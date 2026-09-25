@@ -14,6 +14,7 @@ const CONFIG = {
   myTeamTitle: "Naujokas"
 };
 const FILE = path.join(__dirname, "data.json");
+let FREEZE = null;
 
 // BN santrumpa -> Eurolygos klubo kodas
 const BN2EL = { BKN: "BAS", VAL: "PAM", FEN: "ULK", VIRT: "VIR", EA7: "MIL", BAY: "MUN", "ŽAL": "ZAL", CZV: "RED",
@@ -73,12 +74,18 @@ function statArray(p) { // [sek, pts, 2m, 2a, 3m, 3a, ftm, fta, or, dr, reb, ast
 }
 
 async function build() {
-  const first = await gql(Q_ROUND, { f: CONFIG.fantasyLeagueId });
-  const r = first.draftLeagueFantasyTeamLineupsFromClient[0].fantasyRound;
+  // Einamasis turas pagal tvarkaraštį: rodomas paskutinis prasidėjęs turas,
+  // į kitą perjungiama likus 12 val. iki pirmų jo rungtynių.
+  const sched = await gql(Q_SCHED, { l: CONFIG.leagueId });
+  const now = Date.now();
+  let r = 0;
+  sched.leagueRoundScheduleFromClient.rounds.forEach((rd, i) => {
+    const starts = rd.matchdays.flatMap(m => m.games).map(g => new Date(g.start).getTime()).filter(Boolean);
+    if (starts.length && Math.min(...starts) - 12 * 3600e3 <= now) r = i;
+  });
+  if (FREEZE && FREEZE(r)) return null;
   const vars = { l: CONFIG.leagueId, f: CONFIG.fantasyLeagueId, r, p: CONFIG.pointCalcSystem };
-  const [lu, pool, sched] = await Promise.all([
-    gql(Q_LINEUPS, vars), gql(Q_POOL, { l: vars.l, r, p: vars.p }), gql(Q_SCHED, { l: vars.l })
-  ]);
+  const [lu, pool] = await Promise.all([ gql(Q_LINEUPS, vars), gql(Q_POOL, { l: vars.l, r, p: vars.p }) ]);
 
   // BN žaidėjų fantasy taškai pagal klubą + vardą
   const clubOf = pl => pl.team && pl.team.team ? toEl(pl.team.team.abbreviation) : "";
@@ -165,7 +172,12 @@ async function build() {
 (async () => {
   let old = null;
   try { old = JSON.parse(fs.readFileSync(FILE, "utf8")); } catch (e) { /* pirmas paleidimas */ }
+  // Baigtas turas (visos rungtynės baigtos ir praėjo 4 val. nuo paskutinių) užfiksuojamas ir nebeperskaičiuojamas
+  FREEZE = r => !!old && old.round === r + 1 && old.games && old.games.length > 0 &&
+    old.games.every(g => g.status === "final") &&
+    Date.now() - Math.max(...old.games.map(g => new Date(g.start).getTime() || 0)) > 4 * 3600e3;
   const data = await build();
+  if (!data) { console.log("Turas baigtas, duomenys užfiksuoti."); return; }
   const history = (old && old.history) || {};
   history[String(data.round)] = Object.fromEntries(data.teams.map(t => [t.title, t.total]));
   data.history = history;
