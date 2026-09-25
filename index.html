@@ -247,14 +247,14 @@ function render() {
   const hist = D.history || {};
   const multiRound = Object.keys(hist).length > 1;
   const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? t.total : (m[t.title] || 0)), 0) || t.total;
-  const order = D.teams.map((t, i) => i).sort((a, b) => D.teams[b].total - D.teams[a].total);
-  const lead = D.teams[order[0]].total;
+  const order = D.teams.map((t, i) => i).sort((a, b) => season(D.teams[b]) - season(D.teams[a]) || D.teams[b].total - D.teams[a].total);
+  const lead = season(D.teams[order[0]]);
 
-  let html = `<div class="card"><div class="x"><table class="stand"><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>Taškai</th><th class="bhc">Atsilieka</th>${multiRound ? "<th>Sezonas</th>" : ""}<th>Sužaidė</th><th class="hide-s">Žaidžia</th><th>Liko</th></tr></thead><tbody>` +
+  let html = `<div class="card"><div class="x"><table class="stand"><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>${multiRound ? "Turas" : "Taškai"}</th>${multiRound ? "<th>Sezonas</th>" : ""}<th class="bhc">Atsilieka</th><th>Sužaidė</th><th class="hide-s">Žaidžia</th><th>Liko</th></tr></thead><tbody>` +
     order.map((i, k) => {
       const t = D.teams[i]; const counted = t.players.filter(p => p.mult > 0);
       const c = s => counted.filter(p => playerState(p) === s).length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}</td><td class="bh bhc">${k ? "−" + num(lead - t.total) : ""}</td>${multiRound ? `<td>${num(season(t))}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
+      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td><td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
     }).join("") + `</tbody></table></div></div>`;
 
   const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
