@@ -26,7 +26,14 @@ body{background:var(--bg);color:var(--ink);font-family:"Geist",ui-sans-serif,sys
 .live{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 8px 3px 7px;margin-left:4px}
 .live i{width:6px;height:6px;border-radius:50%;background:var(--cap);box-shadow:0 0 0 3px rgba(255,122,26,.18)}
 .top{background:rgba(11,13,18,.85);position:sticky;top:env(safe-area-inset-top,0px);z-index:5;backdrop-filter:blur(8px)}
-.roundnav{display:flex;align-items:center;gap:22px;font-weight:600;font-size:14px}
+.roundnav{display:flex;align-items:center;gap:6px;font-weight:600;font-size:14px}
+.roundnav button{border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 16px inherit;font-family:inherit;width:34px;height:34px;border-radius:9px;cursor:pointer;display:grid;place-items:center;padding:0}
+.roundnav button:hover:not(:disabled){border-color:var(--cap);color:var(--cap)}
+.roundnav button:disabled{opacity:.35;cursor:default}
+.roundnav button:focus-visible{outline:2px solid var(--cap);outline-offset:1px}
+.roundnav .rt{min-width:64px;text-align:center;white-space:nowrap}
+.archive{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 14px;font-size:13.5px;color:var(--ink-2);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.archive button{border:0;background:none;color:var(--cap);font:600 13.5px inherit;font-family:inherit;cursor:pointer;padding:0}
 .roundnav span.arrow{color:var(--faint);font-size:16px;user-select:none}
 main{padding-inline:16px;padding-block:28px 64px}
 .wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
@@ -190,7 +197,7 @@ a.brand{text-decoration:none}
     <span class="wm">draft<b>live</b></span>
     <span class="live" id="liveTag" hidden><i></i>Live</span>
   </a>
-  <div class="roundnav" id="roundLabel"></div>
+  <div class="roundnav"><button type="button" id="prevR" aria-label="Ankstesnis turas">‹</button><span class="rt" id="roundLabel"></span><button type="button" id="nextR" aria-label="Kitas turas">›</button></div>
 </div></header>
 <main><div class="wrap">
   <div>
@@ -198,6 +205,7 @@ a.brand{text-decoration:none}
     <div class="title"><h1 id="lgTitle"></h1><span class="badge" id="playedBadge"></span><span class="upd" id="updated"></span></div>
   </div>
   <div class="err" id="err" hidden></div>
+  <div class="archive" id="archive" hidden><span id="archiveText"></span><button type="button" id="backCur">Grįžti į einamąjį turą →</button></div>
   <section class="games" id="games" aria-label="Turo rungtynės"></section>
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-t="fantasy" id="tab-fantasy">Fantasy komandos</button>
@@ -213,7 +221,8 @@ a.brand{text-decoration:none}
 const TZ = "Europe/Vilnius";
 const EL = "https://live.euroleague.net/api", SEASON = "E2026";
 const SLUG = new URLSearchParams(location.search).get("l") || "bn";
-let D = null, activeTab = "fantasy", filter = "all", liveAt = null;
+let D = null, CUR = null, viewR = null, activeTab = "fantasy", filter = "all", liveAt = null;
+const ARCH = {};
 
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const num = n => { const x = Math.round(n * 100) / 100; return String(x).replace("-", "−"); };
@@ -272,6 +281,11 @@ function render() {
   const done = D.games.filter(g => g.status === "final").length;
   const live = D.games.some(g => g.status === "live");
   document.getElementById("roundLabel").textContent = D.round + " turas";
+  const curR = CUR ? CUR.round : D.round;
+  document.getElementById("prevR").disabled = D.round <= 1;
+  document.getElementById("nextR").disabled = D.round >= curR;
+  document.getElementById("archive").hidden = viewR == null;
+  if (viewR != null) document.getElementById("archiveText").textContent = `Žiūrite ${D.round} turo istoriją (galutiniai rezultatai)`;
   document.getElementById("playedBadge").textContent = `${done}/${D.games.length} sužaista`;
   document.getElementById("liveTag").hidden = !live;
   const upd = [];
@@ -379,7 +393,7 @@ const statArray = p => [secs(p.Minutes), p.Points, p.FieldGoalsMade2, p.FieldGoa
 const elGet = (what, code) => fetch(`${EL}/${what}?gamecode=${code}&seasoncode=${SEASON}`, { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(t => t ? JSON.parse(t) : null).catch(() => null);
 
 async function pollLive() {
-  if (!D) return;
+  if (!D || viewR != null) return;
   const now = Date.now();
   const active = D.games.filter(g => g.status === "live" || (g.status === "scheduled" && g.start && new Date(g.start).getTime() - 5 * 60000 <= now));
   if (!active.length) return;
@@ -422,8 +436,11 @@ async function load() {
     const res = await fetch("data/" + encodeURIComponent(SLUG) + ".json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
     const d = await res.json();
-    if (D && d.updated === D.updated) return;
-    D = d; render(); pollLive();
+    if (CUR && d.updated === CUR.updated) return;
+    CUR = d;
+    if (viewR != null && viewR >= d.round) viewR = null;
+    if (viewR == null) { D = d; render(); pollLive(); }
+    else render();
     document.getElementById("err").hidden = true;
   } catch (e) {
     if (!D) { const el = document.getElementById("err"); el.hidden = false; el.textContent = "Nepavyko įkelti duomenų. Pabandykite atnaujinti puslapį po kelių minučių."; }
@@ -435,6 +452,27 @@ document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click
   document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
   ["fantasy", "el", "players"].forEach(id => document.getElementById(id).hidden = id !== activeTab);
 }));
+
+// ---- Turų istorija ----
+async function goRound(n) {
+  if (!CUR) return;
+  if (n >= CUR.round) { viewR = null; D = CUR; render(); pollLive(); return; }
+  if (n < 1) return;
+  if (!ARCH[n]) {
+    try {
+      const res = await fetch("data/" + encodeURIComponent(SLUG) + "-r" + n + ".json?t=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) throw new Error(res.status);
+      ARCH[n] = await res.json();
+    } catch (e) {
+      const el = document.getElementById("err"); el.hidden = false; el.textContent = n + " turo istorijos dar nėra."; setTimeout(() => el.hidden = true, 4000); return;
+    }
+  }
+  viewR = n; D = ARCH[n]; render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+document.getElementById("prevR").addEventListener("click", () => D && goRound(D.round - 1));
+document.getElementById("nextR").addEventListener("click", () => D && goRound(D.round + 1));
+document.getElementById("backCur").addEventListener("click", () => CUR && goRound(CUR.round));
 
 // ---- Slaptažodis lygai ----
 const GROUP = SLUG === "bn" ? "bn" : "hla";
