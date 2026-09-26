@@ -683,7 +683,7 @@ function matchupRecap(m, per, done) {
     s.push(sa === sb ? `Kol kas lygu – ${num(sa)}:${num(sb)}.` : `Kol kas pirmauja ${tn(W.title)} – ${num(ws)}:${num(ls)}.`);
     if (pa.left + pb.left) s.push(`Dar žais: ${esc(A.title)} – ${pa.left}, ${esc(B.title)} – ${pb.left}. Pagal vidurkius prognozuojama ${num(pa.proj)}:${num(pb.proj)}.`);
     const tw = top(W); if (tw) s.push(`Kol kas ryškiausias – ${pn(tw)} (${num(tw.fp)} FP).`);
-    return `<article class="rp"><h3>${esc(m.a)} – ${esc(m.b)} <span class="rs">${num(sa)} : ${num(sb)}</span></h3><p>${s.join(" ")}</p>${coachPair(A, B, coachPost(A, B, sa, sb, per, false), coachPost(B, A, sb, sa, per, false))}</article>`;
+    return `<article class="rp"><h3>${esc(m.a)} – ${esc(m.b)} <span class="rs">${num(sa)} : ${num(sb)}</span></h3><p>${s.join(" ")}</p>${coachPair(A, B, "pre")}</article>`;
   }
   if (d === 0) s.push(`Retai pasitaikantis dalykas – lygiosios ${num(ws)}:${num(ls)}.`);
   else if (d >= 40) s.push(pick([`Triuškinanti ${tn(W.title)} pergalė – skirtumas net ${num(d)} taškų.`, `${tn(W.title)} šį turą nepaliko jokių šansų: +${num(d)}.`, `Vienpusė dvikova – ${tn(W.title)} laimėjo ${num(d)} taškų skirtumu.`], m.a + m.b));
@@ -702,7 +702,7 @@ function matchupRecap(m, per, done) {
   if (d && sw && sw.res === "W" && sw.n >= 2) s.push(`Tai jau ${sw.n}-oji ${esc(W.title)} pergalė iš eilės.`);
   if (d && sl && sl.res === "L" && sl.n >= 2) s.push(`${esc(L.title)} pralaimi ${sl.n}-ą turą iš eilės.`);
   if (d) s.push(`Balansas po turo: ${esc(W.title)} ${recordLine(W.title, per)}, ${esc(L.title)} ${recordLine(L.title, per)}.`);
-  return `<article class="rp"><h3>${esc(m.a)} – ${esc(m.b)} <span class="rs">${num(sa)} : ${num(sb)}</span></h3><p>${s.join(" ")}</p>${coachPair(A, B, coachPost(A, B, sa, sb, per, true), coachPost(B, A, sb, sa, per, true))}</article>`;
+  return `<article class="rp"><h3>${esc(m.a)} – ${esc(m.b)} <span class="rs">${num(sa)} : ${num(sb)}</span></h3><p>${s.join(" ")}</p>${coachPair(A, B, "post")}</article>`;
 }
 function matchupPreview(m, per, all) {
   const A = D.teams.find(t => t.title === m.a), B = D.teams.find(t => t.title === m.b); if (!A || !B) return "";
@@ -725,7 +725,7 @@ function matchupPreview(m, per, all) {
   const hurt = t => t.players.filter(p => p.mult > 0 && ["out", "doubtful", "uncertain"].includes(healthOf(p)));
   [A, B].forEach(t => { const h = hurt(t); if (h.length) s.push(`${esc(t.title)} sudėtyje – klaustukai: ${h.map(p => `${esc(p.name)} (${HL[healthOf(p)][0].toLowerCase()})`).join(", ")}.`); });
   [A, B].forEach(t => { const c = streaks(per[t.title] || []).cur; if (c && c.n >= 2) s.push(c.res === "W" ? `${esc(t.title)} sieks ${c.n + 1}-osios pergalės iš eilės.` : c.res === "L" ? `${esc(t.title)} bandys nutraukti ${c.n} pralaimėjimų seriją.` : ""); });
-  return `<article class="rp"><h3>${esc(A.title)} – ${esc(B.title)}</h3><p>${s.join(" ")}</p>${coachPair(A, B, coachPre(A, B, per, all, pa.proj, pb.proj), coachPre(B, A, per, all, pb.proj, pa.proj))}</article>`;
+  return `<article class="rp"><h3>${esc(A.title)} – ${esc(B.title)}</h3><p>${s.join(" ")}</p>${coachPair(A, B, "pre")}</article>`;
 }
 function classicReport() {
   const done = roundDone(), started = D.games.some(g => g.status !== "scheduled");
@@ -756,7 +756,8 @@ function classicReport() {
   }
   let cq = "";
   if (done) { const br = [...D.teams].sort((a, b) => b.total - a.total), W = br[0], L = br[br.length - 1];
-    cq = `<div class="cqs">${coachBlock(W.title, coachFill(coachPick("cwin", D.round + W.title), {}))}${coachBlock(L.title, coachFill(coachPick("clast", D.round + L.title), {}))}</div>`; }
+    const tw = coachText(`${SLUG}|${D.round}|post|cwin`), tl = coachText(`${SLUG}|${D.round}|post|clast`);
+    if (tw || tl) cq = `<div class="cqs">${tw ? coachBlock(W.title, tw) : ""}${tl ? coachBlock(L.title, tl) : ""}</div>`; }
   return `<article class="rp"><h3>${D.round} turo ${started ? (done ? "apžvalga" : "eiga") : "anonsas"}</h3><p>${s.join(" ")}</p>${cq}</article>`;
 }
 function injuriesHtml() {
@@ -784,7 +785,6 @@ function injuriesHtml() {
   return `<div class="sub">Traumuoti ir abejotini lygos komandų žaidėjai${viewR != null ? " (" + D.round + " turo metu)" : ""}</div>${list}${news}`;
 }
 function renderReporter() {
-  CQ_USED.clear();
   const el = document.getElementById("reporter");
   let body = "";
   if (D.format === "h2h" && D.matchups) {
@@ -797,201 +797,17 @@ function renderReporter() {
   el.innerHTML = body + `<p class="foot" style="margin:0">Trenerių komentarai – išgalvoti ir parašyti su šypsena. Realūs lygos žaidėjai jų nesakė (bent jau kol kas).</p>` + txNewsHtml() + injuriesHtml();
 }
 
-// ---- Trenerių komentarai (išgalvoti, humoristiniai) ----
-const CQ = {
-  fav: [
-    "Nenorime per daug kalbėti. Tegul kalba taškai – jų turėsim daugiau.",
-    "Mūsų vienintelis priešas šį turą – mes patys. Ir galbūt BasketNews serveris.",
-    "Popieriuje mes stipresni. Tiesa, popieriuje aš ir sportuoju kasdien.",
-    "Pagal vidurkius esame favoritai. Vidurkiai dar niekada nepralaimėjo – pralaimi treneriai.",
-    "Su visa pagarba komandai „{opp}“. Tik pagarbos šįkart bus nedaug.",
-    "Mūsų sudėtis sustatyta kruopščiai. Varžovų – tiesiog sustatyta.",
-    "Komanda „{opp}“ turėtų džiaugtis, jei pralaimės mažiau nei trisdešimt. Tai ne grasinimas, tai prognozė.",
-    "Spaudimo nejaučiam. Jaučiam tik lengvą gailestį komandai „{opp}“."
-  ],
-  dog: [
-    "Mes kaip tas kaimynas su senu „Golfu“ – niekas netiki, bet kartais aplenkiam.",
-    "Jei laimėsim, tai bus stebuklas. Stebuklai kartais nutinka. Dažniausiai ne mums, bet vis tiek.",
-    "Visi mus jau nurašė. Puiku – mėgstam žaisti be jokio spaudimo ir, kaip matot, be jokių lūkesčių.",
-    "Taip, jie favoritai. Titanikas irgi buvo favoritas.",
-    "Mūsų planas paprastas: tikėtis, kad jų kapitonas {oppCap} pamirš, kad šiandien rungtynės.",
-    "Komanda „{opp}“ turi geresnius žaidėjus, o mes turim tikėjimą. Ir kapitoną {cap}. Daugiausia tikėjimą.",
-    "Skirtumas tarp mūsų – tik ~{gap} taškų. Na, ir talentas. Ir sudėties logika. Bet daugiausia tie taškai.",
-    "Prognozės sako, kad pralaimėsim. Prognozės taip pat sakė, kad šiandien nelis."
-  ],
-  even: [
-    "Jėgos lygios, todėl viską lems detalės. Pavyzdžiui, ar mano kapitonas šįkart nepamirš sportbačių.",
-    "Abi komandos stiprios. Na, bent jau abi turi po penkis startinius.",
-    "Lygi dvikova. Laimės tas, kurio kapitonas nesugalvos mėtyti tritaškių nuo pirmos minutės.",
-    "Pagal prognozę – beveik lygiosios. Pagal mano nuojautą – mes. Nuojauta šį sezoną klydo tik kokius penkis kartus.",
-    "Šansai 50 prieš 50. Kaip ir mano kapitono baudų metimai.",
-    "Bus įtempta. Jau nusipirkau raminamosios arbatos. Dvi pakuotes."
-  ],
-  wstreak: [
-    "Pergalių serija – kaip gera kava: kuo ilgiau, tuo sunkiau sustoti.",
-    "{n} pergalės iš eilės. Pradedu įtarti, kad tikrai kažką išmanau.",
-    "Serija tęsiasi. Prašau nieko nekeisti – net kojinių nekeičiu nuo serijos pradžios."
-  ],
-  lstreak: [
-    "Serija pralaimėjimų ilga, bet mes kantrūs. Ir, matyt, labai kantrūs.",
-    "{n} pralaimėjimai iš eilės? Tai ne krizė, tai ilgalaikė strategija.",
-    "Mūsų pralaimėjimų serija tokia ilga, kad jau galima kurti dokumentinį serialą."
-  ],
-  inj: [
-    "Traumų sąrašas pas mus ilgesnis už pergalių sąrašą. Bet čia tik kol kas.",
-    "{inj} traumuotas? Puiku, bent vienas mūsų žaidėjas šį turą pailsės oficialiai.",
-    "Be žaidėjo {inj} bus sunku. Su juo irgi buvo sunku, tai didelio skirtumo nepajusim."
-  ],
-  revenge: [
-    "Kerštas – patiekalas, kuris patiekiamas šaltas. Mes jį patieksim su FP padažu.",
-    "Praeitos dvikovos rezultatą prisimenu kiekvieną rytą. Šiandien atsiskaitysim.",
-    "Praeitą kartą komanda „{opp}“ mus apgavo. Šįkart sudėtį dėliojau du vakarus. Ir vieną naktį."
-  ],
-  bigwin: [
-    "Tokios pergalės būna tik mano sapnuose. Šįkart nubudau ir vis tiek laimėjom.",
-    "Varžovams tikrai ne gėda – pralaimėti tokiai komandai kaip mūsų yra normalu.",
-    "Nenoriu būti nekuklus, bet +{diff} – tai jau ne pergalė, tai edukacija.",
-    "Komandai „{opp}“ siūlyčiau šios apžvalgos neskaityti. Ir statistikos. Ir kurį laiką apskritai neiti į BasketNews.",
-    "Buvo lengviau, nei tikėjomės. O tikėjomės, kad bus lengva.",
-    "Varžovams atsiųsiu padėkos laišką už svetingumą."
-  ],
-  closewin: [
-    "Laimėjom ant plauko. Plaukų po šito turo liko mažiau.",
-    "Sakoma, kad svarbu ne kaip laimi, o kad laimi. Tai labai patogus posakis šiandien.",
-    "Laimėjom {diff} taško skirtumu. Širdis dar nenurimo, bet taškai – mūsų.",
-    "Gražu nebuvo, bet lentelėje „gražumo“ stulpelio nėra.",
-    "Paskutines rungtynes žiūrėjau pro pirštus. Rekomenduoju – taip pergalės atrodo gražiau."
-  ],
-  win: [
-    "Pergalė pelnyta. Sudėtį dėliojau su kalkuliatorium ir trupučiu intuicijos. Daugiausia intuicijos.",
-    "Šiandien viskas pavyko. Jei kas klaus – visa tai buvo suplanuota nuo pat drafto.",
-    "{star} šiandien buvo mūsų variklis. Kiti buvo ratai – kai kurie nuleisti, bet važiavom.",
-    "Užtikrinta pergalė. Komandai „{opp}“ linkiu sėkmės kitame ture – ypač jei žais ne prieš mus.",
-    "Kai kapitonas {cap} atneša {capPts}, atrodo, kad aš viską taip ir planavau.",
-    "Pergalė yra pergalė. O pergalė prieš komandą „{opp}“ – dviguba šventė."
-  ],
-  lowwin: [
-    "Surinkom mažai, bet užteko. Varžovams siunčiu padėką už kuklumą.",
-    "Taip, surinkom nedaug. Bet užteko. Tai vadinasi efektyvumas, o ne sėkmė. Beveik."
-  ],
-  bigloss: [
-    "Po tokio rezultato net telefonas pasiūlė ištrinti BasketNews programėlę.",
-    "Šį turą vadinsim „mokomuoju“. Mokė, žinoma, komanda „{opp}“.",
-    "Ką galiu pasakyti... Šiandien net mano kavos aparatas būtų surinkęs daugiau FP.",
-    "−{diff}? Tikiuosi, niekas nežiūrėjo. Jei žiūrėjot – niekam nepasakokit.",
-    "Komanda „{opp}“ buvo geresnė. Ir greitesnė. Ir protingesnė. Ir, tiesą sakant, viskuo.",
-    "Pradedu abejoti, ar mano žaidėjai žino, kad sezonas jau prasidėjo."
-  ],
-  closeloss: [
-    "Taip arti, o taip toli. Kaip savaitgalis pirmadienio ryte.",
-    "Vieno tritaškio trūko. Ir, tiesą sakant, dar vieno kapitono.",
-    "Pralaimėti {diff} taško skirtumu – tas pats, kas pamesti raktus prie pat namų durų.",
-    "Pusė taško čia, pusė ten... Kitą kartą kapitoną rinksiu burtų keliu.",
-    "Teisėjams pretenzijų neturim. BasketNews algoritmui – turim."
-  ],
-  loss: [
-    "Pralaimėjom, bet moralinė pergalė – mūsų. Deja, lentelėje jos neskaičiuoja.",
-    "Kiekvienas pralaimėjimas – pamoka. Šį sezoną jau esam labai išsilavinę.",
-    "Pralaimėjom, bet žaidėjai atidavė viską. Deja, to „viskas“ buvo nedaug.",
-    "Šiandien komanda „{opp}“ buvo stipresnė. Kitą kartą būsim mes. Arba ne. Bet bandysim.",
-    "Po tokio turo sudėtį keisiu rimtai. Pradėsiu nuo trenerio."
-  ],
-  highloss: [
-    "Surinkom tiek, kad su bet kuo kitu būtume laimėję. Loterija, ne lyga.",
-    "Surinkom daugiau nei turo vidurkis ir vis tiek pralaimėjom. Varžovai matyt pasirašė sutartį su kosmosu."
-  ],
-  capflop: [
-    "Kapitoną rinkausi pagal vardą. Kitą kartą rinksiuosi pagal statistiką.",
-    "Mūsų kapitonas {cap} šįkart buvo kapitonas tik popieriuje. Labai ploname popieriuje.",
-    "Kapitonas {cap}? Kitą turą jam juostą duosiu tik kelnėms prilaikyti."
-  ],
-  bench: [
-    "Suolas surinko daugiau nei startas. Pradedu galvoti, kad sustatymas – ne mano stiprioji pusė.",
-    "Didžiausi mūsų taškai šįkart sėdėjo ant suolo ir gėrė vandenį.",
-    "Ant suolo palikau {lost} taškų. Suolas buvo geresnis už startą – kitam turui turim naują taktiką."
-  ],
-  lead: [
-    "Pirmaujam, bet dar anksti švęsti. Taurės dar neištraukiu iš spintos.",
-    "Kol kas viskas gerai. Prašau nieko nekalbėti, kad neprakalbėtume.",
-    "Kol kas pirmaujam. Nieko nežadu, bet šampanas jau šaldytuve.",
-    "Viskas pagal planą. Nors, tiesą sakant, plano nebuvo."
-  ],
-  trail: [
-    "Kol kas atsiliekam, bet mūsų žaidėjai mėgsta dramą.",
-    "Atsiliekam. Jau žinau, ką sakysiu po rungtynių, jei nepavyks. Ir jei pavyks.",
-    "Atsiliekam, bet dar žais {left} mūsų žaidėjai. Kaip jie žais – kitas klausimas.",
-    "Rungtynės dar nesibaigė. Tai sakau sau jau trečią kartą šį vakarą."
-  ],
-  cwin: [
-    "Daugiausia taškų lygoje? Tiesiog šiandien žvaigždės buvo mūsų pusėje. Ir visi mūsų žaidėjai.",
-    "Turo nugalėtojai? Nieko keisto. Keista, kad tik dabar.",
-    "Surinkom daugiausia lygoje. Savo sudėtį jau siunčiu į muziejų."
-  ],
-  gpre: [
-    "Pasiruošę esam. Ar pasiruošę varžovai – ne mūsų problema.",
-    "Sudėtis sudėliota, kapitonas išrinktas, kava išgerta. Belieka laukti.",
-    "Nieko nežadėsim. Bet jei laimėsim – priminsim visiems.",
-    "Šis turas bus lemiamas. Kaip ir kiekvienas kitas, apie kurį taip sakau.",
-    "Varžovus gerbiam, bet taškų jiems dalinti neplanuojam."
-  ],
-  gpost: [
-    "Turas baigėsi, emocijos liko. Taškai – irgi, kažkur.",
-    "Ką galiu pasakyti – krepšinis yra krepšinis. O fantasy – dar keistesnis.",
-    "Šiandien viskas buvo aišku nuo pirmų rungtynių. Na, beveik nuo paskutinių.",
-    "Rezultatą priimam oriai. Tiesa, vieną pagalvę jau sukandžiojau."
-  ],
-  clast: [
-    "Paskutinė vieta – geriausia vieta pradėti kilti.",
-    "Visiems nutinka blogų turų. Mums tiesiog nutiko visas.",
-    "Paskutinė vieta šį turą. Bet žiūrint iš kito galo – esam pirmi.",
-    "Šitą turą paprasčiausiai pamiršim. Ir, jei galima, jūs irgi."
-  ]
-};
-const CQ_USED = new Set();
-function coachPick(cat, seed, avoid) {
-  let h = 0; for (const c of String(seed)) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  const pre = ["fav", "dog", "even", "wstreak", "lstreak", "inj", "revenge", "gpre"].includes(cat);
-  const banks = [cat, pre ? "gpre" : "gpost"];
-  for (const b of banks) { const arr = CQ[b]; let i = (h + D.round * 7) % arr.length;
-    for (let k = 0; k < arr.length; k++, i = (i + 1) % arr.length) if (!CQ_USED.has(arr[i]) && arr[i] !== avoid) { CQ_USED.add(arr[i]); return arr[i]; } }
-  const arr = CQ[cat]; return arr[h % arr.length];
+// ---- Trenerių komentarai (išgalvoti, humoristiniai). Parenka serveris – kiekvienas tekstas unikalus visose lygose ir turuose ----
+let COACH = null;
+async function loadCoach() {
+  try { const r = await fetch("data/coach.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); const n = Object.keys(j.q || {}).length; if (!COACH || n !== Object.keys(COACH.q || {}).length) { COACH = j; if (D) render(); } } } catch (e) {}
 }
-function coachFill(txt, v) { return esc(txt).replace(/\{(\w+)\}/g, (m, k) => v[k] != null ? `<b>${esc(v[k])}</b>` : ""); }
-const coachBlock = (team, html) => `<blockquote class="cq"><div class="cq-h">Komandos „${esc(team.trim())}“ treneris:</div>„${html}“</blockquote>`;
-function coachPre(T, O, per, all, projT, projO) {
-  const cap = T.players.find(p => p.cap), ocap = O.players.find(p => p.cap);
-  const hurt = T.players.filter(p => p.mult > 0 && healthOf(p) === "out")[0] || T.players.filter(p => p.mult > 0 && ["doubtful", "uncertain"].includes(healthOf(p)))[0];
-  const c = streaks(per[T.title] || []).cur;
-  const prev = all.filter(g => (g.a === T.title && g.b === O.title) || (g.a === O.title && g.b === T.title)).sort((x, y) => y.r - x.r)[0];
-  const lostPrev = prev && ((prev.a === T.title && prev.as < prev.bs) || (prev.b === T.title && prev.bs < prev.as));
-  const gap = projO - projT;
-  let cat;
-  if (c && c.n >= 2 && c.res === "W") cat = "wstreak";
-  else if (c && c.n >= 2 && c.res === "L") cat = "lstreak";
-  else if (lostPrev) cat = "revenge";
-  else if (hurt && (T.title.length + D.round) % 2) cat = "inj";
-  else if (Math.abs(gap) < 8) cat = "even";
-  else cat = gap < 0 ? "fav" : "dog";
-  return { cat, v: { opp: O.title.trim(), cap: cap && cap.name, oppCap: ocap && ocap.name, gap: num(Math.abs(Math.round(gap))), n: c && c.n, inj: hurt && hurt.name } };
-}
-function coachPost(T, O, sT, sO, per, done) {
-  const d = Math.abs(sT - sO), win = sT > sO;
-  const cap = T.players.find(p => p.cap), star = T.players.filter(p => p.mult > 0 && p.fp != null).sort((x, y) => y.fp * y.mult - x.fp * x.mult)[0];
-  const v = { opp: O.title.trim(), diff: num(d), cap: cap && cap.name, capPts: cap && cap.fp != null ? num(cap.fp * 2) : "", star: star && star.name };
-  if (!done) { const pr = projection(T); v.left = pr.left; return { cat: sT >= sO ? "lead" : "trail", v }; }
-  const avg = D.teams.reduce((a, t) => a + (t.official ?? t.total), 0) / D.teams.length;
-  const o = optimal(T); v.lost = o ? num(o.lost) : "";
-  if (win) return { cat: d >= 40 ? "bigwin" : d < 6 ? "closewin" : sT < avg ? "lowwin" : "win", v };
-  if (sT === sO) return { cat: "closewin", v };
-  if (cap && cap.fp != null && cap.fp * 2 < 16) return { cat: "capflop", v };
-  if (o && o.lost > d) return { cat: "bench", v };
-  return { cat: d >= 40 ? "bigloss" : d < 6 ? "closeloss" : sT > avg ? "highloss" : "loss", v };
-}
-function coachPair(A, B, a, b) {
-  const seed = D.round + "|";
-  const ta = coachPick(a.cat, seed + A.title + a.cat);
-  const tb = coachPick(b.cat, seed + B.title + b.cat, ta);
-  return `<div class="cqs">${coachBlock(A.title, coachFill(ta, a.v))}${coachBlock(B.title, coachFill(tb, b.v))}</div>`;
+const coachText = key => { const x = COACH && COACH.q && COACH.q[key]; return x ? esc(x.t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") : null; };
+const coachBlock = (team, html, lbl) => `<blockquote class="cq"><div class="cq-h">Komandos „${esc(team.trim())}“ treneris${lbl || ""}:</div>„${html}“</blockquote>`;
+function coachPair(A, B, phase) {
+  const lbl = phase === "pre" && D.games.some(g => g.status !== "scheduled") ? " prieš turą" : "";
+  const out = [A, B].map(T => { const t = coachText(`${SLUG}|${D.round}|${phase}|${T.title}`); return t ? coachBlock(T.title, t, lbl) : ""; }).join("");
+  return out ? `<div class="cqs">${out}</div>` : "";
 }
 
 // ---- Perėjimai ir mainai ----
@@ -1181,7 +997,7 @@ async function pollLive() {
 }
 
 async function load() {
-  loadInj(); loadTx();
+  loadInj(); loadTx(); loadCoach();
   try {
     const res = await fetch("data/" + encodeURIComponent(SLUG) + ".json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
