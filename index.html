@@ -104,7 +104,7 @@ function card(L, d) {
       }
     }
   }
-  return `<a class="lg" href="league.html?l=${encodeURIComponent(L.slug)}"><span class="ico ${L.format === "h2h" ? "h2h" : ""}">${esc(L.short)}</span><span><span class="nm">${esc(L.title)}</span><span class="meta">${meta}</span>${me ? `<div class="me">${me}</div>` : ""}</span><span class="go" aria-hidden="true">→</span></a>`;
+  return `<a class="lg" href="league.html?l=${encodeURIComponent(L.slug)}&v=${Date.now()}"><span class="ico ${L.format === "h2h" ? "h2h" : ""}">${esc(L.short)}</span><span><span class="nm">${esc(L.title)}</span><span class="meta">${meta}</span>${me ? `<div class="me">${me}</div>` : ""}</span><span class="go" aria-hidden="true">→</span></a>`;
 }
 const box = document.getElementById("leagues");
 box.innerHTML = LEAGUES.map(L => card(L, null)).join("");
