@@ -19,7 +19,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -33,16 +33,17 @@ jobs:
       - name: Paimti duomenis (BasketNews + Eurolyga)
         run: node update.js
 
-      - name: Issaugoti data.json
+      - name: Issaugoti duomenis
         id: save
         run: |
-          if git diff --quiet -- data.json && git ls-files --error-unmatch data.json >/dev/null 2>&1; then
+          if [ -z "$(git status --porcelain -- data)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-            git add data.json
+            git add -A data
             git commit -m "Atnaujinti duomenys"
+            git pull --rebase --autostash || true
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
