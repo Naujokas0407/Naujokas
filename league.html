@@ -239,7 +239,8 @@ a.brand{text-decoration:none}
 .pt-r span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pt-r.sel{color:var(--cap);font-weight:600}
 .cqs{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.cqg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+.cqg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px;align-items:start}
+.cqt{display:flex;flex-direction:column;gap:6px}
 @media (max-width:560px){.cqg{grid-template-columns:1fr}}
 .cq{margin:0;border-left:3px solid var(--cap);background:rgba(255,122,26,.06);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13.5px;line-height:1.5;color:var(--ink-2);font-style:italic}
 .cq b{font-style:normal;color:var(--ink);font-weight:600}
@@ -792,11 +793,10 @@ function renderReporter() {
     body = `<div class="sub">${D.round} turo ${started ? (done ? "apžvalga" : "eiga – atnaujinama gyvai") : "anonsas"}</div><div class="rps">` +
       D.matchups.map(m => started ? matchupRecap(m, per, done) : matchupPreview(m, perPrev, prevAll)).join("") + `</div>`;
   } else {
-    const done = roundDone(), started = D.games.some(g => g.status !== "scheduled"), phase = done ? "post" : "pre";
-    const lbl = phase === "pre" && started ? " prieš turą" : "";
+    const started = D.games.some(g => g.status !== "scheduled");
     const teams = started ? [...D.teams].sort((a, b) => b.total - a.total) : D.teams;
-    const blocks = teams.map(T => { const t = coachText(`${SLUG}|${D.round}|${phase}|${T.title}`); return t ? coachBlock(T.title, t, lbl) : ""; }).join("");
-    body = `<div class="rps">${classicReport()}</div>` + (blocks ? `<div class="sub">Trenerių komentarai ${done ? "po turo" : "prieš turą"}</div><div class="cqg">${blocks}</div>` : "");
+    const blocks = teams.map(T => { const h = coachTeam(T); return h ? `<div class="cqt">${h}</div>` : ""; }).join("");
+    body = `<div class="rps">${classicReport()}</div>` + (blocks ? `<div class="sub">Trenerių komentarai</div><div class="cqg">${blocks}</div>` : "");
   }
   el.innerHTML = body + `<p class="foot" style="margin:0">Trenerių komentarai – išgalvoti ir parašyti su šypsena. Realūs lygos žaidėjai jų nesakė (bent jau kol kas).</p>` + txNewsHtml() + injuriesHtml();
 }
@@ -808,9 +808,14 @@ async function loadCoach() {
 }
 const coachText = key => { const x = COACH && COACH.q && COACH.q[key]; return x ? esc(x.t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") : null; };
 const coachBlock = (team, html, lbl) => `<blockquote class="cq"><div class="cq-h">Komandos „${esc(team.trim())}“ treneris${lbl || ""}:</div>„${html}“</blockquote>`;
-function coachPair(A, B, phase) {
-  const lbl = phase === "pre" && D.games.some(g => g.status !== "scheduled") ? " prieš turą" : "";
-  const out = [A, B].map(T => { const t = coachText(`${SLUG}|${D.round}|${phase}|${T.title}`); return t ? coachBlock(T.title, t, lbl) : ""; }).join("");
+// Rodomi abu komentarai: prieš turą pasakytas niekur nedingsta, po turo prisideda naujas
+function coachTeam(T) {
+  const started = D.games.some(g => g.status !== "scheduled");
+  const pre = coachText(`${SLUG}|${D.round}|pre|${T.title}`), post = roundDone() ? coachText(`${SLUG}|${D.round}|post|${T.title}`) : null;
+  return (pre ? coachBlock(T.title, pre, started ? " prieš turą" : "") : "") + (post ? coachBlock(T.title, post, " po turo") : "");
+}
+function coachPair(A, B) {
+  const out = [A, B].map(coachTeam).join("");
   return out ? `<div class="cqs">${out}</div>` : "";
 }
 
