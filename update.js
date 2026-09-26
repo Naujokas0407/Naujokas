@@ -49,7 +49,7 @@ async function gql(query, variables) {
 }
 const el = (what, code) => http(`${CONFIG.el}/${what}?gamecode=${code}&seasoncode=${CONFIG.season}`, {}, 2).catch(() => null);
 
-const PLAYER = `id firstName lastName
+const PLAYER = `id firstName lastName health
   team(leagueId:$l,fantasyRound:$r){ team{ abbreviation games(fantasyRound:$r,currentRound:false){ basketnewsApiGameId team1{team{abbreviation}} team2{team{abbreviation}} } } }
   fantasy_pts(leagueId:$l,fantasyRound:$r,pointCalcSystem:$p)`;
 const Q_LINEUPS = `query($l:String!,$f:String!,$r:Int,$p:String){ draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:$f){
@@ -106,13 +106,57 @@ async function buildShared() {
   const sched = await gql(Q_SCHED, { l: CONFIG.leagueId });
   const r = pickRound(sched.leagueRoundScheduleFromClient.rounds, Date.now());
   const pool = await gql(Q_POOL, { l: CONFIG.leagueId, r, p: CONFIG.pointCalcSystem });
-  const fpByKey = {}, fpByLast = {}, bnGames = {};
+  const fpByKey = {}, fpByLast = {}, bnGames = {}, idByKey = {}, idByLast = {};
   for (const pl of pool.playersSearchRecordsFromClient.records) {
     const t = pl.team && pl.team.team;
     if (t) for (const g of t.games || []) bnGames[g.basketnewsApiGameId] = [toEl(g.team1.team.abbreviation), toEl(g.team2.team.abbreviation)];
     fpByKey[clubOf(pl) + "|" + norm(fullName(pl))] = pl.fantasy_pts;
     fpByLast[clubOf(pl) + "|" + norm(pl.lastName)] = pl.fantasy_pts;
+    idByKey[clubOf(pl) + "|" + norm(fullName(pl))] = pl.id;
+    idByLast[clubOf(pl) + "|" + norm(pl.lastName)] = pl.id;
   }
+
+  // Ankstesnių turų fantasy taškai (sezono vidurkiams). Kiekvienas turas parsiunčiamas vieną kartą ir saugomas data/fp-hist.json
+  const histFile = path.join(DIR, "fp-hist.json");
+  let fpHist = {};
+  try { fpHist = JSON.parse(fs.readFileSync(histFile, "utf8")); } catch (e) {}
+  for (let i = 0; i < r; i++) {
+    if (fpHist[i + 1]) continue;
+    try {
+      const d = await gql(Q_POOL, { l: CONFIG.leagueId, r: i, p: CONFIG.pointCalcSystem });
+      const m = {};
+      for (const pl of d.playersSearchRecordsFromClient.records) if (pl.fantasy_pts != null) m[pl.id] = pl.fantasy_pts;
+      if (Object.keys(m).length) fpHist[i + 1] = m;
+    } catch (e) { console.log("Nepavyko gauti " + (i + 1) + " turo taškų", e.message); }
+  }
+  fs.writeFileSync(histFile, JSON.stringify(fpHist));
+  const avgOf = id => {
+    const v = Object.keys(fpHist).filter(k => +k <= r).map(k => fpHist[k][id]).filter(x => x != null);
+    return v.length ? { avg: round2(v.reduce((a, b) => a + b, 0) / v.length), gp: v.length, last: fpHist[r] ? (fpHist[r][id] ?? null) : null } : { avg: null, gp: 0, last: null };
+  };
+  // Traumos: BN žaidėjo būsena (ready / expected / uncertain / doubtful / out). Pokyčiai įrašomi į naujienas.
+  const injFile = path.join(DIR, "injuries.json");
+  let inj = null;
+  try { inj = JSON.parse(fs.readFileSync(injFile, "utf8")); } catch (e) {}
+  const baseline = !inj;
+  inj = inj || { state: {}, news: [] };
+  const nowIso = new Date().toISOString();
+  let injChanged = baseline;
+  for (const pl of pool.playersSearchRecordsFromClient.records) {
+    const h = pl.health || "ready", prev = inj.state[pl.id];
+    const info = { name: fullName(pl), club: clubOf(pl) };
+    if (!prev) {
+      inj.state[pl.id] = { h, since: nowIso, ...info }; injChanged = true;
+      if (!baseline && h !== "ready") inj.news.unshift({ t: nowIso, id: pl.id, ...info, from: null, to: h });
+    } else if (prev.h !== h) {
+      inj.news.unshift({ t: nowIso, id: pl.id, ...info, from: prev.h, to: h });
+      inj.state[pl.id] = { h, since: nowIso, ...info }; injChanged = true;
+    }
+  }
+  inj.news = inj.news.slice(0, 80);
+  if (injChanged) { inj.updated = nowIso; fs.writeFileSync(injFile, JSON.stringify(inj)); }
+
+  const bnPlayers = pool.playersSearchRecordsFromClient.records.map(pl => ({ id: pl.id, name: fullName(pl), club: clubOf(pl), fp: pl.fantasy_pts }));
   const bnSched = (sched.leagueRoundScheduleFromClient.rounds[r] || { matchdays: [] }).matchdays.flatMap(m => m.games).filter(g => !g.canceled);
 
   const codes = Array.from({ length: 12 }, (_, i) => r * 10 + i + 1);
@@ -142,7 +186,7 @@ async function buildShared() {
         st: statArray(p), s: p.IsStarter ? 1 : 0, oc: p.IsPlaying ? 1 : 0 });
     }
   });
-  return { r, games, elPlayers, fpByKey, fpByLast };
+  return { r, games, elPlayers, fpByKey, fpByLast, idByKey, idByLast, avgOf, bnPlayers };
 }
 
 // ---------- Viena lyga ----------
@@ -160,7 +204,8 @@ async function buildLeague(S, L) {
       const e = findEl(club, name, pl.lastName);
       const mult = multiplier(p.cardIdentifier, p.captain);
       const fp = pl.fantasy_pts == null ? null : pl.fantasy_pts;
-      const out = { name, club, pos: (p.position || "").charAt(0).toUpperCase(), card: p.cardIdentifier, cap: !!p.captain, mult,
+      const A = S.avgOf(pl.id);
+      const out = { id: pl.id, avg: A.avg, gp: A.gp, health: pl.health || "ready", name, club, pos: (p.position || "").charAt(0).toUpperCase(), card: p.cardIdentifier, cap: !!p.captain, mult,
         game: gameOfClub(club), fp, total: fp == null ? 0 : round2(fp * mult),
         st: e && !e.dnp ? e.st : null, dnp: e ? e.dnp : false, s: e ? e.s : 0, oc: e ? e.oc : 0 };
       if (e) { e.owner = ti; e.ownedP = out; }
@@ -172,11 +217,17 @@ async function buildLeague(S, L) {
   const pool = elPlayers.filter(e => !e.dnp).map(e => {
     const o = e.ownedP;
     const fp = o ? o.fp : (S.fpByKey[e.key] ?? S.fpByLast[e.lastKey] ?? null);
-    return { name: o ? o.name : e.name, club: e.club, game: e.game, fp, st: e.st, s: e.s, oc: e.oc,
+    const id = o ? o.id : (S.idByKey[e.key] ?? S.idByLast[e.lastKey] ?? null);
+    return { name: o ? o.name : e.name, club: e.club, game: e.game, fp, avg: id ? S.avgOf(id).avg : null, st: e.st, s: e.s, oc: e.oc,
       owner: e.owner ?? null, card: o ? o.card : null, cap: o ? o.cap : false };
   });
 
-  const data = { slug: L.slug, title: L.title, format: L.format, round: r + 1, myTeam: L.myTeam, tv: TV, games, teams, pool };
+  // Geriausi laisvi žaidėjai pagal sezono vidurkį
+  const ownedIds = new Set(teams.flatMap(t => t.players.map(p => p.id)));
+  const fa = S.bnPlayers.filter(p => !ownedIds.has(p.id)).map(p => ({ name: p.name, club: p.club, fp: p.fp, ...S.avgOf(p.id) }))
+    .filter(p => p.gp > 0 || p.fp != null).sort((a, b) => (b.avg ?? b.fp ?? -99) - (a.avg ?? a.fp ?? -99)).slice(0, 40);
+
+  const data = { slug: L.slug, title: L.title, format: L.format, round: r + 1, myTeam: L.myTeam, tv: TV, games, teams, pool, fa };
 
   if (L.format === "h2h") {
     const rounds = await Promise.all(Array.from({ length: r + 1 }, (_, i) => gql(Q_H2H, { f: L.fantasyLeagueId, r: i }).catch(() => null)));
