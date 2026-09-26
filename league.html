@@ -150,9 +150,30 @@ a.brand{text-decoration:none}
 .mr.w span{color:var(--ink);font-weight:600}
 .mr.w b{color:var(--cap)}
 .mst{font-size:12px;color:var(--faint)}
+
+.gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding-inline:16px}
+.gate form{width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.gate h2{margin:0;font-size:20px;letter-spacing:-.02em}
+.gate p{margin:0;color:var(--muted);font-size:13.5px}
+.gate input{width:100%;font:500 16px inherit;font-family:inherit;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-align:center}
+.gate input:focus-visible{outline:2px solid var(--cap);outline-offset:1px}
+.gate button{width:100%;font:600 15px inherit;font-family:inherit;padding:12px;border:0;border-radius:10px;background:var(--cap);color:var(--cap-ink);cursor:pointer}
+.gate .gerr{color:var(--cap);font-size:13px;min-height:18px}
+.gate a{color:var(--muted);font-size:13px;text-decoration:none}
 </style>
 </head>
 <body>
+<div class="gate" id="gate" hidden>
+  <form id="gateForm" autocomplete="off">
+    <svg width="56" height="56" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="9" fill="#ff7a1a"/><circle cx="16" cy="16" r="9" fill="none" stroke="#140a02" stroke-width="1.8"/><path d="M7 16h18M16 7v18" stroke="#140a02" stroke-width="1.8" fill="none"/><path d="M10.2 9.2c2.6 2.2 2.6 11.4 0 13.6M21.8 9.2c-2.6 2.2-2.6 11.4 0 13.6" stroke="#140a02" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+    <h2 id="gateTitle">Lyga</h2>
+    <p>Įveskite lygos slaptažodį</p>
+    <input id="gatePass" type="password" placeholder="Slaptažodis" aria-label="Slaptažodis">
+    <button type="submit">Įeiti</button>
+    <div class="gerr" id="gateErr" role="alert"></div>
+    <a href="./">← Visos lygos</a>
+  </form>
+</div>
 <header class="top"><div class="top-in">
   <a class="brand" href="./" aria-label="draftlive – visos lygos">
     <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
@@ -408,10 +429,33 @@ document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click
   ["fantasy", "el", "players"].forEach(id => document.getElementById(id).hidden = id !== activeTab);
 }));
 
-load();
-setInterval(load, 60000);
-setInterval(pollLive, 30000);
-document.addEventListener("visibilitychange", () => { if (!document.hidden) { load(); pollLive(); } });
+// ---- Slaptažodis lygai ----
+const GROUP = SLUG === "bn" ? "bn" : "hla";
+const PASS = { bn: "18f34bf27131b8855d7c2baeb901d8beccc4faa1b4e8bf26ff2c9bd4666c6743", hla: "00ad9aaae9d4bc03752cc8fc92ee855598982a6511ab0c6034069c5b29f806b8" };
+const NAMES = { bn: "BN Fantasy 🏆", hla1: "HLA 1 Divizionas", hla2: "HLA 2 Divizionas", hla3: "HLA 3 Divizionas", hla4: "HLA 4 Divizionas" };
+const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(b => b.toString(16).padStart(2, "0")).join("");
+const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+let started = false;
+function start() {
+  if (started) return; started = true;
+  document.getElementById("gate").hidden = true;
+  load();
+  setInterval(load, 60000);
+  setInterval(pollLive, 30000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) { load(); pollLive(); } });
+}
+if (store.get("pass_" + GROUP) === PASS[GROUP]) start();
+else {
+  document.getElementById("gateTitle").textContent = NAMES[SLUG] || "Lyga";
+  document.getElementById("gate").hidden = false;
+  document.getElementById("gatePass").focus();
+  document.getElementById("gateForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const v = document.getElementById("gatePass").value.trim().toLowerCase();
+    if (await sha(v) === PASS[GROUP]) { store.set("pass_" + GROUP, PASS[GROUP]); start(); }
+    else { document.getElementById("gateErr").textContent = "Neteisingas slaptažodis"; document.getElementById("gatePass").select(); }
+  });
+}
 </script>
 </body>
 </html>
