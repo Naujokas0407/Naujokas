@@ -444,15 +444,15 @@ function start() {
   setInterval(pollLive, 30000);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) { load(); pollLive(); } });
 }
-if (store.get("pass_" + GROUP) === PASS[GROUP]) start();
-else {
+// slaptažodis klausiamas kiekvieną kartą atidarius lygą
+{
   document.getElementById("gateTitle").textContent = NAMES[SLUG] || "Lyga";
   document.getElementById("gate").hidden = false;
   document.getElementById("gatePass").focus();
   document.getElementById("gateForm").addEventListener("submit", async e => {
     e.preventDefault();
     const v = document.getElementById("gatePass").value.trim().toLowerCase();
-    if (await sha(v) === PASS[GROUP]) { store.set("pass_" + GROUP, PASS[GROUP]); start(); }
+    if (await sha(v) === PASS[GROUP]) { start(); }
     else { document.getElementById("gateErr").textContent = "Neteisingas slaptažodis"; document.getElementById("gatePass").select(); }
   });
 }
