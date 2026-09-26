@@ -340,4 +340,5 @@ function restoreFromGit(slug, round) {
       process.exitCode = 1;
     }
   }
+  try { require("./coach.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Trenerių komentarai:", e.message); }
 })().catch(err => { console.error(err); process.exit(1); });
