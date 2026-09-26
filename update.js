@@ -218,13 +218,13 @@ async function buildLeague(S, L) {
     const o = e.ownedP;
     const fp = o ? o.fp : (S.fpByKey[e.key] ?? S.fpByLast[e.lastKey] ?? null);
     const id = o ? o.id : (S.idByKey[e.key] ?? S.idByLast[e.lastKey] ?? null);
-    return { name: o ? o.name : e.name, club: e.club, game: e.game, fp, avg: id ? S.avgOf(id).avg : null, st: e.st, s: e.s, oc: e.oc,
+    return { id, name: o ? o.name : e.name, club: e.club, game: e.game, fp, avg: id ? S.avgOf(id).avg : null, st: e.st, s: e.s, oc: e.oc,
       owner: e.owner ?? null, card: o ? o.card : null, cap: o ? o.cap : false };
   });
 
   // Geriausi laisvi žaidėjai pagal sezono vidurkį
   const ownedIds = new Set(teams.flatMap(t => t.players.map(p => p.id)));
-  const fa = S.bnPlayers.filter(p => !ownedIds.has(p.id)).map(p => ({ name: p.name, club: p.club, fp: p.fp, ...S.avgOf(p.id) }))
+  const fa = S.bnPlayers.filter(p => !ownedIds.has(p.id)).map(p => ({ id: p.id, name: p.name, club: p.club, fp: p.fp, ...S.avgOf(p.id) }))
     .filter(p => p.gp > 0 || p.fp != null).sort((a, b) => (b.avg ?? b.fp ?? -99) - (a.avg ?? a.fp ?? -99)).slice(0, 40);
 
   const data = { slug: L.slug, title: L.title, format: L.format, round: r + 1, myTeam: L.myTeam, tv: TV, games, teams, pool, fa };
@@ -246,6 +246,46 @@ async function buildLeague(S, L) {
     }
   }
   return data;
+}
+
+// Perėjimai ir mainai: lyginamos komandų sudėtys tarp paleidimų. Žurnalas – data/<lyga>-tx.json
+async function trackRoster(S, L) {
+  const file = path.join(DIR, L.slug + "-tx.json");
+  let tx = null;
+  try { tx = JSON.parse(fs.readFileSync(file, "utf8")); } catch (e) {}
+  const lu = await gql(Q_LINEUPS, { l: CONFIG.leagueId, f: L.fantasyLeagueId, r: S.r, p: CONFIG.pointCalcSystem });
+  const cur = {}, names = {}, titles = {};
+  for (const t of lu.draftLeagueFantasyTeamLineupsFromClient) {
+    titles[t.fantasyTeamId] = t.fantasyTeam.title;
+    for (const p of t.players) { cur[p.player.id] = t.fantasyTeamId; names[p.player.id] = { name: fullName(p.player), club: clubOf(p.player) }; }
+  }
+  if (!Object.keys(cur).length) return;
+  if (!tx) { fs.writeFileSync(file, JSON.stringify({ roster: cur, names, titles, log: [] })); return; }
+  const prev = tx.roster || {}, now = new Date().toISOString(), round = S.r + 1;
+  const nm = id => names[id] || tx.names[id] || { name: "?", club: "" };
+  const ttl = id => titles[id] || (tx.titles || {})[id] || "?";
+  const moves = {}, adds = {}, drops = {};
+  for (const [pid, tid] of Object.entries(cur)) {
+    const was = prev[pid];
+    if (!was) (adds[tid] = adds[tid] || []).push(pid);
+    else if (was !== tid) { const k = [was, tid].sort().join("|"); (moves[k] = moves[k] || []).push({ pid, from: was, to: tid }); }
+  }
+  for (const [pid, tid] of Object.entries(prev)) if (!cur[pid]) (drops[tid] = drops[tid] || []).push(pid);
+  const ev = [];
+  for (const [k, list] of Object.entries(moves)) {
+    const [a, b] = k.split("|");
+    ev.push({ t: now, r: round, type: "trade", a: ttl(a), b: ttl(b),
+      aGets: list.filter(x => x.to === a).map(x => nm(x.pid)), bGets: list.filter(x => x.to === b).map(x => nm(x.pid)) });
+  }
+  for (const tid of new Set([...Object.keys(adds), ...Object.keys(drops)])) {
+    ev.push({ t: now, r: round, type: "fa", team: ttl(tid), in: (adds[tid] || []).map(nm), out: (drops[tid] || []).map(nm) });
+  }
+  const changed = ev.length || JSON.stringify(titles) !== JSON.stringify(tx.titles || {});
+  if (!changed) return;
+  tx.log = [...ev, ...(tx.log || [])].slice(0, 150);
+  tx.roster = cur; tx.names = { ...tx.names, ...names }; tx.titles = titles; tx.updated = now;
+  fs.writeFileSync(file, JSON.stringify(tx));
+  if (ev.length) console.log(L.slug + ": sudėčių pokyčiai – " + ev.length);
 }
 
 // Turų archyvas: data/<lyga>-r<N>.json. Jei kurio nors praėjusio turo failo nėra, jis atkuriamas iš git istorijos.
@@ -276,6 +316,7 @@ function restoreFromGit(slug, round) {
       old.games.every(g => g.status === "final") &&
       Date.now() - Math.max(...old.games.map(g => new Date(g.start).getTime() || 0)) > 4 * 3600e3 &&
       (!old.slug || old.slug === L.slug);
+    try { await trackRoster(S, L); } catch (e) { console.log(L.slug + ": nepavyko patikrinti sudėčių", e.message); }
     for (let r = 1; r <= S.r; r++) if (!fs.existsSync(arch(L.slug, r))) restoreFromGit(L.slug, r);
     if (old && old.round && old.round !== S.r + 1 && !fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
     if (frozen) {
