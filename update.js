@@ -78,16 +78,33 @@ function statArray(p) { // [sek, pts, 2m, 2a, 3m, 3a, ftm, fta, or, dr, reb, ast
 const clubOf = pl => pl.team && pl.team.team ? toEl(pl.team.team.abbreviation) : "";
 const fullName = pl => [pl.firstName, pl.lastName].filter(Boolean).join(" ");
 
+// Lietuvos laiko juostos poslinkis (ms) duotu momentu
+function vilniusOffset(t) {
+  const f = new Intl.DateTimeFormat("en-US", { timeZone: "Europe/Vilnius", hourCycle: "h23", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric", second: "numeric" }).formatToParts(new Date(t));
+  const g = k => +f.find(x => x.type === k).value;
+  return Date.UTC(g("year"), g("month") - 1, g("day"), g("hour"), g("minute"), g("second")) - Math.floor(t / 1000) * 1000;
+}
+// Kitos dienos 12:00 Lietuvos laiku po momento t
+function noonNextDayVilnius(t) {
+  const [y, m, d] = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Vilnius", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(t)).split("-").map(Number);
+  const guess = Date.UTC(y, m - 1, d + 1, 12);
+  return guess - vilniusOffset(guess);
+}
+function pickRound(rounds, now) {
+  let r = 0;
+  for (let i = 1; i < rounds.length; i++) {
+    const prev = rounds[i - 1].matchdays.flatMap(m => m.games).filter(g => !g.canceled).map(g => new Date(g.start).getTime()).filter(Boolean);
+    if (!prev.length) break;
+    if (now >= noonNextDayVilnius(Math.max(...prev))) r = i; else break;
+  }
+  return r;
+}
+
 // ---------- Bendra visoms lygoms: turas, rungtynės, Eurolygos statistika ----------
 async function buildShared() {
-  // Einamasis turas: paskutinis prasidėjęs; į kitą perjungiama likus 12 val. iki pirmų jo rungtynių
+  // Einamasis turas: į kitą turą perjungiama kitą dieną po paskutinių turo rungtynių 12:00 Lietuvos laiku
   const sched = await gql(Q_SCHED, { l: CONFIG.leagueId });
-  const now = Date.now();
-  let r = 0;
-  sched.leagueRoundScheduleFromClient.rounds.forEach((rd, i) => {
-    const starts = rd.matchdays.flatMap(m => m.games).map(g => new Date(g.start).getTime()).filter(Boolean);
-    if (starts.length && Math.min(...starts) - 12 * 3600e3 <= now) r = i;
-  });
+  const r = pickRound(sched.leagueRoundScheduleFromClient.rounds, Date.now());
   const pool = await gql(Q_POOL, { l: CONFIG.leagueId, r, p: CONFIG.pointCalcSystem });
   const fpByKey = {}, fpByLast = {}, bnGames = {};
   for (const pl of pool.playersSearchRecordsFromClient.records) {
