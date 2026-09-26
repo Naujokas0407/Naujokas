@@ -4,375 +4,112 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0d12">
-<title>BN Fantasy 🏆</title>
+<title>draftlive · BasketNews Fantasy lygos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
 <style>
 :root{
   color-scheme:dark;
-  --bg:#0b0d12; --card:#12151c; --muted-bg:#1a1e27; --soft:#161a22; --line:#262b36; --line-2:#1c2029;
+  --bg:#0b0d12; --card:#12151c; --card-2:#161a22; --line:#262b36;
   --ink:#f2f4f8; --ink-2:#d3d8e2; --muted:#8b93a5; --faint:#5f6779;
-  --chip:#eef1f6; --chip-ink:#0b0d12; --cap:#ff7a1a; --cap-ink:#140a02; --me:#21170f;
+  --cap:#ff7a1a; --cap-2:#ffa04d;
 }
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px;line-height:1.4;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
-.top{border-bottom:1px solid var(--line);padding-inline:16px}
-.top-in{max-width:1080px;margin:0 auto;height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.brand svg{display:block;flex:none}
-.wm{font-weight:700;font-size:18px;letter-spacing:-.03em;line-height:1}
-.wm b{color:var(--cap);font-weight:700}
-.live{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 8px 3px 7px;margin-left:4px}
-.live i{width:6px;height:6px;border-radius:50%;background:var(--cap);box-shadow:0 0 0 3px rgba(255,122,26,.18)}
-.top{background:rgba(11,13,18,.85);position:sticky;top:env(safe-area-inset-top,0px);z-index:5;backdrop-filter:blur(8px)}
-.roundnav{display:flex;align-items:center;gap:22px;font-weight:600;font-size:14px}
-.roundnav span.arrow{color:var(--faint);font-size:16px;user-select:none}
-main{padding-inline:16px;padding-block:28px 64px}
-.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
-.eyebrow{font-size:12px;color:var(--muted);letter-spacing:.02em;text-transform:uppercase}
-.title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
-h1{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:0}
-.badge{font-size:11px;font-weight:500;border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--ink-2)}
-.games{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
-@media (max-width:900px){.games{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:520px){.games{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.gc{border:1px solid var(--line);border-radius:8px;padding:10px 12px 8px;background:var(--card);display:flex;flex-direction:column;gap:3px}
-.gc .r{display:flex;justify-content:space-between;color:var(--muted);font-size:13.5px}
-.gc .r.w{color:var(--ink);font-weight:700}
-.gc .s{font-size:12px;color:var(--muted);margin-top:4px}
-.gc.sched .r{color:var(--ink)}
-.tabs{display:inline-flex;gap:2px;background:var(--muted-bg);border-radius:10px;padding:4px;max-width:100%;overflow-x:auto;align-self:flex-start}
-.tabs button{border:0;background:transparent;font:500 15px inherit;font-family:inherit;color:var(--muted);padding:6px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
-.tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
-.tabs button:focus-visible,.seg button:focus-visible{outline:2px solid var(--cap);outline-offset:1px}
-.card{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
-.x{overflow-x:auto}
-table{border-collapse:collapse;width:100%}
-th{font-weight:500;color:var(--ink-2);font-size:13px;text-align:right;padding:10px 8px;white-space:nowrap;border-bottom:1px solid var(--line)}
-td{padding:9px 8px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line-2);font-size:13.5px}
-tr:last-child td{border-bottom:0}
-th.l,td.l{text-align:left}
-th:first-child,td:first-child{padding-left:16px}
-th:last-child,td:last-child{padding-right:16px}
-.stand td{padding-block:12px}
-.stand td.rk{color:var(--muted);width:30px}
-.stand td.pts{font-size:16px;font-weight:600}
-.stand td.bh{color:var(--muted)}
-.stand tr.me td{background:var(--me)}
-.stand tr{cursor:pointer}
-.stand tr:hover td{background:var(--soft)}
-.team-h{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 16px 6px}
-.team-h .n{font-size:16px;font-weight:500}
-.team-h .t{font-size:24px;font-weight:700;letter-spacing:-.02em}
-.card.me{box-shadow:0 0 0 1.5px var(--cap);border-color:transparent}
-.box td{padding-block:8px}
-.box td.pl{min-width:190px}
-.pos{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:22px;border-radius:999px;font-size:11.5px;font-weight:600;margin-right:8px;background:var(--chip);color:var(--chip-ink);vertical-align:middle}
-.pos.o{background:transparent;color:var(--ink-2);border:1px solid var(--line)}
-.pos.out{background:transparent;color:var(--muted);border:1px solid var(--line)}
-.cap{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:var(--cap);color:var(--cap-ink);font-size:10px;font-weight:700;margin-left:6px;vertical-align:1px}
-.nm{font-weight:500;font-size:14px}
-.dim td{color:var(--muted)}
-.dim .nm{color:var(--muted)}
-td.fp,td.mx{color:var(--muted)}
-td.mx{font-size:12px}
-td.pt{font-weight:700;font-size:15px}
-td.gm{color:var(--muted);text-align:left;font-size:12.5px}
-td.gm b{font-weight:400;color:var(--muted)}
-tr.sep td{border-top:1px solid var(--line)}
-tr.tot td{background:var(--soft);font-weight:500;border-top:1px solid var(--line)}
-tr.tot td.pt{font-weight:700}
-.stack{display:flex;flex-direction:column;gap:14px}
-.sub{font-size:13px;color:var(--muted)}
-.gh{display:flex;justify-content:space-between;align-items:center;padding:16px 16px 4px}
-.gh .sc{font-size:17px;font-weight:600}
-.gh .sc i{font-style:normal;color:var(--faint);margin-inline:8px}
-.pill{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--ink-2)}
-.club{padding:12px 16px 2px;font-weight:600;font-size:13px}
-.own{display:inline-flex;align-items:center;gap:6px;justify-content:flex-end}
-.own .tm{max-width:120px;overflow:hidden;text-overflow:ellipsis;color:var(--ink-2);font-size:12.5px}
-.fa{color:var(--muted);font-size:12.5px}
-.ph{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;gap:12px;flex-wrap:wrap}
-.ph .h{font-weight:600;font-size:15px}
-.seg{display:inline-flex;gap:2px;background:var(--muted-bg);border-radius:8px;padding:3px}
-.seg button{border:0;background:transparent;font:500 13px inherit;font-family:inherit;color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
-td.rk2{color:var(--muted);width:28px}
-.foot{font-size:12px;color:var(--muted);line-height:1.6}
-.sched-list{display:flex;flex-direction:column}
-.sched-list div{padding:12px 16px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between}
-.sched-list div:first-child{border-top:0}
-@media (max-width:640px){
-  .hide-s{display:none}
-  h1{font-size:21px}
-}
-
 html,body{margin:0}
 [hidden]{display:none!important}
-td.gm b{margin-left:5px}
-.gc.lvg{border-color:var(--cap)}
-.dotl{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cap);margin-right:6px;vertical-align:1px;animation:pulse 1.4s infinite}
-@keyframes pulse{50%{opacity:.3}}
-@media (prefers-reduced-motion:reduce){.dotl{animation:none}}
-td.gm b.lv{color:var(--cap);font-weight:600;margin-left:4px}
-tr.onc td.nm,tr.onc .nm{color:var(--cap)}
-.pill.pl-live{border-color:var(--cap);color:var(--cap)}
-.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.upd{font-size:12px;color:var(--muted)}
-.err{border:1px solid var(--cap);color:var(--ink-2);border-radius:10px;padding:14px 16px}
-
-.wrap,.top-in{max-width:1240px}
-.ml{display:none;font-size:12px;color:var(--muted);margin-top:3px;white-space:normal;line-height:1.35}
-.ml b{font-weight:600;color:var(--cap);margin-left:3px}
-th,td{padding-inline:6px}
-@media (max-width:1240px){ .d{display:none} }
-@media (max-width:820px){
-  .sc,.fp,.mx,.gm{display:none}
-  .ml{display:block}
-  td.pl,.box td.pl{min-width:0;white-space:normal;width:100%}
-  .own .tm{max-width:86px}
-  .tabs button{font-size:13px;padding:6px 9px}
-  .tabs{align-self:stretch;justify-content:space-between}
-  .team-h .t{font-size:20px}
-}
-@media (max-width:480px){ .bhc{display:none} .stand td.l{white-space:normal} }
-@media (max-width:420px){ .own .pos{display:none} .own .tm{max-width:76px;font-size:12px} .tabs button{font-size:12.5px;padding:6px 7px} .stand td,.stand th{padding-inline:5px} }
+body{background:var(--bg);color:var(--ink);font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.45;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(60rem 30rem at 50% -10%,rgba(255,122,26,.16),transparent 60%)}
+main{position:relative;max-width:760px;margin:0 auto;padding-inline:16px;padding-block:56px 64px;display:flex;flex-direction:column;gap:36px}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.emblem{width:120px;height:120px;filter:drop-shadow(0 12px 30px rgba(255,122,26,.25))}
+.wm{font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.wm b{color:var(--cap)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:rgba(18,21,28,.7)}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--cap);box-shadow:0 0 0 4px rgba(255,122,26,.18)}
+.lead{color:var(--muted);max-width:30rem;margin:0}
+.h{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 -22px}
+.leagues{display:grid;gap:14px}
+a.lg{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:18px 18px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:inherit;text-decoration:none;transition:border-color .15s,transform .15s,background .15s}
+a.lg:hover,a.lg:focus-visible{border-color:var(--cap);background:var(--card-2);transform:translateY(-1px);outline:none}
+.ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:15px;letter-spacing:-.02em;color:#140a02;background:linear-gradient(135deg,var(--cap-2),#f25c05)}
+.ico.h2h{background:linear-gradient(135deg,#e9edf5,#aab3c5)}
+.nm{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.meta{display:flex;flex-wrap:wrap;gap:6px 12px;color:var(--muted);font-size:13px;margin-top:3px}
+.pill{font-size:11px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--ink-2)}
+.live{color:var(--cap);font-weight:600}
+.me{margin-top:6px;font-size:13px;color:var(--ink-2)}
+.me b{color:var(--cap)}
+.go{font-size:22px;color:var(--faint)}
+a.lg:hover .go{color:var(--cap)}
+.foot{font-size:12px;color:var(--faint);text-align:center;line-height:1.6}
+@media (max-width:480px){ .wm{font-size:32px} .emblem{width:96px;height:96px} a.lg{grid-template-columns:auto 1fr;gap:12px} .go{display:none} }
+@media (prefers-reduced-motion:reduce){ a.lg{transition:none} }
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in">
-  <div class="brand" aria-label="draftlive">
-    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-      <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa04d"/><stop offset="1" stop-color="#f25c05"/></linearGradient></defs>
-      <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#lg)"/>
-      <circle cx="16" cy="16" r="9" fill="none" stroke="#140a02" stroke-width="1.8"/>
-      <path d="M7 16h18M16 7v18" stroke="#140a02" stroke-width="1.8" fill="none"/>
-      <path d="M10.2 9.2c2.6 2.2 2.6 11.4 0 13.6M21.8 9.2c-2.6 2.2-2.6 11.4 0 13.6" stroke="#140a02" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-      <path d="M22 5.5l2.2 0M23.1 4.4v2.2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<main>
+  <header class="hero">
+    <svg class="emblem" viewBox="0 0 120 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa04d"/><stop offset="1" stop-color="#e8520a"/></linearGradient>
+        <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1f29"/><stop offset="1" stop-color="#0e1117"/></linearGradient>
+      </defs>
+      <rect x="4" y="4" width="112" height="112" rx="30" fill="url(#g2)" stroke="#2b3140" stroke-width="2"/>
+      <circle cx="60" cy="54" r="30" fill="url(#g1)"/>
+      <g fill="none" stroke="#140a02" stroke-width="3" stroke-linecap="round">
+        <circle cx="60" cy="54" r="30"/>
+        <path d="M30 54h60M60 24v60"/>
+        <path d="M39 33c9 7 9 35 0 42M81 33c-9 7-9 35 0 42"/>
+      </g>
+      <path d="M86 22l2.2 5 5 2.2-5 2.2-2.2 5-2.2-5-5-2.2 5-2.2z" fill="#fff"/>
+      <rect x="22" y="88" width="76" height="20" rx="10" fill="#ff7a1a"/>
+      <text x="60" y="102.5" text-anchor="middle" font-family="Geist,Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="2" fill="#140a02">FANTASY</text>
     </svg>
-    <span class="wm">draft<b>live</b></span>
-    <span class="live" id="liveTag" hidden><i></i>Live</span>
-  </div>
-  <div class="roundnav" id="roundLabel"></div>
-</div></header>
-<main><div class="wrap">
-  <div>
-    <div class="eyebrow">BasketNews Fantasy · Eurolyga</div>
-    <div class="title"><h1>BN Fantasy 🏆</h1><span class="badge" id="playedBadge"></span><span class="upd" id="updated"></span></div>
-  </div>
-  <div class="err" id="err" hidden></div>
-  <section class="games" id="games" aria-label="Turo rungtynės"></section>
-  <div class="tabs" role="tablist">
-    <button role="tab" aria-selected="true" data-t="fantasy" id="tab-fantasy">Fantasy komandos</button>
-    <button role="tab" aria-selected="false" data-t="el" id="tab-el">Eurolygos komandos</button>
-    <button role="tab" aria-selected="false" data-t="players" id="tab-players">Žaidėjai</button>
-  </div>
-  <section id="fantasy" class="stack"></section>
-  <section id="el" class="stack" hidden></section>
-  <section id="players" class="stack" hidden></section>
-  <p class="foot">Rezultatai ir statistika – iš oficialios Eurolygos, rungtynių metu atsinaujina kas 30 sekundžių. Fantasy taškai ir sudėtys – iš BasketNews Fantasy, atsinaujina kas ~6 min. * – startinio penketo žaidėjas, oranžiškai pažymėti žaidėjai, kurie tuo metu aikštėje. FP – žaidėjo fantasy taškai, × – daugiklis (kapitonas ×2, 6-as žaidėjas ×1, kiti suolelyje ×0,5).</p>
-</div></main>
+    <div class="wm">draft<b>live</b></div>
+    <span class="tag"><i></i>BasketNews Fantasy · Eurolyga</span>
+    <p class="lead">Gyvi draft lygų rezultatai: rungtynių eiga ir statistika iš Eurolygos, fantasy taškai iš BasketNews Fantasy.</p>
+  </header>
+
+  <h2 class="h">Pasirinkite lygą</h2>
+  <section class="leagues" id="leagues"></section>
+
+  <p class="foot">Neoficialus puslapis. Duomenys atsinaujina automatiškai rungtynių metu.</p>
+</main>
 <script>
-const TZ = "Europe/Vilnius";
-const EL = "https://live.euroleague.net/api", SEASON = "E2026";
-let D = null, activeTab = "fantasy", filter = "all", liveAt = null;
-
+const LEAGUES = [
+  { slug: "bn", title: "BN Fantasy 🏆", short: "BN", format: "classic" },
+  { slug: "hla1", title: "HLA 1 Divizionas", short: "D1", format: "h2h" },
+  { slug: "hla2", title: "HLA 2 Divizionas", short: "D2", format: "h2h" },
+  { slug: "hla3", title: "HLA 3 Divizionas", short: "D3", format: "h2h" },
+  { slug: "hla4", title: "HLA 4 Divizionas", short: "D4", format: "classic" }
+];
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const num = n => { const x = Math.round(n * 100) / 100; return String(x).replace("-", "−"); };
-const mmss = sec => { const m = Math.floor(sec / 60), s = Math.round(sec % 60); return String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0"); };
-const fmt = (iso, o) => new Intl.DateTimeFormat("lt-LT", { ...o, timeZone: TZ }).format(new Date(iso));
-const when = iso => { if (!iso) return ""; const d = fmt(iso, { weekday: "short" }); return d.charAt(0).toUpperCase() + d.slice(1).replace(".", "") + " " + fmt(iso, { hour: "2-digit", minute: "2-digit" }); };
-const hhmm = iso => iso ? fmt(iso, { hour: "2-digit", minute: "2-digit" }) : "";
-const tv = c => (D.tv && D.tv[c]) || c;
-const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/ł/g, "l").replace(/đ/g, "d").toLowerCase().replace(/[^a-z ]/g, " ").replace(/\b(jr|sr|ii|iii|iv)\b/g, " ").replace(/\s+/g, " ").trim();
-const title = s => s.toLowerCase().replace(/(^|[\s\-'.])([a-zÀ-ɏ])/g, (m, a, b) => a + b.toUpperCase());
-
-const LABELS = ["MIN","PTS","2P","3P","FT","OR","DR","REB","AST","STL","BLK","BA","TO","PF","FD","PIR"];
-const KEY = [0, 1, 7, 8, 15];
-const SC = i => KEY.includes(i) ? "sc" : "sc d";
-const STAT_H = LABELS.map((l, i) => `<th class="${SC(i)}">${l}</th>`).join("");
-// st: [sek, pts, 2m, 2a, 3m, 3a, ftm, fta, or, dr, reb, ast, stl, blk, ba, to, pf, fd, pir]
-const statVals = st => [mmss(st[0]), st[1], `${st[2]}-${st[3]}`, `${st[4]}-${st[5]}`, `${st[6]}-${st[7]}`, st[8], st[9], st[10], st[11], st[12], st[13], st[14], st[15], st[16], st[17], num(st[18])];
-const tds = vals => vals.map((v, i) => `<td class="${SC(i)}">${v}</td>`).join("");
-const statCells = st => tds(statVals(st));
-const brief = st => st ? `${mmss(st[0])} · ${st[1]} tšk · ${st[10]} atk · ${st[11]} rp · PIR ${num(st[18])}` : "";
-const ml = parts => { const s = parts.filter(Boolean).join(" · "); return s ? `<div class="ml">${s}</div>` : ""; };
-
-function gameOf(id) { return D.games.find(g => g.id === id); }
-function clockLabel(g) { const q = String(g.q || "").trim(); const c = String(g.clock || "").trim(); return (q ? (/^\d$/.test(q) ? q + " k." : q) : "") + (c && c !== "00:00" ? " " + c : ""); }
-function gameLabel(p) {
-  const g = gameOf(p.game); if (!g) return "";
-  const home = g.h === p.club; const opp = home ? g.a : g.h;
-  const extra = g.status === "scheduled" ? `<b>${hhmm(g.start)}</b>` : g.status === "live" ? `<b class="lv">LIVE</b>` : "";
-  return `${home ? "vs" : "@"} ${esc(tv(opp))}${extra}`;
-}
-function slotChip(card, mini) {
-  const [k, n] = card.split("-"); const st = mini ? ' style="margin:0"' : "";
-  if (k === "i") return `<span class="pos out"${st}>Out</span>`;
-  if (k === "b") return `<span class="pos o"${st}>${n === "1" ? "6th" : "B" + n}</span>`;
-  return `<span class="pos"${st}>${k.toUpperCase()}</span>`;
-}
-function ownerChip(p) {
-  if (p.owner == null) return `<span class="fa">Laisvas</span>`;
-  return `<span class="own"><span class="tm">${esc(D.teams[p.owner].title)}</span>${p.cap ? '<span class="cap" style="margin:0">C</span>' : ""}${p.card ? slotChip(p.card, true) : ""}</span>`;
-}
-function playerState(p) {
-  const g = gameOf(p.game);
-  if (!g) return "none";
-  if (g.status === "scheduled") return "toplay";
-  if (g.status === "live") return "playing";
-  return "played";
-}
-const nameMark = p => `${esc(p.name)}${p.s ? "*" : ""}`;
-
-function render() {
-  const isMe = t => D.myTeam && t.title.startsWith(D.myTeam);
-  const done = D.games.filter(g => g.status === "final").length;
-  const live = D.games.some(g => g.status === "live");
-  document.getElementById("roundLabel").textContent = D.round + " turas";
-  document.getElementById("playedBadge").textContent = `${done}/${D.games.length} sužaista`;
-  document.getElementById("liveTag").hidden = !live;
-  const upd = [];
-  if (liveAt) upd.push("Eurolyga " + fmt(liveAt, { hour: "2-digit", minute: "2-digit", second: "2-digit" }));
-  if (D.updated) upd.push("fantasy taškai " + fmt(D.updated, { hour: "2-digit", minute: "2-digit" }));
-  document.getElementById("updated").textContent = upd.length ? "Atnaujinta: " + upd.join(" · ") : "";
-
-  document.getElementById("games").innerHTML = D.games.map(g => {
-    if (g.status === "scheduled") return `<div class="gc sched"><div class="r"><span>${esc(tv(g.h))}</span></div><div class="r"><span>${esc(tv(g.a))}</span></div><div class="s">${when(g.start)}</div></div>`;
-    const lv = g.status === "live";
-    return `<div class="gc ${lv ? "lvg" : ""}"><div class="r ${!lv && g.hs > g.as ? "w" : ""}"><span>${esc(tv(g.h))}</span><span>${g.hs}</span></div><div class="r ${!lv && g.as > g.hs ? "w" : ""}"><span>${esc(tv(g.a))}</span><span>${g.as}</span></div><div class="s">${lv ? '<span class="dotl"></span>' + (clockLabel(g) || "Vyksta") : "Baigtos"}</div></div>`;
-  }).join("");
-
-  const hist = D.history || {};
-  const multiRound = Object.keys(hist).length > 1;
-  const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? t.total : (m[t.title] || 0)), 0) || t.total;
-  const order = D.teams.map((t, i) => i).sort((a, b) => season(D.teams[b]) - season(D.teams[a]) || D.teams[b].total - D.teams[a].total);
-  const lead = season(D.teams[order[0]]);
-
-  let html = `<div class="card"><div class="x"><table class="stand"><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>${multiRound ? "Turas" : "Taškai"}</th>${multiRound ? "<th>Sezonas</th>" : ""}<th class="bhc">Atsilieka</th><th>Sužaidė</th><th class="hide-s">Žaidžia</th><th>Liko</th></tr></thead><tbody>` +
-    order.map((i, k) => {
-      const t = D.teams[i]; const counted = t.players.filter(p => p.mult > 0);
-      const c = s => counted.filter(p => playerState(p) === s).length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td><td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
-    }).join("") + `</tbody></table></div></div>`;
-
-  const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
-  order.forEach(i => {
-    const t = D.teams[i]; const ps = [...t.players].sort((a, b) => rank(a.card) - rank(b.card));
-    const counted = ps.filter(p => p.mult > 0 && p.st);
-    const sum = k => counted.reduce((s, p) => s + p.st[k], 0);
-    const rows = ps.map(p => {
-      const state = playerState(p);
-      const sep = p.card === "b-1" || p.card === "i-1";
-      const fpCell = p.fp == null ? "–" : num(p.fp);
-      let tail;
-      if (p.st) tail = statCells(p.st);
-      else if (state === "played" || p.dnp) tail = `<td class="l fa sc" colspan="16">DNP</td>`;
-      else tail = `<td class="sc" colspan="16"></td>`;
-      const ptsCell = (state === "toplay" && p.fp == null) ? "" : num(p.total);
-      return `<tr class="${p.card.startsWith("i") ? "dim" : ""} ${sep ? "sep" : ""} ${p.oc ? "onc" : ""}"><td class="l pl">${slotChip(p.card)}<span class="nm">${nameMark(p)}</span>${p.cap ? '<span class="cap" title="Kapitonas ×2">C</span>' : ""}${ml([gameLabel(p), p.fp == null ? "" : "FP " + fpCell + " ×" + p.mult, p.st ? brief(p.st) : ((state === "played" || p.dnp) ? "DNP" : "")])}</td><td class="fp">${fpCell}</td><td class="mx">×${p.mult}</td><td class="pt">${ptsCell}</td><td class="gm l">${gameLabel(p)}</td>${tail}</tr>`;
-    }).join("");
-    const tot = counted.length ? `<tr class="tot"><td class="l">Iš viso</td><td class="fp"></td><td class="mx"></td><td class="pt">${num(t.total)}</td><td class="gm"></td>` + tds([Math.round(sum(0) / 60), sum(1), `${sum(2)}-${sum(3)}`, `${sum(4)}-${sum(5)}`, `${sum(6)}-${sum(7)}`, sum(8), sum(9), sum(10), sum(11), sum(12), sum(13), sum(14), sum(15), sum(16), sum(17), num(sum(18))]) + `</tr>` : "";
-    html += `<div class="card ${isMe(t) ? "me" : ""}" id="team-${i}"><div class="team-h"><div class="n">${esc(t.title)}</div><div class="t">${num(t.total)}</div></div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="fp">FP</th><th class="mx">×</th><th>Tšk</th><th class="l gm">Rungtynės</th>${STAT_H}</tr></thead><tbody>${rows}${tot}</tbody></table></div></div>`;
-  });
-  document.getElementById("fantasy").innerHTML = html;
-  document.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => document.getElementById(tr.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" })));
-
-  const started = D.games.filter(g => g.status !== "scheduled"), sched = D.games.filter(g => g.status === "scheduled");
-  let el = started.length ? `<div class="sub">Vyksta ir baigtos · ${started.length}</div>` : `<div class="sub">Šio turo rungtynės dar neprasidėjo</div>`;
-  started.forEach(g => {
-    const clubTable = club => {
-      const rows = D.pool.filter(p => p.game === g.id && p.club === club).sort((a, b) => b.st[18] - a.st[18])
-        .map(p => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l pl"><span class="nm">${nameMark(p)}</span>${ml([p.fp == null ? "" : "FP " + num(p.fp), brief(p.st)])}</td><td class="pt">${p.fp == null ? "–" : num(p.fp)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("");
-      return `<div class="club">${esc(tv(club))}</div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th>FP</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>${rows || `<tr><td class="l fa" colspan="19">Statistikos dar nėra</td></tr>`}</tbody></table></div>`;
-    };
-    el += `<div class="card"><div class="gh"><div class="sc">${esc(tv(g.h))} ${g.hs}<i>–</i>${g.as} ${esc(tv(g.a))}</div><span class="pill ${g.status === "live" ? "pl-live" : ""}">${g.status === "live" ? (clockLabel(g) || "Vyksta") : "Baigtos"}</span></div>${clubTable(g.h)}${clubTable(g.a)}</div>`;
-  });
-  if (sched.length) el += `<div class="sub">Suplanuotos · ${sched.length}</div><div class="card sched-list">` + sched.map(g => `<div><span>${esc(tv(g.h))} – ${esc(tv(g.a))}</span><span class="sub">${when(g.start)}</span></div>`).join("") + `</div>`;
-  document.getElementById("el").innerHTML = el;
-
-  renderPlayers();
-}
-
-function renderPlayers() {
-  const list = D.pool.filter(p => filter === "all" || (filter === "owned" ? p.owner != null : p.owner == null)).sort((a, b) => (b.fp ?? -99) - (a.fp ?? -99) || b.st[18] - a.st[18]);
-  const g = p => { const x = gameOf(p.game); if (!x) return esc(tv(p.club)); const home = x.h === p.club; return `${esc(tv(p.club))} ${home ? "vs" : "@"} ${esc(tv(home ? x.a : x.h))}`; };
-  document.getElementById("players").innerHTML = `<div class="card"><div class="ph"><div class="h">Šio turo žaidėjai</div><div class="seg" role="group" aria-label="Filtras">
-    <button aria-pressed="${filter === "all"}" data-f="all">Visi</button><button aria-pressed="${filter === "owned"}" data-f="owned">Užimti</button><button aria-pressed="${filter === "free"}" data-f="free">Laisvi</button></div></div>
-    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>FP</th><th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
-    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${ml([g(p), brief(p.st)])}</td><td class="pt">${p.fp == null ? "–" : num(p.fp)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="20">Šiame ture dar niekas nežaidė</td></tr>`) +
-    `</tbody></table></div></div>`;
-  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
-}
-
-// ---- Gyvi Eurolygos duomenys tiesiai iš naršyklės (kas 30 s rungtynių metu) ----
-const secs = m => { if (!m || m === "DNP") return 0; const [a, b] = String(m).split(":").map(Number); return a * 60 + (b || 0); };
-const statArray = p => [secs(p.Minutes), p.Points, p.FieldGoalsMade2, p.FieldGoalsAttempted2, p.FieldGoalsMade3, p.FieldGoalsAttempted3, p.FreeThrowsMade, p.FreeThrowsAttempted, p.OffensiveRebounds, p.DefensiveRebounds, p.TotalRebounds, p.Assistances, p.Steals, p.BlocksFavour, p.BlocksAgainst, p.Turnovers, p.FoulsCommited, p.FoulsReceived, p.Valuation].map(v => Number(v) || 0);
-const elGet = (what, code) => fetch(`${EL}/${what}?gamecode=${code}&seasoncode=${SEASON}`, { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(t => t ? JSON.parse(t) : null).catch(() => null);
-
-async function pollLive() {
-  if (!D) return;
-  const now = Date.now();
-  const active = D.games.filter(g => g.status === "live" || (g.status === "scheduled" && g.start && new Date(g.start).getTime() - 5 * 60000 <= now));
-  if (!active.length) return;
-  // surandame Eurolygos kodus rungtynėms, kurių dar nežinome
-  if (active.some(g => typeof g.id !== "number")) {
-    const base = (D.round - 1) * 10;
-    const hs = await Promise.all(Array.from({ length: 12 }, (_, i) => elGet("Header", base + i + 1).then(h => [base + i + 1, h])));
-    for (const [code, h] of hs) if (h && h.CodeTeamA) {
-      const g = D.games.find(x => x.h === h.CodeTeamA.trim() && x.a === h.CodeTeamB.trim());
-      if (g && typeof g.id !== "number") { D.pool.forEach(p => { if (p.game === g.id) p.game = code; }); D.teams.forEach(t => t.players.forEach(p => { if (p.game === g.id) p.game = code; })); g.id = code; }
+const num = n => String(Math.round(n * 100) / 100);
+function card(L, d) {
+  const fmt = L.format === "h2h" ? "H2H" : "Klasikinė";
+  let meta = `<span class="pill">${fmt}</span>`, me = "";
+  if (d) {
+    const done = d.games.filter(g => g.status === "final").length, live = d.games.some(g => g.status === "live");
+    meta += `<span>${d.round} turas</span><span>${live ? '<span class="live">● Vyksta</span>' : done === d.games.length && done ? "Turas baigtas" : done + "/" + d.games.length + " sužaista"}</span>`;
+    const t = d.teams.find(x => d.myTeam && x.title.startsWith(d.myTeam));
+    if (t) {
+      if (L.format === "h2h" && d.matchups) {
+        const m = d.matchups.find(x => x.a === t.title || x.b === t.title);
+        if (m) { const opp = m.a === t.title ? m.b : m.a; const tt = n => { const x = d.teams.find(y => y.title === n); return x ? (x.official ?? x.total) : 0; };
+          me = `${esc(t.title)} <b>${num(tt(t.title))}</b> : ${num(tt(opp))} ${esc(opp)}`; }
+      } else {
+        const order = [...d.teams].sort((a, b) => b.total - a.total);
+        me = `${esc(t.title)} – <b>${order.indexOf(t) + 1} vieta</b>, ${num(t.total)} tšk.`;
+      }
     }
   }
-  let changed = false;
-  for (const g of active) {
-    if (typeof g.id !== "number") continue;
-    const [h, bx] = await Promise.all([elGet("Header", g.id), elGet("Boxscore", g.id)]);
-    if (h && h.CodeTeamA) {
-      const hs = parseInt(h.ScoreA, 10), as = parseInt(h.ScoreB, 10);
-      const started = h.Live || hs > 0 || as > 0;
-      if (started) { g.hs = hs; g.as = as; g.status = h.Live ? "live" : "final"; g.q = String(h.Quarter || "").trim(); g.clock = String(h.RemainingPartialTime || "").trim(); changed = true; }
-    }
-    if (bx && bx.Stats) for (const side of bx.Stats) for (const p of side.PlayersStats || []) {
-      const club = String(p.Team || "").trim(); const [last, first] = String(p.Player).split(",").map(x => x.trim());
-      const key = norm((first || "") + " " + last), lkey = norm(last);
-      const dnp = p.Minutes === "DNP" || !p.Minutes;
-      const upd = o => { o.st = dnp ? null : statArray(p); o.s = p.IsStarter ? 1 : 0; o.oc = p.IsPlaying ? 1 : 0; o.dnp = dnp; o.game = g.id; };
-      let owned = null;
-      D.teams.forEach((t, ti) => t.players.forEach(x => { if (x.club === club && (norm(x.name) === key || norm(x.name).split(" ").pop() === lkey)) { upd(x); owned = { ti, x }; } }));
-      if (dnp) continue;
-      let pe = D.pool.find(x => x.club === club && (norm(x.name) === key || norm(x.name).split(" ").pop() === lkey));
-      if (!pe) { pe = { name: owned ? owned.x.name : title((first ? first + " " : "") + last), club, fp: owned ? owned.x.fp : null, owner: owned ? owned.ti : null, card: owned ? owned.x.card : null, cap: owned ? owned.x.cap : false }; D.pool.push(pe); }
-      upd(pe); changed = true;
-    }
-  }
-  if (changed) { liveAt = new Date().toISOString(); render(); }
+  return `<a class="lg" href="league.html?l=${encodeURIComponent(L.slug)}"><span class="ico ${L.format === "h2h" ? "h2h" : ""}">${esc(L.short)}</span><span><span class="nm">${esc(L.title)}</span><span class="meta">${meta}</span>${me ? `<div class="me">${me}</div>` : ""}</span><span class="go" aria-hidden="true">→</span></a>`;
 }
-
-async function load() {
-  try {
-    const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
-    if (!res.ok) throw new Error(res.status);
-    const d = await res.json();
-    if (D && d.updated === D.updated) return;
-    D = d; render(); pollLive();
-    document.getElementById("err").hidden = true;
-  } catch (e) {
-    if (!D) { const el = document.getElementById("err"); el.hidden = false; el.textContent = "Nepavyko įkelti duomenų. Pabandykite atnaujinti puslapį po kelių minučių."; }
-  }
-}
-
-document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
-  activeTab = b.dataset.t;
-  document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
-  ["fantasy", "el", "players"].forEach(id => document.getElementById(id).hidden = id !== activeTab);
-}));
-
-load();
-setInterval(load, 60000);
-setInterval(pollLive, 30000);
-document.addEventListener("visibilitychange", () => { if (!document.hidden) { load(); pollLive(); } });
+const box = document.getElementById("leagues");
+box.innerHTML = LEAGUES.map(L => card(L, null)).join("");
+Promise.all(LEAGUES.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
+  .then(ds => { box.innerHTML = LEAGUES.map((L, i) => card(L, ds[i])).join(""); });
 </script>
 </body>
 </html>
