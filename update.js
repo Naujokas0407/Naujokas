@@ -197,6 +197,19 @@ async function buildLeague(S, L) {
   return data;
 }
 
+// Turų archyvas: data/<lyga>-r<N>.json. Jei kurio nors praėjusio turo failo nėra, jis atkuriamas iš git istorijos.
+const { execSync } = require("child_process");
+const arch = (slug, r) => path.join(DIR, slug + "-r" + r + ".json");
+function restoreFromGit(slug, round) {
+  try {
+    const hs = execSync("git log --format=%H -- data/" + slug + ".json", { cwd: __dirname }).toString().trim().split("\n").filter(Boolean);
+    for (const h of hs) {
+      let d; try { d = JSON.parse(execSync("git show " + h + ":data/" + slug + ".json", { cwd: __dirname, maxBuffer: 1e8 }).toString()); } catch (e) { continue; }
+      if (d && d.round === round) { fs.writeFileSync(arch(slug, round), JSON.stringify(d)); console.log(slug + ": atkurtas " + round + " turo archyvas"); return; }
+    }
+  } catch (e) { console.log(slug + ": nepavyko atkurti " + round + " turo", e.message); }
+}
+
 (async () => {
   if (!fs.existsSync(DIR)) fs.mkdirSync(DIR);
   const S = await buildShared();
@@ -212,8 +225,11 @@ async function buildLeague(S, L) {
       old.games.every(g => g.status === "final") &&
       Date.now() - Math.max(...old.games.map(g => new Date(g.start).getTime() || 0)) > 4 * 3600e3 &&
       (!old.slug || old.slug === L.slug);
+    for (let r = 1; r <= S.r; r++) if (!fs.existsSync(arch(L.slug, r))) restoreFromGit(L.slug, r);
+    if (old && old.round && old.round !== S.r + 1 && !fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
     if (frozen) {
       if (!fs.existsSync(file)) fs.writeFileSync(file, JSON.stringify({ ...old, slug: L.slug, title: L.title, format: L.format, myTeam: L.myTeam }));
+      if (!fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
       console.log(L.slug + ": turas baigtas, duomenys užfiksuoti."); continue;
     }
     try {
@@ -225,6 +241,7 @@ async function buildLeague(S, L) {
       if (old && strip(old) === strip(data)) { console.log(L.slug + ": pakeitimų nėra."); continue; }
       data.updated = new Date().toISOString();
       fs.writeFileSync(file, JSON.stringify(data));
+      fs.writeFileSync(arch(L.slug, data.round), JSON.stringify(data));
       console.log(L.slug + ": atnaujinta, turas " + data.round + " | " + data.teams.map(t => t.title + " " + t.total).join(", "));
     } catch (e) {
       console.error(L.slug + ": klaida", e);
