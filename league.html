@@ -211,6 +211,30 @@ a.brand{text-decoration:none}
 .news li b{color:var(--ink-2);font-weight:600}
 .news li.own b{color:var(--ink)}
 .news .nt{flex:none;color:var(--faint);font-size:12px;padding-top:1px;min-width:78px}
+.prog .ph{align-items:flex-start}
+.pchips{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 6px}
+.pchips button{border:1px solid var(--line);background:transparent;color:var(--muted);font:500 12.5px inherit;font-family:inherit;border-radius:999px;padding:4px 10px;cursor:pointer}
+.pchips button[aria-pressed="true"]{border-color:var(--cap);color:var(--ink);background:rgba(255,122,26,.12)}
+.pchips button:focus-visible{outline:2px solid var(--cap);outline-offset:1px}
+.pwrap{position:relative;padding:4px 0 10px;touch-action:pan-y}
+.pwrap svg{display:block;width:100%;height:auto;overflow:visible}
+.pgrid line{stroke:var(--line-2);stroke-width:1}
+.pgrid text,.pax text{fill:var(--faint);font-size:11px;font-family:inherit}
+.pl{fill:none;stroke:#4a5163;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.pl.hov{stroke:var(--ink-2);stroke-width:2}
+.pl.sel{stroke:var(--cap);stroke-width:2.5}
+.phit{fill:none;stroke:transparent;stroke-width:12}
+.pd{fill:#4a5163;stroke:var(--card);stroke-width:2}
+.pd.sel{fill:var(--cap)}
+.pd.hov{fill:var(--ink-2)}
+.plab{fill:var(--ink);font-size:12px;font-weight:600;font-family:inherit}
+.pcross{stroke:var(--faint);stroke-width:1;stroke-dasharray:3 3}
+.phov{fill:transparent;cursor:crosshair}
+.ptip{position:absolute;z-index:3;min-width:170px;max-width:240px;background:var(--card-2,#161a22);border:1px solid var(--line);border-radius:10px;padding:8px 10px;box-shadow:0 8px 24px rgba(0,0,0,.4);pointer-events:none;font-size:12.5px}
+.pt-h{color:var(--muted);font-size:11.5px;margin-bottom:4px}
+.pt-r{display:flex;justify-content:space-between;gap:12px;color:var(--ink-2);padding:1px 0}
+.pt-r span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt-r.sel{color:var(--cap);font-weight:600}
 </style>
 </head>
 <body>
@@ -357,6 +381,7 @@ function render() {
       const c = s => counted.filter(p => playerState(p) === s).length;
       return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td>${showProj ? `<td class="hide-s">~${num(projection(t).proj)}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
     }).join("") + `</tbody></table></div></div>`;
+  html += progressShell();
 
   const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
   order.forEach(i => {
@@ -378,6 +403,7 @@ function render() {
     html += `<div class="card ${isMe(t) ? "me" : ""}" id="team-${i}"><div class="team-h"><div><div class="n">${esc(t.title)}</div><div class="tsub">${teamSub(t)}</div></div><div class="t">${LVB(liveN(t))} ${num(t.official ?? t.total)}</div></div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="fp">FP</th><th class="mx">×</th><th>Tšk</th><th class="l gm">Rungtynės</th>${STAT_H}</tr></thead><tbody>${rows}${tot}</tbody></table></div></div>`;
   });
   document.getElementById("fantasy").innerHTML = html;
+  bindProgress();
   document.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => document.getElementById(tr.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" })));
 
   const started = D.games.filter(g => g.status !== "scheduled"), sched = D.games.filter(g => g.status === "scheduled");
@@ -432,7 +458,7 @@ function renderPlayers() {
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>Vid. FP</th><th class="hide-s">Sužaidė turų</th><th class="bhc">Praeitas turas</th><th>Šis turas</th></tr></thead><tbody>` +
       (D.fa.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${esc(p.name)}</span> <span class="fa">${esc(tv(p.club))}</span></td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${p.fp == null ? "–" : num(p.fp)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="6">Duomenų dar nėra</td></tr>`) +
       `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda, surikiuoti pagal sezono fantasy taškų vidurkį.</p></div>`;
-    document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
+    document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
     return;
   }
   const list = D.pool.filter(p => filter === "all" || (filter === "owned" ? p.owner != null : p.owner == null)).sort((a, b) => (b.fp ?? -99) - (a.fp ?? -99) || b.st[18] - a.st[18]);
@@ -442,7 +468,7 @@ function renderPlayers() {
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>FP</th><th class="fp">Vid.</th><th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
     (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${ml([g(p), brief(p.st)])}</td><td class="pt">${p.fp == null ? "–" : num(p.fp)}</td><td class="fp">${p.avg == null ? "–" : num(p.avg)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="21">Šiame ture dar niekas nežaidė</td></tr>`) +
     `</tbody></table></div></div>`;
-  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
+  document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
 }
 
 // ---- Prognozė ir optimali sudėtis ----
@@ -752,6 +778,93 @@ function renderReporter() {
   } else body = `<div class="rps">${classicReport()}</div>`;
   el.innerHTML = body + injuriesHtml();
 }
+
+// ---- Bendras progresas (grafikas po lentele) ----
+let progMetric = null, progSel = null, progHover = null;
+function progressData() {
+  const titles = D.teams.map(t => t.title);
+  const started = D.games.some(g => g.status !== "scheduled");
+  if (D.format === "h2h") {
+    const { per } = h2hGames();
+    const rounds = [...new Set(Object.values(per).flatMap(l => l.map(g => g.r)))].sort((a, b) => a - b);
+    const cumW = {}, cumP = {};
+    titles.forEach(t => { let w = 0, p = 0; cumW[t] = []; cumP[t] = [];
+      rounds.forEach(r => { const g = (per[t] || []).find(x => x.r === r); if (g) { w += g.res === "W" ? 1 : g.res === "D" ? 0.5 : 0; p += g.pf; } cumW[t].push(w); cumP[t].push(Math.round(p * 100) / 100); }); });
+    const rank = {}; titles.forEach(t => rank[t] = []);
+    rounds.forEach((r, i) => [...titles].sort((a, b) => cumW[b][i] - cumW[a][i] || cumP[b][i] - cumP[a][i]).forEach((t, k) => rank[t].push(k + 1)));
+    return { rounds, metrics: { wins: { label: "Pergalės", s: cumW, int: true }, rank: { label: "Vieta", s: rank, rank: true }, pts: { label: "Taškai", s: cumP } }, def: "wins", note: "Sukauptos pergalės po kiekvieno baigto turo" };
+  }
+  const hist = D.history || {};
+  let rounds = Object.keys(hist).map(Number).filter(r => r <= D.round).sort((a, b) => a - b);
+  if (!started) rounds = rounds.filter(r => r !== D.round);
+  const val = (t, r) => r === D.round ? (D.teams.find(x => x.title === t) || {}).total || 0 : ((hist[r] || {})[t] ?? 0);
+  const cum = {}; titles.forEach(t => { let s = 0; cum[t] = rounds.map(r => (s += val(t, r), Math.round(s * 100) / 100)); });
+  const rank = {}; titles.forEach(t => rank[t] = []);
+  rounds.forEach((r, i) => [...titles].sort((a, b) => cum[b][i] - cum[a][i]).forEach((t, k) => rank[t].push(k + 1)));
+  const gap = {}; titles.forEach(t => gap[t] = rounds.map((r, i) => Math.round((cum[t][i] - Math.max(...titles.map(x => cum[x][i]))) * 100) / 100));
+  return { rounds, metrics: { pts: { label: "Taškai", s: cum }, rank: { label: "Vieta", s: rank, rank: true }, gap: { label: "Atsilikimas", s: gap } }, def: "pts",
+    note: "Sukaupti taškai po kiekvieno turo" + (started && !roundDone() ? " · einamasis turas dar vyksta" : "") };
+}
+function progressShell() {
+  const P = progressData(); if (!P.rounds.length) return "";
+  if (!progMetric || !P.metrics[progMetric]) progMetric = P.def;
+  const titles = D.teams.map(t => t.title);
+  if (!progSel || !titles.includes(progSel)) { const s = P.metrics.rank.s; progSel = titles.find(t => s[t][s[t].length - 1] === 1) || titles[0]; }
+  return `<div class="card prog"><div class="ph"><div><div class="h">Bendras progresas</div><div class="sub" id="progNote">${esc(P.metrics[progMetric].rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note)}</div></div>
+    <div class="seg" role="group" aria-label="Rodiklis">${Object.entries(P.metrics).map(([k, m]) => `<button aria-pressed="${k === progMetric}" data-pm="${k}">${m.label}</button>`).join("")}</div></div>
+    <div class="pchips" role="group" aria-label="Paryškinti komandą">${titles.map((t, i) => `<button aria-pressed="${t === progSel}" data-ps="${i}">${esc(t)}</button>`).join("")}</div>
+    <div class="pwrap" id="progWrap"><svg id="progSvg" role="img" aria-label="Komandų progreso grafikas"></svg><div class="ptip" id="progTip" hidden></div></div></div>`;
+}
+function drawProgress() {
+  const wrap = document.getElementById("progWrap"); if (!wrap) return;
+  const P = progressData(), M = P.metrics[progMetric], titles = D.teams.map(t => t.title), R = P.rounds;
+  const W = wrap.clientWidth, H = W < 520 ? 220 : 280, mL = 44, mR = W < 520 ? 16 : 90, mT = 14, mB = 28;
+  const all = titles.flatMap(t => M.s[t]);
+  let lo, hi;
+  if (M.rank) { lo = 1; hi = titles.length; } else { lo = Math.min(0, ...all); hi = Math.max(0, ...all); if (hi === lo) hi = lo + 1; }
+  const x = i => R.length === 1 ? mL + (W - mL - mR) / 2 : mL + i * (W - mL - mR) / (R.length - 1);
+  const y = v => M.rank ? mT + (v - 1) * (H - mT - mB) / Math.max(1, titles.length - 1) : mT + (hi - v) * (H - mT - mB) / (hi - lo);
+  const ticks = M.rank ? titles.map((_, i) => i + 1) : (() => { const step = Math.pow(10, Math.floor(Math.log10((hi - lo) / 4 || 1))); const nice = [1, 2, 2.5, 5, 10].map(m => m * step).find(s => (hi - lo) / s <= 5) || step * 10; const a = []; for (let v = Math.ceil(lo / nice) * nice; v <= hi + 1e-9; v += nice) a.push(Math.round(v * 100) / 100); return a; })();
+  const fmtV = v => M.int ? String(v) : num(v);
+  let g = `<g class="pgrid">${ticks.map(v => `<line x1="${mL}" x2="${W - mR}" y1="${y(v)}" y2="${y(v)}"/><text x="${mL - 8}" y="${y(v) + 4}" text-anchor="end">${M.rank ? v + "." : fmtV(v)}</text>`).join("")}</g>`;
+  const stepX = R.length > 12 ? Math.ceil(R.length / 10) : 1;
+  g += `<g class="pax">${R.map((r, i) => i % stepX === 0 || i === R.length - 1 ? `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${r} t.</text>` : "").join("")}</g>`;
+  const order = [...titles].sort((a, b) => (a === progSel) - (b === progSel) || (a === progHover) - (b === progHover));
+  order.forEach(t => {
+    const i = titles.indexOf(t), s = M.s[t], cls = t === progSel ? "sel" : t === progHover ? "hov" : "";
+    const d = s.map((v, k) => `${k ? "L" : "M"}${x(k).toFixed(1)},${y(v).toFixed(1)}`).join("");
+    if (R.length > 1) g += `<path class="pl ${cls}" d="${d}"/>`;
+    g += `<circle class="pd ${cls}" data-pt="${i}" cx="${x(s.length - 1)}" cy="${y(s[s.length - 1])}" r="${t === progSel ? 5 : 3.5}"/>`;
+  });
+  const ss = M.s[progSel];
+  if (ss && W >= 520) g += `<text class="plab" x="${x(ss.length - 1) + 9}" y="${y(ss[ss.length - 1]) + 4}">${esc(progSel.trim().length > 12 ? progSel.trim().slice(0, 11) + "…" : progSel.trim())} ${M.rank ? ss[ss.length - 1] + "." : fmtV(ss[ss.length - 1])}</text>`;
+  g += `<line class="pcross" id="progCross" y1="${mT}" y2="${H - mB}" x1="-10" x2="-10"/><rect class="phov" x="${mL - 20}" y="0" width="${W - mL - mR + 40}" height="${H}"/>`;
+  const svg = document.getElementById("progSvg");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H); svg.innerHTML = g;
+  const tip = document.getElementById("progTip"), cross = document.getElementById("progCross");
+  const show = ev => {
+    const rc = svg.getBoundingClientRect(), px = ev.clientX - rc.left;
+    let k = 0, best = 1e9; R.forEach((_, i) => { const d = Math.abs(x(i) - px); if (d < best) { best = d; k = i; } });
+    cross.setAttribute("x1", x(k)); cross.setAttribute("x2", x(k));
+    const rows = [...titles].sort((a, b) => M.rank ? M.s[a][k] - M.s[b][k] : M.s[b][k] - M.s[a][k]);
+    tip.innerHTML = `<div class="pt-h">${R[k]} turas</div>` + rows.map(t => `<div class="pt-r ${t === progSel ? "sel" : ""}"><span>${esc(t)}</span><b>${M.rank ? M.s[t][k] + "." : fmtV(M.s[t][k])}</b></div>`).join("");
+    tip.hidden = false;
+    const tw = tip.offsetWidth; let left = x(k) + 12; if (left + tw > W) left = x(k) - tw - 12; if (left < 0) left = 4;
+    tip.style.left = left + "px"; tip.style.top = "6px";
+  };
+  const hide = () => { tip.hidden = true; cross.setAttribute("x1", -10); cross.setAttribute("x2", -10); };
+  const hov = svg.querySelector(".phov");
+  hov.addEventListener("pointermove", show); hov.addEventListener("pointerdown", show); hov.addEventListener("pointerleave", hide);
+}
+function bindProgress() {
+  const card = document.querySelector(".prog"); if (!card) return;
+  card.querySelectorAll("[data-pm]").forEach(b => b.addEventListener("click", () => { progMetric = b.dataset.pm; card.querySelectorAll("[data-pm]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    const P = progressData(), M = P.metrics[progMetric]; document.getElementById("progNote").textContent = M.rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note; drawProgress(); }));
+  card.querySelectorAll("[data-ps]").forEach(b => b.addEventListener("click", () => { progSel = D.teams[+b.dataset.ps].title; card.querySelectorAll("[data-ps]").forEach(x => x.setAttribute("aria-pressed", String(x === b))); drawProgress(); }));
+  drawProgress();
+}
+let progRT = null;
+window.addEventListener("resize", () => { clearTimeout(progRT); progRT = setTimeout(drawProgress, 150); });
 
 // ---- Gyvi Eurolygos duomenys tiesiai iš naršyklės (kas 30 s rungtynių metu) ----
 const secs = m => { if (!m || m === "DNP") return 0; const [a, b] = String(m).split(":").map(Number); return a * 60 + (b || 0); };
