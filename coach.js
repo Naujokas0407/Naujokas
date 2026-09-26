@@ -26,7 +26,7 @@ const CORES = {
     "Taip, jie favoritai. Titanikas irgi buvo favoritas.",
     "Mūsų planas paprastas: tikėtis, kad jų kapitonas {oppCap} pamirš, kad šiandien rungtynės.",
     "Komanda „{opp}“ turi geresnius žaidėjus, o mes turim tikėjimą. Ir kapitoną {cap}. Daugiausia tikėjimą.",
-    "Skirtumas tarp mūsų – tik ~{gap} taškų. Na, ir talentas. Ir sudėties logika.",
+    "Skirtumas tarp mūsų – tik ~{gap} tšk. Na, ir talentas. Ir sudėties logika.",
     "Prognozės sako, kad pralaimėsim. Prognozės taip pat sakė, kad šiandien nelis.",
     "Mes kaip tas kaimynas su senu „Golfu“ – niekas netiki, bet kartais aplenkiam.",
     "Jei laimėsim, tai bus stebuklas. Stebuklai kartais nutinka. Dažniausiai ne mums.",
@@ -78,7 +78,7 @@ const CORES = {
     "Pralaimėti tokiai komandai kaip mūsų – jokia gėda. Tiesiog statistika."
   ],
   closewin: [
-    "Laimėjom {diff} taško skirtumu. Širdis dar nenurimo, bet taškai – mūsų.",
+    "Laimėjom vos {diff} tšk. skirtumu. Širdis dar nenurimo, bet taškai – mūsų.",
     "Gražu nebuvo, bet lentelėje „gražumo“ stulpelio nėra.",
     "Paskutines rungtynes žiūrėjau pro pirštus. Rekomenduoju – taip pergalės atrodo gražiau.",
     "Laimėjom ant plauko. Plaukų po šito turo liko mažiau.",
@@ -114,7 +114,7 @@ const CORES = {
   ],
   closeloss: [
     "Kai pralaimi taip nedaug, norisi kaltinti bent orą. Kaltinu orą.",
-    "Pralaimėti {diff} taško skirtumu – tas pats, kas pamesti raktus prie pat namų durų.",
+    "Pralaimėti {diff} tšk. skirtumu – tas pats, kas pamesti raktus prie pat namų durų.",
     "Pusė taško čia, pusė ten... Kitą kartą kapitoną rinksiu burtų keliu.",
     "Teisėjams pretenzijų neturim. BasketNews algoritmui – turim.",
     "Taip arti, o taip toli. Kaip savaitgalis pirmadienio ryte.",
@@ -141,7 +141,7 @@ const CORES = {
     "Mūsų kapitonas {cap} šįkart buvo kapitonas tik popieriuje. Labai ploname popieriuje."
   ],
   bench: [
-    "Ant suolo palikau {lost} taškų. Suolas buvo geresnis už startą – kitam turui turim naują taktiką.",
+    "Ant suolo palikau {lost} tšk. Suolas buvo geresnis už startą – kitam turui turim naują taktiką.",
     "Suolas surinko daugiau nei startas. Pradedu galvoti, kad sustatymas – ne mano stiprioji pusė.",
     "Didžiausi mūsų taškai šįkart sėdėjo ant suolo ir gėrė vandenį."
   ],
@@ -173,21 +173,104 @@ const CORES = {
     "Komanda „{opp}“ – rimtas varžovas. Tai sakau ir dabar, ir sakysiu kitą kartą.",
     "Turas kaip kalneliai: aukštyn, žemyn ir galvos svaigimas."
   ],
+  clead: [
+    "Pirmoji vieta patogi. Tik kad visi kiti nori į ją atsisėsti.",
+    "Lyderio marškinėliai kiek spaudžia, bet nusivilkti jų neplanuojam.",
+    "Žiūrim ne atgal, o į priekį. Nors atgal žiūrėti šiuo metu labai malonu.",
+    "Atotrūkis {gap} tšk.? Gražus skaičius. Norėtųsi didesnio.",
+    "Būti pirmiems lengva. Sunku – nepasakoti apie tai kiekvieną dieną.",
+    "Lentelės viršuje oras grynesnis. Rekomenduoju, bet vietų nėra.",
+    "Pirmą vietą saugom kaip paskutinį picos gabalą."
+  ],
+  cchase: [
+    "Lyderis „{leader}“ jau jaučia mūsų kvėpavimą. Ir kavos kvapą.",
+    "Iki pirmos vietos – {gap} tšk. Tai vienas geras kapitonas.",
+    "Antroji vieta – pirmasis iš pralaimėjusių. Todėl šį turą puolam.",
+    "Komanda „{leader}“ gali ramiai miegoti. Šiąnakt dar gali.",
+    "Vejamės. Lėtai, bet užtikrintai. Daugiausia lėtai.",
+    "Pirmoji vieta jau matosi. Per žiūronus, bet matosi."
+  ],
+  cmid: [
+    "Lentelės vidurys – kaip pietų pertrauka: patogu, bet nieko ypatingo.",
+    "{rank} vieta? Tai tik trumpa stotelė pakeliui į viršų.",
+    "Iki lyderio {gap} tšk. Skamba daug, bet sezonas ilgas, o mano optimizmas – dar ilgesnis.",
+    "Esam ten, kur niekas nežiūri. Puiku – ramiai ruošiam staigmeną.",
+    "Viduryje saugu. Bet saugumas – ne mūsų stilius.",
+    "Nei šis, nei tas. Šį turą planuojam būti „šis“."
+  ],
+  cbottom: [
+    "Paskutinės vietos? Visi kažkur pradeda. Mes pradedam iš labai toli.",
+    "Iš apačios tik vienas kelias – aukštyn. Arba šonu, bet šonu neįdomu.",
+    "Lentelę skaitau iš apačios – taip greičiau randu savo komandą.",
+    "Atsiliekam {gap} tšk. Tai ne atsilikimas, tai – iššūkis.",
+    "Mus visi nuvertina. Tiesą sakant, ir aš kartais.",
+    "Lentelės apačioje ramu. Per ramu. Laikas triukšmauti."
+  ],
+  cprojtop: [
+    "Pagal prognozes šį turą surinksim daugiausia. Prognozėms – ačiū, konkurentams – užuojauta.",
+    "Sudėtis šį turą tokia, kad net man pačiam baisu.",
+    "Kapitonas {cap} jau žino, kad šis turas – jo.",
+    "Šį turą turim viską: tvarkaraštį, sveikus žaidėjus ir labai gerą nuotaiką."
+  ],
+  cprojlow: [
+    "Prognozės mums nežada daug. Gerai, kad prognozių niekas neskaičiuoja lentelėje.",
+    "Šį turą tikslas paprastas – nesurinkti mažiausiai. Užduotis sudėtinga.",
+    "Sudėtis šiek tiek kukli. Kaip ir mano lūkesčiai.",
+    "Tvarkaraštis prieš mus, statistika prieš mus. Bet mes – už save."
+  ],
+  cgood: [
+    "Geras turas. Ne puikus, bet geras. Puikus bus kitas.",
+    "Surinkom {pts}. Galėjo būti daugiau, bet galėjo būti ir kaip kaimynų.",
+    "{star} šiandien tempė visą komandą. Kiti bent jau netrukdė.",
+    "Viršutinėje turo pusėje – ten, kur ir turim būti.",
+    "Kapitonas {cap} davė {capPts}. Galim ramiai miegoti.",
+    "Solidus turas. Nuobodu? Galbūt. Bet taškai nenuobodūs."
+  ],
+  cbad: [
+    "Surinkom {pts}. Ne gėda, bet ir ne kuo girtis.",
+    "Šis turas – kaip atšalusi kava: gerti galima, bet malonumo mažai.",
+    "Buvo ir blogesnių turų. Ne daug, bet buvo.",
+    "Kitą turą grįšim stipresni. Blogesni būti tiesiog sunku.",
+    "Pusė lygos surinko daugiau. Apie tai kalbėti nenoriu.",
+    "Turas praėjo. Ir gerai, kad praėjo."
+  ],
+  cup: [
+    "Pakilom {places} vietomis. Lentelės viršau, ruoškis svečiams.",
+    "Kylam kaip mielinė tešla. Tikiuosi, nesukrisim.",
+    "Šuolis lentelėje – ne atsitiktinumas. Na, beveik ne.",
+    "Plus {places} vietos. Taip ir toliau – ir sezono gale būsim mėnulyje."
+  ],
+  cdown: [
+    "Nukritom {places} vietomis. Laikinai, kaip ir viskas šiame gyvenime.",
+    "Lentelėje judam. Deja, ne ta kryptimi.",
+    "Nuslydom žemyn. Kitą turą užsiauksim rimtesnius batus.",
+    "Minus {places} vietos. Lentelė šiandien buvo ne mūsų draugė."
+  ],
+  cnewlead: [
+    "Nauji lyderiai! Kas galėjo pagalvoti? Na, aš galėjau.",
+    "Pirmoji vieta mūsų. Prašom nebeliesti.",
+    "Sveiki atvykę į viršūnę. Mes čia pasiliksim ilgėliau."
+  ],
   cwin: [
+    "Turo nugalėtojai! Dabar reikia tik išmokti tai daryti kas savaitę.",
+    "Daugiausia taškų šį turą. Kuklumą pasiliekam kitam kartui.",
     "Turo nugalėtojai? Nieko keisto. Keista, kad tik dabar.",
     "Surinkom daugiausia lygoje. Savo sudėtį jau siunčiu į muziejų.",
     "Daugiausia taškų lygoje? Tiesiog šiandien žvaigždės buvo mūsų pusėje. Ir visi mūsų žaidėjai.",
     "Kai viskas pavyksta, atrodo lengva. Nepasakosiu, kad buvo lengva. Buvo labai lengva."
   ],
   clast: [
+    "Mažiausiai taškų lygoje. Bet kažkas gi turi būti paskutinis – šįkart pasiaukojom mes.",
+    "Šio turo nėra ką analizuoti. Yra ką pamiršti.",
     "Paskutinė vieta šį turą. Bet žiūrint iš kito galo – esam pirmi.",
     "Šitą turą paprasčiausiai pamiršim. Ir, jei galima, jūs irgi.",
     "Paskutinė vieta – geriausia vieta pradėti kilti.",
     "Visiems nutinka blogų turų. Mums tiesiog nutiko visas."
   ]
 };
-const PRE_CATS = ["fav", "dog", "even", "wstreak", "lstreak", "inj", "revenge", "gpre"];
-const FALLBACK = { bigwin: ["win"], closewin: ["win"], lowwin: ["win"], bigloss: ["loss"], closeloss: ["loss"], highloss: ["loss"], capflop: ["loss"], bench: ["loss"] };
+CORES.ccapflop = CORES.capflop; CORES.cbench = CORES.bench;
+const PRE_CATS = ["fav", "dog", "even", "wstreak", "lstreak", "inj", "revenge", "gpre", "clead", "cchase", "cmid", "cbottom", "cprojtop", "cprojlow"];
+const FALLBACK = { ccapflop: ["cbad"], cbench: ["cbad"], cnewlead: ["cwin", "cup"], cup: ["cgood"], cdown: ["cbad"], cwin: ["cgood"], clast: ["cbad"], clead: ["cprojtop"], cchase: ["cmid"], cbottom: ["cmid"], cprojtop: ["cmid"], cprojlow: ["cmid"], bigwin: ["win"], closewin: ["win"], lowwin: ["win"], bigloss: ["loss"], closeloss: ["loss"], highloss: ["loss"], capflop: ["loss"], bench: ["loss"] };
 const PREFIX = {
   pre: ["Atvirai?", "Trumpai ir aiškiai.", "Žurnalistams kartoju tą patį.", "Ką čia daug kalbėti.", "Sakysiu tiesiai.", "Na ką, pradedam.",
     "Visi klausia to paties, tai atsakysiu.", "Prieš turą visada sakau tą patį.", "Kalbėsiu kaip treneris, ne kaip sirgalius.", "Be didelių žodžių.",
@@ -347,10 +430,50 @@ function processLeagueRound(L, d, slug) {
         for (const [T, O, sT, sO] of [[A, B, sa, sb], [B, A, sb, sa]]) { const x = postCat(d, T, O, sT, sO); L.assign(`${slug}|${r}|post|${T.title}`, x.cat, x.vars); }
       }
     }
-  } else if (d.format === "classic" && done) {
-    const br = [...d.teams].sort((a, b) => b.total - a.total);
-    L.assign(`${slug}|${r}|post|cwin`, "cwin", {});
-    L.assign(`${slug}|${r}|post|clast`, "clast", {});
+  } else if (d.format === "classic") {
+    const hist = d.history || {};
+    const val = (t, rr) => rr === r ? t.total : ((hist[rr] || {})[t.title] ?? 0);
+    const rounds = Object.keys(hist).map(Number).filter(x => x < r);
+    const cum = (t, upto) => [...rounds, r].filter(x => x <= upto).reduce((s, x) => s + val(t, x), 0);
+    const rankBy = upto => { const o = [...d.teams].sort((a, b) => cum(b, upto) - cum(a, upto)); return { o, rk: t => o.indexOf(t) + 1, c: t => cum(t, upto) }; };
+    const n = d.teams.length;
+    if (!started) {
+      const R0 = rankBy(r - 1), hasHist = rounds.length > 0;
+      const proj = t => t.players.filter(p => p.mult > 0).reduce((s, p) => s + (p.avg != null ? p.avg * p.mult : 0), 0);
+      const po = [...d.teams].sort((a, b) => proj(b) - proj(a)), hasProj = d.teams.some(t => t.players.some(p => p.avg != null));
+      for (const T of d.teams) {
+        const rk = R0.rk(T), lead = R0.o[0], cap = T.players.find(p => p.cap);
+        const hurt = T.players.filter(p => p.mult > 0 && p.health === "out")[0];
+        const gap = rk === 1 ? R0.c(lead) - (R0.o[1] ? R0.c(R0.o[1]) : 0) : R0.c(lead) - R0.c(T);
+        let cat;
+        if (hurt && hash(T.title + r) % 3 === 0) cat = "inj";
+        else if (hasHist && rk === 1) cat = "clead";
+        else if (hasProj && po[0] === T) cat = "cprojtop";
+        else if (hasProj && po[n - 1] === T) cat = "cprojlow";
+        else if (hasHist && rk <= 3 && gap <= 40) cat = "cchase";
+        else if (hasHist && rk >= n - 1) cat = "cbottom";
+        else cat = "cmid";
+        L.assign(`${slug}|${r}|pre|${T.title}`, cat, { rank: hasHist ? String(rk) : null, gap: hasHist ? fmtN(Math.round(gap)) : null, leader: lead && lead !== T ? lead.title.trim() : null, cap: cap && cap.name, inj: hurt && hurt.name });
+      }
+    }
+    if (done) {
+      const Rn = rankBy(r), Rp = rankBy(r - 1), hasPrev = rounds.length > 0;
+      const br = [...d.teams].sort((a, b) => b.total - a.total);
+      for (const T of d.teams) {
+        const cap = T.players.find(p => p.cap), star = T.players.filter(p => p.mult > 0 && p.fp != null).sort((x, y) => y.fp * y.mult - x.fp * x.mult)[0];
+        const o = optimal(T), moved = hasPrev ? Rp.rk(T) - Rn.rk(T) : 0, pos = br.indexOf(T);
+        let cat;
+        if (pos === 0) cat = "cwin";
+        else if (pos === n - 1) cat = "clast";
+        else if (hasPrev && Rn.rk(T) === 1 && Rp.rk(T) !== 1) cat = "cnewlead";
+        else if (cap && cap.fp != null && cap.fp * 2 < 16) cat = "ccapflop";
+        else if (moved >= 2) cat = "cup";
+        else if (moved <= -2) cat = "cdown";
+        else if (o && o.lost > 25) cat = "cbench";
+        else cat = pos < n / 2 ? "cgood" : "cbad";
+        L.assign(`${slug}|${r}|post|${T.title}`, cat, { pts: fmtN(T.total), places: String(Math.abs(moved)), cap: cap && cap.name, capPts: cap && cap.fp != null ? fmtN(cap.fp * 2) : null, star: star && star.name, lost: o ? fmtN(o.lost) : null });
+      }
+    }
   }
 }
 
