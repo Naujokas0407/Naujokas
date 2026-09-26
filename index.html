@@ -92,7 +92,7 @@ function card(L, d) {
   if (d) {
     const done = d.games.filter(g => g.status === "final").length, live = d.games.some(g => g.status === "live");
     meta += `<span>${d.round} turas</span><span>${live ? '<span class="live">● Vyksta</span>' : done === d.games.length && done ? "Turas baigtas" : done + "/" + d.games.length + " sužaista"}</span>`;
-    const t = d.teams.find(x => d.myTeam && x.title.startsWith(d.myTeam));
+    const t = null; // asmeninės pozicijos pradiniame puslapyje nerodomos
     if (t) {
       if (L.format === "h2h" && d.matchups) {
         const m = d.matchups.find(x => x.a === t.title || x.b === t.title);
