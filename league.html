@@ -601,11 +601,11 @@ function seasonClassic() {
   const now = rankAt(last), before = prev ? rankAt(prev) : null;
   const show = rounds.slice(-5);
   const best = {}; rounds.forEach(r => best[r] = Math.max(...titles.map(t => val(t, r))));
-  const wins = t => rounds.filter(r => val(t, r) === best[r]).length;
+  const wins = t => rounds.filter(r => best[r] > 0 && val(t, r) === best[r]).length;
   const order = [...titles].sort((a, b) => now[a] - now[b]);
-  return `<div class="sub">Taškai pagal turus${rounds.length > 5 ? " (paskutiniai 5)" : ""} · oranžinė – turo daugiausia${D.games.some(g => g.status !== "final") ? " · einamojo turo taškai dar keičiasi" : ""}</div><div class="card"><div class="x"><table class="stand ssn"><thead><tr><th class="l">#</th><th class="l">Komanda</th>${show.map(r => `<th class="${r === last ? "" : "hide-s"}">${r} t.</th>`).join("")}<th>Iš viso</th><th class="bhc">Vid.</th><th class="bhc">Turo nugalėt.</th></tr></thead><tbody>` +
+  return `<div class="sub">Taškai pagal turus${rounds.length > 5 ? " (paskutiniai 5)" : ""} · oranžinė – turo daugiausia${D.games.some(g => g.status !== "final") ? " · einamojo turo taškai dar keičiasi" : ""}</div><div class="card"><div class="x"><table class="stand ssn"><thead><tr><th class="l">#</th><th class="l">Komanda</th>${show.map(r => `<th class="${show.indexOf(r) >= show.length - 2 ? "" : "hide-s"}">${r} t.</th>`).join("")}<th>Iš viso</th><th class="bhc">Vid.</th><th class="bhc">Turo nugalėt.</th></tr></thead><tbody>` +
     order.map(t => { const mv = before ? before[t] - now[t] : 0;
-      return `<tr data-jump="team-${D.teams.findIndex(x => x.title === t)}"><td class="l rk">${now[t]}${mv ? ` <span class="mv ${mv > 0 ? "up" : "dn"}">${mv > 0 ? "▲" : "▼"}${Math.abs(mv)}</span>` : ""}</td><td class="l">${esc(t)}</td>${show.map(r => `<td class="${r === last ? "" : "hide-s"} ${val(t, r) === best[r] ? "best" : ""}">${num(val(t, r))}</td>`).join("")}<td class="pts">${num(cum(t, last))}</td><td class="bhc">${num(cum(t, last) / rounds.length)}</td><td class="bhc">${wins(t) || ""}</td></tr>`; }).join("") + `</tbody></table></div></div>`;
+      return `<tr data-jump="team-${D.teams.findIndex(x => x.title === t)}"><td class="l rk">${now[t]}${mv ? ` <span class="mv ${mv > 0 ? "up" : "dn"}">${mv > 0 ? "▲" : "▼"}${Math.abs(mv)}</span>` : ""}</td><td class="l">${esc(t)}</td>${show.map(r => `<td class="${show.indexOf(r) >= show.length - 2 ? "" : "hide-s"} ${best[r] > 0 && val(t, r) === best[r] ? "best" : ""}">${num(val(t, r))}</td>`).join("")}<td class="pts">${num(cum(t, last))}</td><td class="bhc">${num(cum(t, last) / rounds.length)}</td><td class="bhc">${wins(t) || ""}</td></tr>`; }).join("") + `</tbody></table></div></div>`;
 }
 
 function renderSeason() {
