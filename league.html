@@ -114,7 +114,10 @@ td.gm b{margin-left:5px}
 .gc.lvg{border-color:var(--cap)}
 .dotl{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cap);margin-right:6px;vertical-align:1px;animation:pulse 1.4s infinite}
 @keyframes pulse{50%{opacity:.3}}
-@media (prefers-reduced-motion:reduce){.dotl{animation:none}}
+.lvb{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--cap);border:1px solid var(--cap);border-radius:999px;padding:1px 6px;margin-left:6px;vertical-align:2px;white-space:nowrap;line-height:1.4}
+.lvb i{width:6px;height:6px;border-radius:50%;background:var(--cap);animation:pulse 1.4s infinite}
+.mst.on{color:var(--cap);font-weight:600}
+@media (prefers-reduced-motion:reduce){.dotl,.lvb i{animation:none}}
 td.gm b.lv{color:var(--cap);font-weight:600;margin-left:4px}
 tr.onc td.nm,tr.onc .nm{color:var(--cap)}
 .pill.pl-live{border-color:var(--cap);color:var(--cap)}
@@ -258,6 +261,8 @@ function playerState(p) {
   if (g.status === "live") return "playing";
   return "played";
 }
+const liveN = t => t ? t.players.filter(p => p.mult > 0 && playerState(p) === "playing").length : 0;
+const LVB = n => n ? `<span class="lvb" title="Žaidžia dabar: ${n}"><i></i>LIVE ${n}</span>` : "";
 const nameMark = p => `${esc(p.name)}${p.s ? "*" : ""}`;
 
 function render() {
@@ -290,7 +295,7 @@ function render() {
     order.map((i, k) => {
       const t = D.teams[i]; const counted = t.players.filter(p => p.mult > 0);
       const c = s => counted.filter(p => playerState(p) === s).length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td><td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
+      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td><td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
     }).join("") + `</tbody></table></div></div>`;
 
   const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
@@ -310,7 +315,7 @@ function render() {
       return `<tr class="${p.card.startsWith("i") ? "dim" : ""} ${sep ? "sep" : ""} ${p.oc ? "onc" : ""}"><td class="l pl">${slotChip(p.card)}<span class="nm">${nameMark(p)}</span>${p.cap ? '<span class="cap" title="Kapitonas ×2">C</span>' : ""}${ml([gameLabel(p), p.fp == null ? "" : "FP " + fpCell + " ×" + p.mult, p.st ? brief(p.st) : ((state === "played" || p.dnp) ? "DNP" : "")])}</td><td class="fp">${fpCell}</td><td class="mx">×${p.mult}</td><td class="pt">${ptsCell}</td><td class="gm l">${gameLabel(p)}</td>${tail}</tr>`;
     }).join("");
     const tot = counted.length ? `<tr class="tot"><td class="l">Iš viso</td><td class="fp"></td><td class="mx"></td><td class="pt">${num(t.total)}</td><td class="gm"></td>` + tds([Math.round(sum(0) / 60), sum(1), `${sum(2)}-${sum(3)}`, `${sum(4)}-${sum(5)}`, `${sum(6)}-${sum(7)}`, sum(8), sum(9), sum(10), sum(11), sum(12), sum(13), sum(14), sum(15), sum(16), sum(17), num(sum(18))]) + `</tr>` : "";
-    html += `<div class="card ${isMe(t) ? "me" : ""}" id="team-${i}"><div class="team-h"><div class="n">${esc(t.title)}</div><div class="t">${num(t.official ?? t.total)}</div></div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="fp">FP</th><th class="mx">×</th><th>Tšk</th><th class="l gm">Rungtynės</th>${STAT_H}</tr></thead><tbody>${rows}${tot}</tbody></table></div></div>`;
+    html += `<div class="card ${isMe(t) ? "me" : ""}" id="team-${i}"><div class="team-h"><div class="n">${esc(t.title)}</div><div class="t">${LVB(liveN(t))} ${num(t.official ?? t.total)}</div></div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="fp">FP</th><th class="mx">×</th><th>Tšk</th><th class="l gm">Rungtynės</th>${STAT_H}</tr></thead><tbody>${rows}${tot}</tbody></table></div></div>`;
   });
   document.getElementById("fantasy").innerHTML = html;
   document.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => document.getElementById(tr.dataset.jump).scrollIntoView({ behavior: "smooth", block: "start" })));
@@ -344,13 +349,15 @@ function h2hHtml(isMe) {
   const cards = ms.map(m => {
     const me = false;
     const lead = m.sa === m.sb ? 0 : m.sa > m.sb ? 1 : 2;
-    return `<div class="mu ${me ? "me" : ""}"><div class="mr ${lead === 1 ? "w" : ""}" data-jump="team-${idx(m.a)}"><span>${esc(m.a)}</span><b>${num(m.sa)}</b></div><div class="mr ${lead === 2 ? "w" : ""}" data-jump="team-${idx(m.b)}"><span>${esc(m.b)}</span><b>${num(m.sb)}</b></div><div class="mst">${done ? "Baigta" : D.games.some(g => g.status !== "scheduled") ? "Vyksta · taškai gyvai" : "Dar neprasidėjo"}</div></div>`;
+    const la = done ? 0 : liveN(D.teams[idx(m.a)]), lb = done ? 0 : liveN(D.teams[idx(m.b)]);
+    const anyLive = D.games.some(g => g.status === "live");
+    return `<div class="mu ${me ? "me" : ""}"><div class="mr ${lead === 1 ? "w" : ""}" data-jump="team-${idx(m.a)}"><span>${esc(m.a)}</span><b>${LVB(la)} ${num(m.sa)}</b></div><div class="mr ${lead === 2 ? "w" : ""}" data-jump="team-${idx(m.b)}"><span>${esc(m.b)}</span><b>${LVB(lb)} ${num(m.sb)}</b></div><div class="mst ${!done && anyLive ? "on" : ""}">${done ? "Baigta" : anyLive ? '<span class="dotl"></span>Rungtynės vyksta dabar · taškai gyvai' : D.games.some(g => g.status !== "scheduled") ? "Turas tęsiasi" : "Dar neprasidėjo"}</div></div>`;
   }).join("");
   const order = D.teams.map((t, i) => i).sort((a, b) => { const A = st[D.teams[a].title], B = st[D.teams[b].title]; return (B.w + B.d / 2) - (A.w + A.d / 2) || B.pf - A.pf || tot(D.teams[b].title) - tot(D.teams[a].title); });
   const hasDraw = Object.values(st).some(x => x.d);
   const table = `<div class="card"><div class="x"><table class="stand"><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>P</th><th>Pr</th>${hasDraw ? "<th>L</th>" : ""}<th class="bhc">Taškai</th><th>Šio turo</th><th>Liko</th></tr></thead><tbody>` +
     order.map((i, k) => { const t = D.teams[i], s = st[t.title]; const left = t.players.filter(p => p.mult > 0 && playerState(p) === "toplay").length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${s.w}</td><td>${s.l}</td>${hasDraw ? `<td>${s.d}</td>` : ""}<td class="bhc">${num(s.pf)}</td><td>${num(t.official ?? t.total)}</td><td>${left}</td></tr>`; }).join("") +
+      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${s.w}</td><td>${s.l}</td>${hasDraw ? `<td>${s.d}</td>` : ""}<td class="bhc">${num(s.pf)}</td><td>${num(t.official ?? t.total)}${LVB(liveN(t))}</td><td>${left}</td></tr>`; }).join("") +
     `</tbody></table></div></div>`;
   return `<div class="sub">${D.round} turo poros</div><div class="mus">${cards}</div><div class="sub">Lentelė (pergalės / pralaimėjimai)</div>` + table;
 }
