@@ -261,7 +261,7 @@ function playerState(p) {
 const nameMark = p => `${esc(p.name)}${p.s ? "*" : ""}`;
 
 function render() {
-  const isMe = t => D.myTeam && t.title.startsWith(D.myTeam);
+  const isMe = t => false; // komandos neišskiriamos
   document.getElementById("lgTitle").textContent = D.title || "Lyga";
   document.title = (D.title || "Lyga") + " · draftlive";
   const done = D.games.filter(g => g.status === "final").length;
@@ -342,7 +342,7 @@ function h2hHtml(isMe) {
   if (done) ms.forEach(m => add(m.a, m.b, m.sa, m.sb));
   const idx = title => D.teams.findIndex(t => t.title === title);
   const cards = ms.map(m => {
-    const me = [m.a, m.b].some(x => D.myTeam && x.startsWith(D.myTeam));
+    const me = false;
     const lead = m.sa === m.sb ? 0 : m.sa > m.sb ? 1 : 2;
     return `<div class="mu ${me ? "me" : ""}"><div class="mr ${lead === 1 ? "w" : ""}" data-jump="team-${idx(m.a)}"><span>${esc(m.a)}</span><b>${num(m.sa)}</b></div><div class="mr ${lead === 2 ? "w" : ""}" data-jump="team-${idx(m.b)}"><span>${esc(m.b)}</span><b>${num(m.sb)}</b></div><div class="mst">${done ? "Baigta" : D.games.some(g => g.status !== "scheduled") ? "Vyksta · taškai gyvai" : "Dar neprasidėjo"}</div></div>`;
   }).join("");
