@@ -239,6 +239,8 @@ a.brand{text-decoration:none}
 .pt-r span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pt-r.sel{color:var(--cap);font-weight:600}
 .cqs{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.cqg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+@media (max-width:560px){.cqg{grid-template-columns:1fr}}
 .cq{margin:0;border-left:3px solid var(--cap);background:rgba(255,122,26,.06);border-radius:0 8px 8px 0;padding:8px 12px;font-size:13.5px;line-height:1.5;color:var(--ink-2);font-style:italic}
 .cq b{font-style:normal;color:var(--ink);font-weight:600}
 .cq-h{font-style:normal;font-size:11.5px;color:var(--muted);margin-bottom:2px;letter-spacing:.02em}
@@ -754,11 +756,7 @@ function classicReport() {
     if (pl.length) { const b = pl.sort((x, y) => y.p.fp - x.p.fp)[0]; s.push(`Turo žvaigždė – ${pn(b.p)} (${num(b.p.fp)} FP, ${esc(b.t.title)}).`); }
     if (done) { const lost = D.teams.map(t => ({ t, o: optimal(t) })).filter(x => x.o).sort((a, b) => b.o.lost - a.o.lost)[0]; if (lost && lost.o.lost > 10) s.push(`Daugiausiai taškų ant suolo paliko ${esc(lost.t.title)} – ${num(lost.o.lost)}.`); }
   }
-  let cq = "";
-  if (done) { const br = [...D.teams].sort((a, b) => b.total - a.total), W = br[0], L = br[br.length - 1];
-    const tw = coachText(`${SLUG}|${D.round}|post|cwin`), tl = coachText(`${SLUG}|${D.round}|post|clast`);
-    if (tw || tl) cq = `<div class="cqs">${tw ? coachBlock(W.title, tw) : ""}${tl ? coachBlock(L.title, tl) : ""}</div>`; }
-  return `<article class="rp"><h3>${D.round} turo ${started ? (done ? "apžvalga" : "eiga") : "anonsas"}</h3><p>${s.join(" ")}</p>${cq}</article>`;
+  return `<article class="rp"><h3>${D.round} turo ${started ? (done ? "apžvalga" : "eiga") : "anonsas"}</h3><p>${s.join(" ")}</p></article>`;
 }
 function injuriesHtml() {
   const owned = D.teams.flatMap(t => t.players.filter(p => healthOf(p) !== "ready").map(p => ({ p, t })));
@@ -793,7 +791,13 @@ function renderReporter() {
     const perPrev = {}; D.teams.forEach(t => perPrev[t.title] = (per[t.title] || []).filter(g => g.r < D.round));
     body = `<div class="sub">${D.round} turo ${started ? (done ? "apžvalga" : "eiga – atnaujinama gyvai") : "anonsas"}</div><div class="rps">` +
       D.matchups.map(m => started ? matchupRecap(m, per, done) : matchupPreview(m, perPrev, prevAll)).join("") + `</div>`;
-  } else body = `<div class="rps">${classicReport()}</div>`;
+  } else {
+    const done = roundDone(), started = D.games.some(g => g.status !== "scheduled"), phase = done ? "post" : "pre";
+    const lbl = phase === "pre" && started ? " prieš turą" : "";
+    const teams = started ? [...D.teams].sort((a, b) => b.total - a.total) : D.teams;
+    const blocks = teams.map(T => { const t = coachText(`${SLUG}|${D.round}|${phase}|${T.title}`); return t ? coachBlock(T.title, t, lbl) : ""; }).join("");
+    body = `<div class="rps">${classicReport()}</div>` + (blocks ? `<div class="sub">Trenerių komentarai ${done ? "po turo" : "prieš turą"}</div><div class="cqg">${blocks}</div>` : "");
+  }
   el.innerHTML = body + `<p class="foot" style="margin:0">Trenerių komentarai – išgalvoti ir parašyti su šypsena. Realūs lygos žaidėjai jų nesakė (bent jau kol kas).</p>` + txNewsHtml() + injuriesHtml();
 }
 
