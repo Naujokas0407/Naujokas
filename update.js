@@ -341,4 +341,5 @@ function restoreFromGit(slug, round) {
     }
   }
   try { require("./coach.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Trenerių komentarai:", e.message); }
+  try { require("./season.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Sezono suvestinė:", e.message); }
 })().catch(err => { console.error(err); process.exit(1); });
