@@ -249,6 +249,29 @@ a.brand{text-decoration:none}
 .txk.tr{background:rgba(255,122,26,.16);color:var(--cap)}
 .txk.mv{background:rgba(57,135,229,.16);color:#6da7ec}
 .txk.fa2{background:var(--soft);color:var(--ink-2)}
+.pn{color:inherit;text-decoration:none;cursor:pointer;border-bottom:1px dotted var(--faint)}
+.pn:hover,.pn:focus-visible{color:var(--cap);border-color:var(--cap);outline:none}
+.mts{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px}
+.mt{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 12px;font-size:13px;color:var(--ink-2)}
+.mt span:last-child{text-align:right}
+.mt b{color:var(--cap);font-weight:700;white-space:nowrap}
+.pm{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:16px}
+.pm-c{position:relative;width:100%;max-width:520px;max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+#pmBody{display:flex;flex-direction:column;gap:12px}
+.pm-x{position:absolute;top:10px;right:10px;border:0;background:var(--soft);color:var(--ink);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px}
+.pm-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-right:36px}
+.pm-n{font-size:19px;font-weight:700}
+.pm-s{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pm-s div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px}
+.pm-s b{font-size:18px}
+.pbs{display:flex;gap:6px;align-items:flex-end;overflow-x:auto;padding-bottom:2px;min-height:110px}
+.pb{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:34px}
+.pb i{display:block;width:18px;border-radius:4px 4px 0 0;background:#4a5163}
+.pb i.cur{background:var(--cap)}
+.pb i.neg{background:#ff6b5e}
+.pbv{font-size:11px;color:var(--ink-2)}
+.pbr{font-size:10.5px;color:var(--faint)}
+.pm-g{font-size:13.5px;color:var(--ink-2);line-height:1.6}
 </style>
 </head>
 <body>
@@ -357,7 +380,7 @@ function playerState(p) {
 }
 const liveN = t => t ? t.players.filter(p => p.mult > 0 && playerState(p) === "playing").length : 0;
 const LVB = n => n ? `<span class="lvb" title="Žaidžia dabar: ${n}"><i></i>LIVE ${n}</span>` : "";
-const nameMark = p => `${esc(p.name)}${p.s ? "*" : ""}`;
+const nameMark = p => p.id ? `<a class="pn" data-pid="${esc(p.id)}" role="button" tabindex="0">${esc(p.name)}${p.s ? "*" : ""}</a>` : `${esc(p.name)}${p.s ? "*" : ""}`;
 
 function render() {
   const isMe = t => false; // komandos neišskiriamos
@@ -457,7 +480,9 @@ function h2hHtml(isMe) {
     const la = done ? 0 : liveN(D.teams[idx(m.a)]), lb = done ? 0 : liveN(D.teams[idx(m.b)]);
     const anyLive = D.games.some(g => g.status === "live");
     const TA = D.teams[idx(m.a)], TB = D.teams[idx(m.b)], pa = TA ? projection(TA) : null, pb = TB ? projection(TB) : null;
-    return `<div class="mu ${me ? "me" : ""}"><div class="mr ${lead === 1 ? "w" : ""}" data-jump="team-${idx(m.a)}"><span>${esc(m.a)}</span><b>${LVB(la)} ${num(m.sa)}</b></div><div class="mr ${lead === 2 ? "w" : ""}" data-jump="team-${idx(m.b)}"><span>${esc(m.b)}</span><b>${LVB(lb)} ${num(m.sb)}</b></div>${pa && pb && !done && (pa.left + pb.left) ? `<div class="mpr">Prognozė <b>${num(pa.proj)} : ${num(pb.proj)}</b> · dar žais ${pa.left} ir ${pb.left}</div>` : ""}<div class="mst ${!done && anyLive ? "on" : ""}">${done ? "Baigta" : anyLive ? '<span class="dotl"></span>Rungtynės vyksta dabar · taškai gyvai' : D.games.some(g => g.status !== "scheduled") ? "Turas tęsiasi" : "Dar neprasidėjo"}</div></div>`;
+    const HR = h2hRecord(m.a, m.b, D.round);
+    const hrLine = HR.n ? `<div class="mpr">Tarpusavyje iki šiol: <b>${HR.wa}–${HR.wb}${HR.dr ? "–" + HR.dr : ""}</b> · paskutinė ${HR.last.r} ture ${num(HR.last.a === m.a ? HR.last.as : HR.last.bs)}:${num(HR.last.a === m.a ? HR.last.bs : HR.last.as)}</div>` : `<div class="mpr">Pirmoji šių komandų dvikova</div>`;
+    return `<div class="mu ${me ? "me" : ""}"><div class="mr ${lead === 1 ? "w" : ""}" data-jump="team-${idx(m.a)}"><span>${esc(m.a)}</span><b>${LVB(la)} ${num(m.sa)}</b></div><div class="mr ${lead === 2 ? "w" : ""}" data-jump="team-${idx(m.b)}"><span>${esc(m.b)}</span><b>${LVB(lb)} ${num(m.sb)}</b></div>${hrLine}${pa && pb && !done && (pa.left + pb.left) ? `<div class="mpr">Prognozė <b>${num(pa.proj)} : ${num(pb.proj)}</b> · dar žais ${pa.left} ir ${pb.left}</div>` : ""}<div class="mst ${!done && anyLive ? "on" : ""}">${done ? "Baigta" : anyLive ? '<span class="dotl"></span>Rungtynės vyksta dabar · taškai gyvai' : D.games.some(g => g.status !== "scheduled") ? "Turas tęsiasi" : "Dar neprasidėjo"}</div></div>`;
   }).join("");
   const order = D.teams.map((t, i) => i).sort((a, b) => { const A = st[D.teams[a].title], B = st[D.teams[b].title]; return (B.w + B.d / 2) - (A.w + A.d / 2) || B.pf - A.pf || tot(D.teams[b].title) - tot(D.teams[a].title); });
   const hasDraw = Object.values(st).some(x => x.d);
@@ -473,7 +498,7 @@ function renderPlayers() {
     document.getElementById("players").innerHTML = `<div class="card"><div class="ph"><div class="h">Geriausi laisvi žaidėjai</div><div class="seg" role="group" aria-label="Filtras">
     <button aria-pressed="false" data-f="all">Visi</button><button aria-pressed="false" data-f="owned">Užimti</button><button aria-pressed="true" data-f="free">Laisvi</button></div></div>
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>Vid. FP</th><th class="hide-s">Sužaidė turų</th><th class="bhc">Praeitas turas</th><th>Šis turas</th></tr></thead><tbody>` +
-      (D.fa.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${esc(p.name)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${p.fp == null ? "–" : num(p.fp)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="6">Duomenų dar nėra</td></tr>`) +
+      (D.fa.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${p.fp == null ? "–" : num(p.fp)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="6">Duomenų dar nėra</td></tr>`) +
       `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda, surikiuoti pagal sezono fantasy taškų vidurkį.</p></div>`;
     document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
     return;
@@ -556,7 +581,7 @@ function topBy(items, key, dir) {
 
 function roundAwards() {
   const started = D.games.some(g => g.status !== "scheduled");
-  if (!started || !D.matchups) return "";
+  if (!started) return "";
   const done = roundDone();
   const sc = t => done ? (t.official ?? t.total) : t.total;
   const teams = D.teams.map(t => ({ t, s: sc(t) }));
@@ -564,7 +589,7 @@ function roundAwards() {
   const hi = topBy(teams, x => x.s, 1), lo = topBy(teams, x => x.s, -1);
   out.push(tile("Daugiausiai surinko", `${names(hi.map(x => x.t.title))} <b>${num(hi[0].s)}</b>`));
   out.push(tile("Mažiausiai surinko", `${names(lo.map(x => x.t.title))} <b>${num(lo[0].s)}</b>`));
-  const ms = D.matchups.map(m => { const A = D.teams.find(t => t.title === m.a), B = D.teams.find(t => t.title === m.b); const sa = A ? sc(A) : 0, sb = B ? sc(B) : 0;
+  const ms = (D.matchups || []).map(m => { const A = D.teams.find(t => t.title === m.a), B = D.teams.find(t => t.title === m.b); const sa = A ? sc(A) : 0, sb = B ? sc(B) : 0;
     return sa >= sb ? { w: m.a, l: m.b, ws: sa, ls: sb } : { w: m.b, l: m.a, ws: sb, ls: sa }; }).filter(m => m.ws !== m.ls);
   if (ms.length) {
     const big = topBy(ms, m => m.ws - m.ls, 1)[0];
@@ -653,7 +678,7 @@ function seasonClassic() {
 
 function renderSeason() {
   const el = document.getElementById("season");
-  el.innerHTML = D.format === "h2h" ? roundAwards() + seasonH2H() : seasonClassic();
+  el.innerHTML = D.format === "h2h" ? roundAwards() + seasonOscars() + seasonH2H() + h2hMeetings() : roundAwards() + seasonOscars() + classicRecords() + seasonClassic();
   el.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => { document.getElementById("tab-fantasy").click(); const x = document.getElementById(tr.dataset.jump); if (x) x.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
 
@@ -766,7 +791,7 @@ function injuriesHtml() {
   const since = p => INJ && INJ.state[p.id] && INJ.state[p.id].since && INJ.news.some(n => n.id === p.id) ? " · nuo " + fmt(INJ.state[p.id].since, { month: "2-digit", day: "2-digit" }) : "";
   const slot = p => p.mult === 0 ? "rezerve" : p.cap ? "kapitonas" : p.card.startsWith("b") ? "ant suolo" : "starte";
   const list = owned.length ? `<div class="card"><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="l">Fantasy komanda</th></tr></thead><tbody>` +
-    owned.map(({ p, t }) => `<tr><td class="l pl"><span class="nm">${esc(p.name)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}<span class="fa">${since(p)}</span></td><td class="l" style="white-space:normal">${esc(t.title)} <span class="fa">· ${slot(p)}</span></td></tr>`).join("") + `</tbody></table></div></div>` : `<div class="sub">Šios lygos komandos traumuotų žaidėjų neturi.</div>`;
+    owned.map(({ p, t }) => `<tr><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}<span class="fa">${since(p)}</span></td><td class="l" style="white-space:normal">${esc(t.title)} <span class="fa">· ${slot(p)}</span></td></tr>`).join("") + `</tbody></table></div></div>` : `<div class="sub">Šios lygos komandos traumuotų žaidėjų neturi.</div>`;
   let news = "";
   if (INJ && INJ.news && INJ.news.length) {
     const items = INJ.news.slice(0, 25).map(n => {
@@ -873,6 +898,130 @@ function renderTx() {
   el.innerHTML = `<div class="aw">${tile("Iš viso perėjimų", `<b>${log.length}</b>`)}${tile("Mainų tarp komandų", `<b>${trades}</b>`)}${top[0] && top[0][1] ? tile("Aktyviausias rinkoje", `${esc(top[0][0])} <b>${top[0][1]}</b>`, "sandorių / žaidėjų pokyčių") : ""}${top.length && top[top.length - 1][1] === 0 ? tile("Ištikimiausias sudėčiai", `${names(top.filter(x => x[1] === 0).map(x => x[0]).slice(0, 3))}`, "dar nepadarė nė vieno pokyčio") : ""}</div>` +
     Object.keys(byR).sort((a, b) => b - a).map(r => `<div class="sub">Prieš ${r} turą ir jo metu</div><div class="card"><ul class="news">${byR[r].map(e => `<li class="mine"><span class="nt">${txWhen(e.t)}</span><span>${txPlain(e)}</span></li>`).join("")}</ul></div>`).join("");
 }
+
+// ---- Sezono „Oskarai“ ----
+let SEAS = null;
+async function loadSeason() {
+  try { const r = await fetch("data/" + encodeURIComponent(SLUG) + "-season.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!SEAS || JSON.stringify(j.rounds) !== JSON.stringify(SEAS.rounds) || j.deals.length !== SEAS.deals.length) { SEAS = j; if (D) render(); } } } catch (e) {}
+}
+function seasonOscars() {
+  if (!SEAS || !SEAS.rounds || !SEAS.rounds.length) return `<div class="sub">Sezono „Oskarai“ atsiras po pirmojo baigto turo.</div>`;
+  const T = Object.entries(SEAS.teams).map(([t, x]) => ({ t, ...x }));
+  const by = (k, dir) => [...T].sort((a, b) => dir * ((b[k] ?? 0) - (a[k] ?? 0)))[0];
+  const out = [];
+  const ck = by("capPts", 1), cw = by("capPts", -1);
+  out.push(tile("🏆 Kapitonų karalius", `${esc(ck.t)} <b>${num(ck.capPts)}</b>`, "daugiausia kapitonų taškų per sezoną"));
+  const bc = T.filter(x => x.capBest).sort((a, b) => b.capBest.pts - a.capBest.pts)[0];
+  if (bc) out.push(tile("🎯 Geriausias kapitono pasirinkimas", `${esc(bc.capBest.name)} <b>${num(bc.capBest.pts)}</b>`, `${esc(bc.t)}, ${bc.capBest.r} turas`));
+  out.push(tile("🙈 Kapitonų nesėkmė", `${esc(cw.t)} <b>${num(cw.capPts)}</b>`, "mažiausiai kapitonų taškų"));
+  const lb = by("lost", 1), lg = by("lost", -1);
+  out.push(tile("🪑 Suolo karalius", `${esc(lb.t)} <b>−${num(lb.lost)}</b>`, "daugiausia taškų paliko ant suolo"));
+  out.push(tile("🧠 Tiksliausias treneris", `${esc(lg.t)} <b>${lg.lost > 0 ? "−" + num(lg.lost) : "0"}</b>`, "mažiausiai prarado dėl sudėties"));
+  const mvp = SEAS.players[0];
+  if (mvp) out.push(tile("⭐ Sezono MVP", `${esc(mvp.name)} <b>${num(mvp.pts)}</b>`, `${esc(mvp.team)} · ${mvp.n} tur.`));
+  const deal = (SEAS.deals || []).find(x => x.pts > 0);
+  out.push(tile("🤝 Sezono sandoris", deal ? `${esc(deal.name)} <b>${num(deal.pts)}</b>` : "Dar nėra", deal ? `${esc(deal.team)} · įsigytas ${deal.r} ture` : "atsiras po pirmųjų perėjimų"));
+  const rk = Object.entries(SEAS.ranks || {}).map(([t, l]) => ({ t, up: l.length > 1 ? l[0].rank - l[l.length - 1].rank : 0, from: l[0] && l[0].rank, to: l.length && l[l.length - 1].rank }));
+  const up = rk.sort((a, b) => b.up - a.up)[0];
+  if (up && up.up > 0) out.push(tile("🚀 Didžiausias kilimas", `${esc(up.t)} <b>+${up.up}</b>`, `iš ${up.from} į ${up.to} vietą`));
+  const hi = T.filter(x => x.best).sort((a, b) => b.best.pts - a.best.pts)[0];
+  if (hi) out.push(tile("🔥 Sezono turas", `${esc(hi.t)} <b>${num(hi.best.pts)}</b>`, `${hi.best.r} turas`));
+  return `<div class="sub">Sezono „Oskarai“ (po ${SEAS.rounds.length} baigt${SEAS.rounds.length === 1 ? "o turo" : "ų turų"})</div><div class="aw">${out.join("")}</div>`;
+}
+
+// ---- Klasikinės lygos sezono rekordai ----
+function classicRecords() {
+  const hist = D.history || {};
+  const done = roundDone();
+  const rounds = Object.keys(hist).map(Number).filter(r => r < D.round || (r === D.round && done)).sort((a, b) => a - b);
+  if (!rounds.length) return "";
+  const val = (t, r) => r === D.round ? (D.teams.find(x => x.title === t) || {}).total ?? 0 : ((hist[r] || {})[t] ?? 0);
+  const titles = D.teams.map(t => t.title);
+  const games = rounds.flatMap(r => titles.map(t => ({ t, r, v: val(t, r) })));
+  const out = [];
+  const hi = topBy(games, g => g.v, 1)[0], lo = topBy(games, g => g.v, -1)[0];
+  out.push(tile("Daugiausia taškų per turą", `${esc(hi.t)} <b>${num(hi.v)}</b>`, `${hi.r} turas`));
+  out.push(tile("Mažiausiai taškų per turą", `${esc(lo.t)} <b>${num(lo.v)}</b>`, `${lo.r} turas`));
+  const st = titles.map(t => { const v = rounds.map(r => val(t, r)); const avg = v.reduce((a, b) => a + b, 0) / v.length;
+    const sd = Math.sqrt(v.reduce((a, b) => a + (b - avg) ** 2, 0) / v.length);
+    const wins = rounds.filter(r => val(t, r) === Math.max(...titles.map(x => val(x, r)))).length;
+    const lasts = rounds.filter(r => val(t, r) === Math.min(...titles.map(x => val(x, r)))).length;
+    const top3 = rounds.filter(r => titles.filter(x => val(x, r) > val(t, r)).length < 3).length;
+    return { t, avg, sd, wins, lasts, top3, sum: v.reduce((a, b) => a + b, 0) }; });
+  const who = arr => arr.length > 2 ? `${arr.length} komandos` : names(arr.map(x => x.t));
+  const bw = topBy(st, x => x.wins, 1); if (bw[0].wins) out.push(tile("Daugiausia turų laimėta", `${who(bw)} <b>${bw[0].wins}</b>`, "kartų surinko daugiausia ture"));
+  const bl = topBy(st, x => x.lasts, 1); if (bl[0].lasts) out.push(tile("Daugiausia kartų paskutiniai", `${who(bl)} <b>${bl[0].lasts}</b>`, "kartų surinko mažiausiai ture"));
+  const t3 = topBy(st, x => x.top3, 1); out.push(tile("Dažniausiai ture top 3", `${who(t3)} <b>${t3[0].top3}</b>`, "kartų tarp trijų geriausių"));
+  const ba = topBy(st, x => x.avg, 1)[0], wa = topBy(st, x => x.avg, -1)[0];
+  out.push(tile("Geriausias vidurkis", `${esc(ba.t)} <b>${num(ba.avg)}</b>`, "taškų per turą"));
+  out.push(tile("Prasčiausias vidurkis", `${esc(wa.t)} <b>${num(wa.avg)}</b>`, "taškų per turą"));
+  if (rounds.length > 1) {
+    const cs = topBy(st, x => x.sd, -1)[0], wild = topBy(st, x => x.sd, 1)[0];
+    out.push(tile("Stabiliausia komanda", `${esc(cs.t)} <b>±${num(cs.sd)}</b>`, "mažiausias taškų svyravimas tarp turų"));
+    out.push(tile("Nenuspėjamiausia komanda", `${esc(wild.t)} <b>±${num(wild.sd)}</b>`, "didžiausias taškų svyravimas tarp turų"));
+    const diffs = rounds.slice(1).map((r, i) => titles.map(t => ({ t, r, d: val(t, r) - val(t, rounds[i]) }))).flat();
+    const imp = topBy(diffs, x => x.d, 1)[0];
+    if (imp && imp.d > 0) out.push(tile("Didžiausias pagerėjimas", `${esc(imp.t)} <b>+${num(imp.d)}</b>`, `${imp.r} ture, palyginti su ankstesniu`));
+  }
+  return `<div class="sub">Sezono rekordai (${rounds.length} baigt${rounds.length === 1 ? "as turas" : "i turai"})</div><div class="aw">${out.join("")}</div>`;
+}
+
+// ---- Tarpusavio dvikovos (H2H) ----
+function h2hRecord(a, b, beforeRound) {
+  const { all } = h2hGames();
+  const g = all.filter(m => (beforeRound == null || m.r < beforeRound) && ((m.a === a && m.b === b) || (m.a === b && m.b === a)));
+  let wa = 0, wb = 0, dr = 0;
+  g.forEach(m => { const sa = m.a === a ? m.as : m.bs, sb = m.a === a ? m.bs : m.as; if (sa > sb) wa++; else if (sb > sa) wb++; else dr++; });
+  const last = g.sort((x, y) => y.r - x.r)[0];
+  return { n: g.length, wa, wb, dr, last };
+}
+function h2hMeetings() {
+  const { all } = h2hGames();
+  if (!all.length) return "";
+  const pairs = {};
+  all.forEach(m => { const [x, y] = [m.a, m.b].sort(); const k = x + "\u0001" + y; (pairs[k] = pairs[k] || []).push(m); });
+  const chips = Object.entries(pairs).sort((a, b) => b[1].length - a[1].length).map(([k, list]) => {
+    const [x, y] = k.split("\u0001"); const R = h2hRecord(x, y);
+    return `<div class="mt"><span>${esc(x.trim())}</span><b>${R.wa}–${R.wb}${R.dr ? "–" + R.dr : ""}</b><span>${esc(y.trim())}</span></div>`;
+  }).join("");
+  return `<div class="sub">Tarpusavio dvikovų istorija</div><div class="mts">${chips}</div>`;
+}
+
+// ---- Žaidėjo kortelė ----
+let FPH = null;
+async function loadFph() { if (FPH) return FPH; try { const r = await fetch("data/fp-hist.json?t=" + Date.now(), { cache: "no-store" }); FPH = r.ok ? await r.json() : {}; } catch (e) { FPH = {}; } return FPH; }
+function findPlayer(id) {
+  for (const t of D.teams) { const p = t.players.find(x => x.id === id); if (p) return { p, team: t.title }; }
+  const q = (D.pool || []).find(x => x.id === id) || (D.fa || []).find(x => x.id === id);
+  return q ? { p: q, team: q.owner != null && D.teams[q.owner] ? D.teams[q.owner].title : null } : null;
+}
+async function openPlayer(id) {
+  const f = findPlayer(id); if (!f) return;
+  const { p, team } = f;
+  const pm = document.getElementById("pm"), body = document.getElementById("pmBody");
+  const head = () => { const h = healthOf(p); return `<div class="pm-h"><div><div class="pm-n">${esc(p.name)}</div><div class="sub">${esc(tv(p.club))}${p.pos ? " · " + esc(p.pos) : ""}${team ? " · " + esc(team) : " · laisvas"}</div></div>${h && h !== "ready" && HL[h] ? hBadge(p) : ""}</div>`; };
+  body.innerHTML = head() + `<div class="sub">Kraunama…</div>`;
+  pm.hidden = false; document.body.style.overflow = "hidden";
+  const H = await loadFph();
+  const rounds = Object.keys(H).map(Number).sort((a, b) => a - b);
+  const hist = rounds.map(r => ({ r, fp: H[r] ? H[r][id] : undefined }));
+  if (viewR == null && p.fp != null) hist.push({ r: D.round, fp: p.fp, cur: true });
+  const vals = hist.filter(x => x.fp != null).map(x => x.fp);
+  const avg = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null, mx = Math.max(1, ...vals.map(Math.abs));
+  const bars = hist.map(x => `<div class="pb" title="${x.r} turas: ${x.fp == null ? "nežaidė" : num(x.fp)} FP"><span class="pbv">${x.fp == null ? "–" : num(x.fp)}</span><i style="height:${x.fp == null ? 2 : Math.max(3, Math.round(Math.abs(x.fp) / mx * 70))}px" class="${x.fp != null && x.fp < 0 ? "neg" : ""} ${x.cur ? "cur" : ""}"></i><span class="pbr">${x.r} t.</span></div>`).join("");
+  const g = p.game != null ? gameOf(p.game) : null;
+  const gl = g ? `${g.h === p.club ? "vs" : "@"} ${esc(tv(g.h === p.club ? g.a : g.h))} · ${g.status === "scheduled" ? when(g.start) : g.status === "live" ? "vyksta dabar" : "baigtos " + g.hs + ":" + g.as}` : "šį turą rungtynių nėra arba duomenų dar nėra";
+  body.innerHTML = head() +
+    `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals.length}</b></div><div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
+    `<div class="sub">FP pagal turus</div><div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>` +
+    `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div>`;
+}
+function closePlayer() { document.getElementById("pm").hidden = true; document.body.style.overflow = ""; }
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-pid]"); if (a) { e.preventDefault(); e.stopPropagation(); openPlayer(a.dataset.pid); return; }
+  if (e.target.id === "pm" || e.target.closest(".pm-x")) closePlayer();
+}, true);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closePlayer(); if ((e.key === "Enter" || e.key === " ") && e.target.dataset && e.target.dataset.pid) { e.preventDefault(); openPlayer(e.target.dataset.pid); } });
 
 // ---- Bendras progresas (grafikas po lentele) ----
 let progMetric = null, progSel = null, progHover = null;
@@ -1006,7 +1155,7 @@ async function pollLive() {
 }
 
 async function load() {
-  loadInj(); loadTx(); loadCoach();
+  loadInj(); loadTx(); loadCoach(); loadSeason();
   try {
     const res = await fetch("data/" + encodeURIComponent(SLUG) + ".json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
@@ -1077,5 +1226,6 @@ function start() {
   });
 }
 </script>
+<div class="pm" id="pm" hidden><div class="pm-c" role="dialog" aria-modal="true" aria-label="Žaidėjo kortelė"><button type="button" class="pm-x" aria-label="Uždaryti">✕</button><div id="pmBody"></div></div></div>
 </body>
 </html>
