@@ -208,6 +208,9 @@ a.brand{text-decoration:none}
 .rp p{margin:0;font-size:14px;line-height:1.55;color:var(--ink-2)}
 .rp p b{color:var(--ink);font-weight:600}
 .news{list-style:none;margin:0;padding:0}
+.rps .rpw{grid-column:1/-1}
+.txl{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:4px 16px;font-size:13px;color:var(--ink-2)}
+.txin{color:#4cd07d}.txout{color:#ff6b5e}
 .news li{padding:10px 16px;border-top:1px solid var(--line-2);font-size:13.5px;color:var(--muted);display:flex;gap:10px}
 .news li:first-child{border-top:0}
 .news li.mine{color:var(--ink-2)}
@@ -823,6 +826,7 @@ function renderReporter() {
     const blocks = teams.map(T => { const h = coachTeam(T); return h ? `<div class="cqt">${h}</div>` : ""; }).join("");
     body = `<div class="rps">${classicReport()}</div>` + (blocks ? `<div class="sub">Trenerių komentarai</div><div class="cqg">${blocks}</div>` : "");
   }
+  const txr = txReview(); if (txr) body = `<div class="rps">${txr}</div>` + body;
   el.innerHTML = body + `<p class="foot" style="margin:0">Trenerių komentarai – išgalvoti ir parašyti su šypsena. Realūs lygos žaidėjai jų nesakė (bent jau kol kas).</p>` + txNewsHtml() + injuriesHtml();
 }
 
@@ -881,6 +885,41 @@ function txNews(e, i) {
   return `<b>Komanda ${tq(e.team)} atsisveikino</b> su ${pl(e.out)}. ${pick(TXQ.drop, seed)}`;
 }
 const txWhen = t => fmt(t, { month: "2-digit", day: "2-digit" }) + " " + fmt(t, { hour: "2-digit", minute: "2-digit" });
+// ---- Reporterio perėjimų apžvalga (po turo atnaujinimo, prieš turą) ----
+function txReview() {
+  const log = ((TX && TX.log) || []).filter(e => e.r === D.round);
+  if (!log.length) return "";
+  const nm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const avgOf = name => {
+    for (const t of D.teams) { const p = t.players.find(x => nm(x.name) === nm(name)); if (p) return p.avg; }
+    const f = (D.fa || []).find(x => nm(x.name) === nm(name)); return f ? f.avg : null;
+  };
+  const per = {}, ins = [], outs = [];
+  const add = (team, k) => { const t = String(team).trim(); per[t] = (per[t] || 0) + k; };
+  log.forEach(e => {
+    if (e.type === "trade") { e.aGets.forEach(p => ins.push({ team: e.a, ...p })); e.bGets.forEach(p => ins.push({ team: e.b, ...p })); add(e.a, e.aGets.length + e.bGets.length); add(e.b, e.aGets.length + e.bGets.length); }
+    else { e.in.forEach(p => ins.push({ team: e.team, ...p })); e.out.forEach(p => outs.push({ team: e.team, ...p })); add(e.team, e.in.length + e.out.length); }
+  });
+  const trades = log.filter(e => e.type === "trade" && e.aGets.length && e.bGets.length).length;
+  const s = [];
+  s.push(`Prieš ${D.round} turą treneriai buvo aktyvūs: iš viso <b>${ins.length}</b> ${ins.length === 1 ? "naujokas" : "naujokai"} sudėtyse ir <b>${outs.length}</b> ${outs.length === 1 ? "atleistas žaidėjas" : "atleisti žaidėjai"}${trades ? `, dar <b>${trades}</b> ${trades === 1 ? "mainai" : "mainų sandoriai"} tarp komandų` : ""}.`);
+  const top = Object.entries(per).sort((a, b) => b[1] - a[1]);
+  if (top.length) s.push(pick([`Aktyviausias rinkoje – ${tn(top[0][0])} (${top[0][1]} pokyčiai). ${pick(["Telefonas, matyt, dar neatvėso.", "Kažkas labai nori laimėti šį turą.", "Sudėtis perdėliota beveik nuo nulio."], top[0][0] + D.round)}`, `Daugiausia darbo turėjo ${tn(top[0][0])} treneris – ${top[0][1]} pokyčiai.`], top[0][0]));
+  const still = D.teams.map(t => t.title.trim()).filter(t => !per[t]);
+  if (still.length && still.length < D.teams.length) s.push(still.length === 1 ? `Vienintelis sudėties nelietė ${tn(still[0])} – arba labai pasitiki savo žaidėjais, arba pamiršo slaptažodį.` : `Sudėčių nelietė: ${still.map(tn).join(", ")}. Ramybė – irgi strategija.`);
+  const bestIn = ins.map(p => ({ ...p, avg: avgOf(p.name) })).filter(p => p.avg != null).sort((a, b) => b.avg - a.avg)[0];
+  if (bestIn) s.push(`Įdomiausias pirkinys – ${pn(bestIn)} (${esc(tv(bestIn.club))}, sezono vidurkis ${num(bestIn.avg)} FP), kurį pasiėmė ${tn(bestIn.team)}.`);
+  const riskOut = outs.map(p => ({ ...p, avg: avgOf(p.name) })).filter(p => p.avg != null).sort((a, b) => b.avg - a.avg)[0];
+  if (riskOut && riskOut.avg >= 10) s.push(`Drąsiausias sprendimas – ${tn(riskOut.team)} atsisveikino su ${pn(riskOut)}, nors šis vidutiniškai renka ${num(riskOut.avg)} FP. ${pick(["Laikas parodys, ar tai buvo genialu.", "Tikimės, kad treneris žino kažką, ko mes nežinom.", "Rizikinga, bet be rizikos nėra ir šampano."], riskOut.name)}`);
+  const moved = ins.filter(p => outs.some(o => nm(o.name) === nm(p.name) && String(o.team).trim() !== String(p.team).trim()));
+  moved.slice(0, 2).forEach(p => { const o = outs.find(x => nm(x.name) === nm(p.name)); s.push(`${pn(p)} ilgai neliūdėjo: vos ${tn(o.team)} jį atleido, jį pasiėmė ${tn(p.team)}.`); });
+  const byTeam = {};
+  ins.forEach(p => { const t = String(p.team).trim(); (byTeam[t] = byTeam[t] || { in: [], out: [] }).in.push(p); });
+  outs.forEach(p => { const t = String(p.team).trim(); (byTeam[t] = byTeam[t] || { in: [], out: [] }).out.push(p); });
+  const list = Object.entries(byTeam).map(([t, x]) => `<li><b>${esc(t)}</b>: ${x.in.length ? `<span class="txin">+ ${x.in.map(p => esc(p.name)).join(", ")}</span>` : ""}${x.in.length && x.out.length ? " · " : ""}${x.out.length ? `<span class="txout">− ${x.out.map(p => esc(p.name)).join(", ")}</span>` : ""}</li>`).join("");
+  return `<article class="rp rpw"><h3>Perėjimų apžvalga prieš ${D.round} turą</h3><p>${s.join(" ")}</p><ul class="txl">${list}</ul></article>`;
+}
+
 function txNewsHtml() {
   const log = (TX && TX.log) || [];
   if (!log.length) return `<div class="sub">Perėjimų naujienos atsiras, kai tik kuri nors komanda pakeis sudėtį.</div>`;
