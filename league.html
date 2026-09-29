@@ -326,7 +326,7 @@ a.brand{text-decoration:none}
   <section id="season" class="stack" hidden></section>
   <section id="reporter" class="stack" hidden></section>
   <section id="tx" class="stack" hidden></section>
-  <p class="foot">Rezultatai ir statistika – iš oficialios Eurolygos, rungtynių metu atsinaujina kas 30 sekundžių. Fantasy taškai ir sudėtys – iš BasketNews Fantasy, atsinaujina kas ~6 min. * – startinio penketo žaidėjas, oranžiškai pažymėti žaidėjai, kurie tuo metu aikštėje. FP – žaidėjo fantasy taškai, × – daugiklis (kapitonas ×2, 6-as žaidėjas ×1, kiti suolelyje ×0,5).</p>
+  <p class="foot">Rezultatai ir statistika – iš oficialios Eurolygos, rungtynių metu atsinaujina kas 30 sekundžių. Fantasy taškai ir sudėtys – iš BasketNews Fantasy, atsinaujina kas ~6 min. * – startinio penketo žaidėjas, oranžiškai pažymėti žaidėjai, kurie tuo metu aikštėje. FP – žaidėjo fantasy taškai (~ – preliminarūs, apskaičiuoti pagal gyvą Eurolygos statistiką, kol BasketNews paskelbs oficialius), × – daugiklis (kapitonas ×2, 6-as žaidėjas ×1, kiti suolelyje ×0,5).</p>
 </div></main>
 <script>
 const TZ = "Europe/Vilnius";
@@ -385,7 +385,29 @@ const liveN = t => t ? t.players.filter(p => p.mult > 0 && playerState(p) === "p
 const LVB = n => n ? `<span class="lvb" title="Žaidžia dabar: ${n}"><i></i>LIVE ${n}</span>` : "";
 const nameMark = p => p.id ? `<a class="pn" data-pid="${esc(p.id)}" role="button" tabindex="0">${esc(p.name)}${p.s ? "*" : ""}</a>` : `${esc(p.name)}${p.s ? "*" : ""}`;
 
+// ---- Preliminarūs fantasy taškai pagal Eurolygos statistiką (kol BasketNews paskelbia oficialius) ----
+function estFp(p) {
+  if (!p.st) return null;
+  const [sec, pts, m2, a2, m3, a3, ftm, fta, orb, drb, reb, ast, stl, blk, ba, to, pf, fd] = p.st;
+  const dd = [pts, reb, ast, stl, blk].filter(x => x >= 10).length;
+  const g = gameOf(p.game); let win = 0;
+  if (g && g.status === "final") { const home = g.h === p.club; if (home ? g.hs > g.as : g.as > g.hs) win = 2.75; }
+  const v = pts - (a2 - m2) - (a3 - m3) - 0.75 * (fta - ftm) + 1.25 * orb + drb + 1.25 * ast + 1.5 * stl + 1.25 * blk - 0.5 * ba - 1.5 * to - 0.5 * pf + fd + win + (dd >= 2 ? 10.5 : 0);
+  return Math.round(v * 4) / 4;
+}
+function applyEst() {
+  if (!D || viewR != null) return;
+  D.teams.forEach(t => {
+    let ch = false;
+    t.players.forEach(p => { if ((p.fp == null || p.est) && p.st) { p.fp = estFp(p); p.est = true; p.total = Math.round(p.fp * p.mult * 100) / 100; ch = true; } });
+    if (ch) t.total = Math.round(t.players.reduce((a, p) => a + (p.fp ?? 0) * p.mult, 0) * 100) / 100;
+  });
+  (D.pool || []).forEach(p => { if ((p.fp == null || p.est) && p.st) { p.fp = estFp(p); p.est = true; } });
+}
+const fpTxt = p => p.fp == null ? "–" : (p.est ? "~" : "") + num(p.fp);
+
 function render() {
+  applyEst();
   const isMe = t => false; // komandos neišskiriamos
   document.getElementById("lgTitle").textContent = D.title || "Lyga";
   document.title = (D.title || "Lyga") + " · draftlive";
@@ -433,7 +455,7 @@ function render() {
     const rows = ps.map(p => {
       const state = playerState(p);
       const sep = p.card === "b-1" || p.card === "i-1";
-      const fpCell = p.fp == null ? "–" : num(p.fp);
+      const fpCell = fpTxt(p);
       let tail;
       if (p.st) tail = statCells(p.st);
       else if (state === "played" || p.dnp) tail = `<td class="l fa sc" colspan="16">DNP</td>`;
@@ -453,7 +475,7 @@ function render() {
   started.forEach(g => {
     const clubTable = club => {
       const rows = D.pool.filter(p => p.game === g.id && p.club === club).sort((a, b) => b.st[18] - a.st[18])
-        .map(p => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([p.fp == null ? "" : "FP " + num(p.fp), brief(p.st)])}</td><td class="pt">${p.fp == null ? "–" : num(p.fp)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("");
+        .map(p => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([p.fp == null ? "" : "FP " + fpTxt(p), brief(p.st)])}</td><td class="pt">${fpTxt(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("");
       return `<div class="club">${esc(tv(club))}</div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th>FP</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>${rows || `<tr><td class="l fa" colspan="19">Statistikos dar nėra</td></tr>`}</tbody></table></div>`;
     };
     el += `<div class="card"><div class="gh"><div class="sc">${esc(tv(g.h))} ${g.hs}<i>–</i>${g.as} ${esc(tv(g.a))}</div><span class="pill ${g.status === "live" ? "pl-live" : ""}">${g.status === "live" ? (clockLabel(g) || "Vyksta") : "Baigtos"}</span></div>${clubTable(g.h)}${clubTable(g.a)}</div>`;
@@ -501,7 +523,7 @@ function renderPlayers() {
     document.getElementById("players").innerHTML = `<div class="card"><div class="ph"><div class="h">Geriausi laisvi žaidėjai</div><div class="seg" role="group" aria-label="Filtras">
     <button aria-pressed="false" data-f="all">Visi</button><button aria-pressed="false" data-f="owned">Užimti</button><button aria-pressed="true" data-f="free">Laisvi</button></div></div>
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>Vid. FP</th><th class="hide-s">Sužaidė turų</th><th class="bhc">Praeitas turas</th><th>Šis turas</th></tr></thead><tbody>` +
-      (D.fa.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${p.fp == null ? "–" : num(p.fp)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="6">Duomenų dar nėra</td></tr>`) +
+      (D.fa.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="6">Duomenų dar nėra</td></tr>`) +
       `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda, surikiuoti pagal sezono fantasy taškų vidurkį.</p></div>`;
     document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
     return;
@@ -511,7 +533,7 @@ function renderPlayers() {
   document.getElementById("players").innerHTML = `<div class="card"><div class="ph"><div class="h">Šio turo žaidėjai</div><div class="seg" role="group" aria-label="Filtras">
     <button aria-pressed="${filter === "all"}" data-f="all">Visi</button><button aria-pressed="${filter === "owned"}" data-f="owned">Užimti</button><button aria-pressed="${filter === "free"}" data-f="free">Laisvi</button></div></div>
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>FP</th><th class="fp">Vid.</th><th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
-    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}</td><td class="pt">${p.fp == null ? "–" : num(p.fp)}</td><td class="fp">${p.avg == null ? "–" : num(p.avg)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="21">Šiame ture dar niekas nežaidė</td></tr>`) +
+    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}</td><td class="pt">${fpTxt(p)}</td><td class="fp">${p.avg == null ? "–" : num(p.avg)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="21">Šiame ture dar niekas nežaidė</td></tr>`) +
     `</tbody></table></div></div>`;
   document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
 }
