@@ -382,7 +382,7 @@ function playerState(p) {
   return "played";
 }
 const liveN = t => t ? t.players.filter(p => p.mult > 0 && playerState(p) === "playing").length : 0;
-const LVB = n => n ? `<span class="lvb" title="Žaidžia dabar: ${n}"><i></i>LIVE ${n}</span>` : "";
+const LVB = n => n ? `<span class="lvb" title="Žaidžia dabar: ${n}"><i></i>LIVE</span>` : "";
 const nameMark = p => p.id ? `<a class="pn" data-pid="${esc(p.id)}" role="button" tabindex="0">${esc(p.name)}${p.s ? "*" : ""}</a>` : `${esc(p.name)}${p.s ? "*" : ""}`;
 
 // ---- Preliminarūs fantasy taškai pagal Eurolygos statistiką (kol BasketNews paskelbia oficialius) ----
