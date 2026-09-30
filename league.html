@@ -258,6 +258,22 @@ a.brand{text-decoration:none}
 .mt{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;border:1px solid var(--line);border-radius:10px;background:var(--card);padding:8px 12px;font-size:13px;color:var(--ink-2)}
 .mt span:last-child{text-align:right}
 .mt b{color:var(--cap);font-weight:700;white-space:nowrap}
+.hm th,.hm td{text-align:center;padding:7px 6px;font-size:12.5px;white-space:nowrap;min-width:38px}
+.hm th.l,.hm td.l{text-align:left}
+.hm td.self{background:var(--line-2)}
+.hm td.hw{color:#4cd07d;font-weight:600}.hm td.hl{color:#ff6b5e;font-weight:600}.hm td.hd{color:#e6c14d;font-weight:600}
+.hm td small{display:block;font-size:10.5px;font-weight:500;opacity:.85}
+.pr{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 12px;font-size:13px;color:var(--ink-2)}
+.pr .ph{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;font-weight:600}
+.pr .ph span:last-child{text-align:right}
+.pr .ph b{color:var(--cap);white-space:nowrap}
+.pr ul{list-style:none;margin:8px 0 6px;padding:6px 0 0;border-top:1px solid var(--line-2)}
+.pr li{display:grid;grid-template-columns:40px 1fr 10px 1fr;gap:6px;font-size:12.5px;color:var(--muted);padding:2px 0}
+.pr li span:nth-child(2){text-align:right}
+.pr .pt2{font-size:12.5px;color:var(--muted)}.pr .pt2 b{color:var(--ink-2)}
+.news li.ng{box-shadow:inset 3px 0 0 #34c759}.news li.nr{box-shadow:inset 3px 0 0 #ff453a}.news li.ny{box-shadow:inset 3px 0 0 #ffcc00}
+.nb{display:inline-block;font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 6px;margin-right:6px;vertical-align:1px;white-space:nowrap}
+.nb.ng{background:rgba(52,199,89,.16);color:#4cd07d}.nb.nr{background:rgba(255,69,58,.16);color:#ff6b5e}.nb.ny{background:rgba(255,204,0,.14);color:#e6c14d}
 .pm{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:16px}
 .pm-c{position:relative;width:100%;max-width:520px;max-height:90vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
 #pmBody{display:flex;flex-direction:column;gap:12px}
@@ -703,13 +719,13 @@ function seasonClassic() {
 
 function renderSeason() {
   const el = document.getElementById("season");
-  el.innerHTML = D.format === "h2h" ? roundAwards() + seasonOscars() + seasonH2H() + h2hMeetings() : roundAwards() + seasonOscars() + classicRecords() + seasonClassic();
+  el.innerHTML = D.format === "h2h" ? roundAwards() + h2hMeetings() + seasonH2H() + seasonOscars() : roundAwards() + seasonOscars() + classicRecords() + seasonClassic();
   el.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => { document.getElementById("tab-fantasy").click(); const x = document.getElementById(tr.dataset.jump); if (x) x.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
 
 // ---- Lygos reporteris ir traumos ----
 let INJ = null;
-const HL = { out: ["Nežais", "h-out"], doubtful: ["Abejotinas", "h-dbt"], uncertain: ["Neaišku", "h-unc"], expected: ["Tikėtina žais", "h-exp"], ready: ["Sveikas", "h-ok"] };
+const HL = { out: ["Nežais", "h-out"], doubtful: ["Abejotinas", "h-dbt"], uncertain: ["Neaišku", "h-unc"], "game-time": ["Paaiškės prieš rungtynes", "h-unc"], expected: ["Tikėtina žais", "h-exp"], ready: ["Sveikas", "h-ok"] };
 const healthOf = p => (viewR == null && INJ && p.id && INJ.state[p.id]) ? INJ.state[p.id].h : (p.health || "ready");
 const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}"><i aria-hidden="true">✚</i><span class="hbt">${HL[h][0]}</span></span>` : ""; };
 async function loadInj() {
@@ -775,7 +791,7 @@ function matchupPreview(m, per, all) {
   }
   const ca = A.players.find(p => p.cap), cb = B.players.find(p => p.cap);
   if (ca && cb) s.push(`Kapitonai: ${pn(ca)} ir ${pn(cb)}.`);
-  const hurt = t => t.players.filter(p => p.mult > 0 && ["out", "doubtful", "uncertain"].includes(healthOf(p)));
+  const hurt = t => t.players.filter(p => p.mult > 0 && ["out", "doubtful", "uncertain", "game-time"].includes(healthOf(p)));
   [A, B].forEach(t => { const h = hurt(t); if (h.length) s.push(`${esc(t.title)} sudėtyje – klaustukai: ${h.map(p => `${esc(p.name)} (${HL[healthOf(p)][0].toLowerCase()})`).join(", ")}.`); });
   [A, B].forEach(t => { const c = streaks(per[t.title] || []).cur; if (c && c.n >= 2) s.push(c.res === "W" ? `${esc(t.title)} sieks ${c.n + 1}-osios pergalės iš eilės.` : c.res === "L" ? `${esc(t.title)} bandys nutraukti ${c.n} pralaimėjimų seriją.` : ""); });
   return `<article class="rp"><h3>${esc(A.title)} – ${esc(B.title)}</h3><p>${s.join(" ")}</p>${coachPair(A, B, "pre")}</article>`;
@@ -811,7 +827,7 @@ function classicReport() {
 }
 function injuriesHtml() {
   const owned = D.teams.flatMap(t => t.players.filter(p => healthOf(p) !== "ready").map(p => ({ p, t })));
-  const order = ["out", "doubtful", "uncertain", "expected"];
+  const order = ["out", "doubtful", "game-time", "uncertain", "expected"];
   owned.sort((a, b) => order.indexOf(healthOf(a.p)) - order.indexOf(healthOf(b.p)));
   const since = p => INJ && INJ.state[p.id] && INJ.state[p.id].since && INJ.news.some(n => n.id === p.id) ? " · nuo " + fmt(INJ.state[p.id].since, { month: "2-digit", day: "2-digit" }) : "";
   const slot = p => p.mult === 0 ? "rezerve" : p.cap ? "kapitonas" : p.card.startsWith("b") ? "ant suolo" : "starte";
@@ -826,10 +842,13 @@ function injuriesHtml() {
       else if (n.to === "ready") txt = `${who} sveikas ir grįžta į rikiuotę.`;
       else if (n.to === "expected") txt = `${who} turėtų žaisti.`;
       else if (n.to === "doubtful") txt = `${who} dalyvavimas abejotinas.`;
+      else if (n.to === "game-time") txt = `${who} – dalyvavimas paaiškės prieš rungtynes.`;
       else txt = `${who} – būsena neaiški.`;
-      return `<li class="${own ? "mine" : ""}"><span class="nt">${fmt(n.t, { month: "2-digit", day: "2-digit" })} ${fmt(n.t, { hour: "2-digit", minute: "2-digit" })}</span><span>${txt}</span></li>`;
+      const tone = ["out", "doubtful"].includes(n.to) ? "nr" : ["ready", "expected"].includes(n.to) ? "ng" : "ny";
+      const lab = { out: "Nežais", doubtful: "Abejotinas", "game-time": "Paaiškės prieš rungtynes", uncertain: "Neaišku", expected: "Tikėtina, žais", ready: "Grįžta" }[n.to] || "Neaišku";
+      return `<li class="${own ? "mine" : ""} ${tone}"><span class="nt">${fmt(n.t, { month: "2-digit", day: "2-digit" })} ${fmt(n.t, { hour: "2-digit", minute: "2-digit" })}</span><span><span class="nb ${tone}">${lab}</span>${txt}</span></li>`;
     }).join("");
-    news = `<div class="sub">Traumų naujienos · paryškinti šios lygos komandų žaidėjai</div><div class="card"><ul class="news">${items}</ul></div>`;
+    news = `<div class="sub">Traumų naujienos · žalia – grįžta, raudona – nežais ar abejotinas, geltona – paaiškės prieš rungtynes · paryškinti šios lygos komandų žaidėjai</div><div class="card"><ul class="news">${items}</ul></div>`;
   } else news = `<div class="sub">Traumų naujienos atsiras, kai tik pasikeis kurio nors Eurolygos žaidėjo būsena.</div>`;
   return `<div class="sub">Traumuoti ir abejotini lygos komandų žaidėjai${viewR != null ? " (" + D.round + " turo metu)" : ""}</div>${list}${news}`;
 }
@@ -1037,15 +1056,32 @@ function h2hRecord(a, b, beforeRound) {
   return { n: g.length, wa, wb, dr, last };
 }
 function h2hMeetings() {
-  const { all } = h2hGames();
+  const { all, per } = h2hGames();
   if (!all.length) return "";
-  const pairs = {};
-  all.forEach(m => { const [x, y] = [m.a, m.b].sort(); const k = x + "\u0001" + y; (pairs[k] = pairs[k] || []).push(m); });
-  const chips = Object.entries(pairs).sort((a, b) => b[1].length - a[1].length).map(([k, list]) => {
-    const [x, y] = k.split("\u0001"); const R = h2hRecord(x, y);
-    return `<div class="mt"><span>${esc(x.trim())}</span><b>${R.wa}–${R.wb}${R.dr ? "–" + R.dr : ""}</b><span>${esc(y.trim())}</span></div>`;
-  }).join("");
-  return `<div class="sub">Tarpusavio dvikovų istorija</div><div class="mts">${chips}</div>`;
+  const pair = (a, b) => {
+    const g = all.filter(m => (m.a === a && m.b === b) || (m.a === b && m.b === a)).sort((x, y) => x.r - y.r).map(m => ({ r: m.r, x: m.a === a ? m.as : m.bs, y: m.a === a ? m.bs : m.as }));
+    const w = g.filter(m => m.x > m.y).length, l = g.filter(m => m.y > m.x).length, pf = g.reduce((s, m) => s + m.x, 0), pa = g.reduce((s, m) => s + m.y, 0);
+    return { g, w, l, d: g.length - w - l, pf, pa, diff: pf - pa };
+  };
+  const st = D.teams.map(t => { const l = per[t.title] || []; return { t: t.title, w: l.filter(g => g.res === "W").length, d: l.filter(g => g.res === "D").length, sum: l.reduce((a, g) => a + g.pf, 0) }; });
+  const order = st.sort((a, b) => (b.w + b.d / 2) - (a.w + a.d / 2) || b.sum - a.sum).map(x => x.t);
+  const sg = v => (v > 0 ? "+" : v < 0 ? "−" : "±") + num(Math.abs(v));
+  const rec = P => `${P.w}–${P.l}${P.d ? "–" + P.d : ""}`;
+  const matrix = `<div class="card"><div class="x"><table class="stand hm"><thead><tr><th class="l">Komanda</th>${order.map((t, i) => `<th title="${esc(t)}">${i + 1}</th>`).join("")}</tr></thead><tbody>` +
+    order.map((a, i) => `<tr><td class="l"><span class="fa">${i + 1}.</span> ${esc(a)}</td>${order.map(b => {
+      if (a === b) return `<td class="self"></td>`;
+      const P = pair(a, b); if (!P.g.length) return `<td class="fa">–</td>`;
+      return `<td class="${P.w > P.l ? "hw" : P.l > P.w ? "hl" : "hd"}" title="${esc(a)} prieš ${esc(b)}: ${num(P.pf)} : ${num(P.pa)}">${rec(P)}<small>${sg(P.diff)}</small></td>`;
+    }).join("")}</tr>`).join("") + `</tbody></table></div></div>`;
+  const pairs = [];
+  order.forEach((a, i) => order.slice(i + 1).forEach(b => {
+    let x = a, y = b, P = pair(a, b); if (!P.g.length) return;
+    if (P.l > P.w || (P.l === P.w && P.diff < 0)) { x = b; y = a; P = pair(x, y); }
+    pairs.push({ x, y, P, last: P.g[P.g.length - 1].r });
+  }));
+  pairs.sort((p, q) => q.last - p.last || q.P.g.length - p.P.g.length);
+  const cards = pairs.map(({ x, y, P }) => `<div class="pr"><div class="ph"><span>${esc(x)}</span><b>${rec(P)}</b><span>${esc(y)}</span></div><ul>${P.g.map(m => `<li><span class="fa">${m.r} t.</span><span class="${m.x > m.y ? "sw" : ""}">${num(m.x)}</span><span class="fa">:</span><span class="${m.y > m.x ? "sw" : ""}">${num(m.y)}</span></li>`).join("")}</ul><div class="pt2">Iš viso <b>${num(P.pf)} : ${num(P.pa)}</b> · skirtumas <b class="${P.diff > 0 ? "sw" : P.diff < 0 ? "sl" : ""}">${sg(P.diff)}</b></div></div>`).join("");
+  return `<div class="sub">H2H tarpusavio lentelė · eilutės komandos rezultatas prieš stulpelio komandą (pergalės–pralaimėjimai), po juo – bendras taškų skirtumas</div>${matrix}<div class="sub">Visi tarpusavio susitikimai · rezultatai, bendra taškų suma ir skirtumas</div><div class="mts">${cards}</div>`;
 }
 
 // ---- Žaidėjo kortelė ----
