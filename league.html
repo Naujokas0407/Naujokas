@@ -419,6 +419,8 @@ function applyEst() {
     if (ch) t.total = Math.round(t.players.reduce((a, p) => a + (p.fp ?? 0) * p.mult, 0) * 100) / 100;
   });
   (D.pool || []).forEach(p => { if ((p.fp == null || p.est) && p.st) { p.fp = estFp(p); p.est = true; } });
+  const byId = {}; (D.pool || []).forEach(p => { if (p.id) byId[p.id] = p; });
+  (D.fa || []).forEach(p => { const q = byId[p.id]; if (q && q.fp != null && (p.fp == null || p.est)) { p.fp = q.fp; p.est = !!q.est; } });
 }
 const fpTxt = p => p.fp == null ? "–" : (p.est ? "~" : "") + num(p.fp);
 
