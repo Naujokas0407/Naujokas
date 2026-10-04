@@ -268,6 +268,238 @@ const CORES = {
     "Visiems nutinka blogų turų. Mums tiesiog nutiko visas."
   ]
 };
+const MORE = {
+  gpre: [
+    "Planas paprastas: daugiau taškų nei kiti. Detalės – komercinė paslaptis.",
+    "Sudėtį dėliojau iki vėlumos. Žmona sako, kad su žaidėjais kalbu daugiau nei su ja.",
+    "Šį turą žaidžiam protingai. Jei nepavyks protingai – žaisim laimingai.",
+    "Mūsų strategija – nieko nesakyti varžovams. Todėl ir jums nieko nesakysiu.",
+    "Treniruotėje viskas ėjosi. Gaila, kad taškai skaičiuojami ne už treniruotes.",
+    "Jei kas klaus – esam favoritai. Jei neklaus – irgi esam.",
+    "Sudėtis paruošta, nervai – dar ne visai.",
+    "Į šį turą žiūrim kaip į naują galimybę. Senąsias jau išnaudojom.",
+    "Kiekvienas turas – finalas. Tiesa, kai kurie finalai nuobodesni.",
+    "Mano žaidėjai šią savaitę gerai miegojo. Tikiuosi, aikštėje nemiegos.",
+    "Prognozių nedarau. Darau tik garsius pareiškimus.",
+    "Šiam turui pasiruošėm geriau nei bet kada. Na, geriau nei praeitam.",
+    "Varžovai mus pažįsta. Bet mes save pažįstam dar mažiau – tai ir yra mūsų ginklas.",
+    "Telefoną išjungiu, lentelę atsidarau. Prasideda.",
+    "Nėra lengvų turų. Yra tik turai, po kurių lengviau miegoti.",
+    "Sakoma, kad sėkmė mėgsta drąsius. Šį turą būsim labai drąsūs."
+  ],
+  gpost: [
+    "Taškai surinkti, nervai išeikvoti. Normalus turas.",
+    "Lentelė neklysta. Kartais tik labai skaudžiai teisi.",
+    "Šį turą išmokom daug. Ypač apie tai, ko nedaryti.",
+    "Rezultatą priimam oriai. Viduje rėkiam, bet oriai.",
+    "Kai kurie žaidėjai šiandien nustebino. Ne visi – maloniai.",
+    "Turas baigtas, išvados padarytos, sudėtis galvoje perdėliota jau trečią kartą.",
+    "Statistika sako viena, širdis – kita. Lentelė klauso statistikos.",
+    "Galėjo būti geriau, galėjo būti blogiau. Buvo taip, kaip buvo.",
+    "Fantasy – kaip oras Lietuvoje: niekada nežinai, ką gausi.",
+    "Komanda kovojo. Kai kurie kovojo net prieš save.",
+    "Šio turo įrašo per daug kartų neperžiūrėsim.",
+    "Nusiteikimas geras. Taškai – kaip kada.",
+    "Sirgaliai matė viską. Atsiprašau, kad matė viską.",
+    "Esu patenkintas. Na, pusiau. Gerai, ketvirčiu.",
+    "Šiandien krepšinio dievai buvo užsiėmę kitur.",
+    "Kitą kartą bus kitaip. Dar nežinau kaip, bet kitaip."
+  ],
+  clead: [
+    "Lyderiaujam {gap} tšk. Kol kas niekam nesakykit, kad tai lengva.",
+    "Pirmoje vietoje nusipirkom kėdę su porankiais. Nusileisti neplanuojam.",
+    "Visi vejasi mus. Jaučiamės kaip paskutinis autobusas penktadienio vakarą.",
+    "Būti lyderiu – atsakomybė. Ir labai malonus jausmas tikrinant lentelę dešimt kartų per dieną.",
+    "Lentelės viršūnėje vėjuota, bet vaizdas puikus.",
+    "Pirmi esam {gap} tšk. persvara. Užtenka? Niekada neužtenka."
+  ],
+  cchase: [
+    "Esam {rank}. Prizininkų pakopa jau užimta? Ne ilgam.",
+    "Iki „{leader}“ – {gap} tšk. Taip arti, kad jau girdim jų nerimą.",
+    "Vejamės lyderį taip atkakliai, kad kartais net patys savęs bijom.",
+    "Lyderiai žiūri į priekį. Mes žiūrim į lyderius. Labai atidžiai.",
+    "{gap} tšk. iki viršūnės – tai ne atstumas, tai motyvacija.",
+    "Antroje gretoje patogu. Bet pirmoje – geresnis vaizdas."
+  ],
+  cmid: [
+    "{rank} vieta – nei džiaugtis, nei liūdėti. Tai ir darom – nieko.",
+    "Vidurys – puiki vieta iššokti. Arba užmigti. Renkamės iššokti.",
+    "Iki lyderio {gap} tšk. Kalnas didelis, bet turim gerus batus.",
+    "Lentelės vidury jaučiamės kaip sumuštinio sūris – svarbūs, bet nematomi.",
+    "Mūsų laikas ateis. Tikiuosi, dar šį sezoną.",
+    "Esam pilka pelytė. Pelytės, beje, labai greitai bėga.",
+    "{rank} vieta. Sakykim, tai – taktinis pasislėpimas."
+  ],
+  cbottom: [
+    "Apačioje mus mažai kas mato. Tuo ir pasinaudosim.",
+    "Iki lyderio {gap} tšk. Gerai, kad sezonas ilgas. Labai ilgas.",
+    "Mūsų vieta lentelėje – tai tik skaičius. Labai didelis skaičius.",
+    "Apatinėje lentelės dalyje susikūrėm jaukų kampelį. Laikas kraustytis.",
+    "Pradėti iš apačios – lyg filmo apie sportą pradžia. Laukit pabaigos.",
+    "Visi mus nurašė. Mes irgi buvom beveik nurašę save. Beveik."
+  ],
+  cprojtop: [
+    "Popieriuje šį turą esam stipriausi. Belieka, kad popierius nesuplyštų.",
+    "Kapitonu išrinkom {cap}. Jei nepavyks – kaltas bus jis, ne aš.",
+    "Pagal vidurkius mūsų sudėtis – geriausia lygoje. Vidurkiai, nenuvilkit.",
+    "Šį turą planuojam tiesiog būti geriausi. Planai pas mus visada dideli.",
+    "Tvarkaraštis palankus, žaidėjai sveiki, kava stipri. Daugiau nieko nereikia."
+  ],
+  cprojlow: [
+    "Prognozės sako „mažai“. Mes sakom „pažiūrėsim“.",
+    "Šį turą mūsų sudėtis kukli kaip studento stipendija.",
+    "Kapitonas {cap} turės tempti už visus. Tikiuosi, jis pavalgęs.",
+    "Statistikai mūsų nemėgsta. Bet mes ir nesam statistikos komanda.",
+    "Lūkesčiai žemi – vadinasi, nustebinti bus lengva."
+  ],
+  cgood: [
+    "Surinkom {pts}, lentelėje – {rank} vieta. Galim šypsotis.",
+    "{star} – {starPts} FP. Tokiems žaidėjams reikia statyti paminklus. Mažus, bet paminklus.",
+    "Geras turas. Dabar svarbiausia nesugadinti nuotaikos tikrinant kitų rezultatus.",
+    "Viskas pagal planą. Retas jausmas, todėl mėgaujamės.",
+    "{pts} tšk. – nei per mažai, nei per daug. Tiesiog gerai.",
+    "Šis turas – kaip geras kebabas: sotus ir be staigmenų.",
+    "Komanda dirbo kaip laikrodis. Tiesa, kai kurie sraigteliai šiek tiek vėlavo."
+  ],
+  cbad: [
+    "{pts} tšk. Ne tai, ko norėjom, bet tai, ką turim.",
+    "{flop} šiandien surinko {flopPts}. Pakalbėsim. Ilgai pakalbėsim.",
+    "Lentelėje {rank} vieta. Kitam turui žadu tik viena – bus įdomiau.",
+    "Turas buvo sunkus. Žiūrėti – dar sunkiau.",
+    "Šiandien taškų rinkimas priminė grybavimą lapkritį.",
+    "Nieko baisaus, tik šiek tiek gėdinga.",
+    "Daug bandėm, mažai surinkom. Bandymus prašom įskaityti."
+  ],
+  cup: [
+    "Pakilom į {rank} vietą. Lentelė pagaliau mus pastebėjo.",
+    "Kylam {places} pakopomis aukštyn. Liftas pas mus veikia.",
+    "{star} su {starPts} FP pakėlė mus lentelėje. Jam – pyragas.",
+    "Dar {places} vietos aukštyn. Tęsiam kopimą, deguonies dar užtenka.",
+    "Šuolis į {rank} vietą. Sakiau, kad mes dar pasirodysim."
+  ],
+  cdown: [
+    "Nukritom į {rank} vietą. Nieko, nuo dugno atsispirti lengviausia.",
+    "Praradom {places} vietas. Lentelė mums šiandien parodė nugarą.",
+    "Slystam žemyn. Reikia barstyti smėlį.",
+    "{rank} vieta. Ne ta, kurioje norėtume praleisti savaitgalį.",
+    "Žemyn vis tiek lengviau nei aukštyn. Bet mums labiau patinka aukštyn."
+  ],
+  cnewlead: [
+    "Pirmoji vieta! Prašom nesiųsti gėlių – siųskit taškus.",
+    "Užlipom į viršūnę. Vėliavą jau įsmeigėm.",
+    "Lyderiai – mes. Kartokit kartu: lyderiai – mes.",
+    "Nauja savaitė, naujas lyderis. Ir jis – mūsų."
+  ],
+  cwin: [
+    "{pts} tšk. ir pirmoji turo vieta. Šiandien vakarienė – ant manęs.",
+    "{star} surinko {starPts}. Ačiū, kad žaidi pas mus, o ne pas kitus.",
+    "Geriausias turo rezultatas. Lentelės viršau, ruošk kėdę.",
+    "Turo čempionai! Medalių neduoda, bet pasigirti leidžiama.",
+    "Šiandien mūsų sudėtis žaidė taip, lyg būtų perskaičiusi mano mintis.",
+    "Daugiausia taškų? Kuklumas – ne šio vakaro tema."
+  ],
+  clast: [
+    "{pts} tšk. – mažiausiai lygoje. Kai kurie dienoraščio puslapiai turi likti tušti.",
+    "{flop} su {flopPts} FP – šio turo „herojus“. Kabutės ne atsitiktinės.",
+    "Paskutinė vieta šį turą. Bent jau nereikės ilgai ieškoti savęs lentelėje.",
+    "Šį turą buvom dosnūs – leidom aplenkti visiems.",
+    "Mažiausiai taškų. Kitą turą grįšim su planu. Arba bent su sudėtimi.",
+    "Kai nesiseka – nesiseka iš visų pusių. Šį turą nesisekė iš kokių penkių."
+  ],
+  capflop: [
+    "Kapitonas {cap} šiandien atostogavo. Kartu su mūsų taškais.",
+    "{cap} kapitono raištį nešė, o taškų – ne.",
+    "Kapitono pasirinkimas buvo drąsus. Rezultatas – ne.",
+    "Kitą kartą kapitoną rinksiu burtų keliu. Blogiau nebus.",
+    "{cap} su raiščiu – {capPts}. Raištį, matyt, reikia išskalbti."
+  ],
+  bench: [
+    "Ant suolo liko {lost} tšk. Suole, prašau, nebeprovokuok.",
+    "Atsarginiai žaidė puikiai. Gaila, kad atsarginiai.",
+    "Sudėtį reikėjo apversti aukštyn kojom. Įsidėmėsiu kitam kartui.",
+    "Mano suolas šiandien stipresnis už kai kurių varžovų startą.",
+    "Pamesti {lost} tšk. ant suolo – tam reikia talento."
+  ],
+  fav: [
+    "Prognozėse esam favoritai prieš „{opp}“. Prognozės niekada neklysta. Na, beveik.",
+    "Šįkart esam stipresni popieriuje. Žaisim ne ant popieriaus, bet vis tiek malonu.",
+    "„{opp}“ – rimta komanda. Mes – rimtesnė.",
+    "Esam favoritai, todėl visas spaudimas – mums. Spaudimą mėgstam."
+  ],
+  dog: [
+    "Prieš „{opp}“ esam autsaideriai. Autsaideriams tenka gražiausios istorijos.",
+    "Visi stato prieš mus. Labai gerai – laimėsim daugiau.",
+    "Prognozėse atsiliekam {gap} tšk. Prognozėms reikia naujų akinių.",
+    "„{opp}“ stipresni? Gal. Bet krepšinis žaidžiamas ne Excel'yje."
+  ],
+  even: [
+    "Su „{opp}“ jėgos lygios. Lems kapitonai ir nervai.",
+    "Lygi dvikova. Laimės tas, kurio žaidėjai rečiau mėtys baudas pro šalį.",
+    "Popieriuje – lygiosios. Aikštėje lygiųjų neplanuojam.",
+    "Bus įtempta. Jau dabar perku papildomą kavą."
+  ],
+  wstreak: [
+    "{n} pergalės iš eilės. Mes neskaičiuojam, bet visi kiti skaičiuoja.",
+    "Serija tęsiasi. Prašom niekam jos nenužiūrėti.",
+    "Laimim iš eilės jau {n} kartus. Pradedu ir pats tuo tikėti."
+  ],
+  lstreak: [
+    "{n} pralaimėjimai iš eilės. Būna ir gražesnių serijų.",
+    "Pralaimėjimų serija kada nors baigiasi. Kodėl ne šiandien?",
+    "Po {n} nesėkmių pagaliau turim, ką įrodyti."
+  ],
+  inj: [
+    "{inj} šį turą nežais. Rasim, kas užkiš skylę. Tikiuosi.",
+    "Be {inj} bus sunkiau. Bet sunkumai mus grūdina.",
+    "{inj} gydosi, todėl likusieji turės dirbti už du."
+  ],
+  revenge: [
+    "Praeitą kartą „{opp}“ mus įveikė. Atmintis pas mus gera.",
+    "Su „{opp}“ turim neužbaigtų reikalų. Šįkart užbaigsim.",
+    "Revanšas. Nieko asmeniško. Na, truputį asmeniško."
+  ],
+  bigwin: [
+    "Pergalė {diff} tšk. skirtumu. „{opp}“, nieko asmeniško.",
+    "{star} – {starPts} FP. Kai turi tokį žaidėją, gali ramiai gerti kavą.",
+    "Tai buvo ne dvikova, o demonstracija."
+  ],
+  closewin: [
+    "Laimėjom {diff} tšk. Širdis dar nesugrįžo į vietą.",
+    "Pergalė per plauką. Plaukus, beje, jau baigiu prarasti.",
+    "Įtampa iki paskutinių sekundžių. Todėl pergalė dar saldesnė."
+  ],
+  win: [
+    "Įveikėm „{opp}“. Ramiai, dalykiškai, be fejerverkų.",
+    "{star} surinko {starPts} ir parvežė pergalę.",
+    "Dar viena pergalė į kraitį. Kraitis pildosi."
+  ],
+  lowwin: [
+    "Surinkom nedaug, bet daugiau nei „{opp}“. O tik to ir reikia.",
+    "Graži pergalė? Ne. Pergalė? Taip.",
+    "Laimėjom ne grožiu, o rezultatu."
+  ],
+  bigloss: [
+    "Pralaimėjom {diff} tšk. Daugiau nieko pridurti nenoriu.",
+    "„{opp}“ šiandien buvo per stiprūs, o mes – per silpni. Jiems puiki kombinacija.",
+    "Tokius turus geriau pamiršti dar jiems nepasibaigus."
+  ],
+  closeloss: [
+    "Pralaimėjom {diff} tšk. Vienas metimas – ir būtų kita kalba.",
+    "Taip arti ir taip toli. Tipinė fantasy diena.",
+    "Per plauką. Kitą kartą tas plaukas bus mūsų."
+  ],
+  loss: [
+    "„{opp}“ buvo geresni. Pripažįstam ir judam toliau.",
+    "Pralaimėjimas. Dabar svarbiausia – nepanikuoti. Panikuosim vėliau.",
+    "Šįkart nepavyko. Kitą kartą pavyks. Statistiškai turėtų."
+  ],
+  highloss: [
+    "Surinkom daug, bet „{opp}“ – dar daugiau. Neteisinga, bet taip jau yra.",
+    "Su tokiu rezultatu kitoje poroje būtume laimėję. Bet mes ne kitoje poroje.",
+    "Daug taškų, nulis pergalių. Fantasy humoras."
+  ]
+};
+for (const k of Object.keys(MORE)) for (const x of MORE[k]) if (!CORES[k].includes(x)) CORES[k].push(x);
 CORES.ccapflop = CORES.capflop; CORES.cbench = CORES.bench;
 const PRE_CATS = ["fav", "dog", "even", "wstreak", "lstreak", "inj", "revenge", "gpre", "clead", "cchase", "cmid", "cbottom", "cprojtop", "cprojlow"];
 const FALLBACK = { ccapflop: ["cbad"], cbench: ["cbad"], cnewlead: ["cwin", "cup"], cup: ["cgood"], cdown: ["cbad"], cwin: ["cgood"], clast: ["cbad"], clead: ["cprojtop"], cchase: ["cmid"], cbottom: ["cmid"], cprojtop: ["cmid"], cprojlow: ["cmid"], bigwin: ["win"], closewin: ["win"], lowwin: ["win"], bigloss: ["loss"], closeloss: ["loss"], highloss: ["loss"], capflop: ["loss"], bench: ["loss"] };
@@ -337,14 +569,29 @@ class Ledger {
   constructor(file) {
     this.file = file;
     try { this.db = JSON.parse(fs.readFileSync(file, "utf8")); } catch (e) { this.db = { q: {} }; }
+    this.changed = false;
+    // v2: tas pats pagrindinis sakinys toje pačioje lygoje nebekartojamas – vėlesni pasikartojimai išmetami ir sugeneruojami iš naujo
+    if (this.db.v !== 2) {
+      const ph = k => k.split("|")[2] === "pre" ? 0 : 1;
+      const keys = Object.keys(this.db.q).sort((a, b) => (+a.split("|")[1] - +b.split("|")[1]) || (ph(a) - ph(b)) || (a < b ? -1 : 1));
+      const seen = {};
+      for (const k of keys) {
+        const slug = k.split("|")[0], title = k.split("|").slice(3).join("|"), c = this.db.q[k].c;
+        if (CORES[title]) { delete this.db.q[k]; continue; }
+        const s = seen[slug] = seen[slug] || new Set();
+        if (s.has(c)) delete this.db.q[k]; else s.add(c);
+      }
+      this.db.v = 2; this.changed = true;
+    }
     this.used = new Set(Object.values(this.db.q).map(x => x.t));
-    this.coreCount = {}; this.coreRound = {};
+    this.coreCount = {}; this.coreRound = {}; this.coreLeague = {};
     for (const [k, x] of Object.entries(this.db.q)) {
       this.coreCount[x.c] = (this.coreCount[x.c] || 0) + 1;
       const rk = k.split("|")[1] + "|" + k.split("|")[2];
       (this.coreRound[rk] = this.coreRound[rk] || new Set()).add(x.c);
+      const lg = this.coreLeague[k.split("|")[0]] = this.coreLeague[k.split("|")[0]] || {};
+      lg[x.c] = (lg[x.c] || 0) + 1;
     }
-    this.changed = false;
   }
   has(key) { return !!this.db.q[key]; }
   assign(key, cat, vars) {
@@ -353,12 +600,13 @@ class Ledger {
     const [, round, ph] = key.split("|");
     const rk = round + "|" + ph;
     const roundSet = this.coreRound[rk] || new Set();
+    const lg = this.coreLeague[key.split("|")[0]] = this.coreLeague[key.split("|")[0]] || {};
     const ok = c => (c.match(/\{(\w+)\}/g) || []).every(m => vars[m.slice(1, -1)] != null && vars[m.slice(1, -1)] !== "");
     const chain = [cat, ...(FALLBACK[cat] || []), phase === "pre" ? "gpre" : "gpost"];
     const rank = {}; chain.forEach((c, i) => CORES[c].forEach(x => { if (rank[x] == null) rank[x] = i; }));
     let cores = Object.keys(rank).filter(ok);
-    // pirmiausia – šiame ture (visose lygose) dar nepanaudotas, mažiausiai kartų naudotas savo kategorijos tekstas
-    cores.sort((a, b) => (roundSet.has(a) - roundSet.has(b)) || (rank[a] - rank[b]) || ((this.coreCount[a] || 0) - (this.coreCount[b] || 0)) || (hash(key + a) - hash(key + b)));
+    // pirmiausia – šioje lygoje dar niekada nepanaudotas sakinys, tada – šiame ture kitose lygose nenaudotas, tada – savo kategorijos
+    cores.sort((a, b) => ((lg[a] || 0) - (lg[b] || 0)) || (roundSet.has(a) - roundSet.has(b)) || (rank[a] - rank[b]) || ((this.coreCount[a] || 0) - (this.coreCount[b] || 0)) || (hash(key + a) - hash(key + b)));
     const P = ["", ...PREFIX[phase]], S = ["", ...SUFFIX[phase]];
     const combos = [];
     P.forEach((p, i) => S.forEach((s, j) => combos.push({ p, s, lvl: (i ? 1 : 0) + (j ? 1 : 0) })));
@@ -369,7 +617,7 @@ class Ledger {
         const text = [x.p, body, x.s].filter(Boolean).join(" ");
         if (this.used.has(text)) continue;
         this.db.q[key] = { t: text, c: core };
-        this.used.add(text); this.coreCount[core] = (this.coreCount[core] || 0) + 1;
+        this.used.add(text); this.coreCount[core] = (this.coreCount[core] || 0) + 1; lg[core] = (lg[core] || 0) + 1;
         (this.coreRound[rk] = this.coreRound[rk] || new Set()).add(core);
         this.changed = true; return;
       }
@@ -401,7 +649,7 @@ function postCat(d, T, O, sT, sO) {
   const star = T.players.filter(p => p.mult > 0 && p.fp != null).sort((x, y) => y.fp * y.mult - x.fp * x.mult)[0];
   const avg = d.teams.reduce((a, t) => a + (t.official ?? t.total), 0) / d.teams.length;
   const o = optimal(T);
-  const vars = { opp: O.title.trim(), diff: fmtN(dd), cap: cap && cap.name, capPts: cap && cap.fp != null ? fmtN(cap.fp * 2) : null, star: star && star.name, lost: o ? fmtN(o.lost) : null };
+  const vars = { opp: O.title.trim(), diff: fmtN(dd), cap: cap && cap.name, capPts: cap && cap.fp != null ? fmtN(cap.fp * 2) : null, star: star && star.name, starPts: star ? fmtN(star.fp * star.mult) : null, lost: o ? fmtN(o.lost) : null };
   let cat;
   if (sT > sO) cat = dd >= 40 ? "bigwin" : dd < 6 ? "closewin" : sT < avg ? "lowwin" : "win";
   else if (sT === sO) cat = "closewin";
@@ -411,9 +659,11 @@ function postCat(d, T, O, sT, sO) {
   return { cat, vars };
 }
 
-function processLeagueRound(L, d, slug) {
+function processLeagueRound(L, d, slug, isCur) {
   if (!d || !d.teams || !d.games) return;
-  const started = d.games.some(g => g.status !== "scheduled");
+  // prieš turą – kol turas neprasidėjo; einamajam turui trūkstamas (pvz., išmestas kaip pasikartojantis) sugeneruojamas ir vėliau
+  const preMissing = isCur && d.teams.some(t => !L.has(`${slug}|${d.round}|pre|${t.title}`));
+  const started = d.games.some(g => g.status !== "scheduled") && !preMissing;
   const done = d.games.length > 0 && d.games.every(g => g.status === "final");
   const r = d.round;
   if (d.format === "h2h" && d.matchups) {
@@ -471,7 +721,8 @@ function processLeagueRound(L, d, slug) {
         else if (moved <= -2) cat = "cdown";
         else if (o && o.lost > 25) cat = "cbench";
         else cat = pos < n / 2 ? "cgood" : "cbad";
-        L.assign(`${slug}|${r}|post|${T.title}`, cat, { pts: fmtN(T.total), places: String(Math.abs(moved)), cap: cap && cap.name, capPts: cap && cap.fp != null ? fmtN(cap.fp * 2) : null, star: star && star.name, lost: o ? fmtN(o.lost) : null });
+        const flop = T.players.filter(p => p.mult > 0 && p.fp != null && !String(p.card).startsWith("b")).sort((x, y) => x.fp - y.fp)[0];
+        L.assign(`${slug}|${r}|post|${T.title}`, cat, { pts: fmtN(T.total), places: String(Math.abs(moved)), rank: String(Rn.rk(T)), cap: cap && cap.name, capPts: cap && cap.fp != null ? fmtN(cap.fp * 2) : null, star: star && star.name, starPts: star ? fmtN(star.fp * star.mult) : null, flop: flop && flop !== star && flop.fp < 8 ? flop.name : null, flopPts: flop ? fmtN(flop.fp) : null, lost: o ? fmtN(o.lost) : null });
       }
     }
   }
@@ -486,7 +737,7 @@ exports.run = function (DIR, slugs) {
     for (let r = 1; r < cur.round; r++) {
       try { processLeagueRound(L, JSON.parse(fs.readFileSync(path.join(DIR, slug + "-r" + r + ".json"), "utf8")), slug); } catch (e) {}
     }
-    processLeagueRound(L, cur, slug);
+    processLeagueRound(L, cur, slug, true);
   }
   L.save();
   if (L.changed) console.log("Trenerių komentarai atnaujinti");
