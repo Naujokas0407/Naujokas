@@ -12,17 +12,16 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: update
-  cancel-in-progress: false
-
 jobs:
+  # 1) Duomenų atnaujinimas – niekada nelaukia GitHub Pages leidimų, todėl negali užstrigti
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 8
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+    concurrency:
+      group: data
+      cancel-in-progress: false
+    outputs:
+      changed: ${{ steps.save.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,14 +51,25 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
-        uses: actions/configure-pages@v5
-
-      - if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
-        uses: actions/upload-pages-artifact@v3
+  # 2) Svetainės paskelbimas – atskirai; jei užstrigtų, kitas paleidimas senąjį atšaukia
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true' || github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: .
-
-      - if: steps.save.outputs.changed == 'true' || github.event_name != 'schedule'
-        id: deploy
+      - id: deploy
         uses: actions/deploy-pages@v4
