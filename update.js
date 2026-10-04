@@ -90,19 +90,30 @@ function noonNextDayVilnius(t) {
   const guess = Date.UTC(y, m - 1, d + 1, 12);
   return guess - vilniusOffset(guess);
 }
+// Į kitą turą perjungiama kitą dieną 12:00 Lietuvos laiku, bet ne vėliau kaip 2 val. 30 min. iki pirmųjų naujo turo rungtynių
+// (ir ne anksčiau nei ~2 val. 30 min. po paskutinių ankstesnio turo rungtynių pradžios)
+const H = 3600e3;
+function switchAt(rounds, i) {
+  const ts = k => rounds[k].matchdays.flatMap(m => m.games).filter(g => !g.canceled).map(g => new Date(g.start).getTime()).filter(Boolean);
+  const prev = ts(i - 1), next = ts(i);
+  if (!prev.length) return null;
+  const lastPrev = Math.max(...prev);
+  let t = noonNextDayVilnius(lastPrev);
+  if (next.length) t = Math.min(t, Math.min(...next) - 2.5 * H);
+  return Math.max(t, lastPrev + 2.5 * H);
+}
 function pickRound(rounds, now) {
   let r = 0;
   for (let i = 1; i < rounds.length; i++) {
-    const prev = rounds[i - 1].matchdays.flatMap(m => m.games).filter(g => !g.canceled).map(g => new Date(g.start).getTime()).filter(Boolean);
-    if (!prev.length) break;
-    if (now >= noonNextDayVilnius(Math.max(...prev))) r = i; else break;
+    const t = switchAt(rounds, i);
+    if (t != null && now >= t) r = i; else break;
   }
   return r;
 }
 
 // ---------- Bendra visoms lygoms: turas, rungtynės, Eurolygos statistika ----------
 async function buildShared() {
-  // Einamasis turas: į kitą turą perjungiama kitą dieną po paskutinių turo rungtynių 12:00 Lietuvos laiku
+  // Einamasis turas: žr. switchAt()
   const sched = await gql(Q_SCHED, { l: CONFIG.leagueId });
   const r = pickRound(sched.leagueRoundScheduleFromClient.rounds, Date.now());
   const pool = await gql(Q_POOL, { l: CONFIG.leagueId, r, p: CONFIG.pointCalcSystem });
