@@ -43,6 +43,12 @@ a.lg:hover,a.lg:focus-visible{border-color:var(--cap);background:var(--card-2);t
 .go{font-size:22px;color:var(--faint)}
 a.lg:hover .go{color:var(--cap)}
 .foot{font-size:12px;color:var(--faint);text-align:center;line-height:1.6}
+a.lg.cup{border-color:rgba(242,193,78,.45);background:linear-gradient(135deg,rgba(242,193,78,.14),var(--card) 60%)}
+a.lg.cup:hover,a.lg.cup:focus-visible{border-color:#f2c14e}
+a.lg.cup:hover .go{color:#f2c14e}
+.ico.cup{background:#1a1610;box-shadow:inset 0 0 0 1px rgba(242,193,78,.5)}
+.cup .nm{color:#ffe08a}
+.gold{color:#f2c14e;font-weight:600}
 @media (max-width:480px){ .wm{font-size:32px} .emblem{width:96px;height:96px} a.lg{grid-template-columns:auto 1fr;gap:12px} .go{display:none} }
 @media (prefers-reduced-motion:reduce){ a.lg{transition:none} }
 </style>
@@ -73,6 +79,11 @@ a.lg:hover .go{color:var(--cap)}
 
   <h2 class="h">Pasirinkite lygą</h2>
   <section class="leagues" id="leagues"></section>
+
+  <h2 class="h">Taurė</h2>
+  <section class="leagues">
+    <a class="lg cup" href="cup.html" id="cupCard"><span class="ico cup"><svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="cg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".45" stop-color="#f2c14e"/><stop offset="1" stop-color="#a8760a"/></linearGradient><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c14e"/><stop offset="1" stop-color="#8a5f08"/></linearGradient></defs><path d="M18 8h28v14c0 9-6 16-14 16s-14-7-14-16z" fill="url(#cg1)"/><path d="M18 12H9v4c0 7 5 12 11 13M46 12h9v4c0 7-5 12-11 13" fill="none" stroke="url(#cg2)" stroke-width="3.5" stroke-linecap="round"/><rect x="29" y="37" width="6" height="9" fill="url(#cg2)"/><rect x="20" y="46" width="24" height="5" rx="2" fill="url(#cg1)"/><rect x="16" y="51" width="32" height="7" rx="2.5" fill="url(#cg2)"/></svg></span><span><span class="nm">HLA Taurė</span><span class="meta"><span class="pill">32 komandos</span><span id="cupMeta">Grupės ir atkrintamosios · nuo 8 turo</span></span></span><span class="go" aria-hidden="true">→</span></a>
+  </section>
 
   <p class="foot">Neoficialus puslapis. Duomenys atsinaujina automatiškai rungtynių metu.</p>
 </main>
@@ -109,7 +120,9 @@ function card(L, d) {
 const box = document.getElementById("leagues");
 box.innerHTML = LEAGUES.map(L => card(L, null)).join("");
 Promise.all(LEAGUES.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
-  .then(ds => { box.innerHTML = LEAGUES.map((L, i) => card(L, ds[i])).join(""); });
+  .then(ds => { box.innerHTML = LEAGUES.map((L, i) => card(L, ds[i])).join("");
+    const d = ds[1]; if (!d) return; const r = d.round, el = document.getElementById("cupMeta");
+    el.innerHTML = r < 8 ? `Startas ${8} ture · liko ${8 - r} ${8 - r === 1 ? "turas" : "turai"}` : r <= 13 ? `<span class="gold">Grupių etapas</span> · ${r} turas` : r <= 23 ? `<span class="gold">Atkrintamosios</span> · ${r} turas` : "Taurė baigta"; });
 </script>
 </body>
 </html>
