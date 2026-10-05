@@ -880,11 +880,12 @@ async function loadCoach() {
 }
 const coachText = key => { const x = COACH && COACH.q && COACH.q[key]; return x ? esc(x.t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") : null; };
 const coachBlock = (team, html, lbl) => `<blockquote class="cq"><div class="cq-h">Komandos „${esc(team.trim())}“ treneris${lbl || ""}:</div>„${html}“</blockquote>`;
-// Rodomi abu komentarai: prieš turą pasakytas niekur nedingsta, po turo prisideda naujas
+// Rodomas vienas komentaras: iki turo pabaigos – prieš turą pasakytas, pasibaigus turui jį pakeičia komentaras po turo
 function coachTeam(T) {
-  const started = D.games.some(g => g.status !== "scheduled");
-  const pre = coachText(`${SLUG}|${D.round}|pre|${T.title}`), post = roundDone() ? coachText(`${SLUG}|${D.round}|post|${T.title}`) : null;
-  return (pre ? coachBlock(T.title, pre, started ? " prieš turą" : "") : "") + (post ? coachBlock(T.title, post, " po turo") : "");
+  const post = roundDone() ? coachText(`${SLUG}|${D.round}|post|${T.title}`) : null;
+  if (post) return coachBlock(T.title, post, " po turo");
+  const pre = coachText(`${SLUG}|${D.round}|pre|${T.title}`);
+  return pre ? coachBlock(T.title, pre, " prieš turą") : "";
 }
 function coachPair(A, B) {
   const out = [A, B].map(coachTeam).join("");
