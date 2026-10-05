@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<title>HLA Taurė · draftlive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b0d12; --card:#12151c; --card-2:#161a22; --line:#262b36; --line-2:#1c2029;
+  --ink:#f2f4f8; --ink-2:#d3d8e2; --muted:#8b93a5; --faint:#5f6779;
+  --gold:#f2c14e; --gold-2:#ffe08a; --gold-d:#b8860b; --gold-bg:rgba(242,193,78,.10);
+  --win:#4cd07d; --loss:#ff6b5e; --cap:#ff7a1a;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.45;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(60rem 28rem at 50% -8%,rgba(242,193,78,.16),transparent 60%)}
+a{color:inherit}
+.top{border-bottom:1px solid var(--line);padding-inline:16px;background:rgba(11,13,18,.85);position:sticky;top:0;z-index:5;backdrop-filter:blur(8px)}
+.top-in{max-width:1080px;margin:0 auto;height:54px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.back{color:var(--muted);text-decoration:none;font-size:14px}
+.back:hover{color:var(--ink)}
+.tl{font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+main{position:relative;max-width:1080px;margin:0 auto;padding:28px 16px 64px;display:flex;flex-direction:column;gap:22px}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding-top:6px}
+.trophy{width:132px;height:132px;filter:drop-shadow(0 14px 34px rgba(242,193,78,.35))}
+.ht{font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1;margin:0;background:linear-gradient(180deg,var(--gold-2),var(--gold) 55%,var(--gold-d));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hs{color:var(--muted);margin:0;max-width:34rem}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ink-2);border:1px solid rgba(242,193,78,.35);background:var(--gold-bg);border-radius:999px;padding:7px 14px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(242,193,78,.2)}
+.status.live i{background:var(--cap);box-shadow:0 0 0 4px rgba(255,122,26,.22)}
+.tabs{display:flex;gap:4px;justify-content:center;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:4px;align-self:center;flex-wrap:wrap}
+.tabs button{font:600 14px inherit;font-family:inherit;color:var(--muted);background:transparent;border:0;border-radius:9px;padding:8px 14px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--gold-bg);color:var(--gold-2);box-shadow:inset 0 0 0 1px rgba(242,193,78,.35)}
+.sub{font-size:13px;color:var(--muted);margin:4px 0 -10px}
+.note{font-size:13px;color:var(--ink-2);border:1px dashed rgba(242,193,78,.4);background:var(--gold-bg);border-radius:12px;padding:10px 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.card{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.gh{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px}
+.gl{display:flex;align-items:center;gap:10px;font-weight:700}
+.gbadge{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:800;color:#1a1204;background:linear-gradient(135deg,var(--gold-2),var(--gold) 60%,var(--gold-d))}
+.gr{font-size:12px;color:var(--muted)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:7px 10px;text-align:right;font-size:13.5px;white-space:nowrap}
+th{font-size:11.5px;font-weight:600;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line-2)}
+td{border-top:1px solid var(--line-2)}
+th.l,td.l{text-align:left}
+td.nm{white-space:normal;color:var(--ink)}
+td.rk{color:var(--faint);width:22px}
+tr.q1 td.rk{color:var(--gold)}
+.dv{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;border-radius:5px;padding:1px 5px;margin-right:6px;vertical-align:1px;border:1px solid var(--line);color:var(--muted)}
+.dv.d1{color:#1a1204;background:var(--gold);border-color:var(--gold)}
+.dv.d2{color:#e3e7ef;border-color:#8b93a5}
+.dv.d3{color:#e3a36b;border-color:#8a5a33}
+.dv.d4{color:var(--muted)}
+td.pts{font-weight:700;color:var(--ink)}
+.ms{border-top:1px solid var(--line);padding:6px 12px 10px}
+.ms summary{cursor:pointer;font-size:12.5px;color:var(--muted);padding:6px 2px;list-style:none}
+.ms summary::-webkit-details-marker{display:none}
+.ms summary::before{content:"▸ ";color:var(--faint)}
+.ms[open] summary::before{content:"▾ "}
+.m{display:grid;grid-template-columns:34px 1fr auto 1fr;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);padding:3px 0}
+.m .a{text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.m .b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.m .s{font-weight:600;color:var(--ink-2);white-space:nowrap}
+.m .w{color:var(--win)}
+.m.cur .s{color:var(--cap)}
+.stage{display:flex;flex-direction:column;gap:10px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:6px}
+.sh h3{margin:0;font-size:17px;letter-spacing:-.01em}
+.sh span{font-size:12.5px;color:var(--muted)}
+.ties{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.tie{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.tie.fin{border-color:rgba(242,193,78,.55);background:linear-gradient(180deg,rgba(242,193,78,.10),var(--card) 70%)}
+.tr{display:grid;grid-template-columns:30px 1fr auto auto auto;gap:8px;align-items:center;font-size:13.5px}
+.tr .sd{font-size:11px;font-weight:700;color:var(--gold)}
+.tr .tn{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-2)}
+.tr .lg{font-size:12px;color:var(--muted);min-width:42px;text-align:right}
+.tr .ag{font-weight:800;min-width:52px;text-align:right}
+.tr.won .tn{color:var(--ink);font-weight:700}
+.tr.won .ag{color:var(--win)}
+.tr.lost .tn,.tr.lost .ag{color:var(--faint)}
+.tr.tbd .tn{color:var(--faint);font-style:italic}
+.tf{font-size:11.5px;color:var(--faint);display:flex;justify-content:space-between;gap:8px}
+.half{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:4px 0 -2px}
+.champ{display:flex;flex-direction:column;align-items:center;gap:6px;border:1px solid rgba(242,193,78,.55);border-radius:16px;padding:18px;background:linear-gradient(180deg,rgba(242,193,78,.16),var(--card))}
+.champ b{font-size:22px;color:var(--gold-2)}
+.rules{display:flex;flex-direction:column;gap:12px}
+.rules .card{padding:14px 16px}
+.rules h3{margin:0 0 6px;font-size:15px;color:var(--gold-2)}
+.rules p,.rules li{margin:0;font-size:14px;color:var(--ink-2);line-height:1.6}
+.rules ul{margin:0;padding-left:18px}
+.sched{display:grid;grid-template-columns:1fr auto;gap:4px 16px;font-size:14px}
+.sched span:nth-child(odd){color:var(--ink-2)}
+.sched span:nth-child(even){color:var(--muted);text-align:right}
+.sched .on{color:var(--gold-2)!important;font-weight:700}
+.foot{font-size:12px;color:var(--faint);text-align:center}
+.gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding-inline:16px}
+.gate form{width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.gate h2{margin:0;font-size:20px;letter-spacing:-.02em}
+.gate p{margin:0;color:var(--muted);font-size:13.5px}
+.gate input{width:100%;font:500 16px inherit;font-family:inherit;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-align:center}
+.gate input:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.gate button{width:100%;font:600 15px inherit;font-family:inherit;padding:12px;border:0;border-radius:10px;background:var(--gold);color:#1a1204;cursor:pointer}
+.gate .gerr{color:var(--loss);font-size:13px;min-height:18px}
+.gate a{color:var(--muted);font-size:13px;text-decoration:none}
+@media (max-width:480px){.ht{font-size:31px}.trophy{width:108px;height:108px}.grid,.ties{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="gate" id="gate" hidden>
+  <form id="gateForm" autocomplete="off">
+    <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true"><use href="#cupIcon" width="64" height="64"/></svg>
+    <h2>HLA Taurė</h2>
+    <p>Įveskite HLA lygų slaptažodį</p>
+    <input id="gatePass" type="password" placeholder="Slaptažodis" aria-label="Slaptažodis">
+    <button type="submit">Įeiti</button>
+    <div class="gerr" id="gateErr" role="alert"></div>
+    <a href="./">← Visos lygos</a>
+  </form>
+</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".45" stop-color="#f2c14e"/><stop offset="1" stop-color="#a8760a"/></linearGradient>
+    <linearGradient id="gGold2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c14e"/><stop offset="1" stop-color="#8a5f08"/></linearGradient>
+    <symbol id="cupIcon" viewBox="0 0 64 64">
+      <path d="M18 8h28v14c0 9-6 16-14 16s-14-7-14-16z" fill="url(#gGold)"/>
+      <path d="M18 12H9v4c0 7 5 12 11 13M46 12h9v4c0 7-5 12-11 13" fill="none" stroke="url(#gGold2)" stroke-width="3.5" stroke-linecap="round"/>
+      <rect x="29" y="37" width="6" height="9" fill="url(#gGold2)"/>
+      <rect x="20" y="46" width="24" height="5" rx="2" fill="url(#gGold)"/>
+      <rect x="16" y="51" width="32" height="7" rx="2.5" fill="url(#gGold2)"/>
+      <path d="M26 14c0 6 2 11 5 13" fill="none" stroke="#fff6d6" stroke-opacity=".7" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+<header class="top"><div class="top-in">
+  <a class="back" href="./">← Visos lygos</a>
+  <span class="tl"><svg width="22" height="22" viewBox="0 0 64 64" aria-hidden="true"><use href="#cupIcon" width="64" height="64"/></svg>HLA Taurė</span>
+  <span></span>
+</div></header>
+<main>
+  <section class="hero">
+    <svg class="trophy" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="56" fill="#12151c" stroke="#3a3220" stroke-width="2"/>
+      <use href="#cupIcon" x="22" y="20" width="76" height="76"/>
+      <path d="M92 26l1.8 4 4 1.8-4 1.8-1.8 4-1.8-4-4-1.8 4-1.8z" fill="#ffe9a8"/>
+      <path d="M26 40l1.2 2.6 2.6 1.2-2.6 1.2-1.2 2.6-1.2-2.6-2.6-1.2 2.6-1.2z" fill="#ffe9a8" opacity=".8"/>
+    </svg>
+    <h1 class="ht">HLA Taurė</h1>
+    <p class="hs">32 komandos iš keturių divizionų. Grupės, atkrintamosios ir vienas čempionas.</p>
+    <span class="status" id="status"><i></i><span>Kraunama…</span></span>
+  </section>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-t="groups">Grupės</button>
+    <button role="tab" aria-selected="false" data-t="ko">Atkrintamosios</button>
+    <button role="tab" aria-selected="false" data-t="rules">Taisyklės</button>
+  </div>
+  <section id="groups"></section>
+  <section id="ko" hidden></section>
+  <section id="rules" class="rules" hidden></section>
+  <p class="foot">Rezultatai skaičiuojami automatiškai iš lygų duomenų (fantasy taškai iš BasketNews Fantasy).</p>
+</main>
+<script>
+const LG = [{ slug: "hla1", div: 1 }, { slug: "hla2", div: 2 }, { slug: "hla3", div: 3 }, { slug: "hla4", div: 4 }];
+const START = 8, SEED_AFTER = 7, GROUP_ROUNDS = [8, 9, 10, 11, 12, 13];
+const STAGES = [{ key: "r32", name: "1/16 finalo", gen: "1/16 finalo", r: [14, 15] }, { key: "r16", name: "1/8 finalo", gen: "1/8 finalo", r: [16, 17] }, { key: "qf", name: "Ketvirtfinalis", gen: "Ketvirtfinalio", r: [18, 19] }, { key: "sf", name: "Pusfinalis", gen: "Pusfinalio", r: [20, 21] }, { key: "f", name: "Finalas", r: [22, 23] }];
+const GN = "ABCDEFGH".split("");
+// grupės vidaus tvarkaraštis (indeksai: 0 – HLA1, 1 – HLA2, 2 – HLA3, 3 – HLA4)
+const GSCHED = [[[0, 3], [1, 2]], [[0, 2], [1, 3]], [[0, 1], [2, 3]], [[3, 0], [2, 1]], [[2, 0], [3, 1]], [[1, 0], [3, 2]]];
+// 1/16 finalo tinklelis (iš eilės: gretimos poros susitinka 1/8 finale)
+const BRACKET = ["A1-B4", "C2-D3", "E1-F4", "G2-H3", "B2-A3", "D1-C4", "F2-E3", "H1-G4", "B1-A4", "D2-C3", "F1-E4", "H2-G3", "A2-B3", "C1-D4", "E2-F3", "G1-H4"];
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const num = n => n == null ? "–" : String(Math.round(n * 100) / 100).replace(".", ",");
+let DATA = null, CUR = 0, RSTATE = "scheduled";
+
+async function load() {
+  const ds = await Promise.all(LG.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)));
+  if (ds.some(d => !d)) { document.querySelector("#status span").textContent = "Nepavyko įkelti duomenų"; return; }
+  DATA = ds.map((d, i) => ({ ...LG[i], d }));
+  CUR = Math.max(...ds.map(d => d.round));
+  const g = ds[0].games || [];
+  RSTATE = g.length && g.every(x => x.status === "final") ? "final" : g.some(x => x.status !== "scheduled") ? "live" : "scheduled";
+  render();
+}
+
+// komandos taškai konkrečiame Eurolygos ture (null – dar nežaista)
+function scoreOf(L, title, r) {
+  const d = L.d;
+  if (r > d.round) return null;
+  if (d.format === "h2h") {
+    if (r < d.round) { const m = (d.results || []).find(x => x.r === r && (x.a === title || x.b === title)); return m ? (m.a === title ? m.as : m.bs) : null; }
+    if (RSTATE === "scheduled") return null;
+    const t = d.teams.find(x => x.title === title); return t ? (t.official ?? t.total) : null;
+  }
+  if (r === d.round) { if (RSTATE === "scheduled") return null; const t = d.teams.find(x => x.title === title); return t ? t.total : null; }
+  const h = (d.history || {})[r]; return h && h[title] != null ? h[title] : null;
+}
+const isFinal = r => r < CUR || (r === CUR && RSTATE === "final");
+
+// lygos lentelė po N turo
+function standings(L, upto) {
+  const d = L.d, rows = d.teams.map(t => ({ title: t.title, w: 0, pts: 0 }));
+  const by = Object.fromEntries(rows.map(x => [x.title, x]));
+  for (let r = 1; r <= upto; r++) {
+    if (d.format === "h2h") {
+      (d.results || []).filter(m => m.r === r).forEach(m => { const A = by[m.a], B = by[m.b]; if (!A || !B) return; A.pts += m.as; B.pts += m.bs; if (m.as > m.bs) A.w++; else if (m.bs > m.as) B.w++; else { A.w += .5; B.w += .5; } });
+    } else rows.forEach(x => { const v = scoreOf(L, x.title, r); if (v != null) x.pts += v; });
+  }
+  return rows.sort((a, b) => d.format === "h2h" ? (b.w - a.w) || (b.pts - a.pts) : b.pts - a.pts);
+}
+
+function buildGroups() {
+  const lastDone = Math.min(SEED_AFTER, isFinal(CUR) ? CUR : CUR - 1);
+  const st = DATA.map(L => standings(L, lastDone));
+  // A: 1, 8, 1, 8 vietos; B: 2, 7, 2, 7 ... (lyginiai divizionai – atvirkščia tvarka)
+  const groups = GN.map((n, gi) => ({ name: n, teams: DATA.map((L, li) => { const pos = li % 2 === 0 ? gi : 7 - gi; const row = st[li][pos]; return row ? { title: row.title, L, div: L.div, seedPos: pos + 1 } : null; }).filter(Boolean) }));
+  return { groups, prelim: lastDone < SEED_AFTER, basedOn: lastDone };
+}
+
+function groupTable(G) {
+  const t = G.teams.map((x, i) => ({ ...x, i, w: 0, l: 0, dr: 0, pf: 0, pa: 0, gp: 0 }));
+  const matches = [];
+  GSCHED.forEach((pairs, k) => { const r = GROUP_ROUNDS[k];
+    pairs.forEach(([a, b]) => { const A = t[a], B = t[b]; if (!A || !B) return;
+      const sa = scoreOf(A.L, A.title, r), sb = scoreOf(B.L, B.title, r);
+      matches.push({ r, A, B, sa, sb, fin: isFinal(r) });
+      if (sa != null && sb != null && isFinal(r)) { A.gp++; B.gp++; A.pf += sa; A.pa += sb; B.pf += sb; B.pa += sa; if (sa > sb) { A.w++; B.l++; } else if (sb > sa) { B.w++; A.l++; } else { A.dr++; B.dr++; } }
+    }); });
+  t.sort((a, b) => ((b.w + b.dr / 2) - (a.w + a.dr / 2)) || (b.pf - a.pf) || (a.i - b.i));
+  t.forEach((x, k) => x.place = k + 1);
+  return { rows: t, matches };
+}
+
+function render() {
+  const { groups, prelim, basedOn } = buildGroups();
+  const tables = groups.map(G => ({ G, ...groupTable(G) }));
+  // būsena
+  const s = document.getElementById("status"), live = RSTATE === "live";
+  let txt;
+  if (CUR < START) txt = `Taurė prasidės ${START} ture · dabar ${CUR} turas`;
+  else if (CUR <= 13) txt = `Grupių etapas · ${CUR} turas (${CUR - 7}/6)${live ? " · vyksta" : ""}`;
+  else { const stg = STAGES.find(x => x.r.includes(CUR)); txt = stg ? `${stg.name} · ${stg.r.indexOf(CUR) + 1}-osios rungtynės${live ? " · vyksta" : ""}` : "Taurė baigta"; }
+  s.className = "status" + (live && CUR >= START ? " live" : ""); s.querySelector("span").textContent = txt;
+  renderGroups(tables, prelim, basedOn);
+  renderKO(tables);
+  renderRules();
+}
+
+function divChip(d) { return `<span class="dv d${d}">D${d}</span>`; }
+
+function renderGroups(tables, prelim, basedOn) {
+  const el = document.getElementById("groups");
+  let html = "";
+  if (prelim) html += `<p class="note">Grupės dar preliminarios: sudarytos pagal vietas lygose po ${basedOn || 0} turo. Galutinės grupės bus aiškios po ${SEED_AFTER} turo, o taurė prasidės ${START} ture.</p>`;
+  html += `<div class="grid">` + tables.map(({ G, rows, matches }) => {
+    const anyPlayed = rows.some(x => x.gp);
+    return `<article class="card"><div class="gh"><span class="gl"><span class="gbadge">${G.name}</span>Grupė ${G.name}</span><span class="gr">${anyPlayed ? rows[0].gp + "/6 sužaista" : "8–13 turai"}</span></div>
+      <table><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>P</th><th>Pr</th><th>Taškai</th></tr></thead><tbody>` +
+      (anyPlayed ? rows : [...rows].sort((a, b) => a.div - b.div)).map((x, k) => `<tr class="${anyPlayed && k === 0 ? "q1" : ""}"><td class="l rk">${anyPlayed ? x.place : "–"}</td><td class="l nm">${divChip(x.div)}${esc(x.title)}</td><td>${x.w + (x.dr ? "½" : "")}</td><td>${x.l}</td><td class="pts">${num(x.pf)}</td></tr>`).join("") +
+      `</tbody></table>
+      <details class="ms"${CUR >= START && CUR <= 13 ? " open" : ""}><summary>Rungtynės</summary>` +
+      matches.map(m => { const cur = m.r === CUR && !m.fin && m.sa != null; const aw = m.fin && m.sa > m.sb, bw = m.fin && m.sb > m.sa;
+        return `<div class="m ${cur ? "cur" : ""}"><span>${m.r} t.</span><span class="a ${aw ? "w" : ""}">${esc(m.A.title)}</span><span class="s">${m.sa == null ? "–" : num(m.sa) + " : " + num(m.sb)}</span><span class="b ${bw ? "w" : ""}">${esc(m.B.title)}</span></div>`; }).join("") +
+      `</details></article>`;
+  }).join("") + `</div>`;
+  el.innerHTML = html;
+}
+
+// ---- atkrintamosios ----
+function renderKO(tables) {
+  const el = document.getElementById("ko");
+  const groupsDone = isFinal(13);
+  const bySeed = {};
+  tables.forEach(({ G, rows }) => rows.forEach(x => { bySeed[G.name + x.place] = x; }));
+  const seedRank = x => x ? [x.place, -(x.pf || 0)] : [9, 0];
+  const better = (a, b) => { const ra = seedRank(a), rb = seedRank(b); return ra[0] !== rb[0] ? ra[0] < rb[0] : ra[1] <= rb[1]; };
+  const playTie = (a, b, stg) => {
+    const legs = stg.r.map(r => ({ r, sa: a ? scoreOf(a.L, a.title, r) : null, sb: b ? scoreOf(b.L, b.title, r) : null, fin: isFinal(r) }));
+    const ag = legs.reduce((s, l) => s + (l.sa ?? 0), 0), bg = legs.reduce((s, l) => s + (l.sb ?? 0), 0);
+    const done = a && b && legs.every(l => l.fin && l.sa != null && l.sb != null);
+    let win = null;
+    if (done) win = ag > bg ? a : bg > ag ? b : (better(a, b) ? a : b);
+    return { a, b, legs, ag, bg, done, win, started: legs.some(l => l.sa != null) };
+  };
+  let prev = BRACKET.map(p => { const [x, y] = p.split("-"); return { la: x, lb: y, a: groupsDone ? bySeed[x] : null, b: groupsDone ? bySeed[y] : null }; });
+  const out = [];
+  STAGES.forEach((stg, si) => {
+    const ties = prev.map(t => ({ ...t, ...playTie(t.a, t.b, stg), stg }));
+    out.push({ stg, ties });
+    const next = [];
+    for (let i = 0; i < ties.length; i += 2) next.push({ la: "NUG|" + stg.gen + " " + (i + 1) + " poros", lb: "NUG|" + stg.gen + " " + (i + 2) + " poros", a: ties[i].win, b: ties[i + 1] ? ties[i + 1].win : null });
+    prev = next;
+  });
+  const fin = out[out.length - 1].ties[0];
+  let html = "";
+  if (!groupsDone) html += `<p class="note">Poros paaiškės po grupių etapo (13 turo). Žemiau – tinklelis su grupių vietomis: tos pačios grupės 1-a ir 2-a vieta gali susitikti tik finale.</p>`;
+  if (fin.win) html += `<div class="champ"><svg width="72" height="72" viewBox="0 0 64 64" aria-hidden="true"><use href="#cupIcon" width="64" height="64"/></svg><span class="gr">HLA Taurės čempionas</span><b>${esc(fin.win.title)}</b></div>`;
+  html += out.map(({ stg, ties }) => `<div class="stage"><div class="sh"><h3>${stg.name}</h3><span>${stg.r[0]}–${stg.r[1]} turai · laimi dviejų turų suma</span></div>` +
+    (stg.key === "r32" ? `<div class="half">Viršutinė pusė</div>${tieGrid(ties.slice(0, 8), stg)}<div class="half">Apatinė pusė</div>${tieGrid(Object.assign(ties.slice(8), { off: 8 }), stg)}` : tieGrid(ties, stg)) + `</div>`).join("");
+  el.innerHTML = html;
+}
+function tieGrid(ties, stg) {
+  return `<div class="ties">` + ties.map(t => {
+    const row = (x, lab, leg, agg, side) => {
+      const cls = !t.done ? (x ? "" : "tbd") : (t.win === x ? "won" : "lost");
+      const nug = lab.startsWith("NUG|"), sd = nug ? "" : lab;
+      return `<div class="tr ${cls}"><span class="sd">${esc(sd)}</span><span class="tn">${x ? divChip(x.div) + esc(x.title) : esc(nug ? lab.slice(4) + " nugalėtojas" : "Grupės " + lab[0] + " " + lab[1] + " vieta")}</span>${t.legs.map(l => `<span class="lg">${(side ? l.sb : l.sa) == null ? "–" : num(side ? l.sb : l.sa)}</span>`).join("")}<span class="ag">${t.started && x ? num(agg) : ""}</span></div>`;
+    };
+    const live = t.legs.some(l => l.r === CUR && !l.fin && l.sa != null);
+    return `<div class="tie ${stg.key === "f" ? "fin" : ""}"><div class="tf"><span>${stg.key === "f" ? "Finalas" : (ties.indexOf(t) + 1 + (ties.off || 0)) + " pora"}</span><span></span></div>${row(t.a, t.la, 0, t.ag, false)}${row(t.b, t.lb, 1, t.bg, true)}<div class="tf"><span>${stg.r.map(r => r + " t.").join(" · ")}</span><span>${t.done ? "Baigta" : live ? "Vyksta" : t.started ? "Po 1-ųjų rungtynių" : ""}</span></div></div>`;
+  }).join("") + `</div>`;
+}
+
+function renderRules() {
+  const el = document.getElementById("rules");
+  const on = (a, b) => CUR >= a && CUR <= b ? "on" : "";
+  el.innerHTML = `
+  <div class="card"><h3>Dalyviai ir pradžia</h3><ul>
+    <li>Dalyvauja visos 32 komandos iš HLA 1–4 (po 8 komandas).</li>
+    <li>Taurė prasideda ${START} Eurolygos ture – kai visi savo lygose susitinka bent kartą.</li>
+    <li>Taurės rungtynes laimi komanda, tą Eurolygos turą surinkusi daugiau fantasy taškų (tie patys taškai kaip lygoje, ir HLA 4).</li></ul></div>
+  <div class="card"><h3>Grupių sudarymas (po ${SEED_AFTER} turo)</h3>
+    <p>8 grupės po 4 komandas, kiekvienoje po vieną iš kiekvieno diviziono. Skirstoma pagal vietas lygose, kad grupės būtų lygios:</p>
+    <ul><li>A – HLA1 1 vieta, HLA2 8, HLA3 1, HLA4 8</li><li>B – 2, 7, 2, 7 · C – 3, 6, 3, 6 · D – 4, 5, 4, 5</li><li>E – 5, 4, 5, 4 · F – 6, 3, 6, 3 · G – 7, 2, 7, 2 · H – 8, 1, 8, 1</li></ul>
+    <p>HLA 1–3 – pagal H2H lentelę, HLA 4 – pagal bendrą taškų sumą.</p></div>
+  <div class="card"><h3>Grupių etapas (8–13 turai)</h3><ul>
+    <li>Du ratai – kiekvienas su kiekvienu po 2 kartus (6 rungtynės).</li>
+    <li>Pergalė – 1, lygiosios – ½. Esant lygybei – lemia grupėje surinktų taškų suma.</li>
+    <li>Niekas neiškrenta – visos 32 komandos patenka į atkrintamąsias. Vieta grupėje lemia varžovą.</li></ul></div>
+  <div class="card"><h3>Atkrintamosios (14–23 turai)</h3><ul>
+    <li>Grupės poromis A–B, C–D, E–F, G–H: 1 vieta prieš kitos grupės 4, 2 – prieš 3.</li>
+    <li>Kiekviena pora – 2 turai, toliau eina surinkusi daugiau taškų per abu turus.</li>
+    <li>Lygi suma – praeina aukštesnę vietą grupėje užėmusi komanda.</li>
+    <li>Tinklelis fiksuotas iš anksto – tos pačios grupės 1-a ir 2-a vieta gali susitikti tik finale.</li></ul></div>
+  <div class="card"><h3>Tvarkaraštis</h3><div class="sched">
+    <span class="${on(8, 13)}">Grupės</span><span class="${on(8, 13)}">8–13 turai</span>
+    ${STAGES.map(s => `<span class="${on(s.r[0], s.r[1])}">${s.name}</span><span class="${on(s.r[0], s.r[1])}">${s.r[0]}–${s.r[1]} turai</span>`).join("")}
+  </div></div>`;
+}
+
+document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
+  ["groups", "ko", "rules"].forEach(id => document.getElementById(id).hidden = id !== b.dataset.t);
+}));
+
+// ---- slaptažodis (tas pats kaip HLA lygoms) ----
+const PASS_HLA = "00ad9aaae9d4bc03752cc8fc92ee855598982a6511ab0c6034069c5b29f806b8";
+const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(b => b.toString(16).padStart(2, "0")).join("");
+let started = false;
+function start() {
+  if (started) return; started = true;
+  document.getElementById("gate").hidden = true;
+  load(); setInterval(load, 60000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
+}
+{
+  document.getElementById("gate").hidden = false;
+  document.getElementById("gatePass").focus();
+  document.getElementById("gateForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const v = document.getElementById("gatePass").value.trim().toLowerCase();
+    if (await sha(v) === PASS_HLA) start();
+    else { document.getElementById("gateErr").textContent = "Neteisingas slaptažodis"; document.getElementById("gatePass").select(); }
+  });
+}
+</script>
+</body>
+</html>
