@@ -26,13 +26,62 @@ function optimal(t) {
 }
 const norm = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
 
+// ---- Turo Starting five, mėnesio MVP ir karčiausia mėnesio komanda ----
+const stars = fp => fp >= 40 ? 5 : fp >= 32 ? 4 : fp >= 25 ? 3 : fp >= 18 ? 2 : 1;
+const vilniusMonth = t => new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Vilnius", year: "numeric", month: "2-digit" }).format(new Date(t)).slice(0, 7);
+function roundMonth(d) { const ts = (d.games || []).map(g => new Date(g.start).getTime()).filter(Boolean); return ts.length ? vilniusMonth(Math.min(...ts)) : null; }
+// geriausias penketas: 2 gynėjai, 2 puolėjai, 1 centras (trūkstant pozicijų – geriausi likę)
+function bestFive(list) {
+  const pool = list.filter(p => p.fp != null).sort((a, b) => b.fp - a.fp), used = new Set(), out = [];
+  const take = (pos, n) => { for (const p of pool) { if (out.filter(x => x.slot === pos).length >= n) break; if (!used.has(p) && p.pos === pos) { used.add(p); out.push({ ...p, slot: pos }); } } };
+  take("G", 2); take("F", 2); take("C", 1);
+  for (const p of pool) { if (out.length >= 5) break; if (!used.has(p)) { used.add(p); out.push({ ...p, slot: p.pos || "?" }); } }
+  const order = { G: 0, F: 1, C: 2 };
+  return out.sort((a, b) => (order[a.slot] ?? 3) - (order[b.slot] ?? 3) || b.fp - a.fp).map(p => ({ name: p.name, club: p.club, pos: p.pos, fp: p.fp, own: p.own, stars: stars(p.fp) }));
+}
+function extras(archs) { // archs: [{lg, d}]
+  const rounds = {}, months = {};
+  archs.forEach(({ lg, d }) => {
+    const r = d.round, m = roundMonth(d);
+    const score = t => d.format === "h2h" ? (t.official ?? t.total) : t.total;
+    const R = rounds[r] = rounds[r] || {};
+    d.teams.forEach(t => t.players.filter(p => p.fp != null).forEach(p => { const k = p.name + "|" + p.club; const x = R[k] = R[k] || { name: p.name, club: p.club, pos: p.pos, fp: p.fp, own: [] }; x.own.push({ team: t.title.trim(), lg }); }));
+    if (!m) return;
+    const M = months[m] = months[m] || { rounds: new Set(), pl: {}, tm: {} };
+    M.rounds.add(r);
+    d.teams.forEach(t => {
+      const tk = lg + "|" + t.title; const T = M.tm[tk] = M.tm[tk] || { team: t.title.trim(), lg, pts: 0, n: 0, w: 0, l: 0 };
+      T.pts = r2(T.pts + score(t)); T.n++;
+      if (d.format === "h2h" && d.matchups) { const mu = d.matchups.find(x => x.a === t.title || x.b === t.title); if (mu) { const A = d.teams.find(x => x.title === mu.a), B = d.teams.find(x => x.title === mu.b); const sa = mu.as > 0 || mu.bs > 0 ? mu.as : score(A), sb = mu.as > 0 || mu.bs > 0 ? mu.bs : score(B); const mine = mu.a === t.title ? sa : sb, opp = mu.a === t.title ? sb : sa; if (mine > opp) T.w++; else if (opp > mine) T.l++; } }
+      t.players.filter(p => p.fp != null).forEach(p => { const k = p.name + "|" + p.club; const P = M.pl[k] = M.pl[k] || { name: p.name, club: p.club, pos: p.pos, fp: 0, n: 0, best: 0, seen: new Set(), own: {} }; if (!P.seen.has(r)) { P.seen.add(r); P.fp = r2(P.fp + p.fp); P.n++; P.best = Math.max(P.best, p.fp); } P.own[lg] = t.title.trim(); });
+    });
+  });
+  const dream = {}; Object.keys(rounds).forEach(r => { dream[r] = bestFive(Object.values(rounds[r])); });
+  const mon = {}; Object.entries(months).forEach(([m, M]) => {
+    const pl = Object.values(M.pl).sort((a, b) => b.fp - a.fp).map(({ seen, own, ...x }) => ({ ...x, own: Object.entries(own).map(([lg, team]) => ({ lg, team })) })), tm = Object.values(M.tm).filter(x => x.n === M.rounds.size).sort((a, b) => a.pts - b.pts);
+    mon[m] = { rounds: [...M.rounds].sort((a, b) => a - b), mvp: pl.slice(0, 3), bitter: tm.slice(0, 3), top: [...tm].sort((a, b) => b.pts - a.pts).slice(0, 3) };
+  });
+  return { dream, months: mon };
+}
+
 exports.run = function (DIR, slugs) {
+  const hla = [];
   for (const slug of slugs) {
     let cur; try { cur = JSON.parse(fs.readFileSync(path.join(DIR, slug + ".json"), "utf8")); } catch (e) { continue; }
     const arch = [];
+    let fpHist = {}; try { fpHist = JSON.parse(fs.readFileSync(path.join(DIR, "fp-hist.json"), "utf8")); } catch (e) {}
     for (let r = 1; r <= cur.round; r++) {
       let d; try { d = JSON.parse(fs.readFileSync(path.join(DIR, slug + "-r" + r + ".json"), "utf8")); } catch (e) { continue; }
-      if (d.games && d.games.length && d.games.every(g => g.status === "final")) arch.push(d);
+      const allFinal = d.games && d.games.length && d.games.every(g => g.status === "final");
+      if (!allFinal && !(r < cur.round && d.games && d.games.some(g => g.status !== "scheduled"))) continue;
+      if (!allFinal) {
+        // praėjęs turas, užfiksuotas dar nepasibaigus (pvz., kai stringa atnaujinimai): taškai papildomi oficialiais BN taškais
+        const H = fpHist[r] || {};
+        d.teams.forEach(t => { t.players.forEach(p => { if (p.id && H[p.id] != null) p.fp = H[p.id]; }); t.total = r2(t.players.reduce((a, p) => a + (p.fp ?? 0) * p.mult, 0)); });
+        if (d.format === "h2h" && d.matchups) d.matchups.forEach(m => { const x = (cur.results || []).find(z => z.r === r && z.a === m.a && z.b === m.b); if (x) { m.as = x.as; m.bs = x.bs; const A = d.teams.find(t => t.title === m.a), B = d.teams.find(t => t.title === m.b); if (A) A.official = x.as; if (B) B.official = x.bs; } });
+        d.games.forEach(g => g.status = "final");
+      }
+      arch.push(d);
     }
     let tx = null; try { tx = JSON.parse(fs.readFileSync(path.join(DIR, slug + "-tx.json"), "utf8")); } catch (e) {}
     const teams = {}, playerPts = {}, rankHist = {};
@@ -86,8 +135,20 @@ exports.run = function (DIR, slugs) {
     }
     deals.sort((a, b) => b.pts - a.pts);
     const players = Object.values(playerPts).sort((a, b) => b.pts - a.pts).slice(0, 10);
-    const out = { rounds: arch.map(d => d.round), teams, players, deals: deals.slice(0, 10), ranks: rankHist };
+    // komandos kortelei: geriausi žaidėjai ir taškai pagal turus
+    const teamTop = {}; Object.values(playerPts).forEach(p => { (teamTop[p.team] = teamTop[p.team] || []).push(p); });
+    Object.keys(teamTop).forEach(t => { teamTop[t] = teamTop[t].sort((a, b) => b.pts - a.pts).slice(0, 5); });
+    const teamRounds = {}; arch.forEach(d => d.teams.forEach(t => { (teamRounds[t.title] = teamRounds[t.title] || []).push({ r: d.round, pts: d.format === "h2h" ? (t.official ?? t.total) : t.total }); }));
+    const ex = extras(arch.map(d => ({ lg: slug, d })));
+    if (/^hla/.test(slug)) arch.forEach(d => hla.push({ lg: slug, d }));
+    const out = { rounds: arch.map(d => d.round), teams, players, deals: deals.slice(0, 10), ranks: rankHist, teamTop, teamRounds, dream: ex.dream, months: ex.months };
     const file = path.join(DIR, slug + "-season.json"), txt = JSON.stringify(out);
+    let old = null; try { old = fs.readFileSync(file, "utf8"); } catch (e) {}
+    if (old !== txt) fs.writeFileSync(file, txt);
+  }
+  // HLA bendri (taurei): Starting five ir mėnesio apdovanojimai iš visų 32 komandų
+  if (hla.length) {
+    const ex = extras(hla), file = path.join(DIR, "hla-extra.json"), txt = JSON.stringify(ex);
     let old = null; try { old = fs.readFileSync(file, "utf8"); } catch (e) {}
     if (old !== txt) fs.writeFileSync(file, txt);
   }
