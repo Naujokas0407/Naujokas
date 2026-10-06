@@ -125,6 +125,20 @@ td.pts{font-weight:700;color:var(--ink)}
 .ftrophy b{font-size:13px;color:var(--gold-2)}
 .ftrophy span{font-size:11px;color:var(--faint)}
 .pairs-h{margin-top:8px}
+.rps{display:flex;flex-direction:column;gap:12px}
+.rp{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:14px 16px}
+.rp h3{margin:0 0 8px;font-size:15.5px;color:var(--gold-2)}
+.rp p{margin:0 0 6px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+.rp p:last-child{margin-bottom:0}
+.rp b{color:var(--ink)}
+.aw{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.awt{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:12px 14px}
+.awt .h{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+.awt .v{font-size:15px;color:var(--ink-2)}.awt .v b{color:var(--gold-2);margin-left:4px}
+.awt .s{font-size:12px;color:var(--muted);margin-top:2px}
+.x{overflow-x:auto}
+#stats{display:flex;flex-direction:column;gap:14px}
+@media (max-width:480px){.aw{grid-template-columns:1fr 1fr;gap:8px}}
 .rules{display:flex;flex-direction:column;gap:12px}
 .rules .card{padding:14px 16px}
 .rules h3{margin:0 0 6px;font-size:15px;color:var(--gold-2)}
@@ -193,10 +207,14 @@ td.pts{font-weight:700;color:var(--ink)}
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-t="groups">Grupės</button>
     <button role="tab" aria-selected="false" data-t="ko">Atkrintamosios</button>
+    <button role="tab" aria-selected="false" data-t="rep">Reporteris</button>
+    <button role="tab" aria-selected="false" data-t="stats">Statistika</button>
     <button role="tab" aria-selected="false" data-t="rules">Taisyklės</button>
   </div>
   <section id="groups"></section>
   <section id="ko" hidden></section>
+  <section id="rep" hidden></section>
+  <section id="stats" hidden></section>
   <section id="rules" class="rules" hidden></section>
   <p class="foot">Rezultatai skaičiuojami automatiškai iš lygų duomenų (fantasy taškai iš BasketNews Fantasy).</p>
 </main>
@@ -285,7 +303,10 @@ function render() {
   else { const stg = STAGES.find(x => x.r.includes(CUR)); txt = stg ? `${stg.name} · ${stg.r.indexOf(CUR) + 1}-osios rungtynės${live ? " · vyksta" : ""}` : "Taurė baigta"; }
   s.className = "status" + (live && CUR >= START ? " live" : ""); s.querySelector("span").textContent = txt;
   renderGroups(tables, prelim, basedOn);
+  TABLES = tables;
   renderKO(tables);
+  try { renderReporter(); } catch (e) { console.error(e); }
+  try { renderStats(); } catch (e) { console.error(e); }
   renderRules();
 }
 
@@ -337,6 +358,7 @@ function renderKO(tables) {
     for (let i = 0; i < ties.length; i += 2) next.push({ la: "NUG|" + stg.gen + " " + (i + 1) + " poros", lb: "NUG|" + stg.gen + " " + (i + 2) + " poros", a: ties[i].win, b: ties[i + 1] ? ties[i + 1].win : null });
     prev = next;
   });
+  KO = out;
   const fin = out[out.length - 1].ties[0];
   let html = "";
   if (!groupsDone) html += `<p class="note">Poros paaiškės po grupių etapo (21 turo). Žemiau – tinklelis su grupių vietomis: tos pačios grupės 1-a ir 2-a vieta gali susitikti tik finale.</p>`;
@@ -383,6 +405,139 @@ function tieGrid(ties, stg) {
   }).join("") + `</div>`;
 }
 
+
+// ---- Taurės reporteris ir statistika ----
+let KO = null, TABLES = null;
+const hsh = s => { let h = 2166136261; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; } return h; };
+const pick = (arr, seed) => arr[hsh(seed) % arr.length];
+const tn = t => `<b>${esc(t.title)}</b>`;
+const lastFinal = () => isFinal(CUR) ? CUR : CUR - 1;
+// visos taurės rungtynės (grupių ir atkrintamųjų)
+function cupMatches() {
+  const out = [];
+  (TABLES || []).forEach(({ G, matches }) => matches.forEach(m => out.push({ ...m, stage: "Grupė " + G.name })));
+  (KO || []).forEach(({ stg, ties }) => ties.forEach(t => t.a && t.b && t.legs.forEach(l => out.push({ r: l.r, A: t.a, B: t.b, sa: l.sa, sb: l.sb, fin: l.fin, stage: stg.name }))));
+  return out;
+}
+// komandos sezono vidurkis per turą (visi baigti turai)
+function seasonAvg() {
+  const lf = lastFinal(), res = [];
+  DATA.forEach(L => L.d.teams.forEach(t => { let s = 0, n = 0; for (let r = 1; r <= lf; r++) { const v = scoreOf(L, t.title, r); if (v != null) { s += v; n++; } } res.push({ title: t.title, L, div: L.div, avg: n ? s / n : 0, n }); }));
+  return res.sort((a, b) => b.avg - a.avg);
+}
+function cupTeamStats() {
+  const M = cupMatches().filter(m => m.fin && m.sa != null && m.sb != null), by = {};
+  const T = x => by[x.title] = by[x.title] || { title: x.title, div: x.div, g: 0, w: 0, l: 0, d: 0, pf: 0, pa: 0, seq: [] };
+  M.sort((a, b) => a.r - b.r).forEach(m => { const A = T(m.A), B = T(m.B);
+    A.g++; B.g++; A.pf += m.sa; A.pa += m.sb; B.pf += m.sb; B.pa += m.sa;
+    if (m.sa > m.sb) { A.w++; B.l++; A.seq.push("W"); B.seq.push("L"); } else if (m.sb > m.sa) { B.w++; A.l++; A.seq.push("L"); B.seq.push("W"); } else { A.d++; B.d++; A.seq.push("D"); B.seq.push("D"); } });
+  Object.values(by).forEach(x => { let best = 0, cur = 0; x.seq.forEach(r => { cur = r === "W" ? cur + 1 : 0; best = Math.max(best, cur); }); x.streak = best; x.avg = x.g ? x.pf / x.g : 0; });
+  return { M, teams: Object.values(by) };
+}
+const tileC = (h, v, s) => `<div class="awt"><div class="h">${h}</div><div class="v">${v}</div>${s ? `<div class="s">${s}</div>` : ""}</div>`;
+
+function renderReporter() {
+  const el = document.getElementById("rep"); if (!el) return;
+  const arts = [], { M, teams } = cupTeamStats();
+  const art = (h, ps) => `<article class="rp"><h3>${h}</h3>${ps.map(p => `<p>${p}</p>`).join("")}</article>`;
+  if (CUR < START) {
+    const av = seasonAvg(), left = START - CUR;
+    const divAvg = [1, 2, 3, 4].map(d => { const x = av.filter(t => t.div === d); return { d, a: x.reduce((s, t) => s + t.avg, 0) / Math.max(1, x.length) }; }).sort((a, b) => b.a - a.a);
+    const p = [];
+    p.push(`Iki HLA Taurės starto liko <b>${left}</b> ${left === 1 ? "turas" : "turai"}. ${pick(["Trofėjus jau nupoliruotas, belieka išsiaiškinti, kas jį pakels.", "32 komandos, vienas trofėjus ir daug ambicijų.", "Lygose kovos tęsiasi, bet akys jau krypsta į taurę."], "pre" + CUR)}`);
+    if (av[0] && av[0].n) p.push(`Pagal sezono vidurkį didžiausi favoritai – ${tn(av[0])} (${num(av[0].avg)} tšk. per turą), ${tn(av[1])} ir ${tn(av[2])}. ${av[0].div > 1 ? `Įdomu, kad lyderis žaidžia net ${av[0].div}-ajame divizione – taurėje divizionai nieko nereiškia.` : ""}`);
+    if (divAvg[0]) p.push(`Stipriausias divizionas kol kas – <b>HLA ${divAvg[0].d}</b> (vidutiniškai ${num(divAvg[0].a)} tšk. per turą), silpniausias – HLA ${divAvg[3].d} (${num(divAvg[3].a)}). ${divAvg[0].d !== 1 ? "HLA 1 vardas dar turės pasiteisinti." : "Hierarchija kol kas veikia."}`);
+    const dark = [...av].reverse().find(t => t.div >= 3 && av.indexOf(t) < 12);
+    if (dark) p.push(`Tamsus arkliukas – ${tn(dark)} iš HLA ${dark.div}: ${num(dark.avg)} tšk. per turą, daugiau nei pusė aukštesnių divizionų komandų.`);
+    arts.push(art("Taurės anonsas", p));
+  }
+  // grupių etapas
+  if (CUR >= START && CUR <= GROUP_END + 0) {
+    const gm = M.filter(m => GROUP_ROUNDS.includes(m.r));
+    const rr = CUR > START && !cupMatches().some(m => m.r === CUR && m.sa != null) ? CUR - 1 : CUR;
+    const rm = cupMatches().filter(m => m.r === rr && m.stage.startsWith("Grupė") && m.sa != null && m.sb != null);
+    if (rm.length) {
+      const done = isFinal(rr), p = [];
+      const hi = rm.map(m => [{ t: m.A, v: m.sa, o: m.B }, { t: m.B, v: m.sb, o: m.A }]).flat().sort((a, b) => b.v - a.v)[0];
+      const big = [...rm].sort((a, b) => Math.abs(b.sa - b.sb) - Math.abs(a.sa - a.sb))[0];
+      const close = [...rm].sort((a, b) => Math.abs(a.sa - a.sb) - Math.abs(b.sa - b.sb))[0];
+      const ups = rm.filter(m => (m.sa > m.sb && m.A.div > m.B.div + 1) || (m.sb > m.sa && m.B.div > m.A.div + 1));
+      const rn = n => (n % 10 === 0 || (n % 100 > 10 && n % 100 < 20)) ? "rungtynių" : "rungtynės";
+      p.push(`${done ? "Turas baigtas" : "Turas dar vyksta"}: ${rm.length} ${rn(rm.length)} keturiose grupėse. Daugiausia surinko ${tn(hi.t)} – <b>${num(hi.v)}</b> tšk. prieš ${esc(hi.o.title)}.`);
+      const bw = big.sa > big.sb ? [big.A, big.B, big.sa, big.sb] : [big.B, big.A, big.sb, big.sa];
+      p.push(`${pick(["Triuškinanti", "Didžiausia", "Įspūdingiausia"], rr + "b")} pergalė – ${tn(bw[0])} ${num(bw[2])} : ${num(bw[3])} prieš ${esc(bw[1].title)} (+${num(bw[2] - bw[3])}).`);
+      if (Math.abs(close.sa - close.sb) < 8) p.push(`Nervų karas: ${esc(close.A.title)} ir ${esc(close.B.title)} skyrė vos ${num(Math.abs(close.sa - close.sb))} tšk.`);
+      ups.slice(0, 2).forEach(m => { const [w, l] = m.sa > m.sb ? [m.A, m.B] : [m.B, m.A]; p.push(`${pick(["Dovydas įveikė Galijotą", "Sensacija", "Divizionai – tik skaičiai"], m.r + w.title)}: HLA ${w.div} atstovas ${tn(w)} nugalėjo HLA ${l.div} komandą ${esc(l.title)}.`); });
+      arts.push(art(`${rr} turo apžvalga · grupių etapas`, p));
+    }
+    const p2 = [];
+    (TABLES || []).forEach(({ G, rows }) => { if (!rows.some(x => x.gp)) return; const a = rows[0], b = rows[1];
+      p2.push(`<b>Grupė ${G.name}:</b> pirmauja ${tn(a)} (${num(a.w + a.dr / 2)}–${a.l})${b && b.w + b.dr / 2 === a.w + a.dr / 2 ? `, bet ${esc(b.title)} turi tiek pat pergalių` : ""}. ${rows[rows.length - 1].w === 0 && rows[rows.length - 1].gp >= 2 ? `${esc(rows[rows.length - 1].title)} vis dar be pergalės.` : ""}`); });
+    const unbeaten = teams.filter(x => x.l === 0 && x.g >= 3);
+    if (unbeaten.length) p2.push(`Dar nepralaimėję: ${unbeaten.map(x => `<b>${esc(x.title)}</b>`).join(", ")}.`);
+    if (p2.length) arts.push(art("Grupių kova", p2));
+    // kito turo anonsas
+    const nr = RSTATE !== "scheduled" ? CUR + 1 : CUR;
+    if (nr <= GROUP_END && TABLES) {
+      const nm = [];
+      TABLES.forEach(({ G, rows, matches }) => matches.filter(m => m.r === nr).forEach(m => { const pa = rows.find(x => x.title === m.A.title), pb = rows.find(x => x.title === m.B.title); nm.push({ m, G, w: (pa && pb ? 20 - pa.place - pb.place : 0) + (m.A.div === m.B.div ? 3 : 0) }); }));
+      const top = nm.sort((a, b) => b.w - a.w).slice(0, 3);
+      if (top.length) arts.push(art(`${nr} turo anonsas`, [`Labiausiai laukiamos dvikovos: ` + top.map(x => `<b>${esc(x.m.A.title)}</b> – <b>${esc(x.m.B.title)}</b> (gr. ${x.G.name}${x.m.A.div === x.m.B.div ? `, HLA ${x.m.A.div} derbis` : ""})`).join("; ") + "."]));
+    }
+  }
+  // atkrintamosios
+  if (KO && CUR > GROUP_END) {
+    [...KO].reverse().forEach(({ stg, ties }) => {
+      if (!ties.some(t => t.started)) return;
+      const p = [], done = ties.filter(t => t.done);
+      if (done.length === ties.length) p.push(`${stg.name} baigtas. Toliau žengia: ${done.map(t => `<b>${esc(t.win.title)}</b>`).join(", ")}.`);
+      else p.push(`${stg.name}: baigta ${done.length} iš ${ties.length} porų.`);
+      const cl = done.filter(t => t.a && t.b).sort((x, y) => Math.abs(x.ag - x.bg) - Math.abs(y.ag - y.bg))[0];
+      if (cl) p.push(`Įtempčiausia pora – ${esc(cl.a.title)} ir ${esc(cl.b.title)}: skirtumas vos ${num(Math.abs(cl.ag - cl.bg))} tšk. per dvejas rungtynes.`);
+      done.forEach(t => { const l1 = t.legs[0]; if (!l1 || l1.sa == null) return; const w1 = l1.sa > l1.sb ? t.a : t.b; if (w1 !== t.win) p.push(`Sugrįžimas: ${tn(t.win)} pralaimėjo pirmąsias rungtynes, bet perrašė scenarijų ir eliminavo ${esc(w1.title)}.`); });
+      done.filter(t => t.win.div > (t.win === t.a ? t.b : t.a).div + 1).slice(0, 2).forEach(t => p.push(`Sensacija: HLA ${t.win.div} komanda ${tn(t.win)} išmetė aukštesnio diviziono varžovą.`));
+      const live = ties.filter(t => !t.done && t.started && t.a && t.b);
+      if (live.length) { const x = live.sort((a, b) => Math.abs(a.ag - a.bg) - Math.abs(b.ag - b.bg))[0]; p.push(`Kol kas arčiausiai – ${esc(x.a.title)} ${num(x.ag)} : ${num(x.bg)} ${esc(x.b.title)}.`); }
+      arts.push(art(stg.name, p));
+    });
+    const fin = KO[KO.length - 1].ties[0];
+    if (fin.win) arts.unshift(art("🏆 Turime čempioną!", [`HLA Taurę laimi ${tn(fin.win)}! Finale ${num(fin.win === fin.a ? fin.ag : fin.bg)} : ${num(fin.win === fin.a ? fin.bg : fin.ag)} įveikta ${esc((fin.win === fin.a ? fin.b : fin.a).title)}. ${pick(["Šampanas jau atšaldytas.", "Trofėjus keliauja į naujus namus.", "Istorija parašyta."], fin.win.title)}`]));
+  }
+  el.innerHTML = arts.length ? `<div class="rps">${arts.join("")}</div>` : `<p class="note">Reporteris pradės rašyti, kai tik prasidės taurė.</p>`;
+}
+
+function renderStats() {
+  const el = document.getElementById("stats"); if (!el) return;
+  const { M, teams } = cupTeamStats(); let html = "";
+  if (M.length) {
+    const all = M.flatMap(m => [{ t: m.A, v: m.sa, o: m.B, r: m.r }, { t: m.B, v: m.sb, o: m.A, r: m.r }]);
+    const hi = all.sort((a, b) => b.v - a.v)[0], lo = [...all].sort((a, b) => a.v - b.v)[0];
+    const big = [...M].sort((a, b) => Math.abs(b.sa - b.sb) - Math.abs(a.sa - a.sb))[0], bw = big.sa > big.sb ? [big.A, big.B, big.sa, big.sb] : [big.B, big.A, big.sb, big.sa];
+    const st = [...teams].sort((a, b) => b.streak - a.streak)[0], most = [...teams].sort((a, b) => b.pf - a.pf)[0], avg = [...teams].filter(x => x.g >= 2).sort((a, b) => b.avg - a.avg)[0];
+    html += `<div class="sub">Taurės rekordai</div><div class="aw">` +
+      tileC("Daugiausia per rungtynes", `${esc(hi.t.title)} <b>${num(hi.v)}</b>`, `${hi.r} turas, prieš ${esc(hi.o.title)}`) +
+      tileC("Didžiausia pergalė", `${esc(bw[0].title)} <b>+${num(bw[2] - bw[3])}</b>`, `${num(bw[2])} : ${num(bw[3])} prieš ${esc(bw[1].title)}`) +
+      (st && st.streak ? tileC("Ilgiausia pergalių serija", `${esc(st.title)} <b>${st.streak}</b>`, "pergalės iš eilės") : "") +
+      tileC("Daugiausia taškų taurėje", `${esc(most.title)} <b>${num(most.pf)}</b>`, `${most.g} rungtynės`) +
+      (avg ? tileC("Geriausias vidurkis", `${esc(avg.title)} <b>${num(avg.avg)}</b>`, "taškų per rungtynes") : "") +
+      tileC("Mažiausiai per rungtynes", `${esc(lo.t.title)} <b>${num(lo.v)}</b>`, `${lo.r} turas`) + `</div>`;
+    // divizionų kova
+    const dv = [1, 2, 3, 4].map(d => ({ d, g: 0, w: 0, l: 0, pf: 0, vs: {} }));
+    M.forEach(m => { if (m.A.div === m.B.div) return; const A = dv[m.A.div - 1], B = dv[m.B.div - 1]; A.g++; B.g++; A.pf += m.sa; B.pf += m.sb;
+      const k = (x, y, w) => { x.vs[y] = x.vs[y] || [0, 0]; x.vs[y][w ? 0 : 1]++; };
+      if (m.sa > m.sb) { A.w++; B.l++; k(A, m.B.div, 1); k(B, m.A.div, 0); } else if (m.sb > m.sa) { B.w++; A.l++; k(B, m.A.div, 1); k(A, m.B.div, 0); } });
+    html += `<div class="sub">Divizionų kova (rungtynės tarp skirtingų divizionų)</div><div class="card"><div class="x"><table><thead><tr><th class="l">Divizionas</th><th>P–Pr</th><th>%</th>${[1, 2, 3, 4].map(d => `<th>prieš D${d}</th>`).join("")}<th>Vid.</th></tr></thead><tbody>` +
+      [...dv].sort((a, b) => (b.w / Math.max(1, b.g)) - (a.w / Math.max(1, a.g))).map(x => `<tr><td class="l">${divChip(x.d)}HLA ${x.d}</td><td class="pts">${x.w}–${x.l}</td><td>${x.g ? Math.round(x.w / x.g * 100) : 0}</td>${[1, 2, 3, 4].map(d => `<td>${d === x.d ? "–" : x.vs[d] ? x.vs[d][0] + "–" + x.vs[d][1] : "0–0"}</td>`).join("")}<td>${x.g ? num(x.pf / x.g) : "–"}</td></tr>`).join("") + `</tbody></table></div></div>`;
+    html += `<div class="sub">Visos komandos taurėje</div><div class="card"><div class="x"><table><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>R</th><th>P</th><th>Pr</th><th>Taškai</th><th>Vid.</th><th>Serija</th></tr></thead><tbody>` +
+      [...teams].sort((a, b) => (b.w + b.d / 2) - (a.w + a.d / 2) || b.pf - a.pf).map((x, i) => `<tr><td class="l rk">${i + 1}</td><td class="l nm">${divChip(x.div)}${esc(x.title)}</td><td>${x.g}</td><td>${num(x.w + x.d / 2)}</td><td>${x.l}</td><td class="pts">${num(x.pf)}</td><td>${num(x.avg)}</td><td>${x.streak || ""}</td></tr>`).join("") + `</tbody></table></div></div>`;
+  } else html += `<p class="note">Taurės statistika atsiras po pirmųjų taurės rungtynių (${START} turas). Kol kas – visų 32 komandų pajėgumas šį sezoną.</p>`;
+  // sezono pajėgumas – visada
+  const av = seasonAvg();
+  html += `<div class="sub">Sezono pajėgumo reitingas · vidutiniai taškai per turą (po ${lastFinal()} turo)</div><div class="card"><div class="x"><table><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>Vid.</th><th>Turų</th></tr></thead><tbody>` +
+    av.map((x, i) => `<tr class="${i < 8 ? "q1" : ""}"><td class="l rk">${i + 1}</td><td class="l nm">${divChip(x.div)}${esc(x.title)}</td><td class="pts">${num(x.avg)}</td><td>${x.n}</td></tr>`).join("") + `</tbody></table></div></div>`;
+  el.innerHTML = html;
+}
+
 function renderRules() {
   const el = document.getElementById("rules");
   const on = (a, b) => CUR >= a && CUR <= b ? "on" : "";
@@ -412,7 +567,7 @@ function renderRules() {
 
 document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
-  ["groups", "ko", "rules"].forEach(id => document.getElementById(id).hidden = id !== b.dataset.t);
+  ["groups", "ko", "rep", "stats", "rules"].forEach(id => document.getElementById(id).hidden = id !== b.dataset.t);
 }));
 
 // ---- slaptažodis (tas pats kaip HLA lygoms) ----
