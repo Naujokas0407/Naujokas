@@ -1162,7 +1162,7 @@ function dreamCard(dream, r, owners) {
 function monthCard(months, k, owners, teamLbl) {
   const M = months[k]; if (!M) return "";
   const mv = M.mvp[0], bt = M.bitter[0], tp = M.top[0];
-  return `<div class="card dt"><div class="dt-h"><button type="button" class="dt-nav" data-mo="-1" aria-label="Ankstesnis mėnuo">‹</button><div><div class="h">🗓 ${monthName(k)}</div><div class="sub">${M.rounds.length === 1 ? M.rounds[0] + " turas" : M.rounds[0] + "–" + M.rounds[M.rounds.length - 1] + " turai"}</div></div><button type="button" class="dt-nav" data-mo="1" aria-label="Kitas mėnuo">›</button></div>
+  return `<div class="card dt"><div class="dt-h"><button type="button" class="dt-nav" data-mo="-1" aria-label="Ankstesnis mėnuo">‹</button><div><div class="h">📅 ${monthName(k)}</div><div class="sub">${M.rounds.length === 1 ? M.rounds[0] + " turas" : M.rounds[0] + "–" + M.rounds[M.rounds.length - 1] + " turai"}</div></div><button type="button" class="dt-nav" data-mo="1" aria-label="Kitas mėnuo">›</button></div>
     <div class="aw">` +
     (mv ? tile("👑 Mėnesio MVP", `${esc(mv.name)} <b>${num(mv.fp)}</b>`, `${esc(tv(mv.club))} · ${mv.n} ${mv.n === 1 ? "turas" : "turai"} · geriausias ${num(mv.best)} FP<br>${owners(mv)}`) : "") +
     (tp ? tile("🏆 Mėnesio komanda", `${teamLbl(tp)} <b>${num(tp.pts)}</b>`, `${tp.n} ${tp.n === 1 ? "turas" : "turai"}${tp.w + tp.l ? ` · ${tp.w}–${tp.l}` : ""}`) : "") +
