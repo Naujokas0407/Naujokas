@@ -122,7 +122,7 @@ box.innerHTML = LEAGUES.map(L => card(L, null)).join("");
 Promise.all(LEAGUES.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
   .then(ds => { box.innerHTML = LEAGUES.map((L, i) => card(L, ds[i])).join("");
     const d = ds[1]; if (!d) return; const r = d.round, el = document.getElementById("cupMeta");
-    el.innerHTML = r < 8 ? `Startas ${8} ture · liko ${8 - r} ${8 - r === 1 ? "turas" : "turai"}` : r <= 13 ? `<span class="gold">Grupių etapas</span> · ${r} turas` : r <= 23 ? `<span class="gold">Atkrintamosios</span> · ${r} turas` : "Taurė baigta"; });
+    el.innerHTML = r < 8 ? `Startas ${8} ture · liko ${8 - r} ${8 - r === 1 ? "turas" : "turai"}` : r <= 21 ? `<span class="gold">Grupių etapas</span> · ${r} turas` : r <= 31 ? `<span class="gold">Atkrintamosios</span> · ${r} turas` : "Taurė baigta"; });
 </script>
 </body>
 </html>
