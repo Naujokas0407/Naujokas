@@ -280,6 +280,27 @@ a.brand{text-decoration:none}
 .pm-x{position:absolute;top:10px;right:10px;border:0;background:var(--soft);color:var(--ink);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:14px}
 .pm-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding-right:36px}
 .pm-n{font-size:19px;font-weight:700}
+.dts{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;align-items:start}
+@media (max-width:560px){.dts{grid-template-columns:1fr}}
+.dt{padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.dt-h{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;text-align:center}
+.dt-h .h{font-weight:700}
+.dt-nav{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--ink-2);font-size:18px;cursor:pointer}
+.dt-r{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:6px 0;border-top:1px solid var(--line-2)}
+.dt-r.sm{padding:4px 0;font-size:13.5px}
+.dt-p{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:11.5px;font-weight:800;background:rgba(255,122,26,.14);color:var(--cap)}
+.dt-n{min-width:0;font-size:14px;color:var(--ink-2)}
+.dt-o{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dt-v{display:flex;flex-direction:column;align-items:flex-end;gap:1px}
+.dt-v b{font-size:15px}
+.stars{color:#f2c14e;font-size:12px;letter-spacing:1px}.stars i{font-style:normal;color:#3a4150}
+.dt-f{font-size:11.5px;color:var(--faint);border-top:1px solid var(--line-2);padding-top:6px}
+.frm2{display:flex;gap:6px;flex-wrap:wrap}
+.fch{min-width:30px;padding:3px 7px;border-radius:7px;border:1px solid var(--line);text-align:center;font-size:12.5px;font-weight:700;color:var(--ink-2)}
+.fch.w{color:#4cd07d;border-color:rgba(76,208,125,.4)}.fch.l{color:#ff6b5e;border-color:rgba(255,107,94,.4)}
+.cuplink{display:block;text-align:center;padding:10px;border:1px solid rgba(242,193,78,.45);border-radius:10px;color:#ffe08a;text-decoration:none;font-weight:600}
+[data-team]{cursor:pointer}
+[data-team]:hover{text-decoration:underline;text-decoration-color:var(--faint)}
 .pm-s{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .pm-s div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px}
 .pm-s b{font-size:18px}
@@ -461,7 +482,7 @@ function render() {
     order.map((i, k) => {
       const t = D.teams[i]; const counted = t.players.filter(p => p.mult > 0);
       const c = s => counted.filter(p => playerState(p) === s).length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${num(t.total)}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td>${showProj ? `<td class="hide-s">~${num(projection(t).proj)}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
+      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l"><span data-team="${esc(t.title)}">${esc(t.title)}</span></td><td class="pts">${num(t.total)}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td>${showProj ? `<td class="hide-s">~${num(projection(t).proj)}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
     }).join("") + `</tbody></table></div></div>`;
   html += progressShell();
 
@@ -482,7 +503,7 @@ function render() {
       return `<tr class="${p.card.startsWith("i") ? "dim" : ""} ${sep ? "sep" : ""} ${p.oc ? "onc" : ""}"><td class="l pl">${slotChip(p.card)}<span class="nm">${nameMark(p)}</span>${p.cap ? '<span class="cap" title="Kapitonas ×2">C</span>' : ""}${hBadge(p)}${ml([gameLabel(p), p.fp == null ? "" : "FP " + fpCell + " ×" + p.mult, p.st ? brief(p.st) : ((state === "played" || p.dnp) ? "DNP" : "")])}</td><td class="fp">${fpCell}</td><td class="mx">×${p.mult}</td><td class="pt">${ptsCell}</td><td class="gm l">${gameLabel(p)}</td>${tail}</tr>`;
     }).join("");
     const tot = counted.length ? `<tr class="tot"><td class="l">Iš viso</td><td class="fp"></td><td class="mx"></td><td class="pt">${num(t.total)}</td><td class="gm"></td>` + tds([Math.round(sum(0) / 60), sum(1), `${sum(2)}-${sum(3)}`, `${sum(4)}-${sum(5)}`, `${sum(6)}-${sum(7)}`, sum(8), sum(9), sum(10), sum(11), sum(12), sum(13), sum(14), sum(15), sum(16), sum(17), num(sum(18))]) + `</tr>` : "";
-    html += `<div class="card ${isMe(t) ? "me" : ""}" id="team-${i}"><div class="team-h"><div><div class="n">${esc(t.title)}</div><div class="tsub">${teamSub(t)}</div></div><div class="t">${LVB(liveN(t))} ${num(t.official ?? t.total)}</div></div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="fp">FP</th><th class="mx">×</th><th>Tšk</th><th class="l gm">Rungtynės</th>${STAT_H}</tr></thead><tbody>${rows}${tot}</tbody></table></div></div>`;
+    html += `<div class="card ${isMe(t) ? "me" : ""}" id="team-${i}"><div class="team-h"><div><div class="n"><span data-team="${esc(t.title)}">${esc(t.title)}</span></div><div class="tsub">${teamSub(t)}</div></div><div class="t">${LVB(liveN(t))} ${num(t.official ?? t.total)}</div></div><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="fp">FP</th><th class="mx">×</th><th>Tšk</th><th class="l gm">Rungtynės</th>${STAT_H}</tr></thead><tbody>${rows}${tot}</tbody></table></div></div>`;
   });
   document.getElementById("fantasy").innerHTML = html;
   bindProgress();
@@ -531,7 +552,7 @@ function h2hHtml(isMe) {
   const hasDraw = Object.values(st).some(x => x.d);
   const table = `<div class="card"><div class="x"><table class="stand"><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>P</th><th>Pr</th>${hasDraw ? "<th>L</th>" : ""}<th title="Visų sezono turų taškų suma">Taškai</th><th>Šio turo</th><th>Liko</th></tr></thead><tbody>` +
     order.map((i, k) => { const t = D.teams[i], s = st[t.title]; const left = t.players.filter(p => p.mult > 0 && playerState(p) === "toplay").length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l">${esc(t.title)}</td><td class="pts">${s.w}</td><td>${s.l}</td>${hasDraw ? `<td>${s.d}</td>` : ""}<td>${num(s.pf)}</td><td>${num(t.official ?? t.total)}${LVB(liveN(t))}</td><td>${left}</td></tr>`; }).join("") +
+      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l"><span data-team="${esc(t.title)}">${esc(t.title)}</span></td><td class="pts">${s.w}</td><td>${s.l}</td>${hasDraw ? `<td>${s.d}</td>` : ""}<td>${num(s.pf)}</td><td>${num(t.official ?? t.total)}${LVB(liveN(t))}</td><td>${left}</td></tr>`; }).join("") +
     `</tbody></table></div></div>`;
   return `<div class="sub">${D.round} turo poros</div><div class="mus">${cards}</div><div class="sub">Lentelė (pergalės / pralaimėjimai)</div>` + table;
 }
@@ -721,7 +742,8 @@ function seasonClassic() {
 
 function renderSeason() {
   const el = document.getElementById("season");
-  el.innerHTML = D.format === "h2h" ? roundAwards() + h2hMeetings() + seasonH2H() + seasonOscars() : roundAwards() + seasonOscars() + classicRecords() + seasonClassic();
+  el.innerHTML = D.format === "h2h" ? roundAwards() + dreamSection() + h2hMeetings() + seasonH2H() + seasonOscars() : roundAwards() + dreamSection() + seasonOscars() + classicRecords() + seasonClassic();
+  bindDream(el);
   el.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => { document.getElementById("tab-fantasy").click(); const x = document.getElementById(tr.dataset.jump); if (x) x.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
 
@@ -1123,6 +1145,75 @@ document.addEventListener("click", e => {
   if (e.target.id === "pm" || e.target.closest(".pm-x")) closePlayer();
 }, true);
 document.addEventListener("keydown", e => { if (e.key === "Escape") closePlayer(); if ((e.key === "Enter" || e.key === " ") && e.target.dataset && e.target.dataset.pid) { e.preventDefault(); openPlayer(e.target.dataset.pid); } });
+
+
+// ---- Turo Starting five, mėnesio apdovanojimai ----
+const MONTHS_LT = ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis"];
+const monthName = k => { const [y, m] = k.split("-").map(Number); return MONTHS_LT[m - 1] + " " + y; };
+const starsHtml = n => `<span class="stars" aria-label="${n} iš 5">${"★".repeat(n)}<i>${"★".repeat(5 - n)}</i></span>`;
+const posName = { G: "Gynėjas", F: "Puolėjas", C: "Centras" };
+let dreamR = null, monthK = null;
+function dreamCard(dream, r, owners) {
+  const list = dream[r] || [];
+  return `<div class="card dt"><div class="dt-h"><button type="button" class="dt-nav" data-dr="-1" aria-label="Ankstesnis turas">‹</button><div><div class="h">⭐ ${r} turo Starting five</div><div class="sub">Geriausi turo žaidėjai pagal pozicijas: 2 gynėjai, 2 puolėjai, centras</div></div><button type="button" class="dt-nav" data-dr="1" aria-label="Kitas turas">›</button></div>` +
+    list.map(p => `<div class="dt-r"><span class="dt-p" title="${posName[p.pos] || ""}">${esc(p.pos || "?")}</span><div class="dt-n"><b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span><div class="dt-o">${owners(p)}</div></div><div class="dt-v"><b>${num(p.fp)}</b>${starsHtml(p.stars)}</div></div>`).join("") +
+    `<div class="dt-f">Komandos taškai: <b>${num(list.reduce((a, p) => a + p.fp, 0))}</b> FP · ★ – iki 18, ★★ – 18+, ★★★ – 25+, ★★★★ – 32+, ★★★★★ – 40+ FP</div></div>`;
+}
+function monthCard(months, k, owners, teamLbl) {
+  const M = months[k]; if (!M) return "";
+  const mv = M.mvp[0], bt = M.bitter[0], tp = M.top[0];
+  return `<div class="card dt"><div class="dt-h"><button type="button" class="dt-nav" data-mo="-1" aria-label="Ankstesnis mėnuo">‹</button><div><div class="h">🗓 ${monthName(k)}</div><div class="sub">${M.rounds.length === 1 ? M.rounds[0] + " turas" : M.rounds[0] + "–" + M.rounds[M.rounds.length - 1] + " turai"}</div></div><button type="button" class="dt-nav" data-mo="1" aria-label="Kitas mėnuo">›</button></div>
+    <div class="aw">` +
+    (mv ? tile("👑 Mėnesio MVP", `${esc(mv.name)} <b>${num(mv.fp)}</b>`, `${esc(tv(mv.club))} · ${mv.n} ${mv.n === 1 ? "turas" : "turai"} · geriausias ${num(mv.best)} FP<br>${owners(mv)}`) : "") +
+    (tp ? tile("🏆 Mėnesio komanda", `${teamLbl(tp)} <b>${num(tp.pts)}</b>`, `${tp.n} ${tp.n === 1 ? "turas" : "turai"}${tp.w + tp.l ? ` · ${tp.w}–${tp.l}` : ""}`) : "") +
+    (bt ? tile("🍋 Karčiausia mėnesio komanda", `${teamLbl(bt)} <b>${num(bt.pts)}</b>`, `${bt.n} ${bt.n === 1 ? "turas" : "turai"}${bt.w + bt.l ? ` · ${bt.w}–${bt.l}` : ""} · ${pick(["Kava šį mėnesį buvo labai karti.", "Mėnuo, kurį norisi pamiršti.", "Citrinos – ir tos saldesnės.", "Kitas mėnuo tikrai bus geresnis. Tikrai."], k + bt.team)}`) : "") +
+    `</div>${M.mvp.length > 1 ? `<div class="sub">MVP lenktynės: ${M.mvp.map((p, i) => `${i + 1}. ${esc(p.name)} (${num(p.fp)})`).join(" · ")}</div>` : ""}</div>`;
+}
+function dreamSection() {
+  if (!SEAS || !SEAS.dream || !Object.keys(SEAS.dream).length) return "";
+  const rs = Object.keys(SEAS.dream).map(Number).sort((a, b) => a - b), ms = Object.keys(SEAS.months || {}).sort();
+  if (dreamR == null || !rs.includes(dreamR)) dreamR = rs[rs.length - 1];
+  if (monthK == null || !ms.includes(monthK)) monthK = ms[ms.length - 1];
+  const owners = p => p.own ? p.own.map(o => esc(o.team)).join(", ") : "";
+  return `<div class="sub">Žaidėjų apdovanojimai</div><div class="dts">${dreamCard(SEAS.dream, dreamR, owners)}${monthK ? monthCard(SEAS.months, monthK, owners, x => esc(x.team)) : ""}</div>`;
+}
+function bindDream(el) {
+  el.querySelectorAll("[data-dr]").forEach(b => b.addEventListener("click", () => { const rs = Object.keys(SEAS.dream).map(Number).sort((a, b) => a - b); const i = rs.indexOf(dreamR) + +b.dataset.dr; if (i >= 0 && i < rs.length) { dreamR = rs[i]; renderSeason(); } }));
+  el.querySelectorAll("[data-mo]").forEach(b => b.addEventListener("click", () => { const ms = Object.keys(SEAS.months).sort(); const i = ms.indexOf(monthK) + +b.dataset.mo; if (i >= 0 && i < ms.length) { monthK = ms[i]; renderSeason(); } }));
+}
+
+// ---- Komandos kortelė ----
+function openTeam(title) {
+  const T = D.teams.find(t => t.title === title); if (!T) return;
+  const pm = document.getElementById("pm"), body = document.getElementById("pmBody");
+  const S = SEAS && SEAS.teams ? SEAS.teams[title] : null, rounds = (SEAS && SEAS.teamRounds && SEAS.teamRounds[title]) || [];
+  const hist = [...rounds]; if (viewR == null && !hist.some(x => x.r === D.round) && D.games.some(g => g.status !== "scheduled")) hist.push({ r: D.round, pts: T.official ?? T.total, cur: true });
+  let place = "–", rec = "", form = "";
+  if (D.format === "h2h") {
+    const { per } = h2hGames(); const st = D.teams.map(t => { const l = per[t.title] || []; return { t: t.title, w: l.filter(g => g.res === "W").length, d: l.filter(g => g.res === "D").length, l: l.filter(g => g.res === "L").length, pf: l.reduce((a, g) => a + g.pf, 0) }; }).sort((a, b) => (b.w + b.d / 2) - (a.w + a.d / 2) || b.pf - a.pf);
+    const me = st.find(x => x.t === title); place = st.indexOf(me) + 1; rec = `${me.w}–${me.l}${me.d ? "–" + me.d : ""}`;
+    form = (per[title] || []).slice(-5).map(g => `<span class="fch ${g.res === "W" ? "w" : g.res === "L" ? "l" : ""}" title="${g.r} t.: ${num(g.pf)} : ${num(g.pa)} prieš ${esc(g.opp)}">${g.res === "W" ? "P" : g.res === "L" ? "Pr" : "L"}</span>`).join("");
+  } else {
+    const hs = D.history || {}, rr = Object.keys(hs).map(Number).filter(r => r <= D.round);
+    const tot = t => rr.reduce((a, r) => a + (r === D.round ? t.total : ((hs[r] || {})[t.title] ?? 0)), 0);
+    const o = [...D.teams].sort((a, b) => tot(b) - tot(a)); place = o.indexOf(T) + 1; rec = num(tot(T)) + " tšk.";
+    const rk = (SEAS && SEAS.ranks && SEAS.ranks[title]) || []; form = rk.slice(-5).map(x => `<span class="fch" title="${x.r} turas">${x.rank}.</span>`).join("");
+  }
+  const vals = hist.map(x => x.pts), avg = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null, mx = Math.max(1, ...vals);
+  const bars = hist.map(x => `<div class="pb" title="${x.r} turas: ${num(x.pts)}"><span class="pbv">${num(x.pts)}</span><i style="height:${Math.max(3, Math.round(x.pts / mx * 70))}px" class="${x.cur ? "cur" : ""}"></i><span class="pbr">${x.r} t.</span></div>`).join("");
+  const top = (SEAS && SEAS.teamTop && SEAS.teamTop[title]) || [];
+  const h2h = D.format === "h2h" ? D.teams.filter(t => t.title !== title).map(t => { const R = h2hRecord(title, t.title); return R.n ? `<div class="dt-r sm"><div class="dt-n">${esc(t.title)}</div><div class="dt-v"><b class="${R.wa > R.wb ? "sw" : R.wb > R.wa ? "sl" : ""}">${R.wa}–${R.wb}${R.dr ? "–" + R.dr : ""}</b></div></div>` : ""; }).join("") : "";
+  body.innerHTML = `<div class="pm-h"><div><div class="pm-n">${esc(title)}</div><div class="sub">${esc(NAMES[SLUG] || "")} · ${place} vieta${D.format === "h2h" ? " · " + rec : ""}</div></div></div>
+    <div class="pm-s"><div><span class="sub">Vieta</span><b>${place}</b></div><div><span class="sub">${D.format === "h2h" ? "Pergalės–pralaim." : "Taškai"}</span><b>${rec}</b></div><div><span class="sub">Vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div></div>
+    ${form ? `<div class="sub">Forma (paskutiniai turai)</div><div class="frm2">${form}</div>` : ""}
+    <div class="sub">Taškai pagal turus</div><div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>
+    ${S ? `<div class="pm-s"><div><span class="sub">Geriausias turas</span><b>${S.best ? num(S.best.pts) : "–"}</b></div><div><span class="sub">Kapitonai iš viso</span><b>${num(S.capPts)}</b></div><div><span class="sub">Palikta ant suolo</span><b>${num(S.lost)}</b></div></div>` : ""}
+    ${top.length ? `<div class="sub">Geriausi komandos žaidėjai (taškai komandai)</div>${top.map((p, i) => `<div class="dt-r sm"><span class="dt-p">${i + 1}</span><div class="dt-n"><b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span></div><div class="dt-v"><b>${num(p.pts)}</b><span class="fa">${p.n} t.</span></div></div>`).join("")}` : ""}
+    ${h2h ? `<div class="sub">Tarpusavio rezultatai</div>${h2h}` : ""}
+    ${/^hla/.test(SLUG) ? `<a class="cuplink" href="cup.html">🏆 Komandos kelias HLA Taurėje →</a>` : ""}`;
+  pm.hidden = false; document.body.style.overflow = "hidden";
+}
+document.addEventListener("click", e => { const a = e.target.closest("[data-team]"); if (a) { e.preventDefault(); e.stopPropagation(); openTeam(a.dataset.team); } }, true);
 
 // ---- Bendras progresas (grafikas po lentele) ----
 let progMetric = null, progSel = null, progHover = null;
