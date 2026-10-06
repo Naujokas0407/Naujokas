@@ -40,7 +40,7 @@ main{position:relative;max-width:1080px;margin:0 auto;padding:28px 16px 64px;dis
 .tabs button[aria-selected="true"]{background:var(--gold-bg);color:var(--gold-2);box-shadow:inset 0 0 0 1px rgba(242,193,78,.35)}
 .sub{font-size:13px;color:var(--muted);margin:4px 0 -10px}
 .note{font-size:13px;color:var(--ink-2);border:1px dashed rgba(242,193,78,.4);background:var(--gold-bg);border-radius:12px;padding:10px 14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px}
 .card{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
 .gh{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 8px}
 .gl{display:flex;align-items:center;gap:10px;font-weight:700}
@@ -202,13 +202,15 @@ td.pts{font-weight:700;color:var(--ink)}
 </main>
 <script>
 const LG = [{ slug: "hla1", div: 1 }, { slug: "hla2", div: 2 }, { slug: "hla3", div: 3 }, { slug: "hla4", div: 4 }];
-const START = 8, SEED_AFTER = 7, GROUP_ROUNDS = [8, 9, 10, 11, 12, 13];
-const STAGES = [{ key: "r32", name: "1/16 finalo", gen: "1/16 finalo", r: [14, 15] }, { key: "r16", name: "1/8 finalo", gen: "1/8 finalo", r: [16, 17] }, { key: "qf", name: "Ketvirtfinalis", gen: "Ketvirtfinalio", r: [18, 19] }, { key: "sf", name: "Pusfinalis", gen: "Pusfinalio", r: [20, 21] }, { key: "f", name: "Finalas", r: [22, 23] }];
-const GN = "ABCDEFGH".split("");
-// grupės vidaus tvarkaraštis (indeksai: 0 – HLA1, 1 – HLA2, 2 – HLA3, 3 – HLA4)
-const GSCHED = [[[0, 3], [1, 2]], [[0, 2], [1, 3]], [[0, 1], [2, 3]], [[3, 0], [2, 1]], [[2, 0], [3, 1]], [[1, 0], [3, 2]]];
-// 1/16 finalo tinklelis (iš eilės: gretimos poros susitinka 1/8 finale)
-const BRACKET = ["A1-B4", "C2-D3", "E1-F4", "G2-H3", "B2-A3", "D1-C4", "F2-E3", "H1-G4", "B1-A4", "D2-C3", "F1-E4", "H2-G3", "A2-B3", "C1-D4", "E2-F3", "G1-H4"];
+const START = 8, SEED_AFTER = 7, GROUP_END = 21, GROUP_ROUNDS = Array.from({ length: 14 }, (_, i) => 8 + i);
+const STAGES = [{ key: "r32", name: "1/16 finalo", gen: "1/16 finalo", r: [22, 23] }, { key: "r16", name: "1/8 finalo", gen: "1/8 finalo", r: [24, 25] }, { key: "qf", name: "Ketvirtfinalis", gen: "Ketvirtfinalio", r: [26, 27] }, { key: "sf", name: "Pusfinalis", gen: "Pusfinalio", r: [28, 29] }, { key: "f", name: "Finalas", r: [30, 31] }];
+const GN = "ABCD".split("");
+// grupės vidaus tvarkaraštis: 8 komandos, du ratai (ratinis metodas), 7 + 7 turai
+const GSCHED = (() => { const n = 8, arr = [...Array(n).keys()], leg = [];
+  for (let r = 0; r < n - 1; r++) { const pr = []; for (let i = 0; i < n / 2; i++) pr.push(r % 2 ? [arr[n - 1 - i], arr[i]] : [arr[i], arr[n - 1 - i]]); leg.push(pr); arr.splice(1, 0, arr.pop()); }
+  return [...leg, ...leg.map(pr => pr.map(([a, b]) => [b, a]))]; })();
+// 1/16 finalo tinklelis: A–B ir C–D grupių poros, 1 vieta prieš 8, 2 – prieš 7 ir t. t.
+const BRACKET = ["A1-B8", "C4-D5", "B3-A6", "D2-C7", "C1-D8", "A4-B5", "D3-C6", "B2-A7", "B1-A8", "D4-C5", "A3-B6", "C2-D7", "D1-C8", "B4-A5", "C3-D6", "A2-B7"];
 
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const num = n => n == null ? "–" : String(Math.round(n * 100) / 100).replace(".", ",");
@@ -253,8 +255,8 @@ function standings(L, upto) {
 function buildGroups() {
   const lastDone = Math.min(SEED_AFTER, isFinal(CUR) ? CUR : CUR - 1);
   const st = DATA.map(L => standings(L, lastDone));
-  // A: 1, 8, 1, 8 vietos; B: 2, 7, 2, 7 ... (lyginiai divizionai – atvirkščia tvarka)
-  const groups = GN.map((n, gi) => ({ name: n, teams: DATA.map((L, li) => { const pos = li % 2 === 0 ? gi : 7 - gi; const row = st[li][pos]; return row ? { title: row.title, L, div: L.div, seedPos: pos + 1 } : null; }).filter(Boolean) }));
+  // po 2 komandas iš kiekvieno diviziono: HLA1 ir HLA3 – A: 1 ir 8 vietos, B: 2 ir 7, C: 3 ir 6, D: 4 ir 5; HLA2 ir HLA4 – atvirkščiai (A: 4 ir 5 ... D: 1 ir 8)
+  const groups = GN.map((n, gi) => ({ name: n, teams: DATA.flatMap((L, li) => { const ps = li % 2 === 0 ? [gi, 7 - gi] : [3 - gi, 4 + gi]; return ps.map(pos => { const row = st[li][pos]; return row ? { title: row.title, L, div: L.div, seedPos: pos + 1 } : null; }); }).filter(Boolean) }));
   return { groups, prelim: lastDone < SEED_AFTER, basedOn: lastDone };
 }
 
@@ -279,7 +281,7 @@ function render() {
   const s = document.getElementById("status"), live = RSTATE === "live";
   let txt;
   if (CUR < START) txt = `Taurė prasidės ${START} ture · dabar ${CUR} turas`;
-  else if (CUR <= 13) txt = `Grupių etapas · ${CUR} turas (${CUR - 7}/6)${live ? " · vyksta" : ""}`;
+  else if (CUR <= GROUP_END) txt = `Grupių etapas · ${CUR} turas (${CUR - 7}/14)${live ? " · vyksta" : ""}`;
   else { const stg = STAGES.find(x => x.r.includes(CUR)); txt = stg ? `${stg.name} · ${stg.r.indexOf(CUR) + 1}-osios rungtynės${live ? " · vyksta" : ""}` : "Taurė baigta"; }
   s.className = "status" + (live && CUR >= START ? " live" : ""); s.querySelector("span").textContent = txt;
   renderGroups(tables, prelim, basedOn);
@@ -289,17 +291,20 @@ function render() {
 
 function divChip(d) { return `<span class="dv d${d}">D${d}</span>`; }
 
+function mline(m) { const cur = m.r === CUR && !m.fin && m.sa != null; const aw = m.fin && m.sa > m.sb, bw = m.fin && m.sb > m.sa;
+  return `<div class="m ${cur ? "cur" : ""}"><span>${m.r} t.</span><span class="a ${aw ? "w" : ""}">${esc(m.A.title)}</span><span class="s">${m.sa == null ? "–" : num(m.sa) + " : " + num(m.sb)}</span><span class="b ${bw ? "w" : ""}">${esc(m.B.title)}</span></div>`; }
 function renderGroups(tables, prelim, basedOn) {
   const el = document.getElementById("groups");
   let html = "";
   if (prelim) html += `<p class="note">Grupės dar preliminarios: sudarytos pagal vietas lygose po ${basedOn || 0} turo. Galutinės grupės bus aiškios po ${SEED_AFTER} turo, o taurė prasidės ${START} ture.</p>`;
   html += `<div class="grid">` + tables.map(({ G, rows, matches }) => {
     const anyPlayed = rows.some(x => x.gp);
-    return `<article class="card"><div class="gh"><span class="gl"><span class="gbadge">${G.name}</span>Grupė ${G.name}</span><span class="gr">${anyPlayed ? rows[0].gp + "/6 sužaista" : "8–13 turai"}</span></div>
+    return `<article class="card"><div class="gh"><span class="gl"><span class="gbadge">${G.name}</span>Grupė ${G.name}</span><span class="gr">${anyPlayed ? rows[0].gp + "/14 sužaista" : "8–21 turai"}</span></div>
       <table><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>P</th><th>Pr</th><th>Taškai</th></tr></thead><tbody>` +
-      (anyPlayed ? rows : [...rows].sort((a, b) => a.div - b.div)).map((x, k) => `<tr class="${anyPlayed && k === 0 ? "q1" : ""}"><td class="l rk">${anyPlayed ? x.place : "–"}</td><td class="l nm">${divChip(x.div)}${esc(x.title)}</td><td>${x.w + (x.dr ? "½" : "")}</td><td>${x.l}</td><td class="pts">${num(x.pf)}</td></tr>`).join("") +
+      (anyPlayed ? rows : [...rows].sort((a, b) => a.div - b.div)).map((x, k) => `<tr class="${anyPlayed && k === 0 ? "q1" : ""}"><td class="l rk">${anyPlayed ? x.place : "–"}</td><td class="l nm">${divChip(x.div)}${esc(x.title)}</td><td>${num(x.w + x.dr / 2)}</td><td>${x.l}</td><td class="pts">${num(x.pf)}</td></tr>`).join("") +
       `</tbody></table>
-      <details class="ms"${CUR >= START && CUR <= 13 ? " open" : ""}><summary>Rungtynės</summary>` +
+      ${(() => { const rr = matches.filter(m => m.r === CUR); return rr.length ? `<div class="ms"><div class="gr" style="padding:6px 2px">${CUR} turo rungtynės</div>${rr.map(mline).join("")}</div>` : ""; })()}
+      <details class="ms"><summary>Visos rungtynės (14 turų)</summary>` +
       matches.map(m => { const cur = m.r === CUR && !m.fin && m.sa != null; const aw = m.fin && m.sa > m.sb, bw = m.fin && m.sb > m.sa;
         return `<div class="m ${cur ? "cur" : ""}"><span>${m.r} t.</span><span class="a ${aw ? "w" : ""}">${esc(m.A.title)}</span><span class="s">${m.sa == null ? "–" : num(m.sa) + " : " + num(m.sb)}</span><span class="b ${bw ? "w" : ""}">${esc(m.B.title)}</span></div>`; }).join("") +
       `</details></article>`;
@@ -310,10 +315,10 @@ function renderGroups(tables, prelim, basedOn) {
 // ---- atkrintamosios ----
 function renderKO(tables) {
   const el = document.getElementById("ko");
-  const groupsDone = isFinal(13);
+  const groupsDone = isFinal(GROUP_END);
   const bySeed = {};
   tables.forEach(({ G, rows }) => rows.forEach(x => { bySeed[G.name + x.place] = x; }));
-  const seedRank = x => x ? [x.place, -(x.pf || 0)] : [9, 0];
+  const seedRank = x => x ? [x.place, -(x.pf || 0)] : [99, 0];
   const better = (a, b) => { const ra = seedRank(a), rb = seedRank(b); return ra[0] !== rb[0] ? ra[0] < rb[0] : ra[1] <= rb[1]; };
   const playTie = (a, b, stg) => {
     const legs = stg.r.map(r => ({ r, sa: a ? scoreOf(a.L, a.title, r) : null, sb: b ? scoreOf(b.L, b.title, r) : null, fin: isFinal(r) }));
@@ -334,7 +339,7 @@ function renderKO(tables) {
   });
   const fin = out[out.length - 1].ties[0];
   let html = "";
-  if (!groupsDone) html += `<p class="note">Poros paaiškės po grupių etapo (13 turo). Žemiau – tinklelis su grupių vietomis: tos pačios grupės 1-a ir 2-a vieta gali susitikti tik finale.</p>`;
+  if (!groupsDone) html += `<p class="note">Poros paaiškės po grupių etapo (21 turo). Žemiau – tinklelis su grupių vietomis: tos pačios grupės 1-a ir 2-a vieta gali susitikti tik finale.</p>`;
   if (fin.win) html += `<div class="champ"><svg width="72" height="72" viewBox="0 0 64 64" aria-hidden="true"><use href="#cupIcon" width="64" height="64"/></svg><span class="gr">HLA Taurės čempionas</span><b>${esc(fin.win.title)}</b></div>`;
   html += treeHtml(out, fin);
   html += `<div class="sh pairs-h"><h3>Porų rezultatai</h3><span>abiejų rungtynių taškai ir suma</span></div>`;
@@ -363,7 +368,7 @@ function treeHtml(out, fin) {
     return `<div class="tcol ${side} c${s}"><div class="thd">${short[s]}</div><div class="tbody">${body}</div></div>`;
   };
   const left = [0, 1, 2, 3].map(s => col("L", s)).join(""), right = [3, 2, 1, 0].map(s => col("R", s)).join("");
-  const center = `<div class="tcol fc"><div class="thd">Finalas</div><div class="tbody"><div class="ftrophy"><svg width="54" height="54" viewBox="0 0 64 64" aria-hidden="true"><use href="#cupIcon" width="64" height="64"/></svg>${fin.win ? `<span>Čempionas</span><b>${esc(fin.win.title)}</b>` : `<span>22–23 turai</span>`}</div>${box(fin, true)}</div></div>`;
+  const center = `<div class="tcol fc"><div class="thd">Finalas</div><div class="tbody"><div class="ftrophy"><svg width="54" height="54" viewBox="0 0 64 64" aria-hidden="true"><use href="#cupIcon" width="64" height="64"/></svg>${fin.win ? `<span>Čempionas</span><b>${esc(fin.win.title)}</b>` : `<span>30–31 turai</span>`}</div>${box(fin, true)}</div></div>`;
   return `<p class="treehint">← Medį galima slinkti į šonus →</p><div class="treew"><div class="tree">${left}${center}${right}</div></div>`;
 }
 function tieGrid(ties, stg) {
@@ -387,20 +392,20 @@ function renderRules() {
     <li>Taurė prasideda ${START} Eurolygos ture – kai visi savo lygose susitinka bent kartą.</li>
     <li>Taurės rungtynes laimi komanda, tą Eurolygos turą surinkusi daugiau fantasy taškų (tie patys taškai kaip lygoje, ir HLA 4).</li></ul></div>
   <div class="card"><h3>Grupių sudarymas (po ${SEED_AFTER} turo)</h3>
-    <p>8 grupės po 4 komandas, kiekvienoje po vieną iš kiekvieno diviziono. Skirstoma pagal vietas lygose, kad grupės būtų lygios:</p>
-    <ul><li>A – HLA1 1 vieta, HLA2 8, HLA3 1, HLA4 8</li><li>B – 2, 7, 2, 7 · C – 3, 6, 3, 6 · D – 4, 5, 4, 5</li><li>E – 5, 4, 5, 4 · F – 6, 3, 6, 3 · G – 7, 2, 7, 2 · H – 8, 1, 8, 1</li></ul>
+    <p>4 grupės po 8 komandas, kiekvienoje po dvi iš kiekvieno diviziono. Skirstoma pagal vietas lygose, kad grupės būtų lygios:</p>
+    <ul><li>HLA 1 ir HLA 3: A – 1 ir 8 vietos, B – 2 ir 7, C – 3 ir 6, D – 4 ir 5</li><li>HLA 2 ir HLA 4: A – 4 ir 5 vietos, B – 3 ir 6, C – 2 ir 7, D – 1 ir 8</li></ul>
     <p>HLA 1–3 – pagal H2H lentelę, HLA 4 – pagal bendrą taškų sumą.</p></div>
-  <div class="card"><h3>Grupių etapas (8–13 turai)</h3><ul>
-    <li>Du ratai – kiekvienas su kiekvienu po 2 kartus (6 rungtynės).</li>
+  <div class="card"><h3>Grupių etapas (8–21 turai)</h3><ul>
+    <li>Du ratai – kiekvienas su kiekvienu po 2 kartus (14 rungtynių).</li>
     <li>Pergalė – 1, lygiosios – ½. Esant lygybei – lemia grupėje surinktų taškų suma.</li>
     <li>Niekas neiškrenta – visos 32 komandos patenka į atkrintamąsias. Vieta grupėje lemia varžovą.</li></ul></div>
-  <div class="card"><h3>Atkrintamosios (14–23 turai)</h3><ul>
-    <li>Grupės poromis A–B, C–D, E–F, G–H: 1 vieta prieš kitos grupės 4, 2 – prieš 3.</li>
+  <div class="card"><h3>Atkrintamosios (22–31 turai)</h3><ul>
+    <li>Grupės poromis A–B ir C–D: 1 vieta prieš kitos grupės 8, 2 – prieš 7, 3 – prieš 6, 4 – prieš 5.</li>
     <li>Kiekviena pora – 2 turai, toliau eina surinkusi daugiau taškų per abu turus.</li>
     <li>Lygi suma – praeina aukštesnę vietą grupėje užėmusi komanda.</li>
     <li>Tinklelis fiksuotas iš anksto – tos pačios grupės 1-a ir 2-a vieta gali susitikti tik finale.</li></ul></div>
   <div class="card"><h3>Tvarkaraštis</h3><div class="sched">
-    <span class="${on(8, 13)}">Grupės</span><span class="${on(8, 13)}">8–13 turai</span>
+    <span class="${on(8, 21)}">Grupės</span><span class="${on(8, 21)}">8–21 turai</span>
     ${STAGES.map(s => `<span class="${on(s.r[0], s.r[1])}">${s.name}</span><span class="${on(s.r[0], s.r[1])}">${s.r[0]}–${s.r[1]} turai</span>`).join("")}
   </div></div>`;
 }
