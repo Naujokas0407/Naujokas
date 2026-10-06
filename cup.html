@@ -536,6 +536,7 @@ function renderReporter() {
 
 function renderStats() {
   const el = document.getElementById("stats"); if (!el) return;
+  if (CUR < START) { el.innerHTML = `<p class="note">Taurės statistika prasidės kartu su taure (${START} turas).</p>`; return; }
   const { M, teams } = cupTeamStats(); let html = cupAwards() + playerAwards();
   if (M.length) {
     const all = M.flatMap(m => [{ t: m.A, v: m.sa, o: m.B, r: m.r }, { t: m.B, v: m.sb, o: m.A, r: m.r }]);
@@ -577,7 +578,8 @@ const ownChips = own => (own || []).sort((a, b) => lgDiv(a.lg) - lgDiv(b.lg)).ma
 async function loadExtra() { try { const r = await fetch("data/hla-extra.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { EXTRA = await r.json(); renderStats(); } } catch (e) {} }
 function playerAwards() {
   if (!EXTRA || !EXTRA.dream || !Object.keys(EXTRA.dream).length) return "";
-  const rs = Object.keys(EXTRA.dream).map(Number).sort((a, b) => a - b), ms = Object.keys(EXTRA.months || {}).sort();
+  const rs = Object.keys(EXTRA.dream).map(Number).filter(r => r >= START).sort((a, b) => a - b), ms = Object.keys(EXTRA.months || {}).filter(k => EXTRA.months[k].rounds.some(r => r >= START)).sort();
+  if (!rs.length) return "";
   if (dreamR == null || !rs.includes(dreamR)) dreamR = rs[rs.length - 1];
   if (monthK == null || !ms.includes(monthK)) monthK = ms[ms.length - 1];
   const L = EXTRA.dream[dreamR] || [], M = monthK ? EXTRA.months[monthK] : null;
@@ -608,8 +610,8 @@ function cupAwards() {
     (giant ? tileC("Milžinų žudikas", `${esc(giant.win.title)} <b>D${giant.win.div}</b>`, `išmetė HLA ${(giant.win === giant.a ? giant.b : giant.a).div} komandą ${esc((giant.win === giant.a ? giant.b : giant.a).title)}`) : "") + `</div>`;
 }
 function bindStats(el) {
-  el.querySelectorAll("[data-dr]").forEach(b => b.addEventListener("click", () => { const rs = Object.keys(EXTRA.dream).map(Number).sort((a, b) => a - b); const i = rs.indexOf(dreamR) + +b.dataset.dr; if (i >= 0 && i < rs.length) { dreamR = rs[i]; renderStats(); } }));
-  el.querySelectorAll("[data-mo]").forEach(b => b.addEventListener("click", () => { const ms = Object.keys(EXTRA.months).sort(); const i = ms.indexOf(monthK) + +b.dataset.mo; if (i >= 0 && i < ms.length) { monthK = ms[i]; renderStats(); } }));
+  el.querySelectorAll("[data-dr]").forEach(b => b.addEventListener("click", () => { const rs = Object.keys(EXTRA.dream).map(Number).filter(r => r >= START).sort((a, b) => a - b); const i = rs.indexOf(dreamR) + +b.dataset.dr; if (i >= 0 && i < rs.length) { dreamR = rs[i]; renderStats(); } }));
+  el.querySelectorAll("[data-mo]").forEach(b => b.addEventListener("click", () => { const ms = Object.keys(EXTRA.months).filter(k => EXTRA.months[k].rounds.some(r => r >= START)).sort(); const i = ms.indexOf(monthK) + +b.dataset.mo; if (i >= 0 && i < ms.length) { monthK = ms[i]; renderStats(); } }));
 }
 async function openTeam(title) {
   const L = DATA && DATA.find(x => x.d.teams.some(t => t.title === title)); if (!L) return;
