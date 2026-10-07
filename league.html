@@ -983,6 +983,9 @@ function txNews(e, i) {
 }
 const txWhen = t => fmt(t, { month: "2-digit", day: "2-digit" }) + " " + fmt(t, { hour: "2-digit", minute: "2-digit" });
 // ---- Reporterio perėjimų apžvalga (po turo atnaujinimo, prieš turą) ----
+// Vienas perėjimas = vienas veiksmas: paimtas + atleistas žaidėjas yra vienas perėjimas; mainai – vienas perėjimas kiekvienai komandai
+const txActs = e => e.type === "trade" ? 1 : Math.max(e.in.length, e.out.length);
+const perN = n => n % 10 === 1 && n % 100 !== 11 ? "perėjimas" : (n % 10 === 0 || (n % 100 > 10 && n % 100 < 20)) ? "perėjimų" : "perėjimai";
 function txReview() {
   const log = ((TX && TX.log) || []).filter(e => e.r === D.round);
   if (!log.length) return "";
@@ -994,14 +997,15 @@ function txReview() {
   const per = {}, ins = [], outs = [];
   const add = (team, k) => { const t = String(team).trim(); per[t] = (per[t] || 0) + k; };
   log.forEach(e => {
-    if (e.type === "trade") { e.aGets.forEach(p => ins.push({ team: e.a, ...p })); e.bGets.forEach(p => ins.push({ team: e.b, ...p })); add(e.a, e.aGets.length + e.bGets.length); add(e.b, e.aGets.length + e.bGets.length); }
-    else { e.in.forEach(p => ins.push({ team: e.team, ...p })); e.out.forEach(p => outs.push({ team: e.team, ...p })); add(e.team, e.in.length + e.out.length); }
+    if (e.type === "trade") { e.aGets.forEach(p => ins.push({ team: e.a, ...p })); e.bGets.forEach(p => ins.push({ team: e.b, ...p })); add(e.a, 1); add(e.b, 1); }
+    else { e.in.forEach(p => ins.push({ team: e.team, ...p })); e.out.forEach(p => outs.push({ team: e.team, ...p })); add(e.team, txActs(e)); }
   });
   const trades = log.filter(e => e.type === "trade" && e.aGets.length && e.bGets.length).length;
   const s = [];
-  s.push(`Prieš ${D.round} turą treneriai buvo aktyvūs: iš viso <b>${ins.length}</b> ${ins.length === 1 ? "naujokas" : "naujokai"} sudėtyse ir <b>${outs.length}</b> ${outs.length === 1 ? "atleistas žaidėjas" : "atleisti žaidėjai"}${trades ? `, dar <b>${trades}</b> ${trades === 1 ? "mainai" : "mainų sandoriai"} tarp komandų` : ""}.`);
+  const totA = log.reduce((s, e) => s + (e.type === "trade" ? 1 : txActs(e)), 0);
+  s.push(`Prieš ${D.round} turą treneriai atliko <b>${totA}</b> ${perN(totA)}: sudėtyse <b>${ins.length}</b> ${ins.length % 10 === 1 && ins.length % 100 !== 11 ? "naujokas" : ins.length % 10 === 0 || (ins.length % 100 > 10 && ins.length % 100 < 20) ? "naujokų" : "naujokai"}, ${outs.length === 1 ? "atleistas" : "atleisti"} <b>${outs.length}</b> ${outs.length === 1 ? "žaidėjas" : outs.length % 10 === 0 || (outs.length % 100 > 10 && outs.length % 100 < 20) ? "žaidėjų" : "žaidėjai"}${trades ? `, dar <b>${trades}</b> ${trades === 1 ? "mainai" : "mainų sandoriai"} tarp komandų` : ""}.`);
   const top = Object.entries(per).sort((a, b) => b[1] - a[1]);
-  if (top.length) s.push(pick([`Aktyviausias rinkoje – ${tn(top[0][0])} (${top[0][1]} pokyčiai). ${pick(["Telefonas, matyt, dar neatvėso.", "Kažkas labai nori laimėti šį turą.", "Sudėtis perdėliota beveik nuo nulio."], top[0][0] + D.round)}`, `Daugiausia darbo turėjo ${tn(top[0][0])} treneris – ${top[0][1]} pokyčiai.`], top[0][0]));
+  if (top.length) s.push(pick([`Aktyviausias rinkoje – ${tn(top[0][0])} (${top[0][1]} ${perN(top[0][1])}). ${pick(["Telefonas, matyt, dar neatvėso.", "Kažkas labai nori laimėti šį turą.", "Sudėtis perdėliota beveik nuo nulio."], top[0][0] + D.round)}`, `Daugiausia darbo turėjo ${tn(top[0][0])} treneris – ${top[0][1]} ${perN(top[0][1])}.`], top[0][0]));
   const still = D.teams.map(t => t.title.trim()).filter(t => !per[t]);
   if (still.length && still.length < D.teams.length) s.push(still.length === 1 ? `Vienintelis sudėties nelietė ${tn(still[0])} – arba labai pasitiki savo žaidėjais, arba pamiršo slaptažodį.` : `Sudėčių nelietė: ${still.map(tn).join(", ")}. Ramybė – irgi strategija.`);
   const bestIn = ins.map(p => ({ ...p, avg: avgOf(p.name) })).filter(p => p.avg != null).sort((a, b) => b.avg - a.avg)[0];
@@ -1027,11 +1031,11 @@ function renderTx() {
   const log = (TX && TX.log) || [];
   if (!log.length) { el.innerHTML = `<div class="card"><div class="ph"><div class="h">Perėjimai ir mainai</div></div><p class="sub" style="padding:0 16px 16px;margin:0">Kol kas perėjimų nėra. Stebėjimas pradėtas – vos tik kuri nors komanda pasiims žaidėją iš laisvos rinkos, atleis jį arba komandos apsikeis žaidėjais, tai atsiras čia (tikrinama kas ~6 min.).</p></div>`; return; }
   const cnt = {}; D.teams.forEach(t => cnt[t.title] = 0);
-  log.forEach(e => { if (e.type === "trade") { cnt[e.a] = (cnt[e.a] || 0) + 1; cnt[e.b] = (cnt[e.b] || 0) + 1; } else cnt[e.team] = (cnt[e.team] || 0) + e.in.length + e.out.length; });
+  log.forEach(e => { if (e.type === "trade") { cnt[e.a] = (cnt[e.a] || 0) + 1; cnt[e.b] = (cnt[e.b] || 0) + 1; } else cnt[e.team] = (cnt[e.team] || 0) + txActs(e); });
   const trades = log.filter(e => e.type === "trade" && e.aGets.length && e.bGets.length).length;
   const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]);
   const byR = {}; log.forEach(e => (byR[e.r] = byR[e.r] || []).push(e));
-  el.innerHTML = `<div class="aw">${tile("Iš viso perėjimų", `<b>${log.length}</b>`)}${tile("Mainų tarp komandų", `<b>${trades}</b>`)}${top[0] && top[0][1] ? tile("Aktyviausias rinkoje", `${esc(top[0][0])} <b>${top[0][1]}</b>`, "sandorių / žaidėjų pokyčių") : ""}${top.length && top[top.length - 1][1] === 0 ? tile("Ištikimiausias sudėčiai", `${names(top.filter(x => x[1] === 0).map(x => x[0]).slice(0, 3))}`, "dar nepadarė nė vieno pokyčio") : ""}</div>` +
+  el.innerHTML = `<div class="aw">${tile("Iš viso perėjimų", `<b>${log.reduce((s, e) => s + txActs(e), 0)}</b>`)}${tile("Mainų tarp komandų", `<b>${trades}</b>`)}${top[0] && top[0][1] ? tile("Aktyviausias rinkoje", `${esc(top[0][0])} <b>${top[0][1]}</b>`, "perėjimų") : ""}${top.length && top[top.length - 1][1] === 0 ? tile("Ištikimiausias sudėčiai", `${names(top.filter(x => x[1] === 0).map(x => x[0]).slice(0, 3))}`, "dar nepadarė nė vieno perėjimo") : ""}</div>` +
     Object.keys(byR).sort((a, b) => b - a).map(r => `<div class="sub">Prieš ${r} turą ir jo metu</div><div class="card"><ul class="news">${byR[r].map(e => `<li class="mine"><span class="nt">${txWhen(e.t)}</span><span>${txPlain(e)}</span></li>`).join("")}</ul></div>`).join("");
 }
 
