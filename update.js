@@ -218,6 +218,34 @@ async function buildShared() {
       }
     } catch (e) { console.log("Pozicijų nepavyko gauti:", e.message); if (PS.field === undefined) PS.field = null; }
   }
+  // Atsarginis šaltinis – Eurolygos žaidėjų sąrašas (bandoma ne dažniau kaip kas 6 val.)
+  const missing = () => bnPlayers.filter(p => !PS.map[p.id]).length;
+  if (missing() && (!PS.elTried || Date.now() - PS.elTried > 6 * 3600e3)) {
+    PS.elTried = Date.now(); PS.debug = [];
+    const urls = [
+      `https://api-live.euroleague.net/v2/competitions/E/seasons/${CONFIG.season}/people?personType=J&limit=1000`,
+      `https://feeds.incrowdsports.com/provider/euroleague-feeds/v2/competitions/E/seasons/${CONFIG.season}/people?personType=J&limit=1000`
+    ];
+    for (const u of urls) {
+      try {
+        const res = await fetch(u, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(20000) });
+        const j = res.ok ? await res.json() : null;
+        const arr = !j ? [] : Array.isArray(j) ? j : (j.data || j.people || j.items || []);
+        let hit = 0;
+        for (const it of arr) {
+          const person = it.person || it, club = String((it.club && it.club.code) || it.clubCode || "").trim();
+          const nm = person.name || [person.firstName, person.lastName].filter(Boolean).join(" ");
+          const name = /,/.test(nm) ? elName(nm) : nm, last = /,/.test(nm) ? nm.split(",")[0] : String(nm).split(" ").slice(-1)[0];
+          const x = posLetter(it.positionName || it.position || person.position);
+          const id = idByKey[club + "|" + norm(name)] ?? idByLast[club + "|" + norm(last)];
+          if (id && x && !PS.map[id]) { PS.map[id] = x; hit++; }
+        }
+        PS.debug.push({ u: u.split("/")[2], status: res.status, n: arr.length, hit, keys: arr[0] ? Object.keys(arr[0]).slice(0, 15) : null, pos: arr[0] ? [arr[0].positionName, arr[0].position] : null });
+        if (hit) break;
+      } catch (e) { PS.debug.push({ u: u.split("/")[2], err: e.message }); }
+    }
+    console.log("Eurolygos pozicijos:", JSON.stringify(PS.debug), "trūksta:", missing());
+  }
   if (JSON.stringify(PS) !== pos0) fs.writeFileSync(posFile, JSON.stringify(PS));
   posOf = id => PS.map[id] || null;
   } catch (e) { console.log("Pozicijos:", e.message); }
