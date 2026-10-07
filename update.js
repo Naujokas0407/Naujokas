@@ -414,6 +414,53 @@ function restoreFromGit(slug, round) {
   } catch (e) { console.log(slug + ": nepavyko atkurti " + round + " turo", e.message); }
 }
 
+// Pataisomas archyvas, išsaugotas dar nesibaigus turui (pvz., per GitHub sutrikimą): galutiniai rezultatai, statistika ir oficialūs taškai
+async function repairArchive(L, round) {
+  const f = arch(L.slug, round);
+  let d; try { d = JSON.parse(fs.readFileSync(f, "utf8")); } catch (e) { return; }
+  if (!d.games || d.games.every(g => g.status === "final")) return;
+  let fpHist = {}; try { fpHist = JSON.parse(fs.readFileSync(path.join(DIR, "fp-hist.json"), "utf8")); } catch (e) {}
+  const H = fpHist[round] || {};
+  const box = {};
+  for (const g of d.games) {
+    if (g.status === "final" || typeof g.id !== "number") continue;
+    const [h, bx] = await Promise.all([el("Header", g.id), el("Boxscore", g.id)]);
+    if (!h || h.Live || !bx || !bx.Stats) { console.log(L.slug + ": " + round + " turo rungtynių " + g.id + " dar nepavyko pataisyti"); return; }
+    g.hs = parseInt(h.ScoreA, 10); g.as = parseInt(h.ScoreB, 10); g.status = "final"; g.q = ""; g.clock = "";
+    for (const side of bx.Stats) for (const p of side.PlayersStats || []) {
+      const club = String(p.Team || "").trim(), name = elName(p.Player);
+      const v = { st: statArray(p), dnp: p.Minutes === "DNP" || !p.Minutes, s: p.IsStarter ? 1 : 0, game: g.id };
+      box[club + "|" + norm(name)] = v; box["L|" + club + "|" + norm(String(p.Player).split(",")[0])] = v;
+    }
+  }
+  const find = (club, name) => box[club + "|" + norm(name)] || box["L|" + club + "|" + norm(String(name).split(" ").slice(-1)[0])];
+  d.teams.forEach(t => {
+    t.players.forEach(p => {
+      const b = find(p.club, p.name);
+      if (b) { p.st = b.dnp ? null : b.st; p.dnp = b.dnp; p.s = b.s; p.oc = 0; }
+      if (H[p.id] != null) p.fp = H[p.id];
+      p.total = p.fp == null ? 0 : round2(p.fp * p.mult);
+    });
+    t.total = round2(t.players.reduce((s, p) => s + p.total, 0));
+  });
+  (d.pool || []).forEach(p => { const b = find(p.club, p.name); if (b && !b.dnp) { p.st = b.st; p.oc = 0; } if (p.id && H[p.id] != null) p.fp = H[p.id]; });
+  // H2H: oficialūs to turo rezultatai iš dabartinio lygos failo
+  try {
+    const cur = JSON.parse(fs.readFileSync(path.join(DIR, L.slug + ".json"), "utf8"));
+    const res = (cur.results || []).filter(m => m.r === round);
+    if (d.matchups && res.length) {
+      d.matchups.forEach(m => { const x = res.find(z => z.a === m.a && z.b === m.b); if (x) { m.as = x.as; m.bs = x.bs; } });
+      const off = {}; res.forEach(m => { off[m.a] = m.as; off[m.b] = m.bs; });
+      d.teams.forEach(t => { if (off[t.title] != null) t.official = off[t.title]; });
+    }
+  } catch (e) {}
+  const totals = Object.fromEntries(d.teams.map(t => [t.title, t.total]));
+  if (L.format === "classic") d.history = { ...(d.history || {}), [String(round)]: totals };
+  fs.writeFileSync(f, JSON.stringify(d));
+  console.log(L.slug + ": pataisytas " + round + " turo archyvas");
+  return totals;
+}
+
 (async () => {
   if (!fs.existsSync(DIR)) fs.mkdirSync(DIR);
   const S = await buildShared();
@@ -431,6 +478,12 @@ function restoreFromGit(slug, round) {
       (!old.slug || old.slug === L.slug);
     try { await trackRoster(S, L); } catch (e) { console.log(L.slug + ": nepavyko patikrinti sudėčių", e.message); }
     for (let r = 1; r <= S.r; r++) if (!fs.existsSync(arch(L.slug, r))) restoreFromGit(L.slug, r);
+    for (let r = 1; r <= S.r; r++) {
+      try {
+        const tot = await repairArchive(L, r);
+        if (tot && old && L.format === "classic") { old.history = { ...(old.history || {}), [String(r)]: tot }; fs.writeFileSync(file, JSON.stringify(old)); }
+      } catch (e) { console.log(L.slug + ": archyvo taisymas", e.message); }
+    }
     if (old && old.round && old.round !== S.r + 1 && !fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
     if (frozen) {
       // užfiksuotam turui papildomai įrašomos pozicijos ir minutės
