@@ -105,6 +105,11 @@ tr.tot td.pt{font-weight:700}
 .seg{display:inline-flex;gap:2px;background:var(--muted-bg);border-radius:8px;padding:3px}
 .seg button{border:0;background:transparent;font:500 13px inherit;font-family:inherit;color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.ph.pf{padding-top:0;justify-content:flex-start}.segl{font-size:12px;color:var(--muted);padding:4px 4px 4px 8px;align-self:center}
+.pp{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;border-radius:6px;font-size:11.5px;font-weight:700;background:var(--muted-bg);color:var(--ink-2)}
+.pp.pG{background:rgba(59,130,246,.16);color:#3b82f6}.pp.pF{background:rgba(16,185,129,.16);color:#10b981}.pp.pC{background:rgba(245,158,11,.18);color:#d97706}
+th.so{cursor:pointer;user-select:none}th.so:hover{color:var(--ink)}th.so.on{color:var(--ink);font-weight:600}
+@media (max-width:480px){ .ph.pf .seg button{padding:4px 7px;font-size:12px} }
 td.rk2{color:var(--muted);width:28px}
 .foot{font-size:12px;color:var(--muted);line-height:1.6}
 .sched-list{display:flex;flex-direction:column}
@@ -301,7 +306,7 @@ a.brand{text-decoration:none}
 .cuplink{display:block;text-align:center;padding:10px;border:1px solid rgba(242,193,78,.45);border-radius:10px;color:#ffe08a;text-decoration:none;font-weight:600}
 [data-team]{cursor:pointer}
 [data-team]:hover{text-decoration:underline;text-decoration-color:var(--faint)}
-.pm-s{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pm-s{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}
 .pm-s div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px}
 .pm-s b{font-size:18px}
 .pbs{display:flex;gap:6px;align-items:flex-end;overflow-x:auto;padding-bottom:2px;min-height:110px}
@@ -557,24 +562,50 @@ function h2hHtml(isMe) {
   return `<div class="sub">${D.round} turo poros</div><div class="mus">${cards}</div><div class="sub">Lentelė (pergalės / pralaimėjimai)</div>` + table;
 }
 
+let posF = "all", sortK = null, sortD = -1;
+const posName = { G: "Gynėjas", F: "Puolėjas", C: "Centras" };
+const posChip = p => p.pos ? `<span class="pp p${esc(p.pos)}" title="${posName[p.pos] || ""}">${esc(p.pos)}</span>` : `<span class="pp">–</span>`;
+const minTxt = s => s == null ? "–" : String(Math.round(s / 60));
+function sortHead(k, label, cls) { const on = (sortK || defK()) === k; return `<th class="${cls || ""} so${on ? " on" : ""}" data-k="${k}" aria-sort="${on ? (sortD < 0 ? "descending" : "ascending") : "none"}">${label}${on ? (sortD < 0 ? " ↓" : " ↑") : ""}</th>`; }
+function playersBar(title) {
+  return `<div class="ph"><div class="h">${title}</div><div class="seg" role="group" aria-label="Filtras">
+    <button aria-pressed="${filter === "all"}" data-f="all">Visi</button><button aria-pressed="${filter === "owned"}" data-f="owned">Užimti</button><button aria-pressed="${filter === "free"}" data-f="free">Laisvi</button></div></div>
+    <div class="ph pf"><div class="seg" role="group" aria-label="Pozicija">${[["all", "Visos pozicijos"], ["G", "Gynėjai"], ["F", "Puolėjai"], ["C", "Centrai"]].map(([k, l]) => `<button aria-pressed="${posF === k}" data-p="${k}">${l}</button>`).join("")}</div>
+    <div class="seg" role="group" aria-label="Rikiavimas"><span class="segl">Rikiuoti:</span>${sortOpts.map(([k, l]) => `<button aria-pressed="${(sortK || defK()) === k}" data-s="${k}">${l}</button>`).join("")}</div></div>`;
+}
+const defK = () => filter === "free" ? "avg" : "fp";
+const sortOpts = [["fp", "Turo taškai"], ["avg", "Vidurkis"], ["min", "Minutės"], ["pos", "Pozicija"]];
+function bindPlayers() {
+  document.querySelectorAll("#players .seg button[data-f]").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; sortK = null; sortD = -1; renderPlayers(); }));
+  document.querySelectorAll("#players .seg button[data-p]").forEach(b => b.addEventListener("click", () => { posF = b.dataset.p; renderPlayers(); }));
+  document.querySelectorAll("#players .seg button[data-s]").forEach(b => b.addEventListener("click", () => sortClick(b.dataset.s)));
+  document.querySelectorAll("#players th[data-k]").forEach(h => h.addEventListener("click", () => sortClick(h.dataset.k)));
+}
+const POS_ORD = { G: 1, F: 2, C: 3 };
+function sortClick(k) { if (sortK === k) sortD = -sortD; else sortD = k === "pos" ? 1 : -1; sortK = k; renderPlayers(); }
+function sortList(list, def) {
+  const k = sortK; if (!k) return list.sort(def);
+  const v = p => k === "pos" ? (POS_ORD[p.pos] || 9) : p[k];
+  return list.sort((a, b) => { const x = v(a), y = v(b); if (x == null && y == null) return def(a, b); if (x == null) return 1; if (y == null) return -1; return (sortD < 0 ? y - x : x - y) || def(a, b); });
+}
 function renderPlayers() {
+  const byPos = p => posF === "all" || p.pos === posF;
   if (filter === "free" && D.fa) {
-    document.getElementById("players").innerHTML = `<div class="card"><div class="ph"><div class="h">Geriausi laisvi žaidėjai</div><div class="seg" role="group" aria-label="Filtras">
-    <button aria-pressed="false" data-f="all">Visi</button><button aria-pressed="false" data-f="owned">Užimti</button><button aria-pressed="true" data-f="free">Laisvi</button></div></div>
-    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>Vid. FP</th><th class="hide-s">Sužaidė turų</th><th class="bhc">Praeitas turas</th><th>Šis turas</th></tr></thead><tbody>` +
-      (D.fa.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="6">Duomenų dar nėra</td></tr>`) +
-      `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda, surikiuoti pagal sezono fantasy taškų vidurkį.</p></div>`;
-    document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
+    const list = sortList(D.fa.filter(byPos), (a, b) => (b.avg ?? b.fp ?? -99) - (a.avg ?? a.fp ?? -99)).slice(0, 40);
+    document.getElementById("players").innerHTML = `<div class="card">${playersBar("Geriausi laisvi žaidėjai")}
+    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}</tr></thead><tbody>` +
+      (list.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="8">Duomenų nėra</td></tr>`) +
+      `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. „Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+    bindPlayers();
     return;
   }
-  const list = D.pool.filter(p => filter === "all" || (filter === "owned" ? p.owner != null : p.owner == null)).sort((a, b) => (b.fp ?? -99) - (a.fp ?? -99) || b.st[18] - a.st[18]);
+  const list = sortList(D.pool.filter(p => (filter === "all" || (filter === "owned" ? p.owner != null : p.owner == null)) && byPos(p)), (a, b) => (b.fp ?? -99) - (a.fp ?? -99) || b.st[18] - a.st[18]);
   const g = p => { const x = gameOf(p.game); if (!x) return esc(tv(p.club)); const home = x.h === p.club; return `${esc(tv(p.club))} ${home ? "vs" : "@"} ${esc(tv(home ? x.a : x.h))}`; };
-  document.getElementById("players").innerHTML = `<div class="card"><div class="ph"><div class="h">Šio turo žaidėjai</div><div class="seg" role="group" aria-label="Filtras">
-    <button aria-pressed="${filter === "all"}" data-f="all">Visi</button><button aria-pressed="${filter === "owned"}" data-f="owned">Užimti</button><button aria-pressed="${filter === "free"}" data-f="free">Laisvi</button></div></div>
-    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th><th>FP</th><th class="fp">Vid.</th><th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
-    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}</td><td class="pt">${fpTxt(p)}</td><td class="fp">${p.avg == null ? "–" : num(p.avg)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="21">Šiame ture dar niekas nežaidė</td></tr>`) +
-    `</tbody></table></div></div>`;
-  document.querySelectorAll("#players .seg button").forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; renderPlayers(); }));
+  document.getElementById("players").innerHTML = `<div class="card">${playersBar("Šio turo žaidėjai")}
+    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("fp", "FP")}${sortHead("avg", "Vid.")}${sortHead("min", "Min.")}<th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
+    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}</td><td>${posChip(p)}</td><td class="pt">${fpTxt(p)}</td><td>${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="23">${D.pool.length ? "Pagal šį filtrą žaidėjų nėra" : "Šiame ture dar niekas nežaidė"}</td></tr>`) +
+    `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">„Vid.“ – sezono FP vidurkis, „Min.“ – vidutinės žaidimo minutės baigtuose turuose, MIN – šio turo minutės. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+  bindPlayers();
 }
 
 // ---- Prognozė ir optimali sudėtis ----
@@ -1135,7 +1166,7 @@ async function openPlayer(id) {
   const g = p.game != null ? gameOf(p.game) : null;
   const gl = g ? `${g.h === p.club ? "vs" : "@"} ${esc(tv(g.h === p.club ? g.a : g.h))} · ${g.status === "scheduled" ? when(g.start) : g.status === "live" ? "vyksta dabar" : "baigtos " + g.hs + ":" + g.as}` : "šį turą rungtynių nėra arba duomenų dar nėra";
   body.innerHTML = head() +
-    `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals.length}</b></div><div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
+    `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals.length}</b></div>${p.min != null ? `<div><span class="sub">Vid. minutės</span><b>${minTxt(p.min)}</b></div>` : ""}<div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
     `<div class="sub">FP pagal turus</div><div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>` +
     `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div>`;
 }
@@ -1151,7 +1182,6 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closePlayer(
 const MONTHS_LT = ["Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis"];
 const monthName = k => { const [y, m] = k.split("-").map(Number); return MONTHS_LT[m - 1] + " " + y; };
 const starsHtml = n => `<span class="stars" aria-label="${n} iš 5">${"★".repeat(n)}<i>${"★".repeat(5 - n)}</i></span>`;
-const posName = { G: "Gynėjas", F: "Puolėjas", C: "Centras" };
 let dreamR = null, monthK = null;
 function dreamCard(dream, r, owners) {
   const list = dream[r] || [];
