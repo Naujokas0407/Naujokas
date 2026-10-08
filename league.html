@@ -114,6 +114,9 @@ tr.tot td.pt{font-weight:700}
 .myn{padding:0 16px 12px;font-size:13.5px;line-height:1.5}.myn p{margin:4px 0}.warn{color:#ef4444;font-weight:600;font-size:12px}
 .trg{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:760px){.trg{grid-template-columns:1fr}}
 .tra{padding:0 16px 12px}.tra input{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.trl{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.trh{display:flex;align-items:center;gap:6px;flex-wrap:wrap;text-align:left;font:inherit;font-size:13.5px;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer}
+.trh:hover{border-color:var(--cap)}.trm{color:var(--muted);font-size:12px;margin-left:auto}
 .trx{border:0;background:none;color:var(--muted);font-size:18px;cursor:pointer;padding:0 4px}.trx:hover{color:#ef4444}
 .ph.pf{padding-top:0;justify-content:flex-start}.segl{font-size:12px;color:var(--muted);padding:4px 4px 4px 8px;align-self:center}
 .pp{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;border-radius:6px;font-size:11.5px;font-weight:700;background:var(--muted-bg);color:var(--ink-2)}
@@ -1511,7 +1514,7 @@ function renderTrade() {
   const side = (k, title, opts) => {
     const ps = TR[k].map(id => U[id]).filter(Boolean);
     return `<div class="card trs"><div class="ph"><div class="h">${title}</div></div>
-      <div class="tra"><input list="tr-${k}" id="in-${k}" placeholder="Įrašyk žaidėjo vardą…" autocomplete="off"><datalist id="tr-${k}">${opts.filter(p => !TR.give.includes(p.id) && !TR.get.includes(p.id)).map(p => `<option value="${esc(lab(p))}"></option>`).join("")}</datalist></div>
+      <div class="tra"><input type="search" id="in-${k}" placeholder="🔍 Ieškok: vardas, pavardė ar klubas…" autocomplete="off" autocorrect="off" spellcheck="false"><div class="trl" id="res-${k}"></div></div>
       ${ps.length ? `<div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th>Vid. FP</th><th title="Paskutinių 3 turų vidurkis">Forma</th><th>Min.</th><th class="hide-s">Turų</th><th></th></tr></thead><tbody>${ps.map(p => row(p, k)).join("")}</tbody></table></div>` : `<p class="sub" style="padding:0 16px 14px;margin:0">Pridėk vieną ar kelis žaidėjus.</p>`}</div>`;
   };
   const G = TR.give.map(id => U[id]).filter(Boolean), R = TR.get.map(id => U[id]).filter(Boolean);
@@ -1546,10 +1549,19 @@ function renderTrade() {
   el.innerHTML = `${me ? "" : `<p class="note">Patarimas: viršuje pasirink „Mano komanda“ – tada kairėje bus siūlomi tavo žaidėjai, o skaičiuoklė parodys, kaip pasikeis tavo sudėtis.</p>`}
     <div class="trg">${side("give", "Atiduodu", giveOpts)}${side("get", "Gaunu", getOpts)}</div>${verdict}
     <p class="foot" style="margin:0">Forma – paskutinių 3 turų FP vidurkis (🔥 – gerokai virš sezono vidurkio, 🧊 – gerokai žemiau). Minutės – vidutinis žaidimo laikas per rungtynes.</p>`;
+  const fold = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/g, "l").toLowerCase();
   ["give", "get"].forEach(k => {
-    const inp = document.getElementById("in-" + k), opts = k === "give" ? giveOpts : getOpts;
-    const pickIt = () => { const p = opts.find(x => lab(x) === inp.value); if (p && !TR.give.includes(p.id) && !TR.get.includes(p.id)) { TR[k].push(p.id); renderTrade(); const n = document.getElementById("in-" + k); if (n) n.focus(); } };
-    inp.addEventListener("change", pickIt); inp.addEventListener("input", pickIt);
+    const inp = document.getElementById("in-" + k), box = document.getElementById("res-" + k), opts = k === "give" ? giveOpts : getOpts;
+    const show = () => {
+      const q = fold(inp.value).trim();
+      if (!q) { box.innerHTML = ""; return; }
+      const words = q.split(/\s+/);
+      const hits = opts.filter(p => !TR.give.includes(p.id) && !TR.get.includes(p.id)).filter(p => { const h = fold(p.name + " " + p.club + " " + tv(p.club)); return words.every(w => h.split(/[\s-]+/).some(x => x.startsWith(w)) || h.includes(w)); }).slice(0, 8);
+      box.innerHTML = hits.length ? hits.map(p => `<button type="button" class="trh" data-add="${esc(p.id)}">${posChip(p)} <b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span> <span class="trm">${p.owner ? esc(p.owner) : "laisvas"} · vid. ${p.avg == null ? "–" : num(p.avg)}</span></button>`).join("") : `<div class="sub" style="padding:6px 2px">Nerasta</div>`;
+      box.querySelectorAll("[data-add]").forEach(b => b.addEventListener("click", () => { TR[k].push(b.dataset.add); renderTrade(); }));
+    };
+    inp.addEventListener("input", show);
+    inp.addEventListener("keydown", e => { if (e.key === "Enter") { const f = box.querySelector("[data-add]"); if (f) f.click(); } });
   });
   el.querySelectorAll("[data-rm]").forEach(b => b.addEventListener("click", () => { const [k, id] = b.dataset.rm.split(":"); TR[k] = TR[k].filter(x => x !== id); renderTrade(); }));
   const c = document.getElementById("trClear"); if (c) c.addEventListener("click", () => { TR = { give: [], get: [] }; renderTrade(); });
