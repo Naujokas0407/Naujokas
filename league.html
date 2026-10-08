@@ -105,6 +105,8 @@ tr.tot td.pt{font-weight:700}
 .seg{display:inline-flex;gap:2px;background:var(--muted-bg);border-radius:8px;padding:3px}
 .seg button{border:0;background:transparent;font:500 13px inherit;font-family:inherit;color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+details.mtd{margin:0}details.mtd>summary{cursor:pointer;list-style:none;color:var(--ink-2);font-size:13px;font-weight:500;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);margin:6px 0 10px}
+details.mtd>summary::-webkit-details-marker{display:none}details.mtd>summary::before{content:"▸ ";color:var(--muted)}details.mtd[open]>summary::before{content:"▾ "}
 .ph.pf{padding-top:0;justify-content:flex-start}.segl{font-size:12px;color:var(--muted);padding:4px 4px 4px 8px;align-self:center}
 .pp{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;border-radius:6px;font-size:11.5px;font-weight:700;background:var(--muted-bg);color:var(--ink-2)}
 .pp.pG{background:rgba(59,130,246,.16);color:#3b82f6}.pp.pF{background:rgba(16,185,129,.16);color:#10b981}.pp.pC{background:rgba(245,158,11,.18);color:#d97706}
@@ -489,6 +491,7 @@ function render() {
       const c = s => counted.filter(p => playerState(p) === s).length;
       return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}</td><td class="l"><span data-team="${esc(t.title)}">${esc(t.title)}</span></td><td class="pts">${num(t.total)}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td>${showProj ? `<td class="hide-s">~${num(projection(t).proj)}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
     }).join("") + `</tbody></table></div></div>`;
+  html += D.format === "h2h" ? h2hMeetings() : seasonClassic();
   html += progressShell();
 
   const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
@@ -596,6 +599,7 @@ function renderPlayers() {
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}</tr></thead><tbody>` +
       (list.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="8">Duomenų nėra</td></tr>`) +
       `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. „Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+    document.getElementById("players").insertAdjacentHTML("beforeend", injuriesHtml());
     bindPlayers();
     return;
   }
@@ -604,7 +608,7 @@ function renderPlayers() {
   document.getElementById("players").innerHTML = `<div class="card">${playersBar("Šio turo žaidėjai")}
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("fp", "FP")}${sortHead("avg", "Vid.")}${sortHead("min", "Min.")}<th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
     (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}</td><td>${posChip(p)}</td><td class="pt">${fpTxt(p)}</td><td>${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="gm l">${g(p)}</td>${statCells(p.st)}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="23">${D.pool.length ? "Pagal šį filtrą žaidėjų nėra" : "Šiame ture dar niekas nežaidė"}</td></tr>`) +
-    `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">„Vid.“ – sezono FP vidurkis, „Min.“ – vidutinės žaidimo minutės baigtuose turuose, MIN – šio turo minutės. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+    `</tbody></table></div><p class="foot" style="padding:0 16px 14px;margin:0">„Vid.“ – sezono FP vidurkis, „Min.“ – vidutinės žaidimo minutės baigtuose turuose, MIN – šio turo minutės. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>` + injuriesHtml();
   bindPlayers();
 }
 
@@ -773,7 +777,7 @@ function seasonClassic() {
 
 function renderSeason() {
   const el = document.getElementById("season");
-  el.innerHTML = D.format === "h2h" ? roundAwards() + dreamSection() + h2hMeetings() + seasonH2H() + seasonOscars() : roundAwards() + dreamSection() + seasonOscars() + classicRecords() + seasonClassic();
+  el.innerHTML = D.format === "h2h" ? dreamSection() + seasonH2H() + seasonOscars() : dreamSection() + seasonOscars() + classicRecords();
   bindDream(el);
   el.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => { document.getElementById("tab-fantasy").click(); const x = document.getElementById(tr.dataset.jump); if (x) x.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
@@ -923,7 +927,7 @@ function renderReporter() {
     body = `<div class="rps">${classicReport()}</div>` + (blocks ? `<div class="sub">Trenerių komentarai</div><div class="cqg">${blocks}</div>` : "");
   }
   const txr = txReview(); if (txr) body = `<div class="rps">${txr}</div>` + body;
-  el.innerHTML = body + `<p class="foot" style="margin:0">Trenerių komentarai – išgalvoti ir parašyti su šypsena. Realūs lygos žaidėjai jų nesakė (bent jau kol kas).</p>` + txNewsHtml() + injuriesHtml();
+  el.innerHTML = body + roundAwards() + `<p class="foot" style="margin:0">Trenerių komentarai – išgalvoti ir parašyti su šypsena. Realūs lygos žaidėjai jų nesakė (bent jau kol kas).</p>`;
 }
 
 // ---- Trenerių komentarai (išgalvoti, humoristiniai). Parenka serveris – kiekvienas tekstas unikalus visose lygose ir turuose ----
@@ -1115,6 +1119,7 @@ function h2hRecord(a, b, beforeRound) {
   const last = g.sort((x, y) => y.r - x.r)[0];
   return { n: g.length, wa, wb, dr, last };
 }
+var MEET_OPEN = false;
 function h2hMeetings() {
   const { all, per } = h2hGames();
   if (!all.length) return "";
@@ -1142,7 +1147,7 @@ function h2hMeetings() {
   }));
   pairs.sort((p, q) => q.last - p.last || q.P.g.length - p.P.g.length);
   const cards = pairs.map(({ x, y, P }) => `<div class="pr"><div class="ph"><span>${esc(x)}</span><b>${rec(P)}</b><span>${esc(y)}</span></div><ul>${P.g.map(m => `<li><span class="fa">${m.r} t.</span><span class="${m.x > m.y ? "sw" : ""}">${num(m.x)}</span><span class="fa">:</span><span class="${m.y > m.x ? "sw" : ""}">${num(m.y)}</span></li>`).join("")}</ul><div class="pt2">Iš viso <b>${num(P.pf)} : ${num(P.pa)}</b> · skirtumas <b class="${P.diff > 0 ? "sw" : P.diff < 0 ? "sl" : ""}">${sg(P.diff)}</b></div></div>`).join("");
-  return `<div class="sub">H2H tarpusavio lentelė · eilutės komandos rezultatas prieš stulpelio komandą (pergalės–pralaimėjimai), po juo – bendras taškų skirtumas · paskutinis stulpelis – visų sezono turų taškai</div>${matrix}<div class="sub">Visi tarpusavio susitikimai · rezultatai, bendra taškų suma ir skirtumas</div><div class="mts">${cards}</div>`;
+  return `<div class="sub">H2H tarpusavio lentelė · eilutės komandos rezultatas prieš stulpelio komandą (pergalės–pralaimėjimai), po juo – bendras taškų skirtumas · paskutinis stulpelis – visų sezono turų taškai</div>${matrix}<details class="mtd"${MEET_OPEN ? " open" : ""} ontoggle="MEET_OPEN=this.open"><summary>Visi tarpusavio susitikimai (${pairs.length}) · rezultatai, bendra taškų suma ir skirtumas</summary><div class="mts">${cards}</div></details>`;
 }
 
 // ---- Žaidėjo kortelė ----
