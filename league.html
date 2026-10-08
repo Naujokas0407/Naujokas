@@ -1315,7 +1315,8 @@ function progressData() {
       rounds.forEach(r => { const g = (per[t] || []).find(x => x.r === r); if (g) { w += g.res === "W" ? 1 : g.res === "D" ? 0.5 : 0; p += g.pf; } cumW[t].push(w); cumP[t].push(Math.round(p * 100) / 100); }); });
     const rank = {}; titles.forEach(t => rank[t] = []);
     rounds.forEach((r, i) => [...titles].sort((a, b) => cumW[b][i] - cumW[a][i] || cumP[b][i] - cumP[a][i]).forEach((t, k) => rank[t].push(k + 1)));
-    return { rounds, metrics: { wins: { label: "Pergalės", s: cumW, int: true }, rank: { label: "Vieta", s: rank, rank: true }, pts: { label: "Taškai", s: cumP } }, def: "wins", note: "Sukauptos pergalės po kiekvieno baigto turo" };
+    const perR = {}; titles.forEach(t => perR[t] = rounds.map(r => { const g = (per[t] || []).find(x => x.r === r); return g ? Math.round(g.pf * 100) / 100 : 0; }));
+    return { rounds, metrics: { wins: { label: "Pergalės", s: cumW, int: true }, rank: { label: "Vieta", s: rank, rank: true }, pts: { label: "Taškai", s: cumP }, round: { label: "Turo taškai", s: perR, note: "Kiek taškų surinkta kiekviename ture" } }, def: "wins", note: "Sukauptos pergalės po kiekvieno baigto turo" };
   }
   const hist = D.history || {};
   let rounds = Object.keys(hist).map(Number).filter(r => r <= D.round).sort((a, b) => a - b);
@@ -1325,7 +1326,8 @@ function progressData() {
   const rank = {}; titles.forEach(t => rank[t] = []);
   rounds.forEach((r, i) => [...titles].sort((a, b) => cum[b][i] - cum[a][i]).forEach((t, k) => rank[t].push(k + 1)));
   const gap = {}; titles.forEach(t => gap[t] = rounds.map((r, i) => Math.round((cum[t][i] - Math.max(...titles.map(x => cum[x][i]))) * 100) / 100));
-  return { rounds, metrics: { pts: { label: "Taškai", s: cum }, rank: { label: "Vieta", s: rank, rank: true }, gap: { label: "Atsilikimas", s: gap } }, def: "pts",
+  const perR = {}; titles.forEach(t => perR[t] = rounds.map(r => Math.round(val(t, r) * 100) / 100));
+  return { rounds, metrics: { pts: { label: "Taškai", s: cum }, round: { label: "Turo taškai", s: perR, note: "Kiek taškų surinkta kiekviename ture" }, rank: { label: "Vieta", s: rank, rank: true }, gap: { label: "Atsilikimas", s: gap } }, def: "pts",
     note: "Sukaupti taškai po kiekvieno turo" + (started && !roundDone() ? " · einamasis turas dar vyksta" : "") };
 }
 var progMine = null;
@@ -1336,7 +1338,7 @@ function progressShell() {
   const mine = myTeam() ? titles.find(t => t.trim() === myTeam().trim()) : null;
   if (mine && progMine !== mine) { progSel = mine; progMine = mine; }   // pasirinkus „Mano komanda“ – ji paryškinama grafike
   if (!progSel || !titles.includes(progSel)) { const s = P.metrics.rank.s; progSel = titles.find(t => s[t][s[t].length - 1] === 1) || titles[0]; }
-  return `<div class="card prog"><div class="ph"><div><div class="h">Bendras progresas</div><div class="sub" id="progNote">${esc(P.metrics[progMetric].rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note)}</div></div>
+  return `<div class="card prog"><div class="ph"><div><div class="h">Bendras progresas</div><div class="sub" id="progNote">${esc(P.metrics[progMetric].note ? P.metrics[progMetric].note : P.metrics[progMetric].rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note)}</div></div>
     <div class="seg" role="group" aria-label="Rodiklis">${Object.entries(P.metrics).map(([k, m]) => `<button aria-pressed="${k === progMetric}" data-pm="${k}">${m.label}</button>`).join("")}</div></div>
     <div class="sub" style="padding:0 16px 6px">Spausk komandas, kad palygintum – kiekviena gaus savo spalvą</div><div class="pchips" role="group" aria-label="Paryškinti komandą">${titles.map((t, i) => `<button aria-pressed="${!!progColor(t)}" data-ps="${i}"${progColor(t) ? ` style="border-color:${progColor(t)};color:${progColor(t)}"` : ""}>${t === mine ? "⭐ " : ""}${esc(t)}</button>`).join("")}</div>
     <div class="pwrap" id="progWrap"><svg id="progSvg" role="img" aria-label="Komandų progreso grafikas"></svg><div class="ptip" id="progTip" hidden></div></div></div>`;
@@ -1385,7 +1387,7 @@ function drawProgress() {
 function bindProgress() {
   const card = document.querySelector(".prog"); if (!card) return;
   card.querySelectorAll("[data-pm]").forEach(b => b.addEventListener("click", () => { progMetric = b.dataset.pm; card.querySelectorAll("[data-pm]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    const P = progressData(), M = P.metrics[progMetric]; document.getElementById("progNote").textContent = M.rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note; drawProgress(); }));
+    const P = progressData(), M = P.metrics[progMetric]; document.getElementById("progNote").textContent = M.note ? M.note : M.rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note; drawProgress(); }));
   card.querySelectorAll("[data-ps]").forEach(b => b.addEventListener("click", () => {
     const tt = D.teams[+b.dataset.ps].title;
     if (tt === progSel) { if (tt !== progMine && progExtra.length) progSel = progExtra.shift(); }          // pagrindinės nenuimame, jei ji vienintelė
