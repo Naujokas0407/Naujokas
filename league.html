@@ -255,7 +255,7 @@ a.brand{text-decoration:none}
 .pgrid text,.pax text{fill:var(--faint);font-size:11px;font-family:inherit}
 .pl{fill:none;stroke:#4a5163;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
 .pl.hov{stroke:var(--ink-2);stroke-width:2}
-.pl.sel{stroke:var(--cap);stroke-width:2.5}
+.pl.sel{stroke:var(--cap);stroke-width:4}
 .phit{fill:none;stroke:transparent;stroke-width:12}
 .pd{fill:#4a5163;stroke:var(--card);stroke-width:2}
 .pd.sel{fill:var(--cap)}
@@ -1324,14 +1324,17 @@ function progressData() {
   return { rounds, metrics: { pts: { label: "Taškai", s: cum }, rank: { label: "Vieta", s: rank, rank: true }, gap: { label: "Atsilikimas", s: gap } }, def: "pts",
     note: "Sukaupti taškai po kiekvieno turo" + (started && !roundDone() ? " · einamasis turas dar vyksta" : "") };
 }
+var progMine = null;
 function progressShell() {
   const P = progressData(); if (!P.rounds.length) return "";
   if (!progMetric || !P.metrics[progMetric]) progMetric = P.def;
   const titles = D.teams.map(t => t.title);
+  const mine = myTeam() ? titles.find(t => t.trim() === myTeam().trim()) : null;
+  if (mine && progMine !== mine) { progSel = mine; progMine = mine; }   // pasirinkus „Mano komanda“ – ji paryškinama grafike
   if (!progSel || !titles.includes(progSel)) { const s = P.metrics.rank.s; progSel = titles.find(t => s[t][s[t].length - 1] === 1) || titles[0]; }
   return `<div class="card prog"><div class="ph"><div><div class="h">Bendras progresas</div><div class="sub" id="progNote">${esc(P.metrics[progMetric].rank ? "Vieta lentelėje po kiekvieno turo" : progMetric === "gap" ? "Atsilikimas nuo lyderio po kiekvieno turo" : P.note)}</div></div>
     <div class="seg" role="group" aria-label="Rodiklis">${Object.entries(P.metrics).map(([k, m]) => `<button aria-pressed="${k === progMetric}" data-pm="${k}">${m.label}</button>`).join("")}</div></div>
-    <div class="pchips" role="group" aria-label="Paryškinti komandą">${titles.map((t, i) => `<button aria-pressed="${t === progSel}" data-ps="${i}">${esc(t)}</button>`).join("")}</div>
+    <div class="pchips" role="group" aria-label="Paryškinti komandą">${titles.map((t, i) => `<button aria-pressed="${t === progSel}" data-ps="${i}">${t === mine ? "⭐ " : ""}${esc(t)}</button>`).join("")}</div>
     <div class="pwrap" id="progWrap"><svg id="progSvg" role="img" aria-label="Komandų progreso grafikas"></svg><div class="ptip" id="progTip" hidden></div></div></div>`;
 }
 function drawProgress() {
