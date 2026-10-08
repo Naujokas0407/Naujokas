@@ -114,6 +114,11 @@ tr.tot td.pt{font-weight:700}
 .myn{padding:0 16px 12px;font-size:13.5px;line-height:1.5}.myn p{margin:4px 0}.warn{color:#ef4444;font-weight:600;font-size:12px}
 .trg{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:760px){.trg{grid-template-columns:1fr}}
 .tra{padding:0 16px 12px}.tra input{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.trp{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end;padding:14px 16px}.trp label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.trp select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px}.trv{font-size:20px;color:var(--cap);padding-bottom:6px}
+@media (max-width:520px){.trp{grid-template-columns:1fr}.trv{display:none}}
+.trt tr.trr{cursor:pointer}.trt tr.trr:hover td{background:var(--soft)}.trt tr.on td{background:var(--me)}
+.trc{display:inline-flex;width:20px;height:20px;border:1.5px solid var(--line);border-radius:5px;align-items:center;justify-content:center;color:var(--cap);font-weight:700;font-size:13px}.trr.on .trc{border-color:var(--cap)}
 .trl{display:flex;flex-direction:column;gap:4px;margin-top:6px}
 .trh{display:flex;align-items:center;gap:6px;flex-wrap:wrap;text-align:left;font:inherit;font-size:13.5px;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer}
 .trh:hover{border-color:var(--cap)}.trm{color:var(--muted);font-size:12px;margin-left:auto}
@@ -1440,7 +1445,7 @@ function renderMyBar() {
   const el = document.getElementById("mybar"); if (!el || !D) return;
   const cur = myTeam(), titles = (CUR || D).teams.map(t => t.title);
   el.innerHTML = `<label for="mySel">⭐ Mano komanda</label><select id="mySel"><option value="">— pasirink savo komandą —</option>${titles.map(x => `<option value="${esc(x)}"${x.trim() === cur.trim() && cur ? " selected" : ""}>${esc(x)}</option>`).join("")}</select>`;
-  el.querySelector("select").addEventListener("change", e => { store.set("my:" + SLUG, e.target.value); TR = { give: [], get: [] }; render(); });
+  el.querySelector("select").addEventListener("change", e => { store.set("my:" + SLUG, e.target.value); TR = { give: [], get: [] }; TRA = ""; render(); });
 }
 function myPlace(T) {
   if (D.format === "h2h") {
@@ -1488,6 +1493,8 @@ function myCard() {
 
 // ---- Mainų skaičiuoklė ----
 let TR = { give: [], get: [] };
+let TRA = "", TRB = "", FAQ = "";
+const fold = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/g, "l").toLowerCase();
 function tradeUniverse() {
   const map = {};
   (CUR || D).teams.forEach(t => t.players.forEach(p => { map[p.id] = { ...p, owner: t.title }; }));
@@ -1503,20 +1510,26 @@ function formOf(id) {
 function renderTrade() {
   const el = document.getElementById("trade"); if (!el || !D) return;
   if (!FPH) { loadFph().then(() => renderTrade()); }
-  const U = tradeUniverse(), me = myTeam();
-  const lab = p => `${p.name} (${tv(p.club)}${p.pos ? ", " + p.pos : ""}) – ${p.owner ? p.owner.trim() : "laisvas"}`;
-  const all = Object.values(U).sort((a, b) => (b.avg ?? -99) - (a.avg ?? -99));
-  const giveOpts = all.filter(p => me ? p.owner && p.owner.trim() === me.trim() : p.owner), getOpts = all.filter(p => !me || !p.owner || p.owner.trim() !== me.trim());
-  const row = (p, side) => {
-    const f = formOf(p.id), d = f && p.avg != null ? f.avg - p.avg : 0;
-    return `<tr><td class="l pl">${posChip(p)} <span class="nm">${esc(p.name)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}<div class="ml">${p.owner ? esc(p.owner) : "laisvas žaidėjas"}</div></td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${f ? num(Math.round(f.avg * 100) / 100) + (Math.abs(d) >= 3 ? (d > 0 ? " 🔥" : " 🧊") : "") : "–"}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td><button type="button" class="trx" data-rm="${side}:${esc(p.id)}" aria-label="Pašalinti">×</button></td></tr>`;
+  const SRC = CUR || D, U = tradeUniverse(), me = myTeam();
+  const titles = SRC.teams.map(t => t.title);
+  if (!TRA || !titles.includes(TRA)) TRA = titles.find(x => me && x.trim() === me.trim()) || "";
+  if (TRB && TRB !== "__fa" && (!titles.includes(TRB) || TRB === TRA)) TRB = "";
+  const rosterOf = k => k === "__fa" ? (SRC.fa || []).map(p => U[p.id]).filter(Boolean) : ((SRC.teams.find(t => t.title === k) || { players: [] }).players.map(p => U[p.id]).filter(Boolean));
+  const sel = (id, val, ph, extraFa) => `<select id="${id}"><option value="">${ph}</option>${titles.filter(x => id === "trB" ? x !== TRA : x !== TRB || TRB === "").map(x => `<option value="${esc(x)}"${x === val ? " selected" : ""}>${esc(x)}</option>`).join("")}${extraFa ? `<option value="__fa"${val === "__fa" ? " selected" : ""}>🆓 Laisvieji žaidėjai</option>` : ""}</select>`;
+  const head = `<div class="card"><div class="trp"><div><label for="trA">Komanda, kuri atiduoda</label>${sel("trA", TRA, "— pasirink komandą —", false)}</div><span class="trv">⇄</span><div><label for="trB">Su kuo mainomasi</label>${sel("trB", TRB, "— pasirink komandą —", true)}</div></div></div>`;
+  const ord = { G: 1, F: 2, C: 3 };
+  const rowsOf = (k, side) => {
+    let ps = rosterOf(k);
+    if (k === "__fa") { const q = fold(FAQ).trim(); ps = ps.filter(p => !q || fold(p.name + " " + p.club + " " + tv(p.club)).includes(q)).sort((a, b) => (b.avg ?? -99) - (a.avg ?? -99)).slice(0, q ? 40 : 30); }
+    else ps = ps.sort((a, b) => (ord[a.pos] || 9) - (ord[b.pos] || 9) || (b.avg ?? -99) - (a.avg ?? -99));
+    return ps.map(p => {
+      const on = TR[side].includes(p.id), f = formOf(p.id), d = f && p.avg != null ? f.avg - p.avg : 0;
+      return `<tr class="trr${on ? " on" : ""}" data-pick="${side}:${esc(p.id)}"><td class="l"><span class="trc">${on ? "✓" : ""}</span></td><td class="l pl">${posChip(p)} <span class="nm">${esc(p.name)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${f ? num(Math.round(f.avg * 100) / 100) + (Math.abs(d) >= 3 ? (d > 0 ? " 🔥" : " 🧊") : "") : "–"}</td><td>${minTxt(p.min)}</td></tr>`;
+    }).join("");
   };
-  const side = (k, title, opts) => {
-    const ps = TR[k].map(id => U[id]).filter(Boolean);
-    return `<div class="card trs"><div class="ph"><div class="h">${title}</div></div>
-      <div class="tra"><input type="search" id="in-${k}" placeholder="🔍 Ieškok: vardas, pavardė ar klubas…" autocomplete="off" autocorrect="off" spellcheck="false"><div class="trl" id="res-${k}"></div></div>
-      ${ps.length ? `<div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th>Vid. FP</th><th title="Paskutinių 3 turų vidurkis">Forma</th><th>Min.</th><th class="hide-s">Turų</th><th></th></tr></thead><tbody>${ps.map(p => row(p, k)).join("")}</tbody></table></div>` : `<p class="sub" style="padding:0 16px 14px;margin:0">Pridėk vieną ar kelis žaidėjus.</p>`}</div>`;
-  };
+  const roster = (k, side, title) => !k ? "" : `<div class="card trs"><div class="ph"><div class="h">${title}</div><span class="sub">${TR[side].length ? `pažymėta: ${TR[side].length}` : "pažymėk žaidėjus"}</span></div>
+    ${k === "__fa" ? `<div class="tra"><input type="search" id="faq" value="${esc(FAQ)}" placeholder="🔍 Ieškok laisvo žaidėjo…" autocomplete="off" spellcheck="false"></div>` : ""}
+    <div class="x"><table class="box trt"><thead><tr><th class="l"></th><th class="l">Žaidėjas</th><th>Vid. FP</th><th title="Paskutinių 3 turų vidurkis">Forma</th><th>Min.</th></tr></thead><tbody>${rowsOf(k, side) || `<tr><td class="l fa" colspan="5">Nėra žaidėjų</td></tr>`}</tbody></table></div></div>`;
   const G = TR.give.map(id => U[id]).filter(Boolean), R = TR.get.map(id => U[id]).filter(Boolean);
   const sum = (arr, f) => arr.reduce((s, p) => s + (f(p) ?? 0), 0);
   let verdict = "";
@@ -1531,39 +1544,24 @@ function renderTrade() {
       `<div class="myk"><span class="sub">Pagal sezono vidurkį</span><b class="${cls(dA)}">${sg(dA)}</b><span class="sub">FP per turą</span></div>`,
       `<div class="myk"><span class="sub">Pagal formą (3 turai)</span><b class="${cls(dF)}">${sg(dF)}</b><span class="sub">FP per turą</span></div>`,
       `<div class="myk"><span class="sub">Minutės</span><b class="${cls(dM)}">${sg(Math.round(dM))}</b><span class="sub">min. per rungtynes</span></div>`];
+    const notes = [], score = dA + dF, who = esc(TRA);
+    notes.push(score > 2 ? `✅ <b>Naudinga komandai ${who}.</b> Ji gauna daugiau, nei atiduoda${TRB !== "__fa" ? ` – ${esc(TRB)} šiuose mainuose pralaimi` : ""}.` : score < -2 ? `❌ <b>Nenaudinga komandai ${who}.</b> Ji atiduoda daugiau, nei gauna${TRB !== "__fa" ? ` – laimi ${esc(TRB)}` : ""}.` : `⚖️ <b>Lygiaverčiai mainai.</b> Sprendžia pozicijos, traumos ir nuojauta.`);
     const hurtR = R.filter(p => ["out", "doubtful"].includes(healthOf(p))), hurtG = G.filter(p => ["out", "doubtful"].includes(healthOf(p)));
-    const notes = [];
-    const score = dA + dF;
-    notes.push(score > 2 ? `✅ <b>Mainai tau naudingi.</b> Gauni daugiau, nei atiduodi${dF > dA + 2 ? ", o forma rodo dar geresnį vaizdą" : ""}.` : score < -2 ? `❌ <b>Mainai tau nenaudingi.</b> Atiduodi daugiau, nei gauni${dF > 0 ? ", nors pagal formą skirtumas mažesnis" : ""}.` : `⚖️ <b>Lygiaverčiai mainai.</b> Sprendžia pozicijos, traumos ir nuojauta.`);
-    if (hurtR.length) notes.push(`⚠️ Gauni traumuotą žaidėją: ${hurtR.map(p => esc(p.name) + hBadge(p)).join(", ")}.`);
-    if (hurtG.length) notes.push(`💡 Atiduodi traumuotą žaidėją: ${hurtG.map(p => esc(p.name) + hBadge(p)).join(", ")} – tai pliusas tau.`);
-    if (G.length !== R.length) notes.push(`ℹ️ Atiduodi ${G.length}, gauni ${R.length} – sudėtyje ${G.length > R.length ? "atsiras laisva vieta laisvųjų rinkai" : "reikės ką nors atleisti"}.`);
-    const myT = me ? (CUR || D).teams.find(t => t.title.trim() === me.trim()) : null;
-    if (myT) {
-      const cnt = arr => ["G", "F", "C"].map(k => arr.filter(p => p.pos === k).length);
-      const before = cnt(myT.players), after = cnt([...myT.players.filter(p => !TR.give.includes(p.id)), ...R]);
-      notes.push(`Tavo sudėtis pagal pozicijas: G ${before[0]} · F ${before[1]} · C ${before[2]} → <b>G ${after[0]} · F ${after[1]} · C ${after[2]}</b>${after[2] < 1 ? ` <span class="warn">neliks centro!</span>` : after[0] < 1 ? ` <span class="warn">neliks gynėjo!</span>` : after[1] < 1 ? ` <span class="warn">neliks puolėjo!</span>` : ""}`);
-    }
-    verdict = `<div class="card mycard"><div class="ph"><div class="h">Rezultatas</div><button type="button" class="lnk" id="trClear">Išvalyti</button></div><div class="myg">${tiles.join("")}</div><div class="myn">${notes.map(n => `<p>${n}</p>`).join("")}</div></div>`;
-  }
-  el.innerHTML = `${me ? "" : `<p class="note">Patarimas: viršuje pasirink „Mano komanda“ – tada kairėje bus siūlomi tavo žaidėjai, o skaičiuoklė parodys, kaip pasikeis tavo sudėtis.</p>`}
-    <div class="trg">${side("give", "Atiduodu", giveOpts)}${side("get", "Gaunu", getOpts)}</div>${verdict}
-    <p class="foot" style="margin:0">Forma – paskutinių 3 turų FP vidurkis (🔥 – gerokai virš sezono vidurkio, 🧊 – gerokai žemiau). Minutės – vidutinis žaidimo laikas per rungtynes.</p>`;
-  const fold = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/g, "l").toLowerCase();
-  ["give", "get"].forEach(k => {
-    const inp = document.getElementById("in-" + k), box = document.getElementById("res-" + k), opts = k === "give" ? giveOpts : getOpts;
-    const show = () => {
-      const q = fold(inp.value).trim();
-      if (!q) { box.innerHTML = ""; return; }
-      const words = q.split(/\s+/);
-      const hits = opts.filter(p => !TR.give.includes(p.id) && !TR.get.includes(p.id)).filter(p => { const h = fold(p.name + " " + p.club + " " + tv(p.club)); return words.every(w => h.split(/[\s-]+/).some(x => x.startsWith(w)) || h.includes(w)); }).slice(0, 8);
-      box.innerHTML = hits.length ? hits.map(p => `<button type="button" class="trh" data-add="${esc(p.id)}">${posChip(p)} <b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span> <span class="trm">${p.owner ? esc(p.owner) : "laisvas"} · vid. ${p.avg == null ? "–" : num(p.avg)}</span></button>`).join("") : `<div class="sub" style="padding:6px 2px">Nerasta</div>`;
-      box.querySelectorAll("[data-add]").forEach(b => b.addEventListener("click", () => { TR[k].push(b.dataset.add); renderTrade(); }));
-    };
-    inp.addEventListener("input", show);
-    inp.addEventListener("keydown", e => { if (e.key === "Enter") { const f = box.querySelector("[data-add]"); if (f) f.click(); } });
-  });
-  el.querySelectorAll("[data-rm]").forEach(b => b.addEventListener("click", () => { const [k, id] = b.dataset.rm.split(":"); TR[k] = TR[k].filter(x => x !== id); renderTrade(); }));
+    if (hurtR.length) notes.push(`⚠️ ${who} gauna traumuotą žaidėją: ${hurtR.map(p => esc(p.name) + hBadge(p)).join(", ")}.`);
+    if (hurtG.length) notes.push(`💡 ${who} atiduoda traumuotą žaidėją: ${hurtG.map(p => esc(p.name) + hBadge(p)).join(", ")}.`);
+    if (G.length !== R.length) notes.push(`ℹ️ ${who} atiduoda ${G.length}, gauna ${R.length} – ${G.length > R.length ? "atsiras laisva vieta sudėtyje" : "reikės ką nors atleisti"}.`);
+    const cnt = arr => ["G", "F", "C"].map(k => arr.filter(p => p.pos === k).length);
+    const pos = (k, out, inn) => { const ps = rosterOf(k), b = cnt(ps), a = cnt([...ps.filter(p => !out.includes(p.id)), ...inn]); const warn = a[2] < 1 ? " <span class=\"warn\">neliks centro!</span>" : a[0] < 1 ? " <span class=\"warn\">neliks gynėjo!</span>" : a[1] < 1 ? " <span class=\"warn\">neliks puolėjo!</span>" : ""; return `G ${b[0]} · F ${b[1]} · C ${b[2]} → <b>G ${a[0]} · F ${a[1]} · C ${a[2]}</b>${warn}`; };
+    notes.push(`${who} pozicijos: ${pos(TRA, TR.give, R)}`);
+    if (TRB && TRB !== "__fa") notes.push(`${esc(TRB)} pozicijos: ${pos(TRB, TR.get, G)}`);
+    verdict = `<div class="card mycard"><div class="ph"><div class="h">Rezultatas · ${who}</div><button type="button" class="lnk" id="trClear">Išvalyti</button></div><div class="sub" style="padding:0 16px 8px">Atiduoda: ${G.map(p => esc(p.name)).join(", ")} · Gauna: ${R.map(p => esc(p.name)).join(", ")}</div><div class="myg">${tiles.join("")}</div><div class="myn">${notes.map(n => `<p>${n}</p>`).join("")}</div></div>`;
+  } else if (TRA && TRB) verdict = `<p class="note">Pažymėk bent po vieną žaidėją abiejose komandose – rezultatas atsiras čia.</p>`;
+  el.innerHTML = head + verdict + `<div class="trg">${roster(TRA, "give", "Atiduoda: " + esc(TRA))}${roster(TRB, "get", TRB === "__fa" ? "Gauna: laisvieji žaidėjai" : "Gauna iš: " + esc(TRB))}</div>
+    <p class="foot" style="margin:0">Spausk ant žaidėjo eilutės, kad pažymėtum. Forma – paskutinių 3 turų FP vidurkis (🔥 – gerokai virš sezono vidurkio, 🧊 – gerokai žemiau). Minutės – vidutinis žaidimo laikas per rungtynes.</p>`;
+  el.querySelector("#trA").addEventListener("change", e => { TRA = e.target.value; TR.give = []; if (TRB === TRA) { TRB = ""; TR.get = []; } renderTrade(); });
+  el.querySelector("#trB").addEventListener("change", e => { TRB = e.target.value; TR.get = []; renderTrade(); });
+  el.querySelectorAll("[data-pick]").forEach(r => r.addEventListener("click", () => { const [k, id] = r.dataset.pick.split(":"); TR[k] = TR[k].includes(id) ? TR[k].filter(x => x !== id) : [...TR[k], id]; renderTrade(); }));
+  const fq = el.querySelector("#faq"); if (fq) fq.addEventListener("input", () => { FAQ = fq.value; const pos = fq.selectionStart; renderTrade(); const n = document.getElementById("faq"); if (n) { n.focus(); n.setSelectionRange(pos, pos); } });
   const c = document.getElementById("trClear"); if (c) c.addEventListener("click", () => { TR = { give: [], get: [] }; renderTrade(); });
 }
 
