@@ -15,7 +15,7 @@ Out: Matthew Strazel, Joel Parra, Tosan Evbuomwan
 Pakeitimai: į startą – Alec Peters, Devon Dotson, Aliou Diarra; iš starto – Chima Moneke, Vasilije Micic, McKinley Wright IV.
 
 **🩹 Traumos**
-- Tosan Evbuomwan: nežais
+- Tosan Evbuomwan: paaiškės prieš rungtynes
 
 **🛡 Varžovų gynyba šį turą**
 - Jonas Valančiūnas @ BAR: palankus varžovas (+25 % centrams)
