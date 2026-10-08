@@ -647,10 +647,22 @@ function renderPlayers() {
 
 // ---- Prognozė ir optimali sudėtis ----
 const roundDone = () => D.games.length > 0 && D.games.every(g => g.status === "final");
+// kiek rungtynių laiko jau praėjo (0–1)
+function gameElapsed(g) {
+  if (!g || g.status !== "live") return g && g.status === "final" ? 1 : 0;
+  const q = parseInt(g.q, 10), c = String(g.clock || "").split(":").map(Number);
+  if (!q) return 0.5;
+  const left = c.length === 2 ? c[0] * 60 + c[1] : 300;
+  if (q > 4) return 1;
+  return Math.min(1, Math.max(0, ((q - 1) * 600 + (600 - left)) / 2400));
+}
 function projection(t) {
   const rest = t.players.filter(p => p.mult > 0 && playerState(p) === "toplay");
   const add = rest.reduce((s, p) => s + (p.avg != null ? p.avg * p.mult : 0), 0);
-  return { left: rest.length, proj: Math.round((t.total + add) * 4) / 4 };
+  // žaidžiantys dabar: prie jau surinktų taškų pridedama likusiai rungtynių daliai tenkanti vidurkio dalis
+  const live = t.players.filter(p => p.mult > 0 && playerState(p) === "playing");
+  const addLive = live.reduce((s, p) => s + (p.avg != null && !p.dnp ? p.avg * p.mult * (1 - gameElapsed(gameOf(p.game))) : 0), 0);
+  return { left: rest.length, live: live.length, proj: Math.round((t.total + add + addLive) * 4) / 4 };
 }
 function optimal(t) {
   const act = t.players.filter(p => !String(p.card).startsWith("i")).map(p => ({ p, v: p.fp ?? 0 }));
@@ -675,8 +687,8 @@ function optimal(t) {
 function teamSub(t) {
   if (roundDone()) { const o = optimal(t); return o ? `Optimali sudėtis <b>${num(o.opt)}</b> · prarasta ${num(o.lost)}` : ""; }
   const pr = projection(t);
-  if (!pr.left) return "";
-  return `Prognozė <b>~${num(pr.proj)}</b> · dar žais ${pr.left}`;
+  if (!pr.left && !pr.live) return "";
+  return `Prognozė <b>~${num(pr.proj)}</b>${pr.live ? ` · žaidžia ${pr.live}` : ""}${pr.left ? ` · dar žais ${pr.left}` : ""}`;
 }
 
 // ---- H2H sezono duomenys ----
