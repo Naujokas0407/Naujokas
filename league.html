@@ -715,9 +715,9 @@ function roundAwards() {
   return `<div class="sub">${D.round} turo apdovanojimai${done ? "" : " (kol kas, turas vyksta)"}</div><div class="aw">${out.join("")}</div>`;
 }
 
-function seasonH2H() {
+function seasonH2H(after) {
   const { all, per } = h2hGames();
-  if (!all.length) return `<div class="sub">Sezono statistika atsiras po pirmojo baigto turo.</div>`;
+  if (!all.length) return `<div class="sub">Sezono statistika atsiras po pirmojo baigto turo.</div>` + (after || "");
   const games = Object.entries(per).flatMap(([t, l]) => l.map(g => ({ t, ...g })));
   const out = [];
   const hi = topBy(games, g => g.pf, 1)[0], lo = topBy(games, g => g.pf, -1)[0];
@@ -749,7 +749,7 @@ function seasonH2H() {
       return `<tr data-jump="team-${D.teams.findIndex(t => t.title === x.t)}"><td class="l rk">${k + 1}</td><td class="l">${esc(x.t)}</td><td class="l"><span class="frm">${x.l.slice(-5).map(g => resChip(g.res)).join("")}</span></td><td>${c ? `<span class="${c.res === "W" ? "sw" : c.res === "L" ? "sl" : ""}">${c.n} ${c.res === "W" ? "P" : c.res === "L" ? "Pr" : "L"}</span>` : ""}</td><td class="hide-s">${x.s.bestW.n}</td><td class="hide-s">${x.s.bestL.n}</td><td class="bhc">${num(hi)}</td><td class="bhc">${num(lo)}</td><td>${num(x.sum / Math.max(1, x.l.length))}</td></tr>`; }).join("") + `</tbody></table></div></div>`;
   const byRound = `<div class="card"><div class="x"><table class="stand ssn"><thead><tr><th class="l">Komanda</th>${rounds.map(r => `<th>${r} t.</th>`).join("")}<th>Iš viso</th></tr></thead><tbody>` +
     order.map(x => `<tr data-jump="team-${D.teams.findIndex(t => t.title === x.t)}"><td class="l">${esc(x.t)}</td>${rounds.map(r => { const g = x.l.find(y => y.r === r); return g ? `<td class="${g.res === "W" ? "rw" : g.res === "L" ? "rl" : ""} ${g.pf === bestOfRound[r] ? "best" : ""}" title="prieš ${esc(g.opp)}: ${num(g.pf)} : ${num(g.pa)}">${num(g.pf)}</td>` : "<td>–</td>"; }).join("")}<td class="pts">${num(x.sum)}</td></tr>`).join("") + `</tbody></table></div></div>`;
-  return `<div class="sub">Sezono rekordai (iki ${D.round} turo)</div><div class="aw">${out.join("")}</div><div class="sub">Forma ir serijos</div>${table}<div class="sub">Taškai pagal turus${rounds.length > 4 ? " (paskutiniai 5)" : ""} · žalia – pergalė, raudona – pralaimėjimas, oranžinė – turo daugiausia</div>${byRound}`;
+  return `<div class="sub">Sezono rekordai (iki ${D.round} turo)</div><div class="aw">${out.join("")}</div>${after || ""}<div class="sub">Forma ir serijos</div>${table}<div class="sub">Taškai pagal turus${rounds.length > 4 ? " (paskutiniai 5)" : ""} · žalia – pergalė, raudona – pralaimėjimas, oranžinė – turo daugiausia</div>${byRound}`;
 }
 
 function seasonClassic() {
@@ -773,7 +773,7 @@ function seasonClassic() {
 
 function renderSeason() {
   const el = document.getElementById("season");
-  el.innerHTML = D.format === "h2h" ? roundAwards() + dreamSection() + h2hMeetings() + seasonH2H() + seasonOscars() : roundAwards() + dreamSection() + seasonOscars() + classicRecords() + seasonClassic();
+  el.innerHTML = D.format === "h2h" ? roundAwards() + dreamSection() + h2hMeetings() + seasonH2H(seasonOscars()) : roundAwards() + dreamSection() + classicRecords() + seasonOscars() + seasonClassic();
   bindDream(el);
   el.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => { document.getElementById("tab-fantasy").click(); const x = document.getElementById(tr.dataset.jump); if (x) x.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
