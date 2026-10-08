@@ -59,6 +59,6 @@ Pakeitimai: į startą – Sylvain Francisco; iš starto – Dwayne Bacon.
 - Mike James (IST, G) ~16 FP @ OLY (vietoj Bruno Fernando ~10,6)
 - Stanley Umude (BAR, F) ~15,9 FP vs ZAL (vietoj Bruno Fernando ~10,6)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~185,2 : ~164,8
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~185,2 : ~178,7
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
