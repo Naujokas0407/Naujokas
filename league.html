@@ -790,7 +790,7 @@ function seasonClassic() {
 
 function renderSeason() {
   const el = document.getElementById("season");
-  el.innerHTML = D.format === "h2h" ? roundAwards() + dreamSection() + h2hMeetings() + seasonH2H(seasonOscars()) : roundAwards() + dreamSection() + classicRecords() + seasonOscars() + seasonClassic();
+  el.innerHTML = D.format === "h2h" ? dreamSection() + h2hMeetings() + roundAwards() + seasonH2H(seasonOscars()) : dreamSection() + roundAwards() + classicRecords() + seasonOscars() + seasonClassic();
   bindDream(el);
   el.querySelectorAll("[data-jump]").forEach(tr => tr.addEventListener("click", () => { document.getElementById("tab-fantasy").click(); const x = document.getElementById(tr.dataset.jump); if (x) x.scrollIntoView({ behavior: "smooth", block: "start" }); }));
 }
