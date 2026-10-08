@@ -7,20 +7,11 @@ const path = require("path");
 const DIR = path.join(__dirname, "data");
 const rd = f => { try { return JSON.parse(fs.readFileSync(path.join(DIR, f), "utf8")); } catch (e) { return null; } };
 
-const args = process.argv.slice(2);
-const CHECK = args.includes("--check");
-const HOURS = +((args.find(a => a.startsWith("--hours=")) || "").split("=")[1] || 24);
-let targets = args.filter(a => !a.startsWith("--")).map(a => { const i = a.indexOf(":"); return { slug: a.slice(0, i), team: a.slice(i + 1) }; });
-if (!targets.length) {
-  const src = fs.readFileSync(path.join(__dirname, "update.js"), "utf8");
-  targets = [...src.matchAll(/slug:\s*"([^"]+)"[^\n]*myTeam:\s*"([^"]+)"/g)].map(m => ({ slug: m[1], team: m[2] }));
-}
 
 const TV = { BAS: "KBA", PAM: "VBC", ULK: "FBT", MUN: "BAY", RED: "CZV", MAD: "RMB" };
 const tv = c => TV[c] || c;
 const num = x => String(Math.round(x * 10) / 10).replace(".", ",");
-const fpHist = rd("fp-hist.json") || {};
-const posMap = ((rd("pos.json") || {}).map) || {};
+let fpHist = {}, posMap = {};
 const HEALTH = { out: 0, doubtful: 0.35, "game-time": 0.7, uncertain: 0.7, expected: 0.95, ready: 1 };
 const HL = { out: "nežais", doubtful: "abejotinas", "game-time": "paaiškės prieš rungtynes", uncertain: "neaišku", expected: "tikėtina žais" };
 const POSN = { G: "gynėjams", F: "puolėjams", C: "centrams" };
@@ -163,6 +154,16 @@ function report(slug, team) {
   return L.join("\n");
 }
 
+function main(args) {
+fpHist = rd("fp-hist.json") || {};
+posMap = ((rd("pos.json") || {}).map) || {};
+const CHECK = args.includes("--check");
+const HOURS = +((args.find(a => a.startsWith("--hours=")) || "").split("=")[1] || 24);
+let targets = args.filter(a => !a.startsWith("--")).map(a => { const i = a.indexOf(":"); return { slug: a.slice(0, i), team: a.slice(i + 1) }; });
+if (!targets.length) {
+  const src = fs.readFileSync(path.join(__dirname, "update.js"), "utf8");
+  targets = [...src.matchAll(/slug:\s*"([^"]+)"[^\n]*myTeam:\s*"([^"]+)"/g)].map(m => ({ slug: m[1], team: m[2] }));
+}
 const out = [];
 for (const { slug, team } of targets) {
   const A = analyse(slug, team); if (!A) continue;
@@ -173,4 +174,7 @@ for (const { slug, team } of targets) {
   }
   out.push(report(slug, team));
 }
-if (out.length) console.log(out.join("\n\n---\n\n") + "\n\n_Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._");
+return out.length ? out.join("\n\n---\n\n") + "\n\n_Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._\n" : "";
+}
+module.exports = { main };
+if (require.main === module) { const s = main(process.argv.slice(2)); if (s) process.stdout.write(s); }

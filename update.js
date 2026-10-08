@@ -514,4 +514,11 @@ async function repairArchive(L, round) {
   }
   try { require("./coach.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Trenerių komentarai:", e.message); }
   try { require("./season.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Sezono suvestinė:", e.message); }
+  // Patarimai prieš turą: data/advice.md – tik kai turas prasideda per 30 val. (kitaip tuščias), data/advice-full.md – visada
+  try {
+    const adv = require("./advisor.js");
+    const w = (f, s) => { const fp = path.join(DIR, f); let o = null; try { o = fs.readFileSync(fp, "utf8"); } catch (e) {} if (o !== s) fs.writeFileSync(fp, s); };
+    w("advice.md", adv.main(["--check", "--hours=30"]));
+    w("advice-full.md", adv.main([]));
+  } catch (e) { console.log("Patarimai:", e.message); }
 })().catch(err => { console.error(err); process.exit(1); });
