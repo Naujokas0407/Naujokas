@@ -5,21 +5,20 @@ Pirmos rungtynės: 19:00, ketvirtadienis
 1. Aliou Diarra (VIR, C) – ~34,4 FP @ BAY · varžovas silpnai gina centrams
 2. Jonas Valančiūnas (ZAL, C) – ~29,2 FP @ BAR · varžovas silpnai gina centrams
 3. Kevin Punter (BAR, G) – ~27,4 FP vs ZAL
-Dabar kapitonas – Jonas Valančiūnas (~29,2 FP). Siūlau keisti į Aliou Diarra.
+Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~218,9 FP, dabartinė ~198,8 FP, **+20**)
-Startas: Aliou Diarra (C) ~34,4, Jonas Valančiūnas ~29,2, Devon Dotson ~22, Alec Peters ~19,8, Nigel Hayes-Davis ~19,6
-6-as: Kevin Punter ~27,4
-Suolas: Ante Zizic ~18,2, McKinley Wright IV ~16,8, Chima Moneke ~16,7, Vasilije Micic ~12,6
+**📋 Siūloma sudėtis** (prognozė ~216,1 FP, dabartinė ~195,4 FP, **+20,7**)
+Startas: Aliou Diarra (C) ~34,4, Kevin Punter ~27,4, Devon Dotson ~22, Nigel Hayes-Davis ~19,6, Ante Zizic ~18,2
+6-as: Jonas Valančiūnas ~29,2
+Suolas: McKinley Wright IV ~16,8, Chima Moneke ~16,7, Alec Peters ~15,8, Vasilije Micic ~12,6
 Out: Matthew Strazel, Joel Parra, Tosan Evbuomwan
-Pakeitimai: į startą – Alec Peters, Devon Dotson, Aliou Diarra; iš starto – Chima Moneke, Vasilije Micic, McKinley Wright IV.
+Pakeitimai: į startą – Kevin Punter, Devon Dotson, Ante Zizic; iš starto – Chima Moneke, Vasilije Micic, McKinley Wright IV.
 
 **🩹 Traumos**
 - Tosan Evbuomwan: paaiškės prieš rungtynes
 
 **🛡 Varžovų gynyba šį turą**
 - Jonas Valančiūnas @ BAR: palankus varžovas (+25 % centrams)
-- Alec Peters @ TEL: palankus varžovas (+25 % puolėjams)
 - Aliou Diarra @ BAY: palankus varžovas (+25 % centrams)
 - Joel Parra vs ZAL: palankus varžovas (+24 % puolėjams)
 - Tosan Evbuomwan vs ZAL: palankus varžovas (+24 % puolėjams)
@@ -31,8 +30,8 @@ Pakeitimai: į startą – Alec Peters, Devon Dotson, Aliou Diarra; iš starto �
 
 **🛒 Laisvoji rinka**
 - Alessandro Pajola (PAR, G) ~23,8 FP @ RMB (vietoj Tosan Evbuomwan ~0)
-- Marko Guduric (MIL, G) ~18,1 FP @ TEL (vietoj Tosan Evbuomwan ~0)
 - Nikos Rogkavopoulos (PAN, F) ~17,6 FP vs FBT (vietoj Tosan Evbuomwan ~0)
+- Conor Morgan (BES, C) ~16,9 FP @ KBA (vietoj Tosan Evbuomwan ~0)
 
 ---
 
@@ -71,6 +70,6 @@ Pakeitimai: į startą – Tonye Jekiri, Devon Dotson, Mbaye Ndiaye; iš starto 
 - Ante Zizic (BES, C) ~18,2 FP @ KBA (vietoj Bruno Fernando ~10,6)
 - Nikos Rogkavopoulos (PAN, F) ~17,6 FP vs FBT (vietoj Bruno Fernando ~10,6)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~209,4 : ~183
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~209,4 : ~183,7
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
