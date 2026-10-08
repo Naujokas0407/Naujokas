@@ -657,12 +657,11 @@ function gameElapsed(g) {
   return Math.min(1, Math.max(0, ((q - 1) * 600 + (600 - left)) / 2400));
 }
 function projection(t) {
+  // prognozė skaičiuojama prieš turą (sezono vidurkiai × koeficientai) ir rungtynėms prasidėjus nesikeičia
   const rest = t.players.filter(p => p.mult > 0 && playerState(p) === "toplay");
-  const add = rest.reduce((s, p) => s + (p.avg != null ? p.avg * p.mult : 0), 0);
-  // žaidžiantys dabar: prie jau surinktų taškų pridedama likusiai rungtynių daliai tenkanti vidurkio dalis
   const live = t.players.filter(p => p.mult > 0 && playerState(p) === "playing");
-  const addLive = live.reduce((s, p) => s + (p.avg != null && !p.dnp ? p.avg * p.mult * (1 - gameElapsed(gameOf(p.game))) : 0), 0);
-  return { left: rest.length, live: live.length, proj: Math.round((t.total + add + addLive) * 4) / 4 };
+  const proj = t.players.reduce((s, p) => s + (p.mult > 0 && p.avg != null ? p.avg * p.mult : 0), 0);
+  return { left: rest.length, live: live.length, proj: Math.round(proj * 4) / 4 };
 }
 function optimal(t) {
   const act = t.players.filter(p => !String(p.card).startsWith("i")).map(p => ({ p, v: p.fp ?? 0 }));
