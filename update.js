@@ -338,7 +338,7 @@ async function buildLeague(S, L) {
   // Geriausi laisvi žaidėjai pagal sezono vidurkį
   const ownedIds = new Set(teams.flatMap(t => t.players.map(p => p.id)));
   const fa = S.bnPlayers.filter(p => !ownedIds.has(p.id)).map(p => ({ id: p.id, name: p.name, club: p.club, pos: S.posOf(p.id), min: S.minOf(p.id), fp: p.fp, ...S.avgOf(p.id) }))
-    .filter(p => p.gp > 0 || p.fp != null).sort((a, b) => (b.avg ?? b.fp ?? -99) - (a.avg ?? a.fp ?? -99)).slice(0, 90);
+    .filter(p => p.gp > 0 || p.fp != null).sort((a, b) => (b.avg ?? b.fp ?? -99) - (a.avg ?? a.fp ?? -99));
 
   const data = { slug: L.slug, title: L.title, format: L.format, round: r + 1, myTeam: L.myTeam, tv: TV, games, teams, pool, fa };
 
