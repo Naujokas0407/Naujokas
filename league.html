@@ -105,6 +105,16 @@ tr.tot td.pt{font-weight:700}
 .seg{display:inline-flex;gap:2px;background:var(--muted-bg);border-radius:8px;padding:3px}
 .seg button{border:0;background:transparent;font:500 13px inherit;font-family:inherit;color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.mybar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--ink-2)}
+.mybar select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 8px;max-width:100%}
+.mycard .ph .lnk,.lnk{background:none;border:0;color:var(--cap);font:inherit;font-size:13px;cursor:pointer;padding:0}
+.myg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;padding:0 16px 12px}
+.myk{border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.myk b{font-size:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.myk b.up{color:#22c55e}.myk b.dn{color:#ef4444}
+.myn{padding:0 16px 12px;font-size:13.5px;line-height:1.5}.myn p{margin:4px 0}.warn{color:#ef4444;font-weight:600;font-size:12px}
+.trg{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:760px){.trg{grid-template-columns:1fr}}
+.tra{padding:0 16px 12px}.tra input{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.trx{border:0;background:none;color:var(--muted);font-size:18px;cursor:pointer;padding:0 4px}.trx:hover{color:#ef4444}
 .ph.pf{padding-top:0;justify-content:flex-start}.segl{font-size:12px;color:var(--muted);padding:4px 4px 4px 8px;align-self:center}
 .pp{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;border-radius:6px;font-size:11.5px;font-weight:700;background:var(--muted-bg);color:var(--ink-2)}
 .pp.pG{background:rgba(59,130,246,.16);color:#3b82f6}.pp.pF{background:rgba(16,185,129,.16);color:#10b981}.pp.pC{background:rgba(245,158,11,.18);color:#d97706}
@@ -351,6 +361,7 @@ a.brand{text-decoration:none}
     <div class="eyebrow"><a class="back" href="./">← Visos lygos</a> · BasketNews Fantasy · Eurolyga</div>
     <div class="title"><h1 id="lgTitle"></h1><span class="badge" id="playedBadge"></span><span class="upd" id="updated"></span></div>
   </div>
+  <div class="mybar" id="mybar"></div>
   <div class="err" id="err" hidden></div>
   <div class="archive" id="archive" hidden><span id="archiveText"></span><button type="button" id="backCur">Grįžti į einamąjį turą →</button></div>
   <section class="games" id="games" aria-label="Turo rungtynės"></section>
@@ -361,6 +372,7 @@ a.brand{text-decoration:none}
     <button role="tab" aria-selected="false" data-t="season" id="tab-season">Sezonas</button>
     <button role="tab" aria-selected="false" data-t="reporter" id="tab-reporter">Reporteris</button>
     <button role="tab" aria-selected="false" data-t="tx" id="tab-tx">Perėjimai</button>
+    <button role="tab" aria-selected="false" data-t="trade" id="tab-trade">Mainai</button>
   </div>
   <section id="fantasy" class="stack"></section>
   <section id="el" class="stack" hidden></section>
@@ -368,6 +380,7 @@ a.brand{text-decoration:none}
   <section id="season" class="stack" hidden></section>
   <section id="reporter" class="stack" hidden></section>
   <section id="tx" class="stack" hidden></section>
+  <section id="trade" class="stack" hidden></section>
   <p class="foot">Rezultatai ir statistika – iš oficialios Eurolygos, rungtynių metu atsinaujina kas 30 sekundžių. Fantasy taškai ir sudėtys – iš BasketNews Fantasy, atsinaujina kas ~6 min. * – startinio penketo žaidėjas, oranžiškai pažymėti žaidėjai, kurie tuo metu aikštėje. FP – žaidėjo fantasy taškai (~ – preliminarūs, apskaičiuoti pagal gyvą Eurolygos statistiką, kol BasketNews paskelbs oficialius), × – daugiklis (kapitonas ×2, 6-as žaidėjas ×1, kiti suolelyje ×0,5).</p>
 </div></main>
 <script>
@@ -452,7 +465,8 @@ const fpTxt = p => p.fp == null ? "–" : (p.est ? "~" : "") + num(p.fp);
 
 function render() {
   applyEst();
-  const isMe = t => false; // komandos neišskiriamos
+  const isMe = t => !!myTeam() && t.title.trim() === myTeam().trim();
+  renderMyBar();
   document.getElementById("lgTitle").textContent = D.title || "Lyga";
   document.title = (D.title || "Lyga") + " · draftlive";
   const done = D.games.filter(g => g.status === "final").length;
@@ -492,7 +506,8 @@ function render() {
   html += progressShell();
 
   const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
-  order.forEach(i => {
+  html = myCard() + html;
+  [...order].sort((a, b) => isMe(D.teams[b]) - isMe(D.teams[a])).forEach(i => {
     const t = D.teams[i]; const ps = [...t.players].sort((a, b) => rank(a.card) - rank(b.card));
     const counted = ps.filter(p => p.mult > 0 && p.st);
     const sum = k => counted.reduce((s, p) => s + p.st[k], 0);
@@ -531,6 +546,7 @@ function render() {
   renderSeason();
   renderReporter();
   renderTx();
+  if (activeTab === "trade" && !document.getElementById("trade").contains(document.activeElement)) renderTrade();
 }
 
 const tot = title => { const t = D.teams.find(x => x.title === title); return t ? (t.official ?? t.total) : 0; };
@@ -543,8 +559,9 @@ function h2hHtml(isMe) {
   const ms = (D.matchups || []).map(m => { const off = done && (m.as > 0 || m.bs > 0); return { ...m, sa: off ? m.as : tot(m.a), sb: off ? m.bs : tot(m.b) }; });
   if (done) ms.forEach(m => add(m.a, m.b, m.sa, m.sb));
   const idx = title => D.teams.findIndex(t => t.title === title);
+  ms.sort((x, y) => (isMe({ title: y.a }) || isMe({ title: y.b })) - (isMe({ title: x.a }) || isMe({ title: x.b })));
   const cards = ms.map(m => {
-    const me = false;
+    const me = isMe({ title: m.a }) || isMe({ title: m.b });
     const lead = m.sa === m.sb ? 0 : m.sa > m.sb ? 1 : 2;
     const la = done ? 0 : liveN(D.teams[idx(m.a)]), lb = done ? 0 : liveN(D.teams[idx(m.b)]);
     const anyLive = D.games.some(g => g.status === "live");
@@ -1400,8 +1417,134 @@ async function load() {
 document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
   activeTab = b.dataset.t;
   document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
-  ["fantasy", "el", "players", "season", "reporter", "tx"].forEach(id => document.getElementById(id).hidden = id !== activeTab);
+  ["fantasy", "el", "players", "season", "reporter", "tx", "trade"].forEach(id => document.getElementById(id).hidden = id !== activeTab);
+  if (activeTab === "trade") renderTrade();
 }));
+
+
+// ---- Mano komanda ----
+const myTeam = () => (typeof store !== "undefined" && store.get("my:" + SLUG)) || "";
+function renderMyBar() {
+  const el = document.getElementById("mybar"); if (!el || !D) return;
+  const cur = myTeam(), titles = (CUR || D).teams.map(t => t.title);
+  el.innerHTML = `<label for="mySel">⭐ Mano komanda</label><select id="mySel"><option value="">— pasirink savo komandą —</option>${titles.map(x => `<option value="${esc(x)}"${x.trim() === cur.trim() && cur ? " selected" : ""}>${esc(x)}</option>`).join("")}</select>`;
+  el.querySelector("select").addEventListener("change", e => { store.set("my:" + SLUG, e.target.value); TR = { give: [], get: [] }; render(); });
+}
+function myPlace(T) {
+  if (D.format === "h2h") {
+    const { per } = h2hGames();
+    const rows = D.teams.map(t => { const l = per[t.title] || []; return { t: t.title, w: l.filter(g => g.res === "W").length, d: l.filter(g => g.res === "D").length, l: l.filter(g => g.res === "L").length, pf: l.reduce((a, g) => a + g.pf, 0) }; })
+      .sort((a, b) => (b.w + b.d / 2) - (a.w + a.d / 2) || b.pf - a.pf);
+    const i = rows.findIndex(x => x.t === T.title), r = rows[i];
+    return { place: i + 1, line: `${num(r.w + r.d / 2)}–${r.l} · ${num(r.pf)} tšk.` };
+  }
+  const hist = D.history || {};
+  const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? t.total : (m[t.title] || 0)), 0) || t.total;
+  const o = [...D.teams].sort((a, b) => season(b) - season(a));
+  const i = o.findIndex(x => x.title === T.title);
+  return { place: i + 1, line: `${num(season(T))} tšk.${i ? ` · iki lyderio ${num(season(o[0]) - season(T))}` : " · lyderis"}` };
+}
+function myCard() {
+  const me = myTeam(); if (!me) return "";
+  const i = D.teams.findIndex(t => t.title.trim() === me.trim()); if (i < 0) return "";
+  const T = D.teams[i], P = myPlace(T), done = roundDone();
+  const cap = T.players.find(p => p.cap);
+  const parts = [];
+  parts.push(`<div class="myk"><span class="sub">Vieta</span><b>${P.place}</b><span class="sub">${P.line}</span></div>`);
+  parts.push(`<div class="myk"><span class="sub">${D.round} turo taškai</span><b>${num(T.official ?? T.total)}${LVB(liveN(T))}</b><span class="sub">${teamSub(T) || (done ? "turas baigtas" : "")}</span></div>`);
+  if (D.format === "h2h" && D.matchups) {
+    const m = D.matchups.find(x => x.a === T.title || x.b === T.title);
+    if (m) {
+      const opp = m.a === T.title ? m.b : m.a, off = done && (m.as > 0 || m.bs > 0);
+      const my = off ? (m.a === T.title ? m.as : m.bs) : tot(T.title), op = off ? (m.a === T.title ? m.bs : m.as) : tot(opp);
+      const O = D.teams.find(x => x.title === opp), pr = O ? projection(O) : null, mp = projection(T);
+      const st = D.games.some(g => g.status !== "scheduled");
+      parts.push(`<div class="myk"><span class="sub">Varžovas</span><b class="${my > op ? "up" : my < op ? "dn" : ""}">${num(my)} : ${num(op)}</b><span class="sub">${esc(opp)}${!done && st ? ` · prognozė ~${num(mp.proj)}:${num(pr ? pr.proj : 0)}` : !st ? ` · prognozė ~${num(mp.proj)}:${num(pr ? pr.proj : 0)}` : ""}</span></div>`);
+    }
+  }
+  if (cap) parts.push(`<div class="myk"><span class="sub">Kapitonas</span><b>${esc(cap.name)}</b><span class="sub">${cap.fp != null ? num(cap.fp * 2) + " tšk. (×2)" : cap.avg != null ? "vidurkis " + num(cap.avg) : ""}</span></div>`);
+  const hurt = T.players.filter(p => healthOf(p) !== "ready");
+  const left = T.players.filter(p => p.mult > 0 && playerState(p) === "toplay").length;
+  const notes = [];
+  if (hurt.length) notes.push(`<b>Traumos:</b> ${hurt.map(p => `${esc(p.name)}${hBadge(p)}${p.mult > 0 ? ` <span class="warn">${p.cap ? "kapitonas!" : p.card.startsWith("b") ? "ant suolo" : "starte!"}</span>` : ""}`).join(", ")}`);
+  const outGood = T.players.filter(p => p.mult === 0 && healthOf(p) === "ready" && p.avg != null).sort((a, b) => b.avg - a.avg)[0];
+  const weak = T.players.filter(p => p.mult > 0 && !p.card.startsWith("b") && p.avg != null).sort((a, b) => a.avg - b.avg)[0];
+  if (!done && outGood && weak && outGood.avg > weak.avg + 3) notes.push(`<b>Patarimas:</b> rezerve sėdi ${esc(outGood.name)} (vid. ${num(outGood.avg)}), o starte – ${esc(weak.name)} (vid. ${num(weak.avg)}).`);
+  if (left && !done) notes.push(`Dar žais: <b>${left}</b> ${left % 10 === 1 && left % 100 !== 11 ? "žaidėjas" : left % 10 === 0 || (left % 100 > 10 && left % 100 < 20) ? "žaidėjų" : "žaidėjai"}.`);
+  return `<div class="card me mycard"><div class="ph"><div class="h">⭐ ${esc(T.title)}</div><button type="button" class="lnk" data-jump="team-${i}">Mano sudėtis ↓</button></div><div class="myg">${parts.join("")}</div>${notes.length ? `<div class="myn">${notes.map(n => `<p>${n}</p>`).join("")}</div>` : ""}</div>`;
+}
+
+// ---- Mainų skaičiuoklė ----
+let TR = { give: [], get: [] };
+function tradeUniverse() {
+  const map = {};
+  (CUR || D).teams.forEach(t => t.players.forEach(p => { map[p.id] = { ...p, owner: t.title }; }));
+  ((CUR || D).fa || []).forEach(p => { if (!map[p.id]) map[p.id] = { ...p, owner: null }; });
+  return map;
+}
+function formOf(id) {
+  if (!FPH) return null;
+  const rs = Object.keys(FPH).map(Number).sort((a, b) => a - b).slice(-3);
+  const v = rs.map(r => FPH[r] && FPH[r][id]).filter(x => x != null);
+  return v.length ? { avg: v.reduce((a, b) => a + b, 0) / v.length, n: v.length, rounds: rs } : null;
+}
+function renderTrade() {
+  const el = document.getElementById("trade"); if (!el || !D) return;
+  if (!FPH) { loadFph().then(() => renderTrade()); }
+  const U = tradeUniverse(), me = myTeam();
+  const lab = p => `${p.name} (${tv(p.club)}${p.pos ? ", " + p.pos : ""}) – ${p.owner ? p.owner.trim() : "laisvas"}`;
+  const all = Object.values(U).sort((a, b) => (b.avg ?? -99) - (a.avg ?? -99));
+  const giveOpts = all.filter(p => me ? p.owner && p.owner.trim() === me.trim() : p.owner), getOpts = all.filter(p => !me || !p.owner || p.owner.trim() !== me.trim());
+  const row = (p, side) => {
+    const f = formOf(p.id), d = f && p.avg != null ? f.avg - p.avg : 0;
+    return `<tr><td class="l pl">${posChip(p)} <span class="nm">${esc(p.name)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}<div class="ml">${p.owner ? esc(p.owner) : "laisvas žaidėjas"}</div></td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${f ? num(Math.round(f.avg * 100) / 100) + (Math.abs(d) >= 3 ? (d > 0 ? " 🔥" : " 🧊") : "") : "–"}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td><button type="button" class="trx" data-rm="${side}:${esc(p.id)}" aria-label="Pašalinti">×</button></td></tr>`;
+  };
+  const side = (k, title, opts) => {
+    const ps = TR[k].map(id => U[id]).filter(Boolean);
+    return `<div class="card trs"><div class="ph"><div class="h">${title}</div></div>
+      <div class="tra"><input list="tr-${k}" id="in-${k}" placeholder="Įrašyk žaidėjo vardą…" autocomplete="off"><datalist id="tr-${k}">${opts.filter(p => !TR.give.includes(p.id) && !TR.get.includes(p.id)).map(p => `<option value="${esc(lab(p))}"></option>`).join("")}</datalist></div>
+      ${ps.length ? `<div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th>Vid. FP</th><th title="Paskutinių 3 turų vidurkis">Forma</th><th>Min.</th><th class="hide-s">Turų</th><th></th></tr></thead><tbody>${ps.map(p => row(p, k)).join("")}</tbody></table></div>` : `<p class="sub" style="padding:0 16px 14px;margin:0">Pridėk vieną ar kelis žaidėjus.</p>`}</div>`;
+  };
+  const G = TR.give.map(id => U[id]).filter(Boolean), R = TR.get.map(id => U[id]).filter(Boolean);
+  const sum = (arr, f) => arr.reduce((s, p) => s + (f(p) ?? 0), 0);
+  let verdict = "";
+  if (G.length && R.length) {
+    const dA = sum(R, p => p.avg) - sum(G, p => p.avg);
+    const fv = p => { const f = formOf(p.id); return f ? f.avg : p.avg; };
+    const dF = sum(R, fv) - sum(G, fv);
+    const dM = (sum(R, p => p.min) - sum(G, p => p.min)) / 60;
+    const sg = v => (v > 0 ? "+" : v < 0 ? "−" : "±") + num(Math.abs(Math.round(v * 100) / 100));
+    const cls = v => v > 0.5 ? "up" : v < -0.5 ? "dn" : "";
+    const tiles = [
+      `<div class="myk"><span class="sub">Pagal sezono vidurkį</span><b class="${cls(dA)}">${sg(dA)}</b><span class="sub">FP per turą</span></div>`,
+      `<div class="myk"><span class="sub">Pagal formą (3 turai)</span><b class="${cls(dF)}">${sg(dF)}</b><span class="sub">FP per turą</span></div>`,
+      `<div class="myk"><span class="sub">Minutės</span><b class="${cls(dM)}">${sg(Math.round(dM))}</b><span class="sub">min. per rungtynes</span></div>`];
+    const hurtR = R.filter(p => ["out", "doubtful"].includes(healthOf(p))), hurtG = G.filter(p => ["out", "doubtful"].includes(healthOf(p)));
+    const notes = [];
+    const score = dA + dF;
+    notes.push(score > 2 ? `✅ <b>Mainai tau naudingi.</b> Gauni daugiau, nei atiduodi${dF > dA + 2 ? ", o forma rodo dar geresnį vaizdą" : ""}.` : score < -2 ? `❌ <b>Mainai tau nenaudingi.</b> Atiduodi daugiau, nei gauni${dF > 0 ? ", nors pagal formą skirtumas mažesnis" : ""}.` : `⚖️ <b>Lygiaverčiai mainai.</b> Sprendžia pozicijos, traumos ir nuojauta.`);
+    if (hurtR.length) notes.push(`⚠️ Gauni traumuotą žaidėją: ${hurtR.map(p => esc(p.name) + hBadge(p)).join(", ")}.`);
+    if (hurtG.length) notes.push(`💡 Atiduodi traumuotą žaidėją: ${hurtG.map(p => esc(p.name) + hBadge(p)).join(", ")} – tai pliusas tau.`);
+    if (G.length !== R.length) notes.push(`ℹ️ Atiduodi ${G.length}, gauni ${R.length} – sudėtyje ${G.length > R.length ? "atsiras laisva vieta laisvųjų rinkai" : "reikės ką nors atleisti"}.`);
+    const myT = me ? (CUR || D).teams.find(t => t.title.trim() === me.trim()) : null;
+    if (myT) {
+      const cnt = arr => ["G", "F", "C"].map(k => arr.filter(p => p.pos === k).length);
+      const before = cnt(myT.players), after = cnt([...myT.players.filter(p => !TR.give.includes(p.id)), ...R]);
+      notes.push(`Tavo sudėtis pagal pozicijas: G ${before[0]} · F ${before[1]} · C ${before[2]} → <b>G ${after[0]} · F ${after[1]} · C ${after[2]}</b>${after[2] < 1 ? ` <span class="warn">neliks centro!</span>` : after[0] < 1 ? ` <span class="warn">neliks gynėjo!</span>` : after[1] < 1 ? ` <span class="warn">neliks puolėjo!</span>` : ""}`);
+    }
+    verdict = `<div class="card mycard"><div class="ph"><div class="h">Rezultatas</div><button type="button" class="lnk" id="trClear">Išvalyti</button></div><div class="myg">${tiles.join("")}</div><div class="myn">${notes.map(n => `<p>${n}</p>`).join("")}</div></div>`;
+  }
+  el.innerHTML = `${me ? "" : `<p class="note">Patarimas: viršuje pasirink „Mano komanda“ – tada kairėje bus siūlomi tavo žaidėjai, o skaičiuoklė parodys, kaip pasikeis tavo sudėtis.</p>`}
+    <div class="trg">${side("give", "Atiduodu", giveOpts)}${side("get", "Gaunu", getOpts)}</div>${verdict}
+    <p class="foot" style="margin:0">Forma – paskutinių 3 turų FP vidurkis (🔥 – gerokai virš sezono vidurkio, 🧊 – gerokai žemiau). Minutės – vidutinis žaidimo laikas per rungtynes.</p>`;
+  ["give", "get"].forEach(k => {
+    const inp = document.getElementById("in-" + k), opts = k === "give" ? giveOpts : getOpts;
+    const pickIt = () => { const p = opts.find(x => lab(x) === inp.value); if (p && !TR.give.includes(p.id) && !TR.get.includes(p.id)) { TR[k].push(p.id); renderTrade(); const n = document.getElementById("in-" + k); if (n) n.focus(); } };
+    inp.addEventListener("change", pickIt); inp.addEventListener("input", pickIt);
+  });
+  el.querySelectorAll("[data-rm]").forEach(b => b.addEventListener("click", () => { const [k, id] = b.dataset.rm.split(":"); TR[k] = TR[k].filter(x => x !== id); renderTrade(); }));
+  const c = document.getElementById("trClear"); if (c) c.addEventListener("click", () => { TR = { give: [], get: [] }; renderTrade(); });
+}
 
 // ---- Turų istorija ----
 async function goRound(n) {
