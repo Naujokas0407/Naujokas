@@ -14,9 +14,6 @@ Suolas: Alec Peters ~13,5, Matthew Strazel ~12,6, Joel Parra ~11,8, Chima Moneke
 Out: Vasilije Micic (jau žaidė), Tosan Evbuomwan, McKinley Wright IV (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
-**🩹 Traumos**
-- Tosan Evbuomwan: paaiškės prieš rungtynes
-
 **🛡 Varžovų gynyba šį turą**
 - Jonas Valančiūnas @ BAR: palankus varžovas (+25 % centrams)
 - Joel Parra vs ZAL: palankus varžovas (+24 % puolėjams)
