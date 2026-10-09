@@ -3,12 +3,12 @@
 **👑 Kapitonas**
 Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~175,5 FP, dabartinė ~154,4 FP, **+21,1**)
-Startas: Kevin Punter (C) ~27,5, Nigel Hayes-Davis ~23,5, Jonas Valančiūnas ~23,3, Aliou Diarra ~20,5, Devon Dotson ~19,3
+**📋 Siūloma sudėtis** (prognozė ~158,2 FP, dabartinė ~128,1 FP, **+30,1**)
+Startas: Jonas Valančiūnas (C) ~25,5, Nigel Hayes-Davis ~23,5, Aliou Diarra ~20,5, Devon Dotson ~19,3, Alec Peters ~13,5
 6-as: Ante Zizic ~16,8
-Suolas: Alec Peters ~13,5, Joel Parra ~9,5, Chima Moneke ~8, Matthew Strazel ~3
-Out: Vasilije Micic (jau žaidė), Tosan Evbuomwan (jau žaidė), McKinley Wright IV (jau žaidė)
-Startinis penketas jau optimalus. ✅
+Suolas: Tosan Evbuomwan ~10,5, Chima Moneke ~8, Joel Parra ~5,5, Matthew Strazel ~3
+Out: Kevin Punter (jau žaidė), Vasilije Micic (jau žaidė), McKinley Wright IV (jau žaidė)
+Pakeitimai: į startą – Alec Peters; iš starto – Kevin Punter.
 
 **🛡 Varžovų gynyba šį turą**
 
@@ -19,15 +19,15 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~182,9 FP, dabartinė ~175,3 FP, **+7,7**)
-Startas: Sylvain Francisco (C) ~26,5, TJ Shorts II ~22,5, Mbaye Ndiaye ~21, Marcus Carr ~20, Daniel Oturu ~11,5
-6-as: Nigel Hayes-Davis ~23,5
-Suolas: Devon Dotson ~19,3, Dwayne Bacon ~18, Carsen Edwards ~12,8, Olivier Nkamhoua ~12,7
-Out: Jacob Toppin (jau žaidė), Tonye Jekiri (jau žaidė), Bruno Fernando (jau žaidė)
-Pakeitimai: į startą – Marcus Carr, Mbaye Ndiaye; iš starto – Dwayne Bacon, Nigel Hayes-Davis.
+**📋 Siūloma sudėtis** (prognozė ~191,7 FP, dabartinė ~170,2 FP, **+21,5**)
+Startas: Sylvain Francisco (C) ~26,5, Nigel Hayes-Davis ~23,5, TJ Shorts II ~22,5, Mbaye Ndiaye ~21, Daniel Oturu ~11,5
+6-as: Carsen Edwards ~26,5
+Suolas: Marcus Carr ~20, Devon Dotson ~19,3, Dwayne Bacon ~18, Jacob Toppin ~10
+Out: Tonye Jekiri (jau žaidė), Bruno Fernando (jau žaidė), Olivier Nkamhoua (jau žaidė)
+Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Dwayne Bacon.
 
 **🛡 Varžovų gynyba šį turą**
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~182,9 : ~159,5
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~191,7 : ~157,5
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
