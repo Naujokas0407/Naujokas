@@ -124,7 +124,7 @@ td .up{color:#22c55e;font-weight:700}td .dn{color:#ef4444;font-weight:700}
 .trc{display:inline-flex;width:20px;height:20px;border:1.5px solid var(--line);border-radius:5px;align-items:center;justify-content:center;color:var(--cap);font-weight:700;font-size:13px}.trr.on .trc{border-color:var(--cap)}
 .ijg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
 .ijc{padding:10px 12px}.ijh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.ijh b{font-size:15px}
-.ijc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:13px}.ijc li{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.ijc li:not(.mine){opacity:.75}.ijc li.mine .nm{font-weight:600}
+.ijc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:13px}.ijc li{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.ijc li:not(.mine){opacity:.75}.ijr{width:100%;font-size:12px;line-height:1.35;margin:1px 0 3px 2px}.ijr b{color:var(--ink-2);font-weight:600}.ijc li.mine .nm{font-weight:600}
 .trl{display:flex;flex-direction:column;gap:4px;margin-top:6px}
 .trh{display:flex;align-items:center;gap:6px;flex-wrap:wrap;text-align:left;font:inherit;font-size:13.5px;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer}
 .trh:hover{border-color:var(--cap)}.trm{color:var(--muted);font-size:12px;margin-left:auto}
@@ -836,6 +836,24 @@ let INJ = null;
 const HL = { out: ["Nežais", "h-out"], doubtful: ["Abejotinas", "h-dbt"], uncertain: ["Neaišku", "h-unc"], "game-time": ["Paaiškės prieš rungtynes", "h-unc"], expected: ["Tikėtina žais", "h-exp"], ready: ["Sveikas", "h-ok"] };
 const healthOf = p => (viewR == null && INJ && p.id && INJ.state[p.id]) ? INJ.state[p.id].h : (p.health || "ready");
 const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}"><i aria-hidden="true">✚</i><span class="hbt">${HL[h][0]}</span></span>` : ""; };
+let BNI = null;
+async function loadBni() { try { const r = await fetch("data/injuries-bn.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!BNI || j.updated !== BNI.updated) { BNI = j; BNI.idx = {}; (j.rows || []).forEach(x => { const n = norm(x.name), parts = n.split(" "); BNI.idx[n] = x; BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] = x; }); if (D) render(); } } } catch (e) {} }
+const bniOf = name => { if (!BNI || !BNI.idx) return null; const n = norm(name), parts = n.split(" "); return BNI.idx[n] || BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] || null; };
+const LTX = [[/coach'?s decision/gi, "trenerio sprendimas"], [/Not included in (the )?official Euroleague roster/gi, "neįtrauktas į Eurolygos sudėtį"], [/Not included in 12-man roster/gi, "neįtrauktas į 12 žaidėjų sudėtį"], [/DNP in Rounds? /gi, "nežaidė turuose: "], [/Rehab after surgery/gi, "reabilitacija po operacijos"], [/underwent surgery/gi, "operuotas"], [/illness/gi, "liga"], [/new signing, not injured/gi, "naujokas, ne trauma"], [/Played in the domestic league/gi, "žaidė vietinėje lygoje"], [/out for six weeks/gi, "6 sav."]];
+const ltx = s => LTX.reduce((a, [re, r]) => a.replace(re, r), String(s || ""));
+function returnTxt(x) {
+  if (!x) return "";
+  const r = String(x.round || "").trim(), st = String(x.status || "").toLowerCase();
+  if (/season/i.test(r)) return "iki sezono pabaigos";
+  if (/long/i.test(r)) return "ilgam laikui";
+  if (/indefinit/i.test(r)) return "grįžimas neaiškus";
+  let m = r.match(/Round\s*(\d+)\s*[-–]\s*(\d+)/i);
+  if (m) return `praleis iki ${m[2]} turo · grįš ~${+m[2] + 1} ture`;
+  m = r.match(/Round\s*(\d+)/i);
+  if (m) return st === "out" ? `nežais ${m[1]} ture` : st === "expected" ? `tikėtina žais ${m[1]} ture` : `paaiškės ${m[1]} turui`;
+  return r;
+}
+const injInfo = name => { const x = bniOf(name); if (!x) return ""; const rt = returnTxt(x), c = ltx(x.comment); return `<div class="ijr">${rt ? `<b>${esc(rt)}</b>` : ""}${c ? `<span class="fa">${rt ? " · " : ""}${esc(c)}</span>` : ""}</div>`; };
 async function loadInj() {
   try { const r = await fetch("data/injuries.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!INJ || j.updated !== INJ.updated) { INJ = j; if (D) render(); } } } catch (e) {}
 }
@@ -939,8 +957,8 @@ function injuriesHtml() {
   owned.sort((a, b) => order.indexOf(healthOf(a.p)) - order.indexOf(healthOf(b.p)));
   const since = p => INJ && INJ.state[p.id] && INJ.state[p.id].since && INJ.news.some(n => n.id === p.id) ? " · nuo " + fmt(INJ.state[p.id].since, { month: "2-digit", day: "2-digit" }) : "";
   const slot = p => p.mult === 0 ? "rezerve" : p.cap ? "kapitonas" : p.card.startsWith("b") ? "ant suolo" : "starte";
-  const list = owned.length ? `<div class="card"><div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th class="l">Fantasy komanda</th></tr></thead><tbody>` +
-    owned.map(({ p, t }) => `<tr><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}<span class="fa">${since(p)}</span></td><td class="l" style="white-space:normal">${esc(t.title)} <span class="fa">· ${slot(p)}</span></td></tr>`).join("") + `</tbody></table></div></div>` : `<div class="sub">Šios lygos komandos traumuotų žaidėjų neturi.</div>`;
+  const byT = {}; owned.forEach(o => (byT[o.t.title] = byT[o.t.title] || []).push(o.p));
+  const list = owned.length ? `<div class="ijg">${Object.entries(byT).map(([tt, ps]) => `<div class="card ijc"><div class="ijh"><b>${esc(tt)}</b><span class="sub">${ps.filter(p => healthOf(p) === "out").length ? ps.filter(p => healthOf(p) === "out").length + " nežais" : ""}</span></div><ul>${ps.map(p => `<li class="mine"><div style="width:100%">${hBadge(p)} <span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))} · ${slot(p)}${since(p)}</span>${injInfo(p.name)}</div></li>`).join("")}</ul></div>`).join("")}</div>` : `<div class="sub">Šios lygos komandos traumuotų žaidėjų neturi.</div>`;
   let news = "";
   if (INJ && INJ.news && INJ.news.length) {
     const items = INJ.news.slice(0, 25).map(n => {
@@ -958,7 +976,7 @@ function injuriesHtml() {
     }).join("");
     news = `<div class="sub">Traumų naujienos · žalia – grįžta, raudona – nežais ar abejotinas, geltona – paaiškės prieš rungtynes · paryškinti šios lygos komandų žaidėjai</div><div class="card"><ul class="news">${items}</ul></div>`;
   } else news = `<div class="sub">Traumų naujienos atsiras, kai tik pasikeis kurio nors Eurolygos žaidėjo būsena.</div>`;
-  return `<div class="sub">Traumuoti ir abejotini lygos komandų žaidėjai${viewR != null ? " (" + D.round + " turo metu)" : ""}</div>${list}${news}`;
+  return `<div class="sub">Traumuoti ir abejotini žaidėjai pagal lygos komandas · numatomas grįžimas – iš BasketNews traumų lentelės${viewR != null ? " (" + D.round + " turo metu)" : ""}</div>${list}${news}`;
 }
 function renderReporter() {
   const el = document.getElementById("reporter");
@@ -1449,7 +1467,7 @@ async function pollLive() {
 }
 
 async function load() {
-  loadInj(); loadTx(); loadCoach(); loadSeason();
+  loadInj(); loadBni(); loadTx(); loadCoach(); loadSeason();
   try {
     const res = await fetch("data/" + encodeURIComponent(SLUG) + ".json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
@@ -1666,7 +1684,7 @@ function injByClub() {
   const cards = clubs.map(c => {
     const list = by[c].sort((a, b) => ORD.indexOf(a.h) - ORD.indexOf(b.h) || a.name.localeCompare(b.name));
     return `<div class="card ijc"><div class="ijh"><b>${esc(tv(c))}</b><span class="sub">${list.filter(x => x.h === "out").length ? list.filter(x => x.h === "out").length + " nežais" : ""}</span></div><ul>${list.map(x => { const own = ownerOf(x.id), lab = HL[x.h] || ["Neaišku", "h-unc"];
-      return `<li class="${own ? "mine" : ""}"><span class="hb ${lab[1]}"><i aria-hidden="true">✚</i><span class="hbt">${lab[0]}</span></span> <span class="nm">${esc(x.name)}</span>${own ? ` <span class="own"><span class="tm">${esc(own)}</span></span>` : ""}<span class="fa"> · nuo ${fmt(x.since, { month: "2-digit", day: "2-digit" })}</span></li>`; }).join("")}</ul></div>`;
+      return `<li class="${own ? "mine" : ""}"><span class="hb ${lab[1]}"><i aria-hidden="true">✚</i><span class="hbt">${lab[0]}</span></span> <span class="nm">${esc(x.name)}</span>${own ? ` <span class="own"><span class="tm">${esc(own)}</span></span>` : ""}<span class="fa"> · nuo ${fmt(x.since, { month: "2-digit", day: "2-digit" })}</span>${injInfo(x.name)}</li>`; }).join("")}</ul></div>`;
   }).join("");
   const n = clubs.reduce((s, c) => s + by[c].length, 0);
   return `<div class="sub">Traumos pagal Eurolygos komandas · ${n} žaidėjai · paryškinti šios lygos komandų žaidėjai · duomenys iš BasketNews, atnaujinama kas ~6 min.</div>${seg}<div class="ijg">${cards}</div>`;
