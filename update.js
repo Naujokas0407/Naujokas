@@ -461,6 +461,35 @@ async function repairArchive(L, round) {
   return totals;
 }
 
+
+// ---------- BasketNews traumų puslapis ----------
+async function bnInjuries() {
+  const url = "https://basketnews.com/leagues/25-euroleague/injured.html";
+  const res = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (draftlive)", "accept-language": "en" }, signal: AbortSignal.timeout(20000) });
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const html = await res.text();
+  const strip = s => s.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
+  const rows = [];
+  let team = "";
+  for (const tr of html.split(/<tr[\s>]/i).slice(1)) {
+    const body = tr.split(/<\/tr>/i)[0];
+    const cells = [...body.matchAll(/<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi)].map(m => strip(m[1]));
+    const txt = cells.filter(Boolean);
+    if (!txt.length) continue;
+    if (txt.length <= 2 && !/^(Out|Uncertain|Expected|Doubtful|Questionable|Day-to-day)$/i.test(txt[1] || "")) { if (!/^(P|Player)$/i.test(txt[0])) team = txt[0]; continue; }
+    const si = txt.findIndex(c => /^(Out|Uncertain|Expected|Doubtful|Questionable|Day-to-day|Game-time decision)$/i.test(c));
+    if (si < 1) continue;
+    const name = txt[si - 1], pos = si >= 2 ? txt[si - 2] : "";
+    rows.push({ team, pos, name, status: txt[si], round: txt[si + 1] || "", comment: txt.slice(si + 2).join(" ") });
+  }
+  const out = { updated: new Date().toISOString(), url, rows };
+  const f = path.join(DIR, "injuries-bn.json");
+  let old = null; try { old = fs.readFileSync(f, "utf8"); } catch (e) {}
+  if (!old || JSON.stringify(JSON.parse(old).rows) !== JSON.stringify(rows)) fs.writeFileSync(f, JSON.stringify(out));
+  if (!rows.length) fs.writeFileSync(path.join(DIR, "_bninj-debug.txt"), html.slice(0, 400000));
+  console.log("BN traumos:", rows.length);
+}
+
 (async () => {
   if (!fs.existsSync(DIR)) fs.mkdirSync(DIR);
   const S = await buildShared();
@@ -513,6 +542,8 @@ async function repairArchive(L, round) {
     }
   }
   try { require("./coach.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Trenerių komentarai:", e.message); }
+  // BasketNews traumų lentelė (numatomas grįžimas ir komentarai): data/injuries-bn.json
+  try { await bnInjuries(); } catch (e) { console.log("BN traumos:", e.message); }
   try { require("./season.js").run(DIR, LEAGUES.map(l => l.slug)); } catch (e) { console.log("Sezono suvestinė:", e.message); }
   // Patarimai prieš turą: data/advice.md – tik kai turas prasideda per 30 val. (kitaip tuščias), data/advice-full.md – visada
   try {
