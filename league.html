@@ -122,6 +122,9 @@ tr.tot td.pt{font-weight:700}
 .tgs,.tgl{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;vertical-align:middle}.tgs{background:rgba(34,197,94,.15);color:#22c55e}.tgl{background:rgba(245,158,11,.18);color:#f59e0b}
 td .up{color:#22c55e;font-weight:700}td .dn{color:#ef4444;font-weight:700}
 .trc{display:inline-flex;width:20px;height:20px;border:1.5px solid var(--line);border-radius:5px;align-items:center;justify-content:center;color:var(--cap);font-weight:700;font-size:13px}.trr.on .trc{border-color:var(--cap)}
+.ijg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.ijc{padding:10px 12px}.ijh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.ijh b{font-size:15px}
+.ijc ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:13px}.ijc li{display:flex;align-items:center;gap:4px;flex-wrap:wrap}.ijc li:not(.mine){opacity:.75}.ijc li.mine .nm{font-weight:600}
 .trl{display:flex;flex-direction:column;gap:4px;margin-top:6px}
 .trh{display:flex;align-items:center;gap:6px;flex-wrap:wrap;text-align:left;font:inherit;font-size:13.5px;color:var(--ink);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:7px 10px;cursor:pointer}
 .trh:hover{border-color:var(--cap)}.trm{color:var(--muted);font-size:12px;margin-left:auto}
@@ -553,7 +556,7 @@ function render() {
     el += `<div class="card"><div class="gh"><div class="sc">${esc(tv(g.h))} ${g.hs}<i>–</i>${g.as} ${esc(tv(g.a))}</div><span class="pill ${g.status === "live" ? "pl-live" : ""}">${g.status === "live" ? (clockLabel(g) || "Vyksta") : "Baigtos"}</span></div>${clubTable(g.h)}${clubTable(g.a)}</div>`;
   });
   if (sched.length) el += `<div class="sub">Suplanuotos · ${sched.length}</div><div class="card sched-list">` + sched.map(g => `<div><span>${esc(tv(g.h))} – ${esc(tv(g.a))}</span><span class="sub">${when(g.start)}</span></div>`).join("") + `</div>`;
-  document.getElementById("el").innerHTML = el;
+  document.getElementById("el").innerHTML = el + injByClub();
 
   renderPlayers();
   renderSeason();
@@ -1647,6 +1650,26 @@ function renderTrade() {
   el.querySelectorAll("[data-pick]").forEach(r => r.addEventListener("click", () => { const [k, id] = r.dataset.pick.split(":"); TR[k] = TR[k].includes(id) ? TR[k].filter(x => x !== id) : [...TR[k], id]; renderTrade(); }));
   const fq = el.querySelector("#faq"); if (fq) fq.addEventListener("input", () => { FAQ = fq.value; const pos = fq.selectionStart; renderTrade(); const n = document.getElementById("faq"); if (n) { n.focus(); n.setSelectionRange(pos, pos); } });
   const c = document.getElementById("trClear"); if (c) c.addEventListener("click", () => { TR = { give: [], get: [] }; renderTrade(); });
+}
+
+
+// ---- Traumos pagal Eurolygos komandas (BasketNews žaidėjų būsena) ----
+var IJF = "all";
+function injByClub() {
+  if (!INJ || !INJ.state || viewR != null) return "";
+  const ORD = ["out", "doubtful", "game-time", "uncertain", "expected"];
+  const by = {};
+  Object.entries(INJ.state).forEach(([id, s]) => { if (!s.h || s.h === "ready") return; if (IJF === "own" && !ownerOf(id)) return; (by[s.club] = by[s.club] || []).push({ id, ...s }); });
+  const clubs = Object.keys(by).sort((a, b) => by[b].filter(x => x.h === "out").length - by[a].filter(x => x.h === "out").length || tv(a).localeCompare(tv(b)));
+  const seg = `<div class="seg" role="group" aria-label="Traumų filtras" style="margin:4px 0 8px"><button type="button" data-ijf="all" aria-pressed="${IJF === "all"}" onclick="IJF='all';render()">Visi žaidėjai</button><button type="button" data-ijf="own" aria-pressed="${IJF === "own"}" onclick="IJF='own';render()">Tik lygos komandų</button></div>`;
+  if (!clubs.length) return `<div class="sub">Traumos pagal Eurolygos komandas</div>${seg}<p class="note">Šios lygos komandos traumuotų žaidėjų neturi.</p>`;
+  const cards = clubs.map(c => {
+    const list = by[c].sort((a, b) => ORD.indexOf(a.h) - ORD.indexOf(b.h) || a.name.localeCompare(b.name));
+    return `<div class="card ijc"><div class="ijh"><b>${esc(tv(c))}</b><span class="sub">${list.filter(x => x.h === "out").length ? list.filter(x => x.h === "out").length + " nežais" : ""}</span></div><ul>${list.map(x => { const own = ownerOf(x.id), lab = HL[x.h] || ["Neaišku", "h-unc"];
+      return `<li class="${own ? "mine" : ""}"><span class="hb ${lab[1]}"><i aria-hidden="true">✚</i><span class="hbt">${lab[0]}</span></span> <span class="nm">${esc(x.name)}</span>${own ? ` <span class="own"><span class="tm">${esc(own)}</span></span>` : ""}<span class="fa"> · nuo ${fmt(x.since, { month: "2-digit", day: "2-digit" })}</span></li>`; }).join("")}</ul></div>`;
+  }).join("");
+  const n = clubs.reduce((s, c) => s + by[c].length, 0);
+  return `<div class="sub">Traumos pagal Eurolygos komandas · ${n} žaidėjai · paryškinti šios lygos komandų žaidėjai · duomenys iš BasketNews, atnaujinama kas ~6 min.</div>${seg}<div class="ijg">${cards}</div>`;
 }
 
 // ---- Turų istorija ----
