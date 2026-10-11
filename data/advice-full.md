@@ -44,15 +44,12 @@ Pirmos rungtynės: 20:45, antradienis
 3. Sylvain Francisco (PAN, G) – ~22,4 FP @ PAR
 Dabar kapitonas – TJ Shorts II (~28,3 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~199,1 FP, dabartinė ~195 FP, **+4,1**)
+**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~195 FP, **+5,7**)
 Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~28,3, Sylvain Francisco ~22,4, Nigel Hayes-Davis ~20,6, Tonye Jekiri ~16,7
 6-as: Devon Dotson ~21,4
-Suolas: Mbaye Ndiaye ~18,6, Dwayne Bacon ~17,5, Daniel Oturu ~14,7, Jacob Toppin ~11
-Out: Olivier Nkamhoua, Bruno Fernando, Carsen Edwards
+Suolas: Mbaye Ndiaye ~18,6, Dwayne Bacon ~17,5, Daniel Oturu ~14,7, Carsen Edwards ~14,1
+Out: Jacob Toppin, Olivier Nkamhoua, Bruno Fernando
 Pakeitimai: į startą – Tonye Jekiri, Marcus Carr; iš starto – Daniel Oturu, Dwayne Bacon.
-
-**🩹 Traumos**
-- Carsen Edwards: nežais
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Marcus Carr (28,2 vs 22,9), Mbaye Ndiaye (22,5 vs 18,4)
@@ -68,10 +65,10 @@ Pakeitimai: į startą – Tonye Jekiri, Marcus Carr; iš starto – Daniel Otur
 - Tonye Jekiri vs PAN: sunkus varžovas (−20 % centrams)
 
 **🛒 Laisvoji rinka**
-- Semi Ojeleye (CZV, F) ~21,6 FP @ ASV (vietoj Carsen Edwards ~0)
-- Kenneth Faried (KBA, C) ~18,9 FP vs DUB (vietoj Carsen Edwards ~0)
-- Hugo Besson (ASV, G) ~18,6 FP vs CZV (vietoj Carsen Edwards ~0)
+- Semi Ojeleye (CZV, F) ~21,6 FP @ ASV (vietoj Bruno Fernando ~9,4)
+- Kenneth Faried (KBA, C) ~18,9 FP vs DUB (vietoj Bruno Fernando ~9,4)
+- Hugo Besson (ASV, G) ~18,6 FP vs CZV (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~199,1 : ~152,8
+**⚔️ Prieš BC Svajuonė:** prognozė ~200,7 : ~152,8
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
