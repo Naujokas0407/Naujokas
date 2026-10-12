@@ -5,14 +5,14 @@ Pirmos rungtynės: 20:45, antradienis
 1. Aliou Diarra (VIR, C) – ~26,5 FP @ PRS · varžovas gerai gina centrams · 🔥 geros formos
 2. Jonas Valančiūnas (ZAL, C) – ~22,3 FP @ FBT
 3. Devon Dotson (BES, G) – ~21,4 FP @ HTA
-Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
+Dabar kapitonas – Jonas Valančiūnas (~22,3 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~181 FP, dabartinė ~172,8 FP, **+8,1**)
-Startas: Aliou Diarra (C) ~26,5, Jonas Valančiūnas ~22,3, Devon Dotson ~21,4, Nigel Hayes-Davis ~20,6, Chima Moneke ~18,2
-6-as: Kevin Punter ~19,3
+**📋 Siūloma sudėtis** (prognozė ~181 FP, dabartinė ~168,7 FP, **+12,3**)
+Startas: Aliou Diarra (C) ~26,5, Jonas Valančiūnas ~22,3, Nigel Hayes-Davis ~20,6, Kevin Punter ~19,3, Chima Moneke ~18,2
+6-as: Devon Dotson ~21,4
 Suolas: Ante Zizic ~17,4, Tosan Evbuomwan ~11,6, Vasilije Micic ~11,6, Matthew Strazel ~11,5
 Out: Alec Peters, McKinley Wright IV, Joel Parra
-Pakeitimai: į startą – Chima Moneke; iš starto – Kevin Punter.
+Pakeitimai: į startą – Aliou Diarra, Chima Moneke; iš starto – Devon Dotson, Alec Peters.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Aliou Diarra (31 vs 25,8)
