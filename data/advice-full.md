@@ -1,18 +1,18 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 5 turas
-Pirmos rungtynės: 20:45, antradienis
+Pirmos rungtynės: 21:00, antradienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~26,5 FP @ PRS · varžovas gerai gina centrams · 🔥 geros formos
-2. Jonas Valančiūnas (ZAL, C) – ~22,3 FP @ FBT
-3. Devon Dotson (BES, G) – ~21,4 FP @ HTA
-Dabar kapitonas – Jonas Valančiūnas (~22,3 FP). Siūlau keisti į Aliou Diarra.
+2. Devon Dotson (BES, G) – ~21,4 FP @ HTA
+3. Nigel Hayes-Davis (PAN, F) – ~20,6 FP @ PAR · varžovas gerai gina puolėjams
+Dabar kapitonas – Jonas Valančiūnas (~23,2 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~184,4 FP, dabartinė ~167,4 FP, **+17**)
-Startas: Aliou Diarra (C) ~26,5, Jonas Valančiūnas ~22,3, Devon Dotson ~21,4, Nigel Hayes-Davis ~20,6, Hugo Besson ~18,6
-6-as: Kevin Punter ~19,3
+**📋 Siūloma sudėtis** (prognozė ~185,2 FP, dabartinė ~169 FP, **+16,2**)
+Startas: Aliou Diarra (C) ~26,5, Devon Dotson ~21,4, Nigel Hayes-Davis ~20,6, Kevin Punter ~19,3, Hugo Besson ~18,6
+6-as: Jonas Valančiūnas ~23,2
 Suolas: Chima Moneke ~18,2, Ante Zizic ~17,4, Tosan Evbuomwan ~11,6, Alec Peters ~11
 Out: McKinley Wright IV, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Kevin Punter, Chima Moneke.
+Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Jonas Valančiūnas, Chima Moneke.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -38,7 +38,7 @@ Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Kevin Punt
 ---
 
 ## HLA 2 Divizionas – Naujokas · 5 turas
-Pirmos rungtynės: 20:45, antradienis
+Pirmos rungtynės: 21:00, antradienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~29,4 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
@@ -46,10 +46,10 @@ Pirmos rungtynės: 20:45, antradienis
 3. Sylvain Francisco (PAN, G) – ~22,4 FP @ PAR
 Dabar kapitonas – TJ Shorts II (~28,3 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~190,6 FP, **+10**)
+**📋 Siūloma sudėtis** (prognozė ~202,4 FP, dabartinė ~190,6 FP, **+11,8**)
 Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~28,3, Sylvain Francisco ~22,4, Nigel Hayes-Davis ~20,6, Tonye Jekiri ~16,7
 6-as: Devon Dotson ~21,4
-Suolas: Mbaye Ndiaye ~18,6, Dwayne Bacon ~17,5, Daniel Oturu ~14,7, Carsen Edwards ~14,1
+Suolas: Mbaye Ndiaye ~18,6, Carsen Edwards ~17,6, Dwayne Bacon ~17,5, Daniel Oturu ~14,7
 Out: Jacob Toppin, Both Gach, Bruno Fernando
 Pakeitimai: į startą – Marcus Carr; iš starto – Dwayne Bacon.
 
@@ -62,7 +62,6 @@ Pakeitimai: į startą – Marcus Carr; iš starto – Dwayne Bacon.
 - Marcus Carr @ PRS: palankus varžovas (+13 % gynėjams)
 - Mbaye Ndiaye @ VBC: sunkus varžovas (−11 % puolėjams)
 - Nigel Hayes-Davis @ PAR: sunkus varžovas (−14 % puolėjams)
-- Carsen Edwards @ FBT: sunkus varžovas (−20 % gynėjams)
 - Tonye Jekiri vs PAN: sunkus varžovas (−20 % centrams)
 
 **🛒 Laisvoji rinka**
@@ -70,6 +69,6 @@ Pakeitimai: į startą – Marcus Carr; iš starto – Dwayne Bacon.
 - Nikos Rogkavopoulos (PAN, F) ~15,9 FP @ PAR (vietoj Bruno Fernando ~9,4)
 - Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~200,7 : ~152,8
+**⚔️ Prieš BC Svajuonė:** prognozė ~202,4 : ~152,9
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
