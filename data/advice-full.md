@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 5 turas
-Pirmos rungtynės: 22:00, antradienis
+Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~26,5 FP @ PRS · varžovas gerai gina centrams · 🔥 geros formos
@@ -26,18 +26,18 @@ Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Chima Mone
 ---
 
 ## HLA 2 Divizionas – Naujokas · 5 turas
-Pirmos rungtynės: 22:00, antradienis
+Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~29,4 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
-2. TJ Shorts II (VBC, G) – ~28,3 FP vs OLY
-3. Devon Dotson (BES, G) – ~21,4 FP @ HTA
-Dabar kapitonas – TJ Shorts II (~28,3 FP). Siūlau keisti į Marcus Carr.
+2. Devon Dotson (BES, G) – ~21,4 FP @ HTA
+3. Daniel Oturu (HTA, C) – ~14,7 FP vs BES · 🧊 formos duobė
+Dabar kapitonas – TJ Shorts II (~29,3 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~211 FP, dabartinė ~199,6 FP, **+11,4**)
+**📋 Siūloma sudėtis** (prognozė ~213,1 FP, dabartinė ~203,8 FP, **+9,3**)
 Startas: Marcus Carr (C) ~29,4, Nigel Hayes-Davis ~24, Sylvain Francisco ~23,1, Devon Dotson ~21,4, Tonye Jekiri ~20,9
-6-as: TJ Shorts II ~28,3
-Suolas: Mbaye Ndiaye ~18,6, Dwayne Bacon ~18,3, Carsen Edwards ~17,6, Daniel Oturu ~14,7
+6-as: TJ Shorts II ~29,3
+Suolas: Mbaye Ndiaye ~20,9, Dwayne Bacon ~18,3, Carsen Edwards ~17,6, Daniel Oturu ~14,7
 Out: Jacob Toppin, Both Gach (jau žaidė), Bruno Fernando
 Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Dwayne Bacon, TJ Shorts II.
 
@@ -48,13 +48,12 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Dwayne Baco
 **🛡 Varžovų gynyba šį turą**
 - Bruno Fernando vs BAY: palankus varžovas (+25 % centrams)
 - Marcus Carr @ PRS: palankus varžovas (+13 % gynėjams)
-- Mbaye Ndiaye @ VBC: sunkus varžovas (−11 % puolėjams)
 
 **🛒 Laisvoji rinka**
 - Ante Zizic (BES, C) ~17,4 FP @ HTA (vietoj Bruno Fernando ~9,4)
 - Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
 - Tomas Satoransky (HTA, G) ~15,6 FP vs BES (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~211 : ~149,2
+**⚔️ Prieš BC Svajuonė:** prognozė ~213,1 : ~149,2
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
