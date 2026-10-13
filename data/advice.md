@@ -46,12 +46,12 @@ Pirmos rungtynės: 20:45, antradienis
 3. Sylvain Francisco (PAN, G) – ~22,4 FP @ PAR
 Dabar kapitonas – TJ Shorts II (~28,3 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~194,9 FP, **+5,7**)
+**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~190,6 FP, **+10**)
 Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~28,3, Sylvain Francisco ~22,4, Nigel Hayes-Davis ~20,6, Tonye Jekiri ~16,7
 6-as: Devon Dotson ~21,4
 Suolas: Mbaye Ndiaye ~18,6, Dwayne Bacon ~17,5, Daniel Oturu ~14,7, Carsen Edwards ~14,1
 Out: Jacob Toppin, Both Gach, Bruno Fernando
-Pakeitimai: į startą – Tonye Jekiri, Marcus Carr; iš starto – Daniel Oturu, Dwayne Bacon.
+Pakeitimai: į startą – Marcus Carr; iš starto – Dwayne Bacon.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Marcus Carr (28,2 vs 22,9), Mbaye Ndiaye (22,5 vs 18,4)
