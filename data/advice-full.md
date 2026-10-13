@@ -7,12 +7,12 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Ante Zizic (BES, C) – ~17,4 FP @ HTA
 Dabar kapitonas – Jonas Valančiūnas (~16,5 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~184,8 FP, dabartinė ~158,7 FP, **+26,1**)
-Startas: Aliou Diarra (C) ~26,5, Nigel Hayes-Davis ~24, Devon Dotson ~21,4, Kevin Punter ~20,2, Ante Zizic ~17,4
-6-as: Hugo Besson ~20,6
-Suolas: Jonas Valančiūnas ~16,5, Chima Moneke ~15,8, Alec Peters ~13,7, Tosan Evbuomwan ~10,5
-Out: McKinley Wright IV (jau žaidė), Tornike Shengelia (jau žaidė), Dzanan Musa (jau žaidė)
-Pakeitimai: į startą – Aliou Diarra, Devon Dotson, Ante Zizic; iš starto – Jonas Valančiūnas, Chima Moneke, Hugo Besson.
+**📋 Siūloma sudėtis** (prognozė ~182,4 FP, dabartinė ~152,3 FP, **+30,1**)
+Startas: Aliou Diarra (C) ~26,5, Nigel Hayes-Davis ~24, Chima Moneke ~21,5, Devon Dotson ~21,4, Kevin Punter ~20,2
+6-as: Ante Zizic ~17,4
+Suolas: Jonas Valančiūnas ~16,5, Alec Peters ~13,7, Tosan Evbuomwan ~10,5, McKinley Wright IV ~9,2
+Out: Hugo Besson (jau žaidė), Tornike Shengelia (jau žaidė), Dzanan Musa (jau žaidė)
+Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Jonas Valančiūnas, Hugo Besson.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -34,12 +34,12 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Daniel Oturu (HTA, C) – ~14,7 FP vs BES · 🧊 formos duobė
 Dabar kapitonas – TJ Shorts II (~29,3 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~213,8 FP, dabartinė ~203,8 FP, **+10**)
-Startas: Marcus Carr (C) ~29,4, Nigel Hayes-Davis ~24, Sylvain Francisco ~23,1, Devon Dotson ~21,4, Tonye Jekiri ~20,9
-6-as: TJ Shorts II ~29,3
-Suolas: Mbaye Ndiaye ~20,9, Carsen Edwards ~19, Dwayne Bacon ~18,3, Daniel Oturu ~14,7
-Out: Jacob Toppin, Both Gach (jau žaidė), Bruno Fernando
-Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Dwayne Bacon, TJ Shorts II.
+**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~181,8 FP, **+18,9**)
+Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~29,3, Devon Dotson ~21,4, Mbaye Ndiaye ~20,9, Tonye Jekiri ~19,5
+6-as: Carsen Edwards ~19
+Suolas: Dwayne Bacon ~18,3, Both Gach ~16,5, Daniel Oturu ~14,7, Nigel Hayes-Davis ~14,5
+Out: Sylvain Francisco (jau žaidė), Jacob Toppin, Bruno Fernando
+Pakeitimai: į startą – Marcus Carr, Devon Dotson, Mbaye Ndiaye; iš starto – Sylvain Francisco, Dwayne Bacon, Nigel Hayes-Davis.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Marcus Carr (28,2 vs 22,9), Mbaye Ndiaye (22,5 vs 18,4)
@@ -54,6 +54,6 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Dwayne Baco
 - Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
 - Tomas Satoransky (HTA, G) ~15,6 FP vs BES (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~213,8 : ~156,5
+**⚔️ Prieš BC Svajuonė:** prognozė ~200,7 : ~159,9
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
