@@ -32,14 +32,14 @@ Pirmos rungtynės: 19:00, trečiadienis
 1. Marcus Carr (VIR, G) – ~29,4 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
 2. Devon Dotson (BES, G) – ~21,4 FP @ HTA
 3. Daniel Oturu (HTA, C) – ~14,7 FP vs BES · 🧊 formos duobė
-Dabar kapitonas – TJ Shorts II (~29,3 FP). Siūlau keisti į Marcus Carr.
+Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~203,1 FP, dabartinė ~184,6 FP, **+18,5**)
-Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~29,3, Dwayne Bacon ~21, Mbaye Ndiaye ~20,9, Tonye Jekiri ~19,5
-6-as: Devon Dotson ~21,4
-Suolas: Carsen Edwards ~19, Both Gach ~16,5, Daniel Oturu ~14,7, Nigel Hayes-Davis ~14,5
+**📋 Siūloma sudėtis** (prognozė ~192 FP, dabartinė ~164,2 FP, **+27,8**)
+Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~21,5, Devon Dotson ~21,4, Dwayne Bacon ~21, Tonye Jekiri ~19,5
+6-as: Carsen Edwards ~19
+Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Daniel Oturu ~14,7, Nigel Hayes-Davis ~14,5
 Out: Sylvain Francisco (jau žaidė), Jacob Toppin, Bruno Fernando
-Pakeitimai: į startą – Marcus Carr, Mbaye Ndiaye; iš starto – Sylvain Francisco, Nigel Hayes-Davis.
+Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Francisco, Nigel Hayes-Davis.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Marcus Carr (28,2 vs 22,9), Mbaye Ndiaye (22,5 vs 18,4)
@@ -54,6 +54,6 @@ Pakeitimai: į startą – Marcus Carr, Mbaye Ndiaye; iš starto – Sylvain Fra
 - Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
 - Tomas Satoransky (HTA, G) ~15,6 FP vs BES (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~203,1 : ~146,7
+**⚔️ Prieš BC Svajuonė:** prognozė ~192 : ~146,7
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
