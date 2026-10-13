@@ -7,12 +7,12 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Ante Zizic (BES, C) – ~17,4 FP @ HTA
 Dabar kapitonas – Jonas Valančiūnas (~16,5 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~182,4 FP, dabartinė ~152,3 FP, **+30,1**)
-Startas: Aliou Diarra (C) ~26,5, Nigel Hayes-Davis ~24, Chima Moneke ~21,5, Devon Dotson ~21,4, Kevin Punter ~20,2
+**📋 Siūloma sudėtis** (prognozė ~173,9 FP, dabartinė ~142,8 FP, **+31,1**)
+Startas: Aliou Diarra (C) ~26,5, Chima Moneke ~21,5, Devon Dotson ~21,4, Kevin Punter ~20,2, Jonas Valančiūnas ~16,5
 6-as: Ante Zizic ~17,4
-Suolas: Jonas Valančiūnas ~16,5, Alec Peters ~13,7, Tosan Evbuomwan ~10,5, McKinley Wright IV ~9,2
+Suolas: Nigel Hayes-Davis ~14,5, Alec Peters ~13,7, Tosan Evbuomwan ~10,5, McKinley Wright IV ~9,2
 Out: Hugo Besson (jau žaidė), Tornike Shengelia (jau žaidė), Dzanan Musa (jau žaidė)
-Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Jonas Valančiūnas, Hugo Besson.
+Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Nigel Hayes-Davis, Hugo Besson.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
