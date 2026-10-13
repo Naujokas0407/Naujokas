@@ -7,15 +7,15 @@ Pirmos rungtynės: 20:45, antradienis
 3. Devon Dotson (BES, G) – ~21,4 FP @ HTA
 Dabar kapitonas – Jonas Valančiūnas (~22,3 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~184,4 FP, dabartinė ~157,8 FP, **+26,6**)
+**📋 Siūloma sudėtis** (prognozė ~184,4 FP, dabartinė ~167,4 FP, **+17**)
 Startas: Aliou Diarra (C) ~26,5, Jonas Valančiūnas ~22,3, Devon Dotson ~21,4, Nigel Hayes-Davis ~20,6, Hugo Besson ~18,6
 6-as: Kevin Punter ~19,3
 Suolas: Chima Moneke ~18,2, Ante Zizic ~17,4, Tosan Evbuomwan ~11,6, Alec Peters ~11
 Out: McKinley Wright IV, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Aliou Diarra, Hugo Besson; iš starto – Kevin Punter, Chima Moneke.
+Pakeitimai: į startą – Aliou Diarra, Devon Dotson; iš starto – Kevin Punter, Chima Moneke.
 
 **🩹 Traumos**
-- Dzanan Musa: nežais – šiuo metu sudėtyje!
+- Dzanan Musa: nežais
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Aliou Diarra (31 vs 25,8)
