@@ -7,31 +7,33 @@ Pirmos rungtynės: 20:45, antradienis
 3. Devon Dotson (BES, G) – ~21,4 FP @ HTA
 Dabar kapitonas – Jonas Valančiūnas (~22,3 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~181 FP, dabartinė ~164,5 FP, **+16,5**)
-Startas: Aliou Diarra (C) ~26,5, Jonas Valančiūnas ~22,3, Nigel Hayes-Davis ~20,6, Kevin Punter ~19,3, Chima Moneke ~18,2
-6-as: Devon Dotson ~21,4
-Suolas: Ante Zizic ~17,4, Tosan Evbuomwan ~11,6, Vasilije Micic ~11,6, Matthew Strazel ~11,5
-Out: Alec Peters, McKinley Wright IV, Joel Parra
-Pakeitimai: į startą – Aliou Diarra; iš starto – Devon Dotson.
+**📋 Siūloma sudėtis** (prognozė ~184,4 FP, dabartinė ~157,8 FP, **+26,6**)
+Startas: Aliou Diarra (C) ~26,5, Jonas Valančiūnas ~22,3, Devon Dotson ~21,4, Nigel Hayes-Davis ~20,6, Hugo Besson ~18,6
+6-as: Kevin Punter ~19,3
+Suolas: Chima Moneke ~18,2, Ante Zizic ~17,4, Tosan Evbuomwan ~11,6, Alec Peters ~11
+Out: McKinley Wright IV, Tornike Shengelia, Dzanan Musa
+Pakeitimai: į startą – Aliou Diarra, Hugo Besson; iš starto – Kevin Punter, Chima Moneke.
+
+**🩹 Traumos**
+- Dzanan Musa: nežais – šiuo metu sudėtyje!
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Aliou Diarra (31 vs 25,8)
 
 **🛡 Varžovų gynyba šį turą**
+- Dzanan Musa @ KBA: palankus varžovas (+17 % gynėjams)
 - McKinley Wright IV @ KBA: palankus varžovas (+17 % gynėjams)
 - Chima Moneke @ ASV: palankus varžovas (+15 % puolėjams)
-- Matthew Strazel vs BAY: palankus varžovas (+14 % gynėjams)
-- Joel Parra vs TEL: palankus varžovas (+11 % puolėjams)
 - Tosan Evbuomwan vs TEL: palankus varžovas (+11 % puolėjams)
-- Vasilije Micic vs BES: palankus varžovas (+9 % gynėjams)
 - Aliou Diarra @ PRS: sunkus varžovas (−8 % centrams)
+- Hugo Besson vs CZV: sunkus varžovas (−10 % gynėjams)
 - Nigel Hayes-Davis @ PAR: sunkus varžovas (−14 % puolėjams)
 - Alec Peters vs RMB: sunkus varžovas (−20 % puolėjams)
 
 **🛒 Laisvoji rinka**
-- Kenneth Faried (KBA, C) ~18,9 FP vs DUB (vietoj Joel Parra ~9,9)
-- Hugo Besson (ASV, G) ~18,6 FP vs CZV (vietoj Joel Parra ~9,9)
-- Antonio Blakeney (HTA, G) ~18,5 FP vs BES (vietoj Joel Parra ~9,9)
+- Antonio Blakeney (HTA, G) ~18,5 FP vs BES (vietoj Dzanan Musa ~0)
+- Daniel Theis (TEL, C) ~18,1 FP @ BAR (vietoj Dzanan Musa ~0)
+- Nikos Rogkavopoulos (PAN, F) ~15,9 FP @ PAR (vietoj Dzanan Musa ~0)
 
 ---
 
@@ -44,11 +46,11 @@ Pirmos rungtynės: 20:45, antradienis
 3. Sylvain Francisco (PAN, G) – ~22,4 FP @ PAR
 Dabar kapitonas – TJ Shorts II (~28,3 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~195 FP, **+5,7**)
+**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~194,9 FP, **+5,7**)
 Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~28,3, Sylvain Francisco ~22,4, Nigel Hayes-Davis ~20,6, Tonye Jekiri ~16,7
 6-as: Devon Dotson ~21,4
 Suolas: Mbaye Ndiaye ~18,6, Dwayne Bacon ~17,5, Daniel Oturu ~14,7, Carsen Edwards ~14,1
-Out: Jacob Toppin, Olivier Nkamhoua, Bruno Fernando
+Out: Jacob Toppin, Both Gach, Bruno Fernando
 Pakeitimai: į startą – Tonye Jekiri, Marcus Carr; iš starto – Daniel Oturu, Dwayne Bacon.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
@@ -58,16 +60,15 @@ Pakeitimai: į startą – Tonye Jekiri, Marcus Carr; iš starto – Daniel Otur
 **🛡 Varžovų gynyba šį turą**
 - Bruno Fernando vs BAY: palankus varžovas (+25 % centrams)
 - Marcus Carr @ PRS: palankus varžovas (+13 % gynėjams)
-- Olivier Nkamhoua vs TEL: palankus varžovas (+11 % puolėjams)
 - Mbaye Ndiaye @ VBC: sunkus varžovas (−11 % puolėjams)
 - Nigel Hayes-Davis @ PAR: sunkus varžovas (−14 % puolėjams)
 - Carsen Edwards @ FBT: sunkus varžovas (−20 % gynėjams)
 - Tonye Jekiri vs PAN: sunkus varžovas (−20 % centrams)
 
 **🛒 Laisvoji rinka**
-- Semi Ojeleye (CZV, F) ~21,6 FP @ ASV (vietoj Bruno Fernando ~9,4)
-- Kenneth Faried (KBA, C) ~18,9 FP vs DUB (vietoj Bruno Fernando ~9,4)
-- Hugo Besson (ASV, G) ~18,6 FP vs CZV (vietoj Bruno Fernando ~9,4)
+- Ante Zizic (BES, C) ~17,4 FP @ HTA (vietoj Bruno Fernando ~9,4)
+- Nikos Rogkavopoulos (PAN, F) ~15,9 FP @ PAR (vietoj Bruno Fernando ~9,4)
+- Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
 
 **⚔️ Prieš BC Svajuonė:** prognozė ~200,7 : ~152,8
 
