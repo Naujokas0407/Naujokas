@@ -77,23 +77,26 @@ a.lg.cup:hover .go{color:#f2c14e}
     <p class="lead">Gyvi draft lygų rezultatai: rungtynių eiga ir statistika iš Eurolygos, fantasy taškai iš BasketNews Fantasy.</p>
   </header>
 
-  <h2 class="h">Pasirinkite lygą</h2>
-  <section class="leagues" id="leagues"></section>
-
   <h2 class="h">Taurė</h2>
   <section class="leagues">
     <a class="lg cup" href="cup.html" id="cupCard"><span class="ico cup"><svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="cg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe9a8"/><stop offset=".45" stop-color="#f2c14e"/><stop offset="1" stop-color="#a8760a"/></linearGradient><linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2c14e"/><stop offset="1" stop-color="#8a5f08"/></linearGradient></defs><path d="M18 8h28v14c0 9-6 16-14 16s-14-7-14-16z" fill="url(#cg1)"/><path d="M18 12H9v4c0 7 5 12 11 13M46 12h9v4c0 7-5 12-11 13" fill="none" stroke="url(#cg2)" stroke-width="3.5" stroke-linecap="round"/><rect x="29" y="37" width="6" height="9" fill="url(#cg2)"/><rect x="20" y="46" width="24" height="5" rx="2" fill="url(#cg1)"/><rect x="16" y="51" width="32" height="7" rx="2.5" fill="url(#cg2)"/></svg></span><span><span class="nm">HLA Taurė</span><span class="meta"><span class="pill">32 komandos</span><span id="cupMeta">Grupės ir atkrintamosios · nuo 8 turo</span></span></span><span class="go" aria-hidden="true">→</span></a>
   </section>
 
+  <h2 class="h">HLA divizionai</h2>
+  <section class="leagues" id="leagues"></section>
+
+  <h2 class="h">BN Fantasy</h2>
+  <section class="leagues" id="leaguesBn"></section>
+
   <p class="foot">Neoficialus puslapis. Duomenys atsinaujina automatiškai rungtynių metu.</p>
 </main>
 <script>
 const LEAGUES = [
-  { slug: "bn", title: "BN Fantasy 🏆", short: "BN", format: "classic" },
   { slug: "hla1", title: "HLA 1 Divizionas", short: "D1", format: "h2h" },
   { slug: "hla2", title: "HLA 2 Divizionas", short: "D2", format: "h2h" },
   { slug: "hla3", title: "HLA 3 Divizionas", short: "D3", format: "h2h" },
-  { slug: "hla4", title: "HLA 4 Divizionas", short: "D4", format: "classic" }
+  { slug: "hla4", title: "HLA 4 Divizionas", short: "D4", format: "classic" },
+  { slug: "bn", title: "BN Fantasy 🏆", short: "BN", format: "classic" }
 ];
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const num = n => String(Math.round(n * 100) / 100);
@@ -118,10 +121,12 @@ function card(L, d) {
   return `<a class="lg" href="league.html?l=${encodeURIComponent(L.slug)}&v=${Date.now()}"><span class="ico ${L.format === "h2h" ? "h2h" : ""}">${esc(L.short)}</span><span><span class="nm">${esc(L.title)}</span><span class="meta">${meta}</span>${me ? `<div class="me">${me}</div>` : ""}</span><span class="go" aria-hidden="true">→</span></a>`;
 }
 const box = document.getElementById("leagues");
-box.innerHTML = LEAGUES.map(L => card(L, null)).join("");
+const boxBn = document.getElementById("leaguesBn");
+const paint = ds => { box.innerHTML = LEAGUES.map((L, i) => L.slug === "bn" ? "" : card(L, ds ? ds[i] : null)).join(""); boxBn.innerHTML = LEAGUES.map((L, i) => L.slug === "bn" ? card(L, ds ? ds[i] : null) : "").join(""); };
+paint(null);
 Promise.all(LEAGUES.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
-  .then(ds => { box.innerHTML = LEAGUES.map((L, i) => card(L, ds[i])).join("");
-    const d = ds[1]; if (!d) return; const r = d.round, el = document.getElementById("cupMeta");
+  .then(ds => { paint(ds);
+    const d = ds[LEAGUES.findIndex(L => L.slug === "hla1")]; if (!d) return; const r = d.round, el = document.getElementById("cupMeta");
     el.innerHTML = r < 8 ? `Startas ${8} ture · liko ${8 - r} ${8 - r === 1 ? "turas" : "turai"}` : r <= 21 ? `<span class="gold">Grupių etapas</span> · ${r} turas` : r <= 31 ? `<span class="gold">Atkrintamosios</span> · ${r} turas` : "Taurė baigta"; });
 </script>
 </body>
