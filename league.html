@@ -523,7 +523,18 @@ function render() {
 
   const rank = c => ({ c: 0, f: 1, g: 2, b: 3, i: 4 })[c.split("-")[0]] * 10 + +c.split("-")[1];
   html = myCard() + html;
-  [...order].sort((a, b) => isMe(D.teams[b]) - isMe(D.teams[a])).forEach(i => {
+  // kortelių tvarka: H2H – poromis (mano pora pirma: mano komanda, iškart po jos – varžovas); kitur – mano komanda pirma
+  let cardOrder = [...order].sort((a, b) => isMe(D.teams[b]) - isMe(D.teams[a]));
+  if (D.format === "h2h" && D.matchups && D.matchups.length) {
+    const ix = title => D.teams.findIndex(t => t.title === title);
+    const pairs = D.matchups.map(m => { const a = ix(m.a), b = ix(m.b); return isMe(D.teams[b]) ? [b, a] : [a, b]; }).filter(p => p[0] >= 0 && p[1] >= 0);
+    pairs.sort((p, q) => (isMe(D.teams[q[0]]) ? 1 : 0) - (isMe(D.teams[p[0]]) ? 1 : 0));
+    const seen = new Set(), seq = [];
+    pairs.forEach(p => p.forEach(i => { if (!seen.has(i)) { seen.add(i); seq.push(i); } }));
+    order.forEach(i => { if (!seen.has(i)) seq.push(i); });
+    cardOrder = seq;
+  }
+  cardOrder.forEach(i => {
     const t = D.teams[i]; const ps = [...t.players].sort((a, b) => rank(a.card) - rank(b.card));
     const counted = ps.filter(p => p.mult > 0 && p.st);
     const sum = k => counted.reduce((s, p) => s + p.st[k], 0);
