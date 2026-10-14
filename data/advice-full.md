@@ -7,7 +7,7 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Ante Zizic (BES, C) – ~17,4 FP @ HTA
 Dabar kapitonas – Jonas Valančiūnas (~16,5 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~182,8 FP, dabartinė ~151,4 FP, **+31,4**)
+**📋 Siūloma sudėtis** (prognozė ~182,9 FP, dabartinė ~151,5 FP, **+31,4**)
 Startas: Aliou Diarra (C) ~26,5, Kevin Punter ~26,5, Chima Moneke ~21,5, Devon Dotson ~21,4, McKinley Wright IV ~18,5
 6-as: Ante Zizic ~17,4
 Suolas: Jonas Valančiūnas ~16,5, Nigel Hayes-Davis ~14,5, Tosan Evbuomwan ~9,5, Hugo Besson ~8,5
@@ -29,13 +29,13 @@ Pakeitimai: į startą – Aliou Diarra, Devon Dotson, McKinley Wright IV; iš s
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
-1. Marcus Carr (VIR, G) – ~29,4 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
+1. Marcus Carr (VIR, G) – ~29,5 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
 2. Devon Dotson (BES, G) – ~21,4 FP @ HTA
 3. Daniel Oturu (HTA, C) – ~14,7 FP vs BES · 🧊 formos duobė
 Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~192 FP, dabartinė ~164,2 FP, **+27,8**)
-Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~21,5, Devon Dotson ~21,4, Dwayne Bacon ~21, Tonye Jekiri ~19,5
+**📋 Siūloma sudėtis** (prognozė ~192,2 FP, dabartinė ~164,3 FP, **+28**)
+Startas: Marcus Carr (C) ~29,5, TJ Shorts II ~21,5, Devon Dotson ~21,4, Dwayne Bacon ~21, Tonye Jekiri ~19,5
 6-as: Carsen Edwards ~19
 Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Daniel Oturu ~14,7, Nigel Hayes-Davis ~14,5
 Out: Sylvain Francisco (jau žaidė), Jacob Toppin, Bruno Fernando
@@ -51,9 +51,54 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Fra
 
 **🛒 Laisvoji rinka**
 - Ante Zizic (BES, C) ~17,4 FP @ HTA (vietoj Bruno Fernando ~9,4)
-- Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
+- Mike James (IST, G) ~15,9 FP vs BAY (vietoj Bruno Fernando ~9,4)
 - Tomas Satoransky (HTA, G) ~15,6 FP vs BES (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~192 : ~152,9
+**⚔️ Prieš BC Svajuonė:** prognozė ~192,2 : ~152,9
+
+---
+
+## Naujokas 4️⃣7️⃣ lyga – Naujokas 4️⃣7️⃣ · 5 turas
+Pirmos rungtynės: 19:00, trečiadienis
+
+**👑 Kapitonas**
+1. Devon Dotson (BES, G) – ~21,8 FP @ HTA
+2. Scottie Wilbekin (BES, G) – ~20 FP @ HTA
+Dabar kapitonas – Jean Montero (~37,5 FP). Siūlau keisti į Devon Dotson.
+
+**📋 Siūloma sudėtis** (prognozė ~230,2 FP, dabartinė ~226 FP, **+4,2**)
+Startas: Mfiondu Kabengele (C) ~40, Jean Montero ~37,5, Devon Dotson ~21,8, Chima Moneke ~21,5, Bonzie Colson ~18,5
+6-as: Scottie Wilbekin ~20
+Suolas: Chris Duarte ~18,5, Braxton Key ~18, Nigel Hayes-Davis ~14,5, Patrick Baldwin Jr. ~11
+Out: Kenneth Faried (jau žaidė), Tosan Evbuomwan (jau žaidė), Dzanan Musa (jau žaidė)
+Pakeitimai: į startą – Bonzie Colson, Devon Dotson; iš starto – Braxton Key, Chris Duarte.
+
+**🩹 Traumos**
+- Dzanan Musa: nežais
+
+**📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
+🧊 Braxton Key (15,7 vs 21,1)
+
+---
+
+## Naujokas 7️⃣ lyga – Naujokas 7️⃣ · 5 turas
+Pirmos rungtynės: 19:00, trečiadienis
+
+**👑 Kapitonas**
+1. Aliou Diarra (VIR, C) – ~28,9 FP @ PRS · 🔥 geros formos
+2. Marcus Carr (VIR, G) – ~26,1 FP @ PRS · 🔥 geros formos
+3. Daniel Oturu (HTA, C) – ~15,6 FP vs BES · 🧊 formos duobė
+Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Aliou Diarra.
+
+**📋 Siūloma sudėtis** (prognozė ~204,4 FP, dabartinė ~181,6 FP, **+22,8**)
+Startas: Aliou Diarra (C) ~28,9, Theo Maledon ~26,5, Marcus Carr ~26,1, TJ Shorts II ~21,5, Bonzie Colson ~18,5
+6-as: Nikola Mirotic ~20
+Suolas: Chris Duarte ~18,5, Braxton Key ~18, Mbaye Ndiaye ~16, Daniel Oturu ~15,6
+Out: Sylvain Francisco (jau žaidė), Patrick Baldwin Jr. (jau žaidė), Alec Peters (jau žaidė)
+Pakeitimai: į startą – Marcus Carr, Bonzie Colson; iš starto – Braxton Key, Daniel Oturu.
+
+**📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
+🔥 Aliou Diarra (31 vs 25,8), Mbaye Ndiaye (22,5 vs 18,4), Marcus Carr (28,2 vs 22,9)
+🧊 Braxton Key (15,7 vs 21,1), Daniel Oturu (12 vs 21)
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
