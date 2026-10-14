@@ -54,6 +54,6 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Fra
 - Mike James (IST, G) ~15,8 FP vs BAY (vietoj Bruno Fernando ~9,4)
 - Tomas Satoransky (HTA, G) ~15,6 FP vs BES (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~192 : ~146,7
+**⚔️ Prieš BC Svajuonė:** prognozė ~192 : ~152,9
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
