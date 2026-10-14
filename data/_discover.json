@@ -1,0 +1,13 @@
+{
+ "at": "2026-10-14T07:59:32.428Z",
+ "req": {
+  "teamId": "6aab97bc698df3a4754ea960"
+ },
+ "tries": [
+  {
+   "label": "queryFields",
+   "ok": false,
+   "err": "BasketNews: GraphQL introspection has been disabled, but the requested query contained the field \"__schema\".; GraphQL introspection has been disabled, but the requested query contained the field \"queryType\".; GraphQL introspection has been disabled, but the requested query contained the field \"fields\".; GraphQL introspection has been disabled, but the requested query contained the field \"args\".; GraphQL introspection has been disabled, but the requested query contained the field \"type\".; GraphQL"
+  }
+ ]
+}
