@@ -2,17 +2,17 @@
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
-1. Aliou Diarra (VIR, C) – ~26,5 FP @ PRS · varžovas gerai gina centrams · 🔥 geros formos
-2. Devon Dotson (BES, G) – ~21,4 FP @ HTA
-3. Ante Zizic (BES, C) – ~17,4 FP @ HTA
+1. Aliou Diarra (VIR, C) – ~27,8 FP @ PRS · 🔥 geros formos
+2. Devon Dotson (BES, G) – ~22,4 FP @ HTA
+3. Ante Zizic (BES, C) – ~20,2 FP @ HTA · varžovas silpnai gina centrams
 Dabar kapitonas – Jonas Valančiūnas (~16,5 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~182,9 FP, dabartinė ~151,5 FP, **+31,4**)
-Startas: Aliou Diarra (C) ~26,5, Kevin Punter ~26,5, Chima Moneke ~21,5, Devon Dotson ~21,4, McKinley Wright IV ~18,5
-6-as: Ante Zizic ~17,4
+**📋 Siūloma sudėtis** (prognozė ~189,2 FP, dabartinė ~152,6 FP, **+36,6**)
+Startas: Aliou Diarra (C) ~27,8, Kevin Punter ~26,5, Devon Dotson ~22,4, Chima Moneke ~21,5, Ante Zizic ~20,2
+6-as: McKinley Wright IV ~18,5
 Suolas: Jonas Valančiūnas ~16,5, Nigel Hayes-Davis ~14,5, Tosan Evbuomwan ~9,5, Hugo Besson ~8,5
 Out: Alec Peters (jau žaidė), Tornike Shengelia (jau žaidė), Dzanan Musa (jau žaidė)
-Pakeitimai: į startą – Aliou Diarra, Devon Dotson, McKinley Wright IV; iš starto – Nigel Hayes-Davis, Jonas Valančiūnas, Hugo Besson.
+Pakeitimai: į startą – Aliou Diarra, Devon Dotson, Ante Zizic; iš starto – Nigel Hayes-Davis, Jonas Valančiūnas, Hugo Besson.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -21,7 +21,7 @@ Pakeitimai: į startą – Aliou Diarra, Devon Dotson, McKinley Wright IV; iš s
 🔥 Aliou Diarra (31 vs 25,8)
 
 **🛡 Varžovų gynyba šį turą**
-- Aliou Diarra @ PRS: sunkus varžovas (−8 % centrams)
+- Ante Zizic @ HTA: palankus varžovas (+20 % centrams)
 
 ---
 
@@ -29,15 +29,15 @@ Pakeitimai: į startą – Aliou Diarra, Devon Dotson, McKinley Wright IV; iš s
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
-1. Marcus Carr (VIR, G) – ~29,5 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
-2. Devon Dotson (BES, G) – ~21,4 FP @ HTA
-3. Daniel Oturu (HTA, C) – ~14,7 FP vs BES · 🧊 formos duobė
+1. Marcus Carr (VIR, G) – ~28,8 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
+2. Devon Dotson (BES, G) – ~22,4 FP @ HTA
+3. Daniel Oturu (HTA, C) – ~16,2 FP vs BES · 🧊 formos duobė
 Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~192,2 FP, dabartinė ~164,3 FP, **+28**)
-Startas: Marcus Carr (C) ~29,5, TJ Shorts II ~21,5, Devon Dotson ~21,4, Dwayne Bacon ~21, Tonye Jekiri ~19,5
+**📋 Siūloma sudėtis** (prognozė ~192,6 FP, dabartinė ~165,4 FP, **+27,2**)
+Startas: Marcus Carr (C) ~28,8, Devon Dotson ~22,4, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5
 6-as: Carsen Edwards ~19
-Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Daniel Oturu ~14,7, Nigel Hayes-Davis ~14,5
+Suolas: Both Gach ~16,5, Daniel Oturu ~16,2, Mbaye Ndiaye ~16, Nigel Hayes-Davis ~14,5
 Out: Sylvain Francisco (jau žaidė), Jacob Toppin, Bruno Fernando
 Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Francisco, Mbaye Ndiaye.
 
@@ -47,14 +47,14 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Fra
 
 **🛡 Varžovų gynyba šį turą**
 - Bruno Fernando vs BAY: palankus varžovas (+25 % centrams)
-- Marcus Carr @ PRS: palankus varžovas (+13 % gynėjams)
+- Marcus Carr @ PRS: palankus varžovas (+11 % gynėjams)
 
 **🛒 Laisvoji rinka**
-- Ante Zizic (BES, C) ~17,4 FP @ HTA (vietoj Bruno Fernando ~9,4)
-- Mike James (IST, G) ~15,9 FP vs BAY (vietoj Bruno Fernando ~9,4)
-- Tomas Satoransky (HTA, G) ~15,6 FP vs BES (vietoj Bruno Fernando ~9,4)
+- Ante Zizic (BES, C) ~20,2 FP @ HTA (vietoj Bruno Fernando ~9,4)
+- Tomas Satoransky (HTA, G) ~16,1 FP vs BES (vietoj Bruno Fernando ~9,4)
+- Jared Rhoden (PRS, G) ~15,1 FP vs VIR (vietoj Bruno Fernando ~9,4)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~192,2 : ~152,9
+**⚔️ Prieš BC Svajuonė:** prognozė ~192,6 : ~154,6
 
 ---
 
