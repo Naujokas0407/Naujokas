@@ -642,9 +642,7 @@ function trendOf(id) {
   const rs = [...new Set([...Object.keys(STH), ...Object.keys(FPH || {})])].map(Number).filter(r => r < D.round || roundDone()).sort((a, b) => a - b);
   const rows = rs.map(r => { const s = STH[r] && STH[r][id], fp = FPH && FPH[r] ? FPH[r][id] : undefined; if (!s && fp == null) return null;
     return { r, min: s ? s[0] / 60 : null, pts: s ? s[1] : null, reb: s ? s[2] : null, ast: s ? s[3] : null, pir: s ? s[6] : null, fp: fp ?? null }; }).filter(Boolean);
-  // einamas turas: jei žaidėjo rungtynės jau baigtos, jos įskaičiuojamos
-  if (!rs.includes(D.round)) { const q = (D.pool || []).find(x => x.id === id), g = q && gameOf(q.game);
-    if (q && q.st && q.fp != null && g && g.status === "final") rows.push({ r: D.round, min: q.st[0] / 60, pts: q.st[1], reb: q.st[10], ast: q.st[11], pir: q.st[18], fp: q.fp, cur: true }); }
+  // einamas (nebaigtas) turas į 🔥 / 🧊 skaičiavimą neįtraukiamas
   if (rows.length < 4) return null;
   const avg = (arr, k) => { const v = arr.map(x => x[k]).filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
   const rec = rows.slice(-3), out = { n: 3, rows };
@@ -1350,13 +1348,15 @@ async function openPlayer(id) {
   const hist = rounds.map(r => ({ r, fp: H[r] ? H[r][id] : undefined }));
   if (viewR == null && p.fp != null) hist.push({ r: D.round, fp: p.fp, cur: true });
   const vals = hist.filter(x => x.fp != null).map(x => x.fp);
-  const avg = vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null, mx = Math.max(1, ...vals.map(Math.abs));
+  // Bėdų turgui ir Lupikai vidurkis – tik iš baigtų turų (einamas turas nesiskaičiuoja)
+  const vals0 = TREND_ON ? hist.filter(x => x.fp != null && !x.cur).map(x => x.fp) : vals;
+  const avg = vals0.length ? vals0.reduce((a, b) => a + b, 0) / vals0.length : null, mx = Math.max(1, ...vals.map(Math.abs));
   const chart = TREND_ON ? fpChart(hist, avg) : null;
   const bars = chart ? "" : hist.map(x => `<div class="pb" title="${x.r} turas: ${x.fp == null ? "nežaidė" : num(x.fp)} FP"><span class="pbv">${x.fp == null ? "–" : num(x.fp)}</span><i style="height:${x.fp == null ? 2 : Math.max(3, Math.round(Math.abs(x.fp) / mx * 70))}px" class="${x.fp != null && x.fp < 0 ? "neg" : ""} ${x.cur ? "cur" : ""}"></i><span class="pbr">${x.r} t.</span></div>`).join("");
   const g = p.game != null ? gameOf(p.game) : null;
   const gl = g ? `${g.h === p.club ? "vs" : "@"} ${esc(tv(g.h === p.club ? g.a : g.h))} · ${g.status === "scheduled" ? when(g.start) : g.status === "live" ? "vyksta dabar" : "baigtos " + g.hs + ":" + g.as}` : "šį turą rungtynių nėra arba duomenų dar nėra";
   body.innerHTML = head() +
-    `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals.length}</b></div>${p.min != null ? `<div><span class="sub">Vid. minutės</span><b>${minTxt(p.min)}</b></div>` : ""}<div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
+    `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals0.length}</b></div>${p.min != null ? `<div><span class="sub">Vid. minutės</span><b>${minTxt(p.min)}</b></div>` : ""}<div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
     `<div class="sub">FP pagal turus</div>${chart || `<div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>`}` +
     trendTable(p.id) +
     `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div>`;
