@@ -656,11 +656,15 @@ const TREND_ON = SLUG === "n47" || SLUG === "n7";
 const r1 = x => num(Math.round(x * 10) / 10);
 // pokytis reikšmingas, jei viršija absoliučią ribą ir 20 % ankstesnio vidurkio
 const sig = (x, th) => x && Math.abs(x.d) >= Math.max(th, 0.2 * Math.abs(x.all));
+// pastovumas: 3 paskutinių rungtynių mediana (vidurinė reikšmė) irgi turi būti bent 2 FP ir 20 % virš / po sezono vidurkio –
+// taip vienos labai geros ar blogos rungtynės nesukuria 🔥 / 🧊
+const med3 = T => { const v = T.rows.slice(-3).map(x => x.fp).filter(x => x != null).sort((a, b) => a - b); return v.length === 3 ? v[1] : null; };
+const steady = T => { const m = med3(T), F = T.fp; if (m == null || !F) return false; return sig({ d: m - F.all, all: F.all }, 2) && Math.sign(m - F.all) === Math.sign(F.d); };
 function trendTable(id) {
   if (!TREND_ON) return "";
   const T = trendOf(id); if (!T || !T.fp) return "";
   const F = T.fp, s = sig(F, 2), up = F.d > 0;
-  return `<div class="pm-tr">Paskutinių 3 rungtynių vidurkis <b>${r1(F.last)}</b> FP, sezono – <b>${r1(F.all)}</b> FP → ${s ? (up ? '<span class="tbg hot">🔥 Burn</span>' : '<span class="tbg ice">🧊 Ice</span>') : "forma stabili"}</div>`;
+  return `<div class="pm-tr">Paskutinių 3 rungtynių vidurkis <b>${r1(F.last)}</b> FP, sezono – <b>${r1(F.all)}</b> FP → ${s && steady(T) ? (up ? '<span class="tbg hot">🔥 Burn</span>' : '<span class="tbg ice">🧊 Ice</span>') : s ? `forma nepastovi – vidurkį ${up ? "iškelia" : "nuleidžia"} vienos rungtynės (${num(T.rows.slice(-3).map(x => x.fp).filter(x => x != null).sort((a, b) => up ? b - a : a - b)[0])} FP)` : "forma stabili"}</div>`;
 }
 // lentelės langelio rodyklė (Vid. FP, Min.)
 function trendMark(id, k) {
@@ -676,7 +680,7 @@ function trendChips(id) {
     return `<span class="tch ${up ? "tup" : "tdn"}" title="${lab}: ${per} – ${r1(x.last)} vs ${r1(x.all)}">${lab} ${up ? "▲" : "▼"}${r1(Math.abs(x.d))}</span>`; }).join("");
   // 🔥 / 🧊: paskutinių 3 rungtynių FP vidurkis bent 2 FP ir 20 % aukščiau / žemiau sezono vidurkio
   const F = T.fp; let badge = "";
-  if (F && sig(F, 2)) { const info = `paskutinių 3 rungtynių FP vidurkis ${r1(F.last)}, sezono ${r1(F.all)}`;
+  if (F && sig(F, 2) && steady(T)) { const info = `paskutinių 3 rungtynių FP vidurkis ${r1(F.last)}, sezono ${r1(F.all)}`;
     badge = F.d > 0 ? `<span class="tbg hot" title="Kyla – ${info}">🔥 Burn</span>` : `<span class="tbg ice" title="Krenta – ${info}">🧊 Ice</span>`; }
   return chips || badge ? `<div class="tchs">${badge}${chips}</div>` : "";
 }
@@ -720,7 +724,7 @@ function renderPlayers() {
     document.getElementById("players").innerHTML = `<div class="card">${playersBar("Geriausi laisvi žaidėjai")}
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}${STAT_H}</tr></thead><tbody>` +
       (shown.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}${trendMark(p.id, "fp")}</td><td>${minTxt(p.min)}${trendMark(p.id, "min")}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td>${stOf(p) ? statCells(stOf(p)) : `<td class="sc" colspan="16"></td>`}</tr>`).join("") || `<tr><td class="l fa" colspan="24">Duomenų nėra</td></tr>`) +
-      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. ${TREND_ON ? `🔥 Burn / 🧊 Ice – paskutinių 3 sužaistų rungtynių FP vidurkis bent 2 FP ir 20 % aukščiau / žemiau sezono vidurkio. Žalia ▲ / raudona ▼ – tas pats palyginimas minutėms, taškams, atkovotiems, rezultatyviems perdavimams ir PIR. Paspaudus žaidėją – grafikas su sezono vidurkio ir 3 rungtynių vidurkio linijomis. ` : ""}„Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose; MIN, PTS ir kiti – šio turo statistika. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. ${TREND_ON ? `🔥 Burn / 🧊 Ice – paskutinių 3 sužaistų rungtynių FP vidurkis bent 2 FP ir 20 % aukščiau / žemiau sezono vidurkio, ir bent 2 iš tų 3 rungtynių turi būti tokios (vienos išskirtinės rungtynės nesiskaito). Žalia ▲ / raudona ▼ – tas pats palyginimas minutėms, taškams, atkovotiems, rezultatyviems perdavimams ir PIR. Paspaudus žaidėją – grafikas su sezono vidurkio ir 3 rungtynių vidurkio linijomis. ` : ""}„Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose; MIN, PTS ir kiti – šio turo statistika. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
     bindPlayers();
     return;
   }
