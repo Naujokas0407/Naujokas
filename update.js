@@ -490,8 +490,34 @@ async function bnInjuries() {
   console.log("BN traumos:", rows.length);
 }
 
+
+// ---------- Vienkartinė paieška: lyga pagal komandos ID (data/_discover-req.json -> data/_discover.json) ----------
+async function discover() {
+  const rq = path.join(DIR, "_discover-req.json"); if (!fs.existsSync(rq)) return;
+  const req = JSON.parse(fs.readFileSync(rq, "utf8")), out = { at: new Date().toISOString(), req, tries: [] };
+  const TR = "name kind ofType{ name kind ofType{ name kind } }";
+  const tryQ = async (label, q, v) => { try { const d = await gql(q, v || {}); out.tries.push({ label, ok: true, d }); return d; } catch (e) { out.tries.push({ label, ok: false, err: String(e.message).slice(0, 500) }); return null; } };
+  const qf = await tryQ("queryFields", `{ __schema { queryType { fields { name args { name type { ${TR} } } type { ${TR} } } } } }`);
+  if (qf) {
+    const fields = qf.__schema.queryType.fields.filter(f => /team|league/i.test(f.name));
+    out.candidates = fields.map(f => ({ name: f.name, args: f.args.map(a => a.name), type: JSON.stringify(f.type) }));
+    const un = t => { while (t && !t.name && t.ofType) t = t.ofType; return t && t.name; };
+    const typeFields = async n => { const d = await tryQ("type " + n, `{ __type(name:"${n}"){ fields{ name type{ ${TR} } } } }`); return d && d.__type ? d.__type.fields : []; };
+    for (const f of fields.slice(0, 40)) {
+      const arg = f.args.find(a => /team/i.test(a.name)); if (!arg) continue;
+      const tn = un(f.type); const tf = await typeFields(tn);
+      const sel = tf.filter(x => /^(id|title|name|fantasyLeagueId|leagueId|fantasyLeague|league|draftLeague)$/i.test(x.name)).map(x => { const k = un(x.type); return /^(String|ID|Int)$/.test(k) || !k ? x.name : `${x.name}{ id ${["title", "name"].join(" ")} }`; });
+      if (!sel.length) continue;
+      await tryQ("call " + f.name, `query($t:String!){ ${f.name}(${arg.name}:$t){ ${sel.join(" ")} } }`, { t: req.teamId });
+    }
+  }
+  fs.writeFileSync(path.join(DIR, "_discover.json"), JSON.stringify(out, null, 1));
+  fs.unlinkSync(rq);
+}
+
 (async () => {
   if (!fs.existsSync(DIR)) fs.mkdirSync(DIR);
+  try { await discover(); } catch (e) { console.log("discover:", e.message); }
   const S = await buildShared();
   for (const L of LEAGUES) {
     const file = path.join(DIR, L.slug + ".json");
