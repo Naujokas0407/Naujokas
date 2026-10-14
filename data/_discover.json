@@ -1,13 +1,126 @@
 {
- "at": "2026-10-14T07:59:32.428Z",
+ "at": "2026-10-14T08:02:19.051Z",
  "req": {
-  "teamId": "6aab97bc698df3a4754ea960"
+  "queries": [
+   "query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ fantasyTeamFromClient(id:$t){ id } }",
+   "query($t:String){ fantasyTeamByIdFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ fantasyTeamByIdFromClient(id:$t){ id } }",
+   "query($t:String){ draftLeagueFantasyTeamFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ draftLeagueFantasyTeamFromClient(id:$t){ id } }",
+   "query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
+   "query($t:String){ fantasyTeam(id:$t){ id } }",
+   "query($t:String){ fantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ fantasyTeamsFromClient(id:$t){ id } }",
+   "query($t:String){ userFantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ userFantasyTeamsFromClient(id:$t){ id } }",
+   "query($t:String){ draftLeagueFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ draftLeagueFromClient(id:$t){ id } }",
+   "query($t:String){ fantasyLeagueFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ fantasyLeagueFromClient(id:$t){ id } }",
+   "query($t:String){ draftLeaguesFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ draftLeaguesFromClient(id:$t){ id } }",
+   "query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ title } }"
+  ],
+  "vars": {
+   "t": "6aab97bc698df3a4754ea960"
+  }
  },
  "tries": [
   {
-   "label": "queryFields",
+   "label": "q0 query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }",
    "ok": false,
-   "err": "BasketNews: GraphQL introspection has been disabled, but the requested query contained the field \"__schema\".; GraphQL introspection has been disabled, but the requested query contained the field \"queryType\".; GraphQL introspection has been disabled, but the requested query contained the field \"fields\".; GraphQL introspection has been disabled, but the requested query contained the field \"args\".; GraphQL introspection has been disabled, but the requested query contained the field \"type\".; GraphQL"
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q1 query($t:String){ fantasyTeamFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q2 query($t:String){ fantasyTeamByIdFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q3 query($t:String){ fantasyTeamByIdFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q4 query($t:String){ draftLeagueFantasyTeamFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q5 query($t:String){ draftLeagueFantasyTeamFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q6 query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q7 query($t:String){ fantasyTeam(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q8 query($t:String){ fantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q9 query($t:String){ fantasyTeamsFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q10 query($t:String){ userFantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q11 query($t:String){ userFantasyTeamsFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q12 query($t:String){ draftLeagueFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q13 query($t:String){ draftLeagueFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q14 query($t:String){ fantasyLeagueFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q15 query($t:String){ fantasyLeagueFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q16 query($t:String){ draftLeaguesFromClient(fantasyTeamId:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q17 query($t:String){ draftLeaguesFromClient(id:$t){ id } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+  },
+  {
+   "label": "q18 query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ title } }",
+   "ok": false,
+   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
   }
  ]
 }
