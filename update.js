@@ -18,8 +18,8 @@ const LEAGUES = [
   { slug: "hla2", title: "HLA 2 Divizionas", fantasyLeagueId: "6a9b0b72d2094d97fda188b7", format: "h2h", myTeam: "Naujokas" },
   { slug: "hla3", title: "HLA 3 Divizionas", fantasyLeagueId: "6aa3f0f51f38d9ba866b20d3", format: "h2h", myTeam: null },
   { slug: "hla4", title: "HLA 4 Divizionas", fantasyLeagueId: "6a9811b0536d72db0c77997b", format: "classic", myTeam: null },
-  { slug: "n47", title: "Naujokas 4️⃣7️⃣ lyga", fantasyLeagueId: "6aa8423bc95ed14589d40951", format: "classic", myTeam: "Naujokas 4️⃣7️⃣" },
-  { slug: "n7", title: "Naujokas 7️⃣ lyga", fantasyLeagueId: "6ab2d1c198f6ba07dd1fe7c4", format: "classic", myTeam: "Naujokas 7️⃣" }
+  { slug: "n47", title: "Bėdų turgus", fantasyLeagueId: "6aa8423bc95ed14589d40951", format: "classic", myTeam: "Naujokas 4️⃣7️⃣" },
+  { slug: "n7", title: "Lupika Fantasy Lyga", fantasyLeagueId: "6ab2d1c198f6ba07dd1fe7c4", format: "classic", myTeam: "Naujokas 7️⃣" }
 ];
 const DIR = path.join(__dirname, "data");
 
