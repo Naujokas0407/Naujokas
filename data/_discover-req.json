@@ -1,0 +1,1 @@
+{"queries": ["{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ records{ id titl point scor tota rank roun fantasyTea } } }", "{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\", fantasyRound:3){ records{ id } } }"], "vars": {}}
