@@ -1,26 +1,12 @@
 {
- "at": "2026-10-14T08:02:19.051Z",
+ "at": "2026-10-14T08:05:05.087Z",
  "req": {
   "queries": [
    "query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyTeamFromClient(id:$t){ id } }",
-   "query($t:String){ fantasyTeamByIdFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyTeamByIdFromClient(id:$t){ id } }",
-   "query($t:String){ draftLeagueFantasyTeamFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ draftLeagueFantasyTeamFromClient(id:$t){ id } }",
    "query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyTeam(id:$t){ id } }",
-   "query($t:String){ fantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyTeamsFromClient(id:$t){ id } }",
-   "query($t:String){ userFantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ userFantasyTeamsFromClient(id:$t){ id } }",
-   "query($t:String){ draftLeagueFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ draftLeagueFromClient(id:$t){ id } }",
-   "query($t:String){ fantasyLeagueFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyLeagueFromClient(id:$t){ id } }",
-   "query($t:String){ draftLeaguesFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ draftLeaguesFromClient(id:$t){ id } }",
-   "query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ title } }"
+   "query($t:String){ draftLeagueFromClient(fantasyLeagueId:$t){ id } }",
+   "query($t:String){ fantasyTeamsFromClient{ id } }",
+   "query($t:String){ teamFromClient(fantasyTeamId:$t){ id } }"
   ],
   "vars": {
    "t": "6aab97bc698df3a4754ea960"
@@ -29,98 +15,28 @@
  "tries": [
   {
    "label": "q0 query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+   "status": 403,
+   "body": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-CRPMqHft5sqTiqVd4cYAQo&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd"
   },
   {
-   "label": "q1 query($t:String){ fantasyTeamFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+   "label": "q1 query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
+   "status": 403,
+   "body": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-0CdVKK73gH40p1BPSPIFNM&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd"
   },
   {
-   "label": "q2 query($t:String){ fantasyTeamByIdFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+   "label": "q2 query($t:String){ draftLeagueFromClient(fantasyLeagueId:$t){ id } }",
+   "status": 403,
+   "body": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-vAQFyoN2ljFPfTBJE8v0Ja&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd"
   },
   {
-   "label": "q3 query($t:String){ fantasyTeamByIdFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+   "label": "q3 query($t:String){ fantasyTeamsFromClient{ id } }",
+   "status": 403,
+   "body": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-ujRyxkIAA72hO9nsPyXohw&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd"
   },
   {
-   "label": "q4 query($t:String){ draftLeagueFantasyTeamFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q5 query($t:String){ draftLeagueFantasyTeamFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q6 query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q7 query($t:String){ fantasyTeam(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q8 query($t:String){ fantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q9 query($t:String){ fantasyTeamsFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q10 query($t:String){ userFantasyTeamsFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q11 query($t:String){ userFantasyTeamsFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q12 query($t:String){ draftLeagueFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q13 query($t:String){ draftLeagueFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q14 query($t:String){ fantasyLeagueFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q15 query($t:String){ fantasyLeagueFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q16 query($t:String){ draftLeaguesFromClient(fantasyTeamId:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q17 query($t:String){ draftLeaguesFromClient(id:$t){ id } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
-  },
-  {
-   "label": "q18 query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ title } }",
-   "ok": false,
-   "err": "https://fantasy.basketnews.com/backend/graphql HTTP 400"
+   "label": "q4 query($t:String){ teamFromClient(fantasyTeamId:$t){ id } }",
+   "status": 403,
+   "body": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-C6B6hkN6PAaLReiPPAxfwO&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd"
   }
  ]
 }
