@@ -651,6 +651,8 @@ async function discover() {
           Object.entries(off).forEach(([k, o]) => { if (o.final) history[k] = Object.fromEntries(Object.entries(o.teams).map(([t, x]) => [t, x.pts])); });
           const cur = off[String(data.round)];
           if (cur) data.officialTable = Object.fromEntries(Object.entries(cur.teams).map(([t, x]) => [t, { total: x.total, pos: x.pos }]));
+          // einamojo turo oficialūs BN taškai (užfiksuotos turo sudėtys) – kai jau skaičiuojami
+          if (cur && data.games.length && data.games.every(g => g.status === "final") && Object.values(cur.teams).some(x => x.pts > 0)) data.teams.forEach(t => { const x = cur.teams[t.title]; if (x) { t.official = x.pts; history[String(data.round)][t.title] = x.pts; } });
         } catch (e) { console.log(L.slug + ": oficiali lentelė", e.message); }
       }
       data.history = history;

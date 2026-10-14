@@ -481,6 +481,8 @@ function applyEst() {
   const byId = {}; (D.pool || []).forEach(p => { if (p.id) byId[p.id] = p; });
   (D.fa || []).forEach(p => { const q = byId[p.id]; if (q && q.fp != null && (p.fp == null || p.est)) { p.fp = q.fp; p.est = !!q.est; } });
 }
+// komandos turo taškai: turui pasibaigus – oficialūs BN, kol vyksta – gyvi
+const rptsOf = t => (D && D.games && D.games.length && D.games.every(g => g.status === "final")) ? (t.official ?? t.total) : t.total;
 const fpTxt = p => p.fp == null ? "–" : (p.est ? "~" : "") + num(p.fp);
 
 function render() {
@@ -512,7 +514,7 @@ function render() {
 
   const hist = D.history || {};
   const multiRound = Object.keys(hist).length > 1;
-  const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? t.total : (m[t.title] || 0)), 0) || t.total;
+  const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? rptsOf(t) : (m[t.title] || 0)), 0) || rptsOf(t);
   const order = D.teams.map((t, i) => i).sort((a, b) => season(D.teams[b]) - season(D.teams[a]) || D.teams[b].total - D.teams[a].total);
   const lead = season(D.teams[order[0]]);
   // vieta sezono lentelėje prieš šį turą – rodyklėms (▲/▼)
@@ -527,7 +529,7 @@ function render() {
     order.map((i, k) => {
       const t = D.teams[i]; const counted = t.players.filter(p => p.mult > 0);
       const c = s => counted.filter(p => playerState(p) === s).length;
-      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}${showMv ? mvArrow(beforeRank[i] - k) : ""}</td><td class="l"><span data-team="${esc(t.title)}">${esc(t.title)}</span></td><td class="pts">${num(t.total)}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td>${showProj ? `<td class="hide-s">~${num(projection(t).proj)}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
+      return `<tr class="${isMe(t) ? "me" : ""}" data-jump="team-${i}"><td class="l rk">${k + 1}${showMv ? mvArrow(beforeRank[i] - k) : ""}</td><td class="l"><span data-team="${esc(t.title)}">${esc(t.title)}</span></td><td class="pts">${num(rptsOf(t))}${LVB(liveN(t))}</td>${multiRound ? `<td class="pts">${num(season(t))}</td>` : ""}<td class="bh bhc">${lead - season(t) > 0 ? "−" + num(lead - season(t)) : ""}</td>${showProj ? `<td class="hide-s">~${num(projection(t).proj)}</td>` : ""}<td>${c("played")}</td><td class="hide-s">${c("playing") || ""}</td><td>${c("toplay")}</td></tr>`;
     }).join("") + `</tbody></table></div></div>`;
   html += progressShell();
 
@@ -1536,7 +1538,7 @@ function myPlace(T) {
     return { place: i + 1, line: `${num(r.w + r.d / 2)}–${r.l} · ${num(r.pf)} tšk.` };
   }
   const hist = D.history || {};
-  const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? t.total : (m[t.title] || 0)), 0) || t.total;
+  const season = t => Object.entries(hist).reduce((s, [r, m]) => s + (Number(r) === D.round ? rptsOf(t) : (m[t.title] || 0)), 0) || rptsOf(t);
   const o = [...D.teams].sort((a, b) => season(b) - season(a));
   const i = o.findIndex(x => x.title === T.title);
   return { place: i + 1, line: `${num(season(T))} tšk.${i ? ` · iki lyderio ${num(season(o[0]) - season(T))}` : " · lyderis"}` };
