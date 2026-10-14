@@ -62,13 +62,13 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Fra
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
-1. Devon Dotson (BES, G) – ~21,8 FP @ HTA
-2. Scottie Wilbekin (BES, G) – ~20 FP @ HTA
+1. Devon Dotson (BES, G) – ~21,4 FP @ HTA
+2. Scottie Wilbekin (BES, G) – ~19,6 FP @ HTA
 Dabar kapitonas – Jean Montero (~37,5 FP). Siūlau keisti į Devon Dotson.
 
-**📋 Siūloma sudėtis** (prognozė ~230,2 FP, dabartinė ~226 FP, **+4,2**)
-Startas: Mfiondu Kabengele (C) ~40, Jean Montero ~37,5, Devon Dotson ~21,8, Chima Moneke ~21,5, Bonzie Colson ~18,5
-6-as: Scottie Wilbekin ~20
+**📋 Siūloma sudėtis** (prognozė ~229,5 FP, dabartinė ~225,5 FP, **+4,1**)
+Startas: Mfiondu Kabengele (C) ~40, Jean Montero ~37,5, Chima Moneke ~21,5, Devon Dotson ~21,4, Bonzie Colson ~18,5
+6-as: Scottie Wilbekin ~19,6
 Suolas: Chris Duarte ~18,5, Braxton Key ~18, Nigel Hayes-Davis ~14,5, Patrick Baldwin Jr. ~11
 Out: Kenneth Faried (jau žaidė), Tosan Evbuomwan (jau žaidė), Dzanan Musa (jau žaidė)
 Pakeitimai: į startą – Bonzie Colson, Devon Dotson; iš starto – Braxton Key, Chris Duarte.
@@ -79,26 +79,35 @@ Pakeitimai: į startą – Bonzie Colson, Devon Dotson; iš starto – Braxton K
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🧊 Braxton Key (15,7 vs 21,1)
 
+**🛡 Varžovų gynyba šį turą**
+
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 5 turas
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
-1. Aliou Diarra (VIR, C) – ~28,9 FP @ PRS · 🔥 geros formos
-2. Marcus Carr (VIR, G) – ~26,1 FP @ PRS · 🔥 geros formos
-3. Daniel Oturu (HTA, C) – ~15,6 FP vs BES · 🧊 formos duobė
-Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Aliou Diarra.
+1. Marcus Carr (VIR, G) – ~29,5 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
+2. Aliou Diarra (VIR, C) – ~26,5 FP @ PRS · varžovas gerai gina centrams · 🔥 geros formos
+3. Daniel Oturu (HTA, C) – ~14,7 FP vs BES · 🧊 formos duobė
+Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~204,4 FP, dabartinė ~181,6 FP, **+22,8**)
-Startas: Aliou Diarra (C) ~28,9, Theo Maledon ~26,5, Marcus Carr ~26,1, TJ Shorts II ~21,5, Bonzie Colson ~18,5
+**📋 Siūloma sudėtis** (prognozė ~205,6 FP, dabartinė ~181,7 FP, **+23,9**)
+Startas: Marcus Carr (C) ~29,5, Aliou Diarra ~26,5, Theo Maledon ~26,5, TJ Shorts II ~21,5, Bonzie Colson ~18,5
 6-as: Nikola Mirotic ~20
-Suolas: Chris Duarte ~18,5, Braxton Key ~18, Mbaye Ndiaye ~16, Daniel Oturu ~15,6
+Suolas: Chris Duarte ~18,5, Braxton Key ~18, Mbaye Ndiaye ~16, Daniel Oturu ~14,7
 Out: Sylvain Francisco (jau žaidė), Patrick Baldwin Jr. (jau žaidė), Alec Peters (jau žaidė)
 Pakeitimai: į startą – Marcus Carr, Bonzie Colson; iš starto – Braxton Key, Daniel Oturu.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Aliou Diarra (31 vs 25,8), Mbaye Ndiaye (22,5 vs 18,4), Marcus Carr (28,2 vs 22,9)
 🧊 Braxton Key (15,7 vs 21,1), Daniel Oturu (12 vs 21)
+
+**🛡 Varžovų gynyba šį turą**
+- Marcus Carr @ PRS: palankus varžovas (+13 % gynėjams)
+- Aliou Diarra @ PRS: sunkus varžovas (−8 % centrams)
+
+**🛒 Laisvoji rinka**
+- Antonio Blakeney (HTA, G) ~18,6 FP vs BES (vietoj Daniel Oturu ~14,7)
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
