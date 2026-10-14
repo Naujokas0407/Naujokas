@@ -122,6 +122,7 @@ tr.tot td.pt{font-weight:700}
 @media (max-width:520px){.trp{grid-template-columns:1fr}.trv{display:none}}
 .trt tr.trr{cursor:pointer}.trt tr.trr:hover td{background:var(--soft)}.trt tr.on td{background:var(--me)}
 .mykw{grid-column:span 2}td.dnv{color:#ef4444}@media (max-width:420px){.mykw{grid-column:auto}}
+.tbg{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px}.tbg.hot{background:rgba(249,115,22,.2);color:#fb923c}.tbg.ice{background:rgba(56,189,248,.18);color:#38bdf8}
 .tchs{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}.tch{font-size:11px;font-weight:600;padding:1px 6px;border-radius:999px;white-space:nowrap}.tup{background:rgba(34,197,94,.15);color:#22c55e}.tdn{background:rgba(239,68,68,.15);color:#ef4444}
 .tgs,.tgl{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;vertical-align:middle}.tgs{background:rgba(34,197,94,.15);color:#22c55e}.tgl{background:rgba(245,158,11,.18);color:#f59e0b}
 td .up{color:#22c55e;font-weight:700}td .dn{color:#ef4444;font-weight:700}
@@ -645,7 +646,11 @@ function trendChips(id) {
   const T = trendOf(id); if (!T) return "";
   const chips = TRD.map(([k, lab, th]) => { const x = T[k]; if (!x || Math.abs(x.d) < th) return ""; const up = x.d > 0;
     return `<span class="tch ${up ? "tup" : "tdn"}" title="${lab}: paskutiniai 2 turai ${num(Math.round(x.last * 10) / 10)}, sezono vidurkis ${num(Math.round(x.all * 10) / 10)}">${lab} ${up ? "▲" : "▼"}${num(Math.round(Math.abs(x.d) * 10) / 10)}</span>`; }).join("");
-  return chips ? `<div class="tchs">${chips}</div>` : "";
+  // bendra būsena: 🔥 – paskutinių 2 turų vidurkiai kyla, 🧊 – krenta (FP kryptis + dauguma rodiklių)
+  const ups = TRD.filter(([k, , th]) => T[k] && T[k].d >= th).length, dns = TRD.filter(([k, , th]) => T[k] && T[k].d <= -th).length;
+  const fpd = T.fp ? T.fp.d : 0;
+  const badge = fpd >= 3 && ups > dns ? `<span class="tbg hot" title="Paskutinius 2 turus žaidžia geriau nei vidutiniškai">🔥 Burn</span>` : fpd <= -3 && dns > ups ? `<span class="tbg ice" title="Paskutinius 2 turus žaidžia blogiau nei vidutiniškai">🧊 Ice</span>` : "";
+  return chips || badge ? `<div class="tchs">${badge}${chips}</div>` : "";
 }
 let posF = "all", sortK = null, sortD = -1, showN = 60;
 const moreBtn = n => n > showN ? `<div style="padding:10px 16px"><button type="button" class="lnk" id="plMore">Rodyti daugiau (${n - showN} liko)</button></div>` : "";
@@ -685,7 +690,7 @@ function renderPlayers() {
     document.getElementById("players").innerHTML = `<div class="card">${playersBar("Geriausi laisvi žaidėjai")}
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}</tr></thead><tbody>` +
       (shown.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="8">Duomenų nėra</td></tr>`) +
-      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. Žalia ▲ / raudona ▼ – paskutinių 2 sužaistų turų vidurkis aukštesnis ar žemesnis už sezono vidurkį (minutės, FP, taškai, atkovoti, rezultatyvūs perdavimai, PIR). „Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. 🔥 Burn – žaidėjas kyla, 🧊 Ice – krenta. Žalia ▲ / raudona ▼ – paskutinių 2 sužaistų turų vidurkis aukštesnis ar žemesnis už sezono vidurkį (minutės, FP, taškai, atkovoti, rezultatyvūs perdavimai, PIR). „Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
     bindPlayers();
     return;
   }
