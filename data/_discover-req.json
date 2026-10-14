@@ -1,0 +1,1 @@
+{"queries": ["query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }", "query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }", "query($t:String){ draftLeagueFromClient(fantasyLeagueId:$t){ id } }", "query($t:String){ fantasyTeamsFromClient{ id } }", "query($t:String){ teamFromClient(fantasyTeamId:$t){ id } }"], "vars": {"t": "6aab97bc698df3a4754ea960"}}
