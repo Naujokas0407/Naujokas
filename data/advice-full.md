@@ -3,9 +3,9 @@
 **👑 Kapitonas**
 Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~200,7 FP, dabartinė ~172,3 FP, **+28,3**)
+**📋 Siūloma sudėtis** (prognozė ~193,8 FP, dabartinė ~158,5 FP, **+35,3**)
 Startas: Ante Zizic (C) ~32,5, Kevin Punter ~26,5, Chima Moneke ~21,5, McKinley Wright IV ~18,5, Jonas Valančiūnas ~16,5
-6-as: Aliou Diarra ~28,9
+6-as: Aliou Diarra ~22
 Suolas: Devon Dotson ~15, Nigel Hayes-Davis ~14,5, Tosan Evbuomwan ~9,5, Hugo Besson ~8,5
 Out: Alec Peters (jau žaidė), Tornike Shengelia (jau žaidė), Dzanan Musa (jau žaidė)
 Pakeitimai: į startą – Jonas Valančiūnas, Ante Zizic; iš starto – Devon Dotson, Aliou Diarra.
@@ -25,8 +25,8 @@ Pakeitimai: į startą – Jonas Valančiūnas, Ante Zizic; iš starto – Devon
 **👑 Kapitonas**
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~212,1 FP, dabartinė ~163,5 FP, **+48,6**)
-Startas: Bruno Fernando (C) ~37, Marcus Carr ~26,1, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5
+**📋 Siūloma sudėtis** (prognozė ~206 FP, dabartinė ~157,4 FP, **+48,6**)
+Startas: Bruno Fernando (C) ~37, TJ Shorts II ~21,5, Dwayne Bacon ~21, Marcus Carr ~20, Tonye Jekiri ~19,5
 6-as: Carsen Edwards ~19
 Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Devon Dotson ~15, Nigel Hayes-Davis ~14,5
 Out: Sylvain Francisco (jau žaidė), Daniel Oturu (jau žaidė), Jacob Toppin (jau žaidė)
@@ -38,7 +38,7 @@ Pakeitimai: į startą – Bruno Fernando; iš starto – Mbaye Ndiaye.
 
 **🛡 Varžovų gynyba šį turą**
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~212,1 : ~152,5
+**⚔️ Prieš BC Svajuonė:** prognozė ~206 : ~160,5
 
 ---
 
@@ -69,8 +69,8 @@ Pakeitimai: į startą – Bonzie Colson; iš starto – Chris Duarte.
 **👑 Kapitonas**
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~202,6 FP, dabartinė ~177,5 FP, **+25,2**)
-Startas: Aliou Diarra (C) ~28,9, Theo Maledon ~26,5, Marcus Carr ~26,1, TJ Shorts II ~21,5, Bonzie Colson ~18,5
+**📋 Siūloma sudėtis** (prognozė ~187,3 FP, dabartinė ~164,5 FP, **+22,8**)
+Startas: Theo Maledon (C) ~26,5, Aliou Diarra ~22, TJ Shorts II ~21,5, Marcus Carr ~20, Bonzie Colson ~18,5
 6-as: Nikola Mirotic ~20
 Suolas: Chris Duarte ~18,5, Braxton Key ~18, Mbaye Ndiaye ~16, Sylvain Francisco ~12
 Out: Daniel Oturu (jau žaidė), Patrick Baldwin Jr. (jau žaidė), Alec Peters (jau žaidė)
