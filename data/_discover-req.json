@@ -1,0 +1,1 @@
+{"queries": ["{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fantasyRound:0){ id point scor tota fantasyRoun player lineu card } }", "{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fantasyRound:0){ players{ cardIdentifier captain player{ id firstName lastName } } } }"], "vars": {}}
