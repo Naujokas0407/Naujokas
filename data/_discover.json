@@ -1,70 +1,40 @@
 {
- "at": "2026-10-14T11:57:16.584Z",
+ "at": "2026-10-14T11:59:47.911Z",
  "req": {
   "queries": [
-   "{ fantasyLeagueStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ standingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ draftLeagueStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ leaderboardFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ fantasyLeagueRankingFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ fantasyLeagueTableFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ classicStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ fantasyTeamsStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ allFantasyTeamScoresFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "{ fantasyLeagueResultsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }"
+   "{ allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
+   "{ allFantasyTeamScoreRecordsFromClient(xx:\"6aa8423bc95ed14589d40951\"){ id } }",
+   "{ fantasyTeamScoreRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ id } }",
+   "{ fantasyTeamScoreRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fantasyRound:0){ id } }",
+   "{ allFantasyTeamScoreRecordsFromClient{ id } }"
   ],
   "vars": {}
  },
  "tries": [
   {
-   "label": "q0 { fantasyLeagueStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ ",
+   "label": "q0 { allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951",
    "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagueStandingsFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyLeagueTeamsFromClient\\\", \\\"fantasyLeagueRecordFromClient\\\", \\\"allFantasyLeagueTeamsFromClient\\\", \\\"allFantasyLeagueRecordsFromClient\\\", or \\\"fantasyTeamRecordFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"id\\\" on type \\\"AllFantasyTeamScoreRecords\\\".\",\"locations\":[{\"line\":1,\"column\":85}]}]}"
   },
   {
-   "label": "q1 { standingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"standingsFromClient\\\" on type \\\"Query\\\".\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
+   "label": "q1 { allFantasyTeamScoreRecordsFromClient(xx:\"6aa8423bc95ed14589d40951\"){ id } }",
+   "status": 200,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"xx\\\" on field \\\"Query.allFantasyTeamScoreRecordsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":40}]},{\"message\":\"Cannot query field \\\"id\\\" on type \\\"AllFantasyTeamScoreRecords\\\".\",\"locations\":[{\"line\":1,\"column\":72}]}]}"
   },
   {
-   "label": "q2 { draftLeagueStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"draftLeagueStandingsFromClient\\\" on type \\\"Query\\\". Did you mean \\\"draftFreeAgentBidsFromClient\\\", \\\"draftTradePlayerInfoFromClient\\\", \\\"allLeagueRecordsFromClient\\\", \\\"draftLeagueFantasyTeamLineupsFromClient\\\", or \\\"draftTradesFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
+   "label": "q2 { fantasyTeamScoreRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ id",
+   "status": 200,
+   "body": "{\"data\":{\"fantasyTeamScoreRecordFromClient\":null},\"errors\":[{\"message\":\"invalidLeagueId\",\"locations\":[{\"line\":1,\"column\":3}],\"path\":[\"fantasyTeamScoreRecordFromClient\"]}]}"
   },
   {
-   "label": "q3 { leaderboardFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"leaderboardFromClient\\\" on type \\\"Query\\\". Did you mean \\\"playerRecordFromClient\\\", \\\"playerStatsFromClient\\\", \\\"allTeamRecordsFromClient\\\", or \\\"allLeagueRecordsFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
+   "label": "q3 { fantasyTeamScoreRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fan",
+   "status": 200,
+   "body": "{\"data\":{\"fantasyTeamScoreRecordFromClient\":null},\"errors\":[{\"message\":\"invalidLeagueId\",\"locations\":[{\"line\":1,\"column\":3}],\"path\":[\"fantasyTeamScoreRecordFromClient\"]}]}"
   },
   {
-   "label": "q4 { fantasyLeagueRankingFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id",
+   "label": "q4 { allFantasyTeamScoreRecordsFromClient{ id } }",
    "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagueRankingFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyLeagueRecordFromClient\\\", \\\"fantasyLeagueTeamsFromClient\\\", \\\"allFantasyLeagueRecordsFromClient\\\", \\\"allFantasyLeagueTeamsFromClient\\\", or \\\"fantasyTeamRecordFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
-  },
-  {
-   "label": "q5 { fantasyLeagueTableFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagueTableFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyLeagueTeamsFromClient\\\", \\\"fantasyLeagueRecordFromClient\\\", \\\"allFantasyLeagueTeamsFromClient\\\", \\\"fantasyTeamRecordFromClient\\\", or \\\"allFantasyLeagueRecordsFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
-  },
-  {
-   "label": "q6 { classicStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"classicStandingsFromClient\\\" on type \\\"Query\\\". Did you mean \\\"playerStatsFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
-  },
-  {
-   "label": "q7 { fantasyTeamsStandingsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ i",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyTeamsStandingsFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyTeamRecordFromClient\\\", \\\"fantasyLeagueTeamsFromClient\\\", \\\"fantasyTeamScoreRecordFromClient\\\", \\\"allFantasyTeamRecordsFromClient\\\", or \\\"fantasyLeagueRecordFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
-  },
-  {
-   "label": "q8 { allFantasyTeamScoresFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"allFantasyTeamScoresFromClient\\\" on type \\\"Query\\\". Did you mean \\\"allFantasyTeamRecordsFromClient\\\", \\\"allFantasyTeamScoreRecordsFromClient\\\", \\\"allFantasyLeagueRecordsFromClient\\\", \\\"fantasyTeamRecordFromClient\\\", or \\\"allFantasyLeagueTeamsFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
-  },
-  {
-   "label": "q9 { fantasyLeagueResultsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagueResultsFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyLeagueRecordFromClient\\\", \\\"fantasyLeagueTeamsFromClient\\\", \\\"allFantasyLeagueRecordsFromClient\\\", \\\"allFantasyLeagueTeamsFromClient\\\", or \\\"fantasyTeamRecordFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"id\\\" on type \\\"AllFantasyTeamScoreRecords\\\".\",\"locations\":[{\"line\":1,\"column\":41}]}]}"
   }
  ]
 }
