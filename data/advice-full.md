@@ -39,7 +39,7 @@ Startas: Marcus Carr (C) ~29,4, TJ Shorts II ~21,5, Devon Dotson ~21,4, Dwayne B
 6-as: Carsen Edwards ~19
 Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Daniel Oturu ~14,7, Nigel Hayes-Davis ~14,5
 Out: Sylvain Francisco (jau žaidė), Jacob Toppin, Bruno Fernando
-Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Francisco, Nigel Hayes-Davis.
+Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Francisco, Mbaye Ndiaye.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Marcus Carr (28,2 vs 22,9), Mbaye Ndiaye (22,5 vs 18,4)
