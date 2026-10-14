@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 5 turas
-Pirmos rungtynės: 20:30, trečiadienis
+Pirmos rungtynės: 21:45, trečiadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~27,8 FP @ PRS · 🔥 geros formos
@@ -23,18 +23,17 @@ Startinis penketas jau optimalus. ✅
 ---
 
 ## HLA 2 Divizionas – Naujokas · 5 turas
-Pirmos rungtynės: 20:30, trečiadienis
+Pirmos rungtynės: 21:45, trečiadienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~28,8 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
-2. Bruno Fernando (IST, C) – ~9,4 FP vs BAY · varžovas silpnai gina centrams
 Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
 **📋 Siūloma sudėtis** (prognozė ~191,7 FP, dabartinė ~173,7 FP, **+18**)
 Startas: Marcus Carr (C) ~28,8, Devon Dotson ~21,8, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5
 6-as: Carsen Edwards ~19
 Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Daniel Oturu ~15,6, Nigel Hayes-Davis ~14,5
-Out: Sylvain Francisco (jau žaidė), Jacob Toppin (jau žaidė), Bruno Fernando
+Out: Sylvain Francisco (jau žaidė), Jacob Toppin (jau žaidė), Bruno Fernando (jau žaidė)
 Pakeitimai: į startą – Devon Dotson; iš starto – Mbaye Ndiaye.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
@@ -42,20 +41,14 @@ Pakeitimai: į startą – Devon Dotson; iš starto – Mbaye Ndiaye.
 🧊 Dwayne Bacon (16,3 vs 21,1), Daniel Oturu (12 vs 21)
 
 **🛡 Varžovų gynyba šį turą**
-- Bruno Fernando vs BAY: palankus varžovas (+25 % centrams)
 - Marcus Carr @ PRS: palankus varžovas (+11 % gynėjams)
-
-**🛒 Laisvoji rinka**
-- Jared Rhoden (PRS, G) ~15,1 FP vs VIR (vietoj Bruno Fernando ~9,4)
-- Mike James (IST, G) ~14,7 FP vs BAY (vietoj Bruno Fernando ~9,4)
-- Trent Frazier (VIR, G) ~13,8 FP @ PRS (vietoj Bruno Fernando ~9,4)
 
 **⚔️ Prieš BC Svajuonė:** prognozė ~191,7 : ~152,6
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 5 turas
-Pirmos rungtynės: 20:30, trečiadienis
+Pirmos rungtynės: 21:45, trečiadienis
 
 **👑 Kapitonas**
 Dabartinis kapitonas Jean Montero – geriausias pasirinkimas. ✅
@@ -78,7 +71,7 @@ Pakeitimai: į startą – Bonzie Colson, Devon Dotson; iš starto – Braxton K
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 5 turas
-Pirmos rungtynės: 20:30, trečiadienis
+Pirmos rungtynės: 21:45, trečiadienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~28,8 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
