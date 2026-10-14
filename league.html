@@ -122,6 +122,7 @@ tr.tot td.pt{font-weight:700}
 @media (max-width:520px){.trp{grid-template-columns:1fr}.trv{display:none}}
 .trt tr.trr{cursor:pointer}.trt tr.trr:hover td{background:var(--soft)}.trt tr.on td{background:var(--me)}
 .mykw{grid-column:span 2}td.dnv{color:#ef4444}@media (max-width:420px){.mykw{grid-column:auto}}
+.hb.hbi{padding:0 4px;min-width:0}
 .tbg{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px}.tbg.hot{background:rgba(249,115,22,.2);color:#fb923c}.tbg.ice{background:rgba(56,189,248,.18);color:#38bdf8}
 .tchs{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}.tch{font-size:11px;font-weight:600;padding:1px 6px;border-radius:999px;white-space:nowrap}.tup{background:rgba(34,197,94,.15);color:#22c55e}.tdn{background:rgba(239,68,68,.15);color:#ef4444}
 .tgs,.tgl{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;vertical-align:middle}.tgs{background:rgba(34,197,94,.15);color:#22c55e}.tgl{background:rgba(245,158,11,.18);color:#f59e0b}
@@ -894,7 +895,9 @@ function renderSeason() {
 let INJ = null;
 const HL = { out: ["Nežais", "h-out"], doubtful: ["Abejotinas", "h-dbt"], uncertain: ["Neaišku", "h-unc"], "game-time": ["Paaiškės prieš rungtynes", "h-unc"], expected: ["Tikėtina žais", "h-exp"], ready: ["Sveikas", "h-ok"] };
 const healthOf = p => (viewR == null && INJ && p.id && INJ.state[p.id]) ? INJ.state[p.id].h : (p.health || "ready");
-const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}"><i aria-hidden="true">✚</i><span class="hbt">${HL[h][0]}</span></span>` : ""; };
+// prie žaidėjų – tik spalvotas kryžiukas (tekstas – užvedus); pilnas užrašas – traumų sąrašuose
+const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb hbi ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}" aria-label="${HL[h][0]}"><i aria-hidden="true">✚</i></span>` : ""; };
+const hBadgeFull = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}"><i aria-hidden="true">✚</i><span class="hbt">${HL[h][0]}</span></span>` : ""; };
 let BNI = null;
 async function loadBni() { try { const r = await fetch("data/injuries-bn.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!BNI || j.updated !== BNI.updated) { BNI = j; BNI.idx = {}; (j.rows || []).forEach(x => { const n = norm(x.name), parts = n.split(" "); BNI.idx[n] = x; BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] = x; }); if (D) render(); } } } catch (e) {} }
 const bniOf = name => { if (!BNI || !BNI.idx) return null; const n = norm(name), parts = n.split(" "); return BNI.idx[n] || BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] || null; };
@@ -1017,7 +1020,7 @@ function injuriesHtml() {
   const since = p => INJ && INJ.state[p.id] && INJ.state[p.id].since && INJ.news.some(n => n.id === p.id) ? " · nuo " + fmt(INJ.state[p.id].since, { month: "2-digit", day: "2-digit" }) : "";
   const slot = p => p.mult === 0 ? "rezerve" : p.cap ? "kapitonas" : p.card.startsWith("b") ? "ant suolo" : "starte";
   const byT = {}; owned.forEach(o => (byT[o.t.title] = byT[o.t.title] || []).push(o.p));
-  const list = owned.length ? `<div class="ijg">${Object.entries(byT).map(([tt, ps]) => `<div class="card ijc"><div class="ijh"><b>${esc(tt)}</b><span class="sub">${ps.filter(p => healthOf(p) === "out").length ? ps.filter(p => healthOf(p) === "out").length + " nežais" : ""}</span></div><ul>${ps.map(p => `<li class="mine"><div style="width:100%">${hBadge(p)} <span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))} · ${slot(p)}${since(p)}</span>${injInfo(p.name)}</div></li>`).join("")}</ul></div>`).join("")}</div>` : `<div class="sub">Šios lygos komandos traumuotų žaidėjų neturi.</div>`;
+  const list = owned.length ? `<div class="ijg">${Object.entries(byT).map(([tt, ps]) => `<div class="card ijc"><div class="ijh"><b>${esc(tt)}</b><span class="sub">${ps.filter(p => healthOf(p) === "out").length ? ps.filter(p => healthOf(p) === "out").length + " nežais" : ""}</span></div><ul>${ps.map(p => `<li class="mine"><div style="width:100%">${hBadgeFull(p)} <span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))} · ${slot(p)}${since(p)}</span>${injInfo(p.name)}</div></li>`).join("")}</ul></div>`).join("")}</div>` : `<div class="sub">Šios lygos komandos traumuotų žaidėjų neturi.</div>`;
   let news = "";
   if (INJ && INJ.news && INJ.news.length) {
     const items = INJ.news.slice(0, 25).map(n => {
