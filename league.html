@@ -688,10 +688,12 @@ function renderPlayers() {
   if (filter === "free" && D.fa) {
     const list = sortList(D.fa.filter(byPos), (a, b) => (b.avg ?? b.fp ?? -99) - (a.avg ?? a.fp ?? -99));
     const shown = list.slice(0, showN);
+    const pById = {}; (D.pool || []).forEach(q => { if (q.id) pById[q.id] = q; });
+    const stOf = p => { const q = pById[p.id]; return q && q.st ? q.st : null; };
     document.getElementById("players").innerHTML = `<div class="card">${playersBar("Geriausi laisvi žaidėjai")}
-    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}</tr></thead><tbody>` +
-      (shown.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="8">Duomenų nėra</td></tr>`) +
-      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. 🔥 Burn – žaidėjas kyla, 🧊 Ice – krenta. Žalia ▲ / raudona ▼ – paskutinių 2 sužaistų turų vidurkis aukštesnis ar žemesnis už sezono vidurkį (minutės, FP, taškai, atkovoti, rezultatyvūs perdavimai, PIR). „Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+    <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}${STAT_H}</tr></thead><tbody>` +
+      (shown.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td>${stOf(p) ? statCells(stOf(p)) : `<td class="sc" colspan="16"></td>`}</tr>`).join("") || `<tr><td class="l fa" colspan="24">Duomenų nėra</td></tr>`) +
+      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. 🔥 Burn – žaidėjas kyla, 🧊 Ice – krenta. Žalia ▲ / raudona ▼ – paskutinių 2 sužaistų turų vidurkis aukštesnis ar žemesnis už sezono vidurkį (minutės, FP, taškai, atkovoti, rezultatyvūs perdavimai, PIR). „Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose; MIN, PTS ir kiti – šio turo statistika. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
     bindPlayers();
     return;
   }
@@ -1321,8 +1323,8 @@ const starsHtml = n => `<span class="stars" aria-label="${n} iš 5">${"★".repe
 let dreamR = null, monthK = null;
 function dreamCard(dream, r, owners) {
   const list = dream[r] || [];
-  return `<div class="card dt"><div class="dt-h"><button type="button" class="dt-nav" data-dr="-1" aria-label="Ankstesnis turas">‹</button><div><div class="h">⭐ ${r} turo Starting five</div><div class="sub">Geriausi turo žaidėjai pagal pozicijas: 2 gynėjai, 2 puolėjai, centras</div></div><button type="button" class="dt-nav" data-dr="1" aria-label="Kitas turas">›</button></div>` +
-    list.map(p => `<div class="dt-r"><span class="dt-p" title="${posName[p.pos] || ""}">${esc(p.pos || "?")}</span><div class="dt-n"><b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span><div class="dt-o">${owners(p)}</div></div><div class="dt-v"><b>${num(p.fp)}</b>${starsHtml(p.stars)}</div></div>`).join("") +
+  return `<div class="card dt"><div class="dt-h"><button type="button" class="dt-nav" data-dr="-1" aria-label="Ankstesnis turas">‹</button><div><div class="h">⭐ ${r} turo Starting five${list.some(p => p.live) && !roundDone() ? ' <span class="fa">(kol kas, turas vyksta)</span>' : ""}</div><div class="sub">Geriausi turo žaidėjai pagal pozicijas: 2 gynėjai, 2 puolėjai, centras</div></div><button type="button" class="dt-nav" data-dr="1" aria-label="Kitas turas">›</button></div>` +
+    list.map(p => `<div class="dt-r"><span class="dt-p" title="${posName[p.pos] || ""}">${esc(p.pos || "?")}</span><div class="dt-n"><b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span><div class="dt-o">${owners(p) || (p.live ? "laisvas žaidėjas" : "")}</div></div><div class="dt-v"><b>${num(p.fp)}</b>${starsHtml(p.stars)}</div></div>`).join("") +
     `<div class="dt-f">Komandos taškai: <b>${num(list.reduce((a, p) => a + p.fp, 0))}</b> FP · ★ – iki 18, ★★ – 18+, ★★★ – 25+, ★★★★ – 32+, ★★★★★ – 40+ FP</div></div>`;
 }
 function monthCard(months, k, owners, teamLbl) {
@@ -1335,7 +1337,19 @@ function monthCard(months, k, owners, teamLbl) {
     (bt ? tile("🍋 Karčiausia mėnesio komanda", `${teamLbl(bt)} <b>${num(bt.pts)}</b>`, `${bt.n} ${bt.n === 1 ? "turas" : "turai"}${bt.w + bt.l ? ` · ${bt.w}–${bt.l}` : ""} · ${pick(["Kava šį mėnesį buvo labai karti.", "Mėnuo, kurį norisi pamiršti.", "Citrinos – ir tos saldesnės.", "Kitas mėnuo tikrai bus geresnis. Tikrai."], k + bt.team)}`) : "") +
     `</div>${M.mvp.length > 1 ? `<div class="sub">MVP lenktynės: ${M.mvp.map((p, i) => `${i + 1}. ${esc(p.name)} (${num(p.fp)})`).join(" · ")}</div>` : ""}</div>`;
 }
+// einamo turo penketas skaičiuojamas iš gyvų duomenų, kol turas dar nebaigtas
+function liveDream() {
+  if (!SEAS || !SEAS.dream || !D.pool) return; const ex = SEAS.dream[D.round]; if (ex && !ex.some(x => x.live)) return;
+  const pool = D.pool.filter(p => p.fp != null && p.st).sort((a, b) => b.fp - a.fp); if (pool.length < 5) return;
+  const used = new Set(), out = [];
+  const take = (pos, n) => { for (const p of pool) { if (out.filter(x => x.slot === pos).length >= n) break; if (!used.has(p) && p.pos === pos) { used.add(p); out.push({ p, slot: pos }); } } };
+  take("G", 2); take("F", 2); take("C", 1);
+  for (const p of pool) { if (out.length >= 5) break; if (!used.has(p)) { used.add(p); out.push({ p, slot: p.pos || "?" }); } }
+  const ord = { G: 0, F: 1, C: 2 }, st = fp => fp >= 40 ? 5 : fp >= 32 ? 4 : fp >= 25 ? 3 : fp >= 18 ? 2 : 1;
+  SEAS.dream[D.round] = out.sort((a, b) => (ord[a.slot] ?? 3) - (ord[b.slot] ?? 3) || b.p.fp - a.p.fp).map(({ p }) => ({ name: p.name, club: p.club, pos: p.pos, fp: p.fp, stars: st(p.fp), own: p.owner != null && D.teams[p.owner] ? [{ team: D.teams[p.owner].title.trim() }] : [], live: true }));
+}
 function dreamSection() {
+  liveDream();
   if (!SEAS || !SEAS.dream || !Object.keys(SEAS.dream).length) return "";
   const rs = Object.keys(SEAS.dream).map(Number).sort((a, b) => a - b), ms = Object.keys(SEAS.months || {}).sort();
   if (dreamR == null || !rs.includes(dreamR)) dreamR = rs[rs.length - 1];
