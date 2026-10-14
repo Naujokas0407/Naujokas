@@ -58,7 +58,7 @@ Pakeitimai: į startą – Marcus Carr, Devon Dotson; iš starto – Sylvain Fra
 
 ---
 
-## Naujokas 4️⃣7️⃣ lyga – Naujokas 4️⃣7️⃣ · 5 turas
+## Bėdų turgus – Naujokas 4️⃣7️⃣ · 5 turas
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
@@ -81,7 +81,7 @@ Pakeitimai: į startą – Bonzie Colson, Devon Dotson; iš starto – Braxton K
 
 ---
 
-## Naujokas 7️⃣ lyga – Naujokas 7️⃣ · 5 turas
+## Lupika Fantasy Lyga – Naujokas 7️⃣ · 5 turas
 Pirmos rungtynės: 19:00, trečiadienis
 
 **👑 Kapitonas**
