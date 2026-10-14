@@ -271,6 +271,23 @@ async function buildShared() {
     minHist[i] = m; minChanged = true;
   }
   if (minChanged) fs.writeFileSync(minFile, JSON.stringify(minHist));
+  // statistika per turą (tendencijoms): data/stat-hist.json – [sek, tšk, atk, rp, pr, blk, PIR]
+  const statFile = path.join(DIR, "stat-hist.json");
+  let statHist = {}; try { statHist = JSON.parse(fs.readFileSync(statFile, "utf8")); } catch (e) {}
+  let statChanged = false;
+  for (let i = 1; i <= r; i++) {
+    if (statHist[i]) continue;
+    const bx = await Promise.all(Array.from({ length: 12 }, (_, k) => el("Boxscore", (i - 1) * 10 + k + 1)));
+    const ok = bx.filter(b => b && b.Stats); if (ok.length < 9) continue;
+    const m = {};
+    ok.forEach(b => b.Stats.forEach(side => (side.PlayersStats || []).forEach(p => {
+      const club = String(p.Team || "").trim(), name = elName(p.Player), st = statArray(p);
+      const id = idByKey[club + "|" + norm(name)] ?? idByLast[club + "|" + norm(String(p.Player).split(",")[0])];
+      if (id && st[0] > 0) m[id] = [st[0], st[1], st[10], st[11], st[12], st[13], st[18]];
+    })));
+    statHist[i] = m; statChanged = true;
+  }
+  if (statChanged) fs.writeFileSync(statFile, JSON.stringify(statHist));
   minOf = id => { const v = Object.keys(minHist).filter(k => +k <= r).map(k => minHist[k][id]).filter(x => x != null); return v.length ? Math.round(v.reduce((a, b) => a + b, 0) / v.length) : null; };
   } catch (e) { console.log("Minutės:", e.message); }
 
