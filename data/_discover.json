@@ -1,34 +1,22 @@
 {
- "at": "2026-10-14T12:02:23.486Z",
+ "at": "2026-10-14T12:04:59.384Z",
  "req": {
   "queries": [
-   "{ allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ records{ id } } }",
-   "{ allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ records{ fantasyTeamId fantasyRoun poin scor tota fantasyTea } } }",
-   "{ fantasyTeamScoreRecordFromClient(leagueId:\"6a7ae0128b647e038c999860\", fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ id poin scor tota fantasyRoun } }",
-   "{ allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ recor tota coun } }"
+   "{ fantasyTeamScoreRecordFromClient(leagueId:\"6a7ae0128b647e038c999860\", fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ fantasyRound fantasyTeamId scorePoints fantasyScorePoints fantasyTeamScorePoints fantasyPoints pts value sum amount scoreValue } }",
+   "{ allFantasyTeamScoreRecordsFromClient(leagueId:\"6a7ae0128b647e038c999860\", fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ records{ fantasyRound fantasyTeamId } } }"
   ],
   "vars": {}
  },
  "tries": [
   {
-   "label": "q0 { allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951",
+   "label": "q0 { fantasyTeamScoreRecordFromClient(leagueId:\"6a7ae0128b647e038c999860\", fantasyT",
    "status": 200,
-   "body": "{\"data\":{\"allFantasyTeamScoreRecordsFromClient\":null},\"errors\":[{\"message\":\"invalidLeagueId\",\"locations\":[{\"line\":1,\"column\":3}],\"path\":[\"allFantasyTeamScoreRecordsFromClient\"]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"scorePoints\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":143}]},{\"message\":\"Cannot query field \\\"fantasyScorePoints\\\" on type \\\"FantasyTeamScore\\\". Did you mean \\\"fantasyRound\\\"?\",\"locations\":[{\"line\":1,\"column\":155}]},{\"message\":\"Cannot query field \\\"fantasyTeamScorePoints\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":174}]},{\"message\":\"Cannot query field \\\"fantasyPoints\\\" on type \\\"FantasyTeamScore\\\". Did you mean \\\"fantasyRound\\\", \\\"fantasyLeague\\\", \\\"fantasyTeam\\\", or \\\"fantasyTeamId\\\"?\",\"locations\":[{\"line\":1,\"column\":197}]},{\"message\":\"Cannot query field \\\"pts\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":211}]},{\"message\":\"Cannot query field \\\"value\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":215}]},{\"message\":\"Cannot query field \\\"sum\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":221}]},{\"message\":\"Cannot query field \\\"amount\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":225}]},{\"message\":\"Cannot query field \\\"scoreValue\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":232}]}]}"
   },
   {
-   "label": "q1 { allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951",
+   "label": "q1 { allFantasyTeamScoreRecordsFromClient(leagueId:\"6a7ae0128b647e038c999860\", fant",
    "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyRoun\\\" on type \\\"FantasyTeamScore\\\". Did you mean \\\"fantasyRound\\\", \\\"fantasyTeam\\\", or \\\"fantasyLeague\\\"?\",\"locations\":[{\"line\":1,\"column\":108}]},{\"message\":\"Cannot query field \\\"poin\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":120}]},{\"message\":\"Cannot query field \\\"scor\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":125}]},{\"message\":\"Cannot query field \\\"tota\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":130}]},{\"message\":\"Cannot query field \\\"fantasyTea\\\" on type \\\"FantasyTeamScore\\\". Did you mean \\\"fantasyTeam\\\", \\\"fantasyTeamId\\\", \\\"fantasyLeague\\\", or \\\"fantasyRound\\\"?\",\"locations\":[{\"line\":1,\"column\":135}]}]}"
-  },
-  {
-   "label": "q2 { fantasyTeamScoreRecordFromClient(leagueId:\"6a7ae0128b647e038c999860\", fantasyT",
-   "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"poin\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":119}]},{\"message\":\"Cannot query field \\\"scor\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":124}]},{\"message\":\"Cannot query field \\\"tota\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":129}]},{\"message\":\"Cannot query field \\\"fantasyRoun\\\" on type \\\"FantasyTeamScore\\\". Did you mean \\\"fantasyRound\\\", \\\"fantasyTeam\\\", or \\\"fantasyLeague\\\"?\",\"locations\":[{\"line\":1,\"column\":134}]}]}"
-  },
-  {
-   "label": "q3 { allFantasyTeamScoreRecordsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951",
-   "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"recor\\\" on type \\\"AllFantasyTeamScoreRecords\\\". Did you mean \\\"records\\\"?\",\"locations\":[{\"line\":1,\"column\":85}]},{\"message\":\"Cannot query field \\\"tota\\\" on type \\\"AllFantasyTeamScoreRecords\\\".\",\"locations\":[{\"line\":1,\"column\":91}]},{\"message\":\"Cannot query field \\\"coun\\\" on type \\\"AllFantasyTeamScoreRecords\\\".\",\"locations\":[{\"line\":1,\"column\":96}]}]}"
+   "body": "{\"data\":{\"allFantasyTeamScoreRecordsFromClient\":null},\"errors\":[{\"message\":\"fantasyRoundNotProvided\",\"locations\":[{\"line\":1,\"column\":3}],\"path\":[\"allFantasyTeamScoreRecordsFromClient\"]}]}"
   }
  ]
 }
