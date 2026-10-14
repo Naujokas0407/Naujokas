@@ -123,6 +123,7 @@ tr.tot td.pt{font-weight:700}
 .trt tr.trr{cursor:pointer}.trt tr.trr:hover td{background:var(--soft)}.trt tr.on td{background:var(--me)}
 .mykw{grid-column:span 2}td.dnv{color:#ef4444}@media (max-width:420px){.mykw{grid-column:auto}}
 .hb.hbi{padding:0 4px;min-width:0}
+.tm{font-size:10px;font-weight:700;background:none!important}.ttab td.tup{color:#16a34a;font-weight:700;background:none}.ttab td.tdn{color:#dc2626;font-weight:700;background:none}.ttab{margin:6px 0}
 .tbg{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px}.tbg.hot{background:rgba(249,115,22,.2);color:#fb923c}.tbg.ice{background:rgba(56,189,248,.18);color:#38bdf8}
 .tchs{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}.tch{font-size:11px;font-weight:600;padding:1px 6px;border-radius:999px;white-space:nowrap}.tup{background:rgba(34,197,94,.15);color:#22c55e}.tdn{background:rgba(239,68,68,.15);color:#ef4444}
 .tgs,.tgl{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;vertical-align:middle}.tgs{background:rgba(34,197,94,.15);color:#22c55e}.tgl{background:rgba(245,158,11,.18);color:#f59e0b}
@@ -635,25 +636,52 @@ async function loadSth() { if (STH) return STH; try { const r = await fetch("dat
 const TRD = [["min", "Min", 3], ["fp", "FP", 3], ["pts", "TŠK", 2], ["reb", "ATK", 1.5], ["ast", "RP", 1], ["pir", "PIR", 3]];
 function trendOf(id) {
   if (!id || !STH) return null;
-  const rs = Object.keys(STH).map(Number).sort((a, b) => a - b);
-  const rows = rs.map(r => { const s = STH[r][id]; if (!s) return null; const fp = FPH && FPH[r] ? FPH[r][id] : null; return { min: s[0] / 60, pts: s[1], reb: s[2], ast: s[3], pir: s[6], fp }; }).filter(Boolean);
+  const rs = [...new Set([...Object.keys(STH), ...Object.keys(FPH || {})])].map(Number).filter(r => r < D.round || roundDone()).sort((a, b) => a - b);
+  const first = rs.findIndex(r => (STH[r] && STH[r][id]) || (FPH && FPH[r] && FPH[r][id] != null)); if (first < 0) return null;
+  // nuo pirmo sužaisto turo; nesužaistas turas = 0 (prarasta rolė ar trauma)
+  const rows = rs.slice(first).map(r => { const s = STH[r] && STH[r][id], fp = FPH && FPH[r] ? FPH[r][id] : undefined;
+    if (!s && fp == null) return { r, dnp: true, min: 0, pts: 0, reb: 0, ast: 0, pir: 0, fp: 0 };
+    return { r, min: s ? s[0] / 60 : null, pts: s ? s[1] : null, reb: s ? s[2] : null, ast: s ? s[3] : null, pir: s ? s[6] : null, fp: fp ?? null }; });
   if (rows.length < 4) return null;
+  const n = rows.length >= 6 ? 3 : 2, rec = rows.slice(-n), prev = rows.slice(0, -n);
   const avg = (arr, k) => { const v = arr.map(x => x[k]).filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
-  const last = rows.slice(-3), out = {};
-  TRD.forEach(([k]) => { const a = avg(rows, k), l = avg(last, k); out[k] = a == null || l == null ? null : { all: a, last: l, d: l - a }; });
+  const out = { n, rec, prev, dnp: rec.filter(x => x.dnp).length };
+  TRD.forEach(([k]) => { const a = avg(prev, k), l = avg(rec, k); out[k] = a == null || l == null ? null : { all: a, last: l, d: l - a }; });
   return out;
 }
 // tendencijų ženkliukai – tik Bėdų turgui ir Lupikai
 const TREND_ON = SLUG === "n47" || SLUG === "n7";
+const r1 = x => num(Math.round(x * 10) / 10);
+// pokytis reikšmingas, jei viršija absoliučią ribą ir 20 % ankstesnio vidurkio
+const sig = (x, th) => x && Math.abs(x.d) >= Math.max(th, 0.2 * Math.abs(x.all));
+function trendTable(id) {
+  if (!TREND_ON) return "";
+  const T = trendOf(id); if (!T) return "";
+  const rows = TRD.map(([k, lab, th]) => { const x = T[k]; if (!x) return ""; const s = sig(x, th), up = x.d > 0;
+    return `<tr><td class="l">${lab}</td><td>${r1(x.all)}</td><td>${r1(x.last)}</td><td class="${s ? (up ? "tup" : "tdn") : "fa"}">${s ? (up ? "▲ " : "▼ ") : "≈ "}${x.d > 0 ? "+" : ""}${r1(x.d)}</td></tr>`; }).join("");
+  return `<div class="sub">Tendencijos: paskutiniai ${T.n} t. vs ankstesni ${T.prev.length} t.${T.dnp ? ` · nežaidė ${T.dnp} t.` : ""}</div><table class="box ttab"><thead><tr><th class="l">Rodiklis</th><th>Anksčiau</th><th>Dabar</th><th>Pokytis</th></tr></thead><tbody>${rows}</tbody></table><div class="sub">Žalia ▲ – kyla, raudona ▼ – krenta, ≈ – reikšmingo pokyčio nėra.</div>`;
+}
+// lentelės langelio rodyklė (Vid. FP, Min.)
+function trendMark(id, k) {
+  if (!TREND_ON) return "";
+  const T = trendOf(id); if (!T || !T[k]) return ""; const th = (TRD.find(x => x[0] === k) || [])[2] || 2; if (!sig(T[k], th)) return "";
+  const up = T[k].d > 0; return ` <span class="${up ? "tup" : "tdn"} tm" title="paskutiniai ${T.n} t. ${r1(T[k].last)} vs anksčiau ${r1(T[k].all)}">${up ? "▲" : "▼"}</span>`;
+}
 function trendChips(id) {
   if (!TREND_ON) return "";
   const T = trendOf(id); if (!T) return "";
-  const chips = TRD.map(([k, lab, th]) => { const x = T[k]; if (!x || Math.abs(x.d) < th) return ""; const up = x.d > 0;
-    return `<span class="tch ${up ? "tup" : "tdn"}" title="${lab}: paskutiniai 3 turai ${num(Math.round(x.last * 10) / 10)}, sezono vidurkis ${num(Math.round(x.all * 10) / 10)}">${lab} ${up ? "▲" : "▼"}${num(Math.round(Math.abs(x.d) * 10) / 10)}</span>`; }).join("");
-  // bendra būsena: 🔥 – paskutinių 3 turų vidurkiai kyla, 🧊 – krenta (FP kryptis + dauguma rodiklių)
-  const ups = TRD.filter(([k, , th]) => T[k] && T[k].d >= th).length, dns = TRD.filter(([k, , th]) => T[k] && T[k].d <= -th).length;
-  const fpd = T.fp ? T.fp.d : 0;
-  const badge = fpd >= 2 ? `<span class="tbg hot" title="Paskutinius 3 turus žaidžia geriau nei vidutiniškai">🔥 Burn</span>` : fpd <= -2 ? `<span class="tbg ice" title="Paskutinius 3 turus žaidžia blogiau nei vidutiniškai">🧊 Ice</span>` : "";
+  const per = `paskutiniai ${T.n} t. vs ankstesni ${T.prev.length} t.`;
+  const chips = TRD.map(([k, lab, th]) => { const x = T[k]; if (!sig(x, th)) return ""; const up = x.d > 0;
+    return `<span class="tch ${up ? "tup" : "tdn"}" title="${lab}: ${per} – ${r1(x.last)} vs ${r1(x.all)}">${lab} ${up ? "▲" : "▼"}${r1(Math.abs(x.d))}</span>`; }).join("");
+  // 🔥 / 🧊: FP pokytis ≥ max(2, 20 %), bent 2 paskutiniai turai virš (po) ankstesnio vidurkio, minutės neprieštarauja
+  const F = T.fp, M = T.min; let badge = "";
+  if (F && sig(F, 2)) {
+    const pct = F.all ? Math.round(F.d / Math.abs(F.all) * 100) : null;
+    const info = `${per}: FP ${r1(F.last)} vs ${r1(F.all)}${pct != null ? ` (${pct > 0 ? "+" : ""}${pct} %)` : ""}${M ? `, min. ${r1(M.last)} vs ${r1(M.all)}` : ""}${T.dnp ? `, nežaidė ${T.dnp} t.` : ""}`;
+    const above = T.rec.filter(x => x.fp != null && x.fp > F.all).length, below = T.rec.filter(x => x.fp != null && x.fp < F.all).length;
+    if (F.d > 0 && above >= 2 && !(M && M.d <= -3)) badge = `<span class="tbg hot" title="Kyla – ${info}">🔥 Burn</span>`;
+    else if (F.d < 0 && below >= 2 && !(M && M.d >= 3)) badge = `<span class="tbg ice" title="Krenta – ${info}">🧊 Ice</span>`;
+  }
   return chips || badge ? `<div class="tchs">${badge}${chips}</div>` : "";
 }
 let posF = "all", sortK = null, sortD = -1, showN = 60;
@@ -695,8 +723,8 @@ function renderPlayers() {
     const stOf = p => { const q = pById[p.id]; return q && q.st ? q.st : null; };
     document.getElementById("players").innerHTML = `<div class="card">${playersBar("Geriausi laisvi žaidėjai")}
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("avg", "Vid. FP")}${sortHead("min", "Min.")}${sortHead("gp", "Turų", "hide-s")}${sortHead("last", "Praeitas turas", "bhc")}${sortHead("fp", "Šis turas")}${STAT_H}</tr></thead><tbody>` +
-      (shown.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td>${stOf(p) ? statCells(stOf(p)) : `<td class="sc" colspan="16"></td>`}</tr>`).join("") || `<tr><td class="l fa" colspan="24">Duomenų nėra</td></tr>`) +
-      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. ${TREND_ON ? `🔥 Burn – žaidėjas kyla, 🧊 Ice – krenta. Žalia ▲ / raudona ▼ – paskutinių 3 sužaistų turų vidurkis aukštesnis ar žemesnis už sezono vidurkį (minutės, FP, taškai, atkovoti, rezultatyvūs perdavimai, PIR). ` : ""}„Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose; MIN, PTS ir kiti – šio turo statistika. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
+      (shown.map((p, i) => `<tr><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${p.avg == null ? "–" : num(p.avg)}${trendMark(p.id, "fp")}</td><td>${minTxt(p.min)}${trendMark(p.id, "min")}</td><td class="hide-s">${p.gp || 0}</td><td class="bhc">${p.last == null ? "–" : num(p.last)}</td><td>${fpTxt(p)}</td>${stOf(p) ? statCells(stOf(p)) : `<td class="sc" colspan="16"></td>`}</tr>`).join("") || `<tr><td class="l fa" colspan="24">Duomenų nėra</td></tr>`) +
+      `</tbody></table></div>${moreBtn(list.length)}<p class="foot" style="padding:0 16px 14px;margin:0">Žaidėjai, kurių neturi nė viena šios lygos komanda. ${TREND_ON ? `🔥 Burn – žaidėjas kyla, 🧊 Ice – krenta: paskutinių 2 turų (nuo 6 sužaistų – 3 turų) FP vidurkis lyginamas su ankstesnių turų vidurkiu; reikia bent ±2 FP ir ±20 %, bent 2 paskutiniai turai turi būti virš (po) ankstesnio vidurkio, o minutės neturi rodyti priešingos krypties. Nesužaistas turas skaičiuojamas kaip 0. Žalia ▲ / raudona ▼ – tas pats palyginimas minutėms, FP, taškams, atkovotiems, rezultatyviems perdavimams ir PIR. Užvedus ant ženkliuko rodomi skaičiai, o paspaudus žaidėjo vardą – visų rodiklių lentelė (anksčiau / dabar / pokytis). ` : ""}„Min.“ – vidutinis žaidimo laikas per rungtynes (minutėmis) baigtuose turuose; MIN, PTS ir kiti – šio turo statistika. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
     bindPlayers();
     return;
   }
@@ -710,7 +738,7 @@ function renderPlayers() {
   const g = p => { const x = gameOf(p.game); if (!x) return esc(tv(p.club)); const home = x.h === p.club; return `${esc(tv(p.club))} ${home ? "vs" : "@"} ${esc(tv(home ? x.a : x.h))}`; };
   document.getElementById("players").innerHTML = `<div class="card">${playersBar("Žaidėjai")}
     <div class="x"><table class="box"><thead><tr><th class="l">#</th><th class="l">Žaidėjas</th>${sortHead("pos", "Poz.")}${sortHead("fp", "FP")}${sortHead("avg", "Vid.")}${sortHead("min", "Min.")}<th class="l gm">Rungtynės</th>${STAT_H}<th>Savininkas</th></tr></thead><tbody>` +
-    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${fpTxt(p)}</td><td>${p.avg == null ? "–" : num(p.avg)}</td><td>${minTxt(p.min)}</td><td class="gm l">${g(p)}</td>${p.st ? statCells(p.st) : `<td class="sc" colspan="16"></td>`}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="23">${D.pool.length ? "Pagal šį filtrą žaidėjų nėra" : "Šiame ture dar niekas nežaidė"}</td></tr>`) +
+    (list.map((p, i) => `<tr class="${p.owner == null ? "dim" : ""} ${p.oc ? "onc" : ""}"><td class="l rk2">${i + 1}</td><td class="l pl"><span class="nm">${nameMark(p)}</span>${hBadge(p)}${ml([g(p), brief(p.st)])}${trendChips(p.id)}</td><td>${posChip(p)}</td><td class="pt">${fpTxt(p)}</td><td>${p.avg == null ? "–" : num(p.avg)}${trendMark(p.id, "fp")}</td><td>${minTxt(p.min)}${trendMark(p.id, "min")}</td><td class="gm l">${g(p)}</td>${p.st ? statCells(p.st) : `<td class="sc" colspan="16"></td>`}<td>${ownerChip(p)}</td></tr>`).join("") || `<tr><td class="l fa" colspan="23">${D.pool.length ? "Pagal šį filtrą žaidėjų nėra" : "Šiame ture dar niekas nežaidė"}</td></tr>`) +
     `</tbody></table></div>${moreBtn(full.length)}<p class="foot" style="padding:0 16px 14px;margin:0">„Vid.“ – sezono FP vidurkis, „Min.“ – vidutinės žaidimo minutės baigtuose turuose, MIN – šio turo minutės. Spausk stulpelio pavadinimą, kad surikiuotum.</p></div>`;
   bindPlayers();
 }
@@ -1309,6 +1337,7 @@ async function openPlayer(id) {
   body.innerHTML = head() +
     `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals.length}</b></div>${p.min != null ? `<div><span class="sub">Vid. minutės</span><b>${minTxt(p.min)}</b></div>` : ""}<div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
     `<div class="sub">FP pagal turus</div><div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>` +
+    trendTable(p.id) +
     `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div>`;
 }
 function closePlayer() { document.getElementById("pm").hidden = true; document.body.style.overflow = ""; }
