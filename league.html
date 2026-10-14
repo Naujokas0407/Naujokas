@@ -469,12 +469,14 @@ const nameMark = p => p.id ? `<a class="pn" data-pid="${esc(p.id)}" role="button
 
 // ---- Preliminarūs fantasy taškai pagal Eurolygos statistiką (kol BasketNews paskelbia oficialius) ----
 function estFp(p) {
+  // BN formulė (patikrinta su 948 iš 952 oficialių 1–4 turų rezultatų): pergalė +1,5, pralaimėjimas −1,5, 5 pražangos −5
   if (!p.st) return null;
   const [sec, pts, m2, a2, m3, a3, ftm, fta, orb, drb, reb, ast, stl, blk, ba, to, pf, fd] = p.st;
   const dd = [pts, reb, ast, stl, blk].filter(x => x >= 10).length;
-  const g = gameOf(p.game); let win = 0;
-  if (g && g.status === "final") { const home = g.h === p.club; if (home ? g.hs > g.as : g.as > g.hs) win = 2.75; }
-  const v = pts - (a2 - m2) - (a3 - m3) - 0.75 * (fta - ftm) + 1.25 * orb + drb + 1.25 * ast + 1.5 * stl + 1.25 * blk - 0.5 * ba - 1.5 * to - 0.5 * pf + fd + win + (dd >= 2 ? 10.5 : 0);
+  const g = gameOf(p.game); let wl = 0;
+  // gyvai – pagal einamą rezultatą (kas tuo metu pirmauja), po rungtynių – pagal galutinį
+  if (g && (g.status === "final" || g.status === "live") && g.hs != null && g.as != null && g.hs !== g.as) { const home = g.h === p.club; wl = (home ? g.hs > g.as : g.as > g.hs) ? 1.5 : -1.5; }
+  const v = pts - (a2 - m2) - (a3 - m3) - (fta - ftm) + 1.5 * orb + drb + 1.5 * ast + 1.5 * stl + blk - 0.5 * ba - 1.5 * to + fd + (dd >= 2 ? 10 : 0) + (pf >= 5 ? -5 : 0) + wl;
   return Math.round(v * 4) / 4;
 }
 function applyEst() {
