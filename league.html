@@ -642,6 +642,9 @@ function trendOf(id) {
   const rows = rs.slice(first).map(r => { const s = STH[r] && STH[r][id], fp = FPH && FPH[r] ? FPH[r][id] : undefined;
     if (!s && fp == null) return { r, dnp: true, min: 0, pts: 0, reb: 0, ast: 0, pir: 0, fp: 0 };
     return { r, min: s ? s[0] / 60 : null, pts: s ? s[1] : null, reb: s ? s[2] : null, ast: s ? s[3] : null, pir: s ? s[6] : null, fp: fp ?? null }; });
+  // einamas turas: jei žaidėjo rungtynės jau baigtos, jos įskaičiuojamos
+  if (!rs.includes(D.round)) { const q = (D.pool || []).find(x => x.id === id), g = q && gameOf(q.game);
+    if (q && q.st && q.fp != null && g && g.status === "final") rows.push({ r: D.round, min: q.st[0] / 60, pts: q.st[1], reb: q.st[10], ast: q.st[11], pir: q.st[18], fp: q.fp, cur: true }); }
   if (rows.length < 4) return null;
   const n = rows.length >= 6 ? 3 : 2, rec = rows.slice(-n), prev = rows.slice(0, -n);
   const avg = (arr, k) => { const v = arr.map(x => x[k]).filter(x => x != null); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null; };
