@@ -509,6 +509,26 @@ async function repairArchive(L, round) {
 }
 
 
+
+// ---------- Oficiali BN klasikinės lygos lentelė (taškai per turą, sukaupti taškai, vieta) ----------
+const Q_SCORES = `query($l:String!,$f:String!,$r:Int!){ allFantasyTeamScoreRecordsFromClient(leagueId:$l,fantasyLeagueId:$f,fantasyRound:$r){ records{ fantasyRound fantasyTeam{ title } pointsGained pointsTotal position } } }`;
+async function officialScores(L, S) {
+  const f = path.join(DIR, L.slug + "-official.json");
+  let off = {}; try { off = JSON.parse(fs.readFileSync(f, "utf8")); } catch (e) {}
+  const before = JSON.stringify(off);
+  for (let k = 1; k <= S.r + 1; k++) {
+    if (off[k] && off[k].final) continue;
+    try {
+      const d = await gql(Q_SCORES, { l: CONFIG.leagueId, f: L.fantasyLeagueId, r: k - 1 });
+      const recs = (d.allFantasyTeamScoreRecordsFromClient || {}).records || [];
+      if (!recs.length) continue;
+      off[k] = { final: k <= S.r, teams: Object.fromEntries(recs.map(x => [x.fantasyTeam.title, { pts: x.pointsGained, total: x.pointsTotal, pos: x.position }])) };
+    } catch (e) { console.log(L.slug + ": oficiali lentelė " + k, e.message); }
+  }
+  if (JSON.stringify(off) !== before) fs.writeFileSync(f, JSON.stringify(off));
+  return off;
+}
+
 // ---------- BasketNews traumų puslapis ----------
 async function bnInjuries() {
   const url = "https://basketnews.com/leagues/25-euroleague/injured.html";
@@ -625,6 +645,14 @@ async function discover() {
       const data = await buildLeague(S, L);
       const history = (old && old.history) || {};
       if (L.format === "classic") history[String(data.round)] = Object.fromEntries(data.teams.map(t => [t.title, t.total]));
+      if (L.format === "classic") {
+        try {
+          const off = await officialScores(L, S);
+          Object.entries(off).forEach(([k, o]) => { if (o.final) history[k] = Object.fromEntries(Object.entries(o.teams).map(([t, x]) => [t, x.pts])); });
+          const cur = off[String(data.round)];
+          if (cur) data.officialTable = Object.fromEntries(Object.entries(cur.teams).map(([t, x]) => [t, { total: x.total, pos: x.pos }]));
+        } catch (e) { console.log(L.slug + ": oficiali lentelė", e.message); }
+      }
       data.history = history;
       const strip = d => JSON.stringify({ ...d, updated: undefined });
       if (old && strip(old) === strip(data)) { console.log(L.slug + ": pakeitimų nėra."); continue; }

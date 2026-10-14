@@ -1728,8 +1728,12 @@ async function goRound(n) {
       const res = await fetch("data/" + encodeURIComponent(SLUG) + "-r" + n + ".json?t=" + Date.now(), { cache: "no-store" });
       if (!res.ok) throw new Error(res.status);
       ARCH[n] = await res.json();
-      // archyve – tik iki to turo imtinai sukaupti taškai
-      if (ARCH[n].history) Object.keys(ARCH[n].history).forEach(k => { if (+k > n) delete ARCH[n].history[k]; });
+      // archyve – naujausia (oficiali) istorija, bet tik iki to turo imtinai
+      const H = (CUR && CUR.history) || ARCH[n].history || {};
+      ARCH[n].history = Object.fromEntries(Object.entries(H).filter(([k]) => +k <= n));
+      // baigto turo komandų taškai – pagal oficialią lentelę
+      const hr = ARCH[n].history[String(n)];
+      if (hr && ARCH[n].format === "classic") ARCH[n].teams.forEach(tm => { if (hr[tm.title] != null) tm.total = hr[tm.title]; });
     } catch (e) {
       const el = document.getElementById("err"); el.hidden = false; el.textContent = n + " turo istorijos dar nėra."; setTimeout(() => el.hidden = true, 4000); return;
     }
