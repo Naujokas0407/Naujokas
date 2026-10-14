@@ -497,6 +497,8 @@ async function discover() {
   const req = JSON.parse(fs.readFileSync(rq, "utf8")), out = { at: new Date().toISOString(), req, tries: [] };
   const TR = "name kind ofType{ name kind ofType{ name kind } }";
   const tryQ = async (label, q, v) => { try { const d = await gql(q, v || {}); out.tries.push({ label, ok: true, d }); return d; } catch (e) { out.tries.push({ label, ok: false, err: String(e.message).slice(0, 500) }); return null; } };
+  for (const [i, q] of (req.queries || []).entries()) await tryQ("q" + i + " " + q.slice(0, 80), q, req.vars || {});
+  if (req.queries) { fs.writeFileSync(path.join(DIR, "_discover.json"), JSON.stringify(out, null, 1)); fs.unlinkSync(rq); return; }
   const qf = await tryQ("queryFields", `{ __schema { queryType { fields { name args { name type { ${TR} } } type { ${TR} } } } } }`);
   if (qf) {
     const fields = qf.__schema.queryType.fields.filter(f => /team|league/i.test(f.name));
