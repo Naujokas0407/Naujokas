@@ -1147,6 +1147,7 @@ function txNews(e, i) {
   return `<b>Komanda ${tq(e.team)} atsisveikino</b> su ${pl(e.out)}. ${pick(TXQ.drop, seed)}`;
 }
 const txWhen = t => fmt(t, { month: "2-digit", day: "2-digit" }) + " " + fmt(t, { hour: "2-digit", minute: "2-digit" });
+const txWhenE = e => e.est ? "iki " + fmt(e.t, { month: "2-digit", day: "2-digit" }) : txWhen(e.t);
 // ---- Reporterio perėjimų apžvalga (po turo atnaujinimo, prieš turą) ----
 // Vienas perėjimas = vienas veiksmas: paimtas + atleistas žaidėjas yra vienas perėjimas; mainai – vienas perėjimas kiekvienai komandai
 const txActs = e => e.type === "trade" ? 1 : Math.max(e.in.length, e.out.length);
@@ -1189,7 +1190,7 @@ function txReview() {
 function txNewsHtml() {
   const log = (TX && TX.log) || [];
   if (!log.length) return `<div class="sub">Perėjimų naujienos atsiras, kai tik kuri nors komanda pakeis sudėtį.</div>`;
-  return `<div class="sub">Perėjimų naujienos</div><div class="card"><ul class="news">${log.slice(0, 12).map((e, i) => `<li class="mine"><span class="nt">${txWhen(e.t)}</span><span>${txNews(e, i)}</span></li>`).join("")}</ul></div>`;
+  return `<div class="sub">Perėjimų naujienos</div><div class="card"><ul class="news">${log.slice(0, 12).map((e, i) => `<li class="mine"><span class="nt">${txWhenE(e)}</span><span>${txNews(e, i)}</span></li>`).join("")}</ul></div>`;
 }
 function renderTx() {
   const el = document.getElementById("tx"); if (!el) return;
@@ -1201,7 +1202,7 @@ function renderTx() {
   const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]);
   const byR = {}; log.forEach(e => (byR[e.r] = byR[e.r] || []).push(e));
   el.innerHTML = `<div class="aw">${tile("Iš viso perėjimų", `<b>${log.reduce((s, e) => s + txActs(e), 0)}</b>`)}${tile("Mainų tarp komandų", `<b>${trades}</b>`)}${top[0] && top[0][1] ? tile("Aktyviausias rinkoje", `${esc(top[0][0])} <b>${top[0][1]}</b>`, "perėjimų") : ""}${top.length && top[top.length - 1][1] === 0 ? tile("Ištikimiausias sudėčiai", `${names(top.filter(x => x[1] === 0).map(x => x[0]).slice(0, 3))}`, "dar nepadarė nė vieno perėjimo") : ""}</div>` +
-    Object.keys(byR).sort((a, b) => b - a).map(r => `<div class="sub">Prieš ${r} turą ir jo metu</div><div class="card"><ul class="news">${byR[r].map(e => `<li class="mine"><span class="nt">${txWhen(e.t)}</span><span>${txPlain(e)}</span></li>`).join("")}</ul></div>`).join("");
+    Object.keys(byR).sort((a, b) => b - a).map(r => `<div class="sub">Prieš ${r} turą ir jo metu</div><div class="card"><ul class="news">${byR[r].map(e => `<li class="mine"><span class="nt">${txWhenE(e)}</span><span>${txPlain(e)}</span></li>`).join("")}</ul></div>`).join("");
 }
 
 // ---- Sezono „Oskarai“ ----

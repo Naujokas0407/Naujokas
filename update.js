@@ -393,6 +393,30 @@ async function trackRoster(S, L) {
   }
   if (!Object.keys(cur).length) return;
   if (!tx) { fs.writeFileSync(file, JSON.stringify({ roster: cur, names, titles, log: [] })); return; }
+  // naujoms lygoms – praėjusių turų perėjimai atkuriami iš kiekvieno turo sudėčių (vieną kartą)
+  if (L.backfill && !tx.histDone) {
+    try {
+      const rost = [];
+      for (let k = 1; k <= S.r + 1; k++) { const pt = await pastTeams(L, k, S); const m = {}; pt.forEach(tm => tm.players.forEach(p => { m[p.player.id] = tm.id; names[p.player.id] = names[p.player.id] || { name: fullName(p.player), club: clubOf(p.player) }; })); rost.push({ k, m }); }
+      rost.push({ k: S.r + 1, m: cur, now: true });
+      const startOf = k => { try { const d = JSON.parse(fs.readFileSync(arch(L.slug, k), "utf8")); const ts = (d.games || []).map(g => g.start).filter(Boolean).sort(); return ts[0] || null; } catch (e) { return null; } };
+      const hist = [];
+      for (let i = 1; i < rost.length; i++) {
+        const A = rost[i - 1].m, B = rost[i].m, r = rost[i].k, when = rost[i].now ? (tx.updated || new Date().toISOString()) : (startOf(r) || new Date().toISOString());
+        const moves = {}, adds = {}, drops = {};
+        for (const [pid, tid] of Object.entries(B)) { const was = A[pid]; if (!was) (adds[tid] = adds[tid] || []).push(pid); else if (was !== tid) { const kk = [was, tid].sort().join("|"); (moves[kk] = moves[kk] || []).push({ pid, from: was, to: tid }); } }
+        for (const [pid, tid] of Object.entries(A)) if (!B[pid]) (drops[tid] = drops[tid] || []).push(pid);
+        const nmH = id => names[id] || (tx.names || {})[id] || { name: "?", club: "" }, ttlH = id => titles[id] || "?";
+        const ev = [];
+        for (const [kk, list] of Object.entries(moves)) { const [a, b] = kk.split("|"); ev.push({ t: when, r, est: true, type: "trade", a: ttlH(a), b: ttlH(b), aGets: list.filter(x => x.to === a).map(x => nmH(x.pid)), bGets: list.filter(x => x.to === b).map(x => nmH(x.pid)) }); }
+        for (const tid of new Set([...Object.keys(adds), ...Object.keys(drops)])) ev.push({ t: when, r, est: true, type: "fa", team: ttlH(tid), in: (adds[tid] || []).map(nmH), out: (drops[tid] || []).map(nmH) });
+        hist.unshift(...ev);
+      }
+      tx.log = [...(tx.log || []), ...hist].slice(0, 150); tx.histDone = true; tx.names = { ...tx.names, ...names }; tx.updated = new Date().toISOString();
+      fs.writeFileSync(file, JSON.stringify(tx));
+      console.log(L.slug + ": atkurta praėjusių perėjimų – " + hist.length);
+    } catch (e) { console.log(L.slug + ": nepavyko atkurti perėjimų", e.message); }
+  }
   const prev = tx.roster || {}, now = new Date().toISOString(), round = S.r + 1;
   const nm = id => names[id] || tx.names[id] || { name: "?", club: "" };
   const ttl = id => titles[id] || (tx.titles || {})[id] || "?";
