@@ -416,6 +416,33 @@ function restoreFromGit(slug, round) {
   } catch (e) { console.log(slug + ": nepavyko atkurti " + round + " turo", e.message); }
 }
 
+
+// Naujai pridėtai lygai – praėjusių turų archyvai sukuriami iš BN sudėčių (to turo taškai) ir kitos lygos archyvo (rungtynės, statistika)
+async function buildPastArchive(L, k) {
+  const src = LEAGUES.map(x => x.slug).find(s => s !== L.slug && fs.existsSync(arch(s, k)));
+  if (!src) return;
+  const base = JSON.parse(fs.readFileSync(arch(src, k), "utf8"));
+  const lu = await gql(Q_LINEUPS, { l: CONFIG.leagueId, f: L.fantasyLeagueId, r: k - 1, p: CONFIG.pointCalcSystem });
+  const poolById = {}; (base.pool || []).forEach(p => { if (p.id) poolById[p.id] = p; });
+  const allById = {}; (base.teams || []).forEach(t => t.players.forEach(p => { allById[p.id] = p; }));
+  const gameOfClub = club => ((base.games || []).find(g => g.h === club || g.a === club) || {}).id || null;
+  const teams = lu.draftLeagueFantasyTeamLineupsFromClient.map(t => {
+    const players = t.players.map(p => {
+      const pl = p.player, club = clubOf(pl), mult = multiplier(p.cardIdentifier, p.captain), fp = pl.fantasy_pts == null ? null : pl.fantasy_pts;
+      const e = poolById[pl.id] || allById[pl.id] || {};
+      return { id: pl.id, avg: e.avg ?? null, gp: e.gp ?? 0, health: "ready", name: fullName(pl), club, pos: posLetter(p.position) || e.pos || "", card: p.cardIdentifier, cap: !!p.captain, mult,
+        game: e.game ?? gameOfClub(club), fp, total: fp == null ? 0 : round2(fp * mult), st: e.st || null, dnp: !!e.dnp, s: e.s || 0, oc: 0 };
+    });
+    return { id: t.fantasyTeamId, title: t.fantasyTeam.title, total: round2(players.reduce((s, p) => s + p.total, 0)), players };
+  });
+  const own = {}; teams.forEach((t, i) => t.players.forEach(p => { own[p.id] = { i, p }; }));
+  const pool = (base.pool || []).map(p => { const o = p.id && own[p.id]; return { ...p, owner: o ? o.i : null, card: o ? o.p.card : null, cap: o ? o.p.cap : false }; });
+  let history = {}; try { history = JSON.parse(fs.readFileSync(path.join(DIR, L.slug + ".json"), "utf8")).history || {}; } catch (e) {}
+  const d = { slug: L.slug, title: L.title, format: L.format, round: k, myTeam: L.myTeam, tv: TV, games: base.games, teams, pool, fa: [], history, updated: new Date().toISOString() };
+  fs.writeFileSync(arch(L.slug, k), JSON.stringify(d));
+  console.log(L.slug + ": sukurtas " + k + " turo archyvas");
+}
+
 // Pataisomas archyvas, išsaugotas dar nesibaigus turui (pvz., per GitHub sutrikimą): galutiniai rezultatai, statistika ir oficialūs taškai
 async function repairArchive(L, round) {
   const f = arch(L.slug, round);
@@ -538,6 +565,7 @@ async function discover() {
       (!old.slug || old.slug === L.slug);
     try { await trackRoster(S, L); } catch (e) { console.log(L.slug + ": nepavyko patikrinti sudėčių", e.message); }
     for (let r = 1; r <= S.r; r++) if (!fs.existsSync(arch(L.slug, r))) restoreFromGit(L.slug, r);
+    for (let r = 1; r <= S.r; r++) if (!fs.existsSync(arch(L.slug, r))) { try { await buildPastArchive(L, r); } catch (e) { console.log(L.slug + ": archyvo kūrimas " + r, e.message); } }
     for (let r = 1; r <= S.r; r++) {
       try {
         const tot = await repairArchive(L, r);
