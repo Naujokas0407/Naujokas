@@ -1,12 +1,13 @@
 {
- "at": "2026-10-14T08:07:55.518Z",
+ "at": "2026-10-14T08:10:40.684Z",
  "req": {
   "queries": [
-   "query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
-   "query($t:String){ draftLeagueFromClient(fantasyLeagueId:$t){ id } }",
-   "query($t:String){ teamFromClient(fantasyTeamId:$t){ id } }",
-   "query($t:String){ fantasyTeamLineupFromClient(fantasyTeamId:$t){ id } }"
+   "query($t:String){ fantasyTeamRecordFromClient(fantasyTeamId:$t){ id } }",
+   "query($t:String){ fantasyTeamRecordFromClient(id:$t){ id } }",
+   "query($t:String!){ fantasyTeamRecordFromClient(fantasyTeamId:$t){ id title fantasyLeague leagu } }",
+   "query($t:String!){ fantasyTeamRecordFromClient(fantasyTeamId:$t){ title fantasyLeagueId } }",
+   "query($t:String){ fantasyLeagueRecordFromClient(fantasyLeagueId:$t){ id title } }",
+   "query($t:String){ fantasyLeagueRecordFromClient(xx:$t){ id } }"
   ],
   "vars": {
    "t": "6aab97bc698df3a4754ea960"
@@ -14,29 +15,34 @@
  },
  "tries": [
   {
-   "label": "q0 query($t:String){ fantasyTeamFromClient(fantasyTeamId:$t){ id } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyTeamFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyTeamRecordFromClient\\\", \\\"fantasyLeagueTeamsFromClient\\\", \\\"draftTradesFromClient\\\", or \\\"playerStatsFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":19}]}]}"
+   "label": "q0 query($t:String){ fantasyTeamRecordFromClient(fantasyTeamId:$t){ id } }",
+   "status": 200,
+   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"id\":\"6aab97bc698df3a4754ea960\"}}}"
   },
   {
-   "label": "q1 query($t:String){ fantasyTeam(fantasyTeamId:$t){ id } }",
+   "label": "q1 query($t:String){ fantasyTeamRecordFromClient(id:$t){ id } }",
    "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyTeam\\\" on type \\\"Query\\\".\",\"locations\":[{\"line\":1,\"column\":19}]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"id\\\" on field \\\"Query.fantasyTeamRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":47}]}]}"
   },
   {
-   "label": "q2 query($t:String){ draftLeagueFromClient(fantasyLeagueId:$t){ id } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"draftLeagueFromClient\\\" on type \\\"Query\\\". Did you mean \\\"draftTradesFromClient\\\", \\\"advertsForLeagueFromClient\\\", or \\\"draftTransfersFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":19}]}]}"
+   "label": "q2 query($t:String!){ fantasyTeamRecordFromClient(fantasyTeamId:$t){ id title fanta",
+   "status": 200,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeague\\\" on type \\\"FantasyTeam\\\". Did you mean \\\"fantasyLeagues\\\"?\",\"locations\":[{\"line\":1,\"column\":76}]},{\"message\":\"Cannot query field \\\"leagu\\\" on type \\\"FantasyTeam\\\". Did you mean \\\"leagueId\\\"?\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
   },
   {
-   "label": "q3 query($t:String){ teamFromClient(fantasyTeamId:$t){ id } }",
+   "label": "q3 query($t:String!){ fantasyTeamRecordFromClient(fantasyTeamId:$t){ title fantasyL",
    "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"teamFromClient\\\" on type \\\"Query\\\".\",\"locations\":[{\"line\":1,\"column\":19}]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagueId\\\" on type \\\"FantasyTeam\\\". Did you mean \\\"fantasyLeagues\\\" or \\\"leagueId\\\"?\",\"locations\":[{\"line\":1,\"column\":73}]}]}"
   },
   {
-   "label": "q4 query($t:String){ fantasyTeamLineupFromClient(fantasyTeamId:$t){ id } }",
+   "label": "q4 query($t:String){ fantasyLeagueRecordFromClient(fantasyLeagueId:$t){ id title } ",
    "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyTeamLineupFromClient\\\" on type \\\"Query\\\". Did you mean \\\"fantasyTeamLineupRecordFromClient\\\", \\\"fantasyTeamRecordFromClient\\\", \\\"fantasyLeagueTeamsFromClient\\\", \\\"fantasyLeagueRecordFromClient\\\", or \\\"allFantasyTeamRecordsFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":19}]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"fantasyLeagueId\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":49}]}]}"
+  },
+  {
+   "label": "q5 query($t:String){ fantasyLeagueRecordFromClient(xx:$t){ id } }",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"xx\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":49}]}]}"
   }
  ]
 }
