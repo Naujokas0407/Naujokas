@@ -438,6 +438,7 @@ async function buildPastArchive(L, k) {
   const own = {}; teams.forEach((t, i) => t.players.forEach(p => { own[p.id] = { i, p }; }));
   const pool = (base.pool || []).map(p => { const o = p.id && own[p.id]; return { ...p, owner: o ? o.i : null, card: o ? o.p.card : null, cap: o ? o.p.cap : false }; });
   let history = {}; try { history = JSON.parse(fs.readFileSync(path.join(DIR, L.slug + ".json"), "utf8")).history || {}; } catch (e) {}
+  Object.keys(history).forEach(x => { if (+x > k) delete history[x]; });
   const d = { slug: L.slug, title: L.title, format: L.format, round: k, myTeam: L.myTeam, tv: TV, games: base.games, teams, pool, fa: [], history, updated: new Date().toISOString() };
   fs.writeFileSync(arch(L.slug, k), JSON.stringify(d));
   console.log(L.slug + ": sukurtas " + k + " turo archyvas");

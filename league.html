@@ -1164,8 +1164,7 @@ function seasonOscars() {
   const rk = Object.entries(SEAS.ranks || {}).map(([t, l]) => ({ t, up: l.length > 1 ? l[0].rank - l[l.length - 1].rank : 0, from: l[0] && l[0].rank, to: l.length && l[l.length - 1].rank }));
   const up = rk.sort((a, b) => b.up - a.up)[0];
   if (up && up.up > 0) out.push(tile("🚀 Didžiausias kilimas", `${esc(up.t)} <b>+${up.up}</b>`, `iš ${up.from} į ${up.to} vietą`));
-  const hi = T.filter(x => x.best).sort((a, b) => b.best.pts - a.best.pts)[0];
-  if (hi) out.push(tile("🔥 Sezono turas", `${esc(hi.t)} <b>${num(hi.best.pts)}</b>`, `${hi.best.r} turas`));
+  // „Sezono turas“ nerodomas – tą patį rodo „Daugiausia taškų per turą“ rekorduose
   return `<div class="sub">Sezono „Oskarai“ (po ${SEAS.rounds.length} baigt${SEAS.rounds.length === 1 ? "o turo" : "ų turų"})</div><div class="aw">${out.join("")}</div>`;
 }
 
@@ -1729,6 +1728,8 @@ async function goRound(n) {
       const res = await fetch("data/" + encodeURIComponent(SLUG) + "-r" + n + ".json?t=" + Date.now(), { cache: "no-store" });
       if (!res.ok) throw new Error(res.status);
       ARCH[n] = await res.json();
+      // archyve – tik iki to turo imtinai sukaupti taškai
+      if (ARCH[n].history) Object.keys(ARCH[n].history).forEach(k => { if (+k > n) delete ARCH[n].history[k]; });
     } catch (e) {
       const el = document.getElementById("err"); el.hidden = false; el.textContent = n + " turo istorijos dar nėra."; setTimeout(() => el.hidden = true, 4000); return;
     }
