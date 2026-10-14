@@ -5,12 +5,12 @@ Pirmos rungtynės: 21:45, trečiadienis
 1. Aliou Diarra (VIR, C) – ~27,8 FP @ PRS · 🔥 geros formos
 Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~185,2 FP, dabartinė ~176,9 FP, **+8,3**)
-Startas: Aliou Diarra (C) ~27,8, Kevin Punter ~26,5, Devon Dotson ~21,8, Chima Moneke ~21,5, McKinley Wright IV ~18,5
-6-as: Ante Zizic ~16,8
-Suolas: Jonas Valančiūnas ~16,5, Nigel Hayes-Davis ~14,5, Tosan Evbuomwan ~9,5, Hugo Besson ~8,5
+**📋 Siūloma sudėtis** (prognozė ~199,6 FP, dabartinė ~170,1 FP, **+29,4**)
+Startas: Ante Zizic (C) ~32,5, Kevin Punter ~26,5, Chima Moneke ~21,5, McKinley Wright IV ~18,5, Jonas Valančiūnas ~16,5
+6-as: Aliou Diarra ~27,8
+Suolas: Devon Dotson ~15, Nigel Hayes-Davis ~14,5, Tosan Evbuomwan ~9,5, Hugo Besson ~8,5
 Out: Alec Peters (jau žaidė), Tornike Shengelia (jau žaidė), Dzanan Musa (jau žaidė)
-Startinis penketas jau optimalus. ✅
+Pakeitimai: į startą – Jonas Valančiūnas, Ante Zizic; iš starto – Devon Dotson, Aliou Diarra.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -29,12 +29,12 @@ Pirmos rungtynės: 21:45, trečiadienis
 1. Marcus Carr (VIR, G) – ~28,8 FP @ PRS · varžovas silpnai gina gynėjams · 🔥 geros formos
 Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~191,7 FP, dabartinė ~173,7 FP, **+18**)
-Startas: Marcus Carr (C) ~28,8, Devon Dotson ~21,8, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5
+**📋 Siūloma sudėtis** (prognozė ~183,9 FP, dabartinė ~166,2 FP, **+17,7**)
+Startas: Marcus Carr (C) ~28,8, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5, Both Gach ~16,5
 6-as: Carsen Edwards ~19
-Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Daniel Oturu ~15,6, Nigel Hayes-Davis ~14,5
-Out: Sylvain Francisco (jau žaidė), Jacob Toppin (jau žaidė), Bruno Fernando (jau žaidė)
-Pakeitimai: į startą – Devon Dotson; iš starto – Mbaye Ndiaye.
+Suolas: Mbaye Ndiaye ~16, Devon Dotson ~15, Nigel Hayes-Davis ~14,5, Sylvain Francisco ~12
+Out: Daniel Oturu (jau žaidė), Jacob Toppin (jau žaidė), Bruno Fernando (jau žaidė)
+Pakeitimai: į startą – Both Gach; iš starto – Mbaye Ndiaye.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Mbaye Ndiaye (22,5 vs 18,4), Marcus Carr (28,2 vs 22,9)
@@ -43,7 +43,7 @@ Pakeitimai: į startą – Devon Dotson; iš starto – Mbaye Ndiaye.
 **🛡 Varžovų gynyba šį turą**
 - Marcus Carr @ PRS: palankus varžovas (+11 % gynėjams)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~191,7 : ~152,6
+**⚔️ Prieš BC Svajuonė:** prognozė ~183,9 : ~153,5
 
 ---
 
@@ -53,12 +53,12 @@ Pirmos rungtynės: 21:45, trečiadienis
 **👑 Kapitonas**
 Dabartinis kapitonas Jean Montero – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~230,2 FP, dabartinė ~226 FP, **+4,2**)
-Startas: Mfiondu Kabengele (C) ~40, Jean Montero ~37,5, Devon Dotson ~21,8, Chima Moneke ~21,5, Bonzie Colson ~18,5
-6-as: Scottie Wilbekin ~20
-Suolas: Chris Duarte ~18,5, Braxton Key ~18, Nigel Hayes-Davis ~14,5, Patrick Baldwin Jr. ~11
-Out: Kenneth Faried (jau žaidė), Tosan Evbuomwan (jau žaidė), Dzanan Musa (jau žaidė)
-Pakeitimai: į startą – Bonzie Colson, Devon Dotson; iš starto – Braxton Key, Chris Duarte.
+**📋 Siūloma sudėtis** (prognozė ~219 FP, dabartinė ~211,3 FP, **+7,8**)
+Startas: Mfiondu Kabengele (C) ~40, Jean Montero ~37,5, Chima Moneke ~21,5, Bonzie Colson ~18,5, Braxton Key ~18
+6-as: Chris Duarte ~18,5
+Suolas: Devon Dotson ~15, Nigel Hayes-Davis ~14,5, Patrick Baldwin Jr. ~11, Kenneth Faried ~9,5
+Out: Tosan Evbuomwan (jau žaidė), Scottie Wilbekin (jau žaidė), Dzanan Musa (jau žaidė)
+Pakeitimai: į startą – Bonzie Colson; iš starto – Chris Duarte.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -78,11 +78,11 @@ Pirmos rungtynės: 21:45, trečiadienis
 2. Aliou Diarra (VIR, C) – ~27,8 FP @ PRS · 🔥 geros formos
 Dabar kapitonas – TJ Shorts II (~21,5 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~206 FP, dabartinė ~183,2 FP, **+22,8**)
+**📋 Siūloma sudėtis** (prognozė ~204,2 FP, dabartinė ~179,1 FP, **+25,1**)
 Startas: Marcus Carr (C) ~28,8, Aliou Diarra ~27,8, Theo Maledon ~26,5, TJ Shorts II ~21,5, Bonzie Colson ~18,5
 6-as: Nikola Mirotic ~20
-Suolas: Chris Duarte ~18,5, Braxton Key ~18, Mbaye Ndiaye ~16, Daniel Oturu ~15,6
-Out: Sylvain Francisco (jau žaidė), Patrick Baldwin Jr. (jau žaidė), Alec Peters (jau žaidė)
+Suolas: Chris Duarte ~18,5, Braxton Key ~18, Mbaye Ndiaye ~16, Sylvain Francisco ~12
+Out: Daniel Oturu (jau žaidė), Patrick Baldwin Jr. (jau žaidė), Alec Peters (jau žaidė)
 Pakeitimai: į startą – Marcus Carr, Bonzie Colson; iš starto – Braxton Key, Daniel Oturu.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
