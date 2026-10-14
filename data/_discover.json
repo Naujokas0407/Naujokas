@@ -1,76 +1,16 @@
 {
- "at": "2026-10-14T08:28:20.016Z",
+ "at": "2026-10-14T08:31:05.136Z",
  "req": {
   "queries": [
-   "{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(leagueId:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(fantasyLeagueRecordId:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(recordId:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(draftLeagueId:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(_id:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(fantasyLeagueSlug:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient(slug:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueRecordFromClient{ id } }",
-   "{ draftLeagueRecordFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ fantasyLeague{ title } leagu titl } }"
+   "{ fantasyLeagueRecordFromClient(id:\"6ab2d1c198f6ba07dd1fe7c4\"){ id title } }"
   ],
   "vars": {}
  },
  "tries": [
   {
-   "label": "q0 { fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ id title } }",
+   "label": "q0 { fantasyLeagueRecordFromClient(id:\"6ab2d1c198f6ba07dd1fe7c4\"){ id title } }",
    "status": 200,
-   "body": "{\"data\":{\"fantasyLeagueRecordFromClient\":{\"id\":\"6aa8423bc95ed14589d40951\",\"title\":\"Bėdų turgus\"}}}"
-  },
-  {
-   "label": "q1 { fantasyLeagueRecordFromClient(leagueId:\"6aa8423bc95ed14589d40951\"){ id title }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"leagueId\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q2 { fantasyLeagueRecordFromClient(fantasyLeagueRecordId:\"6aa8423bc95ed14589d40951\"",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"fantasyLeagueRecordId\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q3 { fantasyLeagueRecordFromClient(recordId:\"6aa8423bc95ed14589d40951\"){ id title }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"recordId\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q4 { fantasyLeagueRecordFromClient(draftLeagueId:\"6aa8423bc95ed14589d40951\"){ id ti",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"draftLeagueId\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q5 { fantasyLeagueRecordFromClient(_id:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"_id\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\". Did you mean \\\"id\\\"?\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q6 { fantasyLeagueRecordFromClient(fantasyLeagueSlug:\"6aa8423bc95ed14589d40951\"){ i",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"fantasyLeagueSlug\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q7 { fantasyLeagueRecordFromClient(slug:\"6aa8423bc95ed14589d40951\"){ id title } }",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"slug\\\" on field \\\"Query.fantasyLeagueRecordFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":33}]}]}"
-  },
-  {
-   "label": "q8 { fantasyLeagueRecordFromClient{ id } }",
-   "status": 200,
-   "body": "{\"data\":{\"fantasyLeagueRecordFromClient\":null}}"
-  },
-  {
-   "label": "q9 { draftLeagueRecordFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ id ti",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"draftLeagueRecordFromClient\\\" on type \\\"Query\\\". Did you mean \\\"allLeagueRecordsFromClient\\\", \\\"fantasyLeagueRecordFromClient\\\", \\\"allTeamRecordsFromClient\\\", \\\"allFantasyLeagueRecordsFromClient\\\", or \\\"draftTransfersFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":3}]}]}"
-  },
-  {
-   "label": "q10 { fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ fant",
-   "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeague\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":77}]},{\"message\":\"Cannot query field \\\"leagu\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":100}]},{\"message\":\"Cannot query field \\\"titl\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":106}]}]}"
+   "body": "{\"data\":{\"fantasyLeagueRecordFromClient\":{\"id\":\"6ab2d1c198f6ba07dd1fe7c4\",\"title\":\"Lupika Fantasy Lyga\"}}}"
   }
  ]
 }
