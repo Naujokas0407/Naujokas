@@ -1,22 +1,22 @@
 {
- "at": "2026-10-14T08:56:44.186Z",
+ "at": "2026-10-14T11:51:52.710Z",
  "req": {
   "queries": [
-   "{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fantasyRound:0){ id point scor tota fantasyRoun player lineu card } }",
-   "{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fantasyRound:0){ players{ cardIdentifier captain player{ id firstName lastName } } } }"
+   "{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ records{ id titl point scor tota rank roun fantasyTea } } }",
+   "{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\", fantasyRound:3){ records{ id } } }"
   ],
   "vars": {}
  },
  "tries": [
   {
-   "label": "q0 { fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fa",
+   "label": "q0 { fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ reco",
    "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"point\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":99}]},{\"message\":\"Cannot query field \\\"scor\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":105}]},{\"message\":\"Cannot query field \\\"tota\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":110}]},{\"message\":\"Cannot query field \\\"fantasyRoun\\\" on type \\\"FantasyTeamLineup\\\". Did you mean \\\"fantasyRound\\\" or \\\"fantasyTeam\\\"?\",\"locations\":[{\"line\":1,\"column\":115}]},{\"message\":\"Cannot query field \\\"player\\\" on type \\\"FantasyTeamLineup\\\". Did you mean \\\"players\\\"?\",\"locations\":[{\"line\":1,\"column\":127}]},{\"message\":\"Cannot query field \\\"lineu\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":134}]},{\"message\":\"Cannot query field \\\"card\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":140}]}]}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"titl\\\" on type \\\"FantasyTeam\\\". Did you mean \\\"title\\\"?\",\"locations\":[{\"line\":1,\"column\":89}]},{\"message\":\"Cannot query field \\\"point\\\" on type \\\"FantasyTeam\\\".\",\"locations\":[{\"line\":1,\"column\":94}]},{\"message\":\"Cannot query field \\\"scor\\\" on type \\\"FantasyTeam\\\".\",\"locations\":[{\"line\":1,\"column\":100}]},{\"message\":\"Cannot query field \\\"tota\\\" on type \\\"FantasyTeam\\\".\",\"locations\":[{\"line\":1,\"column\":105}]},{\"message\":\"Cannot query field \\\"rank\\\" on type \\\"FantasyTeam\\\".\",\"locations\":[{\"line\":1,\"column\":110}]},{\"message\":\"Cannot query field \\\"roun\\\" on type \\\"FantasyTeam\\\".\",\"locations\":[{\"line\":1,\"column\":115}]},{\"message\":\"Cannot query field \\\"fantasyTea\\\" on type \\\"FantasyTeam\\\". Did you mean \\\"fantasyLeagues\\\"?\",\"locations\":[{\"line\":1,\"column\":120}]}]}"
   },
   {
-   "label": "q1 { fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\", fa",
-   "status": 200,
-   "body": "{\"data\":{\"fantasyTeamLineupRecordFromClient\":{\"players\":[{\"cardIdentifier\":\"g-1\",\"captain\":false,\"player\":{\"id\":\"6513070c98a6be433053457e\",\"firstName\":\"Vasilije\",\"lastName\":\"Micic\"}},{\"cardIdentifier\":\"c-1\",\"captain\":false,\"player\":{\"id\":\"669b6a1069eb071c0f3bfef1\",\"firstName\":\"Mfiondu\",\"lastName\":\"Kabengele\"}},{\"cardIdentifier\":\"f-1\",\"captain\":false,\"player\":{\"id\":\"66e6e4314589cab32aef6a8f\",\"firstName\":\"Bonzie\",\"lastName\":\"Colson\"}},{\"cardIdentifier\":\"g-2\",\"captain\":false,\"player\":{\"id\":\"68c40826a07be49331fea232\",\"firstName\":\"Jean\",\"lastName\":\"Montero\"}},{\"cardIdentifier\":\"b-1\",\"captain\":false,\"player\":{\"id\":\"66e6e4324589cab32aef6bcb\",\"firstName\":\"Chima\",\"lastName\":\"Moneke\"}},{\"cardIdentifier\":\"b-2\",\"captain\":false,\"player\":{\"id\":\"6a8c494f491e10f37dfb692e\",\"firstName\":\"Keaton\",\"lastName\":\"Wallace\"}},{\"cardIdentifier\":\"g-3\",\"captain\":true,\"player\":{\"id\":\"6a8c494e491e10f37dfb6657\",\"firstName\":\"Jaylen\",\"lastName\":\"Nowell\"}},{\"cardIdentifier\":\"b-3\",\"captain\":false,\"player\":{\"id\":\"6a8c494f491e10f37dfb6847\",\"firstName\":\"Tyrese\",\"lastName\":\"Martin\"}},{\"cardIdentifier\":\"b-4\",\"captain\":false,\"player\":{\"id\":\"6a8c4950491e10f37dfb6999\",\"firstName\":\"Both\",\"lastName\":\"Gach\"}},{\"cardIdentifier\":\"b-5\",\"captain\":false,\"player\":{\"id\":\"6a8c494f491e10f37dfb6841\",\"firstName\":\"Patrick\",\"lastName\":\"Baldwin Jr.\"}},{\"cardIdentifier\":\"i-1\",\"captain\":false,\"player\":{\"id\":\"66e6e42e4589cab32aef6880\",\"firstName\":\"Joffrey\",\"lastName\":\"Lauvergne\"}},{\"cardIdentifier\":\"i-2\",\"captain\":false,\"player\":{\"id\":\"66e"
+   "label": "q1 { fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\", fanta",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Unknown argument \\\"fantasyRound\\\" on field \\\"Query.fantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":76}]}]}"
   }
  ]
 }
