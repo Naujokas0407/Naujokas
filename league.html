@@ -1387,7 +1387,7 @@ function monthCard(months, k, owners, teamLbl) {
     <div class="aw">` +
     (mv ? tile("👑 Mėnesio MVP", `${esc(mv.name)} <b>${num(mv.fp)}</b>`, `${esc(tv(mv.club))} · ${mv.n} ${mv.n === 1 ? "turas" : "turai"} · geriausias ${num(mv.best)} FP<br>${owners(mv)}`) : "") +
     (tp ? tile("🏆 Mėnesio komanda", `${teamLbl(tp)} <b>${num(tp.pts)}</b>`, `${tp.n} ${tp.n === 1 ? "turas" : "turai"}${tp.w + tp.l ? ` · ${tp.w}–${tp.l}` : ""}`) : "") +
-    (bt ? tile("🍋 Karčiausia mėnesio komanda", `${teamLbl(bt)} <b>${num(bt.pts)}</b>`, `${bt.n} ${bt.n === 1 ? "turas" : "turai"}${bt.w + bt.l ? ` · ${bt.w}–${bt.l}` : ""} · ${pick(["Kava šį mėnesį buvo labai karti.", "Mėnuo, kurį norisi pamiršti.", "Citrinos – ir tos saldesnės.", "Kitas mėnuo tikrai bus geresnis. Tikrai."], k + bt.team)}`) : "") +
+    (bt ? tile("🍋 Silpniausia mėnesio komanda", `${teamLbl(bt)} <b>${num(bt.pts)}</b>`, `${bt.n} ${bt.n === 1 ? "turas" : "turai"}${bt.w + bt.l ? ` · ${bt.w}–${bt.l}` : ""} · ${pick(["Kava šį mėnesį buvo labai karti.", "Mėnuo, kurį norisi pamiršti.", "Citrinos – ir tos saldesnės.", "Kitas mėnuo tikrai bus geresnis. Tikrai."], k + bt.team)}`) : "") +
     `</div>${M.mvp.length > 1 ? `<div class="sub">MVP lenktynės: ${M.mvp.map((p, i) => `${i + 1}. ${esc(p.name)} (${num(p.fp)})`).join(" · ")}</div>` : ""}</div>`;
 }
 // einamo turo penketas skaičiuojamas iš gyvų duomenų, kol turas dar nebaigtas
