@@ -25,12 +25,12 @@ Pakeitimai: į startą – Jonas Valančiūnas, Ante Zizic; iš starto – Devon
 **👑 Kapitonas**
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~178,4 FP, dabartinė ~163,5 FP, **+14,9**)
-Startas: Marcus Carr (C) ~26,1, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5, Both Gach ~16,5
+**📋 Siūloma sudėtis** (prognozė ~212,1 FP, dabartinė ~163,5 FP, **+48,6**)
+Startas: Bruno Fernando (C) ~37, Marcus Carr ~26,1, TJ Shorts II ~21,5, Dwayne Bacon ~21, Tonye Jekiri ~19,5
 6-as: Carsen Edwards ~19
-Suolas: Mbaye Ndiaye ~16, Devon Dotson ~15, Nigel Hayes-Davis ~14,5, Sylvain Francisco ~12
-Out: Daniel Oturu (jau žaidė), Jacob Toppin (jau žaidė), Bruno Fernando (jau žaidė)
-Pakeitimai: į startą – Both Gach; iš starto – Mbaye Ndiaye.
+Suolas: Both Gach ~16,5, Mbaye Ndiaye ~16, Devon Dotson ~15, Nigel Hayes-Davis ~14,5
+Out: Sylvain Francisco (jau žaidė), Daniel Oturu (jau žaidė), Jacob Toppin (jau žaidė)
+Pakeitimai: į startą – Bruno Fernando; iš starto – Mbaye Ndiaye.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Mbaye Ndiaye (22,5 vs 18,4), Marcus Carr (28,2 vs 22,9)
@@ -38,7 +38,7 @@ Pakeitimai: į startą – Both Gach; iš starto – Mbaye Ndiaye.
 
 **🛡 Varžovų gynyba šį turą**
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~178,4 : ~152,5
+**⚔️ Prieš BC Svajuonė:** prognozė ~212,1 : ~152,5
 
 ---
 
