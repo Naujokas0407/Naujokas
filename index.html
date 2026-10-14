@@ -96,7 +96,9 @@ const LEAGUES = [
   { slug: "hla2", title: "HLA 2 Divizionas", short: "D2", format: "h2h" },
   { slug: "hla3", title: "HLA 3 Divizionas", short: "D3", format: "h2h" },
   { slug: "hla4", title: "HLA 4 Divizionas", short: "D4", format: "classic" },
-  { slug: "bn", title: "BN Fantasy 🏆", short: "BN", format: "classic" }
+  { slug: "bn", title: "BN Fantasy 🏆", short: "BN", format: "classic" },
+  { slug: "n47", title: "Naujokas 4️⃣7️⃣ lyga", short: "47", format: "classic" },
+  { slug: "n7", title: "Naujokas 7️⃣ lyga", short: "N7", format: "classic" }
 ];
 const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const num = n => String(Math.round(n * 100) / 100);
@@ -122,7 +124,7 @@ function card(L, d) {
 }
 const box = document.getElementById("leagues");
 const boxBn = document.getElementById("leaguesBn");
-const paint = ds => { box.innerHTML = LEAGUES.map((L, i) => L.slug === "bn" ? "" : card(L, ds ? ds[i] : null)).join(""); boxBn.innerHTML = LEAGUES.map((L, i) => L.slug === "bn" ? card(L, ds ? ds[i] : null) : "").join(""); };
+const paint = ds => { box.innerHTML = LEAGUES.map((L, i) => /^hla/.test(L.slug) ? card(L, ds ? ds[i] : null) : "").join(""); boxBn.innerHTML = LEAGUES.map((L, i) => /^hla/.test(L.slug) ? "" : card(L, ds ? ds[i] : null)).join(""); };
 paint(null);
 Promise.all(LEAGUES.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
   .then(ds => { paint(ds);

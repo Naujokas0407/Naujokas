@@ -17,7 +17,9 @@ const LEAGUES = [
   { slug: "hla1", title: "HLA 1 Divizionas", fantasyLeagueId: "6aa7fe67c95ed14589bf170d", format: "h2h", myTeam: null },
   { slug: "hla2", title: "HLA 2 Divizionas", fantasyLeagueId: "6a9b0b72d2094d97fda188b7", format: "h2h", myTeam: "Naujokas" },
   { slug: "hla3", title: "HLA 3 Divizionas", fantasyLeagueId: "6aa3f0f51f38d9ba866b20d3", format: "h2h", myTeam: null },
-  { slug: "hla4", title: "HLA 4 Divizionas", fantasyLeagueId: "6a9811b0536d72db0c77997b", format: "classic", myTeam: null }
+  { slug: "hla4", title: "HLA 4 Divizionas", fantasyLeagueId: "6a9811b0536d72db0c77997b", format: "classic", myTeam: null },
+  { slug: "n47", title: "Naujokas 4️⃣7️⃣ lyga", fantasyLeagueId: "6aa8423bc95ed14589d40951", format: "classic", myTeam: "Naujokas 4️⃣7️⃣" },
+  { slug: "n7", title: "Naujokas 7️⃣ lyga", fantasyLeagueId: "6ab2d1c198f6ba07dd1fe7c4", format: "classic", myTeam: "Naujokas 7️⃣" }
 ];
 const DIR = path.join(__dirname, "data");
 
@@ -557,6 +559,15 @@ async function discover() {
     try {
       const data = await buildLeague(S, L);
       const history = (old && old.history) || {};
+      // klasikinėje lygoje trūkstamų ankstesnių turų taškai atkuriami iš BN (naujai pridėtoms lygoms)
+      if (L.format === "classic") for (let k = 1; k <= S.r; k++) {
+        if (history[String(k)]) continue;
+        try {
+          const lu = await gql(Q_LINEUPS, { l: CONFIG.leagueId, f: L.fantasyLeagueId, r: k - 1, p: CONFIG.pointCalcSystem });
+          history[String(k)] = Object.fromEntries(lu.draftLeagueFantasyTeamLineupsFromClient.map(t => [t.fantasyTeam.title, round2(t.players.reduce((s, p) => s + (p.player.fantasy_pts || 0) * multiplier(p.cardIdentifier, p.captain), 0))]));
+          console.log(L.slug + ": atkurti " + k + " turo taškai");
+        } catch (e) { console.log(L.slug + ": nepavyko atkurti " + k + " turo", e.message); }
+      }
       if (L.format === "classic") history[String(data.round)] = Object.fromEntries(data.teams.map(t => [t.title, t.total]));
       data.history = history;
       const strip = d => JSON.stringify({ ...d, updated: undefined });
