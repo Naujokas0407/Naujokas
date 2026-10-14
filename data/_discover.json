@@ -1,34 +1,58 @@
 {
- "at": "2026-10-14T08:16:02.595Z",
+ "at": "2026-10-14T08:18:47.906Z",
  "req": {
   "queries": [
-   "{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ id title leagueId fantasyLeagues{ id } } }",
-   "{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ fantasyLeagues{ fantasyLeagu leagu nam titl fantasyLeague{ id } } } }",
-   "{ fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ id title leagueId fantasyLeagues{ id } } }",
-   "{ fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ fantasyLeagues{ fantasyLeagu leagu nam titl fantasyLeague{ id } } } }"
+   "{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ fantasyLeagues{ id fantasyLeagueId } } }",
+   "{ fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ fantasyLeagues{ id fantasyLeagueId } } }",
+   "{ draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:\"6aab97bc698df3a4754ea95f\"){ fantasyTeamId fantasyTeam{ title } } }",
+   "{ allHeadToHeadScheduleRecordsFromClient(fantasyLeagueId:\"6aab97bc698df3a4754ea95f\",fantasyRound:4){ records{ fantasyTeam1{ title } fantasyTeam2{ title } } } }",
+   "{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aab97bc698df3a4754ea95f\"){ id title } }",
+   "{ draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:\"6ab3f1e8ab9125e6b164bd0a\"){ fantasyTeamId fantasyTeam{ title } } }",
+   "{ allHeadToHeadScheduleRecordsFromClient(fantasyLeagueId:\"6ab3f1e8ab9125e6b164bd0a\",fantasyRound:4){ records{ fantasyTeam1{ title } fantasyTeam2{ title } } } }",
+   "{ fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6ab3f1e8ab9125e6b164bd0a\"){ id title } }"
   ],
   "vars": {}
  },
  "tries": [
   {
-   "label": "q0 { fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ id titl",
+   "label": "q0 { fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ fantasy",
    "status": 200,
-   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"id\":\"6aab97bc698df3a4754ea960\",\"title\":\"Naujokas 4️⃣7️⃣\",\"leagueId\":\"6a7ae0128b647e038c999860\",\"fantasyLeagues\":[{\"id\":\"6aab97bc698df3a4754ea95f\"}]}}}"
+   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"fantasyLeagues\":[{\"id\":\"6aab97bc698df3a4754ea95f\",\"fantasyLeagueId\":\"6aa8423bc95ed14589d40951\"}]}}}"
   },
   {
-   "label": "q1 { fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ fantasy",
+   "label": "q1 { fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ fantasy",
    "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagu\\\" on type \\\"FantasyTeamFantasyLeague\\\". Did you mean \\\"fantasyLeagueId\\\"?\",\"locations\":[{\"line\":1,\"column\":90}]},{\"message\":\"Cannot query field \\\"leagu\\\" on type \\\"FantasyTeamFantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":103}]},{\"message\":\"Cannot query field \\\"nam\\\" on type \\\"FantasyTeamFantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":109}]},{\"message\":\"Cannot query field \\\"titl\\\" on type \\\"FantasyTeamFantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":113}]},{\"message\":\"Cannot query field \\\"fantasyLeague\\\" on type \\\"FantasyTeamFantasyLeague\\\". Did you mean \\\"fantasyLeagueId\\\"?\",\"locations\":[{\"line\":1,\"column\":118}]}]}"
+   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"fantasyLeagues\":[{\"id\":\"6ab3f1e8ab9125e6b164bd0a\",\"fantasyLeagueId\":\"6ab2d1c198f6ba07dd1fe7c4\"}]}}}"
   },
   {
-   "label": "q2 { fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ id titl",
+   "label": "q2 { draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:\"6aab97bc698df3a4754ea",
    "status": 200,
-   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"id\":\"6ab3f1e8ab9125e6b164bd0b\",\"title\":\"Naujokas 7️⃣\",\"leagueId\":\"6a7ae0128b647e038c999860\",\"fantasyLeagues\":[{\"id\":\"6ab3f1e8ab9125e6b164bd0a\"}]}}}"
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"fantasyLeagueNotFound\",\"locations\":[{\"line\":1,\"column\":3}],\"path\":[\"draftLeagueFantasyTeamLineupsFromClient\"]}]}"
   },
   {
-   "label": "q3 { fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ fantasy",
+   "label": "q3 { allHeadToHeadScheduleRecordsFromClient(fantasyLeagueId:\"6aab97bc698df3a4754ea9",
    "status": 200,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyLeagu\\\" on type \\\"FantasyTeamFantasyLeague\\\". Did you mean \\\"fantasyLeagueId\\\"?\",\"locations\":[{\"line\":1,\"column\":90}]},{\"message\":\"Cannot query field \\\"leagu\\\" on type \\\"FantasyTeamFantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":103}]},{\"message\":\"Cannot query field \\\"nam\\\" on type \\\"FantasyTeamFantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":109}]},{\"message\":\"Cannot query field \\\"titl\\\" on type \\\"FantasyTeamFantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":113}]},{\"message\":\"Cannot query field \\\"fantasyLeague\\\" on type \\\"FantasyTeamFantasyLeague\\\". Did you mean \\\"fantasyLeagueId\\\"?\",\"locations\":[{\"line\":1,\"column\":118}]}]}"
+   "body": "{\"data\":{\"allHeadToHeadScheduleRecordsFromClient\":{\"records\":[]}}}"
+  },
+  {
+   "label": "q4 { fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6aab97bc698df3a4754ea95f\"){ id t",
+   "status": 200,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"id\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":77}]},{\"message\":\"Cannot query field \\\"title\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":80}]}]}"
+  },
+  {
+   "label": "q5 { draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:\"6ab3f1e8ab9125e6b164b",
+   "status": 200,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"fantasyLeagueNotFound\",\"locations\":[{\"line\":1,\"column\":3}],\"path\":[\"draftLeagueFantasyTeamLineupsFromClient\"]}]}"
+  },
+  {
+   "label": "q6 { allHeadToHeadScheduleRecordsFromClient(fantasyLeagueId:\"6ab3f1e8ab9125e6b164bd",
+   "status": 200,
+   "body": "{\"data\":{\"allHeadToHeadScheduleRecordsFromClient\":{\"records\":[]}}}"
+  },
+  {
+   "label": "q7 { fantasyLeagueTeamsFromClient(fantasyLeagueId:\"6ab3f1e8ab9125e6b164bd0a\"){ id t",
+   "status": 200,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"id\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":77}]},{\"message\":\"Cannot query field \\\"title\\\" on type \\\"FantasyLeagueTeamsFromClient\\\".\",\"locations\":[{\"line\":1,\"column\":80}]}]}"
   }
  ]
 }
