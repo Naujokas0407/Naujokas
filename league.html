@@ -757,7 +757,8 @@ function projection(t) {
   // prognozė skaičiuojama prieš turą (sezono vidurkiai × koeficientai) ir rungtynėms prasidėjus nesikeičia
   const rest = t.players.filter(p => p.mult > 0 && playerState(p) === "toplay");
   const live = t.players.filter(p => p.mult > 0 && playerState(p) === "playing");
-  const proj = t.players.reduce((s, p) => s + (p.mult > 0 && p.avg != null ? p.avg * p.mult : 0), 0);
+  // traumuoti žaidėjai su būsena „Nežais“ į prognozę neįskaičiuojami (0 taškų)
+  const proj = t.players.reduce((s, p) => s + (p.mult > 0 && p.avg != null && healthOf(p) !== "out" ? p.avg * p.mult : 0), 0);
   return { left: rest.length, live: live.length, proj: Math.round(proj * 4) / 4 };
 }
 function optimal(t) {
