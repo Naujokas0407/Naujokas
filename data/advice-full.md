@@ -5,14 +5,14 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 1. Aliou Diarra (VIR, C) – ~35,1 FP vs KBA · varžovas silpnai gina centrams · 🔥 geros formos
 2. Ante Zizic (BES, C) – ~26,9 FP vs BAY · varžovas silpnai gina centrams
 3. Hugo Besson (ASV, G) – ~23,7 FP @ RMB · varžovas silpnai gina gynėjams · 🔥 geros formos
-Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
+Dabar kapitonas – Tornike Shengelia (~6,6 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~209,1 FP, dabartinė ~185,7 FP, **+23,5**)
+**📋 Siūloma sudėtis** (prognozė ~209,1 FP, dabartinė ~151,4 FP, **+57,7**)
 Startas: Aliou Diarra (C) ~35,1, Hugo Besson ~23,7, Chima Moneke ~21,3, Kevin Punter ~19,6, Devon Dotson ~18,5
 6-as: Ante Zizic ~26,9
 Suolas: Jonas Valančiūnas ~18, Nigel Hayes-Davis ~17,9, McKinley Wright IV ~11,7, Alec Peters ~10,3
 Out: Tosan Evbuomwan, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Devon Dotson, Chima Moneke; iš starto – McKinley Wright IV, Alec Peters.
+Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke; iš starto – McKinley Wright IV, Alec Peters, Tornike Shengelia.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -86,14 +86,14 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 1. Mfiondu Kabengele (DUB, C) – ~26,6 FP @ MIL · varžovas silpnai gina centrams
 2. Jean Montero (OLY, G) – ~21,6 FP @ BAR · varžovas gerai gina gynėjams
 3. Chima Moneke (CZV, F) – ~21,3 FP vs PRS · varžovas silpnai gina puolėjams
-Dabar kapitonas – Jean Montero (~21,6 FP). Siūlau keisti į Mfiondu Kabengele.
+Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~184,3 FP, dabartinė ~179,3 FP, **+5**)
+**📋 Siūloma sudėtis** (prognozė ~184,3 FP, dabartinė ~179,1 FP, **+5,2**)
 Startas: Mfiondu Kabengele (C) ~26,6, Jean Montero ~21,6, Chima Moneke ~21,3, Braxton Key ~18,7, Devon Dotson ~18,5
 6-as: Chris Duarte ~20,8
 Suolas: Nigel Hayes-Davis ~17,9, Kenneth Faried ~16,7, Scottie Wilbekin ~15, Bonzie Colson ~10,8
 Out: Patrick Baldwin Jr., Tosan Evbuomwan, Dzanan Musa
-Pakeitimai: į startą – Devon Dotson; iš starto – Chris Duarte.
+Pakeitimai: į startą – Chima Moneke, Devon Dotson; iš starto – Bonzie Colson, Chris Duarte.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
