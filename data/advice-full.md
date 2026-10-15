@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 6 turas
-Pirmos rungtynės: 20:45, ketvirtadienis
+Pirmos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~35,1 FP vs KBA · varžovas silpnai gina centrams · 🔥 geros formos
@@ -39,7 +39,7 @@ Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke, Ante Zizic;
 ---
 
 ## HLA 2 Divizionas – Naujokas · 6 turas
-Pirmos rungtynės: 20:45, ketvirtadienis
+Pirmos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~32,7 FP vs KBA · varžovas silpnai gina gynėjams · 🔥 geros formos
@@ -47,8 +47,8 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Carsen Edwards (ZAL, G) – ~20,3 FP vs IST · varžovas silpnai gina gynėjams
 Dabar kapitonas – TJ Shorts II (~26,6 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~201,6 FP, dabartinė ~182,4 FP, **+19,1**)
-Startas: Marcus Carr (C) ~32,7, TJ Shorts II ~26,6, Mbaye Ndiaye ~19,8, Devon Dotson ~18,5, Tonye Jekiri ~17,4
+**📋 Siūloma sudėtis** (prognozė ~203,6 FP, dabartinė ~184,5 FP, **+19,1**)
+Startas: Marcus Carr (C) ~32,7, TJ Shorts II ~26,6, Mbaye Ndiaye ~19,8, Tonye Jekiri ~19,4, Devon Dotson ~18,5
 6-as: Carsen Edwards ~20,3
 Suolas: Dwayne Bacon ~18,2, Nigel Hayes-Davis ~17,9, Sylvain Francisco ~17,2, Mamadi Diakite ~13,5
 Out: Both Gach, Bruno Fernando, Daniel Oturu
@@ -62,7 +62,6 @@ Pakeitimai: į startą – Mbaye Ndiaye, Devon Dotson; iš starto – Dwayne Bac
 - Marcus Carr vs KBA: palankus varžovas (+23 % gynėjams)
 - Carsen Edwards vs IST: palankus varžovas (+15 % gynėjams)
 - Sylvain Francisco vs HTA: sunkus varžovas (−9 % gynėjams)
-- Tonye Jekiri @ FBT: sunkus varžovas (−11 % centrams)
 - Nigel Hayes-Davis vs HTA: sunkus varžovas (−14 % puolėjams)
 - Daniel Oturu @ PAN: sunkus varžovas (−20 % centrams)
 - Both Gach @ RMB: sunkus varžovas (−20 % puolėjams)
@@ -73,12 +72,12 @@ Pakeitimai: į startą – Mbaye Ndiaye, Devon Dotson; iš starto – Dwayne Bac
 - Agustin Ubal (BAR, G) ~17,2 FP vs OLY (vietoj Daniel Oturu ~11,2)
 - Mouhamet Diouf (VIR, C) ~17,1 FP vs KBA (vietoj Daniel Oturu ~11,2)
 
-**⚔️ Prieš Briedis:** prognozė ~201,6 : ~137,7
+**⚔️ Prieš Briedis:** prognozė ~203,6 : ~138,6
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 6 turas
-Pirmos rungtynės: 20:45, ketvirtadienis
+Pirmos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~26,6 FP @ MIL · varžovas silpnai gina centrams
@@ -86,8 +85,8 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Chima Moneke (CZV, F) – ~21,3 FP vs PRS · varžovas silpnai gina puolėjams
 Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~184 FP, dabartinė ~175,1 FP, **+8,9**)
-Startas: Mfiondu Kabengele (C) ~26,6, Jean Montero ~21,6, Chima Moneke ~21,3, Braxton Key ~18,7, Devon Dotson ~18,5
+**📋 Siūloma sudėtis** (prognozė ~185,2 FP, dabartinė ~176,3 FP, **+8,9**)
+Startas: Mfiondu Kabengele (C) ~26,6, Jean Montero ~21,6, Chima Moneke ~21,3, Braxton Key ~19,9, Devon Dotson ~18,5
 6-as: Chris Duarte ~20,8
 Suolas: Nigel Hayes-Davis ~17,9, Kenneth Faried ~16,7, Andres Feliz ~14,3, Bonzie Colson ~10,8
 Out: Patrick Baldwin Jr., Tosan Evbuomwan, Dzanan Musa
@@ -115,7 +114,7 @@ Pakeitimai: į startą – Jean Montero, Chima Moneke, Devon Dotson; iš starto 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 6 turas
-Pirmos rungtynės: 20:45, ketvirtadienis
+Pirmos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~35,1 FP vs KBA · varžovas silpnai gina centrams · 🔥 geros formos
@@ -123,10 +122,10 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Theo Maledon (RMB, G) – ~27,3 FP vs ASV · 🔥 geros formos
 Dabar kapitonas – TJ Shorts II (~26,6 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~235,4 FP, dabartinė ~211,6 FP, **+23,8**)
+**📋 Siūloma sudėtis** (prognozė ~236 FP, dabartinė ~212,8 FP, **+23,2**)
 Startas: Aliou Diarra (C) ~35,1, Marcus Carr ~32,7, Theo Maledon ~27,3, TJ Shorts II ~26,6, Nikola Mirotic ~24,2
 6-as: Chris Duarte ~20,8
-Suolas: Mbaye Ndiaye ~19,8, Braxton Key ~18,7, Sylvain Francisco ~17,2, Bruno Fernando ~11,3
+Suolas: Braxton Key ~19,9, Mbaye Ndiaye ~19,8, Sylvain Francisco ~17,2, Bruno Fernando ~11,3
 Out: Daniel Oturu, Bonzie Colson, Alec Peters
 Pakeitimai: į startą – Marcus Carr; iš starto – Braxton Key.
 
