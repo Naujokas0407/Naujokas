@@ -86,12 +86,12 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Chima Moneke (CZV, F) – ~21,3 FP vs PRS · varžovas silpnai gina puolėjams
 Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~184 FP, dabartinė ~178,8 FP, **+5,2**)
+**📋 Siūloma sudėtis** (prognozė ~184 FP, dabartinė ~175,1 FP, **+8,9**)
 Startas: Mfiondu Kabengele (C) ~26,6, Jean Montero ~21,6, Chima Moneke ~21,3, Braxton Key ~18,7, Devon Dotson ~18,5
 6-as: Chris Duarte ~20,8
 Suolas: Nigel Hayes-Davis ~17,9, Kenneth Faried ~16,7, Andres Feliz ~14,3, Bonzie Colson ~10,8
 Out: Patrick Baldwin Jr., Tosan Evbuomwan, Dzanan Musa
-Pakeitimai: į startą – Chima Moneke, Devon Dotson; iš starto – Bonzie Colson, Chris Duarte.
+Pakeitimai: į startą – Jean Montero, Chima Moneke, Devon Dotson; iš starto – Bonzie Colson, Andres Feliz, Chris Duarte.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
