@@ -4,15 +4,15 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~35,1 FP vs KBA · varžovas silpnai gina centrams · 🔥 geros formos
 2. Ante Zizic (BES, C) – ~26,9 FP vs BAY · varžovas silpnai gina centrams
-3. Hugo Besson (ASV, G) – ~23,7 FP @ RMB · varžovas silpnai gina gynėjams · 🔥 geros formos
+3. Chima Moneke (CZV, F) – ~21,3 FP vs PRS · varžovas silpnai gina puolėjams
 Dabar kapitonas – Tornike Shengelia (~6,6 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~209,1 FP, dabartinė ~151,4 FP, **+57,7**)
-Startas: Aliou Diarra (C) ~35,1, Hugo Besson ~23,7, Chima Moneke ~21,3, Kevin Punter ~19,6, Devon Dotson ~18,5
-6-as: Ante Zizic ~26,9
-Suolas: Jonas Valančiūnas ~18, Nigel Hayes-Davis ~17,9, McKinley Wright IV ~11,7, Alec Peters ~10,3
+**📋 Siūloma sudėtis** (prognozė ~201,6 FP, dabartinė ~142,1 FP, **+59,5**)
+Startas: Aliou Diarra (C) ~35,1, Ante Zizic ~26,9, Chima Moneke ~21,3, Kevin Punter ~19,6, Devon Dotson ~18,5
+6-as: Jonas Valančiūnas ~18
+Suolas: Nigel Hayes-Davis ~17,9, Andres Feliz ~14,3, McKinley Wright IV ~11,7, Alec Peters ~10,3
 Out: Tosan Evbuomwan, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke; iš starto – McKinley Wright IV, Alec Peters, Tornike Shengelia.
+Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke, Ante Zizic; iš starto – McKinley Wright IV, Andres Feliz, Alec Peters, Tornike Shengelia.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -26,16 +26,15 @@ Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke; iš starto 
 - Ante Zizic vs BAY: palankus varžovas (+25 % centrams)
 - McKinley Wright IV @ MIL: palankus varžovas (+25 % gynėjams)
 - Dzanan Musa @ MIL: palankus varžovas (+25 % gynėjams)
-- Hugo Besson @ RMB: palankus varžovas (+22 % gynėjams)
 - Chima Moneke vs PRS: palankus varžovas (+22 % puolėjams)
 - Jonas Valančiūnas vs IST: sunkus varžovas (−13 % centrams)
 - Tosan Evbuomwan vs OLY: sunkus varžovas (−13 % puolėjams)
 - Nigel Hayes-Davis vs HTA: sunkus varžovas (−14 % puolėjams)
 
 **🛒 Laisvoji rinka**
+- Hugo Besson (ASV, G) ~23,7 FP @ RMB (vietoj Dzanan Musa ~0)
 - Tremont Waters (ASV, G) ~20,1 FP @ RMB (vietoj Dzanan Musa ~0)
-- Amir Coffey (HTA, G) ~18 FP @ PAN (vietoj Dzanan Musa ~0)
-- Derrick Alston Jr. (VIR, F) ~17,3 FP vs KBA (vietoj Dzanan Musa ~0)
+- Agustin Ubal (BAR, G) ~17,2 FP vs OLY (vietoj Dzanan Musa ~0)
 
 ---
 
@@ -48,11 +47,11 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Carsen Edwards (ZAL, G) – ~20,3 FP vs IST · varžovas silpnai gina gynėjams
 Dabar kapitonas – TJ Shorts II (~26,6 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~200,5 FP, dabartinė ~182,4 FP, **+18,1**)
+**📋 Siūloma sudėtis** (prognozė ~201,6 FP, dabartinė ~182,4 FP, **+19,1**)
 Startas: Marcus Carr (C) ~32,7, TJ Shorts II ~26,6, Mbaye Ndiaye ~19,8, Devon Dotson ~18,5, Tonye Jekiri ~17,4
 6-as: Carsen Edwards ~20,3
-Suolas: Dwayne Bacon ~18,2, Nigel Hayes-Davis ~17,9, Sylvain Francisco ~17,2, Both Gach ~11,4
-Out: Bruno Fernando, Daniel Oturu, Jacob Toppin
+Suolas: Dwayne Bacon ~18,2, Nigel Hayes-Davis ~17,9, Sylvain Francisco ~17,2, Mamadi Diakite ~13,5
+Out: Both Gach, Bruno Fernando, Daniel Oturu
 Pakeitimai: į startą – Mbaye Ndiaye, Devon Dotson; iš starto – Dwayne Bacon, Both Gach.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
@@ -65,17 +64,16 @@ Pakeitimai: į startą – Mbaye Ndiaye, Devon Dotson; iš starto – Dwayne Bac
 - Sylvain Francisco vs HTA: sunkus varžovas (−9 % gynėjams)
 - Tonye Jekiri @ FBT: sunkus varžovas (−11 % centrams)
 - Nigel Hayes-Davis vs HTA: sunkus varžovas (−14 % puolėjams)
-- Jacob Toppin @ PAN: sunkus varžovas (−18 % puolėjams)
 - Daniel Oturu @ PAN: sunkus varžovas (−20 % centrams)
 - Both Gach @ RMB: sunkus varžovas (−20 % puolėjams)
 - Bruno Fernando @ ZAL: sunkus varžovas (−20 % centrams)
 
 **🛒 Laisvoji rinka**
-- Ante Zizic (BES, C) ~26,9 FP vs BAY (vietoj Jacob Toppin ~9,2)
-- Tremont Waters (ASV, G) ~20,1 FP @ RMB (vietoj Jacob Toppin ~9,2)
-- Amir Coffey (HTA, G) ~18 FP @ PAN (vietoj Jacob Toppin ~9,2)
+- Tremont Waters (ASV, G) ~20,1 FP @ RMB (vietoj Daniel Oturu ~11,2)
+- Agustin Ubal (BAR, G) ~17,2 FP vs OLY (vietoj Daniel Oturu ~11,2)
+- Mouhamet Diouf (VIR, C) ~17,1 FP vs KBA (vietoj Daniel Oturu ~11,2)
 
-**⚔️ Prieš Briedis:** prognozė ~200,5 : ~144,3
+**⚔️ Prieš Briedis:** prognozė ~201,6 : ~137,7
 
 ---
 
@@ -88,10 +86,10 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Chima Moneke (CZV, F) – ~21,3 FP vs PRS · varžovas silpnai gina puolėjams
 Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~184,3 FP, dabartinė ~179,1 FP, **+5,2**)
+**📋 Siūloma sudėtis** (prognozė ~184 FP, dabartinė ~178,8 FP, **+5,2**)
 Startas: Mfiondu Kabengele (C) ~26,6, Jean Montero ~21,6, Chima Moneke ~21,3, Braxton Key ~18,7, Devon Dotson ~18,5
 6-as: Chris Duarte ~20,8
-Suolas: Nigel Hayes-Davis ~17,9, Kenneth Faried ~16,7, Scottie Wilbekin ~15, Bonzie Colson ~10,8
+Suolas: Nigel Hayes-Davis ~17,9, Kenneth Faried ~16,7, Andres Feliz ~14,3, Bonzie Colson ~10,8
 Out: Patrick Baldwin Jr., Tosan Evbuomwan, Dzanan Musa
 Pakeitimai: į startą – Chima Moneke, Devon Dotson; iš starto – Bonzie Colson, Chris Duarte.
 
@@ -111,8 +109,8 @@ Pakeitimai: į startą – Chima Moneke, Devon Dotson; iš starto – Bonzie Col
 
 **🛒 Laisvoji rinka**
 - Tremont Waters (ASV, G) ~20,1 FP @ RMB (vietoj Dzanan Musa ~0)
-- Amir Coffey (HTA, G) ~18 FP @ PAN (vietoj Dzanan Musa ~0)
 - Agustin Ubal (BAR, G) ~17,2 FP vs OLY (vietoj Dzanan Musa ~0)
+- Mouhamet Diouf (VIR, C) ~17,1 FP vs KBA (vietoj Dzanan Musa ~0)
 
 ---
 
@@ -125,12 +123,12 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Theo Maledon (RMB, G) – ~27,3 FP vs ASV · 🔥 geros formos
 Dabar kapitonas – TJ Shorts II (~26,6 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~235,3 FP, dabartinė ~211,6 FP, **+23,8**)
-Startas: Aliou Diarra (C) ~35,1, Marcus Carr ~32,7, Theo Maledon ~27,3, Nikola Mirotic ~24,2, Chris Duarte ~20,8
-6-as: TJ Shorts II ~26,6
-Suolas: Mbaye Ndiaye ~19,8, Braxton Key ~18,7, Sylvain Francisco ~17,2, Daniel Oturu ~11,2
-Out: Bonzie Colson, Alec Peters, Patrick Baldwin Jr.
-Pakeitimai: į startą – Marcus Carr, Chris Duarte; iš starto – TJ Shorts II, Braxton Key.
+**📋 Siūloma sudėtis** (prognozė ~235,4 FP, dabartinė ~211,6 FP, **+23,8**)
+Startas: Aliou Diarra (C) ~35,1, Marcus Carr ~32,7, Theo Maledon ~27,3, TJ Shorts II ~26,6, Nikola Mirotic ~24,2
+6-as: Chris Duarte ~20,8
+Suolas: Mbaye Ndiaye ~19,8, Braxton Key ~18,7, Sylvain Francisco ~17,2, Bruno Fernando ~11,3
+Out: Daniel Oturu, Bonzie Colson, Alec Peters
+Pakeitimai: į startą – Marcus Carr; iš starto – Braxton Key.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Aliou Diarra (30,2 vs 25), Theo Maledon (29,7 vs 25), Mbaye Ndiaye (23,2 vs 17,9), Marcus Carr (29,5 vs 22,3), Chris Duarte (24,8 vs 18,8)
@@ -143,10 +141,11 @@ Pakeitimai: į startą – Marcus Carr, Chris Duarte; iš starto – TJ Shorts I
 - Sylvain Francisco vs HTA: sunkus varžovas (−9 % gynėjams)
 - Bonzie Colson @ VBC: sunkus varžovas (−12 % puolėjams)
 - Daniel Oturu @ PAN: sunkus varžovas (−20 % centrams)
+- Bruno Fernando @ ZAL: sunkus varžovas (−20 % centrams)
 
 **🛒 Laisvoji rinka**
-- Hugo Besson (ASV, G) ~23,7 FP @ RMB (vietoj Patrick Baldwin Jr. ~9,6)
-- Tremont Waters (ASV, G) ~20,1 FP @ RMB (vietoj Patrick Baldwin Jr. ~9,6)
-- Amir Coffey (HTA, G) ~18 FP @ PAN (vietoj Patrick Baldwin Jr. ~9,6)
+- Hugo Besson (ASV, G) ~23,7 FP @ RMB (vietoj Alec Peters ~10,3)
+- Tremont Waters (ASV, G) ~20,1 FP @ RMB (vietoj Alec Peters ~10,3)
+- Agustin Ubal (BAR, G) ~17,2 FP vs OLY (vietoj Alec Peters ~10,3)
 
 _Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._
