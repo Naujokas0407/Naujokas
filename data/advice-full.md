@@ -5,14 +5,14 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 1. Aliou Diarra (VIR, C) – ~35,1 FP vs KBA · varžovas silpnai gina centrams · 🔥 geros formos
 2. Ante Zizic (BES, C) – ~26,9 FP vs BAY · varžovas silpnai gina centrams
 3. Chima Moneke (CZV, F) – ~21,3 FP vs PRS · varžovas silpnai gina puolėjams
-Dabar kapitonas – Tornike Shengelia (~6,6 FP). Siūlau keisti į Aliou Diarra.
+Dabar kapitonas – Andres Feliz (~14,3 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~201,6 FP, dabartinė ~142,1 FP, **+59,5**)
+**📋 Siūloma sudėtis** (prognozė ~201,6 FP, dabartinė ~148,2 FP, **+53,4**)
 Startas: Aliou Diarra (C) ~35,1, Ante Zizic ~26,9, Chima Moneke ~21,3, Kevin Punter ~19,6, Devon Dotson ~18,5
 6-as: Jonas Valančiūnas ~18
 Suolas: Nigel Hayes-Davis ~17,9, Andres Feliz ~14,3, McKinley Wright IV ~11,7, Alec Peters ~10,3
 Out: Tosan Evbuomwan, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke, Ante Zizic; iš starto – McKinley Wright IV, Andres Feliz, Alec Peters, Tornike Shengelia.
+Pakeitimai: į startą – Kevin Punter, Devon Dotson, Chima Moneke, Ante Zizic; iš starto – McKinley Wright IV, Andres Feliz, Tornike Shengelia, Tosan Evbuomwan.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
