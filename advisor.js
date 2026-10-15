@@ -73,14 +73,14 @@ function analyse(slug, teamName) {
   };
   const players = T.players.map(p => ({ p, ...proj(p) }));
 
-  // geriausia sudėtis: 5 startas (C 1–2, F 1–3, G 1–3), kapitonas ×2, 6-as ×1, likę ×0,5, „Out“ – tiek pat kiek dabar
+  // geriausia sudėtis: 5 startas (2 G, 2 F, 1 C), kapitonas ×2, 6-as ×1, likę ×0,5, „Out“ – tiek pat kiek dabar
   const outN = T.players.filter(p => String(p.card).startsWith("i")).length;
   const n = players.length; let best = null;
   for (let m = 0; m < (1 << n); m++) {
     let bits = 0; for (let k = m; k; k &= k - 1) bits++; if (bits !== 5) continue;
     const S = [], R = []; players.forEach((x, i) => (m >> i & 1 ? S : R).push(x));
     const c = S.filter(x => x.pos === "C").length, f = S.filter(x => x.pos === "F").length, g = S.filter(x => x.pos === "G").length;
-    if (c < 1 || c > 2 || f < 1 || f > 3 || g < 1 || g > 3) continue;
+    if (c !== 1 || f !== 2 || g !== 2) continue; // BN startas: 2 gynėjai (g-1, g-2), 2 puolėjai (f-1, f-2), 1 centras (c-1)
     R.sort((a, b) => b.v - a.v);
     const cap = S.reduce((a, b) => b.v > a.v ? b : a);
     const bench = R.slice(0, R.length - outN), out = R.slice(R.length - outN);
