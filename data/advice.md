@@ -7,12 +7,12 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Hugo Besson (ASV, G) – ~23,7 FP @ RMB · varžovas silpnai gina gynėjams · 🔥 geros formos
 Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~209,1 FP, dabartinė ~189,6 FP, **+19,5**)
+**📋 Siūloma sudėtis** (prognozė ~209,1 FP, dabartinė ~185,7 FP, **+23,5**)
 Startas: Aliou Diarra (C) ~35,1, Hugo Besson ~23,7, Chima Moneke ~21,3, Kevin Punter ~19,6, Devon Dotson ~18,5
 6-as: Ante Zizic ~26,9
 Suolas: Jonas Valančiūnas ~18, Nigel Hayes-Davis ~17,9, McKinley Wright IV ~11,7, Alec Peters ~10,3
 Out: Tosan Evbuomwan, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Hugo Besson; iš starto – McKinley Wright IV.
+Pakeitimai: į startą – Devon Dotson, Chima Moneke; iš starto – McKinley Wright IV, Alec Peters.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -48,12 +48,12 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Carsen Edwards (ZAL, G) – ~20,3 FP vs IST · varžovas silpnai gina gynėjams
 Dabar kapitonas – TJ Shorts II (~26,6 FP). Siūlau keisti į Marcus Carr.
 
-**📋 Siūloma sudėtis** (prognozė ~200,5 FP, dabartinė ~184 FP, **+16,5**)
+**📋 Siūloma sudėtis** (prognozė ~200,5 FP, dabartinė ~182,4 FP, **+18,1**)
 Startas: Marcus Carr (C) ~32,7, TJ Shorts II ~26,6, Mbaye Ndiaye ~19,8, Devon Dotson ~18,5, Tonye Jekiri ~17,4
 6-as: Carsen Edwards ~20,3
 Suolas: Dwayne Bacon ~18,2, Nigel Hayes-Davis ~17,9, Sylvain Francisco ~17,2, Both Gach ~11,4
 Out: Bruno Fernando, Daniel Oturu, Jacob Toppin
-Pakeitimai: į startą – Devon Dotson; iš starto – Dwayne Bacon.
+Pakeitimai: į startą – Mbaye Ndiaye, Devon Dotson; iš starto – Dwayne Bacon, Both Gach.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Mbaye Ndiaye (23,2 vs 17,9), Marcus Carr (29,5 vs 22,3), Both Gach (16,3 vs 11,2)
@@ -125,12 +125,12 @@ Pirmos rungtynės: 20:45, ketvirtadienis
 3. Theo Maledon (RMB, G) – ~27,3 FP vs ASV · 🔥 geros formos
 Dabar kapitonas – TJ Shorts II (~26,6 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~235,3 FP, dabartinė ~207,3 FP, **+28**)
-Startas: Aliou Diarra (C) ~35,1, Marcus Carr ~32,7, Theo Maledon ~27,3, TJ Shorts II ~26,6, Nikola Mirotic ~24,2
-6-as: Chris Duarte ~20,8
+**📋 Siūloma sudėtis** (prognozė ~235,3 FP, dabartinė ~211,6 FP, **+23,8**)
+Startas: Aliou Diarra (C) ~35,1, Marcus Carr ~32,7, Theo Maledon ~27,3, Nikola Mirotic ~24,2, Chris Duarte ~20,8
+6-as: TJ Shorts II ~26,6
 Suolas: Mbaye Ndiaye ~19,8, Braxton Key ~18,7, Sylvain Francisco ~17,2, Daniel Oturu ~11,2
 Out: Bonzie Colson, Alec Peters, Patrick Baldwin Jr.
-Pakeitimai: į startą – Marcus Carr, Nikola Mirotic; iš starto – Braxton Key, Daniel Oturu.
+Pakeitimai: į startą – Marcus Carr, Chris Duarte; iš starto – TJ Shorts II, Braxton Key.
 
 **📈 Forma** (paskutinių 3 turų vidurkis vs sezono)
 🔥 Aliou Diarra (30,2 vs 25), Theo Maledon (29,7 vs 25), Mbaye Ndiaye (23,2 vs 17,9), Marcus Carr (29,5 vs 22,3), Chris Duarte (24,8 vs 18,8)
