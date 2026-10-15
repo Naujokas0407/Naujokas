@@ -64,28 +64,39 @@ function analyse(slug, teamName) {
     const pos = p.pos || posMap[p.id];
     const g = gameOf(p.club);
     const f = formOf(p.id, D.round - 1);
-    const base = p.avg == null ? 0 : f == null ? p.avg : 0.6 * f + 0.4 * p.avg;
+    const base = p.avg == null ? 0 : p.avg; // tik sezono vidurkis
     if (!g) return { v: 0, why: "šį turą nežaidžia", g: null, f, pos };
     if (g.status === "final" || g.status === "live") return { v: p.fp ?? base, why: "jau žaidė", g, f, pos, played: true };
     const opp = g.h === p.club ? g.a : g.h, home = g.h === p.club;
-    const df = pos ? DEF.factor(opp, pos) : 1, hf = HEALTH[p.health || "ready"] ?? 1;
-    return { v: base * df * hf, g, f, pos, opp, home, df, hf };
+    const hf = (p.health || "ready") === "out" ? 0 : 1; // „Nežais“ – 0, kiti – pilnas vidurkis
+    return { v: base * hf, g, f, pos, opp, home, hf };
   };
   const players = T.players.map(p => ({ p, ...proj(p) }));
 
   // geriausia sudėtis: 5 startas (2 G, 2 F, 1 C), kapitonas ×2, 6-as ×1, likę ×0,5, „Out“ – tiek pat kiek dabar
   const outN = T.players.filter(p => String(p.card).startsWith("i")).length;
+  // jau žaidę / žaidžiantys žaidėjai užrakinti savo vietose (BN jų nebeleidžia keisti)
+  const slot = x => { const c = String(x.p.card); return c[0] === "i" ? "out" : c === "b-1" ? "six" : c[0] === "b" ? "bench" : "start"; };
+  const lk = players.map(x => x.played ? slot(x) : null);
+  const curCapX = players.find(x => x.p.cap);
   const n = players.length; let best = null;
   for (let m = 0; m < (1 << n); m++) {
     let bits = 0; for (let k = m; k; k &= k - 1) bits++; if (bits !== 5) continue;
+    if (players.some((x, i) => lk[i] && ((m >> i & 1) !== (lk[i] === "start" ? 1 : 0)))) continue;
     const S = [], R = []; players.forEach((x, i) => (m >> i & 1 ? S : R).push(x));
     const c = S.filter(x => x.pos === "C").length, f = S.filter(x => x.pos === "F").length, g = S.filter(x => x.pos === "G").length;
     if (c !== 1 || f !== 2 || g !== 2) continue; // BN startas: 2 gynėjai (g-1, g-2), 2 puolėjai (f-1, f-2), 1 centras (c-1)
-    R.sort((a, b) => b.v - a.v);
-    const cap = S.reduce((a, b) => b.v > a.v ? b : a);
-    const bench = R.slice(0, R.length - outN), out = R.slice(R.length - outN);
-    const val = S.reduce((s, x) => s + x.v, 0) + cap.v + (bench[0] ? bench[0].v : 0) + 0.5 * bench.slice(1).reduce((s, x) => s + x.v, 0);
-    if (!best || val > best.val) best = { val, S, cap, sixth: bench[0], bench: bench.slice(1), out };
+    const cap = curCapX && curCapX.played ? curCapX : S.filter(x => !x.played).reduce((a, b) => !a || b.v > a.v ? b : a, null) || S.reduce((a, b) => b.v > a.v ? b : a);
+    if (!S.includes(cap)) continue;
+    const L = i => lk[players.indexOf(i)];
+    const fixedOut = R.filter(x => L(x) === "out"), fixedSix = R.find(x => L(x) === "six"), fixedBench = R.filter(x => L(x) === "bench");
+    const free = R.filter(x => !L(x)).sort((a, b) => b.v - a.v);
+    const needOut = outN - fixedOut.length; if (needOut < 0 || needOut > free.length) continue;
+    const out = [...fixedOut, ...free.slice(free.length - needOut)], rest = free.slice(0, free.length - needOut);
+    const sixth = fixedSix || rest.shift();
+    const bench = [...fixedBench, ...rest].sort((a, b) => b.v - a.v);
+    const val = S.reduce((s, x) => s + x.v, 0) + cap.v + (sixth ? sixth.v : 0) + 0.5 * bench.reduce((s, x) => s + x.v, 0);
+    if (!best || val > best.val) best = { val, S, cap, sixth, bench, out };
   }
   const curVal = players.reduce((s, x) => s + x.v * x.p.mult, 0);
 
@@ -112,13 +123,15 @@ function report(slug, team) {
   const lbl = x => `${x.p.name} (${tv(x.p.club)}${x.pos ? ", " + x.pos : ""})`;
   const vs = x => x.g ? `${x.home ? "vs" : "@"} ${tv(x.opp)}` : "";
   L.push(`## ${D.title} – ${T.title} · ${D.round} turas`);
-  if (A.first) L.push(`Pirmos rungtynės: ${new Date(A.first).toLocaleString("lt-LT", { timeZone: "Europe/Vilnius", weekday: "long", hour: "2-digit", minute: "2-digit" })}`);
+  if (A.started) L.push(`⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.${A.first ? " Kitos rungtynės: " + new Date(A.first).toLocaleString("lt-LT", { timeZone: "Europe/Vilnius", weekday: "long", hour: "2-digit", minute: "2-digit" }) : ""}`);
+  else if (A.first) L.push(`Pirmos rungtynės: ${new Date(A.first).toLocaleString("lt-LT", { timeZone: "Europe/Vilnius", weekday: "long", hour: "2-digit", minute: "2-digit" })}`);
   // kapitonas
   const capC = players.filter(x => !x.played && x.v > 0).sort((a, b) => b.v - a.v).slice(0, 3);
   L.push(`\n**👑 Kapitonas**`);
-  capC.forEach((x, i) => L.push(`${i + 1}. ${lbl(x)} – ~${num(x.v)} FP ${vs(x)}${x.df && Math.abs(x.df - 1) >= 0.07 ? (x.df > 1 ? ` · varžovas silpnai gina ${POSN[x.pos]}` : ` · varžovas gerai gina ${POSN[x.pos]}`) : ""}${x.f != null && x.p.avg != null && Math.abs(x.f - x.p.avg) >= 3 ? (x.f > x.p.avg ? " · 🔥 geros formos" : " · 🧊 formos duobė") : ""}`));
+  capC.forEach((x, i) => L.push(`${i + 1}. ${lbl(x)} – ~${num(x.v)} FP ${vs(x)}`));
   const curCap = players.find(x => x.p.cap);
-  if (curCap && capC[0] && curCap.p.id !== capC[0].p.id) L.push(`Dabar kapitonas – ${curCap.p.name} (~${num(curCap.v)} FP). Siūlau keisti į ${capC[0].p.name}.`);
+  if (curCap && curCap.played) L.push(`Kapitonas ${curCap.p.name} jau žaidžia – šį turą keisti nebegalima.`);
+  else if (curCap && capC[0] && curCap.p.id !== capC[0].p.id) L.push(`Dabar kapitonas – ${curCap.p.name} (~${num(curCap.v)} FP). Siūlau keisti į ${capC[0].p.name}.`);
   else if (curCap) L.push(`Dabartinis kapitonas ${curCap.p.name} – geriausias pasirinkimas. ✅`);
   // sudėtis
   if (best) {
@@ -131,21 +144,16 @@ function report(slug, team) {
     players.forEach(x => { const isS = ["c", "f", "g"].includes(String(x.p.card)[0]); if (S.has(x.p.id) && !isS) inS.push(x.p.name); if (!S.has(x.p.id) && isS) outS.push(x.p.name); });
     if (inS.length) L.push(`Pakeitimai: į startą – ${inS.join(", ")}; iš starto – ${outS.join(", ")}.`);
     else L.push(`Startinis penketas jau optimalus. ✅`);
+    const outNow = players.filter(x => String(x.p.card)[0] === "i"), outNew = new Set(best.out.map(x => x.p.id));
+    const toOut = players.filter(x => outNew.has(x.p.id) && String(x.p.card)[0] !== "i").map(x => x.p.name), fromOut = outNow.filter(x => !outNew.has(x.p.id)).map(x => x.p.name);
+    if (fromOut.length) L.push(`Iš Out į sudėtį – ${fromOut.join(", ")}; į Out – ${toOut.join(", ")}.`);
+    const six = players.find(x => x.p.card === "b-1"); if (best.sixth && six && best.sixth.p.id !== six.p.id) L.push(`6-u žaidėju (b-1) dėk ${best.sixth.p.name} vietoj ${six.p.name}.`);
   }
   // traumos
   const hurt = players.filter(x => (x.p.health || "ready") !== "ready");
   if (hurt.length) { L.push(`\n**🩹 Traumos**`); hurt.forEach(x => L.push(`- ${x.p.name}: ${HL[x.p.health] || x.p.health}${x.p.mult > 0 ? " – šiuo metu sudėtyje!" : ""}`)); }
   const noGame = players.filter(x => !x.g);
   if (noGame.length) L.push(`⚠️ Šį turą nežaidžia: ${noGame.map(x => x.p.name).join(", ")}`);
-  // forma
-  const hot = players.filter(x => x.f != null && x.p.avg != null && x.f - x.p.avg >= 4).map(x => `${x.p.name} (${num(x.f)} vs ${num(x.p.avg)})`);
-  const cold = players.filter(x => x.f != null && x.p.avg != null && x.p.avg - x.f >= 4).map(x => `${x.p.name} (${num(x.f)} vs ${num(x.p.avg)})`);
-  if (hot.length || cold.length) { L.push(`\n**📈 Forma** (paskutinių 3 turų vidurkis vs sezono)`); if (hot.length) L.push(`🔥 ${hot.join(", ")}`); if (cold.length) L.push(`🧊 ${cold.join(", ")}`); }
-  // varžovų gynyba
-  if (DEF.n >= 6) {
-    L.push(`\n**🛡 Varžovų gynyba šį turą**`);
-    players.filter(x => x.df && Math.abs(x.df - 1) >= 0.08).sort((a, b) => b.df - a.df).forEach(x => L.push(`- ${x.p.name} ${vs(x)}: ${x.df > 1 ? "palankus" : "sunkus"} varžovas (${x.df > 1 ? "+" : "−"}${Math.round(Math.abs(x.df - 1) * 100)} % ${POSN[x.pos]})`));
-  }
   // laisvieji
   const low = weakest[0];
   const goodFa = fa.filter(x => low && x.v > low.v + 3).slice(0, 3);
@@ -174,7 +182,7 @@ for (const { slug, team } of targets) {
   }
   out.push(report(slug, team));
 }
-return out.length ? out.join("\n\n---\n\n") + "\n\n_Prognozė: 60 % paskutinių 3 turų forma + 40 % sezono vidurkis, pakoreguota pagal varžovo gynybą prieš tą poziciją ir traumas._\n" : "";
+return out.length ? out.join("\n\n---\n\n") + "\n\n_Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._\n" : "";
 }
 module.exports = { main };
 if (require.main === module) { const s = main(process.argv.slice(2)); if (s) process.stdout.write(s); }
