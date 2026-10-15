@@ -7,8 +7,8 @@
 3. Kevin Punter (BAR, G) – ~22 FP vs OLY
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~154,6 FP, dabartinė ~144,1 FP, **+10,5**)
-Startas: Jonas Valančiūnas ~22,4, Nigel Hayes-Davis ~20,8, Andres Feliz (C) ~14,5, McKinley Wright IV ~11,8, Tornike Shengelia ~6,7
+**📋 Siūloma sudėtis** (prognozė ~198,1 FP, dabartinė ~187,6 FP, **+10,5**)
+Startas: Andres Feliz (C) ~36, Jonas Valančiūnas ~22,4, Nigel Hayes-Davis ~20,8, McKinley Wright IV ~15,5, Tornike Shengelia ~3,5
 6-as: Aliou Diarra ~25
 Suolas: Kevin Punter ~22, Ante Zizic ~19,7, Devon Dotson ~19,5, Chima Moneke ~16,5
 Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Tosan Evbuomwan
@@ -35,8 +35,8 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tosan Evbuomwan.
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~169,8 FP, dabartinė ~167,1 FP, **+2,7**)
-Startas: TJ Shorts II (C) ~27,2, Marcus Carr ~22,3, Dwayne Bacon ~21,1, Both Gach ~11,2, Tonye Jekiri ~1,5
+**📋 Siūloma sudėtis** (prognozė ~153,3 FP, dabartinė ~150,6 FP, **+2,7**)
+Startas: Dwayne Bacon ~33, Marcus Carr ~22,3, TJ Shorts II (C) ~13, Both Gach ~11,2, Tonye Jekiri ~1,5
 6-as: Nigel Hayes-Davis ~20,8
 Suolas: Sylvain Francisco ~20,4, Devon Dotson ~19,5, Daniel Oturu ~19,1, Mbaye Ndiaye ~17,9
 Out: Mamadi Diakite (jau žaidė), Carsen Edwards, Bruno Fernando
@@ -49,7 +49,7 @@ Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 - Mike James (IST, G) ~16,3 FP @ ZAL (vietoj Bruno Fernando ~13,2)
 - Scottie Wilbekin (BES, G) ~16,3 FP vs BAY (vietoj Bruno Fernando ~13,2)
 
-**⚔️ Prieš Briedis:** prognozė ~169,8 : ~151,1
+**⚔️ Prieš Briedis:** prognozė ~153,3 : ~155,3
 
 ---
 
@@ -62,8 +62,8 @@ Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 3. Devon Dotson (BES, G) – ~19,5 FP vs BAY
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~158,2 FP, dabartinė ~155,1 FP, **+3,1**)
-Startas: Jean Montero ~23,7, Mfiondu Kabengele (C) ~22,1, Andres Feliz ~14,5, Bonzie Colson ~11,2, Braxton Key ~8,5
+**📋 Siūloma sudėtis** (prognozė ~184,8 FP, dabartinė ~181,7 FP, **+3,1**)
+Startas: Andres Feliz ~36, Jean Montero ~23,7, Mfiondu Kabengele (C) ~22, Bonzie Colson ~16,5, Braxton Key ~8,5
 6-as: Nigel Hayes-Davis ~20,8
 Suolas: Devon Dotson ~19,5, Chris Duarte ~18,8, Chima Moneke ~16,5, Kenneth Faried ~15,7
 Out: Dzanan Musa (jau žaidė), Tosan Evbuomwan, Patrick Baldwin Jr.
@@ -89,9 +89,9 @@ Pakeitimai: į startą – Jean Montero; iš starto – Chris Duarte.
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~185,3 FP, dabartinė ~184 FP, **+1,3**)
-Startas: TJ Shorts II (C) ~27,2, Aliou Diarra ~25, Theo Maledon ~25, Nikola Mirotic ~20,9, Braxton Key ~8,5
-6-as: Bonzie Colson ~11,2
+**📋 Siūloma sudėtis** (prognozė ~155,8 FP, dabartinė ~154,6 FP, **+1,3**)
+Startas: Aliou Diarra ~25, Theo Maledon ~25, Nikola Mirotic ~14,5, TJ Shorts II (C) ~13, Braxton Key ~8,5
+6-as: Bonzie Colson ~16,5
 Suolas: Marcus Carr ~22,3, Sylvain Francisco ~20,4, Daniel Oturu ~19,1, Chris Duarte ~18,8
 Out: Alec Peters (jau žaidė), Mbaye Ndiaye, Bruno Fernando
 Startinis penketas jau optimalus. ✅
