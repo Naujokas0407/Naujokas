@@ -35,8 +35,8 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tosan Evbuomwan.
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~153,3 FP, dabartinė ~150,6 FP, **+2,7**)
-Startas: Dwayne Bacon ~33, Marcus Carr ~22,3, TJ Shorts II (C) ~13, Both Gach ~11,2, Tonye Jekiri ~1,5
+**📋 Siūloma sudėtis** (prognozė ~148,1 FP, dabartinė ~145,4 FP, **+2,7**)
+Startas: Dwayne Bacon ~33, Marcus Carr ~22,3, TJ Shorts II (C) ~13, Both Gach ~6, Tonye Jekiri ~1,5
 6-as: Nigel Hayes-Davis ~20,8
 Suolas: Sylvain Francisco ~20,4, Devon Dotson ~19,5, Daniel Oturu ~19,1, Mbaye Ndiaye ~17,9
 Out: Mamadi Diakite (jau žaidė), Carsen Edwards, Bruno Fernando
@@ -49,7 +49,7 @@ Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 - Mike James (IST, G) ~16,3 FP @ ZAL (vietoj Bruno Fernando ~13,2)
 - Scottie Wilbekin (BES, G) ~16,3 FP vs BAY (vietoj Bruno Fernando ~13,2)
 
-**⚔️ Prieš Briedis:** prognozė ~153,3 : ~155,3
+**⚔️ Prieš Briedis:** prognozė ~148,1 : ~151,8
 
 ---
 
@@ -89,8 +89,8 @@ Pakeitimai: į startą – Jean Montero; iš starto – Chris Duarte.
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~155,8 FP, dabartinė ~154,6 FP, **+1,3**)
-Startas: Aliou Diarra ~25, Theo Maledon ~25, Nikola Mirotic ~14,5, TJ Shorts II (C) ~13, Braxton Key ~8,5
+**📋 Siūloma sudėtis** (prognozė ~164,8 FP, dabartinė ~163,6 FP, **+1,3**)
+Startas: Theo Maledon ~34, Aliou Diarra ~25, Nikola Mirotic ~14,5, TJ Shorts II (C) ~13, Braxton Key ~8,5
 6-as: Bonzie Colson ~16,5
 Suolas: Marcus Carr ~22,3, Sylvain Francisco ~20,4, Daniel Oturu ~19,1, Chris Duarte ~18,8
 Out: Alec Peters (jau žaidė), Mbaye Ndiaye, Bruno Fernando
