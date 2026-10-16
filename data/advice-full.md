@@ -4,8 +4,8 @@
 **👑 Kapitonas**
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~191,8 FP, dabartinė ~191,8 FP)
-Startas: Andres Feliz (C) ~36, Kevin Punter ~22, Nigel Hayes-Davis ~20,8, Jonas Valančiūnas ~16,5, Chima Moneke ~16,5
+**📋 Siūloma sudėtis** (prognozė ~187 FP, dabartinė ~187 FP)
+Startas: Chima Moneke ~36,5, Andres Feliz (C) ~36, Kevin Punter ~22, Jonas Valančiūnas ~16,5, Nigel Hayes-Davis ~-4
 6-as: Aliou Diarra ~25
 Suolas: McKinley Wright IV ~15,5, Tosan Evbuomwan ~10, Devon Dotson ~9, Tornike Shengelia ~3,5
 Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Ante Zizic (jau žaidė)
@@ -22,8 +22,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Marcus Carr jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~164 FP, dabartinė ~164 FP)
-Startas: Dwayne Bacon ~33, Marcus Carr (C) ~22,3, Nigel Hayes-Davis ~20,8, Sylvain Francisco ~20,4, Bruno Fernando ~17
+**📋 Siūloma sudėtis** (prognozė ~146,8 FP, dabartinė ~146,8 FP)
+Startas: Dwayne Bacon ~33, Sylvain Francisco ~28, Marcus Carr (C) ~22,3, Bruno Fernando ~17, Nigel Hayes-Davis ~-4
 6-as: Devon Dotson ~9
 Suolas: Mbaye Ndiaye ~17,9, TJ Shorts II ~13, Both Gach ~6, Tonye Jekiri ~1,5
 Out: Daniel Oturu (jau žaidė), Mamadi Diakite (jau žaidė), Carsen Edwards (jau žaidė)
@@ -32,7 +32,7 @@ Startinis penketas jau optimalus. ✅
 **🩹 Traumos**
 - Tonye Jekiri: neaišku – šiuo metu sudėtyje!
 
-**⚔️ Prieš Briedis:** prognozė ~164 : ~146
+**⚔️ Prieš Briedis:** prognozė ~146,8 : ~135,6
 
 ---
 
@@ -42,8 +42,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Jean Montero jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~184,9 FP, dabartinė ~184,9 FP)
-Startas: Andres Feliz ~36, Jean Montero (C) ~23,7, Nigel Hayes-Davis ~20,8, Mfiondu Kabengele ~20,5, Chima Moneke ~16,5
+**📋 Siūloma sudėtis** (prognozė ~180,1 FP, dabartinė ~180,1 FP)
+Startas: Chima Moneke ~36,5, Andres Feliz ~36, Jean Montero (C) ~23,7, Mfiondu Kabengele ~20,5, Nigel Hayes-Davis ~-4
 6-as: Chris Duarte ~18,8
 Suolas: Bonzie Colson ~16,5, Kenneth Faried ~15,7, Devon Dotson ~9, Braxton Key ~8,5
 Out: Patrick Baldwin Jr. (jau žaidė), Tosan Evbuomwan (jau žaidė), Dzanan Musa (jau žaidė)
