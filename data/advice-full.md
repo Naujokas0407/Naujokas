@@ -4,8 +4,8 @@
 **👑 Kapitonas**
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~203 FP, dabartinė ~203 FP)
-Startas: Andres Feliz (C) ~36, Jonas Valančiūnas ~22,4, Kevin Punter ~22, Nigel Hayes-Davis ~20,8, Chima Moneke ~16,5
+**📋 Siūloma sudėtis** (prognozė ~197,1 FP, dabartinė ~197,1 FP)
+Startas: Andres Feliz (C) ~36, Kevin Punter ~22, Nigel Hayes-Davis ~20,8, Jonas Valančiūnas ~16,5, Chima Moneke ~16,5
 6-as: Aliou Diarra ~25
 Suolas: Devon Dotson ~19,5, McKinley Wright IV ~15,5, Tosan Evbuomwan ~10, Tornike Shengelia ~3,5
 Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Ante Zizic (jau žaidė)
@@ -22,8 +22,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Marcus Carr jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~170,7 FP, dabartinė ~170,7 FP)
-Startas: Dwayne Bacon ~33, Marcus Carr (C) ~22,3, Nigel Hayes-Davis ~20,8, Sylvain Francisco ~20,4, Bruno Fernando ~13,2
+**📋 Siūloma sudėtis** (prognozė ~174,5 FP, dabartinė ~174,5 FP)
+Startas: Dwayne Bacon ~33, Marcus Carr (C) ~22,3, Nigel Hayes-Davis ~20,8, Sylvain Francisco ~20,4, Bruno Fernando ~17
 6-as: Devon Dotson ~19,5
 Suolas: Mbaye Ndiaye ~17,9, TJ Shorts II ~13, Both Gach ~6, Tonye Jekiri ~1,5
 Out: Daniel Oturu (jau žaidė), Mamadi Diakite (jau žaidė), Carsen Edwards (jau žaidė)
@@ -32,7 +32,7 @@ Startinis penketas jau optimalus. ✅
 **🩹 Traumos**
 - Tonye Jekiri: neaišku – šiuo metu sudėtyje!
 
-**⚔️ Prieš Briedis:** prognozė ~170,7 : ~157,2
+**⚔️ Prieš Briedis:** prognozė ~174,5 : ~146
 
 ---
 
