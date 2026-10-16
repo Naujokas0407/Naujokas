@@ -59,15 +59,15 @@ Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 1. Jean Montero (OLY, G) – ~23,7 FP @ BAR
 2. Nigel Hayes-Davis (PAN, F) – ~20,8 FP vs HTA
 3. Devon Dotson (BES, G) – ~19,5 FP vs BAY
-Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
+Dabartinis kapitonas Jean Montero – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~181,8 FP, dabartinė ~178,7 FP, **+3,1**)
-Startas: Andres Feliz ~36, Jean Montero ~23,7, Mfiondu Kabengele (C) ~20,5, Bonzie Colson ~16,5, Braxton Key ~8,5
-6-as: Nigel Hayes-Davis ~20,8
-Suolas: Devon Dotson ~19,5, Chris Duarte ~18,8, Chima Moneke ~16,5, Kenneth Faried ~15,7
+**📋 Siūloma sudėtis** (prognozė ~190,5 FP, dabartinė ~190,1 FP)
+Startas: Andres Feliz ~36, Jean Montero (C) ~23,7, Nigel Hayes-Davis ~20,8, Mfiondu Kabengele ~20,5, Chima Moneke ~16,5
+6-as: Devon Dotson ~19,5
+Suolas: Chris Duarte ~18,8, Bonzie Colson ~16,5, Kenneth Faried ~15,7, Braxton Key ~8,5
 Out: Dzanan Musa (jau žaidė), Tosan Evbuomwan, Patrick Baldwin Jr.
-Pakeitimai: į startą – Jean Montero; iš starto – Chris Duarte.
-6-u žaidėju (b-1) dėk Nigel Hayes-Davis vietoj Devon Dotson.
+Startinis penketas jau optimalus. ✅
+6-u žaidėju (b-1) dėk Devon Dotson vietoj Chris Duarte.
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
@@ -88,14 +88,14 @@ Pakeitimai: į startą – Jean Montero; iš starto – Chris Duarte.
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
 Dabar kapitonas – Marcus Carr (~22,3 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~187,4 FP, dabartinė ~182,8 FP, **+4,6**)
+**📋 Siūloma sudėtis** (prognozė ~187,4 FP, dabartinė ~182,7 FP, **+4,8**)
 Startas: Theo Maledon ~34, Aliou Diarra (C) ~25, Marcus Carr ~22,3, Bonzie Colson ~16,5, Nikola Mirotic ~14,5
 6-as: Sylvain Francisco ~20,4
 Suolas: Daniel Oturu ~19,1, Chris Duarte ~18,8, TJ Shorts II ~13, Braxton Key ~8,5
 Out: Alec Peters (jau žaidė), Mbaye Ndiaye, Bruno Fernando
 Startinis penketas jau optimalus. ✅
 Iš Out į sudėtį – Sylvain Francisco; į Out – Mbaye Ndiaye.
-6-u žaidėju (b-1) dėk Sylvain Francisco vietoj Daniel Oturu.
+6-u žaidėju (b-1) dėk Sylvain Francisco vietoj Chris Duarte.
 
 **🛒 Laisvoji rinka**
 - Agustin Ubal (BAR, G) ~17 FP vs OLY (vietoj Bruno Fernando ~13,2)
