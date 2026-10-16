@@ -61,8 +61,8 @@ Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 3. Devon Dotson (BES, G) – ~19,5 FP vs BAY
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~184,8 FP, dabartinė ~181,7 FP, **+3,1**)
-Startas: Andres Feliz ~36, Jean Montero ~23,7, Mfiondu Kabengele (C) ~22, Bonzie Colson ~16,5, Braxton Key ~8,5
+**📋 Siūloma sudėtis** (prognozė ~181,8 FP, dabartinė ~178,7 FP, **+3,1**)
+Startas: Andres Feliz ~36, Jean Montero ~23,7, Mfiondu Kabengele (C) ~20,5, Bonzie Colson ~16,5, Braxton Key ~8,5
 6-as: Nigel Hayes-Davis ~20,8
 Suolas: Devon Dotson ~19,5, Chris Duarte ~18,8, Chima Moneke ~16,5, Kenneth Faried ~15,7
 Out: Dzanan Musa (jau žaidė), Tosan Evbuomwan, Patrick Baldwin Jr.
