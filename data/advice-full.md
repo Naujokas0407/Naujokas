@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 6 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~25 FP vs KBA
@@ -25,7 +25,7 @@ Startinis penketas jau optimalus. ✅
 ---
 
 ## HLA 2 Divizionas – Naujokas · 6 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~22,3 FP vs KBA
@@ -49,7 +49,7 @@ Iš Out į sudėtį – Daniel Oturu; į Out – Mbaye Ndiaye.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 6 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Jean Montero (OLY, G) – ~23,7 FP @ BAR
@@ -61,21 +61,21 @@ Dabartinis kapitonas Jean Montero – geriausias pasirinkimas. ✅
 Startas: Andres Feliz ~36, Jean Montero (C) ~23,7, Nigel Hayes-Davis ~20,8, Mfiondu Kabengele ~20,5, Chima Moneke ~16,5
 6-as: Chris Duarte ~18,8
 Suolas: Devon Dotson ~19,5, Bonzie Colson ~16,5, Kenneth Faried ~15,7, Braxton Key ~8,5
-Out: Dzanan Musa (jau žaidė), Tosan Evbuomwan, Patrick Baldwin Jr.
+Out: Patrick Baldwin Jr. (jau žaidė), Dzanan Musa (jau žaidė), Tosan Evbuomwan
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
 - Dzanan Musa: nežais
 
 **🛒 Laisvoji rinka**
-- Agustin Ubal (BAR, G) ~17 FP vs OLY (vietoj Patrick Baldwin Jr. ~9)
-- Juan Hernangomez (PAN, F) ~16 FP vs HTA (vietoj Patrick Baldwin Jr. ~9)
-- Antonio Blakeney (HTA, G) ~15,9 FP @ PAN (vietoj Patrick Baldwin Jr. ~9)
+- Agustin Ubal (BAR, G) ~17 FP vs OLY (vietoj Tosan Evbuomwan ~10)
+- Juan Hernangomez (PAN, F) ~16 FP vs HTA (vietoj Tosan Evbuomwan ~10)
+- Antonio Blakeney (HTA, G) ~15,9 FP @ PAN (vietoj Tosan Evbuomwan ~10)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 6 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~25 FP vs KBA
