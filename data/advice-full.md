@@ -32,7 +32,7 @@ Startinis penketas jau optimalus. ✅
 **🩹 Traumos**
 - Tonye Jekiri: neaišku – šiuo metu sudėtyje!
 
-**⚔️ Prieš Briedis:** prognozė ~160,8 : ~132,8
+**⚔️ Prieš Briedis:** prognozė ~160,8 : ~132,3
 
 ---
 
