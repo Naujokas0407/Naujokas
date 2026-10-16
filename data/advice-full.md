@@ -43,6 +43,9 @@ Pakeitimai: į startą – Sylvain Francisco; iš starto – Marcus Carr.
 Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 6-u žaidėju (b-1) dėk Marcus Carr vietoj Carsen Edwards.
 
+**🩹 Traumos**
+- Tonye Jekiri: neaišku – šiuo metu sudėtyje!
+
 **🛒 Laisvoji rinka**
 - Agustin Ubal (BAR, G) ~17 FP vs OLY (vietoj Bruno Fernando ~13,2)
 - Mike James (IST, G) ~16,3 FP @ ZAL (vietoj Bruno Fernando ~13,2)
