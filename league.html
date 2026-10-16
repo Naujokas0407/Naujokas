@@ -597,6 +597,7 @@ function render() {
   if (activeTab === "trade" && !document.getElementById("trade").contains(document.activeElement)) renderTrade();
 }
 
+const srvDone = () => D._srvDone !== false;
 const tot = title => { const t = D.teams.find(x => x.title === title); return t ? (t.official ?? t.total) : 0; };
 function h2hHtml(isMe) {
   const st = {}; D.teams.forEach(t => st[t.title] = { w: 0, l: 0, d: 0, pf: 0 });
@@ -604,7 +605,7 @@ function h2hHtml(isMe) {
     if (as > bs) { st[a].w++; st[b].l++; } else if (bs > as) { st[b].w++; st[a].l++; } else { st[a].d++; st[b].d++; } };
   (D.results || []).forEach(m => add(m.a, m.b, m.as, m.bs));
   const done = D.games.length > 0 && D.games.every(g => g.status === "final");
-  const ms = (D.matchups || []).map(m => { const off = done && (m.as > 0 || m.bs > 0); return { ...m, sa: off ? m.as : tot(m.a), sb: off ? m.bs : tot(m.b) }; });
+  const ms = (D.matchups || []).map(m => { const off = done && srvDone() && (m.as > 0 || m.bs > 0); return { ...m, sa: off ? m.as : tot(m.a), sb: off ? m.bs : tot(m.b) }; });
   // vieta lentelėje prieš šį turą – rodyklėms (▲/▼)
   const pts = x => x.w + x.d / 2;
   const before = D.teams.map(t => t.title).sort((a, b) => pts(st[b]) - pts(st[a]) || st[b].pf - st[a].pf);
@@ -791,7 +792,7 @@ function teamSub(t) {
 // ---- H2H sezono duomenys ----
 function h2hGames() {
   const all = (D.results || []).filter(m => m.r < D.round).map(m => ({ ...m }));
-  if (roundDone() && D.matchups) D.matchups.forEach(m => { const off = m.as > 0 || m.bs > 0; all.push({ r: D.round, a: m.a, b: m.b, as: off ? m.as : tot(m.a), bs: off ? m.bs : tot(m.b) }); });
+  if (roundDone() && D.matchups) D.matchups.forEach(m => { const off = srvDone() && (m.as > 0 || m.bs > 0); all.push({ r: D.round, a: m.a, b: m.b, as: off ? m.as : tot(m.a), bs: off ? m.bs : tot(m.b) }); });
   const per = {}; D.teams.forEach(t => per[t.title] = []);
   all.forEach(m => {
     const res = m.as > m.bs ? ["W", "L"] : m.bs > m.as ? ["L", "W"] : ["D", "D"];
@@ -1604,6 +1605,8 @@ async function load() {
     if (!res.ok) throw new Error(res.status);
     const d = await res.json();
     if (CUR && d.updated === CUR.updated) return;
+    // ar serveris jau turi galutinius BN poros rezultatus (gyvai baigtos rungtynės dar neturi)
+    d._srvDone = d.games.length > 0 && d.games.every(g => g.status === "final");
     CUR = d;
     if (viewR != null && viewR >= d.round) viewR = null;
     if (viewR == null) { D = d; render(); pollLive(); }
@@ -1655,7 +1658,7 @@ function myCard() {
   if (D.format === "h2h" && D.matchups) {
     const m = D.matchups.find(x => x.a === T.title || x.b === T.title);
     if (m) {
-      const opp = m.a === T.title ? m.b : m.a, off = done && (m.as > 0 || m.bs > 0);
+      const opp = m.a === T.title ? m.b : m.a, off = done && srvDone() && (m.as > 0 || m.bs > 0);
       const my = off ? (m.a === T.title ? m.as : m.bs) : tot(T.title), op = off ? (m.a === T.title ? m.bs : m.as) : tot(opp);
       const O = D.teams.find(x => x.title === opp), pr = O ? projection(O) : null, mp = projection(T);
       const st = D.games.some(g => g.status !== "scheduled");
