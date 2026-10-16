@@ -32,16 +32,15 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tosan Evbuomwan.
 1. Marcus Carr (VIR, G) – ~22,3 FP vs KBA
 2. Nigel Hayes-Davis (PAN, F) – ~20,8 FP vs HTA
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
-Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
+Dabartinis kapitonas Marcus Carr – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~164,1 FP, dabartinė ~160,5 FP, **+3,6**)
-Startas: Dwayne Bacon ~33, Nigel Hayes-Davis ~20,8, Sylvain Francisco ~20,4, Daniel Oturu ~19,1, TJ Shorts II (C) ~13
-6-as: Marcus Carr ~22,3
-Suolas: Devon Dotson ~19,5, Mbaye Ndiaye ~17,9, Both Gach ~6, Tonye Jekiri ~1,5
+**📋 Siūloma sudėtis** (prognozė ~176,6 FP, dabartinė ~170,7 FP, **+5,9**)
+Startas: Dwayne Bacon ~33, Marcus Carr (C) ~22,3, Nigel Hayes-Davis ~20,8, Sylvain Francisco ~20,4, Daniel Oturu ~19,1
+6-as: Devon Dotson ~19,5
+Suolas: Mbaye Ndiaye ~17,9, TJ Shorts II ~13, Both Gach ~6, Tonye Jekiri ~1,5
 Out: Mamadi Diakite (jau žaidė), Carsen Edwards, Bruno Fernando
-Pakeitimai: į startą – Sylvain Francisco; iš starto – Marcus Carr.
-Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
-6-u žaidėju (b-1) dėk Marcus Carr vietoj Carsen Edwards.
+Pakeitimai: į startą – Daniel Oturu; iš starto – Bruno Fernando.
+Iš Out į sudėtį – Daniel Oturu; į Out – Bruno Fernando.
 
 **🩹 Traumos**
 - Tonye Jekiri: neaišku – šiuo metu sudėtyje!
@@ -51,7 +50,7 @@ Iš Out į sudėtį – Sylvain Francisco; į Out – Carsen Edwards.
 - Mike James (IST, G) ~16,3 FP @ ZAL (vietoj Bruno Fernando ~13,2)
 - Scottie Wilbekin (BES, G) ~16,3 FP vs BAY (vietoj Bruno Fernando ~13,2)
 
-**⚔️ Prieš Briedis:** prognozė ~164,1 : ~151,8
+**⚔️ Prieš Briedis:** prognozė ~176,6 : ~151,8
 
 ---
 
@@ -91,13 +90,13 @@ Startinis penketas jau optimalus. ✅
 3. Sylvain Francisco (PAN, G) – ~20,4 FP vs HTA
 Dabar kapitonas – Marcus Carr (~22,3 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~187,4 FP, dabartinė ~182,7 FP, **+4,8**)
+**📋 Siūloma sudėtis** (prognozė ~187,4 FP, dabartinė ~179,7 FP, **+7,7**)
 Startas: Theo Maledon ~34, Aliou Diarra (C) ~25, Marcus Carr ~22,3, Bonzie Colson ~16,5, Nikola Mirotic ~14,5
 6-as: Sylvain Francisco ~20,4
 Suolas: Daniel Oturu ~19,1, Chris Duarte ~18,8, TJ Shorts II ~13, Braxton Key ~8,5
 Out: Alec Peters (jau žaidė), Mbaye Ndiaye, Bruno Fernando
 Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Sylvain Francisco; į Out – Mbaye Ndiaye.
+Iš Out į sudėtį – Daniel Oturu, Sylvain Francisco; į Out – Mbaye Ndiaye, Bruno Fernando.
 6-u žaidėju (b-1) dėk Sylvain Francisco vietoj Chris Duarte.
 
 **🛒 Laisvoji rinka**
