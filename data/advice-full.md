@@ -50,7 +50,7 @@ Iš Out į sudėtį – Daniel Oturu; į Out – Bruno Fernando.
 - Mike James (IST, G) ~16,3 FP @ ZAL (vietoj Bruno Fernando ~13,2)
 - Scottie Wilbekin (BES, G) ~16,3 FP vs BAY (vietoj Bruno Fernando ~13,2)
 
-**⚔️ Prieš Briedis:** prognozė ~176,6 : ~151,8
+**⚔️ Prieš Briedis:** prognozė ~176,6 : ~150,9
 
 ---
 
