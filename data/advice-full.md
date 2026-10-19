@@ -5,16 +5,16 @@ Pirmos rungtynės: 19:00, trečiadienis
 1. Aliou Diarra (VIR, C) – ~23,9 FP @ HTA
 2. Jonas Valančiūnas (ZAL, C) – ~21,4 FP vs ASV
 3. Ante Zizic (BES, C) – ~20,1 FP @ IST
-Dabar kapitonas – Andres Feliz (~18,1 FP). Siūlau keisti į Aliou Diarra.
+Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~172,3 FP, dabartinė ~156,5 FP, **+15,9**)
+**📋 Siūloma sudėtis** (prognozė ~172,3 FP, dabartinė ~161,8 FP, **+10,5**)
 Startas: Aliou Diarra (C) ~23,9, Chima Moneke ~19,8, Kevin Punter ~18,3, Andres Feliz ~18,1, Nigel Hayes-Davis ~14,6
 6-as: Jonas Valančiūnas ~21,4
 Suolas: Ante Zizic ~20,1, Devon Dotson ~17,8, Alec Peters ~14,3, McKinley Wright IV ~12,4
 Out: Tosan Evbuomwan, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Aliou Diarra; iš starto – Jonas Valančiūnas.
-Iš Out į sudėtį – Alec Peters, Ante Zizic; į Out – Tornike Shengelia, Tosan Evbuomwan.
-6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Aliou Diarra.
+Startinis penketas jau optimalus. ✅
+Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
+6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Alec Peters.
 
 **🩹 Traumos**
 - Dzanan Musa: neaišku
@@ -35,17 +35,17 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Marcus Carr (VIR, G) – ~22,8 FP @ HTA
 Dabar kapitonas – Marcus Carr (~22,8 FP). Siūlau keisti į TJ Shorts II.
 
-**📋 Siūloma sudėtis** (prognozė ~186,6 FP, dabartinė ~164,4 FP, **+22,1**)
+**📋 Siūloma sudėtis** (prognozė ~186,6 FP, dabartinė ~175,8 FP, **+10,7**)
 Startas: TJ Shorts II (C) ~24,8, Dwayne Bacon ~23,1, Sylvain Francisco ~21,7, Mbaye Ndiaye ~20,4, Daniel Oturu ~18,3
 6-as: Marcus Carr ~22,8
 Suolas: Devon Dotson ~17,8, Carsen Edwards ~14,9, Nigel Hayes-Davis ~14,6, Bruno Fernando ~13,8
 Out: Mamadi Diakite, Both Gach, Tonye Jekiri
-Pakeitimai: į startą – TJ Shorts II, Daniel Oturu, Mbaye Ndiaye; iš starto – Nigel Hayes-Davis, Marcus Carr, Bruno Fernando.
-Iš Out į sudėtį – Daniel Oturu, Carsen Edwards; į Out – Tonye Jekiri, Both Gach.
+Pakeitimai: į startą – TJ Shorts II, Mbaye Ndiaye; iš starto – Nigel Hayes-Davis, Marcus Carr.
+Iš Out į sudėtį – Carsen Edwards; į Out – Both Gach.
 6-u žaidėju (b-1) dėk Marcus Carr vietoj Devon Dotson.
 
 **🩹 Traumos**
-- Tonye Jekiri: nežais – šiuo metu sudėtyje!
+- Tonye Jekiri: nežais
 
 **🛒 Laisvoji rinka**
 - Andres Feliz (RMB, G) ~18,1 FP @ TEL (vietoj Tonye Jekiri ~0)
