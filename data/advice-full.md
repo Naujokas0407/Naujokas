@@ -17,6 +17,7 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Alec Peters.
 
 **🩹 Traumos**
+- Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
 - Dzanan Musa: neaišku
 
 **🛒 Laisvoji rinka**
@@ -46,6 +47,7 @@ Iš Out į sudėtį – Carsen Edwards; į Out – Both Gach.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
+- Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
 - Andres Feliz (RMB, G) ~18,1 FP @ TEL (vietoj Tonye Jekiri ~0)
@@ -74,6 +76,7 @@ Pakeitimai: į startą – Braxton Key, Devon Dotson; iš starto – Nigel Hayes
 6-u žaidėju (b-1) dėk Andres Feliz vietoj Chris Duarte.
 
 **🩹 Traumos**
+- Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
 - Dzanan Musa: neaišku
 
 **🛒 Laisvoji rinka**
