@@ -95,13 +95,13 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Aliou Diarra (VIR, C) – ~23,9 FP @ HTA
 Dabar kapitonas – Marcus Carr (~22,8 FP). Siūlau keisti į Theo Maledon.
 
-**📋 Siūloma sudėtis** (prognozė ~201,5 FP, dabartinė ~181,5 FP, **+19,9**)
+**📋 Siūloma sudėtis** (prognozė ~201,5 FP, dabartinė ~188,5 FP, **+13**)
 Startas: Theo Maledon (C) ~26,5, Aliou Diarra ~23,9, Marcus Carr ~22,8, Mbaye Ndiaye ~20,4, Nikola Mirotic ~19,8
 6-as: TJ Shorts II ~24,8
 Suolas: Sylvain Francisco ~21,7, Braxton Key ~18,5, Daniel Oturu ~18,3, Chris Duarte ~14,8
 Out: Alec Peters, Bruno Fernando, Bonzie Colson
-Pakeitimai: į startą – Nikola Mirotic, Mbaye Ndiaye; iš starto – Bonzie Colson, Chris Duarte.
-Iš Out į sudėtį – Daniel Oturu, Sylvain Francisco; į Out – Bonzie Colson, Bruno Fernando.
+Pakeitimai: į startą – Nikola Mirotic, Mbaye Ndiaye; iš starto – Bonzie Colson, Sylvain Francisco.
+Iš Out į sudėtį – Chris Duarte, Daniel Oturu; į Out – Bonzie Colson, Bruno Fernando.
 6-u žaidėju (b-1) dėk TJ Shorts II vietoj Nikola Mirotic.
 
 **🛒 Laisvoji rinka**
