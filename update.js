@@ -670,6 +670,21 @@ async function discover() {
         if (tot && old && L.format === "classic") { old.history = { ...(old.history || {}), [String(r)]: tot }; fs.writeFileSync(file, JSON.stringify(old)); }
       } catch (e) { console.log(L.slug + ": archyvo taisymas", e.message); }
     }
+    // klasikinėse lygose: jei archyvo komandų taškai nesutampa su oficialiais BN (komanda keitė sudėtį po turo),
+    // archyvas perstatomas iš tikrų to turo BN sudėčių (vieną kartą kiekvienam turui)
+    if (L.format === "classic" && old && old.history) {
+      const fixF = path.join(DIR, L.slug + "-archfix.json"); let fixed = {}; try { fixed = JSON.parse(fs.readFileSync(fixF, "utf8")); } catch (e) {}
+      for (let r = 1; r <= S.r; r++) {
+        if (fixed[r]) continue;
+        let a; try { a = JSON.parse(fs.readFileSync(arch(L.slug, r), "utf8")); } catch (e) { continue; }
+        const H = old.history[String(r)] || {};
+        const bad = (a.teams || []).some(tm => H[tm.title] != null && Math.abs(H[tm.title] - tm.total) > 0.5);
+        if (!bad) continue;
+        try { await buildPastArchive(L, r, S); fixed[r] = new Date().toISOString(); console.log(L.slug + ": " + r + " turo archyvas perstatytas pagal tikras BN sudėtis"); }
+        catch (e) { console.log(L.slug + ": archyvo perstatymas " + r, e.message); }
+      }
+      fs.writeFileSync(fixF, JSON.stringify(fixed));
+    }
     if (old && old.round && old.round !== S.r + 1 && !fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
     if (frozen) {
       // užfiksuotam turui papildomai įrašomos pozicijos ir minutės
