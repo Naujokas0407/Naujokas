@@ -76,6 +76,7 @@ Pakeitimai: į startą – Braxton Key, Devon Dotson; iš starto – Nigel Hayes
 6-u žaidėju (b-1) dėk Andres Feliz vietoj Chris Duarte.
 
 **🩹 Traumos**
+- Jean Montero: abejotinas – šiuo metu sudėtyje!
 - Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
 - Dzanan Musa: neaišku
 
