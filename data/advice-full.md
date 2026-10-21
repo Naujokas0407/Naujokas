@@ -17,8 +17,8 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Alec Peters.
 
 **🩹 Traumos**
-- Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
-- Dzanan Musa: neaišku
+- Devon Dotson: neaišku – šiuo metu sudėtyje!
+- Dzanan Musa: nežais
 
 **🛒 Laisvoji rinka**
 - TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Dzanan Musa ~0)
@@ -47,7 +47,7 @@ Iš Out į sudėtį – Carsen Edwards; į Out – Both Gach.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
-- Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
+- Devon Dotson: neaišku – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
 - Andres Feliz (RMB, G) ~18,1 FP @ TEL (vietoj Tonye Jekiri ~0)
@@ -67,23 +67,25 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Chima Moneke (CZV, F) – ~19,8 FP @ PAR
 Dabartinis kapitonas Jean Montero – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~170,9 FP, dabartinė ~167,4 FP, **+3,4**)
+**📋 Siūloma sudėtis** (prognozė ~168,9 FP, dabartinė ~152,7 FP, **+16,2**)
 Startas: Jean Montero (C) ~23,6, Mfiondu Kabengele ~21,8, Chima Moneke ~19,8, Braxton Key ~18,5, Devon Dotson ~17,8
 6-as: Andres Feliz ~18,1
-Suolas: Chris Duarte ~14,8, Nigel Hayes-Davis ~14,6, Kenneth Faried ~14, Bonzie Colson ~12,1
-Out: Patrick Baldwin Jr., Tosan Evbuomwan, Dzanan Musa
+Suolas: Nigel Hayes-Davis ~14,6, Kenneth Faried ~14, Bonzie Colson ~12,1, Patrick Baldwin Jr. ~10,8
+Out: Tosan Evbuomwan, Chris Duarte, Dzanan Musa
 Pakeitimai: į startą – Braxton Key, Devon Dotson; iš starto – Nigel Hayes-Davis, Andres Feliz.
+Iš Out į sudėtį – Patrick Baldwin Jr.; į Out – Chris Duarte.
 6-u žaidėju (b-1) dėk Andres Feliz vietoj Chris Duarte.
 
 **🩹 Traumos**
 - Jean Montero: abejotinas – šiuo metu sudėtyje!
-- Devon Dotson: tikėtina žais – šiuo metu sudėtyje!
-- Dzanan Musa: neaišku
+- Devon Dotson: neaišku – šiuo metu sudėtyje!
+- Chris Duarte: nežais – šiuo metu sudėtyje!
+- Dzanan Musa: nežais
 
 **🛒 Laisvoji rinka**
-- TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Dzanan Musa ~0)
-- Scottie Wilbekin (BES, G) ~17,4 FP @ IST (vietoj Dzanan Musa ~0)
-- Mike James (IST, G) ~16,3 FP vs BES (vietoj Dzanan Musa ~0)
+- TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Chris Duarte ~0)
+- Scottie Wilbekin (BES, G) ~17,4 FP @ IST (vietoj Chris Duarte ~0)
+- Mike James (IST, G) ~16,3 FP vs BES (vietoj Chris Duarte ~0)
 
 ---
 
@@ -96,18 +98,21 @@ Pirmos rungtynės: 19:00, trečiadienis
 3. Aliou Diarra (VIR, C) – ~23,9 FP @ HTA
 Dabar kapitonas – Marcus Carr (~22,8 FP). Siūlau keisti į Theo Maledon.
 
-**📋 Siūloma sudėtis** (prognozė ~201,5 FP, dabartinė ~188,5 FP, **+13**)
+**📋 Siūloma sudėtis** (prognozė ~201,2 FP, dabartinė ~188,5 FP, **+12,8**)
 Startas: Theo Maledon (C) ~26,5, Aliou Diarra ~23,9, Marcus Carr ~22,8, Mbaye Ndiaye ~20,4, Nikola Mirotic ~19,8
 6-as: TJ Shorts II ~24,8
-Suolas: Sylvain Francisco ~21,7, Braxton Key ~18,5, Daniel Oturu ~18,3, Chris Duarte ~14,8
-Out: Alec Peters, Bruno Fernando, Bonzie Colson
+Suolas: Sylvain Francisco ~21,7, Braxton Key ~18,5, Daniel Oturu ~18,3, Alec Peters ~14,3
+Out: Bruno Fernando, Bonzie Colson, Chris Duarte
 Pakeitimai: į startą – Nikola Mirotic, Mbaye Ndiaye; iš starto – Bonzie Colson, Sylvain Francisco.
-Iš Out į sudėtį – Chris Duarte, Daniel Oturu; į Out – Bonzie Colson, Bruno Fernando.
+Iš Out į sudėtį – Daniel Oturu, Alec Peters; į Out – Bonzie Colson, Bruno Fernando.
 6-u žaidėju (b-1) dėk TJ Shorts II vietoj Nikola Mirotic.
 
+**🩹 Traumos**
+- Chris Duarte: nežais
+
 **🛒 Laisvoji rinka**
-- Andres Feliz (RMB, G) ~18,1 FP @ TEL (vietoj Bonzie Colson ~12,1)
-- TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Bonzie Colson ~12,1)
-- Mike James (IST, G) ~16,3 FP vs BES (vietoj Bonzie Colson ~12,1)
+- Andres Feliz (RMB, G) ~18,1 FP @ TEL (vietoj Chris Duarte ~0)
+- TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Chris Duarte ~0)
+- Mike James (IST, G) ~16,3 FP vs BES (vietoj Chris Duarte ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
