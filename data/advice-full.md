@@ -7,8 +7,8 @@
 3. Chima Moneke (CZV, F) – ~19,8 FP @ PAR
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~173 FP, dabartinė ~162,5 FP, **+10,5**)
-Startas: Aliou Diarra (C) ~23,9, Chima Moneke ~19,8, Kevin Punter ~18,3, Andres Feliz ~18,1, Nigel Hayes-Davis ~14,6
+**📋 Siūloma sudėtis** (prognozė ~178,2 FP, dabartinė ~167,7 FP, **+10,5**)
+Startas: Aliou Diarra (C) ~26,5, Chima Moneke ~19,8, Kevin Punter ~18,3, Andres Feliz ~18,1, Nigel Hayes-Davis ~14,6
 6-as: Jonas Valančiūnas ~21,4
 Suolas: Ante Zizic ~20,1, Devon Dotson ~17,8, Alec Peters ~14,3, AJ Lawson ~13,8
 Out: Chuma Okeke, Tornike Shengelia, Dzanan Musa
@@ -36,8 +36,8 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 3. Sylvain Francisco (PAN, G) – ~21,7 FP vs KBA
 Kapitonas Daniel Oturu jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~179,9 FP, dabartinė ~173 FP, **+6,9**)
-Startas: TJ Shorts II ~24,8, Dwayne Bacon ~23,1, Marcus Carr ~22,8, Mbaye Ndiaye ~20,4, Daniel Oturu (C) ~18,3
+**📋 Siūloma sudėtis** (prognozė ~147,9 FP, dabartinė ~141 FP, **+6,9**)
+Startas: TJ Shorts II ~24,8, Dwayne Bacon ~23,1, Mbaye Ndiaye ~20,4, Daniel Oturu (C) ~12, Marcus Carr ~3,5
 6-as: Sylvain Francisco ~21,7
 Suolas: Devon Dotson ~17,8, Nigel Hayes-Davis ~14,6, Tyler Dorsey ~14,6, Bruno Fernando ~13,8
 Out: Collin Malcolm, Both Gach, Tonye Jekiri
@@ -55,7 +55,7 @@ Iš Out į sudėtį – Tyler Dorsey; į Out – Collin Malcolm.
 - Mike James (IST, G) ~16,3 FP vs BES (vietoj Tonye Jekiri ~0)
 - Umoja Gibson (BAR, G) ~15,3 FP @ MIL (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~179,9 : ~159,2
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~147,9 : ~159,2
 
 ---
 
