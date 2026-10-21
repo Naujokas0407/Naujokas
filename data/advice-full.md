@@ -1,11 +1,11 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 7 turas
-Pirmos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:30, ketvirtadienis
 
 **👑 Kapitonas**
-1. Aliou Diarra (VIR, C) – ~23,9 FP @ HTA
-2. Jonas Valančiūnas (ZAL, C) – ~21,4 FP vs ASV
-3. Ante Zizic (BES, C) – ~20,1 FP @ IST
-Dabartinis kapitonas Aliou Diarra – geriausias pasirinkimas. ✅
+1. Jonas Valančiūnas (ZAL, C) – ~21,4 FP vs ASV
+2. Ante Zizic (BES, C) – ~20,1 FP @ IST
+3. Chima Moneke (CZV, F) – ~19,8 FP @ PAR
+Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
 **📋 Siūloma sudėtis** (prognozė ~173 FP, dabartinė ~162,5 FP, **+10,5**)
 Startas: Aliou Diarra (C) ~23,9, Chima Moneke ~19,8, Kevin Punter ~18,3, Andres Feliz ~18,1, Nigel Hayes-Davis ~14,6
@@ -28,22 +28,22 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 7 turas
-Pirmos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~24,8 FP @ PRS
 2. Dwayne Bacon (DUB, F) – ~23,1 FP @ BAY
-3. Marcus Carr (VIR, G) – ~22,8 FP @ HTA
-Dabar kapitonas – Daniel Oturu (~18,3 FP). Siūlau keisti į TJ Shorts II.
+3. Sylvain Francisco (PAN, G) – ~21,7 FP vs KBA
+Kapitonas Daniel Oturu jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~186,4 FP, dabartinė ~171,3 FP, **+15,1**)
-Startas: TJ Shorts II (C) ~24,8, Dwayne Bacon ~23,1, Sylvain Francisco ~21,7, Mbaye Ndiaye ~20,4, Daniel Oturu ~18,3
-6-as: Marcus Carr ~22,8
+**📋 Siūloma sudėtis** (prognozė ~179,9 FP, dabartinė ~173 FP, **+6,9**)
+Startas: TJ Shorts II ~24,8, Dwayne Bacon ~23,1, Marcus Carr ~22,8, Mbaye Ndiaye ~20,4, Daniel Oturu (C) ~18,3
+6-as: Sylvain Francisco ~21,7
 Suolas: Devon Dotson ~17,8, Nigel Hayes-Davis ~14,6, Tyler Dorsey ~14,6, Bruno Fernando ~13,8
 Out: Collin Malcolm, Both Gach, Tonye Jekiri
-Pakeitimai: į startą – TJ Shorts II, Mbaye Ndiaye; iš starto – Nigel Hayes-Davis, Marcus Carr.
-Iš Out į sudėtį – Tyler Dorsey; į Out – Both Gach.
-6-u žaidėju (b-1) dėk Marcus Carr vietoj Devon Dotson.
+Pakeitimai: į startą – TJ Shorts II, Mbaye Ndiaye; iš starto – Sylvain Francisco, Nigel Hayes-Davis.
+Iš Out į sudėtį – Tyler Dorsey; į Out – Collin Malcolm.
+6-u žaidėju (b-1) dėk Sylvain Francisco vietoj Devon Dotson.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
@@ -55,12 +55,12 @@ Iš Out į sudėtį – Tyler Dorsey; į Out – Both Gach.
 - Mike James (IST, G) ~16,3 FP vs BES (vietoj Tonye Jekiri ~0)
 - Umoja Gibson (BAR, G) ~15,3 FP @ MIL (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~186,4 : ~159,2
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~179,9 : ~159,2
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 7 turas
-Pirmos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Jean Montero (OLY, G) – ~23,6 FP vs FBT
@@ -91,22 +91,13 @@ Iš Out į sudėtį – Devin Booker; į Out – Dzanan Musa.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 7 turas
-Pirmos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Theo Maledon (RMB, G) – ~26,5 FP @ TEL
 2. TJ Shorts II (VBC, G) – ~24,8 FP @ PRS
-3. Aliou Diarra (VIR, C) – ~23,9 FP @ HTA
-Dabar kapitonas – Daniel Oturu (~18,3 FP). Siūlau keisti į Theo Maledon.
-
-**📋 Siūloma sudėtis** (prognozė ~201,7 FP, dabartinė ~185,5 FP, **+16,3**)
-Startas: Theo Maledon (C) ~26,5, Aliou Diarra ~23,9, Marcus Carr ~22,8, Mbaye Ndiaye ~20,4, Nikola Mirotic ~19,8
-6-as: TJ Shorts II ~24,8
-Suolas: Sylvain Francisco ~21,7, Braxton Key ~18,5, Daniel Oturu ~18,3, Tyson Etienne ~15,3
-Out: Alec Peters, Bruno Fernando, Bonzie Colson
-Pakeitimai: į startą – Nikola Mirotic, Mbaye Ndiaye; iš starto – Bonzie Colson, Daniel Oturu.
-Iš Out į sudėtį – Tyson Etienne; į Out – Bonzie Colson.
-6-u žaidėju (b-1) dėk TJ Shorts II vietoj Sylvain Francisco.
+3. Sylvain Francisco (PAN, G) – ~21,7 FP vs KBA
+Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
 **🛒 Laisvoji rinka**
 - TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Bonzie Colson ~12,1)
