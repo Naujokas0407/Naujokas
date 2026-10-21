@@ -66,16 +66,16 @@ Iš Out į sudėtį – Tyler Dorsey; į Out – Collin Malcolm.
 1. Jean Montero (OLY, G) – ~23,6 FP vs FBT
 2. Mfiondu Kabengele (DUB, C) – ~21,8 FP @ BAY
 3. Chima Moneke (CZV, F) – ~19,8 FP @ PAR
-Dabartinis kapitonas Jean Montero – geriausias pasirinkimas. ✅
+Dabar kapitonas – Mfiondu Kabengele (~21,8 FP). Siūlau keisti į Jean Montero.
 
-**📋 Siūloma sudėtis** (prognozė ~168,7 FP, dabartinė ~159,7 FP, **+9**)
+**📋 Siūloma sudėtis** (prognozė ~168,7 FP, dabartinė ~146,2 FP, **+22,5**)
 Startas: Jean Montero (C) ~23,6, Mfiondu Kabengele ~21,8, Chima Moneke ~19,8, Braxton Key ~18,5, Devon Dotson ~17,8
 6-as: Andres Feliz ~18,1
 Suolas: Nigel Hayes-Davis ~14,6, Kenneth Faried ~14, Bonzie Colson ~12,1, Devin Booker ~10,3
 Out: Tyrese Martin, Chris Duarte, Dzanan Musa
-Pakeitimai: į startą – Braxton Key, Devon Dotson; iš starto – Nigel Hayes-Davis, Andres Feliz.
-Iš Out į sudėtį – Devin Booker; į Out – Dzanan Musa.
-6-u žaidėju (b-1) dėk Andres Feliz vietoj Kenneth Faried.
+Pakeitimai: į startą – Jean Montero, Braxton Key, Devon Dotson; iš starto – Nigel Hayes-Davis, Andres Feliz, Dzanan Musa.
+Iš Out į sudėtį – Kenneth Faried; į Out – Dzanan Musa.
+6-u žaidėju (b-1) dėk Andres Feliz vietoj Devon Dotson.
 
 **🩹 Traumos**
 - Jean Montero: abejotinas – šiuo metu sudėtyje!
@@ -98,6 +98,15 @@ Iš Out į sudėtį – Devin Booker; į Out – Dzanan Musa.
 2. TJ Shorts II (VBC, G) – ~24,8 FP @ PRS
 3. Sylvain Francisco (PAN, G) – ~21,7 FP vs KBA
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
+
+**📋 Siūloma sudėtis** (prognozė ~190,9 FP, dabartinė ~177,8 FP, **+13,1**)
+Startas: Aliou Diarra (C) ~26,5, Theo Maledon ~26,5, Sylvain Francisco ~21,7, Mbaye Ndiaye ~20,4, Nikola Mirotic ~19,8
+6-as: TJ Shorts II ~24,8
+Suolas: Braxton Key ~18,5, Tyson Etienne ~15,3, Daniel Oturu ~12, Marcus Carr ~3,5
+Out: Alec Peters, Bruno Fernando, Bonzie Colson
+Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Alec Peters.
+Iš Out į sudėtį – Braxton Key, Tyson Etienne; į Out – Bonzie Colson, Alec Peters.
+6-u žaidėju (b-1) dėk TJ Shorts II vietoj Bonzie Colson.
 
 **🛒 Laisvoji rinka**
 - TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Bonzie Colson ~12,1)
