@@ -5,13 +5,6 @@
 1. Jonas Valančiūnas (ZAL, C) – ~21,4 FP vs ASV
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~158,5 FP, dabartinė ~158,5 FP)
-Startas: Nigel Hayes-Davis ~28, Aliou Diarra (C) ~26,5, Andres Feliz ~26, Kevin Punter ~18, Chima Moneke ~3
-6-as: Alec Peters ~10
-Suolas: Jonas Valančiūnas ~21,4, Devon Dotson ~13, Tornike Shengelia ~6,2, AJ Lawson ~0,5
-Out: Chuma Okeke (jau žaidė), Dzanan Musa (jau žaidė), Ante Zizic (jau žaidė)
-Startinis penketas jau optimalus. ✅
-
 **🩹 Traumos**
 - Tornike Shengelia: nežais – šiuo metu sudėtyje!
 - Dzanan Musa: nežais
@@ -25,12 +18,12 @@ Startinis penketas jau optimalus. ✅
 1. TJ Shorts II (VBC, G) – ~24,8 FP @ PRS
 2. Mbaye Ndiaye (OLY, F) – ~20,4 FP vs FBT
 3. Both Gach (ASV, F) – ~10,3 FP @ ZAL
-Kapitonas Dwayne Bacon jau žaidžia – šį turą keisti nebegalima.
+Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~149,9 FP, dabartinė ~149,9 FP)
-Startas: Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, Dwayne Bacon (C) ~14, Devon Dotson ~13, Bruno Fernando ~6,5
+**📋 Siūloma sudėtis** (prognozė ~169,8 FP, dabartinė ~169,8 FP)
+Startas: Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, TJ Shorts II (C) ~24,8, Mbaye Ndiaye ~20,4, Bruno Fernando ~6,5
 6-as: Collin Malcolm ~14,5
-Suolas: TJ Shorts II ~24,8, Mbaye Ndiaye ~20,4, Daniel Oturu ~12, Marcus Carr ~3,5
+Suolas: Dwayne Bacon ~14, Devon Dotson ~13, Daniel Oturu ~12, Marcus Carr ~3,5
 Out: Tonye Jekiri (jau žaidė), Both Gach, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
 
@@ -43,7 +36,7 @@ Startinis penketas jau optimalus. ✅
 - Edwin Jackson (ASV, F) ~14,5 FP @ ZAL (vietoj Tyler Dorsey ~0)
 - Tremont Waters (ASV, G) ~13,4 FP @ ZAL (vietoj Tyler Dorsey ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~149,9 : ~219,8
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~169,8 : ~219,8
 
 ---
 
