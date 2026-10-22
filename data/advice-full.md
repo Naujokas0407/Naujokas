@@ -5,8 +5,8 @@
 1. Jonas Valančiūnas (ZAL, C) – ~21,4 FP vs ASV
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~175,4 FP, dabartinė ~175,4 FP)
-Startas: Nigel Hayes-Davis ~28, Aliou Diarra (C) ~26,5, Andres Feliz ~26, Chima Moneke ~19,8, Kevin Punter ~18
+**📋 Siūloma sudėtis** (prognozė ~158,5 FP, dabartinė ~158,5 FP)
+Startas: Nigel Hayes-Davis ~28, Aliou Diarra (C) ~26,5, Andres Feliz ~26, Kevin Punter ~18, Chima Moneke ~3
 6-as: Alec Peters ~10
 Suolas: Jonas Valančiūnas ~21,4, Devon Dotson ~13, Tornike Shengelia ~6,2, AJ Lawson ~0,5
 Out: Chuma Okeke (jau žaidė), Dzanan Musa (jau žaidė), Ante Zizic (jau žaidė)
@@ -43,7 +43,7 @@ Startinis penketas jau optimalus. ✅
 - Edwin Jackson (ASV, F) ~14,5 FP @ ZAL (vietoj Tyler Dorsey ~0)
 - Tremont Waters (ASV, G) ~13,4 FP @ ZAL (vietoj Tyler Dorsey ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~149,9 : ~211,3
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~149,9 : ~219,8
 
 ---
 
@@ -55,8 +55,8 @@ Startinis penketas jau optimalus. ✅
 2. Braxton Key (FBT, F) – ~18,5 FP @ OLY
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~188,9 FP, dabartinė ~188,9 FP)
-Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Chima Moneke ~19,8, Dzanan Musa ~0
+**📋 Siūloma sudėtis** (prognozė ~172 FP, dabartinė ~172 FP)
+Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Chima Moneke ~3, Dzanan Musa ~0
 6-as: Devon Dotson ~13
 Suolas: Jean Montero ~23,6, Bonzie Colson ~22,5, Braxton Key ~18,5, Devin Booker ~5,5
 Out: Chris Duarte (jau žaidė), Kenneth Faried (jau žaidė), Tyrese Martin (jau žaidė)
