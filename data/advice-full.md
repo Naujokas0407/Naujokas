@@ -55,7 +55,7 @@ Iš Out į sudėtį – Tyler Dorsey; į Out – Collin Malcolm.
 - Mike James (IST, G) ~16,3 FP vs BES (vietoj Tonye Jekiri ~0)
 - Umoja Gibson (BAR, G) ~15,3 FP @ MIL (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~168,8 : ~159,2
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~168,8 : ~157,1
 
 ---
 
