@@ -36,26 +36,25 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 3. Sylvain Francisco (PAN, G) – ~21,7 FP vs KBA
 Dabar kapitonas – Dwayne Bacon (~23,1 FP). Siūlau keisti į TJ Shorts II.
 
-**📋 Siūloma sudėtis** (prognozė ~168,8 FP, dabartinė ~158 FP, **+10,8**)
+**📋 Siūloma sudėtis** (prognozė ~168,3 FP, dabartinė ~158 FP, **+10,3**)
 Startas: TJ Shorts II (C) ~24,8, Dwayne Bacon ~23,1, Sylvain Francisco ~21,7, Mbaye Ndiaye ~20,4, Bruno Fernando ~13,8
 6-as: Devon Dotson ~17,8
-Suolas: Nigel Hayes-Davis ~14,6, Tyler Dorsey ~14,6, Daniel Oturu ~12, Marcus Carr ~3,5
-Out: Collin Malcolm, Both Gach, Tonye Jekiri
+Suolas: Nigel Hayes-Davis ~14,6, Collin Malcolm ~13,6, Daniel Oturu ~12, Marcus Carr ~3,5
+Out: Both Gach, Tonye Jekiri, Tyler Dorsey
 Pakeitimai: į startą – TJ Shorts II, Mbaye Ndiaye; iš starto – Nigel Hayes-Davis, Devon Dotson.
-Iš Out į sudėtį – Tyler Dorsey; į Out – Collin Malcolm.
 6-u žaidėju (b-1) dėk Devon Dotson vietoj Collin Malcolm.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
 - Devon Dotson: neaišku – šiuo metu sudėtyje!
-- Tyler Dorsey: neaišku
+- Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
 - Devon Hall (MIL, G) ~17,4 FP vs BAR (vietoj Tonye Jekiri ~0)
 - Mike James (IST, G) ~16,3 FP vs BES (vietoj Tonye Jekiri ~0)
 - Umoja Gibson (BAR, G) ~15,3 FP @ MIL (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~168,8 : ~157,1
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~168,3 : ~157,1
 
 ---
 
