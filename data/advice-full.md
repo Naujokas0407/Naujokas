@@ -44,21 +44,25 @@ Startinis penketas jau optimalus. ✅
 ⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, penktadienis
 
 **👑 Kapitonas**
-1. Jean Montero (OLY, G) – ~23,6 FP vs FBT
-2. Braxton Key (FBT, F) – ~18,5 FP @ OLY
+1. Braxton Key (FBT, F) – ~18,5 FP @ OLY
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~191,6 FP, dabartinė ~191,6 FP)
+**📋 Siūloma sudėtis** (prognozė ~168 FP, dabartinė ~168 FP)
 Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Braxton Key ~18,5, Devon Dotson ~13
-6-as: Jean Montero ~23,6
+6-as: Jean Montero ~0
 Suolas: Bonzie Colson ~22,5, Devin Booker ~5,5, Chima Moneke ~3, Dzanan Musa ~0
 Out: Chris Duarte (jau žaidė), Kenneth Faried (jau žaidė), Tyrese Martin (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
-- Jean Montero: abejotinas – šiuo metu sudėtyje!
+- Jean Montero: nežais – šiuo metu sudėtyje!
 - Chris Duarte: neaišku
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
+
+**🛒 Laisvoji rinka**
+- TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Jean Montero ~0)
+- Hugo Besson (ASV, G) ~16,1 FP @ ZAL (vietoj Jean Montero ~0)
+- Tyler Dorsey (OLY, G) ~14,6 FP vs FBT (vietoj Jean Montero ~0)
 
 ---
 
