@@ -1,8 +1,7 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 7 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
-1. Jonas Valančiūnas (ZAL, C) – ~21,4 FP vs ASV
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -12,19 +11,18 @@ Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 7 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~24,8 FP @ PRS
 2. Mbaye Ndiaye (OLY, F) – ~20,4 FP vs FBT
-3. Both Gach (ASV, F) – ~10,3 FP @ ZAL
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
 **📋 Siūloma sudėtis** (prognozė ~169,8 FP, dabartinė ~169,8 FP)
 Startas: Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, TJ Shorts II (C) ~24,8, Mbaye Ndiaye ~20,4, Bruno Fernando ~6,5
 6-as: Collin Malcolm ~14,5
 Suolas: Dwayne Bacon ~14, Devon Dotson ~13, Daniel Oturu ~12, Marcus Carr ~3,5
-Out: Tonye Jekiri (jau žaidė), Both Gach, Tyler Dorsey
+Out: Tonye Jekiri (jau žaidė), Both Gach (jau žaidė), Tyler Dorsey
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
@@ -32,16 +30,16 @@ Startinis penketas jau optimalus. ✅
 - Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
-- Carsen Edwards (ZAL, G) ~14,9 FP vs ASV (vietoj Tyler Dorsey ~0)
-- Edwin Jackson (ASV, F) ~14,5 FP @ ZAL (vietoj Tyler Dorsey ~0)
-- Tremont Waters (ASV, G) ~13,4 FP @ ZAL (vietoj Tyler Dorsey ~0)
+- Evan Fournier (OLY, G) ~12,3 FP vs FBT (vietoj Tyler Dorsey ~0)
+- Nicolo Melli (FBT, C) ~11,9 FP @ OLY (vietoj Tyler Dorsey ~0)
+- Dylan Osetkowski (VBC, F) ~11,3 FP @ PRS (vietoj Tyler Dorsey ~0)
 
 **⚔️ Prieš Vidurinis pirštas :** prognozė ~169,8 : ~219,8
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 7 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Braxton Key (FBT, F) – ~18,5 FP @ OLY
@@ -60,14 +58,14 @@ Startinis penketas jau optimalus. ✅
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
-- TyTy Washington Jr. (ASV, G) ~18 FP @ ZAL (vietoj Jean Montero ~0)
-- Hugo Besson (ASV, G) ~16,1 FP @ ZAL (vietoj Jean Montero ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs FBT (vietoj Jean Montero ~0)
+- Alan Dokossi (PRS, C) ~14,1 FP vs VBC (vietoj Jean Montero ~0)
+- Armoni Brooks (VBC, G) ~13,2 FP @ PRS (vietoj Jean Montero ~0)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 7 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~24,8 FP @ PRS
