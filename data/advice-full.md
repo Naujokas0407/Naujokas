@@ -48,10 +48,10 @@ Startinis penketas jau optimalus. ✅
 2. Braxton Key (FBT, F) – ~18,5 FP @ OLY
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~172 FP, dabartinė ~172 FP)
-Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Chima Moneke ~3, Dzanan Musa ~0
-6-as: Devon Dotson ~13
-Suolas: Jean Montero ~23,6, Bonzie Colson ~22,5, Braxton Key ~18,5, Devin Booker ~5,5
+**📋 Siūloma sudėtis** (prognozė ~191,6 FP, dabartinė ~191,6 FP)
+Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Braxton Key ~18,5, Devon Dotson ~13
+6-as: Jean Montero ~23,6
+Suolas: Bonzie Colson ~22,5, Devin Booker ~5,5, Chima Moneke ~3, Dzanan Musa ~0
 Out: Chris Duarte (jau žaidė), Kenneth Faried (jau žaidė), Tyrese Martin (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
@@ -71,11 +71,11 @@ Startinis penketas jau optimalus. ✅
 3. Nikola Mirotic (VBC, F) – ~19,8 FP @ PRS
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~176 FP, dabartinė ~175,7 FP)
-Startas: Sylvain Francisco ~29,5, Aliou Diarra (C) ~26,5, Mbaye Ndiaye ~20,4, Theo Maledon ~10,5, Alec Peters ~10
+**📋 Siūloma sudėtis** (prognozė ~188,1 FP, dabartinė ~188,1 FP)
+Startas: Sylvain Francisco ~29,5, Aliou Diarra (C) ~26,5, TJ Shorts II ~24,8, Mbaye Ndiaye ~20,4, Nikola Mirotic ~19,8
 6-as: Bonzie Colson ~22,5
-Suolas: TJ Shorts II ~24,8, Nikola Mirotic ~19,8, Daniel Oturu ~12, Marcus Carr ~3,5
+Suolas: Daniel Oturu ~12, Theo Maledon ~10,5, Alec Peters ~10, Marcus Carr ~3,5
 Out: Bruno Fernando (jau žaidė), Braxton Key, Tyson Etienne
-Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Nikola Mirotic.
+Startinis penketas jau optimalus. ✅
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
