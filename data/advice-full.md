@@ -16,8 +16,8 @@ Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~169,8 FP, dabartinė ~169,8 FP)
-Startas: Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, TJ Shorts II (C) ~24,8, Mbaye Ndiaye ~20,4, Bruno Fernando ~6,5
+**📋 Siūloma sudėtis** (prognozė ~142,4 FP, dabartinė ~142,4 FP)
+Startas: Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, TJ Shorts II (C) ~24,8, Bruno Fernando ~6,5, Mbaye Ndiaye ~-7
 6-as: Collin Malcolm ~14,5
 Suolas: Dwayne Bacon ~14, Devon Dotson ~13, Daniel Oturu ~12, Marcus Carr ~3,5
 Out: Tonye Jekiri (jau žaidė), Both Gach (jau žaidė), Tyler Dorsey (jau žaidė)
@@ -27,7 +27,7 @@ Startinis penketas jau optimalus. ✅
 - Tonye Jekiri: nežais
 - Tyler Dorsey: nežais
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~169,8 : ~219,8
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~142,4 : ~215,3
 
 ---
 
@@ -37,8 +37,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~191,6 FP, dabartinė ~191,6 FP)
-Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Braxton Key ~18,5, Devon Dotson ~13
+**📋 Siūloma sudėtis** (prognozė ~182,6 FP, dabartinė ~182,6 FP)
+Startas: Mfiondu Kabengele (C) ~33,5, Nigel Hayes-Davis ~28, Andres Feliz ~26, Devon Dotson ~13, Braxton Key ~9,5
 6-as: Jean Montero ~23,6
 Suolas: Bonzie Colson ~22,5, Devin Booker ~5,5, Chima Moneke ~3, Dzanan Musa ~0
 Out: Chris Duarte (jau žaidė), Kenneth Faried (jau žaidė), Tyrese Martin (jau žaidė)
@@ -57,8 +57,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~188,1 FP, dabartinė ~188,1 FP)
-Startas: Sylvain Francisco ~29,5, Aliou Diarra (C) ~26,5, TJ Shorts II ~24,8, Mbaye Ndiaye ~20,4, Nikola Mirotic ~19,8
+**📋 Siūloma sudėtis** (prognozė ~160,7 FP, dabartinė ~160,7 FP)
+Startas: Sylvain Francisco ~29,5, Aliou Diarra (C) ~26,5, TJ Shorts II ~24,8, Nikola Mirotic ~19,8, Mbaye Ndiaye ~-7
 6-as: Bonzie Colson ~22,5
 Suolas: Daniel Oturu ~12, Theo Maledon ~10,5, Alec Peters ~10, Marcus Carr ~3,5
 Out: Braxton Key (jau žaidė), Tyson Etienne (jau žaidė), Bruno Fernando (jau žaidė)
