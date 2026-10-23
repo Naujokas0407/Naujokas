@@ -6,8 +6,8 @@
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
-- Tornike Shengelia: nežais – šiuo metu sudėtyje!
-- Dzanan Musa: nežais
+- Tornike Shengelia: neaišku – šiuo metu sudėtyje!
+- Dzanan Musa: neaišku
 
 ---
 
@@ -57,8 +57,8 @@ Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
 - Jean Montero: abejotinas – šiuo metu sudėtyje!
-- Chris Duarte: nežais
-- Dzanan Musa: nežais – šiuo metu sudėtyje!
+- Chris Duarte: neaišku
+- Dzanan Musa: neaišku – šiuo metu sudėtyje!
 
 ---
 
