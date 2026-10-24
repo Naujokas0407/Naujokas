@@ -685,10 +685,52 @@ async function discover() {
       }
       fs.writeFileSync(fixF, JSON.stringify(fixed));
     }
+    // praėjusių turų archyvai: žaidėjų FP sulyginami su galutiniais BN taškais (fp-hist), H2H – su oficialiais porų rezultatais (vieną kartą)
+    try {
+      const syncF = path.join(DIR, L.slug + "-fpsync.json"); let done = {}; try { done = JSON.parse(fs.readFileSync(syncF, "utf8")); } catch (e) {}
+      let FH = {}; try { FH = JSON.parse(fs.readFileSync(path.join(DIR, "fp-hist.json"), "utf8")); } catch (e) {}
+      let ch = false;
+      for (let r = 1; r <= S.r; r++) {
+        if (done[r] || !FH[r]) continue;
+        let a; try { a = JSON.parse(fs.readFileSync(arch(L.slug, r), "utf8")); } catch (e) { continue; }
+        const H = FH[r];
+        (a.teams || []).forEach(tm => { tm.players.forEach(p => { if (p.id && H[p.id] != null) { p.fp = H[p.id]; p.est = false; p.total = round2(p.fp * p.mult); } }); tm.total = round2(tm.players.reduce((s, p) => s + (p.total || 0), 0)); });
+        (a.pool || []).forEach(p => { if (p.id && H[p.id] != null) p.fp = H[p.id]; });
+        if (L.format === "h2h" && old && a.matchups) {
+          const res = (old.results || []).filter(m => m.r === r);
+          a.matchups.forEach(m => { const x = res.find(z => z.a === m.a && z.b === m.b); if (x) { m.as = x.as; m.bs = x.bs; } });
+          const off = {}; res.forEach(m => { off[m.a] = m.as; off[m.b] = m.bs; }); a.teams.forEach(tm => { if (off[tm.title] != null) tm.official = off[tm.title]; });
+        }
+        fs.writeFileSync(arch(L.slug, r), JSON.stringify(a)); done[r] = new Date().toISOString(); ch = true;
+      }
+      if (ch) fs.writeFileSync(syncF, JSON.stringify(done));
+    } catch (e) { console.log(L.slug + ": archyvų FP sulyginimas", e.message); }
     if (old && old.round && old.round !== S.r + 1 && !fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
     if (frozen) {
       // užfiksuotam turui papildomai įrašomos pozicijos ir minutės
       const before = JSON.stringify(old);
+      // BN galutinius taškus (pergalė/pralaimėjimas ±1,5, statistikos pataisymai) paskelbia vėliau – kol BN dar šiame ture, jie atnaujinami
+      try {
+        const bnFp = {}; S.bnPlayers.forEach(p => { if (p.fp != null) bnFp[p.id] = p.fp; });
+        (old.teams || []).forEach(t => { t.players.forEach(p => { if (p.id && bnFp[p.id] != null) { p.fp = bnFp[p.id]; p.est = false; p.total = round2(p.fp * p.mult); } }); t.total = round2(t.players.reduce((s, p) => s + (p.total || 0), 0)); });
+        (old.pool || []).forEach(p => { if (p.id && bnFp[p.id] != null) p.fp = bnFp[p.id]; });
+        (old.fa || []).forEach(p => { if (p.id && bnFp[p.id] != null) p.fp = bnFp[p.id]; });
+        if (L.format === "h2h") {
+          const h = await gql(Q_H2H, { f: L.fantasyLeagueId, r: S.r });
+          const recs = h.allHeadToHeadScheduleRecordsFromClient.records;
+          old.matchups = recs.map(m => ({ a: m.fantasyTeam1.title, b: m.fantasyTeam2.title, as: m.fantasyTeam1ScorePoints, bs: m.fantasyTeam2ScorePoints }));
+          const off = {}; old.matchups.forEach(m => { if (m.as > 0 || m.bs > 0) { off[m.a] = m.as; off[m.b] = m.bs; } });
+          old.teams.forEach(t => { if (off[t.title] != null) t.official = off[t.title]; });
+        } else {
+          const off = await officialScores(L, S); const cur = off[String(old.round)];
+          if (cur && Object.values(cur.teams).some(x => x.pts > 0)) {
+            old.officialTable = Object.fromEntries(Object.entries(cur.teams).map(([t, x]) => [t, { total: x.total, pos: x.pos }]));
+            old.history = old.history || {}; old.history[String(old.round)] = old.history[String(old.round)] || {};
+            old.teams.forEach(t => { const x = cur.teams[t.title]; if (x) { t.official = x.pts; old.history[String(old.round)][t.title] = x.pts; } });
+          }
+        }
+        if (JSON.stringify(old) !== before) { old.updated = new Date().toISOString(); fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old)); console.log(L.slug + ": užfiksuoto turo BN taškai atnaujinti"); }
+      } catch (e) { console.log(L.slug + ": užfiksuoto turo atnaujinimas", e.message); }
       (old.fa || []).forEach(p => { p.pos = p.pos || S.posOf(p.id); p.min = S.minOf(p.id); });
       (old.pool || []).forEach(p => { if (p.id) { p.pos = p.pos || S.posOf(p.id); p.min = S.minOf(p.id); } });
       (old.teams || []).forEach(t => t.players.forEach(p => { p.min = S.minOf(p.id); }));
