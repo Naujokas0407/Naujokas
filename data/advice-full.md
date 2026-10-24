@@ -16,8 +16,8 @@ Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~172,8 FP, dabartinė ~172,8 FP)
-Startas: TJ Shorts II (C) ~40, Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, Bruno Fernando ~6,5, Mbaye Ndiaye ~-7
+**📋 Siūloma sudėtis** (prognozė ~175,8 FP, dabartinė ~175,8 FP)
+Startas: TJ Shorts II (C) ~41,5, Sylvain Francisco ~29,5, Nigel Hayes-Davis ~28, Bruno Fernando ~6,5, Mbaye Ndiaye ~-7
 6-as: Collin Malcolm ~14,5
 Suolas: Dwayne Bacon ~14, Devon Dotson ~13, Daniel Oturu ~12, Marcus Carr ~3,5
 Out: Tonye Jekiri (jau žaidė), Both Gach (jau žaidė), Tyler Dorsey (jau žaidė)
@@ -27,7 +27,7 @@ Startinis penketas jau optimalus. ✅
 - Tonye Jekiri: nežais
 - Tyler Dorsey: nežais
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~172,8 : ~206
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~175,8 : ~206,5
 
 ---
 
@@ -57,8 +57,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~165 FP, dabartinė ~165 FP)
-Startas: TJ Shorts II ~40, Sylvain Francisco ~29,5, Aliou Diarra (C) ~26,5, Nikola Mirotic ~9, Mbaye Ndiaye ~-7
+**📋 Siūloma sudėtis** (prognozė ~166,5 FP, dabartinė ~166,5 FP)
+Startas: TJ Shorts II ~41,5, Sylvain Francisco ~29,5, Aliou Diarra (C) ~26,5, Nikola Mirotic ~9, Mbaye Ndiaye ~-7
 6-as: Bonzie Colson ~22,5
 Suolas: Daniel Oturu ~12, Theo Maledon ~10,5, Alec Peters ~10, Marcus Carr ~3,5
 Out: Braxton Key (jau žaidė), Tyson Etienne (jau žaidė), Bruno Fernando (jau žaidė)
