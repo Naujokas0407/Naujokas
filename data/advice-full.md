@@ -35,12 +35,12 @@ Pirmos rungtynės: 18:00, antradienis
 3. Dwayne Bacon (DUB, F) – ~21,8 FP vs PRS
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~183,8 FP, dabartinė ~175,7 FP, **+8,1**)
+**📋 Siūloma sudėtis** (prognozė ~183,8 FP, dabartinė ~178,3 FP, **+5,5**)
 Startas: TJ Shorts II (C) ~27,2, Dwayne Bacon ~21,8, Marcus Carr ~20,1, Daniel Oturu ~17,4, Nigel Hayes-Davis ~17,3
 6-as: Sylvain Francisco ~22,8
 Suolas: Devon Dotson ~17,1, Mbaye Ndiaye ~16,5, Collin Malcolm ~13,7, Bruno Fernando ~12,8
 Out: Both Gach, Tonye Jekiri, Tyler Dorsey
-Pakeitimai: į startą – Dwayne Bacon, Daniel Oturu, Marcus Carr; iš starto – Sylvain Francisco, Mbaye Ndiaye, Bruno Fernando.
+Pakeitimai: į startą – Daniel Oturu, Marcus Carr; iš starto – Sylvain Francisco, Bruno Fernando.
 6-u žaidėju (b-1) dėk Sylvain Francisco vietoj Collin Malcolm.
 
 **🩹 Traumos**
