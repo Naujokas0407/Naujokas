@@ -17,7 +17,7 @@ Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 
 **🩹 Traumos**
 - Tornike Shengelia: neaišku – šiuo metu sudėtyje!
-- Dzanan Musa: neaišku
+- Dzanan Musa: tikėtina žais
 
 **🛒 Laisvoji rinka**
 - Umoja Gibson (BAR, G) ~16,6 FP @ BAY (vietoj Dzanan Musa ~0)
@@ -77,7 +77,7 @@ Iš Out į sudėtį – Chris Duarte, Kenneth Faried; į Out – Devin Booker, D
 **🩹 Traumos**
 - Jean Montero: neaišku – šiuo metu sudėtyje!
 - Chris Duarte: neaišku
-- Dzanan Musa: neaišku – šiuo metu sudėtyje!
+- Dzanan Musa: tikėtina žais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
 - Tonye Jekiri (PAR, C) ~17,2 FP @ ASV (vietoj Dzanan Musa ~0)
