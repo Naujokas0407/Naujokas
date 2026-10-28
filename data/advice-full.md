@@ -7,19 +7,22 @@
 3. Ante Zizic (BES, C) – ~18,4 FP vs OLY
 Kapitonas Kevin Punter jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~154,8 FP, dabartinė ~157,8 FP)
+**📋 Siūloma sudėtis** (prognozė ~154,2 FP, dabartinė ~149,2 FP, **+5**)
 Startas: Aliou Diarra ~24,3, Kevin Punter (C) ~23, Andres Feliz ~14,5, Lamar Stevens ~12,7, Nigel Hayes-Davis ~8,5
 6-as: Chima Moneke ~15
-Suolas: Jonas Valančiūnas ~21,1, Ante Zizic ~18,4, Devon Dotson ~17,1, Tornike Shengelia ~11
-Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Hugo Besson
+Suolas: Jonas Valančiūnas ~21,1, Ante Zizic ~18,4, Hugo Besson ~15,9, Tornike Shengelia ~11
+Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Devon Dotson
 Pakeitimai: į startą – Lamar Stevens; iš starto – Jonas Valančiūnas.
-Iš Out į sudėtį – Ante Zizic; į Out – Hugo Besson.
+Iš Out į sudėtį – Ante Zizic; į Out – Devon Dotson.
 
 **🩹 Traumos**
-- Alec Peters: nežais
+- Devon Dotson: nežais – šiuo metu sudėtyje!
+- Alec Peters: neaišku
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP @ HTA (vietoj Lamar Stevens ~12,7)
+- Mike James (IST, G) ~16,3 FP @ HTA (vietoj Devon Dotson ~0)
+- Tyler Dorsey (OLY, G) ~14,6 FP @ BES (vietoj Devon Dotson ~0)
+- Patrick Mills (ASV, G) ~14,6 FP vs PAR (vietoj Devon Dotson ~0)
 
 ---
 
@@ -29,19 +32,22 @@ Iš Out į sudėtį – Ante Zizic; į Out – Hugo Besson.
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~20,1 FP vs ZAL
 2. Daniel Oturu (HTA, C) – ~17,4 FP vs IST
-3. Devon Dotson (BES, G) – ~17,1 FP vs OLY
+3. Mbaye Ndiaye (OLY, F) – ~16,5 FP @ BES
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~190,1 FP, dabartinė ~190,1 FP)
+**📋 Siūloma sudėtis** (prognozė ~179,9 FP, dabartinė ~173 FP, **+6,9**)
 Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Marcus Carr ~20,1, Daniel Oturu ~17,4, Mbaye Ndiaye ~16,5
-6-as: Devon Dotson ~17,1
-Suolas: Collin Malcolm ~13,7, Bruno Fernando ~12,8, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
-Out: Joel Parra (jau žaidė), Tonye Jekiri, Tyler Dorsey
+6-as: Collin Malcolm ~13,7
+Suolas: Bruno Fernando ~12,8, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3, Tonye Jekiri ~0
+Out: Joel Parra (jau žaidė), Devon Dotson, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
+Iš Out į sudėtį – Tonye Jekiri; į Out – Devon Dotson.
+6-u žaidėju (b-1) dėk Collin Malcolm vietoj Devon Dotson.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
-- Joel Parra: nežais
+- Devon Dotson: nežais – šiuo metu sudėtyje!
+- Joel Parra: neaišku
 - Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
@@ -49,7 +55,7 @@ Startinis penketas jau optimalus. ✅
 - Carsen Edwards (ZAL, G) ~15 FP @ VIR (vietoj Tonye Jekiri ~0)
 - Edwin Jackson (ASV, F) ~14,5 FP vs PAR (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~190,1 : ~131,5
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~179,9 : ~131,5
 
 ---
 
@@ -57,25 +63,18 @@ Startinis penketas jau optimalus. ✅
 ⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, trečiadienis
 
 **👑 Kapitonas**
-1. Devon Dotson (BES, G) – ~17,1 FP vs OLY
-2. Kevarrius Hayes (PAR, C) – ~14 FP @ ASV
+1. Kevarrius Hayes (PAR, C) – ~14 FP @ ASV
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~148,5 FP, dabartinė ~148,5 FP)
-Startas: Mfiondu Kabengele (C) ~37,5, Andres Feliz ~14,5, Umoja Gibson ~13, Nigel Hayes-Davis ~8,5, Braxton Key ~-2,5
-6-as: Chima Moneke ~15
-Suolas: Devon Dotson ~17,1, Tyrese Martin ~15, Kevarrius Hayes ~14, Dzanan Musa ~4
-Out: Bonzie Colson (jau žaidė), Jean Montero, Tonye Jekiri
-Startinis penketas jau optimalus. ✅
-
 **🩹 Traumos**
+- Devon Dotson: nežais – šiuo metu sudėtyje!
 - Jean Montero: nežais
 - Tonye Jekiri: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP @ HTA (vietoj Jean Montero ~0)
-- Hugo Besson (ASV, G) ~15,9 FP vs PAR (vietoj Jean Montero ~0)
-- Tyler Dorsey (OLY, G) ~14,6 FP @ BES (vietoj Jean Montero ~0)
+- Mike James (IST, G) ~16,3 FP @ HTA (vietoj Devon Dotson ~0)
+- Hugo Besson (ASV, G) ~15,9 FP vs PAR (vietoj Devon Dotson ~0)
+- Tyler Dorsey (OLY, G) ~14,6 FP @ BES (vietoj Devon Dotson ~0)
 
 ---
 
@@ -88,8 +87,16 @@ Startinis penketas jau optimalus. ✅
 3. Daniel Oturu (HTA, C) – ~17,4 FP vs IST
 Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 
+**📋 Siūloma sudėtis** (prognozė ~176,3 FP, dabartinė ~176,8 FP)
+Startas: TJ Shorts II ~30,5, Aliou Diarra ~24,3, Theo Maledon (C) ~24, Nikola Mirotic ~20,5, Mbaye Ndiaye ~16,5
+6-as: Marcus Carr ~20,1
+Suolas: Daniel Oturu ~17,4, Bonzie Colson ~15, Sylvain Francisco ~3, Braxton Key ~-2,5
+Out: Alec Peters (jau žaidė), Jimmy Clark III (jau žaidė), Bruno Fernando
+Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Marcus Carr.
+6-u žaidėju (b-1) dėk Marcus Carr vietoj Daniel Oturu.
+
 **🩹 Traumos**
-- Alec Peters: nežais
+- Alec Peters: neaišku
 
 **🛒 Laisvoji rinka**
 - Mike James (IST, G) ~16,3 FP @ HTA (vietoj Bruno Fernando ~12,8)
