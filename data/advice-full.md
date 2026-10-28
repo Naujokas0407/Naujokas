@@ -4,9 +4,9 @@
 **👑 Kapitonas**
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~158,7 FP, dabartinė ~158,7 FP)
-Startas: Kevin Punter ~23, Jonas Valančiūnas (C) ~21,1, Hugo Besson ~15,9, Chima Moneke ~15, Lamar Stevens ~12,7
-6-as: Aliou Diarra ~24,3
+**📋 Siūloma sudėtis** (prognozė ~186,2 FP, dabartinė ~186,2 FP)
+Startas: Jonas Valančiūnas (C) ~37, Kevin Punter ~23, Hugo Besson ~15,9, Chima Moneke ~15, Lamar Stevens ~12,7
+6-as: Aliou Diarra ~20
 Suolas: Devon Dotson ~17,1, Andres Feliz ~14,5, Tornike Shengelia ~11, Nigel Hayes-Davis ~8,5
 Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Ante Zizic (jau žaidė)
 Startinis penketas jau optimalus. ✅
@@ -23,8 +23,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~187,6 FP, dabartinė ~187,6 FP)
-Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Daniel Oturu ~28, Marcus Carr ~20,1, Mbaye Ndiaye ~10
+**📋 Siūloma sudėtis** (prognozė ~169,1 FP, dabartinė ~169,1 FP)
+Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Daniel Oturu ~28, Mbaye Ndiaye ~10, Marcus Carr ~1,5
 6-as: Bruno Fernando ~9
 Suolas: Collin Malcolm ~15, Tyler Dorsey ~14,6, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
 Out: Tonye Jekiri (jau žaidė), Devon Dotson (jau žaidė), Joel Parra (jau žaidė)
@@ -36,7 +36,7 @@ Startinis penketas jau optimalus. ✅
 - Joel Parra: neaišku
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~187,6 : ~131,5
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~169,1 : ~156,4
 
 ---
 
