@@ -1434,7 +1434,7 @@ async function openPlayer(id) {
   const pm = document.getElementById("pm"), body = document.getElementById("pmBody");
   const head = () => { const h = healthOf(p); return `<div class="pm-h"><div><div class="pm-n">${esc(p.name)}</div><div class="sub">${esc(tv(p.club))}${p.pos ? " · " + esc(p.pos) : ""}${team ? " · " + esc(team) : " · laisvas"}</div></div>${h && h !== "ready" && HL[h] ? hBadge(p) : ""}</div>`; };
   body.innerHTML = head() + `<div class="sub">Kraunama…</div>`;
-  pm.dataset.pid = id;
+  pm.dataset.openId = id;
   pm.hidden = false; document.body.style.overflow = "hidden";
   const H = await loadFph();
   const rounds = Object.keys(H).map(Number).sort((a, b) => a - b);
@@ -1453,7 +1453,7 @@ async function openPlayer(id) {
     `<div class="sub">FP pagal turus</div>${chart || `<div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>`}` +
     trendTable(p.id) +
     `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div><div id="pmOpp"><div class="sub">Kraunami varžovai…</div></div>`;
-  try { const html = await oppTable(p, hist); const el = document.getElementById("pmOpp"); if (el && document.getElementById("pm").dataset.pid === id) el.innerHTML = html; } catch (e) { const el = document.getElementById("pmOpp"); if (el) el.innerHTML = ""; }
+  try { const html = await oppTable(p, hist); const el = document.getElementById("pmOpp"); if (el && document.getElementById("pm").dataset.openId === id) el.innerHTML = html; } catch (e) { const el = document.getElementById("pmOpp"); if (el) el.innerHTML = ""; }
 }
 function closePlayer() { document.getElementById("pm").hidden = true; document.body.style.overflow = ""; }
 document.addEventListener("click", e => {
