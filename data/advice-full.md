@@ -7,13 +7,13 @@
 3. Ante Zizic (BES, C) – ~18,4 FP vs OLY
 Kapitonas Kevin Punter jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~155,6 FP, dabartinė ~152,7 FP, **+2,9**)
-Startas: Aliou Diarra ~24,3, Kevin Punter (C) ~23, Chima Moneke ~15, Andres Feliz ~14,5, Nigel Hayes-Davis ~8,5
-6-as: Tornike Shengelia ~11
-Suolas: Jonas Valančiūnas ~21,1, Ante Zizic ~18,4, Devon Dotson ~17,1, Hugo Besson ~15,9
-Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Lamar Stevens
-Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Ante Zizic; į Out – Lamar Stevens.
+**📋 Siūloma sudėtis** (prognozė ~154,8 FP, dabartinė ~157,8 FP)
+Startas: Aliou Diarra ~24,3, Kevin Punter (C) ~23, Andres Feliz ~14,5, Lamar Stevens ~12,7, Nigel Hayes-Davis ~8,5
+6-as: Chima Moneke ~15
+Suolas: Jonas Valančiūnas ~21,1, Ante Zizic ~18,4, Devon Dotson ~17,1, Tornike Shengelia ~11
+Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Hugo Besson
+Pakeitimai: į startą – Lamar Stevens; iš starto – Jonas Valančiūnas.
+Iš Out į sudėtį – Ante Zizic; į Out – Hugo Besson.
 
 **🩹 Traumos**
 - Alec Peters: nežais
@@ -32,13 +32,12 @@ Iš Out į sudėtį – Ante Zizic; į Out – Lamar Stevens.
 3. Devon Dotson (BES, G) – ~17,1 FP vs OLY
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~179 FP, dabartinė ~175,9 FP, **+3,2**)
-Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Daniel Oturu ~17,4, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
-6-as: Marcus Carr ~20,1
-Suolas: Devon Dotson ~17,1, Mbaye Ndiaye ~16,5, Collin Malcolm ~13,7, Bruno Fernando ~12,8
+**📋 Siūloma sudėtis** (prognozė ~190,1 FP, dabartinė ~190,1 FP)
+Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Marcus Carr ~20,1, Daniel Oturu ~17,4, Mbaye Ndiaye ~16,5
+6-as: Devon Dotson ~17,1
+Suolas: Collin Malcolm ~13,7, Bruno Fernando ~12,8, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
 Out: Joel Parra (jau žaidė), Tonye Jekiri, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
-6-u žaidėju (b-1) dėk Marcus Carr vietoj Collin Malcolm.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
@@ -50,7 +49,7 @@ Startinis penketas jau optimalus. ✅
 - Carsen Edwards (ZAL, G) ~15 FP @ VIR (vietoj Tonye Jekiri ~0)
 - Edwin Jackson (ASV, F) ~14,5 FP vs PAR (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~179 : ~131,5
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~190,1 : ~131,5
 
 ---
 
