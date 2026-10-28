@@ -5,15 +5,16 @@
 1. Aliou Diarra (VIR, C) – ~24,3 FP vs ZAL
 2. Jonas Valančiūnas (ZAL, C) – ~21,1 FP @ VIR
 3. Ante Zizic (BES, C) – ~18,4 FP vs OLY
-Kapitonas Kevin Punter jau žaidžia – šį turą keisti nebegalima.
+Dabar kapitonas – Jonas Valančiūnas (~21,1 FP). Siūlau keisti į Aliou Diarra.
 
-**📋 Siūloma sudėtis** (prognozė ~154,2 FP, dabartinė ~149,2 FP, **+5**)
-Startas: Aliou Diarra ~24,3, Kevin Punter (C) ~23, Andres Feliz ~14,5, Lamar Stevens ~12,7, Nigel Hayes-Davis ~8,5
-6-as: Chima Moneke ~15
-Suolas: Jonas Valančiūnas ~21,1, Ante Zizic ~18,4, Hugo Besson ~15,9, Tornike Shengelia ~11
+**📋 Siūloma sudėtis** (prognozė ~161,9 FP, dabartinė ~151,1 FP, **+10,8**)
+Startas: Aliou Diarra (C) ~24,3, Kevin Punter ~23, Chima Moneke ~15, Andres Feliz ~14,5, Lamar Stevens ~12,7
+6-as: Jonas Valančiūnas ~21,1
+Suolas: Ante Zizic ~18,4, Hugo Besson ~15,9, Tornike Shengelia ~11, Nigel Hayes-Davis ~8,5
 Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Devon Dotson
 Pakeitimai: į startą – Lamar Stevens; iš starto – Jonas Valančiūnas.
 Iš Out į sudėtį – Ante Zizic; į Out – Devon Dotson.
+6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Hugo Besson.
 
 **🩹 Traumos**
 - Devon Dotson: nežais – šiuo metu sudėtyje!
@@ -35,20 +36,20 @@ Iš Out į sudėtį – Ante Zizic; į Out – Devon Dotson.
 3. Mbaye Ndiaye (OLY, F) – ~16,5 FP @ BES
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~179,9 FP, dabartinė ~173 FP, **+6,9**)
+**📋 Siūloma sudėtis** (prognozė ~179,9 FP, dabartinė ~179,4 FP)
 Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Marcus Carr ~20,1, Daniel Oturu ~17,4, Mbaye Ndiaye ~16,5
 6-as: Collin Malcolm ~13,7
 Suolas: Bruno Fernando ~12,8, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3, Tonye Jekiri ~0
 Out: Joel Parra (jau žaidė), Devon Dotson, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Tonye Jekiri; į Out – Devon Dotson.
-6-u žaidėju (b-1) dėk Collin Malcolm vietoj Devon Dotson.
+Iš Out į sudėtį – Tonye Jekiri; į Out – Tyler Dorsey.
+6-u žaidėju (b-1) dėk Collin Malcolm vietoj Bruno Fernando.
 
 **🩹 Traumos**
 - Tonye Jekiri: nežais
-- Devon Dotson: nežais – šiuo metu sudėtyje!
+- Devon Dotson: nežais
 - Joel Parra: neaišku
-- Tyler Dorsey: nežais
+- Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
 - Mike James (IST, G) ~16,3 FP @ HTA (vietoj Tonye Jekiri ~0)
