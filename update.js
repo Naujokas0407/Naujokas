@@ -705,6 +705,33 @@ async function discover() {
       }
       if (ch) fs.writeFileSync(syncF, JSON.stringify(done));
     } catch (e) { console.log(L.slug + ": archyvų FP sulyginimas", e.message); }
+    // H2H lygose: praėjusių turų archyvuose porų rezultatai ir oficialūs taškai visada sulyginami su naujausiais BN rezultatais
+    // (BN kartais pataiso taškus vėliau), o jei komandos sudėtis archyve neatitinka oficialių taškų (komanda keitė sudėtį po turo),
+    // archyvas vieną kartą perstatomas iš tikrų to turo BN sudėčių
+    if (L.format === "h2h" && old && Array.isArray(old.results)) {
+      const fixF = path.join(DIR, L.slug + "-archfix.json"); let fixed = {}; try { fixed = JSON.parse(fs.readFileSync(fixF, "utf8")); } catch (e) {}
+      let fixCh = false;
+      for (let r = 1; r <= S.r; r++) {
+        try {
+          const res = old.results.filter(m => m.r === r); if (!res.length) continue;
+          const off = {}; res.forEach(m => { off[m.a] = m.as; off[m.b] = m.bs; });
+          let a; try { a = JSON.parse(fs.readFileSync(arch(L.slug, r), "utf8")); } catch (e) { continue; }
+          const bad = (a.teams || []).some(tm => off[tm.title] != null && Math.abs(off[tm.title] - tm.total) > 0.5);
+          if (bad && !fixed[r]) {
+            const prev = a;
+            await buildPastArchive(L, r, S); fixed[r] = new Date().toISOString(); fixCh = true;
+            a = JSON.parse(fs.readFileSync(arch(L.slug, r), "utf8"));
+            Object.keys(prev).forEach(k => { if (!(k in a)) a[k] = prev[k]; }); // results, matchups ir kt. lieka
+            console.log(L.slug + ": " + r + " turo archyvas perstatytas pagal tikras BN sudėtis");
+          }
+          const before = JSON.stringify(a);
+          a.matchups = res.map(m => ({ a: m.a, b: m.b, as: m.as, bs: m.bs }));
+          (a.teams || []).forEach(tm => { if (off[tm.title] != null) tm.official = off[tm.title]; });
+          if (JSON.stringify(a) !== before) fs.writeFileSync(arch(L.slug, r), JSON.stringify(a));
+        } catch (e) { console.log(L.slug + ": H2H archyvo sulyginimas " + r, e.message); }
+      }
+      if (fixCh) fs.writeFileSync(fixF, JSON.stringify(fixed));
+    }
     if (old && old.round && old.round !== S.r + 1 && !fs.existsSync(arch(L.slug, old.round))) fs.writeFileSync(arch(L.slug, old.round), JSON.stringify(old));
     if (frozen) {
       // užfiksuotam turui papildomai įrašomos pozicijos ir minutės
