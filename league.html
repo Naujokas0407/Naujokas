@@ -306,6 +306,9 @@ a.brand{text-decoration:none}
 .hm td.self{background:var(--line-2)}
 .hm td.hw{color:#4cd07d;font-weight:600}.hm td.hl{color:#ff6b5e;font-weight:600}.hm td.hd{color:#e6c14d;font-weight:600}
 .hm td small{display:block;font-size:10.5px;font-weight:500;opacity:.85}
+.opp th,.opp td{padding:6px 8px;font-size:13px;white-space:nowrap}
+.opp .oppn{color:var(--muted);font-size:12px}
+.opp tr.curr td{background:rgba(255,122,26,.07)}
 .hm td[data-hp]{cursor:pointer}
 .hm tr.hx td,.hm td.hx,.hm th.hx{background:rgba(255,122,26,.08)}
 .hm td.hx[data-hp]:hover,.hm td[data-hp]:focus-visible{outline:2px solid var(--cap);outline-offset:-2px}
@@ -1397,17 +1400,46 @@ function fpChart(hist, avg) {
   const rd = roll.map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="3" class="dr"/>`).join("");
   return `<div class="fpc"><svg viewBox="0 0 ${w} ${H}" width="${w}" height="${H}" role="img" aria-label="FP pagal turus">${bars}${al}</svg></div><div class="fpl"><span><i class="k1"></i>sezono vidurkis${avg != null ? ` <b>${r1(avg)}</b>` : ""}</span><span><i class="k3"></i>virš vidurkio</span><span><i class="k4"></i>po vidurkiu</span></div>`;
 }
+// ---- Eurolygos klubų pavadinimai (pagal Eurolygos kodą) ----
+const CLUB_NAME = { ASV: "LDLC ASVEL Villeurbanne", BAR: "FC Barcelona", BAS: "Baskonia Vitoria-Gasteiz", BES: "Beşiktaş Stambulas", DUB: "Dubai Basketball", HTA: "Hapoel Tel Avivas", IST: "Anadolu Efes Stambulas", MAD: "Real Madrid", MIL: "Olimpia Milano", MUN: "Bayern Miunchenas", OLY: "Olympiacos Pirėjas", PAM: "Valencia Basket", PAN: "Panathinaikos Atėnai", PAR: "Partizan Belgradas", PRS: "Paris Basketball", RED: "Crvena Zvezda Belgradas", TEL: "Maccabi Tel Avivas", ULK: "Fenerbahçe Stambulas", VIR: "Virtus Bologna", ZAL: "Žalgiris Kaunas" };
+const clubName = c => CLUB_NAME[c] || c;
+// turų archyvai (rungtynės ir žaidėjų klubai kiekvieną turą) – kraunami tik atidarius žaidėjo kortelę
+const RARCH = {};
+async function loadArch(r) {
+  const k = D.slug + "|" + r; if (k in RARCH) return RARCH[k];
+  try { const x = await fetch("data/" + D.slug + "-r" + r + ".json", { cache: "force-cache" }); RARCH[k] = x.ok ? await x.json() : null; } catch (e) { RARCH[k] = null; }
+  return RARCH[k];
+}
+function oppRow(r, club, g, fp, cur) {
+  if (!g) return `<tr><td class="l fa">${r} t.</td><td class="l fa" colspan="2">Rungtynių nėra</td><td>${fp == null ? "–" : num(fp)}</td></tr>`;
+  const home = g.h === club, opp = home ? g.a : g.h, my = home ? g.hs : g.as, ot = home ? g.as : g.hs;
+  const res = g.status === "final" && my != null && ot != null ? `<span class="${my > ot ? "sw" : my < ot ? "sl" : ""}">${my > ot ? "P" : my < ot ? "Pr" : "L"} ${my}:${ot}</span>` : g.status === "live" ? `<span class="sl">LIVE ${my ?? 0}:${ot ?? 0}</span>` : `<span class="fa">${when(g.start)}</span>`;
+  return `<tr${cur ? ' class="curr"' : ""}><td class="l fa">${r} t.</td><td class="l"><span class="fa">${home ? "vs" : "@"}</span> <b>${esc(tv(opp))}</b> <span class="oppn">${esc(clubName(opp))}</span></td><td class="l">${res}</td><td class="pt">${fp == null ? "–" : num(fp)}</td></tr>`;
+}
+async function oppTable(p, hist) {
+  const rows = await Promise.all(hist.map(async h => {
+    if (h.cur) return oppRow(h.r, p.club, p.game != null ? gameOf(p.game) : null, h.fp, true);
+    const A = await loadArch(h.r); if (!A) return "";
+    const all = [...(A.teams || []).flatMap(t => t.players || []), ...(A.pool || []), ...(A.fa || [])];
+    const q = all.find(x => x.id === p.id), club = (q && q.club) || p.club;
+    const g = (A.games || []).find(x => (q && q.game != null && x.id === q.game)) || (A.games || []).find(x => x.h === club || x.a === club);
+    return oppRow(h.r, club, g, h.fp, false);
+  }));
+  const body = rows.filter(Boolean).reverse().join("");
+  return body ? `<div class="sub">Rungtynės pagal turus · prieš ką žaidė</div><div class="x"><table class="stand opp"><thead><tr><th class="l">Turas</th><th class="l">Varžovas</th><th class="l">Rezultatas</th><th>FP</th></tr></thead><tbody>${body}</tbody></table></div>` : "";
+}
 async function openPlayer(id) {
   const f = findPlayer(id); if (!f) return;
   const { p, team } = f;
   const pm = document.getElementById("pm"), body = document.getElementById("pmBody");
   const head = () => { const h = healthOf(p); return `<div class="pm-h"><div><div class="pm-n">${esc(p.name)}</div><div class="sub">${esc(tv(p.club))}${p.pos ? " · " + esc(p.pos) : ""}${team ? " · " + esc(team) : " · laisvas"}</div></div>${h && h !== "ready" && HL[h] ? hBadge(p) : ""}</div>`; };
   body.innerHTML = head() + `<div class="sub">Kraunama…</div>`;
+  pm.dataset.pid = id;
   pm.hidden = false; document.body.style.overflow = "hidden";
   const H = await loadFph();
   const rounds = Object.keys(H).map(Number).sort((a, b) => a - b);
   const hist = rounds.map(r => ({ r, fp: H[r] ? H[r][id] : undefined }));
-  if (viewR == null && p.fp != null) hist.push({ r: D.round, fp: p.fp, cur: true });
+  if (viewR == null && (p.fp != null || p.game != null)) hist.push({ r: D.round, fp: p.fp ?? null, cur: true });
   const vals = hist.filter(x => x.fp != null).map(x => x.fp);
   // Bėdų turgui ir Lupikai vidurkis – tik iš baigtų turų (einamas turas nesiskaičiuoja)
   const vals0 = TREND_ON ? hist.filter(x => x.fp != null && !x.cur).map(x => x.fp) : vals;
@@ -1415,12 +1447,13 @@ async function openPlayer(id) {
   const chart = TREND_ON ? fpChart(hist, avg) : null;
   const bars = chart ? "" : hist.map(x => `<div class="pb" title="${x.r} turas: ${x.fp == null ? "nežaidė" : num(x.fp)} FP"><span class="pbv">${x.fp == null ? "–" : num(x.fp)}</span><i style="height:${x.fp == null ? 2 : Math.max(3, Math.round(Math.abs(x.fp) / mx * 70))}px" class="${x.fp != null && x.fp < 0 ? "neg" : ""} ${x.cur ? "cur" : ""}"></i><span class="pbr">${x.r} t.</span></div>`).join("");
   const g = p.game != null ? gameOf(p.game) : null;
-  const gl = g ? `${g.h === p.club ? "vs" : "@"} ${esc(tv(g.h === p.club ? g.a : g.h))} · ${g.status === "scheduled" ? when(g.start) : g.status === "live" ? "vyksta dabar" : "baigtos " + g.hs + ":" + g.as}` : "šį turą rungtynių nėra arba duomenų dar nėra";
+  const gl = g ? `${g.h === p.club ? "vs" : "@"} ${esc(tv(g.h === p.club ? g.a : g.h))} (${esc(clubName(g.h === p.club ? g.a : g.h))}) · ${g.status === "scheduled" ? when(g.start) : g.status === "live" ? "vyksta dabar" : "baigtos " + g.hs + ":" + g.as}` : "šį turą rungtynių nėra arba duomenų dar nėra";
   body.innerHTML = head() +
     `<div class="pm-s"><div><span class="sub">Sezono vidurkis</span><b>${avg == null ? "–" : num(avg)}</b></div><div><span class="sub">Sužaidė turų</span><b>${vals0.length}</b></div>${p.min != null ? `<div><span class="sub">Vid. minutės</span><b>${minTxt(p.min)}</b></div>` : ""}<div><span class="sub">Geriausias turas</span><b>${vals.length ? num(Math.max(...vals)) : "–"}</b></div></div>` +
     `<div class="sub">FP pagal turus</div>${chart || `<div class="pbs">${bars || '<span class="sub">Duomenų dar nėra</span>'}</div>`}` +
     trendTable(p.id) +
-    `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div>`;
+    `<div class="sub">${D.round} turo rungtynės</div><div class="pm-g">${gl}${p.st ? "<br>" + brief(p.st) : ""}${p.fp != null ? `<br>FP šį turą: <b>${num(p.fp)}</b>` : ""}</div><div id="pmOpp"><div class="sub">Kraunami varžovai…</div></div>`;
+  try { const html = await oppTable(p, hist); const el = document.getElementById("pmOpp"); if (el && document.getElementById("pm").dataset.pid === id) el.innerHTML = html; } catch (e) { const el = document.getElementById("pmOpp"); if (el) el.innerHTML = ""; }
 }
 function closePlayer() { document.getElementById("pm").hidden = true; document.body.style.overflow = ""; }
 document.addEventListener("click", e => {
