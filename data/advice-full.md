@@ -23,10 +23,10 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~180,2 FP, dabartinė ~180,2 FP)
-Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Marcus Carr ~20,1, Daniel Oturu ~17,4, Mbaye Ndiaye ~10
-6-as: Bruno Fernando ~12,8
-Suolas: Tyler Dorsey ~14,6, Collin Malcolm ~13,7, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
+**📋 Siūloma sudėtis** (prognozė ~187,6 FP, dabartinė ~187,6 FP)
+Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Daniel Oturu ~28, Marcus Carr ~20,1, Mbaye Ndiaye ~10
+6-as: Bruno Fernando ~9
+Suolas: Collin Malcolm ~15, Tyler Dorsey ~14,6, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
 Out: Tonye Jekiri (jau žaidė), Devon Dotson (jau žaidė), Joel Parra (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
@@ -36,7 +36,7 @@ Startinis penketas jau optimalus. ✅
 - Joel Parra: neaišku
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~180,2 : ~131,5
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~187,6 : ~131,5
 
 ---
 
