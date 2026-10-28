@@ -50,7 +50,7 @@ Startinis penketas jau optimalus. ✅
 - Carsen Edwards (ZAL, G) ~15 FP @ VIR (vietoj Tonye Jekiri ~0)
 - Edwin Jackson (ASV, F) ~14,5 FP vs PAR (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~179 : ~109,9
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~179 : ~134
 
 ---
 
