@@ -201,6 +201,7 @@ td.pts{font-weight:700;color:var(--ink)}
 .dp .pv{text-align:right;font-weight:700;white-space:nowrap}
 .dp .pv small{display:block;font-weight:500;font-size:10.5px;color:var(--muted)}
 .dp.onc .pn b{color:#ff9a4a}
+.dp .stl{font-size:11px;color:var(--ink-2)}
 .sl{display:inline-block;font-size:9.5px;font-weight:700;border-radius:4px;padding:0 4px;border:1px solid var(--line);color:var(--muted)}
 .sl.st{color:var(--ink-2)}
 .dd{display:inline-block;font-size:9.5px;font-weight:700;border-radius:4px;padding:0 4px;background:#1f2a3a;color:#9cc3ff}
@@ -305,7 +306,68 @@ async function load() {
   CUR = Math.max(...ds.map(d => d.round));
   const g = ds[0].games || [];
   RSTATE = g.length && g.every(x => x.status === "final") ? "final" : g.some(x => x.status !== "scheduled") ? "live" : "scheduled";
+  applyLive();
   render();
+}
+
+// ---- Gyvi Eurolygos duomenys tiesiai iš naršyklės (kas 30 s rungtynių metu), kaip lygų puslapiuose ----
+const EL = "https://live.euroleague.net/api", SEASON = "E2026";
+const LIVE = { games: {}, players: {} }; // games[h|a] = {code,hs,as,status,q,clock}; players[club|norm] = {st,oc,dnp,code}
+let LIVE_AT = null;
+const normN = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/ł/g, "l").replace(/đ/g, "d").toLowerCase().replace(/[^a-z ]/g, " ").replace(/\b(jr|sr|ii|iii|iv)\b/g, " ").replace(/\s+/g, " ").trim();
+const secsL = m => { if (!m || m === "DNP") return 0; const [a, b] = String(m).split(":").map(Number); return a * 60 + (b || 0); };
+const statArr = p => [secsL(p.Minutes), p.Points, p.FieldGoalsMade2, p.FieldGoalsAttempted2, p.FieldGoalsMade3, p.FieldGoalsAttempted3, p.FreeThrowsMade, p.FreeThrowsAttempted, p.OffensiveRebounds, p.DefensiveRebounds, p.TotalRebounds, p.Assistances, p.Steals, p.BlocksFavour, p.BlocksAgainst, p.Turnovers, p.FoulsCommited, p.FoulsReceived, p.Valuation].map(v => Number(v) || 0);
+const elGet = (what, code) => fetch(`${EL}/${what}?gamecode=${code}&seasoncode=${SEASON}`, { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(t => t ? JSON.parse(t) : null).catch(() => null);
+// BN fantasy taškų formulė (ta pati kaip lygų puslapiuose)
+function estFpL(st, g, club) {
+  const [sec, pts, m2, a2, m3, a3, ftm, fta, orb, drb, reb, ast, stl, blk, ba, to, pf, fd] = st;
+  const dd = [pts, reb, ast, stl, blk].filter(x => x >= 10).length; let wl = 0;
+  if (g && g.hs != null && g.as != null && g.hs !== g.as && (g.status === "live" || g.status === "final")) { const home = g.h === club; wl = (home ? g.hs > g.as : g.as > g.hs) ? 1.5 : -1.5; }
+  return Math.round((pts - (a2 - m2) - (a3 - m3) - (fta - ftm) + 1.5 * orb + drb + 1.5 * ast + 1.5 * stl + blk - 0.5 * ba - 1.5 * to + fd + (dd >= 2 ? 10 : 0) + (pf >= 5 ? -5 : 0) + wl) * 4) / 4;
+}
+// pritaiko gyvus duomenis visoms keturioms lygoms (rezultatai, žaidėjų statistika, preliminarūs FP ir komandų sumos)
+function applyLive() {
+  if (!DATA) return;
+  DATA.forEach(L => {
+    const gm = {};
+    (L.d.games || []).forEach(g => { const lg = LIVE.games[g.h + "|" + g.a]; if (lg) { const old = g.id; Object.assign(g, { hs: lg.hs, as: lg.as, status: lg.status, q: lg.q, clock: lg.clock }); if (lg.code != null && typeof old !== "number") { g.id = lg.code; L.d.teams.forEach(t => t.players.forEach(p => { if (p.game === old) p.game = lg.code; })); } } gm[g.id] = g; });
+    L.d.teams.forEach(t => {
+      let ch = false;
+      t.players.forEach(p => {
+        const lp = LIVE.players[p.club + "|" + normN(p.name)] || LIVE.players[p.club + "|~" + normN(p.name).split(" ").pop()];
+        if (!lp) return;
+        p.oc = lp.oc; p.dnp = lp.dnp; p.st = lp.st;
+        if ((p.fp == null || p.est) && lp.st) { p.fp = estFpL(lp.st, gm[p.game], p.club); p.est = true; ch = true; }
+      });
+      if (ch) t.total = Math.round(t.players.reduce((a, p) => a + (p.fp ?? 0) * (p.mult || 0), 0) * 100) / 100;
+    });
+  });
+  const g = DATA[0].d.games || [];
+  RSTATE = g.length && g.every(x => x.status === "final") ? "final" : g.some(x => x.status !== "scheduled") ? "live" : "scheduled";
+}
+async function pollLive() {
+  if (!DATA) return;
+  const games = DATA[0].d.games || [], now = Date.now();
+  const active = games.filter(g => g.status === "live" || (g.status === "scheduled" && g.start && new Date(g.start).getTime() - 5 * 60000 <= now));
+  if (!active.length) return;
+  if (active.some(g => typeof g.id !== "number" && !(LIVE.games[g.h + "|" + g.a] || {}).code)) {
+    const base = (CUR - 1) * 10;
+    const hs = await Promise.all(Array.from({ length: 12 }, (_, i) => elGet("Header", base + i + 1).then(h => [base + i + 1, h])));
+    for (const [code, h] of hs) if (h && h.CodeTeamA) { const k = h.CodeTeamA.trim() + "|" + h.CodeTeamB.trim(); LIVE.games[k] = Object.assign(LIVE.games[k] || {}, { code }); }
+  }
+  let changed = false;
+  for (const g of active) {
+    const k = g.h + "|" + g.a, code = typeof g.id === "number" ? g.id : (LIVE.games[k] || {}).code; if (code == null) continue;
+    const [h, bx] = await Promise.all([elGet("Header", code), elGet("Boxscore", code)]);
+    if (h && h.CodeTeamA) { const hs = parseInt(h.ScoreA, 10), as = parseInt(h.ScoreB, 10);
+      if (h.Live || hs > 0 || as > 0) { LIVE.games[k] = { code, hs, as, status: h.Live ? "live" : "final", q: String(h.Quarter || "").trim(), clock: String(h.RemainingPartialTime || "").trim() }; changed = true; } }
+    if (bx && bx.Stats) for (const side of bx.Stats) for (const p of side.PlayersStats || []) {
+      const club = String(p.Team || "").trim(), [last, first] = String(p.Player).split(",").map(x => x.trim()), dnp = p.Minutes === "DNP" || !p.Minutes;
+      const v = { st: dnp ? null : statArr(p), oc: p.IsPlaying ? 1 : 0, dnp };
+      LIVE.players[club + "|" + normN((first || "") + " " + last)] = v; LIVE.players[club + "|~" + normN(last).split(" ").pop()] = v; changed = true;
+    }
+  }
+  if (changed) { LIVE_AT = new Date(); applyLive(); render(); }
 }
 
 // komandos taškai konkrečiame Eurolygos ture (null – dar nežaista)
@@ -315,7 +377,7 @@ function scoreOf(L, title, r) {
   if (d.format === "h2h") {
     if (r < d.round) { const m = (d.results || []).find(x => x.r === r && (x.a === title || x.b === title)); return m ? (m.a === title ? m.as : m.bs) : null; }
     if (RSTATE === "scheduled") return null;
-    const t = d.teams.find(x => x.title === title); return t ? (t.official ?? t.total) : null;
+    const t = d.teams.find(x => x.title === title); return t ? (RSTATE === "final" ? (t.official ?? t.total) : t.total) : null;
   }
   if (r === d.round) { if (RSTATE === "scheduled") return null; const t = d.teams.find(x => x.title === title); return t ? t.total : null; }
   const h = (d.history || {})[r]; return h && h[title] != null ? h[title] : null;
@@ -734,12 +796,13 @@ function rosterHtml(L, t) {
     const d = g ? dm[g.id] : 0;
     let gs = "Nežaidžia";
     if (g) { const home = g.h === p.club, opp = home ? g.a : g.h, vs = (home ? "vs " : "@ ") + esc((L.d.tv || {})[opp] || opp);
-      gs = g.status === "scheduled" ? `${vs} · ${wd(g.start)} ${hm(g.start)}` : g.status === "live" ? `${vs} · <span class="lvx">LIVE</span>` : `${vs} · baigta`; }
+      gs = g.status === "scheduled" ? `${vs} · ${wd(g.start)} ${hm(g.start)}` : g.status === "live" ? `${vs} · <span class="lvx">LIVE${g.q ? " " + esc(/^\d$/.test(g.q) ? g.q + " k." : g.q) : ""}${g.clock && g.clock !== "00:00" ? " " + esc(g.clock) : ""}</span>` : `${vs} · baigta`; }
+    const stl = p.st ? `<span class="stl">${p.st[1]} tšk · ${p.st[10]} atk · ${p.st[11]} rp · ${Math.floor(p.st[0] / 60)} min</span>` : (p.dnp && g && g.status !== "scheduled" ? `<span class="stl">DNP</span>` : "");
     const fp = p.fp == null ? null : p.fp, pts = fp == null ? null : fp * (p.mult || 0);
-    return sep + `<div class="dp ${k === "i" ? "out" : ""} ${p.oc && g && g.status === "live" ? "onc" : ""}"><div class="pn"><b>${esc(p.name)}</b><span class="pm2"><span class="sl ${k === "g" || k === "f" || k === "c" ? "st" : ""}">${slotTxt(p.card)}</span>${d ? `<span class="dd ${d === 2 ? "d2x" : ""}">D${d}</span>` : ""}${p.cap ? `<span class="cpt" title="Kapitonas ×2">C</span>` : ""}<span>${esc(p.club)} ${gs}</span></span></div><div class="pv">${pts == null ? "–" : num(pts)}${fp != null && p.mult !== 1 ? `<small>${num(fp)} ×${String(p.mult).replace(".", ",")}</small>` : ""}</div></div>`;
+    return sep + `<div class="dp ${k === "i" ? "out" : ""} ${p.oc && g && g.status === "live" ? "onc" : ""}"><div class="pn"><b>${esc(p.name)}</b><span class="pm2"><span class="sl ${k === "g" || k === "f" || k === "c" ? "st" : ""}">${slotTxt(p.card)}</span>${d ? `<span class="dd ${d === 2 ? "d2x" : ""}">D${d}</span>` : ""}${p.cap ? `<span class="cpt" title="Kapitonas ×2">C</span>` : ""}<span>${esc(p.club)} ${gs}</span></span>${stl}</div><div class="pv">${pts == null ? "–" : (p.est ? "~" : "") + num(pts)}${fp != null && p.mult !== 1 ? `<small>${num(fp)} ×${String(p.mult).replace(".", ",")}</small>` : ""}</div></div>`;
   }).join("");
 }
-function teamTotal(L, t) { const v = scoreOf(L, t.title, CUR); return v != null ? v : (t.official ?? t.total ?? 0); }
+function teamTotal(L, t) { const v = scoreOf(L, t.title, CUR); return v != null ? v : (t.total ?? 0); }
 function leftToPlay(L, t) { const gm = Object.fromEntries((L.d.games || []).map(g => [g.id, g])); return t.players.filter(p => p.mult > 0 && gm[p.game] && gm[p.game].status !== "final").length; }
 function renderDuel() {
   const el = document.getElementById("duel"); if (!el || !DATA) return;
@@ -760,7 +823,7 @@ function renderDuel() {
     html += `<div class="card dsc">${sideHead(F)}<div class="big"><span class="${a > b ? "w" : ""}">${num(a)}</span> : <span class="${b > a ? "w" : ""}">${num(b)}</span></div>${sideHead(O, true)}</div>`;
   }
   html += `<div class="dcols"><div class="card dcol"><h4>★ ${esc(F.t.title)}</h4>${rosterHtml(F.L, F.t)}</div>${O ? `<div class="card dcol"><h4>${esc(O.t.title)}</h4>${rosterHtml(O.L, O.t)}</div>` : ""}</div>
-    <p class="gr" style="text-align:center">D1 / D2 – kurią turo dieną žaidžia žaidėjas. Taškai = FP × daugiklis (kapitonas ×2, 6-as ×1, kiti suolelyje ×0,5). Atsinaujina kas minutę.</p>`;
+    <p class="gr" style="text-align:center">D1 / D2 – kurią turo dieną žaidžia žaidėjas. Taškai = FP × daugiklis (kapitonas ×2, 6-as ×1, kiti suolelyje ×0,5). Rungtynių metu atsinaujina kas 30 s iš Eurolygos${LIVE_AT ? " (paskutinį kartą " + LIVE_AT.toLocaleTimeString("lt-LT", { hour: "2-digit", minute: "2-digit", second: "2-digit" }) + ")" : ""}; ~ – preliminarūs taškai, kol BasketNews paskelbs oficialius. Oranžinis vardas – žaidėjas šiuo metu aikštėje.</p>`;
   el.innerHTML = html; bindDuel();
 }
 function bindDuel() {
@@ -784,6 +847,7 @@ function start() {
   if (started) return; started = true;
   document.getElementById("gate").hidden = true;
   load(); setInterval(load, 60000); loadExtra(); setInterval(loadExtra, 300000);
+  setTimeout(pollLive, 3000); setInterval(pollLive, 30000);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
 }
 {
