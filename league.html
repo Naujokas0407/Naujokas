@@ -81,6 +81,8 @@ th:last-child,td:last-child{padding-right:16px}
 .pos{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:22px;border-radius:999px;font-size:11.5px;font-weight:600;margin-right:8px;background:var(--chip);color:var(--chip-ink);vertical-align:middle}
 .pos.o{background:transparent;color:var(--ink-2);border:1px solid var(--line)}
 .pos.out{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.dd{display:inline-block;font-size:9.5px;font-weight:700;border-radius:4px;padding:0 4px;background:#1f2a3a;color:#9cc3ff;vertical-align:1px}
+.dd.d2x{background:#2b2238;color:#d0a8ff}
 .cap{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:var(--cap);color:var(--cap-ink);font-size:10px;font-weight:700;margin-left:6px;vertical-align:1px}
 .nm{font-weight:500;font-size:14px}
 .dim td{color:var(--muted)}
@@ -443,7 +445,15 @@ function gameLabel(p) {
   const g = gameOf(p.game); if (!g) return "";
   const home = g.h === p.club; const opp = home ? g.a : g.h;
   const extra = g.status === "scheduled" ? `<b>${hhmm(g.start)}</b>` : g.status === "live" ? `<b class="lv">LIVE</b>` : "";
-  return `${home ? "vs" : "@"} ${esc(tv(opp))}${extra}`;
+  const d = gameDay(g);
+  return `${d ? `<span class="dd${d === 2 ? " d2x" : ""}" title="${d}-oji turo diena">D${d}</span> ` : ""}${home ? "vs" : "@"} ${esc(tv(opp))}${extra}`;
+}
+// kurią turo dieną (D1, D2…) vyksta rungtynės – pagal datą Vilniaus laiku
+function gameDay(g) {
+  const f = x => new Date(x).toLocaleDateString("lt-LT", { timeZone: "Europe/Vilnius" });
+  if (!D || !D.games || !g || !g.start) return 0;
+  const days = [...new Set(D.games.filter(x => x.start).map(x => f(x.start)))].sort((a, b) => a.localeCompare(b));
+  return days.length > 1 ? days.indexOf(f(g.start)) + 1 : 0;
 }
 function slotChip(card, mini) {
   const [k, n] = card.split("-"); const st = mini ? ' style="margin:0"' : "";
