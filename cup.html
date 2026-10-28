@@ -176,6 +176,39 @@ td.pts{font-weight:700;color:var(--ink)}
 .sched span:nth-child(even){color:var(--muted);text-align:right}
 .sched .on{color:var(--gold-2)!important;font-weight:700}
 .foot{font-size:12px;color:var(--faint);text-align:center}
+#duel{display:flex;flex-direction:column;gap:12px}
+.dpick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dpick label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);min-width:0}
+.dpick select{width:100%;font:500 14px inherit;font-family:inherit;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.dpick select:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+.dfav{color:var(--gold-2)!important}
+.dacts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.dbtn{font:600 13px inherit;font-family:inherit;padding:7px 12px;border-radius:9px;border:1px solid rgba(242,193,78,.45);background:var(--gold-bg);color:var(--gold-2);cursor:pointer}
+.dsc{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:14px 16px}
+.dsc .tm{display:flex;flex-direction:column;gap:2px;min-width:0}
+.dsc .tm:last-child{text-align:right;align-items:flex-end}
+.dsc .tn{font-weight:700;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.dsc .big{font-size:26px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.dsc .big .w{color:var(--win)}
+.dcols{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.dcol{padding:8px 10px}
+.dcol h4{margin:2px 0 6px;font-size:13px;color:var(--gold-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dp{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center;padding:6px 0;border-top:1px solid var(--line-2);font-size:13px}
+.dp.out{opacity:.45}
+.dp .pn{min-width:0;display:flex;flex-direction:column;gap:2px}
+.dp .pn b{font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dp .pm2{font-size:11px;color:var(--muted);display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.dp .pv{text-align:right;font-weight:700;white-space:nowrap}
+.dp .pv small{display:block;font-weight:500;font-size:10.5px;color:var(--muted)}
+.dp.onc .pn b{color:#ff9a4a}
+.sl{display:inline-block;font-size:9.5px;font-weight:700;border-radius:4px;padding:0 4px;border:1px solid var(--line);color:var(--muted)}
+.sl.st{color:var(--ink-2)}
+.dd{display:inline-block;font-size:9.5px;font-weight:700;border-radius:4px;padding:0 4px;background:#1f2a3a;color:#9cc3ff}
+.dd.d2x{background:#2b2238;color:#d0a8ff}
+.cpt{display:inline-block;font-size:9.5px;font-weight:700;border-radius:50%;width:14px;height:14px;line-height:14px;text-align:center;background:var(--cap);color:#1a0d02}
+.lvx{color:var(--loss);font-weight:700}
+.dsep{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;padding:8px 0 2px}
+@media (max-width:560px){.dcols{gap:6px}.dcol{padding:6px 7px}.dp{font-size:12px;gap:4px}.dsc .big{font-size:22px}.dpick{grid-template-columns:1fr}}
 .gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding-inline:16px}
 .gate form{width:100%;max-width:360px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
 .gate h2{margin:0;font-size:20px;letter-spacing:-.02em}
@@ -233,12 +266,14 @@ td.pts{font-weight:700;color:var(--ink)}
     <span class="status" id="status"><i></i><span>Kraunama…</span></span>
   </section>
   <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="false" data-t="duel">Dvikova</button>
     <button role="tab" aria-selected="true" data-t="groups">Grupės</button>
     <button role="tab" aria-selected="false" data-t="ko">Atkrintamosios</button>
     <button role="tab" aria-selected="false" data-t="rep">Reporteris</button>
     <button role="tab" aria-selected="false" data-t="stats">Statistika</button>
     <button role="tab" aria-selected="false" data-t="rules">Taisyklės</button>
   </div>
+  <section id="duel" hidden></section>
   <section id="groups"></section>
   <section id="ko" hidden></section>
   <section id="rep" hidden></section>
@@ -314,7 +349,7 @@ function groupTable(G) {
     pairs.forEach(([a, b]) => { const A = t[a], B = t[b]; if (!A || !B) return;
       const sa = scoreOf(A.L, A.title, r), sb = scoreOf(B.L, B.title, r);
       matches.push({ r, A, B, sa, sb, fin: isFinal(r) });
-      if (sa != null && sb != null && isFinal(r)) { A.gp++; B.gp++; A.pf += sa; A.pa += sb; B.pf += sb; B.pa += sa; if (sa > sb) { A.w++; B.l++; } else if (sb > sa) { B.w++; A.l++; } else { A.dr++; B.dr++; } }
+      if (sa != null && sb != null && (isFinal(r) || r === CUR)) { A.gp++; B.gp++; A.pf += sa; A.pa += sb; B.pf += sb; B.pa += sa; if (sa > sb) { A.w++; B.l++; } else if (sb > sa) { B.w++; A.l++; } else { A.dr++; B.dr++; } }
     }); });
   t.sort((a, b) => ((b.w + b.dr / 2) - (a.w + a.dr / 2)) || (b.pf - a.pf) || (a.i - b.i));
   t.forEach((x, k) => x.place = k + 1);
@@ -337,6 +372,7 @@ function render() {
   try { renderReporter(); } catch (e) { console.error(e); }
   try { renderStats(); } catch (e) { console.error(e); }
   renderRules();
+  try { renderDuel(); } catch (e) { console.error(e); }
 }
 
 function divChip(d) { return `<span class="dv d${d}">D${d}</span>`; }
@@ -348,8 +384,8 @@ function renderGroups(tables, prelim, basedOn) {
   let html = "";
   if (prelim) html += `<p class="note">Grupės dar preliminarios: sudarytos pagal vietas lygose po ${basedOn || 0} turo. Galutinės grupės bus aiškios po ${SEED_AFTER} turo, o taurė prasidės ${START} ture.</p>`;
   html += `<div class="grid">` + tables.map(({ G, rows, matches }) => {
-    const anyPlayed = rows.some(x => x.gp);
-    return `<article class="card"><div class="gh"><span class="gl"><span class="gbadge">${G.name}</span>Grupė ${G.name}</span><span class="gr">${anyPlayed ? rows[0].gp + "/14 sužaista" : "8–21 turai"}</span></div>
+    const anyPlayed = rows.some(x => x.gp), liveNow = CUR >= START && CUR <= GROUP_END && !isFinal(CUR) && matches.some(m => m.r === CUR && m.sa != null);
+    return `<article class="card"><div class="gh"><span class="gl"><span class="gbadge">${G.name}</span>Grupė ${G.name}</span><span class="gr">${anyPlayed ? (liveNow ? `<span class="lvx">● gyvai</span> · ${CUR} turas` : rows[0].gp + "/14 sužaista") : "8–21 turai"}</span></div>
       <table><thead><tr><th class="l">#</th><th class="l">Komanda</th><th>P</th><th>Pr</th><th>Taškai</th></tr></thead><tbody>` +
       (anyPlayed ? rows : [...rows].sort((a, b) => a.div - b.div)).map((x, k) => `<tr class="${anyPlayed && k === 0 ? "q1" : ""}"><td class="l rk">${anyPlayed ? x.place : "–"}</td><td class="l nm">${divChip(x.div)}<span data-team="${esc(x.title)}">${esc(x.title)}</span></td><td>${num(x.w + x.dr / 2)}</td><td>${x.l}</td><td class="pts">${num(x.pf)}</td></tr>`).join("") +
       `</tbody></table>
@@ -665,9 +701,79 @@ function renderRules() {
   </div></div>`;
 }
 
+
+// ---- Dvikova: mėgstama komanda (išsaugoma naršyklėje) prieš pasirenkamą varžovą ----
+const LSK = "cupFav";
+const lsGet = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const lsSet = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
+let DUEL_OPP = null, DUEL_AUTO = true;
+const tKey = (L, t) => L.slug + "|" + t.title;
+function teamByKey(k) { if (!k || !DATA) return null; const i = k.indexOf("|"), slug = k.slice(0, i), title = k.slice(i + 1); const L = DATA.find(x => x.slug === slug); const t = L && L.d.teams.find(x => x.title === title); return t ? { L, t } : null; }
+function cupOpponent(title) {
+  const ms = cupMatches().filter(m => m.r === CUR && (m.A.title === title || m.B.title === title));
+  const m = ms[0]; if (!m) return null; const o = m.A.title === title ? m.B : m.A;
+  return o.L ? tKey(o.L, o) : null;
+}
+// rungtynių diena turo viduje (D1, D2…) pagal datą Vilniaus laiku
+function dayMap(L) {
+  const f = s => new Date(s).toLocaleDateString("lt-LT", { timeZone: "Europe/Vilnius" });
+  const days = [...new Set((L.d.games || []).map(g => f(g.start)))].sort((a, b) => a.localeCompare(b));
+  const m = {}; (L.d.games || []).forEach(g => m[g.id] = days.indexOf(f(g.start)) + 1); return m;
+}
+const hm = s => new Date(s).toLocaleTimeString("lt-LT", { timeZone: "Europe/Vilnius", hour: "2-digit", minute: "2-digit" });
+const wd = s => new Date(s).toLocaleDateString("lt-LT", { timeZone: "Europe/Vilnius", weekday: "short" });
+function slotTxt(card) { const [k, n] = String(card || "").split("-"); if (k === "i") return "Out"; if (k === "b") return n === "1" ? "6th" : "B" + n; return (k || "").toUpperCase(); }
+const slotRank = c => { const [k, n] = String(c || "").split("-"); return (k === "i" ? 200 : k === "b" ? 100 : 0) + (+n || 0) + ({ g: 0, f: 10, c: 20 }[k] || 0); };
+function rosterHtml(L, t) {
+  const dm = dayMap(L), gm = Object.fromEntries((L.d.games || []).map(g => [g.id, g]));
+  const ps = [...t.players].sort((a, b) => slotRank(a.card) - slotRank(b.card));
+  let lastGrp = null;
+  return ps.map(p => {
+    const g = gm[p.game], k = String(p.card || "")[0], grp = k === "i" ? "Rezervas" : k === "b" ? "Suolelis" : "Startas";
+    const sep = grp !== lastGrp ? `<div class="dsep">${grp}</div>` : ""; lastGrp = grp;
+    const d = g ? dm[g.id] : 0;
+    let gs = "Nežaidžia";
+    if (g) { const home = g.h === p.club, opp = home ? g.a : g.h, vs = (home ? "vs " : "@ ") + esc((L.d.tv || {})[opp] || opp);
+      gs = g.status === "scheduled" ? `${vs} · ${wd(g.start)} ${hm(g.start)}` : g.status === "live" ? `${vs} · <span class="lvx">LIVE</span>` : `${vs} · baigta`; }
+    const fp = p.fp == null ? null : p.fp, pts = fp == null ? null : fp * (p.mult || 0);
+    return sep + `<div class="dp ${k === "i" ? "out" : ""} ${p.oc && g && g.status === "live" ? "onc" : ""}"><div class="pn"><b>${esc(p.name)}</b><span class="pm2"><span class="sl ${k === "g" || k === "f" || k === "c" ? "st" : ""}">${slotTxt(p.card)}</span>${d ? `<span class="dd ${d === 2 ? "d2x" : ""}">D${d}</span>` : ""}${p.cap ? `<span class="cpt" title="Kapitonas ×2">C</span>` : ""}<span>${esc(p.club)} ${gs}</span></span></div><div class="pv">${pts == null ? "–" : num(pts)}${fp != null && p.mult !== 1 ? `<small>${num(fp)} ×${String(p.mult).replace(".", ",")}</small>` : ""}</div></div>`;
+  }).join("");
+}
+function teamTotal(L, t) { const v = scoreOf(L, t.title, CUR); return v != null ? v : (t.official ?? t.total ?? 0); }
+function leftToPlay(L, t) { const gm = Object.fromEntries((L.d.games || []).map(g => [g.id, g])); return t.players.filter(p => p.mult > 0 && gm[p.game] && gm[p.game].status !== "final").length; }
+function renderDuel() {
+  const el = document.getElementById("duel"); if (!el || !DATA) return;
+  const fav = lsGet(LSK), F = teamByKey(fav);
+  if (F && DUEL_AUTO) DUEL_OPP = cupOpponent(F.t.title) || DUEL_OPP;
+  const O = teamByKey(DUEL_OPP);
+  const opts = (sel, favMark) => `<option value="">— pasirinkite komandą —</option>` + DATA.map(L => `<optgroup label="HLA ${L.div} Divizionas">` + [...L.d.teams].sort((a, b) => a.title.localeCompare(b.title, "lt")).map(t => { const k = tKey(L, t); return `<option value="${esc(k)}" ${k === sel ? "selected" : ""}>${favMark && k === fav ? "★ " : ""}${esc(t.title)}</option>`; }).join("") + `</optgroup>`).join("");
+  let html = `<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:10px">
+    <div class="dpick"><label><span class="dfav">★ Mano komanda (išsaugoma šioje naršyklėje)</span><select id="dFav">${opts(F ? fav : "", false)}</select></label>
+    <label><span>Varžovas (galima keisti)</span><select id="dOpp">${opts(O ? DUEL_OPP : "", true)}</select></label></div>
+    ${F ? `<div class="dacts"><button type="button" class="dbtn" id="dMine">Mano taurės varžovas (${CUR} turas)</button><span class="gr">${DUEL_AUTO ? "Rodomas šio turo taurės varžovas" : "Pasirinktas kitas varžovas"}</span></div>` : ""}
+  </div>`;
+  if (!F) { html += `<p class="note">Pasirinkite savo komandą – ji išliks pažymėta kitą kartą atidarius puslapį. Varžovas bus parinktas automatiškai pagal taurės tvarkaraštį, bet jį galite pakeisti bet kada.</p>`; el.innerHTML = html; bindDuel(); return; }
+  if (!O) { html += `<p class="note">Šiame ture taurės varžovo nėra – pasirinkite bet kurią komandą palyginimui.</p>`; }
+  const sideHead = (X, right) => { const v = teamTotal(X.L, X.t), lf = leftToPlay(X.L, X.t); return `<div class="tm"><span class="tn" data-team="${esc(X.t.title)}">${esc(X.t.title)}</span><span class="gr">${divChip(X.L.div)}HLA ${X.L.div} · liko žaisti: ${lf}</span></div>`; };
+  if (O) {
+    const a = teamTotal(F.L, F.t), b = teamTotal(O.L, O.t);
+    html += `<div class="card dsc">${sideHead(F)}<div class="big"><span class="${a > b ? "w" : ""}">${num(a)}</span> : <span class="${b > a ? "w" : ""}">${num(b)}</span></div>${sideHead(O, true)}</div>`;
+  }
+  html += `<div class="dcols"><div class="card dcol"><h4>★ ${esc(F.t.title)}</h4>${rosterHtml(F.L, F.t)}</div>${O ? `<div class="card dcol"><h4>${esc(O.t.title)}</h4>${rosterHtml(O.L, O.t)}</div>` : ""}</div>
+    <p class="gr" style="text-align:center">D1 / D2 – kurią turo dieną žaidžia žaidėjas. Taškai = FP × daugiklis (kapitonas ×2, 6-as ×1, kiti suolelyje ×0,5). Atsinaujina kas minutę.</p>`;
+  el.innerHTML = html; bindDuel();
+}
+function bindDuel() {
+  const f = document.getElementById("dFav"), o = document.getElementById("dOpp"), m = document.getElementById("dMine");
+  if (f) f.addEventListener("change", () => { lsSet(LSK, f.value || null); DUEL_AUTO = true; DUEL_OPP = null; renderDuel(); });
+  if (o) o.addEventListener("change", () => { DUEL_OPP = o.value || null; DUEL_AUTO = false; renderDuel(); });
+  if (m) m.addEventListener("click", () => { DUEL_AUTO = true; renderDuel(); });
+}
+function showTab(id) { document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x.dataset.t === id))); ["duel", "groups", "ko", "rep", "stats", "rules"].forEach(k => document.getElementById(k).hidden = k !== id); }
+if (lsGet(LSK)) showTab("duel");
 document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
   document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", String(x === b)));
-  ["groups", "ko", "rep", "stats", "rules"].forEach(id => document.getElementById(id).hidden = id !== b.dataset.t);
+  ["duel", "groups", "ko", "rep", "stats", "rules"].forEach(id => document.getElementById(id).hidden = id !== b.dataset.t);
 }));
 
 // ---- slaptažodis (tas pats kaip HLA lygoms) ----
