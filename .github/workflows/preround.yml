@@ -1,0 +1,33 @@
+name: Atnaujinimai prieš rungtynes
+
+# GitHub „cron“ paleidimai gali vėluoti valandą ir daugiau. Šis darbas paleidžiamas kas valandą,
+# pats laukia tikslaus laiko (iki ~5,5 val.) ir tada paleidžia pagrindinį atnaujinimą:
+# likus 2,5 val. iki turo pirmųjų rungtynių, likus 5 min. iki kiekvienos turo dienos pirmųjų rungtynių
+# ir kas 10 min. rungtynių metu.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: preround
+  cancel-in-progress: false
+
+jobs:
+  wait:
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Laukti ir paleisti atnaujinimus
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HORIZON_MIN: "330"
+        run: node preround.js
