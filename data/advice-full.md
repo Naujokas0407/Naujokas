@@ -1,10 +1,9 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 8 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, trečiadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~24,3 FP vs ZAL
 2. Jonas Valančiūnas (ZAL, C) – ~21,1 FP @ VIR
-3. Hugo Besson (ASV, G) – ~15,9 FP vs PAR
 Dabar kapitonas – Jonas Valančiūnas (~21,1 FP). Siūlau keisti į Aliou Diarra.
 
 **📋 Siūloma sudėtis** (prognozė ~161,9 FP, dabartinė ~158,7 FP, **+3,2**)
@@ -22,7 +21,7 @@ Pakeitimai: į startą – Aliou Diarra; iš starto – Jonas Valančiūnas.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 8 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, trečiadienis
 
 **👑 Kapitonas**
 1. Marcus Carr (VIR, G) – ~20,1 FP vs ZAL
@@ -32,7 +31,7 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 Startas: Dwayne Bacon ~39, TJ Shorts II (C) ~30,5, Marcus Carr ~20,1, Daniel Oturu ~17,4, Mbaye Ndiaye ~16,5
 6-as: Bruno Fernando ~12,8
 Suolas: Tyler Dorsey ~14,6, Collin Malcolm ~13,7, Nigel Hayes-Davis ~8,5, Sylvain Francisco ~3
-Out: Devon Dotson (jau žaidė), Joel Parra (jau žaidė), Tonye Jekiri
+Out: Tonye Jekiri (jau žaidė), Devon Dotson (jau žaidė), Joel Parra (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
@@ -41,20 +40,14 @@ Startinis penketas jau optimalus. ✅
 - Joel Parra: neaišku
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
-**🛒 Laisvoji rinka**
-- Carsen Edwards (ZAL, G) ~15 FP @ VIR (vietoj Tonye Jekiri ~0)
-- Edwin Jackson (ASV, F) ~14,5 FP vs PAR (vietoj Tonye Jekiri ~0)
-- Sterling Brown (ZAL, G) ~12,9 FP @ VIR (vietoj Tonye Jekiri ~0)
-
 **⚔️ Prieš Naujoji Akmenė:** prognozė ~186,7 : ~131,5
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 8 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, trečiadienis
 
 **👑 Kapitonas**
-1. Kevarrius Hayes (PAR, C) – ~14 FP @ ASV
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -62,15 +55,10 @@ Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 - Jean Montero: nežais
 - Tonye Jekiri: nežais
 
-**🛒 Laisvoji rinka**
-- Hugo Besson (ASV, G) ~15,9 FP vs PAR (vietoj Tonye Jekiri ~0)
-- Edwin Jackson (ASV, F) ~14,5 FP vs PAR (vietoj Tonye Jekiri ~0)
-- TyTy Washington Jr. (ASV, G) ~13,3 FP vs PAR (vietoj Tonye Jekiri ~0)
-
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 8 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, trečiadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~24,3 FP vs ZAL
