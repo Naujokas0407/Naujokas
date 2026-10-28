@@ -4,8 +4,8 @@
 **👑 Kapitonas**
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~186,2 FP, dabartinė ~186,2 FP)
-Startas: Jonas Valančiūnas (C) ~37, Kevin Punter ~23, Hugo Besson ~15,9, Chima Moneke ~15, Lamar Stevens ~12,7
+**📋 Siūloma sudėtis** (prognozė ~188 FP, dabartinė ~188 FP)
+Startas: Jonas Valančiūnas (C) ~37, Kevin Punter ~23, Hugo Besson ~16,5, Chima Moneke ~15, Lamar Stevens ~14
 6-as: Aliou Diarra ~20
 Suolas: Devon Dotson ~17,1, Andres Feliz ~14,5, Tornike Shengelia ~11, Nigel Hayes-Davis ~8,5
 Out: Alec Peters (jau žaidė), Dzanan Musa (jau žaidė), Ante Zizic (jau žaidė)
@@ -36,7 +36,7 @@ Startinis penketas jau optimalus. ✅
 - Joel Parra: neaišku
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~169,1 : ~156,4
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~169,1 : ~170,8
 
 ---
 
