@@ -36,7 +36,7 @@ Startinis penketas jau optimalus. ✅
 - Joel Parra: neaišku
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~169,1 : ~170,8
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~169,1 : ~113,5
 
 ---
 
