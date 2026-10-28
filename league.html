@@ -306,6 +306,21 @@ a.brand{text-decoration:none}
 .hm td.self{background:var(--line-2)}
 .hm td.hw{color:#4cd07d;font-weight:600}.hm td.hl{color:#ff6b5e;font-weight:600}.hm td.hd{color:#e6c14d;font-weight:600}
 .hm td small{display:block;font-size:10.5px;font-weight:500;opacity:.85}
+.hm td[data-hp]{cursor:pointer}
+.hm tr.hx td,.hm td.hx,.hm th.hx{background:rgba(255,122,26,.08)}
+.hm td.hx[data-hp]:hover,.hm td[data-hp]:focus-visible{outline:2px solid var(--cap);outline-offset:-2px}
+.hpop{position:fixed;z-index:80;width:min(300px,calc(100vw - 16px));background:#161a22;border:1px solid #3a4150;border-radius:12px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,.55);font-size:13px;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.hpop .hp-h{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.hpop .hp-h b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hpop .hp-h b:last-child{text-align:right}
+.hpop .hp-r{font-weight:800;font-size:15px}
+.hpop .hp-l{display:flex;flex-direction:column;gap:2px}
+.hpop .hp-l div{display:grid;grid-template-columns:40px 1fr auto 1fr;gap:6px;text-align:center}
+.hpop .hp-l div span:first-child{text-align:left}
+.hpop .hp-f{border-top:1px solid var(--line);padding-top:6px;color:var(--ink-2)}
+.hpop .sw{color:#4cd07d}.hpop .sl{color:#ff6b5e}
+details.mtsd>summary{cursor:pointer;color:var(--muted);font-size:13px;padding:6px 2px}
+details.mtsd[open]>summary{margin-bottom:8px}
 .pr{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:10px 12px;font-size:13px;color:var(--ink-2)}
 .pr .ph{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;font-weight:600}
 .pr .ph span:last-child{text-align:right}
@@ -1305,13 +1320,16 @@ function h2hMeetings() {
   const order = st.sort((a, b) => (b.w + b.d / 2) - (a.w + a.d / 2) || b.sum - a.sum).map(x => x.t);
   const sg = v => (v > 0 ? "+" : v < 0 ? "−" : "±") + num(Math.abs(v));
   const rec = P => `${P.w}–${P.l}${P.d ? "–" + P.d : ""}`;
+  H2HP = [];
   const matrix = `<div class="card"><div class="x"><table class="stand hm"><thead><tr><th class="l">Komanda</th>${order.map((t, i) => `<th title="${esc(t)}">${i + 1}</th>`).join("")}<th title="Visų sezono turų taškų suma">Taškai</th></tr></thead><tbody>` +
     order.map((a, i) => `<tr><td class="l"><span class="fa">${i + 1}.</span> ${esc(a)}</td>${order.map(b => {
       if (a === b) return `<td class="self"></td>`;
       const P = pair(a, b); if (!P.g.length) return `<td class="fa">–</td>`;
-      return `<td class="${P.w > P.l ? "hw" : P.l > P.w ? "hl" : "hd"}" title="${esc(a)} prieš ${esc(b)}: ${num(P.pf)} : ${num(P.pa)}">${rec(P)}<small>${sg(P.diff)}</small></td>`;
+      const k = H2HP.length; H2HP.push({ a, b, P });
+      return `<td class="${P.w > P.l ? "hw" : P.l > P.w ? "hl" : "hd"}" data-hp="${k}" data-ci="${order.indexOf(b)}" tabindex="0">${rec(P)}<small>${sg(P.diff)}</small></td>`;
     }).join("")}<td class="pts">${num(sumOf[a] || 0)}</td></tr>`).join("") + `</tbody></table></div></div>`;
   const pairs = [];
+  H2H_SG = sg; H2H_REC = rec;
   order.forEach((a, i) => order.slice(i + 1).forEach(b => {
     let x = a, y = b, P = pair(a, b); if (!P.g.length) return;
     if (P.l > P.w || (P.l === P.w && P.diff < 0)) { x = b; y = a; P = pair(x, y); }
@@ -1319,8 +1337,37 @@ function h2hMeetings() {
   }));
   pairs.sort((p, q) => q.last - p.last || q.P.g.length - p.P.g.length);
   const cards = pairs.map(({ x, y, P }) => `<div class="pr"><div class="ph"><span>${esc(x)}</span><b>${rec(P)}</b><span>${esc(y)}</span></div><ul>${P.g.map(m => `<li><span class="fa">${m.r} t.</span><span class="${m.x > m.y ? "sw" : ""}">${num(m.x)}</span><span class="fa">:</span><span class="${m.y > m.x ? "sw" : ""}">${num(m.y)}</span></li>`).join("")}</ul><div class="pt2">Iš viso <b>${num(P.pf)} : ${num(P.pa)}</b> · skirtumas <b class="${P.diff > 0 ? "sw" : P.diff < 0 ? "sl" : ""}">${sg(P.diff)}</b></div></div>`).join("");
-  return `<div class="sub">H2H tarpusavio lentelė · eilutės komandos rezultatas prieš stulpelio komandą (pergalės–pralaimėjimai), po juo – bendras taškų skirtumas · paskutinis stulpelis – visų sezono turų taškai</div>${matrix}<div class="sub">Visi tarpusavio susitikimai · rezultatai, bendra taškų suma ir skirtumas</div><div class="mts">${cards}</div>`;
+  return `<div class="sub">H2H tarpusavio lentelė · eilutės komandos rezultatas prieš stulpelio komandą (pergalės–pralaimėjimai), po juo – bendras taškų skirtumas · užveskite pelę ar paspauskite langelį – pamatysite visus jų susitikimus · paskutinis stulpelis – visų sezono turų taškai</div>${matrix}<details class="mtsd"><summary>Rodyti visus tarpusavio susitikimus (${pairs.length} porų)</summary><div class="mts">${cards}</div></details>`;
 }
+// ---- H2H lentelės langelio santrauka (užvedus pele / paspaudus) ----
+let H2HP = [], H2H_SG = v => num(v), H2H_REC = P => P.w + "–" + P.l;
+function h2hPopHtml({ a, b, P }) {
+  const sg = H2H_SG;
+  return `<div class="hp-h"><b>${esc(a)}</b><span class="hp-r ${P.w > P.l ? "sw" : P.l > P.w ? "sl" : ""}">${H2H_REC(P)}</span><b>${esc(b)}</b></div>` +
+    `<div class="hp-l">${P.g.map(m => `<div><span class="fa">${m.r} t.</span><span class="${m.x > m.y ? "sw" : ""}">${num(m.x)}</span><span class="fa">:</span><span class="${m.y > m.x ? "sw" : ""}">${num(m.y)}</span></div>`).join("")}</div>` +
+    `<div class="hp-f">Iš viso <b>${num(P.pf)} : ${num(P.pa)}</b> · skirtumas <b class="${P.diff > 0 ? "sw" : P.diff < 0 ? "sl" : ""}">${sg(P.diff)}</b>${P.g.length ? ` · vid. <b>${num(Math.round(P.pf / P.g.length * 100) / 100)} : ${num(Math.round(P.pa / P.g.length * 100) / 100)}</b>` : ""}</div>`;
+}
+(function () {
+  let pop = null, cur = null, shownAt = 0;
+  const hide = () => { if (pop) pop.hidden = true; document.querySelectorAll(".hm .hx").forEach(e => e.classList.remove("hx")); cur = null; };
+  const show = td => {
+    const it = H2HP[+td.dataset.hp]; if (!it) return;
+    if (!pop) { pop = document.createElement("div"); pop.className = "hpop"; pop.setAttribute("role", "tooltip"); document.body.appendChild(pop); }
+    document.querySelectorAll(".hm .hx").forEach(e => e.classList.remove("hx"));
+    const tr = td.parentElement, tb = td.closest("table"), ci = td.cellIndex;
+    tr.classList.add("hx"); tb.querySelectorAll("tr").forEach(r => { const c = r.cells[ci]; if (c) c.classList.add("hx"); });
+    pop.innerHTML = h2hPopHtml(it); pop.hidden = false; cur = td; shownAt = Date.now();
+    const r = td.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight, vw = document.documentElement.clientWidth;
+    let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), vw - w - 8), y = r.bottom + 8;
+    if (y + h > window.innerHeight - 8) y = Math.max(8, r.top - h - 8);
+    pop.style.left = x + "px"; pop.style.top = y + "px";
+  };
+  document.addEventListener("pointerover", e => { if (e.pointerType !== "mouse") return; const td = e.target.closest && e.target.closest("td[data-hp]"); if (td && td !== cur) show(td); else if (!td && cur && !(e.target.closest && e.target.closest(".hm"))) hide(); });
+  document.addEventListener("click", e => { const td = e.target.closest && e.target.closest("td[data-hp]"); if (td) { if (td === cur && pop && !pop.hidden) { if (Date.now() - shownAt > 500) hide(); } else show(td); } else if (!(e.target.closest && e.target.closest(".hpop"))) hide(); });
+  document.addEventListener("focusin", e => { const td = e.target.closest && e.target.closest("td[data-hp]"); if (td) show(td); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
+  window.addEventListener("scroll", hide, { passive: true, capture: true });
+})();
 
 // ---- Žaidėjo kortelė ----
 let FPH = null;
