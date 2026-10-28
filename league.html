@@ -1360,16 +1360,21 @@ function h2hPopHtml({ a, b, P }) {
     const tr = td.parentElement, tb = td.closest("table"), ci = td.cellIndex;
     tr.classList.add("hx"); tb.querySelectorAll("tr").forEach(r => { const c = r.cells[ci]; if (c) c.classList.add("hx"); });
     pop.innerHTML = h2hPopHtml(it); pop.hidden = false; cur = td; shownAt = Date.now();
+    place(td);
+  };
+  const place = td => {
+    if (!td.isConnected) { hide(); return; }
     const r = td.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight, vw = document.documentElement.clientWidth;
+    if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > vw) { hide(); return; }
     let x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), vw - w - 8), y = r.bottom + 8;
     if (y + h > window.innerHeight - 8) y = Math.max(8, r.top - h - 8);
     pop.style.left = x + "px"; pop.style.top = y + "px";
   };
-  document.addEventListener("pointerover", e => { if (e.pointerType !== "mouse") return; const td = e.target.closest && e.target.closest("td[data-hp]"); if (td && td !== cur) show(td); else if (!td && cur && !(e.target.closest && e.target.closest(".hm"))) hide(); });
+  document.addEventListener("pointermove", e => { if (e.pointerType !== "mouse") return; const td = e.target.closest && e.target.closest("td[data-hp]"); if (td && (td !== cur || !pop || pop.hidden)) show(td); else if (!td && cur && !(e.target.closest && e.target.closest(".hm"))) hide(); });
   document.addEventListener("click", e => { const td = e.target.closest && e.target.closest("td[data-hp]"); if (td) { if (td === cur && pop && !pop.hidden) { if (Date.now() - shownAt > 500) hide(); } else show(td); } else if (!(e.target.closest && e.target.closest(".hpop"))) hide(); });
   document.addEventListener("focusin", e => { const td = e.target.closest && e.target.closest("td[data-hp]"); if (td) show(td); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") hide(); });
-  window.addEventListener("scroll", hide, { passive: true, capture: true });
+  window.addEventListener("scroll", () => { if (cur && pop && !pop.hidden) place(cur); }, { passive: true, capture: true });
 })();
 
 // ---- Žaidėjo kortelė ----
@@ -1587,7 +1592,7 @@ function progressShell() {
     <div class="pwrap" id="progWrap"><svg id="progSvg" role="img" aria-label="Komandų progreso grafikas"></svg><div class="ptip" id="progTip" hidden></div></div></div>`;
 }
 function drawProgress() {
-  const wrap = document.getElementById("progWrap"); if (!wrap) return;
+  const wrap = document.getElementById("progWrap"); if (!wrap || wrap.clientWidth < 60) return;
   const P = progressData(), M = P.metrics[progMetric], titles = D.teams.map(t => t.title), R = P.rounds;
   const W = wrap.clientWidth, H = W < 520 ? 220 : 280, mL = 44, mR = W < 520 ? 16 : 90, mT = 14, mB = 28;
   const all = titles.flatMap(t => M.s[t]);
