@@ -1,124 +1,52 @@
 {
- "at": "2026-10-29T12:34:38.624Z",
+ "at": "2026-10-29T12:35:39.241Z",
  "req": {
   "queries": [
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ id } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ type } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ round } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ fantasyRound } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ wildcardType } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ name } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ usedAt } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ createdAt } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ active } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ status } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ kind } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ code } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ identifier } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ wildcard } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ fantasyRoundNumber } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ multiplier } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ used } } }",
-   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards{ isUsed } } }",
-   "query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ useWildcards } }"
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6a9b0e7499d3c87221c70fe4\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa1315cf36b29573a11aafc\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b2353d2094d97fda33075\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b0e7499d3c87221c70fe7\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b11acd2094d97fda20046\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b0eeed2094d97fda1ce6b\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa1c5e0e293936abedd6a34\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9bc327d2094d97fdaa0bde\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa013784933bbaf32cf3bd9\"){ title wildcards{ id fantasyRound identifier } } }",
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6aa7fe67c95ed14589bf170d\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa9487893bf2e3920b8b39c\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa805859ce5c03ca18aa400\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa8161d9ce5c03ca18d692a\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa834559ce5c03ca196e0da\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6aafd54a349148cc9eff62ab\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa804e109a9c51e40240da6\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab000834c2b8500128411f8\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa7fe67c95ed14589bf1710\"){ title wildcards{ id fantasyRound identifier } } }",
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6a9b0b72d2094d97fda188b7\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b0b72d2094d97fda188ba\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9bc80cd2094d97fdaa550f\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b19c0d2094d97fda282ce\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b0f5299d3c87221c71f13\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9d30076cdad82978814421\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9b224399d3c87221c87533\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa84bc7c95ed14589d8019a\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa84236c95ed14589d40867\"){ title wildcards{ id fantasyRound identifier } } }",
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6aa3f0f51f38d9ba866b20d3\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa3f20e4dedc4bad773d142\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6aaa71b6af6e87247d0723b7\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa3f0f51f38d9ba866b20d6\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa409ea1f38d9ba866e7662\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6aaa2ed7af6e87247dfb7b30\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6aaa7315a6835a4766c6958e\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa43ae94dedc4bad77d62ad\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa567d11f38d9ba8691975f\"){ title wildcards{ id fantasyRound identifier } } }",
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6a9811b0536d72db0c77997b\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9fc1c099d3c872211ba03e\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9fab14d2094d97fdf3b5f8\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa2a99972a34efb8ea94334\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa03d7f5b99c9683758ea46\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9ef28a6cdad82978a86e2e\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9811b0536d72db0c77997e\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9a8921d2094d97fd97ded4\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6a9a8f6899d3c87221bda602\"){ title wildcards{ id fantasyRound identifier } } }",
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6aac0fbca6789801a9e7bc40\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6aaad0d0b031f0d8fbfe17df\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa8423bc95ed14589d40955\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa8497909a9c51e403a342d\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa8452d9ce5c03ca19f2499\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa8440009a9c51e4037c26d\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6aa8d89b9ce5c03ca1af54d4\"){ title wildcards{ id fantasyRound identifier } } }",
+   "query{ lg: fantasyLeagueRecordFromClient(id:\"6ab2d1c198f6ba07dd1fe7c4\"){ useWildcards } t0: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab2d2ee98f6ba07dd21add8\"){ title wildcards{ id fantasyRound identifier } } t1: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab2d3062abaa7724f9c87b9\"){ title wildcards{ id fantasyRound identifier } } t2: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3d59831a854bca426ef59\"){ title wildcards{ id fantasyRound identifier } } t3: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3e23fbe4bf20949e97f12\"){ title wildcards{ id fantasyRound identifier } } t4: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3f1e8ab9125e6b164bd0b\"){ title wildcards{ id fantasyRound identifier } } t5: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab2dae87f58a3b48c6b45c7\"){ title wildcards{ id fantasyRound identifier } } t6: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab2d1c198f6ba07dd1fe7d1\"){ title wildcards{ id fantasyRound identifier } } t7: fantasyTeamRecordFromClient(fantasyTeamId:\"6ab3cb0b83dc9e9e07893381\"){ title wildcards{ id fantasyRound identifier } } }"
   ],
   "vars": {}
  },
  "tries": [
   {
-   "label": "q0 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
+   "label": "q0 query{ lg: fantasyLeagueRecordFromClient(id:\"6a9b0e7499d3c87221c70fe4\"){ useWild",
    "status": 200,
-   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"wildcards\":[]}}}"
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":true},\"t0\":{\"title\":\"NKnebus\",\"wildcards\":[]},\"t1\":{\"title\":\"N Fanazz choice\",\"wildcards\":[{\"id\":\"6ae2da24dd8e01f7520d1eb2\",\"fantasyRound\":8,\"identifier\":\"boost_bench\"}]},\"t2\":{\"title\":\"Naujokas ™️\",\"wildcards\":[]},\"t3\":{\"title\":\"krepšinio saulėgrąža\",\"wildcards\":[{\"id\":\"6abe6ea0a857fe0933daac72\",\"fantasyRound\":2,\"identifier\":\"triple_points_captain\"},{\"id\":\"6ac67481000ee04a7a294cf9\",\"fantasyRound\":3,\"identifier\":\"boost_bench\"}]},\"t4\":{\"title\":\"Zali Gulbiukai\",\"wildcards\":[]},\"t5\":{\"title\":\"Nelaimėsim\",\"wildcards\":[]},\"t6\":{\"title\":\"Deivyzas\",\"wildcards\":[]},\"t7\":{\"title\":\"RealMadafakaG\",\"wildcards\":[]}}}"
   },
   {
-   "label": "q1 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"type\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q2 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"round\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q3 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
+   "label": "q1 query{ lg: fantasyLeagueRecordFromClient(id:\"6aa7fe67c95ed14589bf170d\"){ useWild",
    "status": 200,
-   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"wildcards\":[]}}}"
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":false},\"t0\":{\"title\":\"Karlaila\",\"wildcards\":[]},\"t1\":{\"title\":\"Brasilas\",\"wildcards\":[]},\"t2\":{\"title\":\"IONQ\",\"wildcards\":[]},\"t3\":{\"title\":\"Rekordininkai\",\"wildcards\":[]},\"t4\":{\"title\":\"Dejau skersa\",\"wildcards\":[]},\"t5\":{\"title\":\"Krakatūzai\",\"wildcards\":[]},\"t6\":{\"title\":\"Jackies & Chans\",\"wildcards\":[]},\"t7\":{\"title\":\"GM07\",\"wildcards\":[]}}}"
   },
   {
-   "label": "q4 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcardType\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q5 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"name\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q6 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"usedAt\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q7 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"createdAt\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q8 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"active\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q9 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"status\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q10 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"kind\\\" on type \\\"FantasyTeamWildcard\\\". Did you mean \\\"id\\\"?\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q11 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"code\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q12 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
+   "label": "q2 query{ lg: fantasyLeagueRecordFromClient(id:\"6a9b0b72d2094d97fda188b7\"){ useWild",
    "status": 200,
-   "body": "{\"data\":{\"fantasyTeamRecordFromClient\":{\"wildcards\":[]}}}"
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":false},\"t0\":{\"title\":\"Naujokas\",\"wildcards\":[]},\"t1\":{\"title\":\"BC Svajuonė\",\"wildcards\":[]},\"t2\":{\"title\":\"Atletas\",\"wildcards\":[]},\"t3\":{\"title\":\"ČiaPoniai\",\"wildcards\":[]},\"t4\":{\"title\":\"Briedis\",\"wildcards\":[]},\"t5\":{\"title\":\"HLA Fanazz ch0ice\",\"wildcards\":[]},\"t6\":{\"title\":\"Naujoji Akmenė\",\"wildcards\":[]},\"t7\":{\"title\":\"Vidurinis pirštas \",\"wildcards\":[]}}}"
   },
   {
-   "label": "q13 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcard\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q14 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyRoundNumber\\\" on type \\\"FantasyTeamWildcard\\\". Did you mean \\\"fantasyRound\\\"?\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q15 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"multiplier\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q16 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"used\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q17 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
-   "status": 400,
-   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"isUsed\\\" on type \\\"FantasyTeamWildcard\\\".\",\"locations\":[{\"line\":1,\"column\":90}]}]}"
-  },
-  {
-   "label": "q18 query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ useWildcard",
+   "label": "q3 query{ lg: fantasyLeagueRecordFromClient(id:\"6aa3f0f51f38d9ba866b20d3\"){ useWild",
    "status": 200,
-   "body": "{\"data\":{\"fantasyLeagueRecordFromClient\":{\"useWildcards\":false}}}"
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":false},\"t0\":{\"title\":\"ForeL HLA\",\"wildcards\":[]},\"t1\":{\"title\":\"Hermio Hla 🌭 \",\"wildcards\":[]},\"t2\":{\"title\":\"TytuvaH.L.A\",\"wildcards\":[]},\"t3\":{\"title\":\"Žaliagiris\",\"wildcards\":[]},\"t4\":{\"title\":\"Bendrik\",\"wildcards\":[]},\"t5\":{\"title\":\"EFT\",\"wildcards\":[]},\"t6\":{\"title\":\"Debrecenas\",\"wildcards\":[]},\"t7\":{\"title\":\"BC Liūtai\",\"wildcards\":[]}}}"
+  },
+  {
+   "label": "q4 query{ lg: fantasyLeagueRecordFromClient(id:\"6a9811b0536d72db0c77997b\"){ useWild",
+   "status": 200,
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":false},\"t0\":{\"title\":\"Velniai\",\"wildcards\":[]},\"t1\":{\"title\":\"Lukenzo\",\"wildcards\":[]},\"t2\":{\"title\":\"shpunka\",\"wildcards\":[]},\"t3\":{\"title\":\"LukaMagic\",\"wildcards\":[]},\"t4\":{\"title\":\"SixSeven\",\"wildcards\":[]},\"t5\":{\"title\":\"Tragedijos nematau\",\"wildcards\":[]},\"t6\":{\"title\":\"IKI PARYČIŲ\",\"wildcards\":[]},\"t7\":{\"title\":\"Jimmy\",\"wildcards\":[]}}}"
+  },
+  {
+   "label": "q5 query{ lg: fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ useWild",
+   "status": 200,
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":false},\"t0\":{\"title\":\"Toyotagaidysnemašina\",\"wildcards\":[]},\"t1\":{\"title\":\"Naujokas 4️⃣7️⃣\",\"wildcards\":[]},\"t2\":{\"title\":\"Saules miestas\",\"wildcards\":[]},\"t3\":{\"title\":\"Gensekas\",\"wildcards\":[]},\"t4\":{\"title\":\"Kiemo lyga\",\"wildcards\":[]},\"t5\":{\"title\":\"IKI PARYČIŲ ;)\",\"wildcards\":[]},\"t6\":{\"title\":\"Joniškio- Žiemgala\",\"wildcards\":[]},\"t7\":{\"title\":\"BC SAULĖS SMŪGIS\",\"wildcards\":[]}}}"
+  },
+  {
+   "label": "q6 query{ lg: fantasyLeagueRecordFromClient(id:\"6ab2d1c198f6ba07dd1fe7c4\"){ useWild",
+   "status": 200,
+   "body": "{\"data\":{\"lg\":{\"useWildcards\":true},\"t0\":{\"title\":\"Rytas\",\"wildcards\":[]},\"t1\":{\"title\":\"BC Bedarbis\",\"wildcards\":[]},\"t2\":{\"title\":\"BC UPE\",\"wildcards\":[]},\"t3\":{\"title\":\"PEPPERLIVE\",\"wildcards\":[{\"id\":\"6ae2ce653e8eabb936ea3d90\",\"fantasyRound\":8,\"identifier\":\"triple_points_captain\"}]},\"t4\":{\"title\":\"Naujokas 7️⃣\",\"wildcards\":[]},\"t5\":{\"title\":\"Briedis\",\"wildcards\":[]},\"t6\":{\"title\":\"Tėkrus Lupėks\",\"wildcards\":[]},\"t7\":{\"title\":\"Yagon Don\",\"wildcards\":[]}}}"
   }
  ]
 }
