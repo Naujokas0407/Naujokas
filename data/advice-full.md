@@ -7,8 +7,8 @@
 3. Kevin Punter (BAR, G) – ~18,8 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~165,2 FP, dabartinė ~156,1 FP, **+9,1**)
-Startas: Jonas Valančiūnas ~23,1, Kevin Punter ~18,8, Chima Moneke (C) ~17,1, Devon Dotson ~17,1, Nigel Hayes-Davis ~15,8
+**📋 Siūloma sudėtis** (prognozė ~202,9 FP, dabartinė ~193,8 FP, **+9,1**)
+Startas: Chima Moneke (C) ~36, Jonas Valančiūnas ~23,1, Kevin Punter ~18,8, Devon Dotson ~17,1, Nigel Hayes-Davis ~15,8
 6-as: Aliou Diarra ~23,8
 Suolas: Andres Feliz ~18,6, Ante Zizic ~16,3, Hugo Besson ~16, Alec Peters ~13,7
 Out: Joel Parra, Tornike Shengelia, Dzanan Musa
@@ -69,8 +69,8 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 3. Umoja Gibson (BAR, G) – ~16,2 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~149,7 FP, dabartinė ~148,7 FP)
-Startas: Mfiondu Kabengele ~25,3, Andres Feliz ~18,6, Chima Moneke (C) ~17,1, Umoja Gibson ~16,2, Braxton Key ~14,8
+**📋 Siūloma sudėtis** (prognozė ~187,4 FP, dabartinė ~186,5 FP)
+Startas: Chima Moneke (C) ~36, Mfiondu Kabengele ~25,3, Andres Feliz ~18,6, Umoja Gibson ~16,2, Braxton Key ~14,8
 6-as: Devon Dotson ~17,1
 Suolas: Nigel Hayes-Davis ~15,8, Kevarrius Hayes ~15,2, Tyrese Martin ~12, Dzanan Musa ~4
 Out: Jean Montero, Tadas Sedekerskis, Tonye Jekiri
