@@ -414,7 +414,6 @@ details.mtsd[open]>summary{margin-bottom:8px}
   <div class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-t="fantasy" id="tab-fantasy"><span class="lgl">Fantasy komandos</span><span class="shl">Fantasy</span></button>
     <button role="tab" aria-selected="false" data-t="el" id="tab-el"><span class="lgl">Eurolygos komandos</span><span class="shl">Eurolyga</span></button>
-    <button role="tab" aria-selected="false" data-t="players" id="tab-players">Žaidėjai</button>
     <button role="tab" aria-selected="false" data-t="season" id="tab-season">Statistika</button>
     <button role="tab" aria-selected="false" data-t="reporter" id="tab-reporter">Reporteris</button>
     <button role="tab" aria-selected="false" data-t="tx" id="tab-tx">Perėjimai</button>
@@ -618,7 +617,6 @@ function render() {
   if (sched.length) el += `<div class="sub">Suplanuotos · ${sched.length}</div><div class="card sched-list">` + sched.map(g => `<div><span>${esc(tv(g.h))} – ${esc(tv(g.a))}</span><span class="sub">${when(g.start)}</span></div>`).join("") + `</div>`;
   document.getElementById("el").innerHTML = el + injByClub();
 
-  renderPlayers();
   renderSeason();
   renderReporter();
   renderTx();
