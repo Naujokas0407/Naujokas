@@ -237,7 +237,7 @@ a.brand{text-decoration:none}
 .mv{font-size:11px;font-weight:600}.mv.up{color:#4cd07d}.mv.dn{color:#ff6b5e}
 .hb{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;letter-spacing:.03em;border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:1px;white-space:nowrap}
 .hb i{font-style:normal;font-size:12px;line-height:1;color:#ff453a}
-.h-exp i{color:#4cd07d}
+.h-exp i{color:#4cd07d}.h-dbt i{color:var(--cap)}.h-unc i{color:#e6c14d}.h-dbt i,.h-unc i{font-weight:900}
 @media (max-width:560px){.box .hb .hbt{display:none}.box .hb{padding:1px 3px}}
 .h-out{background:rgba(255,69,58,.16);color:#ff6b5e}
 .h-dbt{background:rgba(255,122,26,.16);color:var(--cap)}
@@ -958,11 +958,11 @@ function renderSeason() {
 
 // ---- Lygos reporteris ir traumos ----
 let INJ = null;
-const HL = { out: ["Nežais", "h-out"], doubtful: ["Abejotinas", "h-dbt"], uncertain: ["Neaišku", "h-unc"], "game-time": ["Paaiškės prieš rungtynes", "h-unc"], expected: ["Tikėtina žais", "h-exp"], ready: ["Sveikas", "h-ok"] };
+const HL = { out: ["Nežais", "h-out", "✚"], doubtful: ["Abejotinas", "h-dbt", "!"], uncertain: ["Neaišku", "h-unc", "?"], "game-time": ["Paaiškės prieš rungtynes", "h-unc", "?"], expected: ["Tikėtina žais", "h-exp", "✓"], ready: ["Sveikas", "h-ok", ""] };
 const healthOf = p => (viewR == null && INJ && p.id && INJ.state[p.id]) ? INJ.state[p.id].h : (p.health || "ready");
 // prie žaidėjų – tik spalvotas kryžiukas (tekstas – užvedus); pilnas užrašas – traumų sąrašuose
-const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb hbi ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}" aria-label="${HL[h][0]}"><i aria-hidden="true">✚</i></span>` : ""; };
-const hBadgeFull = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}"><i aria-hidden="true">✚</i><span class="hbt">${HL[h][0]}</span></span>` : ""; };
+const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb hbi ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}" aria-label="${HL[h][0]}"><i aria-hidden="true">${HL[h][2]}</i></span>` : ""; };
+const hBadgeFull = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="hb ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}"><i aria-hidden="true">${HL[h][2]}</i><span class="hbt">${HL[h][0]}</span></span>` : ""; };
 let BNI = null;
 async function loadBni() { try { const r = await fetch("data/injuries-bn.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!BNI || j.updated !== BNI.updated) { BNI = j; BNI.idx = {}; (j.rows || []).forEach(x => { const n = norm(x.name), parts = n.split(" "); BNI.idx[n] = x; BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] = x; }); if (D) render(); } } } catch (e) {} }
 const bniOf = name => { if (!BNI || !BNI.idx) return null; const n = norm(name), parts = n.split(" "); return BNI.idx[n] || BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] || null; };
@@ -1915,8 +1915,8 @@ function injByClub() {
   if (!clubs.length) return `<div class="sub">Traumos pagal Eurolygos komandas</div>${seg}<p class="note">Šios lygos komandos traumuotų žaidėjų neturi.</p>`;
   const cards = clubs.map(c => {
     const list = by[c].sort((a, b) => ORD.indexOf(a.h) - ORD.indexOf(b.h) || a.name.localeCompare(b.name));
-    return `<div class="card ijc"><div class="ijh"><b>${esc(tv(c))}</b><span class="sub">${list.filter(x => x.h === "out").length ? list.filter(x => x.h === "out").length + " nežais" : ""}</span></div><ul>${list.map(x => { const own = ownerOf(x.id), lab = HL[x.h] || ["Neaišku", "h-unc"];
-      return `<li class="${own ? "mine" : ""}"><span class="hb ${lab[1]}"><i aria-hidden="true">✚</i><span class="hbt">${lab[0]}</span></span> <span class="nm">${esc(x.name)}</span>${own ? ` <span class="own"><span class="tm">${esc(own)}</span></span>` : ""}<span class="fa"> · nuo ${fmt(x.since, { month: "2-digit", day: "2-digit" })}</span>${injInfo(x.name)}</li>`; }).join("")}</ul></div>`;
+    return `<div class="card ijc"><div class="ijh"><b>${esc(tv(c))}</b><span class="sub">${list.filter(x => x.h === "out").length ? list.filter(x => x.h === "out").length + " nežais" : ""}</span></div><ul>${list.map(x => { const own = ownerOf(x.id), lab = HL[x.h] || ["Neaišku", "h-unc", "?"];
+      return `<li class="${own ? "mine" : ""}"><span class="hb ${lab[1]}"><i aria-hidden="true">${lab[2]}</i><span class="hbt">${lab[0]}</span></span> <span class="nm">${esc(x.name)}</span>${own ? ` <span class="own"><span class="tm">${esc(own)}</span></span>` : ""}<span class="fa"> · nuo ${fmt(x.since, { month: "2-digit", day: "2-digit" })}</span>${injInfo(x.name)}</li>`; }).join("")}</ul></div>`;
   }).join("");
   const n = clubs.reduce((s, c) => s + by[c].length, 0);
   return `<div class="sub">Traumos pagal Eurolygos komandas · ${n} žaidėjai · paryškinti šios lygos komandų žaidėjai · duomenys iš BasketNews, atnaujinama kas ~6 min.</div>${seg}<div class="ijg">${cards}</div>`;
