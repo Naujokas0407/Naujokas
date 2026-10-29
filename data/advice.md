@@ -48,7 +48,7 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 **🩹 Traumos**
 - Tonye Jekiri: nežais
 - Devon Dotson: neaišku
-- Joel Parra: neaišku
+- Joel Parra: tikėtina žais
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
@@ -56,7 +56,7 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 - Tadas Sedekerskis (KBA, F) ~15,9 FP @ ASV (vietoj Tonye Jekiri ~0)
 - Devon Hall (MIL, G) ~15,4 FP @ OLY (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš ČiaPoniai:** prognozė ~181,3 : ~177,3
+**⚔️ Prieš ČiaPoniai:** prognozė ~181,3 : ~173,7
 
 ---
 
@@ -65,28 +65,29 @@ Pirmos rungtynės: 21:00, ketvirtadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~25,3 FP vs HTA
-2. Jean Montero (OLY, G) – ~23,6 FP vs MIL
-3. Andres Feliz (RMB, G) – ~18,6 FP vs FBT
-Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
+2. Andres Feliz (RMB, G) – ~18,6 FP vs FBT
+3. Chima Moneke (CZV, F) – ~17,1 FP vs BAY
+Dabar kapitonas – Chima Moneke (~17,1 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~172,7 FP, dabartinė ~157,4 FP, **+15,3**)
-Startas: Mfiondu Kabengele (C) ~25,3, Jean Montero ~23,6, Chima Moneke ~17,1, Devon Dotson ~17,1, Nigel Hayes-Davis ~15,8
-6-as: Andres Feliz ~18,6
-Suolas: Umoja Gibson ~16,2, Kevarrius Hayes ~15,2, Braxton Key ~14,8, Bonzie Colson ~13,8
-Out: Tyrese Martin, Dzanan Musa, Tonye Jekiri
-Pakeitimai: į startą – Devon Dotson, Nigel Hayes-Davis, Jean Montero; iš starto – Andres Feliz, Umoja Gibson, Kevarrius Hayes.
-Iš Out į sudėtį – Jean Montero, Bonzie Colson; į Out – Tyrese Martin, Dzanan Musa.
-6-u žaidėju (b-1) dėk Andres Feliz vietoj Nigel Hayes-Davis.
+**📋 Siūloma sudėtis** (prognozė ~158,3 FP, dabartinė ~148,7 FP, **+9,6**)
+Startas: Mfiondu Kabengele (C) ~25,3, Andres Feliz ~18,6, Chima Moneke ~17,1, Umoja Gibson ~16,2, Nigel Hayes-Davis ~15,8
+6-as: Devon Dotson ~17,1
+Suolas: Kevarrius Hayes ~15,2, Braxton Key ~14,8, Tyrese Martin ~12, Dzanan Musa ~4
+Out: Jean Montero, Tadas Sedekerskis, Tonye Jekiri
+Pakeitimai: į startą – Nigel Hayes-Davis; iš starto – Braxton Key.
+6-u žaidėju (b-1) dėk Devon Dotson vietoj Kevarrius Hayes.
 
 **🩹 Traumos**
+- Umoja Gibson: abejotinas – šiuo metu sudėtyje!
 - Devon Dotson: neaišku – šiuo metu sudėtyje!
-- Jean Montero: neaišku
+- Jean Montero: nežais
+- Tadas Sedekerskis: nežais
 - Tonye Jekiri: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs PAN (vietoj Tonye Jekiri ~0)
-- Antonio Blakeney (HTA, G) ~16,1 FP @ DUB (vietoj Tonye Jekiri ~0)
-- Armoni Brooks (VBC, G) ~16,1 FP @ BAR (vietoj Tonye Jekiri ~0)
+- Mike James (IST, G) ~16,3 FP vs PAN (vietoj Jean Montero ~0)
+- Antonio Blakeney (HTA, G) ~16,1 FP @ DUB (vietoj Jean Montero ~0)
+- Armoni Brooks (VBC, G) ~16,1 FP @ BAR (vietoj Jean Montero ~0)
 
 ---
 
@@ -99,21 +100,22 @@ Pirmos rungtynės: 21:00, ketvirtadienis
 3. Aliou Diarra (VIR, C) – ~23,8 FP vs BES
 Dabar kapitonas – Theo Maledon (~24,2 FP). Siūlau keisti į TJ Shorts II.
 
-**📋 Siūloma sudėtis** (prognozė ~190,3 FP, dabartinė ~187,1 FP, **+3,2**)
-Startas: TJ Shorts II (C) ~27,6, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Nikola Mirotic ~18,6, Mbaye Ndiaye ~15,7
+**📋 Siūloma sudėtis** (prognozė ~185,9 FP, dabartinė ~168,4 FP, **+17,4**)
+Startas: TJ Shorts II (C) ~27,6, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Mbaye Ndiaye ~15,7, Braxton Key ~14,8
 6-as: Theo Maledon ~24,2
-Suolas: Daniel Oturu ~18,8, Marcus Carr ~17,8, Braxton Key ~14,8, Bonzie Colson ~13,8
-Out: Alec Peters, Jimmy Clark III, Bruno Fernando
-Pakeitimai: į startą – Sylvain Francisco, Mbaye Ndiaye; iš starto – Marcus Carr, Theo Maledon.
+Suolas: Daniel Oturu ~18,8, Marcus Carr ~17,8, Alec Peters ~13,7, Juan Hernangomez ~13,6
+Out: Jimmy Clark III, Bruno Fernando, Nikola Mirotic
+Pakeitimai: į startą – Sylvain Francisco, Braxton Key, Mbaye Ndiaye; iš starto – Nikola Mirotic, Marcus Carr, Theo Maledon.
+Iš Out į sudėtį – Alec Peters; į Out – Nikola Mirotic.
 6-u žaidėju (b-1) dėk Theo Maledon vietoj Daniel Oturu.
 
 **🩹 Traumos**
-- Nikola Mirotic: questionable – šiuo metu sudėtyje!
+- Nikola Mirotic: nežais – šiuo metu sudėtyje!
 - Alec Peters: neaišku
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs PAN (vietoj Bruno Fernando ~12,3)
-- Antonio Blakeney (HTA, G) ~16,1 FP @ DUB (vietoj Bruno Fernando ~12,3)
-- Armoni Brooks (VBC, G) ~16,1 FP @ BAR (vietoj Bruno Fernando ~12,3)
+- Mike James (IST, G) ~16,3 FP vs PAN (vietoj Nikola Mirotic ~0)
+- Antonio Blakeney (HTA, G) ~16,1 FP @ DUB (vietoj Nikola Mirotic ~0)
+- Armoni Brooks (VBC, G) ~16,1 FP @ BAR (vietoj Nikola Mirotic ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
