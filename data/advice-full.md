@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~23,8 FP vs BES
@@ -29,7 +29,7 @@ Iš Out į sudėtį – Alec Peters, Ante Zizic; į Out – Tornike Shengelia, J
 ---
 
 ## HLA 2 Divizionas – Naujokas · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,6 FP @ BAR
@@ -62,7 +62,7 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~25,3 FP vs HTA
@@ -86,14 +86,14 @@ Pakeitimai: į startą – Nigel Hayes-Davis; iš starto – Braxton Key.
 - Tonye Jekiri: nežais
 
 **🛒 Laisvoji rinka**
-- Yam Madar (TEL, G) ~16,9 FP vs PRS (vietoj Jean Montero ~0)
 - Mike James (IST, G) ~16,3 FP vs PAN (vietoj Jean Montero ~0)
 - Hugo Besson (ASV, G) ~16 FP vs KBA (vietoj Jean Montero ~0)
+- Scottie Wilbekin (BES, G) ~14,9 FP @ VIR (vietoj Jean Montero ~0)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,6 FP @ BAR
