@@ -396,7 +396,14 @@ function standings(L, upto) {
   return rows.sort((a, b) => d.format === "h2h" ? (b.w - a.w) || (b.pts - a.pts) : b.pts - a.pts);
 }
 
+// Galutinės grupės (užfiksuotos po 7 turo pagal komandų ID), kad vėlesni BN taškų pataisymai jų nebepakeistų
+const FROZEN_GROUPS = {"A": ["hla1:6aafd54a349148cc9eff62ab:1", "hla1:6aa7fe67c95ed14589bf1710:8", "hla2:6aa84bc7c95ed14589d8019a:4", "hla2:6a9b0b72d2094d97fda188ba:5", "hla3:6aa409ea1f38d9ba866e7662:1", "hla3:6aaa2ed7af6e87247dfb7b30:8", "hla4:6aa03d7f5b99c9683758ea46:4", "hla4:6a9fc1c099d3c872211ba03e:5"], "B": ["hla1:6aa804e109a9c51e40240da6:2", "hla1:6ab000834c2b8500128411f8:7", "hla2:6aa84236c95ed14589d40867:3", "hla2:6a9b19c0d2094d97fda282ce:6", "hla3:6aaa7315a6835a4766c6958e:2", "hla3:6aa567d11f38d9ba8691975f:7", "hla4:6a9fab14d2094d97fdf3b5f8:3", "hla4:6a9a8f6899d3c87221bda602:6"], "C": ["hla1:6aa8161d9ce5c03ca18d692a:3", "hla1:6aa9487893bf2e3920b8b39c:6", "hla2:6a9b224399d3c87221c87533:2", "hla2:6a9bc80cd2094d97fdaa550f:7", "hla3:6aaa71b6af6e87247d0723b7:3", "hla3:6aa3f20e4dedc4bad773d142:6", "hla4:6a9a8921d2094d97fd97ded4:2", "hla4:6a9ef28a6cdad82978a86e2e:7"], "D": ["hla1:6aa834559ce5c03ca196e0da:4", "hla1:6aa805859ce5c03ca18aa400:5", "hla2:6a9b0f5299d3c87221c71f13:1", "hla2:6a9d30076cdad82978814421:8", "hla3:6aa3f0f51f38d9ba866b20d6:4", "hla3:6aa43ae94dedc4bad77d62ad:5", "hla4:6a9811b0536d72db0c77997e:1", "hla4:6aa2a99972a34efb8ea94334:8"]};
+function frozenGroups() {
+  const groups = GN.map(n => ({ name: n, teams: (FROZEN_GROUPS[n] || []).map(k => { const [slug, id, pos] = k.split(":"); const L = DATA.find(x => x.slug === slug); const t = L && L.d.teams.find(x => x.id === id); return t ? { title: t.title, L, div: L.div, seedPos: +pos } : null; }) }));
+  return groups.every(G => G.teams.length === 8 && G.teams.every(Boolean)) ? groups : null;
+}
 function buildGroups() {
+  if (CUR > SEED_AFTER) { const fg = frozenGroups(); if (fg) return { groups: fg, prelim: false, basedOn: SEED_AFTER }; }
   const lastDone = Math.min(SEED_AFTER, isFinal(CUR) ? CUR : CUR - 1);
   const st = DATA.map(L => standings(L, lastDone));
   // po 2 komandas iš kiekvieno diviziono: HLA1 ir HLA3 – A: 1 ir 8 vietos, B: 2 ir 7, C: 3 ir 6, D: 4 ir 5; HLA2 ir HLA4 – atvirkščiai (A: 4 ir 5 ... D: 1 ir 8)
