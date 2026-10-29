@@ -56,7 +56,7 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 - Devon Hall (MIL, G) ~15,4 FP @ OLY (vietoj Tonye Jekiri ~0)
 - Edwin Jackson (ASV, F) ~14,5 FP vs KBA (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš ČiaPoniai:** prognozė ~181,3 : ~173,7
+**⚔️ Prieš ČiaPoniai:** prognozė ~181,3 : ~165,9
 
 ---
 
