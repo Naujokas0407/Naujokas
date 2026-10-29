@@ -92,11 +92,34 @@ async function discoverPosField() {
   }
   return null;
 }
-function multiplier(card, captain) {
+// wc – komandos tame ture panaudota BN kortelė: "triple_points_captain" (kapitonas ×3) arba "boost_bench" (suolas ×1)
+function multiplier(card, captain, wc) {
   const [k, n] = card.split("-");
   if (k === "i") return 0;
-  if (k === "b") return n === "1" ? 1 : 0.5;
-  return captain ? 2 : 1;
+  if (k === "b") return n === "1" || wc === "boost_bench" ? 1 : 0.5;
+  return captain ? (wc === "triple_points_captain" ? 3 : 2) : 1;
+}
+// ---- BN kortelės (wildcards): kurią turo kortelę panaudojo kiekviena komanda ----
+const WC = {}; // slug -> { teamId: { turas(1..): identifier } }
+const wcOf = (slug, teamId, round) => ((WC[slug] || {})[teamId] || {})[round] || null;
+async function loadWildcards(L, S) {
+  const lg = await gql(`query($f:String!){ fantasyLeagueRecordFromClient(id:$f){ useWildcards } }`, { f: L.fantasyLeagueId });
+  if (!lg.fantasyLeagueRecordFromClient || !lg.fantasyLeagueRecordFromClient.useWildcards) { WC[L.slug] = {}; return null; }
+  const lu = S.lu[L.slug] || await gql(Q_LINEUPS, { l: CONFIG.leagueId, f: L.fantasyLeagueId, r: S.r, p: CONFIG.pointCalcSystem });
+  const ts = lu.draftLeagueFantasyTeamLineupsFromClient;
+  const q = "query{ " + ts.map((x, i) => `t${i}: fantasyTeamRecordFromClient(fantasyTeamId:"${x.fantasyTeamId}"){ title wildcards{ fantasyRound identifier } }`).join(" ") + " }";
+  const d = await gql(q, {});
+  const m = {}, byTitle = {};
+  ts.forEach((x, i) => { const r = d["t" + i]; if (!r) return; m[x.fantasyTeamId] = {}; (r.wildcards || []).forEach(w => { m[x.fantasyTeamId][w.fantasyRound + 1] = w.identifier; (byTitle[x.fantasyTeam.title] = byTitle[x.fantasyTeam.title] || []).push({ r: w.fantasyRound + 1, type: w.identifier }); }); });
+  WC[L.slug] = m;
+  return byTitle;
+}
+// archyve pritaikomos kortelės (koeficientai ir taškai) – kartojama saugiai
+function applyWcArchive(L, r) {
+  const f = arch(L.slug, r); let d; try { d = JSON.parse(fs.readFileSync(f, "utf8")); } catch (e) { return; }
+  const before = JSON.stringify(d.teams);
+  (d.teams || []).forEach(tm => { const wc = wcOf(L.slug, tm.id, r); tm.players.forEach(p => { if (!p.card) return; p.mult = multiplier(p.card, p.cap, wc); p.total = p.fp == null ? 0 : round2(p.fp * p.mult); }); tm.total = round2(tm.players.reduce((s, p) => s + (p.total || 0), 0)); if (wc) tm.wc = wc; else delete tm.wc; });
+  if (JSON.stringify(d.teams) !== before) { fs.writeFileSync(f, JSON.stringify(d)); console.log(L.slug + ": " + r + " turo archyve pritaikytos kortelės"); }
 }
 function statArray(p) { // [sek, pts, 2m, 2a, 3m, 3a, ftm, fta, or, dr, reb, ast, stl, blk, ba, to, pf, fd, pir]
   return [secs(p.Minutes), p.Points, p.FieldGoalsMade2, p.FieldGoalsAttempted2, p.FieldGoalsMade3, p.FieldGoalsAttempted3,
@@ -334,7 +357,7 @@ async function buildLeague(S, L) {
     const players = t.players.map(p => {
       const pl = p.player, club = clubOf(pl), name = fullName(pl);
       const e = findEl(club, name, pl.lastName);
-      const mult = multiplier(p.cardIdentifier, p.captain);
+      const mult = multiplier(p.cardIdentifier, p.captain, wcOf(L.slug, t.fantasyTeamId, r + 1));
       const fp = pl.fantasy_pts == null ? null : pl.fantasy_pts;
       const A = S.avgOf(pl.id);
       const out = { id: pl.id, avg: A.avg, gp: A.gp, health: pl.health || "ready", name, club, pos: posLetter(p.position) || S.posOf(pl.id) || "", min: S.minOf(pl.id), card: p.cardIdentifier, cap: !!p.captain, mult,
@@ -483,7 +506,7 @@ async function buildPastArchive(L, k, S) {
   const gameOfClub = club => ((base.games || []).find(g => g.h === club || g.a === club) || {}).id || null;
   const teams = lu.draftLeagueFantasyTeamLineupsFromClient.map(t => {
     const players = t.players.map(p => {
-      const pl = p.player, club = clubOf(pl), mult = multiplier(p.cardIdentifier, p.captain), fp = pl.fantasy_pts == null ? null : pl.fantasy_pts;
+      const pl = p.player, club = clubOf(pl), mult = multiplier(p.cardIdentifier, p.captain, wcOf(L.slug, t.id, k)), fp = pl.fantasy_pts == null ? null : pl.fantasy_pts;
       const e = poolById[pl.id] || allById[pl.id] || {};
       return { id: pl.id, avg: e.avg ?? null, gp: e.gp ?? 0, health: "ready", name: fullName(pl), club, pos: posLetter(p.position) || e.pos || "", card: p.cardIdentifier, cap: !!p.captain, mult,
         game: e.game ?? gameOfClub(club), fp, total: fp == null ? 0 : round2(fp * mult), st: e.st || null, dnp: !!e.dnp, s: e.s || 0, oc: 0 };
@@ -651,6 +674,8 @@ async function discover() {
       old.games.every(g => g.status === "final") &&
       Date.now() - Math.max(...old.games.map(g => new Date(g.start).getTime() || 0)) > 4 * 3600e3 &&
       (!old.slug || old.slug === L.slug);
+    let wcTitles = null;
+    try { wcTitles = await loadWildcards(L, S); if (wcTitles) fs.writeFileSync(path.join(DIR, L.slug + "-wc.json"), JSON.stringify({ updated: new Date().toISOString(), teams: wcTitles })); } catch (e) { console.log(L.slug + ": kortelės", e.message); }
     try { await trackRoster(S, L); } catch (e) { console.log(L.slug + ": nepavyko patikrinti sudėčių", e.message); }
     for (let r = 1; r <= S.r; r++) if (!fs.existsSync(arch(L.slug, r))) restoreFromGit(L.slug, r);
     const bfMark = path.join(DIR, L.slug + "-backfill.json");
@@ -705,6 +730,8 @@ async function discover() {
       }
       if (ch) fs.writeFileSync(syncF, JSON.stringify(done));
     } catch (e) { console.log(L.slug + ": archyvų FP sulyginimas", e.message); }
+    // kortelės (wildcards) archyvuose
+    for (let r = 1; r <= S.r + 1; r++) { const has = Object.values(WC[L.slug] || {}).some(x => x[r]); if (has || r <= S.r) { try { if (has || fs.existsSync(arch(L.slug, r))) applyWcArchive(L, r); } catch (e) {} } }
     // H2H lygose: praėjusių turų archyvuose porų rezultatai ir oficialūs taškai visada sulyginami su naujausiais BN rezultatais
     // (BN kartais pataiso taškus vėliau), o jei komandos sudėtis archyve neatitinka oficialių taškų (komanda keitė sudėtį po turo),
     // archyvas vieną kartą perstatomas iš tikrų to turo BN sudėčių
@@ -738,6 +765,8 @@ async function discover() {
       const before = JSON.stringify(old);
       // BN galutinius taškus (pergalė/pralaimėjimas ±1,5, statistikos pataisymai) paskelbia vėliau – kol BN dar šiame ture, jie atnaujinami
       try {
+        if (wcTitles) old.wc = wcTitles;
+        (old.teams || []).forEach(tm => { const wc = wcOf(L.slug, tm.id, old.round); tm.players.forEach(p => { if (p.card) p.mult = multiplier(p.card, p.cap, wc); }); if (wc) tm.wc = wc; else delete tm.wc; });
         const bnFp = {}; S.bnPlayers.forEach(p => { if (p.fp != null) bnFp[p.id] = p.fp; });
         (old.teams || []).forEach(t => { t.players.forEach(p => { if (p.id && bnFp[p.id] != null) { p.fp = bnFp[p.id]; p.est = false; p.total = round2(p.fp * p.mult); } }); t.total = round2(t.players.reduce((s, p) => s + (p.total || 0), 0)); });
         (old.pool || []).forEach(p => { if (p.id && bnFp[p.id] != null) p.fp = bnFp[p.id]; });
@@ -768,6 +797,8 @@ async function discover() {
     }
     try {
       const data = await buildLeague(S, L);
+      if (wcTitles) data.wc = wcTitles;
+      data.teams.forEach(tm => { const wc = wcOf(L.slug, tm.id, data.round); if (wc) tm.wc = wc; });
       const history = (old && old.history) || {};
       if (L.format === "classic") history[String(data.round)] = Object.fromEntries(data.teams.map(t => [t.title, t.total]));
       if (L.format === "classic") {
