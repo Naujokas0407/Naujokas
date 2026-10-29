@@ -1,0 +1,88 @@
+{
+ "at": "2026-10-29T12:33:47.894Z",
+ "req": {
+  "queries": [
+   "query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ wildcard } }",
+   "query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ wildcards } }",
+   "query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ wildCards } }",
+   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcard } }",
+   "query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wildcards } }",
+   "query{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\",fantasyRound:7){ wildcard } }",
+   "query{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\",fantasyRound:7){ wildcards } }",
+   "query{ draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:\"6aa8423bc95ed14589d40951\"){ wildcard } }",
+   "query{ allFantasyTeamScoreRecordsFromClient(leagueId:\"6a7ae0128b647e038c999860\",fantasyLeagueId:\"6aa8423bc95ed14589d40951\",fantasyRound:7){ records{ wildcard } } }",
+   "query{ wildcards }",
+   "query{ fantasyWildcard }",
+   "query{ wildcardsFromClient }",
+   "query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ settings } }"
+  ],
+  "vars": {}
+ },
+ "tries": [
+  {
+   "label": "q0 query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ wildcard } ",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcard\\\" on type \\\"FantasyLeague\\\". Did you mean \\\"useWildcards\\\"?\",\"locations\":[{\"line\":1,\"column\":70}]}]}"
+  },
+  {
+   "label": "q1 query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ wildcards }",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcards\\\" on type \\\"FantasyLeague\\\". Did you mean \\\"useWildcards\\\"?\",\"locations\":[{\"line\":1,\"column\":70}]}]}"
+  },
+  {
+   "label": "q2 query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ wildCards }",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildCards\\\" on type \\\"FantasyLeague\\\". Did you mean \\\"useWildcards\\\"?\",\"locations\":[{\"line\":1,\"column\":70}]}]}"
+  },
+  {
+   "label": "q3 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcard\\\" on type \\\"FantasyTeam\\\". Did you mean \\\"wildcards\\\"?\",\"locations\":[{\"line\":1,\"column\":79}]}]}"
+  },
+  {
+   "label": "q4 query{ fantasyTeamRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960\"){ wi",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Field \\\"wildcards\\\" of type \\\"[FantasyTeamWildcard]!\\\" must have a selection of subfields. Did you mean \\\"wildcards { ... }\\\"?\",\"locations\":[{\"line\":1,\"column\":79}]}]}"
+  },
+  {
+   "label": "q5 query{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcard\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":100}]}]}"
+  },
+  {
+   "label": "q6 query{ fantasyTeamLineupRecordFromClient(fantasyTeamId:\"6aab97bc698df3a4754ea960",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcards\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":100}]}]}"
+  },
+  {
+   "label": "q7 query{ draftLeagueFantasyTeamLineupsFromClient(fantasyLeagueId:\"6aa8423bc95ed145",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcard\\\" on type \\\"FantasyTeamLineup\\\".\",\"locations\":[{\"line\":1,\"column\":93}]}]}"
+  },
+  {
+   "label": "q8 query{ allFantasyTeamScoreRecordsFromClient(leagueId:\"6a7ae0128b647e038c999860\",",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcard\\\" on type \\\"FantasyTeamScore\\\".\",\"locations\":[{\"line\":1,\"column\":150}]}]}"
+  },
+  {
+   "label": "q9 query{ wildcards }",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcards\\\" on type \\\"Query\\\".\",\"locations\":[{\"line\":1,\"column\":8}]}]}"
+  },
+  {
+   "label": "q10 query{ fantasyWildcard }",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"fantasyWildcard\\\" on type \\\"Query\\\".\",\"locations\":[{\"line\":1,\"column\":8}]}]}"
+  },
+  {
+   "label": "q11 query{ wildcardsFromClient }",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"wildcardsFromClient\\\" on type \\\"Query\\\". Did you mean \\\"draftTradesFromClient\\\"?\",\"locations\":[{\"line\":1,\"column\":8}]}]}"
+  },
+  {
+   "label": "q12 query{ fantasyLeagueRecordFromClient(id:\"6aa8423bc95ed14589d40951\"){ settings } ",
+   "status": 400,
+   "body": "{\"data\":null,\"errors\":[{\"message\":\"Cannot query field \\\"settings\\\" on type \\\"FantasyLeague\\\".\",\"locations\":[{\"line\":1,\"column\":70}]}]}"
+  }
+ ]
+}
