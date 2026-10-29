@@ -7,10 +7,10 @@
 3. Kevin Punter (BAR, G) – ~18,8 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~202,9 FP, dabartinė ~193,8 FP, **+9,1**)
+**📋 Siūloma sudėtis** (prognozė ~198,6 FP, dabartinė ~189,5 FP, **+9,1**)
 Startas: Chima Moneke (C) ~36, Jonas Valančiūnas ~23,1, Kevin Punter ~18,8, Devon Dotson ~17,1, Nigel Hayes-Davis ~15,8
 6-as: Aliou Diarra ~23,8
-Suolas: Andres Feliz ~18,6, Ante Zizic ~16,3, Hugo Besson ~16, Alec Peters ~13,7
+Suolas: Ante Zizic ~16,3, Hugo Besson ~16, Alec Peters ~13,7, Andres Feliz ~10
 Out: Joel Parra, Tornike Shengelia, Dzanan Musa
 Pakeitimai: į startą – Nigel Hayes-Davis, Devon Dotson; iš starto – Hugo Besson, Joel Parra.
 Iš Out į sudėtį – Alec Peters, Ante Zizic; į Out – Tornike Shengelia, Joel Parra.
@@ -56,7 +56,7 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 - Devon Hall (MIL, G) ~15,4 FP @ OLY (vietoj Tonye Jekiri ~0)
 - Edwin Jackson (ASV, F) ~14,5 FP vs KBA (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš ČiaPoniai:** prognozė ~181,3 : ~165,9
+**⚔️ Prieš ČiaPoniai:** prognozė ~181,3 : ~186,7
 
 ---
 
@@ -69,8 +69,8 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 3. Umoja Gibson (BAR, G) – ~16,2 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~187,4 FP, dabartinė ~186,5 FP)
-Startas: Chima Moneke (C) ~36, Mfiondu Kabengele ~25,3, Andres Feliz ~18,6, Umoja Gibson ~16,2, Braxton Key ~14,8
+**📋 Siūloma sudėtis** (prognozė ~174 FP, dabartinė ~173,1 FP)
+Startas: Chima Moneke (C) ~36, Mfiondu Kabengele ~25,3, Umoja Gibson ~16,2, Andres Feliz ~10, Braxton Key ~10
 6-as: Devon Dotson ~17,1
 Suolas: Nigel Hayes-Davis ~15,8, Kevarrius Hayes ~15,2, Tyrese Martin ~12, Dzanan Musa ~4
 Out: Jean Montero, Tadas Sedekerskis, Tonye Jekiri
@@ -100,8 +100,8 @@ Startinis penketas jau optimalus. ✅
 3. Sylvain Francisco (PAN, G) – ~20,3 FP @ IST
 Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~182,4 FP, dabartinė ~182,7 FP)
-Startas: Theo Maledon (C) ~24,2, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Mbaye Ndiaye ~15,7, Braxton Key ~14,8
+**📋 Siūloma sudėtis** (prognozė ~201,3 FP, dabartinė ~201,5 FP)
+Startas: Theo Maledon (C) ~36, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Mbaye Ndiaye ~15,7, Braxton Key ~10
 6-as: TJ Shorts II ~27,6
 Suolas: Daniel Oturu ~18,8, Marcus Carr ~17,8, Alec Peters ~13,7, Juan Hernangomez ~13,6
 Out: Bruno Fernando, Nikola Mirotic, Tyler Dorsey
