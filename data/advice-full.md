@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 18:00, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~23,8 FP vs BES
@@ -7,14 +7,13 @@
 3. Kevin Punter (BAR, G) – ~18,8 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~166 FP, dabartinė ~156,1 FP, **+9,9**)
-Startas: Aliou Diarra ~23,8, Kevin Punter ~18,8, Andres Feliz ~18,6, Chima Moneke (C) ~17,1, Nigel Hayes-Davis ~15,8
-6-as: Jonas Valančiūnas ~23,1
-Suolas: Devon Dotson ~17,1, Ante Zizic ~16,3, Hugo Besson ~16, Alec Peters ~13,7
+**📋 Siūloma sudėtis** (prognozė ~165,2 FP, dabartinė ~156,1 FP, **+9,1**)
+Startas: Jonas Valančiūnas ~23,1, Kevin Punter ~18,8, Chima Moneke (C) ~17,1, Devon Dotson ~17,1, Nigel Hayes-Davis ~15,8
+6-as: Aliou Diarra ~23,8
+Suolas: Andres Feliz ~18,6, Ante Zizic ~16,3, Hugo Besson ~16, Alec Peters ~13,7
 Out: Joel Parra, Tornike Shengelia, Dzanan Musa
-Pakeitimai: į startą – Aliou Diarra, Andres Feliz, Nigel Hayes-Davis; iš starto – Jonas Valančiūnas, Hugo Besson, Joel Parra.
+Pakeitimai: į startą – Nigel Hayes-Davis, Devon Dotson; iš starto – Hugo Besson, Joel Parra.
 Iš Out į sudėtį – Alec Peters, Ante Zizic; į Out – Tornike Shengelia, Joel Parra.
-6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Aliou Diarra.
 
 **🩹 Traumos**
 - Devon Dotson: neaišku – šiuo metu sudėtyje!
@@ -23,13 +22,13 @@ Iš Out į sudėtį – Alec Peters, Ante Zizic; į Out – Tornike Shengelia, J
 
 **🛒 Laisvoji rinka**
 - Mike James (IST, G) ~16,3 FP vs PAN (vietoj Dzanan Musa ~4)
-- Facundo Campazzo (RMB, G) ~16 FP vs FBT (vietoj Dzanan Musa ~4)
 - Devon Hall (MIL, G) ~15,4 FP @ OLY (vietoj Dzanan Musa ~4)
+- Tremont Waters (ASV, G) ~14,9 FP vs KBA (vietoj Dzanan Musa ~4)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 18:00, penktadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,6 FP @ BAR
@@ -62,20 +61,20 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 18:00, penktadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~25,3 FP vs HTA
-2. Andres Feliz (RMB, G) – ~18,6 FP vs FBT
-3. Devon Dotson (BES, G) – ~17,1 FP @ VIR
+2. Devon Dotson (BES, G) – ~17,1 FP @ VIR
+3. Umoja Gibson (BAR, G) – ~16,2 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~150,2 FP, dabartinė ~148,7 FP, **+1,5**)
-Startas: Mfiondu Kabengele ~25,3, Andres Feliz ~18,6, Chima Moneke (C) ~17,1, Umoja Gibson ~16,2, Nigel Hayes-Davis ~15,8
+**📋 Siūloma sudėtis** (prognozė ~149,7 FP, dabartinė ~148,7 FP)
+Startas: Mfiondu Kabengele ~25,3, Andres Feliz ~18,6, Chima Moneke (C) ~17,1, Umoja Gibson ~16,2, Braxton Key ~14,8
 6-as: Devon Dotson ~17,1
-Suolas: Kevarrius Hayes ~15,2, Braxton Key ~14,8, Tyrese Martin ~12, Dzanan Musa ~4
+Suolas: Nigel Hayes-Davis ~15,8, Kevarrius Hayes ~15,2, Tyrese Martin ~12, Dzanan Musa ~4
 Out: Jean Montero, Tadas Sedekerskis, Tonye Jekiri
-Pakeitimai: į startą – Nigel Hayes-Davis; iš starto – Braxton Key.
+Startinis penketas jau optimalus. ✅
 6-u žaidėju (b-1) dėk Devon Dotson vietoj Kevarrius Hayes.
 
 **🩹 Traumos**
@@ -93,21 +92,21 @@ Pakeitimai: į startą – Nigel Hayes-Davis; iš starto – Braxton Key.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 18:00, penktadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,6 FP @ BAR
-2. Theo Maledon (RMB, G) – ~24,2 FP vs FBT
-3. Aliou Diarra (VIR, C) – ~23,8 FP vs BES
-Dabar kapitonas – Theo Maledon (~24,2 FP). Siūlau keisti į TJ Shorts II.
+2. Aliou Diarra (VIR, C) – ~23,8 FP vs BES
+3. Sylvain Francisco (PAN, G) – ~20,3 FP @ IST
+Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~185,9 FP, dabartinė ~182,7 FP, **+3,2**)
-Startas: TJ Shorts II (C) ~27,6, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Mbaye Ndiaye ~15,7, Braxton Key ~14,8
-6-as: Theo Maledon ~24,2
+**📋 Siūloma sudėtis** (prognozė ~182,4 FP, dabartinė ~182,7 FP)
+Startas: Theo Maledon (C) ~24,2, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Mbaye Ndiaye ~15,7, Braxton Key ~14,8
+6-as: TJ Shorts II ~27,6
 Suolas: Daniel Oturu ~18,8, Marcus Carr ~17,8, Alec Peters ~13,7, Juan Hernangomez ~13,6
 Out: Bruno Fernando, Nikola Mirotic, Tyler Dorsey
-Pakeitimai: į startą – Sylvain Francisco, Mbaye Ndiaye; iš starto – Marcus Carr, Theo Maledon.
-6-u žaidėju (b-1) dėk Theo Maledon vietoj Daniel Oturu.
+Pakeitimai: į startą – Sylvain Francisco, Mbaye Ndiaye; iš starto – TJ Shorts II, Marcus Carr.
+6-u žaidėju (b-1) dėk TJ Shorts II vietoj Daniel Oturu.
 
 **🩹 Traumos**
 - Nikola Mirotic: nežais
