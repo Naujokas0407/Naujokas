@@ -4,10 +4,10 @@
 **👑 Kapitonas**
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~192,1 FP, dabartinė ~192,1 FP)
+**📋 Siūloma sudėtis** (prognozė ~187 FP, dabartinė ~187 FP)
 Startas: Chima Moneke (C) ~36, Jonas Valančiūnas ~29, Kevin Punter ~18,8, Nigel Hayes-Davis ~13,5, Hugo Besson ~13
 6-as: Aliou Diarra ~23,8
-Suolas: Alec Peters ~13,7, Joel Parra ~10,9, Andres Feliz ~10, Dzanan Musa ~9,5
+Suolas: Joel Parra ~10,9, Andres Feliz ~10, Dzanan Musa ~9,5, Alec Peters ~3,5
 Out: Tornike Shengelia (jau žaidė), Devon Dotson (jau žaidė), Ante Zizic (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
@@ -23,8 +23,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~185 FP, dabartinė ~185 FP)
-Startas: TJ Shorts II (C) ~27,6, Dwayne Bacon ~22,5, Marcus Carr ~17,8, Daniel Oturu ~16, Mbaye Ndiaye ~15,7
+**📋 Siūloma sudėtis** (prognozė ~179,3 FP, dabartinė ~179,3 FP)
+Startas: TJ Shorts II (C) ~27,6, Dwayne Bacon ~22,5, Marcus Carr ~17,8, Daniel Oturu ~16, Mbaye Ndiaye ~10
 6-as: Bruno Fernando ~27,5
 Suolas: Collin Malcolm ~24, Tyler Dorsey ~14,6, Nigel Hayes-Davis ~13,5, Sylvain Francisco ~8,5
 Out: Tonye Jekiri (jau žaidė), Devon Dotson (jau žaidė), Tadas Sedekerskis (jau žaidė)
@@ -36,7 +36,7 @@ Startinis penketas jau optimalus. ✅
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais – šiuo metu sudėtyje!
 
-**⚔️ Prieš ČiaPoniai:** prognozė ~185 : ~150
+**⚔️ Prieš ČiaPoniai:** prognozė ~179,3 : ~154,1
 
 ---
 
