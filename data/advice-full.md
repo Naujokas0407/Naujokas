@@ -4,8 +4,8 @@
 **👑 Kapitonas**
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~195,1 FP, dabartinė ~195,1 FP)
-Startas: Chima Moneke (C) ~36, Jonas Valančiūnas ~29, Kevin Punter ~18,8, Hugo Besson ~16, Nigel Hayes-Davis ~13,5
+**📋 Siūloma sudėtis** (prognozė ~192,1 FP, dabartinė ~192,1 FP)
+Startas: Chima Moneke (C) ~36, Jonas Valančiūnas ~29, Kevin Punter ~18,8, Nigel Hayes-Davis ~13,5, Hugo Besson ~13
 6-as: Aliou Diarra ~23,8
 Suolas: Alec Peters ~13,7, Joel Parra ~10,9, Andres Feliz ~10, Dzanan Musa ~9,5
 Out: Tornike Shengelia (jau žaidė), Devon Dotson (jau žaidė), Ante Zizic (jau žaidė)
