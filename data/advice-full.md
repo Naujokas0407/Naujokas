@@ -14,7 +14,6 @@ Startinis penketas jau optimalus. ✅
 **🩹 Traumos**
 - Devon Dotson: nežais
 - Joel Parra: tikėtina žais – šiuo metu sudėtyje!
-- Alec Peters: paaiškės prieš rungtynes – šiuo metu sudėtyje!
 
 ---
 
@@ -71,7 +70,6 @@ Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
 - Theo Maledon: nežais – šiuo metu sudėtyje!
-- Alec Peters: paaiškės prieš rungtynes – šiuo metu sudėtyje!
 - Nikola Mirotic: nežais
 - Tyler Dorsey: nežais
 
