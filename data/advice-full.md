@@ -69,13 +69,12 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 3. Umoja Gibson (BAR, G) – ~16,2 FP vs VBC
 Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~174 FP, dabartinė ~173,1 FP)
-Startas: Chima Moneke (C) ~36, Mfiondu Kabengele ~25,3, Umoja Gibson ~16,2, Andres Feliz ~10, Braxton Key ~10
-6-as: Devon Dotson ~17,1
-Suolas: Nigel Hayes-Davis ~15,8, Kevarrius Hayes ~15,2, Tyrese Martin ~12, Dzanan Musa ~4
+**📋 Siūloma sudėtis** (prognozė ~179,5 FP, dabartinė ~179,5 FP)
+Startas: Chima Moneke (C) ~36, Mfiondu Kabengele ~25,3, Devon Dotson ~17,1, Umoja Gibson ~16,2, Nigel Hayes-Davis ~15,8
+6-as: Kevarrius Hayes ~15,2
+Suolas: Tyrese Martin ~12, Andres Feliz ~10, Braxton Key ~10, Dzanan Musa ~4
 Out: Jean Montero, Tadas Sedekerskis, Tonye Jekiri
 Startinis penketas jau optimalus. ✅
-6-u žaidėju (b-1) dėk Devon Dotson vietoj Kevarrius Hayes.
 
 **🩹 Traumos**
 - Umoja Gibson: abejotinas – šiuo metu sudėtyje!
@@ -100,17 +99,17 @@ Startinis penketas jau optimalus. ✅
 3. Sylvain Francisco (PAN, G) – ~20,3 FP @ IST
 Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~201,3 FP, dabartinė ~201,5 FP)
-Startas: Theo Maledon (C) ~36, Aliou Diarra ~23,8, Sylvain Francisco ~20,3, Mbaye Ndiaye ~15,7, Braxton Key ~10
-6-as: TJ Shorts II ~27,6
-Suolas: Daniel Oturu ~18,8, Marcus Carr ~17,8, Alec Peters ~13,7, Juan Hernangomez ~13,6
+**📋 Siūloma sudėtis** (prognozė ~203,1 FP, dabartinė ~204,4 FP)
+Startas: Theo Maledon (C) ~36, TJ Shorts II ~27,6, Aliou Diarra ~23,8, Mbaye Ndiaye ~15,7, Alec Peters ~13,7
+6-as: Sylvain Francisco ~20,3
+Suolas: Daniel Oturu ~18,8, Marcus Carr ~17,8, Juan Hernangomez ~13,6, Braxton Key ~10
 Out: Bruno Fernando, Nikola Mirotic, Tyler Dorsey
-Pakeitimai: į startą – Sylvain Francisco, Mbaye Ndiaye; iš starto – TJ Shorts II, Marcus Carr.
-6-u žaidėju (b-1) dėk TJ Shorts II vietoj Daniel Oturu.
+Pakeitimai: į startą – Alec Peters; iš starto – Marcus Carr.
+6-u žaidėju (b-1) dėk Sylvain Francisco vietoj Daniel Oturu.
 
 **🩹 Traumos**
-- Nikola Mirotic: nežais
 - Alec Peters: paaiškės prieš rungtynes – šiuo metu sudėtyje!
+- Nikola Mirotic: nežais
 - Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
