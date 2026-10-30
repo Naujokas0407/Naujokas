@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~23,8 FP vs BES
@@ -22,13 +22,13 @@ Iš Out į sudėtį – Ante Zizic; į Out – Joel Parra.
 
 **🛒 Laisvoji rinka**
 - Devon Hall (MIL, G) ~15,4 FP @ OLY (vietoj Devon Dotson ~0)
-- Tremont Waters (ASV, G) ~14,9 FP vs KBA (vietoj Devon Dotson ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs MIL (vietoj Devon Dotson ~0)
+- Jaylen Nowell (BES, G) ~12,8 FP @ VIR (vietoj Devon Dotson ~0)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,6 FP @ BAR
@@ -40,7 +40,7 @@ Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 Startas: TJ Shorts II (C) ~27,6, Dwayne Bacon ~22,5, Marcus Carr ~17,8, Daniel Oturu ~16, Mbaye Ndiaye ~15,7
 6-as: Bruno Fernando ~12,3
 Suolas: Sylvain Francisco ~20,3, Nigel Hayes-Davis ~15,8, Collin Malcolm ~13,9, Devon Dotson ~0
-Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis, Tyler Dorsey
+Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis (jau žaidė), Tyler Dorsey
 Startinis penketas jau optimalus. ✅
 Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 
@@ -52,15 +52,15 @@ Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
 
 **🛒 Laisvoji rinka**
 - Devon Hall (MIL, G) ~15,4 FP @ OLY (vietoj Devon Dotson ~0)
-- Edwin Jackson (ASV, F) ~14,5 FP vs KBA (vietoj Devon Dotson ~0)
-- Kenneth Faried (KBA, C) ~13,5 FP @ ASV (vietoj Devon Dotson ~0)
+- Jaylen Nowell (BES, G) ~12,8 FP @ VIR (vietoj Devon Dotson ~0)
+- Neal Sako (VBC, C) ~12,5 FP @ BAR (vietoj Devon Dotson ~0)
 
 **⚔️ Prieš ČiaPoniai:** prognozė ~164,5 : ~164,5
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Umoja Gibson (BAR, G) – ~16,2 FP vs VBC
@@ -71,7 +71,7 @@ Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 Startas: Chima Moneke (C) ~36, Umoja Gibson ~16,2, Nigel Hayes-Davis ~15,8, Mfiondu Kabengele ~15, Dzanan Musa ~9,5
 6-as: Kevarrius Hayes ~15,2
 Suolas: Tyrese Martin ~12, Andres Feliz ~10, Braxton Key ~10, Devon Dotson ~0
-Out: Tonye Jekiri (jau žaidė), Jean Montero, Tadas Sedekerskis
+Out: Tadas Sedekerskis (jau žaidė), Tonye Jekiri (jau žaidė), Jean Montero
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
@@ -82,14 +82,14 @@ Startinis penketas jau optimalus. ✅
 - Tonye Jekiri: nežais
 
 **🛒 Laisvoji rinka**
-- Hugo Besson (ASV, G) ~16 FP vs KBA (vietoj Devon Dotson ~0)
 - Scottie Wilbekin (BES, G) ~14,9 FP @ VIR (vietoj Devon Dotson ~0)
-- Chris Duarte (KBA, G) ~14,8 FP @ ASV (vietoj Devon Dotson ~0)
+- Tyler Dorsey (OLY, G) ~14,6 FP vs MIL (vietoj Devon Dotson ~0)
+- Evan Fournier (OLY, G) ~12,3 FP vs MIL (vietoj Devon Dotson ~0)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 9 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,6 FP @ BAR
@@ -112,7 +112,7 @@ Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Marcus Carr.
 
 **🛒 Laisvoji rinka**
 - Umoja Gibson (BAR, G) ~16,2 FP vs VBC (vietoj Nikola Mirotic ~0)
-- Hugo Besson (ASV, G) ~16 FP vs KBA (vietoj Nikola Mirotic ~0)
 - Wendell Moore Jr. (VIR, F) ~14,9 FP vs BES (vietoj Nikola Mirotic ~0)
+- Neal Sako (VBC, C) ~12,5 FP @ BAR (vietoj Nikola Mirotic ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
