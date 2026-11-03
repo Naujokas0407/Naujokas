@@ -32,29 +32,29 @@ Pirmos rungtynės: 21:45, trečiadienis
 1. TJ Shorts II (VBC, G) – ~26,8 FP @ MIL
 2. Dwayne Bacon (DUB, F) – ~23,8 FP @ VIR
 3. Sylvain Francisco (PAN, G) – ~19 FP @ RMB
-Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
+Dabar kapitonas – Sylvain Francisco (~19 FP). Siūlau keisti į TJ Shorts II.
 
-**📋 Siūloma sudėtis** (prognozė ~178,2 FP, dabartinė ~167 FP, **+11,3**)
+**📋 Siūloma sudėtis** (prognozė ~179,8 FP, dabartinė ~164,4 FP, **+15,5**)
 Startas: TJ Shorts II (C) ~26,8, Dwayne Bacon ~23,8, Sylvain Francisco ~19, Daniel Oturu ~18,4, Nigel Hayes-Davis ~15,5
 6-as: Marcus Carr ~17,4
-Suolas: Devon Dotson ~17,1, Mbaye Ndiaye ~15,1, Collin Malcolm ~15, Bruno Fernando ~14
-Out: Tonye Jekiri, Tadas Sedekerskis, Tyler Dorsey
-Pakeitimai: į startą – Sylvain Francisco, Nigel Hayes-Davis; iš starto – Mbaye Ndiaye, Marcus Carr.
-Iš Out į sudėtį – Devon Dotson; į Out – Tyler Dorsey.
+Suolas: Tonye Jekiri ~17,2, Devon Dotson ~17,1, Mbaye Ndiaye ~15,1, Collin Malcolm ~15
+Out: Bruno Fernando, Tadas Sedekerskis, Tyler Dorsey
+Pakeitimai: į startą – Dwayne Bacon; iš starto – Collin Malcolm.
+Iš Out į sudėtį – Tonye Jekiri; į Out – Bruno Fernando.
 6-u žaidėju (b-1) dėk Marcus Carr vietoj Bruno Fernando.
 
 **🩹 Traumos**
-- Tonye Jekiri: nežais
-- Devon Dotson: neaišku
+- Tonye Jekiri: neaišku
+- Devon Dotson: neaišku – šiuo metu sudėtyje!
 - Tadas Sedekerskis: nežais
-- Tyler Dorsey: nežais – šiuo metu sudėtyje!
+- Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
-- TyTy Washington Jr. (ASV, G) ~16,5 FP vs BAY (vietoj Tonye Jekiri ~0)
-- Mike James (IST, G) ~16,3 FP vs PRS (vietoj Tonye Jekiri ~0)
-- Kenneth Faried (KBA, C) ~15,6 FP @ FBT (vietoj Tonye Jekiri ~0)
+- TyTy Washington Jr. (ASV, G) ~16,5 FP vs BAY (vietoj Tadas Sedekerskis ~0)
+- Mike James (IST, G) ~16,3 FP vs PRS (vietoj Tadas Sedekerskis ~0)
+- Kenneth Faried (KBA, C) ~15,6 FP @ FBT (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš Atletas:** prognozė ~178,2 : ~149,5
+**⚔️ Prieš Atletas:** prognozė ~179,8 : ~149,5
 
 ---
 
@@ -67,20 +67,21 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Andres Feliz (RMB, G) – ~17,7 FP vs PAN
 Dabar kapitonas – Chima Moneke (~19,2 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~157 FP, dabartinė ~145,2 FP, **+11,7**)
-Startas: Mfiondu Kabengele (C) ~24,1, Chima Moneke ~19,2, Andres Feliz ~17,7, Umoja Gibson ~16,2, Nigel Hayes-Davis ~15,5
-6-as: Devon Dotson ~17,1
-Suolas: Kevarrius Hayes ~14,3, Braxton Key ~14,2, Tyrese Martin ~10,9, Dzanan Musa ~6,8
-Out: Jean Montero, Tadas Sedekerskis, Tonye Jekiri
-Pakeitimai: į startą – Andres Feliz; iš starto – Dzanan Musa.
-6-u žaidėju (b-1) dėk Devon Dotson vietoj Kevarrius Hayes.
+**📋 Siūloma sudėtis** (prognozė ~162,7 FP, dabartinė ~145,2 FP, **+17,4**)
+Startas: Mfiondu Kabengele (C) ~24,1, Chima Moneke ~19,2, Andres Feliz ~17,7, Devon Dotson ~17,1, Nigel Hayes-Davis ~15,5
+6-as: Tonye Jekiri ~17,2
+Suolas: Umoja Gibson ~16,2, Kevarrius Hayes ~14,3, Braxton Key ~14,2, Tyrese Martin ~10,9
+Out: Dzanan Musa, Jean Montero, Tadas Sedekerskis
+Pakeitimai: į startą – Andres Feliz, Devon Dotson; iš starto – Umoja Gibson, Dzanan Musa.
+Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
+6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Kevarrius Hayes.
 
 **🩹 Traumos**
 - Umoja Gibson: neaišku – šiuo metu sudėtyje!
 - Devon Dotson: neaišku – šiuo metu sudėtyje!
 - Jean Montero: nežais
 - Tadas Sedekerskis: nežais
-- Tonye Jekiri: nežais
+- Tonye Jekiri: neaišku
 
 **🛒 Laisvoji rinka**
 - Yam Madar (TEL, G) ~17,7 FP @ PAR (vietoj Jean Montero ~0)
