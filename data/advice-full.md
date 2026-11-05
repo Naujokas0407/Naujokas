@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~23,8 FP @ BES
@@ -20,24 +20,24 @@ Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Evan Fournier, Dzan
 - Devon Dotson: neaišku
 
 **🛒 Laisvoji rinka**
-- Devon Hall (MIL, G) ~14,6 FP vs VBC (vietoj Dzanan Musa ~6,8)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs CZV (vietoj Dzanan Musa ~6,8)
 - Sterling Brown (ZAL, G) ~13,7 FP @ BES (vietoj Dzanan Musa ~6,8)
+- Luca Vildoza (PAR, G) ~13,5 FP vs TEL (vietoj Dzanan Musa ~6,8)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
 
 **👑 Kapitonas**
-1. TJ Shorts II (VBC, G) – ~26,8 FP @ MIL
-2. Dwayne Bacon (DUB, F) – ~23,8 FP @ VIR
-3. Marcus Carr (VIR, G) – ~17,4 FP vs DUB
-Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
+1. Dwayne Bacon (DUB, F) – ~23,8 FP @ VIR
+2. Marcus Carr (VIR, G) – ~17,4 FP vs DUB
+3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
+Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~163,7 FP, dabartinė ~162,7 FP, **+1,1**)
-Startas: TJ Shorts II (C) ~26,8, Sylvain Francisco ~19,5, Daniel Oturu ~18,4, Collin Malcolm ~15, Nigel Hayes-Davis ~5,5
-6-as: Bruno Fernando ~14
+**📋 Siūloma sudėtis** (prognozė ~194,2 FP, dabartinė ~193,2 FP, **+1,1**)
+Startas: TJ Shorts II (C) ~26,8, Collin Malcolm ~23,5, Sylvain Francisco ~19,5, Daniel Oturu ~18,4, Nigel Hayes-Davis ~5,5
+6-as: Bruno Fernando ~36
 Suolas: Dwayne Bacon ~23,8, Marcus Carr ~17,4, Tonye Jekiri ~17,2, Devon Dotson ~17,1
 Out: Tadas Sedekerskis (jau žaidė), Mbaye Ndiaye, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
@@ -52,14 +52,14 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs CZV (vietoj Tyler Dorsey ~0)
 - Carsen Edwards (ZAL, G) ~14,7 FP @ BES (vietoj Tyler Dorsey ~0)
-- Devon Hall (MIL, G) ~14,6 FP vs VBC (vietoj Tyler Dorsey ~0)
+- Ante Zizic (BES, C) ~14,5 FP vs ZAL (vietoj Tyler Dorsey ~0)
 
-**⚔️ Prieš Atletas:** prognozė ~163,7 : ~146,5
+**⚔️ Prieš Atletas:** prognozė ~194,2 : ~154,8
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~24,1 FP @ VIR
@@ -89,30 +89,23 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
 
 **👑 Kapitonas**
-1. TJ Shorts II (VBC, G) – ~26,8 FP @ MIL
-2. Aliou Diarra (VIR, C) – ~22,8 FP vs DUB
-3. Marcus Carr (VIR, G) – ~17,4 FP vs DUB
+1. Aliou Diarra (VIR, C) – ~22,8 FP vs DUB
+2. Marcus Carr (VIR, G) – ~17,4 FP vs DUB
+3. Mbaye Ndiaye (OLY, F) – ~15,1 FP vs CZV
 Kapitonas Sylvain Francisco jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~160,1 FP, dabartinė ~154,7 FP, **+5,3**)
+**📋 Siūloma sudėtis** (prognozė ~154,7 FP, dabartinė ~154,7 FP)
 Startas: TJ Shorts II ~26,8, Sylvain Francisco (C) ~19,5, Daniel Oturu ~18,4, Braxton Key ~14,2, Juan Hernangomez ~8
-6-as: Aliou Diarra ~22,8
-Suolas: Marcus Carr ~17,4, TyTy Washington Jr. ~16,5, Mbaye Ndiaye ~15,1, Neal Sako ~12,8
-Out: Theo Maledon (jau žaidė), Alec Peters, Nikola Mirotic
+6-as: Alec Peters ~12,4
+Suolas: Aliou Diarra ~22,8, Marcus Carr ~17,4, TyTy Washington Jr. ~16,5, Mbaye Ndiaye ~15,1
+Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
 Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Neal Sako; į Out – Alec Peters.
-6-u žaidėju (b-1) dėk Aliou Diarra vietoj Alec Peters.
 
 **🩹 Traumos**
 - Theo Maledon: nežais
 - Nikola Mirotic: nežais
-
-**🛒 Laisvoji rinka**
-- Tyler Dorsey (OLY, G) ~14,6 FP vs CZV (vietoj Nikola Mirotic ~0)
-- Keenan Evans (ZAL, G) ~13,8 FP @ BES (vietoj Nikola Mirotic ~0)
-- Luca Vildoza (PAR, G) ~13,5 FP vs TEL (vietoj Nikola Mirotic ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
