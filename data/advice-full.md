@@ -67,8 +67,8 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~170,1 FP, dabartinė ~164,9 FP, **+5,2**)
-Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, TyTy Washington Jr. ~16,5, Braxton Key ~14,2, Nigel Hayes-Davis ~5,5
+**📋 Siūloma sudėtis** (prognozė ~172,4 FP, dabartinė ~167,2 FP, **+5,2**)
+Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Braxton Key ~16,5, TyTy Washington Jr. ~16,5, Nigel Hayes-Davis ~5,5
 6-as: Tyrese Martin ~10,9
 Suolas: Chima Moneke ~19,2, Tonye Jekiri ~17,2, Devon Dotson ~17,1, Kevarrius Hayes ~14,3
 Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Dzanan Musa
@@ -97,8 +97,8 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
 3. Mbaye Ndiaye (OLY, F) – ~15,1 FP vs CZV
 Kapitonas Sylvain Francisco jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~154,7 FP, dabartinė ~154,7 FP)
-Startas: TJ Shorts II ~26,8, Sylvain Francisco (C) ~19,5, Daniel Oturu ~18,4, Braxton Key ~14,2, Juan Hernangomez ~8
+**📋 Siūloma sudėtis** (prognozė ~157 FP, dabartinė ~157 FP)
+Startas: TJ Shorts II ~26,8, Sylvain Francisco (C) ~19,5, Daniel Oturu ~18,4, Braxton Key ~16,5, Juan Hernangomez ~8
 6-as: Alec Peters ~12,4
 Suolas: Aliou Diarra ~22,8, Marcus Carr ~17,4, TyTy Washington Jr. ~16,5, Mbaye Ndiaye ~15,1
 Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
