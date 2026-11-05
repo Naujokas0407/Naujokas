@@ -55,7 +55,7 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Bruno Fernando.
 - Mike James (IST, G) ~16,3 FP vs PRS (vietoj Tadas Sedekerskis ~0)
 - Umoja Gibson (BAR, G) ~16,2 FP @ HTA (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš Atletas:** prognozė ~163 : ~152
+**⚔️ Prieš Atletas:** prognozė ~163 : ~146,5
 
 ---
 
