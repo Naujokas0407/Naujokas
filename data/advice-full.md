@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~23,8 FP @ BES
@@ -20,14 +20,14 @@ Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Evan Fournier, Dzan
 - Devon Dotson: neaišku
 
 **🛒 Laisvoji rinka**
-- Hugo Besson (ASV, G) ~15,7 FP vs BAY (vietoj Dzanan Musa ~6,8)
 - Devon Hall (MIL, G) ~14,6 FP vs VBC (vietoj Dzanan Musa ~6,8)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs CZV (vietoj Dzanan Musa ~6,8)
+- Sterling Brown (ZAL, G) ~13,7 FP @ BES (vietoj Dzanan Musa ~6,8)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~26,8 FP @ MIL
@@ -59,7 +59,7 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~24,1 FP @ VIR
@@ -67,12 +67,12 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~170,4 FP, dabartinė ~164,9 FP, **+5,5**)
-Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Devon Dotson ~17,1, Braxton Key ~14,2, Nigel Hayes-Davis ~5,5
+**📋 Siūloma sudėtis** (prognozė ~170,1 FP, dabartinė ~164,9 FP, **+5,2**)
+Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, TyTy Washington Jr. ~16,5, Braxton Key ~14,2, Nigel Hayes-Davis ~5,5
 6-as: Tyrese Martin ~10,9
-Suolas: Chima Moneke ~19,2, Tonye Jekiri ~17,2, TyTy Washington Jr. ~16,5, Kevarrius Hayes ~14,3
+Suolas: Chima Moneke ~19,2, Tonye Jekiri ~17,2, Devon Dotson ~17,1, Kevarrius Hayes ~14,3
 Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Dzanan Musa
-Pakeitimai: į startą – Devon Dotson; iš starto – TyTy Washington Jr..
+Startinis penketas jau optimalus. ✅
 Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
 
 **🩹 Traumos**
@@ -83,13 +83,13 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs CZV (vietoj Dzanan Musa ~6,8)
-- Hugo Besson (ASV, G) ~15,7 FP vs BAY (vietoj Dzanan Musa ~6,8)
 - Scottie Wilbekin (BES, G) ~15,6 FP vs ZAL (vietoj Dzanan Musa ~6,8)
+- Carsen Edwards (ZAL, G) ~14,7 FP @ BES (vietoj Dzanan Musa ~6,8)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~26,8 FP @ MIL
@@ -111,8 +111,8 @@ Iš Out į sudėtį – Neal Sako; į Out – Alec Peters.
 - Nikola Mirotic: nežais
 
 **🛒 Laisvoji rinka**
-- Hugo Besson (ASV, G) ~15,7 FP vs BAY (vietoj Nikola Mirotic ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs CZV (vietoj Nikola Mirotic ~0)
-- Edwin Jackson (ASV, F) ~14,5 FP vs BAY (vietoj Nikola Mirotic ~0)
+- Keenan Evans (ZAL, G) ~13,8 FP @ BES (vietoj Nikola Mirotic ~0)
+- Luca Vildoza (PAR, G) ~13,5 FP vs TEL (vietoj Nikola Mirotic ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
