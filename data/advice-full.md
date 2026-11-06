@@ -7,13 +7,14 @@
 3. Chima Moneke (CZV, F) – ~19,2 FP @ OLY
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~162,6 FP, dabartinė ~156,3 FP, **+6,2**)
-Startas: Andres Feliz (C) ~32,5, Jonas Valančiūnas ~23,8, Chima Moneke ~19,2, Kevin Punter ~9,5, Nigel Hayes-Davis ~5,5
+**📋 Siūloma sudėtis** (prognozė ~164,2 FP, dabartinė ~158,4 FP, **+5,8**)
+Startas: Andres Feliz (C) ~32,5, Jonas Valančiūnas ~23,8, Chima Moneke ~19,2, Devon Dotson ~17,1, Tornike Shengelia ~7,8
 6-as: Aliou Diarra ~22,8
-Suolas: Devon Dotson ~17,1, Ante Zizic ~14,5, Alec Peters ~6,5, Joel Parra ~-4,5
-Out: Evan Fournier, Tornike Shengelia, Dzanan Musa
-Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Evan Fournier, Dzanan Musa.
+Suolas: Kevin Punter ~9,5, Alec Peters ~6,5, Nigel Hayes-Davis ~5,5, Joel Parra ~-4,5
+Out: Ante Zizic, Evan Fournier, Dzanan Musa
+Pakeitimai: į startą – Tornike Shengelia, Devon Dotson; iš starto – Dzanan Musa, Aliou Diarra.
+Iš Out į sudėtį – Tornike Shengelia, Devon Dotson; į Out – Dzanan Musa, Evan Fournier.
+6-u žaidėju (b-1) dėk Aliou Diarra vietoj Evan Fournier.
 
 **🩹 Traumos**
 - Evan Fournier: tikėtina žais – šiuo metu sudėtyje!
@@ -35,10 +36,10 @@ Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Evan Fournier, Dzan
 3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~199,2 FP, dabartinė ~198,2 FP, **+1,1**)
-Startas: Daniel Oturu ~27, TJ Shorts II (C) ~25, Collin Malcolm ~23,5, Sylvain Francisco ~19,5, Nigel Hayes-Davis ~5,5
+**📋 Siūloma sudėtis** (prognozė ~208,3 FP, dabartinė ~207,3 FP, **+1,1**)
+Startas: Daniel Oturu ~27, TJ Shorts II (C) ~25, Dwayne Bacon ~23,8, Collin Malcolm ~23,5, Sylvain Francisco ~19,5
 6-as: Bruno Fernando ~36
-Suolas: Dwayne Bacon ~23,8, Marcus Carr ~17,4, Tonye Jekiri ~17,2, Devon Dotson ~17,1
+Suolas: Marcus Carr ~17,4, Tonye Jekiri ~17,2, Devon Dotson ~17,1, Nigel Hayes-Davis ~5,5
 Out: Tadas Sedekerskis (jau žaidė), Mbaye Ndiaye, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
 Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
@@ -54,7 +55,7 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 - Carsen Edwards (ZAL, G) ~14,7 FP @ BES (vietoj Tyler Dorsey ~0)
 - Ante Zizic (BES, C) ~14,5 FP vs ZAL (vietoj Tyler Dorsey ~0)
 
-**⚔️ Prieš Atletas:** prognozė ~199,2 : ~172,3
+**⚔️ Prieš Atletas:** prognozė ~208,3 : ~196,9
 
 ---
 
@@ -67,17 +68,9 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~163,5 FP, dabartinė ~158,3 FP, **+5,2**)
-Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Braxton Key ~16,5, Nigel Hayes-Davis ~5,5, TyTy Washington Jr. ~5
-6-as: Tyrese Martin ~13,5
-Suolas: Chima Moneke ~19,2, Tonye Jekiri ~17,2, Devon Dotson ~17,1, Kevarrius Hayes ~14,3
-Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Dzanan Musa
-Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
-
 **🩹 Traumos**
-- Umoja Gibson: nežais
 - Devon Dotson: neaišku – šiuo metu sudėtyje!
+- Umoja Gibson: neaišku
 - Tadas Sedekerskis: nežais
 - Tonye Jekiri: paaiškės prieš rungtynes
 
@@ -97,15 +90,16 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Dzanan Musa.
 3. Mbaye Ndiaye (OLY, F) – ~15,1 FP vs CZV
 Kapitonas Sylvain Francisco jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~152,1 FP, dabartinė ~152,1 FP)
-Startas: Daniel Oturu ~27, TJ Shorts II ~25, Sylvain Francisco (C) ~19,5, Braxton Key ~16,5, Juan Hernangomez ~8
-6-as: Alec Peters ~6,5
-Suolas: Aliou Diarra ~22,8, Marcus Carr ~17,4, Mbaye Ndiaye ~15,1, TyTy Washington Jr. ~5
+**📋 Siūloma sudėtis** (prognozė ~163,8 FP, dabartinė ~165 FP)
+Startas: Daniel Oturu ~27, TJ Shorts II ~25, Sylvain Francisco (C) ~19,5, Braxton Key ~16,5, Mbaye Ndiaye ~15,1
+6-as: Aliou Diarra ~22,8
+Suolas: Marcus Carr ~17,4, Juan Hernangomez ~8, Alec Peters ~6,5, TyTy Washington Jr. ~5
 Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
-Startinis penketas jau optimalus. ✅
+Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Aliou Diarra.
+6-u žaidėju (b-1) dėk Aliou Diarra vietoj Marcus Carr.
 
 **🩹 Traumos**
 - Theo Maledon: nežais
-- Nikola Mirotic: nežais
+- Nikola Mirotic: neaišku
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
