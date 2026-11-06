@@ -1,88 +1,92 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
-1. Jonas Valančiūnas (ZAL, C) – ~23,8 FP @ BES
-2. Aliou Diarra (VIR, C) – ~22,8 FP vs DUB
-3. Chima Moneke (CZV, F) – ~19,2 FP @ OLY
+1. Aliou Diarra (VIR, C) – ~22,8 FP vs DUB
+2. Chima Moneke (CZV, F) – ~19,2 FP @ OLY
+3. Evan Fournier (OLY, G) – ~12,3 FP vs CZV
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~164,2 FP, dabartinė ~158,4 FP, **+5,8**)
-Startas: Andres Feliz (C) ~32,5, Jonas Valančiūnas ~23,8, Chima Moneke ~19,2, Devon Dotson ~17,1, Tornike Shengelia ~7,8
+**📋 Siūloma sudėtis** (prognozė ~159,4 FP, dabartinė ~158,4 FP, **+1,1**)
+Startas: Andres Feliz (C) ~32,5, Jonas Valančiūnas ~23,8, Chima Moneke ~19,2, Evan Fournier ~12,3, Tornike Shengelia ~7,8
 6-as: Aliou Diarra ~22,8
 Suolas: Kevin Punter ~9,5, Alec Peters ~6,5, Nigel Hayes-Davis ~5,5, Joel Parra ~-4,5
-Out: Ante Zizic, Evan Fournier, Dzanan Musa
-Pakeitimai: į startą – Tornike Shengelia, Devon Dotson; iš starto – Dzanan Musa, Aliou Diarra.
-Iš Out į sudėtį – Tornike Shengelia, Devon Dotson; į Out – Dzanan Musa, Evan Fournier.
+Out: Devon Dotson (jau žaidė), Ante Zizic (jau žaidė), Dzanan Musa
+Pakeitimai: į startą – Evan Fournier, Tornike Shengelia; iš starto – Dzanan Musa, Aliou Diarra.
+Iš Out į sudėtį – Tornike Shengelia; į Out – Dzanan Musa.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Evan Fournier.
 
 **🩹 Traumos**
 - Evan Fournier: tikėtina žais – šiuo metu sudėtyje!
-- Devon Dotson: neaišku
 
 **🛒 Laisvoji rinka**
 - Tyler Dorsey (OLY, G) ~14,6 FP vs CZV (vietoj Dzanan Musa ~6,8)
-- Sterling Brown (ZAL, G) ~13,7 FP @ BES (vietoj Dzanan Musa ~6,8)
 - Luca Vildoza (PAR, G) ~13,5 FP vs TEL (vietoj Dzanan Musa ~6,8)
+- Daniel Theis (TEL, C) ~11,8 FP @ PAR (vietoj Dzanan Musa ~6,8)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Dwayne Bacon (DUB, F) – ~23,8 FP @ VIR
 2. Marcus Carr (VIR, G) – ~17,4 FP vs DUB
-3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
+3. Mbaye Ndiaye (OLY, F) – ~15,1 FP vs CZV
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~208,3 FP, dabartinė ~207,3 FP, **+1,1**)
+**📋 Siūloma sudėtis** (prognozė ~207,3 FP, dabartinė ~207,3 FP)
 Startas: Daniel Oturu ~27, TJ Shorts II (C) ~25, Dwayne Bacon ~23,8, Collin Malcolm ~23,5, Sylvain Francisco ~19,5
 6-as: Bruno Fernando ~36
-Suolas: Marcus Carr ~17,4, Tonye Jekiri ~17,2, Devon Dotson ~17,1, Nigel Hayes-Davis ~5,5
-Out: Tadas Sedekerskis (jau žaidė), Mbaye Ndiaye, Tyler Dorsey
+Suolas: Marcus Carr ~17,4, Devon Dotson ~17,1, Mbaye Ndiaye ~15,1, Nigel Hayes-Davis ~5,5
+Out: Tadas Sedekerskis (jau žaidė), Tonye Jekiri, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 
 **🩹 Traumos**
-- Tonye Jekiri: paaiškės prieš rungtynes
-- Devon Dotson: neaišku – šiuo metu sudėtyje!
+- Tonye Jekiri: nežais
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs CZV (vietoj Tyler Dorsey ~0)
-- Carsen Edwards (ZAL, G) ~14,7 FP @ BES (vietoj Tyler Dorsey ~0)
-- Ante Zizic (BES, C) ~14,5 FP vs ZAL (vietoj Tyler Dorsey ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs CZV (vietoj Tonye Jekiri ~0)
+- Evan Fournier (OLY, G) ~12,3 FP vs CZV (vietoj Tonye Jekiri ~0)
+- Nikola Tanaskovic (PAR, C) ~11,7 FP vs TEL (vietoj Tonye Jekiri ~0)
 
-**⚔️ Prieš Atletas:** prognozė ~208,3 : ~196,9
+**⚔️ Prieš Atletas:** prognozė ~207,3 : ~196,9
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~24,1 FP @ VIR
 2. Chima Moneke (CZV, F) – ~19,2 FP @ OLY
-3. Tonye Jekiri (PAR, C) – ~17,2 FP vs TEL
+3. Dzanan Musa (DUB, G) – ~6,8 FP @ VIR
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
+**📋 Siūloma sudėtis** (prognozė ~158,9 FP, dabartinė ~158,9 FP)
+Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Chima Moneke ~19,2, Braxton Key ~16,5, Dzanan Musa ~6,8
+6-as: Tyrese Martin ~13,5
+Suolas: Devon Dotson ~17,1, Nigel Hayes-Davis ~5,5, TyTy Washington Jr. ~5, Kevarrius Hayes ~0
+Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Tonye Jekiri
+Startinis penketas jau optimalus. ✅
+
 **🩹 Traumos**
-- Devon Dotson: neaišku – šiuo metu sudėtyje!
+- Kevarrius Hayes: nežais – šiuo metu sudėtyje!
 - Umoja Gibson: neaišku
 - Tadas Sedekerskis: nežais
-- Tonye Jekiri: paaiškės prieš rungtynes
+- Tonye Jekiri: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs CZV (vietoj Dzanan Musa ~6,8)
-- Scottie Wilbekin (BES, G) ~15,6 FP vs ZAL (vietoj Dzanan Musa ~6,8)
-- Carsen Edwards (ZAL, G) ~14,7 FP @ BES (vietoj Dzanan Musa ~6,8)
+- Jean Montero (OLY, G) ~23,6 FP vs CZV (vietoj Kevarrius Hayes ~0)
+- Tyler Dorsey (OLY, G) ~14,6 FP vs CZV (vietoj Kevarrius Hayes ~0)
+- Luca Vildoza (PAR, G) ~13,5 FP vs TEL (vietoj Kevarrius Hayes ~0)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~22,8 FP vs DUB
