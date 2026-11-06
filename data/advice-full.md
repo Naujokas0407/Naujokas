@@ -12,10 +12,10 @@ Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~208,3 FP, dabartinė ~208,3 FP)
+**📋 Siūloma sudėtis** (prognozė ~202,7 FP, dabartinė ~202,7 FP)
 Startas: Daniel Oturu ~27, TJ Shorts II (C) ~25, Dwayne Bacon ~23,8, Collin Malcolm ~23,5, Sylvain Francisco ~19,5
 6-as: Bruno Fernando ~36
-Suolas: Devon Dotson ~19, Marcus Carr ~17,4, Mbaye Ndiaye ~15,1, Nigel Hayes-Davis ~5,5
+Suolas: Devon Dotson ~19, Marcus Carr ~17,4, Nigel Hayes-Davis ~5,5, Mbaye Ndiaye ~4
 Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis (jau žaidė), Tyler Dorsey (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
@@ -24,7 +24,7 @@ Startinis penketas jau optimalus. ✅
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais
 
-**⚔️ Prieš Atletas:** prognozė ~208,3 : ~178,4
+**⚔️ Prieš Atletas:** prognozė ~202,7 : ~164,6
 
 ---
 
@@ -34,8 +34,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~167 FP, dabartinė ~167 FP)
-Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Chima Moneke ~19,2, Braxton Key ~16,5, Dzanan Musa ~6,8
+**📋 Siūloma sudėtis** (prognozė ~153,3 FP, dabartinė ~153,3 FP)
+Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Braxton Key ~16,5, Dzanan Musa ~6,8, Chima Moneke ~5,5
 6-as: Tyrese Martin ~13,5
 Suolas: Devon Dotson ~19, Kevarrius Hayes ~14,3, Nigel Hayes-Davis ~5,5, TyTy Washington Jr. ~5
 Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Tonye Jekiri (jau žaidė)
