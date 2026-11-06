@@ -4,9 +4,6 @@
 **👑 Kapitonas**
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**🩹 Traumos**
-- Evan Fournier: tikėtina žais – šiuo metu sudėtyje!
-
 ---
 
 ## HLA 2 Divizionas – Naujokas · 10 turas
