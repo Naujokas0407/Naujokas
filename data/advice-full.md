@@ -24,7 +24,7 @@ Startinis penketas jau optimalus. ✅
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais
 
-**⚔️ Prieš Atletas:** prognozė ~189 : ~164,6
+**⚔️ Prieš Atletas:** prognozė ~189 : ~156,8
 
 ---
 
