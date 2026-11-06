@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
@@ -10,7 +10,7 @@ Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
@@ -19,7 +19,7 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 Startas: Daniel Oturu ~27, TJ Shorts II (C) ~25, Dwayne Bacon ~23,8, Collin Malcolm ~23,5, Sylvain Francisco ~19,5
 6-as: Bruno Fernando ~36
 Suolas: Devon Dotson ~19, Marcus Carr ~17,4, Mbaye Ndiaye ~15,1, Nigel Hayes-Davis ~5,5
-Out: Tadas Sedekerskis (jau žaidė), Tyler Dorsey (jau žaidė), Tonye Jekiri
+Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis (jau žaidė), Tyler Dorsey (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
@@ -27,26 +27,21 @@ Startinis penketas jau optimalus. ✅
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais
 
-**🛒 Laisvoji rinka**
-- Nikola Tanaskovic (PAR, C) ~11,7 FP vs TEL (vietoj Tonye Jekiri ~0)
-- Alessandro Pajola (PAR, G) ~10,4 FP vs TEL (vietoj Tonye Jekiri ~0)
-- Ethan Thompson (PAR, G) ~10,1 FP vs TEL (vietoj Tonye Jekiri ~0)
-
 **⚔️ Prieš Atletas:** prognozė ~208,3 : ~178,4
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
 Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~159,8 FP, dabartinė ~159,8 FP)
+**📋 Siūloma sudėtis** (prognozė ~167 FP, dabartinė ~167 FP)
 Startas: Andres Feliz (C) ~32,5, Mfiondu Kabengele ~24,1, Chima Moneke ~19,2, Braxton Key ~16,5, Dzanan Musa ~6,8
 6-as: Tyrese Martin ~13,5
-Suolas: Devon Dotson ~19, Nigel Hayes-Davis ~5,5, TyTy Washington Jr. ~5, Kevarrius Hayes ~0
-Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Tonye Jekiri
+Suolas: Devon Dotson ~19, Kevarrius Hayes ~14,3, Nigel Hayes-Davis ~5,5, TyTy Washington Jr. ~5
+Out: Umoja Gibson (jau žaidė), Tadas Sedekerskis (jau žaidė), Tonye Jekiri (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
@@ -55,15 +50,10 @@ Startinis penketas jau optimalus. ✅
 - Tadas Sedekerskis: nežais
 - Tonye Jekiri: nežais
 
-**🛒 Laisvoji rinka**
-- Luca Vildoza (PAR, G) ~13,5 FP vs TEL (vietoj Kevarrius Hayes ~0)
-- Jimmy Clark III (TEL, G) ~12,6 FP @ PAR (vietoj Kevarrius Hayes ~0)
-- Nikola Tanaskovic (PAR, C) ~11,7 FP vs TEL (vietoj Kevarrius Hayes ~0)
-
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 10 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:45, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
 Kapitonas Sylvain Francisco jau žaidžia – šį turą keisti nebegalima.
