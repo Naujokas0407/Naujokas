@@ -32,25 +32,26 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Daniel Oturu (HTA, C) – ~19,3 FP @ TEL
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~178 FP, dabartinė ~177,5 FP)
+**📋 Siūloma sudėtis** (prognozė ~179,6 FP, dabartinė ~177,5 FP, **+2,2**)
 Startas: TJ Shorts II (C) ~26,6, Dwayne Bacon ~23,1, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Collin Malcolm ~15,9
 6-as: Devon Dotson ~17,3
-Suolas: Bruno Fernando ~16,2, Marcus Carr ~16, Nigel Hayes-Davis ~14,3, Mbaye Ndiaye ~14
-Out: Tonye Jekiri, Tadas Sedekerskis, Tyler Dorsey
+Suolas: Tonye Jekiri ~17,2, Bruno Fernando ~16,2, Marcus Carr ~16, Nigel Hayes-Davis ~14,3
+Out: Mbaye Ndiaye, Tadas Sedekerskis, Tyler Dorsey
 Startinis penketas jau optimalus. ✅
+Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 6-u žaidėju (b-1) dėk Devon Dotson vietoj Bruno Fernando.
 
 **🩹 Traumos**
-- Tonye Jekiri: nežais
+- Tonye Jekiri: neaišku
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Tonye Jekiri ~0)
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tonye Jekiri ~0)
-- Umoja Gibson (BAR, G) ~16,2 FP @ PAN (vietoj Tonye Jekiri ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Tadas Sedekerskis ~0)
+- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tadas Sedekerskis ~0)
+- Umoja Gibson (BAR, G) ~16,2 FP @ PAN (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~178 : ~164,1
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,6 : ~164,1
 
 ---
 
@@ -63,25 +64,25 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
 Dabar kapitonas – Andres Feliz (~19,2 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~159,2 FP, dabartinė ~141 FP, **+18,3**)
+**📋 Siūloma sudėtis** (prognozė ~163,9 FP, dabartinė ~148,1 FP, **+15,8**)
 Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~14,5
-6-as: Umoja Gibson ~16,2
-Suolas: TyTy Washington Jr. ~14,6, Nigel Hayes-Davis ~14,3, Dzanan Musa ~12, Tyrese Martin ~11,2
-Out: Kevarrius Hayes, Tadas Sedekerskis, Tonye Jekiri
+6-as: Tonye Jekiri ~17,2
+Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Kevarrius Hayes ~14,3, Nigel Hayes-Davis ~14,3
+Out: Dzanan Musa, Tyrese Martin, Tadas Sedekerskis
 Pakeitimai: į startą – Devon Dotson; iš starto – Dzanan Musa.
-Iš Out į sudėtį – Umoja Gibson; į Out – Kevarrius Hayes.
-6-u žaidėju (b-1) dėk Umoja Gibson vietoj Tyrese Martin.
+Iš Out į sudėtį – Umoja Gibson, Tonye Jekiri; į Out – Dzanan Musa, Tyrese Martin.
+6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
-- Kevarrius Hayes: nežais – šiuo metu sudėtyje!
+- Kevarrius Hayes: neaišku – šiuo metu sudėtyje!
 - Umoja Gibson: neaišku
 - Tadas Sedekerskis: nežais
-- Tonye Jekiri: nežais
+- Tonye Jekiri: neaišku
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Kevarrius Hayes ~0)
-- Dwight Powell (FBT, C) ~18,5 FP @ PRS (vietoj Kevarrius Hayes ~0)
-- Kenneth Faried (KBA, C) ~17,8 FP @ PAR (vietoj Kevarrius Hayes ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Tadas Sedekerskis ~0)
+- Dwight Powell (FBT, C) ~18,5 FP @ PRS (vietoj Tadas Sedekerskis ~0)
+- Kenneth Faried (KBA, C) ~17,8 FP @ PAR (vietoj Tadas Sedekerskis ~0)
 
 ---
 
