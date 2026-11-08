@@ -16,6 +16,9 @@ Pakeitimai: į startą – Nigel Hayes-Davis, Kevin Punter; iš starto – Dzana
 Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Evan Fournier, Joel Parra.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Evan Fournier.
 
+**🩹 Traumos**
+- Kevin Punter: neaišku – šiuo metu sudėtyje!
+
 **🛒 Laisvoji rinka**
 - Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tornike Shengelia ~9,2)
 - Umoja Gibson (BAR, G) ~16,2 FP @ PAN (vietoj Tornike Shengelia ~9,2)
