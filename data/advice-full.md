@@ -7,22 +7,22 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
 Dabar kapitonas – Andres Feliz (~19,2 FP). Siūlau keisti į Jonas Valančiūnas.
 
-**📋 Siūloma sudėtis** (prognozė ~170,6 FP, dabartinė ~156,1 FP, **+14,5**)
-Startas: Jonas Valančiūnas (C) ~25,1, Andres Feliz ~19,2, Kevin Punter ~18,2, Chima Moneke ~17,9, Nigel Hayes-Davis ~14,3
+**📋 Siūloma sudėtis** (prognozė ~166,7 FP, dabartinė ~147 FP, **+19,6**)
+Startas: Jonas Valančiūnas (C) ~25,1, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Nigel Hayes-Davis ~14,3
 6-as: Aliou Diarra ~24
-Suolas: Devon Dotson ~17,3, Ante Zizic ~12,8, Dzanan Musa ~12, Alec Peters ~11,8
-Out: Evan Fournier, Joel Parra, Tornike Shengelia
-Pakeitimai: į startą – Nigel Hayes-Davis, Kevin Punter; iš starto – Dzanan Musa, Aliou Diarra.
-Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Evan Fournier, Joel Parra.
+Suolas: Ante Zizic ~12,8, Dzanan Musa ~12, Alec Peters ~11,8, Evan Fournier ~11,2
+Out: Joel Parra, Tornike Shengelia, Kevin Punter
+Pakeitimai: į startą – Nigel Hayes-Davis, Devon Dotson; iš starto – Dzanan Musa, Aliou Diarra.
+Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Kevin Punter, Joel Parra.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Evan Fournier.
 
 **🩹 Traumos**
-- Kevin Punter: neaišku – šiuo metu sudėtyje!
+- Kevin Punter: nežais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tornike Shengelia ~9,2)
-- Umoja Gibson (BAR, G) ~16,2 FP @ PAN (vietoj Tornike Shengelia ~9,2)
-- Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Tornike Shengelia ~9,2)
+- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Kevin Punter ~0)
+- Umoja Gibson (BAR, G) ~16,2 FP @ PAN (vietoj Kevin Punter ~0)
+- Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Kevin Punter ~0)
 
 ---
 
