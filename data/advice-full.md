@@ -7,17 +7,17 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
 Dabar kapitonas – Andres Feliz (~19,2 FP). Siūlau keisti į Jonas Valančiūnas.
 
-**📋 Siūloma sudėtis** (prognozė ~166,7 FP, dabartinė ~147 FP, **+19,6**)
+**📋 Siūloma sudėtis** (prognozė ~166,7 FP, dabartinė ~154,7 FP, **+11,9**)
 Startas: Jonas Valančiūnas (C) ~25,1, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Nigel Hayes-Davis ~14,3
 6-as: Aliou Diarra ~24
 Suolas: Ante Zizic ~12,8, Dzanan Musa ~12, Alec Peters ~11,8, Evan Fournier ~11,2
 Out: Joel Parra, Tornike Shengelia, Kevin Punter
 Pakeitimai: į startą – Nigel Hayes-Davis, Devon Dotson; iš starto – Dzanan Musa, Aliou Diarra.
-Iš Out į sudėtį – Devon Dotson, Ante Zizic; į Out – Kevin Punter, Joel Parra.
+Iš Out į sudėtį – Ante Zizic; į Out – Tornike Shengelia.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Evan Fournier.
 
 **🩹 Traumos**
-- Kevin Punter: nežais – šiuo metu sudėtyje!
+- Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
 - Mike James (IST, G) ~16,3 FP vs VIR (vietoj Kevin Punter ~0)
