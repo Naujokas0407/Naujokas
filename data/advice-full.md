@@ -45,7 +45,7 @@ Iš Out į sudėtį – Tonye Jekiri; į Out – Mbaye Ndiaye.
 6-u žaidėju (b-1) dėk Devon Dotson vietoj Bruno Fernando.
 
 **🩹 Traumos**
-- Tonye Jekiri: neaišku
+- Tonye Jekiri: paaiškės prieš rungtynes
 - Tadas Sedekerskis: nežais
 - Tyler Dorsey: nežais
 
@@ -67,25 +67,25 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
 Dabar kapitonas – Andres Feliz (~19,2 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~163,9 FP, dabartinė ~148,1 FP, **+15,8**)
+**📋 Siūloma sudėtis** (prognozė ~162,7 FP, dabartinė ~141 FP, **+21,8**)
 Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~14,5
 6-as: Tonye Jekiri ~17,2
-Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Kevarrius Hayes ~14,3, Nigel Hayes-Davis ~14,3
-Out: Dzanan Musa, Tyrese Martin, Tadas Sedekerskis
+Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Nigel Hayes-Davis ~14,3, Dzanan Musa ~12
+Out: Tyrese Martin, Kevarrius Hayes, Tadas Sedekerskis
 Pakeitimai: į startą – Devon Dotson; iš starto – Dzanan Musa.
-Iš Out į sudėtį – Umoja Gibson, Tonye Jekiri; į Out – Dzanan Musa, Tyrese Martin.
+Iš Out į sudėtį – Umoja Gibson, Tonye Jekiri; į Out – Kevarrius Hayes, Tyrese Martin.
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
-- Kevarrius Hayes: neaišku – šiuo metu sudėtyje!
+- Kevarrius Hayes: nežais – šiuo metu sudėtyje!
 - Umoja Gibson: neaišku
 - Tadas Sedekerskis: nežais
-- Tonye Jekiri: neaišku
+- Tonye Jekiri: paaiškės prieš rungtynes
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Tadas Sedekerskis ~0)
-- Dwight Powell (FBT, C) ~18,5 FP @ PRS (vietoj Tadas Sedekerskis ~0)
-- Kenneth Faried (KBA, C) ~17,8 FP @ PAR (vietoj Tadas Sedekerskis ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Kevarrius Hayes ~0)
+- Dwight Powell (FBT, C) ~18,5 FP @ PRS (vietoj Kevarrius Hayes ~0)
+- Kenneth Faried (KBA, C) ~17,8 FP @ PAR (vietoj Kevarrius Hayes ~0)
 
 ---
 
