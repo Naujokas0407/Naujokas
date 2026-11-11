@@ -52,7 +52,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Mbaye Ndiaye.
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Mbaye Ndiaye ~14)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,1 : ~162,5
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,1 : ~146,8
 
 ---
 
@@ -65,8 +65,8 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Mbaye Ndiaye.
 3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
 Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~183,4 FP, dabartinė ~171,7 FP, **+11,7**)
-Startas: Tonye Jekiri (C) ~31, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~14,5
+**📋 Siūloma sudėtis** (prognozė ~173 FP, dabartinė ~161,3 FP, **+11,7**)
+Startas: Tonye Jekiri (C) ~31, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~4
 6-as: Mfiondu Kabengele ~24,2
 Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Nigel Hayes-Davis ~14,3, Dzanan Musa ~12
 Out: Kevarrius Hayes (jau žaidė), Tadas Sedekerskis (jau žaidė), Tyrese Martin
@@ -95,14 +95,14 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Tyrese Martin.
 3. Daniel Oturu (HTA, C) – ~19,3 FP @ TEL
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~172,5 FP, dabartinė ~199,3 FP)
-Startas: TJ Shorts II (C) ~26,6, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Braxton Key ~14,5, Mbaye Ndiaye ~14
-6-as: Aliou Diarra ~24
+**📋 Siūloma sudėtis** (prognozė ~162,1 FP, dabartinė ~188,8 FP)
+Startas: TJ Shorts II (C) ~26,6, Aliou Diarra ~24, Sylvain Francisco ~19,1, Mbaye Ndiaye ~14, Braxton Key ~4
+6-as: Daniel Oturu ~19,3
 Suolas: Umoja Gibson ~16,2, Marcus Carr ~16, Neal Sako ~13,2, Alec Peters ~11,8
 Out: Juan Hernangomez, Theo Maledon, Nikola Mirotic
-Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Aliou Diarra.
+Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Daniel Oturu.
 Iš Out į sudėtį – Neal Sako; į Out – Juan Hernangomez.
-6-u žaidėju (b-1) dėk Aliou Diarra vietoj Marcus Carr.
+6-u žaidėju (b-1) dėk Daniel Oturu vietoj Marcus Carr.
 
 **🩹 Traumos**
 - Umoja Gibson: neaišku – šiuo metu sudėtyje!
