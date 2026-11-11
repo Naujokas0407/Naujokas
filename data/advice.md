@@ -109,7 +109,7 @@ Iš Out į sudėtį – Nikola Mirotic, Neal Sako; į Out – Juan Hernangomez, 
 
 **🩹 Traumos**
 - Theo Maledon: nežais
-- Nikola Mirotic: neaišku
+- Nikola Mirotic: questionable
 
 **🛒 Laisvoji rinka**
 - Dwight Powell (FBT, C) ~18,5 FP @ PRS (vietoj Theo Maledon ~0)
