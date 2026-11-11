@@ -55,7 +55,7 @@ Iš Out į sudėtį – Tonye Jekiri, Umoja Gibson; į Out – Nigel Hayes-Davis
 - Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tadas Sedekerskis ~0)
 - Jae Crowder (ASV, F) ~14,8 FP vs BES (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~180,6 : ~164,1
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~180,6 : ~163
 
 ---
 
@@ -66,22 +66,22 @@ Pirmos rungtynės: 21:45, trečiadienis
 1. Mfiondu Kabengele (DUB, C) – ~24,2 FP @ OLY
 2. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
 3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
-Dabar kapitonas – Andres Feliz (~19,2 FP). Siūlau keisti į Mfiondu Kabengele.
+Dabar kapitonas – Tonye Jekiri (~17,2 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~162,7 FP, dabartinė ~141 FP, **+21,8**)
+**📋 Siūloma sudėtis** (prognozė ~162,7 FP, dabartinė ~144,1 FP, **+18,7**)
 Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~14,5
 6-as: Tonye Jekiri ~17,2
 Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Nigel Hayes-Davis ~14,3, Dzanan Musa ~12
 Out: Tyrese Martin, Kevarrius Hayes, Tadas Sedekerskis
-Pakeitimai: į startą – Devon Dotson; iš starto – Dzanan Musa.
-Iš Out į sudėtį – Umoja Gibson, Tonye Jekiri; į Out – Kevarrius Hayes, Tyrese Martin.
+Pakeitimai: į startą – Mfiondu Kabengele, Devon Dotson; iš starto – Dzanan Musa, Tonye Jekiri.
+Iš Out į sudėtį – Umoja Gibson; į Out – Tyrese Martin.
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
-- Kevarrius Hayes: nežais – šiuo metu sudėtyje!
+- Kevarrius Hayes: nežais
 - Umoja Gibson: neaišku
 - Tadas Sedekerskis: nežais
-- Tonye Jekiri: paaiškės prieš rungtynes
+- Tonye Jekiri: paaiškės prieš rungtynes – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Kevarrius Hayes ~0)
