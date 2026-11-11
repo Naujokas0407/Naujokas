@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 11 turas
-Pirmos rungtynės: 21:45, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~25,1 FP @ MIL
@@ -28,7 +28,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Tornike Shengelia.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 11 turas
-Pirmos rungtynės: 21:45, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~26,6 FP vs BAY
@@ -36,62 +36,58 @@ Pirmos rungtynės: 21:45, trečiadienis
 3. Daniel Oturu (HTA, C) – ~19,3 FP @ TEL
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~180,6 FP, dabartinė ~177,5 FP, **+3,1**)
+**📋 Siūloma sudėtis** (prognozė ~179,1 FP, dabartinė ~177,5 FP, **+1,7**)
 Startas: TJ Shorts II (C) ~26,6, Dwayne Bacon ~23,1, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Collin Malcolm ~15,9
 6-as: Devon Dotson ~17,3
-Suolas: Tonye Jekiri ~17,2, Bruno Fernando ~16,2, Umoja Gibson ~16,2, Marcus Carr ~16
-Out: Nigel Hayes-Davis, Mbaye Ndiaye, Tadas Sedekerskis
+Suolas: Bruno Fernando ~16,2, Umoja Gibson ~16,2, Marcus Carr ~16, Nigel Hayes-Davis ~14,3
+Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis (jau žaidė), Mbaye Ndiaye
 Startinis penketas jau optimalus. ✅
-Iš Out į sudėtį – Tonye Jekiri, Umoja Gibson; į Out – Nigel Hayes-Davis, Mbaye Ndiaye.
+Iš Out į sudėtį – Umoja Gibson; į Out – Mbaye Ndiaye.
 6-u žaidėju (b-1) dėk Devon Dotson vietoj Bruno Fernando.
 
 **🩹 Traumos**
-- Tonye Jekiri: paaiškės prieš rungtynes
 - Tadas Sedekerskis: nežais
 - Umoja Gibson: neaišku
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Tadas Sedekerskis ~0)
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tadas Sedekerskis ~0)
-- Jae Crowder (ASV, F) ~14,8 FP vs BES (vietoj Tadas Sedekerskis ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Mbaye Ndiaye ~14)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~180,6 : ~163
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,1 : ~163
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 11 turas
-Pirmos rungtynės: 21:45, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~24,2 FP @ OLY
 2. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
 3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
-Dabar kapitonas – Tonye Jekiri (~17,2 FP). Siūlau keisti į Mfiondu Kabengele.
+Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~162,7 FP, dabartinė ~144,1 FP, **+18,7**)
-Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~14,5
-6-as: Tonye Jekiri ~17,2
+**📋 Siūloma sudėtis** (prognozė ~155,8 FP, dabartinė ~144,1 FP, **+11,7**)
+Startas: Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Tonye Jekiri (C) ~17,2, Braxton Key ~14,5
+6-as: Mfiondu Kabengele ~24,2
 Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Nigel Hayes-Davis ~14,3, Dzanan Musa ~12
-Out: Tyrese Martin, Kevarrius Hayes, Tadas Sedekerskis
-Pakeitimai: į startą – Mfiondu Kabengele, Devon Dotson; iš starto – Dzanan Musa, Tonye Jekiri.
+Out: Kevarrius Hayes (jau žaidė), Tadas Sedekerskis (jau žaidė), Tyrese Martin
+Pakeitimai: į startą – Devon Dotson; iš starto – Dzanan Musa.
 Iš Out į sudėtį – Umoja Gibson; į Out – Tyrese Martin.
-6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
+6-u žaidėju (b-1) dėk Mfiondu Kabengele vietoj Tyrese Martin.
 
 **🩹 Traumos**
 - Kevarrius Hayes: nežais
 - Umoja Gibson: neaišku
 - Tadas Sedekerskis: nežais
-- Tonye Jekiri: paaiškės prieš rungtynes – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Kevarrius Hayes ~0)
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Kevarrius Hayes ~0)
-- Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Kevarrius Hayes ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Tyrese Martin ~11,2)
+- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tyrese Martin ~11,2)
+- Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Tyrese Martin ~11,2)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 11 turas
-Pirmos rungtynės: 21:45, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:05, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~26,6 FP vs BAY
