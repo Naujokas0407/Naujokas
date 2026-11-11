@@ -52,7 +52,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Mbaye Ndiaye.
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Mbaye Ndiaye ~14)
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,1 : ~163
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,1 : ~162,5
 
 ---
 
@@ -65,8 +65,8 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Mbaye Ndiaye.
 3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
 Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~155,8 FP, dabartinė ~144,1 FP, **+11,7**)
-Startas: Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Tonye Jekiri (C) ~17,2, Braxton Key ~14,5
+**📋 Siūloma sudėtis** (prognozė ~183,4 FP, dabartinė ~171,7 FP, **+11,7**)
+Startas: Tonye Jekiri (C) ~31, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Braxton Key ~14,5
 6-as: Mfiondu Kabengele ~24,2
 Suolas: Umoja Gibson ~16,2, TyTy Washington Jr. ~14,6, Nigel Hayes-Davis ~14,3, Dzanan Musa ~12
 Out: Kevarrius Hayes (jau žaidė), Tadas Sedekerskis (jau žaidė), Tyrese Martin
