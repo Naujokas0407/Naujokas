@@ -1,10 +1,10 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 22:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~24 FP @ IST
-2. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
-3. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
+2. Devon Dotson (BES, G) – ~17,3 FP @ ASV
+3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
 **📋 Siūloma sudėtis** (prognozė ~156,1 FP, dabartinė ~156,1 FP)
@@ -26,7 +26,7 @@ Startinis penketas jau optimalus. ✅
 ---
 
 ## HLA 2 Divizionas – Naujokas · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 22:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
 
 **👑 Kapitonas**
 1. Sylvain Francisco (PAN, G) – ~19,1 FP vs BAR
@@ -51,12 +51,12 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Nigel Hayes-Davis.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 22:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
 
 **👑 Kapitonas**
-1. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
-2. Chima Moneke (CZV, F) – ~17,9 FP @ RMB
-3. Devon Dotson (BES, G) – ~17,3 FP @ ASV
+1. Devon Dotson (BES, G) – ~17,3 FP @ ASV
+2. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
+3. TyTy Washington Jr. (ASV, G) – ~14,6 FP vs BES
 Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -71,7 +71,7 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 22:00, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
 
 **👑 Kapitonas**
 1. Aliou Diarra (VIR, C) – ~24 FP @ IST
@@ -83,7 +83,7 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 Startas: TJ Shorts II (C) ~26,6, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Alec Peters ~11,8, Juan Hernangomez ~11,4
 6-as: Mbaye Ndiaye ~14
 Suolas: Aliou Diarra ~24, Umoja Gibson ~16,2, Marcus Carr ~16, Braxton Key ~4
-Out: Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė), Theo Maledon
+Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
 Pakeitimai: į startą – Juan Hernangomez; iš starto – Aliou Diarra.
 
 **🩹 Traumos**
@@ -92,8 +92,8 @@ Pakeitimai: į startą – Juan Hernangomez; iš starto – Aliou Diarra.
 - Nikola Mirotic: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Theo Maledon ~0)
-- Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Theo Maledon ~0)
-- TyTy Washington Jr. (ASV, G) ~14,6 FP vs BES (vietoj Theo Maledon ~0)
+- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Juan Hernangomez ~11,4)
+- Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Juan Hernangomez ~11,4)
+- TyTy Washington Jr. (ASV, G) ~14,6 FP vs BES (vietoj Juan Hernangomez ~11,4)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
