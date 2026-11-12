@@ -7,8 +7,8 @@
 3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~192,4 FP, dabartinė ~192,4 FP)
-Startas: Jonas Valančiūnas (C) ~52, Andres Feliz ~19,2, Chima Moneke ~17,9, Dzanan Musa ~8,5, Alec Peters ~4,5
+**📋 Siūloma sudėtis** (prognozė ~188,4 FP, dabartinė ~188,4 FP)
+Startas: Jonas Valančiūnas (C) ~52, Andres Feliz ~24, Chima Moneke ~9, Dzanan Musa ~8,5, Alec Peters ~4,5
 6-as: Tornike Shengelia ~2,5
 Suolas: Aliou Diarra ~24, Devon Dotson ~17,3, Umoja Gibson ~16,2, Nigel Hayes-Davis ~14,3
 Out: Neal Sako (jau žaidė), Joel Parra, Kevin Punter
@@ -46,7 +46,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Nigel Hayes-Davis.
 - Tadas Sedekerskis: nežais
 - Umoja Gibson: tikėtina žais
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~211,2 : ~131,8
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~211,2 : ~120,1
 
 ---
 
