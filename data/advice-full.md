@@ -34,8 +34,8 @@ Startinis penketas jau optimalus. ✅
 3. Bruno Fernando (IST, C) – ~16,2 FP vs VIR
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~179,8 FP, dabartinė ~178,8 FP)
-Startas: TJ Shorts II (C) ~26,6, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Dwayne Bacon ~19, Collin Malcolm ~15,9
+**📋 Siūloma sudėtis** (prognozė ~208,6 FP, dabartinė ~207,6 FP)
+Startas: TJ Shorts II (C) ~41, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Dwayne Bacon ~19, Collin Malcolm ~15,9
 6-as: Mbaye Ndiaye ~20,5
 Suolas: Devon Dotson ~17,3, Bruno Fernando ~16,2, Umoja Gibson ~16,2, Marcus Carr ~16
 Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis (jau žaidė), Nigel Hayes-Davis
@@ -46,7 +46,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Nigel Hayes-Davis.
 - Tadas Sedekerskis: nežais
 - Umoja Gibson: tikėtina žais
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~179,8 : ~151,4
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~208,6 : ~151,4
 
 ---
 
@@ -79,8 +79,8 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~165,4 FP, dabartinė ~198,2 FP)
-Startas: TJ Shorts II (C) ~26,6, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Alec Peters ~11,8, Juan Hernangomez ~11,4
+**📋 Siūloma sudėtis** (prognozė ~194,2 FP, dabartinė ~241,4 FP)
+Startas: TJ Shorts II (C) ~41, Daniel Oturu ~19,3, Sylvain Francisco ~19,1, Alec Peters ~11,8, Juan Hernangomez ~11,4
 6-as: Mbaye Ndiaye ~20,5
 Suolas: Aliou Diarra ~24, Umoja Gibson ~16,2, Marcus Carr ~16, Braxton Key ~4
 Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
