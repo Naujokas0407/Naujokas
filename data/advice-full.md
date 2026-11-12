@@ -5,9 +5,9 @@
 1. Jonas Valančiūnas (ZAL, C) – ~25,1 FP @ MIL
 2. Aliou Diarra (VIR, C) – ~24 FP @ IST
 3. Andres Feliz (RMB, G) – ~19,2 FP vs CZV
-Dabar kapitonas – Andres Feliz (~19,2 FP). Siūlau keisti į Jonas Valančiūnas.
+Dabartinis kapitonas Jonas Valančiūnas – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~169,3 FP, dabartinė ~150,1 FP, **+19,2**)
+**📋 Siūloma sudėtis** (prognozė ~169,3 FP, dabartinė ~156,1 FP, **+13,2**)
 Startas: Jonas Valančiūnas (C) ~25,1, Andres Feliz ~19,2, Chima Moneke ~17,9, Devon Dotson ~17,3, Nigel Hayes-Davis ~14,3
 6-as: Aliou Diarra ~24
 Suolas: Umoja Gibson ~16,2, Neal Sako ~13,2, Dzanan Musa ~12, Alec Peters ~11,8
@@ -17,7 +17,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Tornike Shengelia.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Tornike Shengelia.
 
 **🩹 Traumos**
-- Umoja Gibson: neaišku – šiuo metu sudėtyje!
+- Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
@@ -47,7 +47,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Mbaye Ndiaye.
 
 **🩹 Traumos**
 - Tadas Sedekerskis: nežais
-- Umoja Gibson: neaišku
+- Umoja Gibson: tikėtina žais
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs DUB (vietoj Mbaye Ndiaye ~14)
@@ -75,7 +75,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Tyrese Martin.
 
 **🩹 Traumos**
 - Kevarrius Hayes: neaišku
-- Umoja Gibson: neaišku
+- Umoja Gibson: tikėtina žais
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
@@ -104,7 +104,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Juan Hernangomez.
 6-u žaidėju (b-1) dėk Daniel Oturu vietoj Mbaye Ndiaye.
 
 **🩹 Traumos**
-- Umoja Gibson: neaišku – šiuo metu sudėtyje!
+- Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Theo Maledon: nežais
 - Nikola Mirotic: nežais
 
