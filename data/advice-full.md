@@ -8,7 +8,6 @@
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
-- Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
@@ -37,7 +36,6 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Nigel Hayes-Davis.
 
 **🩹 Traumos**
 - Tadas Sedekerskis: nežais
-- Umoja Gibson: tikėtina žais
 
 **⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~211,2 : ~137,9
 
@@ -54,7 +52,6 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
 - Kevarrius Hayes: neaišku
-- Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
@@ -72,7 +69,6 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
-- Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Theo Maledon: nežais
 - Nikola Mirotic: neaišku
 
