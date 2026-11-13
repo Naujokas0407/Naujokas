@@ -92,7 +92,7 @@ Pakeitimai: į startą – Juan Hernangomez; iš starto – Aliou Diarra.
 **🩹 Traumos**
 - Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Theo Maledon: nežais
-- Nikola Mirotic: nežais
+- Nikola Mirotic: neaišku
 
 **🛒 Laisvoji rinka**
 - Mike James (IST, G) ~16,3 FP vs VIR (vietoj Juan Hernangomez ~11,4)
