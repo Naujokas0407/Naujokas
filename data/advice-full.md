@@ -1,39 +1,30 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
-1. Aliou Diarra (VIR, C) – ~24 FP @ IST
-2. Devon Dotson (BES, G) – ~17,3 FP @ ASV
-3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
+1. Devon Dotson (BES, G) – ~17,3 FP @ ASV
+2. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
+3. Nigel Hayes-Davis (PAN, F) – ~14,3 FP vs BAR
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
-
-**📋 Siūloma sudėtis** (prognozė ~206,9 FP, dabartinė ~212 FP)
-Startas: Jonas Valančiūnas (C) ~52, Andres Feliz ~24, Devon Dotson ~17,3, Nigel Hayes-Davis ~14,3, Joel Parra ~11,1
-6-as: Aliou Diarra ~24
-Suolas: Chima Moneke ~9, Dzanan Musa ~8,5, Alec Peters ~4,5, Tornike Shengelia ~2,5
-Out: Neal Sako (jau žaidė), Umoja Gibson, Kevin Punter
-Pakeitimai: į startą – Joel Parra; iš starto – Aliou Diarra.
-Iš Out į sudėtį – Joel Parra; į Out – Umoja Gibson.
-6-u žaidėju (b-1) dėk Aliou Diarra vietoj Umoja Gibson.
 
 **🩹 Traumos**
 - Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Kevin Punter ~0)
 - Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Kevin Punter ~0)
 - Tremont Waters (ASV, G) ~13,3 FP vs BES (vietoj Kevin Punter ~0)
+- Kostas Sloukas (PAN, G) ~13 FP vs BAR (vietoj Kevin Punter ~0)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Sylvain Francisco (PAN, G) – ~19,1 FP vs BAR
 2. Devon Dotson (BES, G) – ~17,3 FP @ ASV
-3. Bruno Fernando (IST, C) – ~16,2 FP vs VIR
+3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
 **📋 Siūloma sudėtis** (prognozė ~211,2 FP, dabartinė ~210,3 FP)
@@ -53,7 +44,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Nigel Hayes-Davis.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
 1. Devon Dotson (BES, G) – ~17,3 FP @ ASV
@@ -67,27 +58,18 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Tyrese Martin ~11,2)
 - Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Tyrese Martin ~11,2)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:15, penktadienis
 
 **👑 Kapitonas**
-1. Aliou Diarra (VIR, C) – ~24 FP @ IST
-2. Sylvain Francisco (PAN, G) – ~19,1 FP vs BAR
-3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
+1. Sylvain Francisco (PAN, G) – ~19,1 FP vs BAR
+2. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
+3. Juan Hernangomez (PAN, F) – ~11,4 FP vs BAR
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
-
-**📋 Siūloma sudėtis** (prognozė ~199,3 FP, dabartinė ~242,7 FP)
-Startas: TJ Shorts II (C) ~41, Daniel Oturu ~22, Mbaye Ndiaye ~20,5, Sylvain Francisco ~19,1, Juan Hernangomez ~11,4
-6-as: Aliou Diarra ~24
-Suolas: Umoja Gibson ~16,2, Marcus Carr ~16, Alec Peters ~4,5, Braxton Key ~4
-Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
-Pakeitimai: į startą – Juan Hernangomez; iš starto – Aliou Diarra.
-6-u žaidėju (b-1) dėk Aliou Diarra vietoj Umoja Gibson.
 
 **🩹 Traumos**
 - Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
@@ -95,7 +77,6 @@ Pakeitimai: į startą – Juan Hernangomez; iš starto – Aliou Diarra.
 - Nikola Mirotic: neaišku
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP vs VIR (vietoj Juan Hernangomez ~11,4)
 - Hugo Besson (ASV, G) ~15,5 FP vs BES (vietoj Juan Hernangomez ~11,4)
 - TyTy Washington Jr. (ASV, G) ~14,6 FP vs BES (vietoj Juan Hernangomez ~11,4)
 
