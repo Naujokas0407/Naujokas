@@ -48,7 +48,7 @@ Iš Out į sudėtį – Umoja Gibson; į Out – Nigel Hayes-Davis.
 - Tadas Sedekerskis: nežais
 - Umoja Gibson: tikėtina žais
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~211,2 : ~120,1
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~211,2 : ~137,9
 
 ---
 
