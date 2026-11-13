@@ -1,8 +1,7 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Devon Dotson (BES, G) – ~17,3 FP @ ASV
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -11,10 +10,9 @@ Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Devon Dotson (BES, G) – ~17,3 FP @ ASV
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
 **📋 Siūloma sudėtis** (prognozė ~210,3 FP, dabartinė ~210,3 FP)
@@ -32,11 +30,9 @@ Startinis penketas jau optimalus. ✅
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Devon Dotson (BES, G) – ~17,3 FP @ ASV
-2. TyTy Washington Jr. (ASV, G) – ~14,6 FP vs BES
 Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -46,7 +42,7 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 11 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, penktadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
