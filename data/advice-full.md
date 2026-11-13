@@ -7,12 +7,14 @@
 3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~188,4 FP, dabartinė ~188,4 FP)
-Startas: Jonas Valančiūnas (C) ~52, Andres Feliz ~24, Chima Moneke ~9, Dzanan Musa ~8,5, Alec Peters ~4,5
-6-as: Tornike Shengelia ~2,5
-Suolas: Aliou Diarra ~24, Devon Dotson ~17,3, Umoja Gibson ~16,2, Nigel Hayes-Davis ~14,3
-Out: Neal Sako (jau žaidė), Joel Parra, Kevin Punter
-Startinis penketas jau optimalus. ✅
+**📋 Siūloma sudėtis** (prognozė ~206,9 FP, dabartinė ~212 FP)
+Startas: Jonas Valančiūnas (C) ~52, Andres Feliz ~24, Devon Dotson ~17,3, Nigel Hayes-Davis ~14,3, Joel Parra ~11,1
+6-as: Aliou Diarra ~24
+Suolas: Chima Moneke ~9, Dzanan Musa ~8,5, Alec Peters ~4,5, Tornike Shengelia ~2,5
+Out: Neal Sako (jau žaidė), Umoja Gibson, Kevin Punter
+Pakeitimai: į startą – Joel Parra; iš starto – Aliou Diarra.
+Iš Out į sudėtį – Joel Parra; į Out – Umoja Gibson.
+6-u žaidėju (b-1) dėk Aliou Diarra vietoj Umoja Gibson.
 
 **🩹 Traumos**
 - Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
@@ -61,7 +63,7 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
 - Kevarrius Hayes: neaišku
-- Umoja Gibson: tikėtina žais
+- Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
@@ -79,12 +81,13 @@ Kapitonas Tonye Jekiri jau žaidžia – šį turą keisti nebegalima.
 3. Umoja Gibson (BAR, G) – ~16,2 FP @ PAN
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~189,6 FP, dabartinė ~236,9 FP)
-Startas: TJ Shorts II (C) ~41, Daniel Oturu ~22, Sylvain Francisco ~19,1, Juan Hernangomez ~11,4, Alec Peters ~4,5
-6-as: Mbaye Ndiaye ~20,5
-Suolas: Aliou Diarra ~24, Umoja Gibson ~16,2, Marcus Carr ~16, Braxton Key ~4
+**📋 Siūloma sudėtis** (prognozė ~199,3 FP, dabartinė ~242,7 FP)
+Startas: TJ Shorts II (C) ~41, Daniel Oturu ~22, Mbaye Ndiaye ~20,5, Sylvain Francisco ~19,1, Juan Hernangomez ~11,4
+6-as: Aliou Diarra ~24
+Suolas: Umoja Gibson ~16,2, Marcus Carr ~16, Alec Peters ~4,5, Braxton Key ~4
 Out: Theo Maledon (jau žaidė), Nikola Mirotic (jau žaidė), Neal Sako (jau žaidė)
 Pakeitimai: į startą – Juan Hernangomez; iš starto – Aliou Diarra.
+6-u žaidėju (b-1) dėk Aliou Diarra vietoj Umoja Gibson.
 
 **🩹 Traumos**
 - Umoja Gibson: tikėtina žais – šiuo metu sudėtyje!
