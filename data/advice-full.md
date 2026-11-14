@@ -15,17 +15,18 @@ Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~228,8 FP, dabartinė ~228,8 FP)
-Startas: TJ Shorts II (C) ~41, Collin Malcolm ~25, Daniel Oturu ~22, Sylvain Francisco ~19,1, Dwayne Bacon ~19
+**📋 Siūloma sudėtis** (prognozė ~221 FP, dabartinė ~221 FP)
+Startas: TJ Shorts II (C) ~41, Collin Malcolm ~25, Daniel Oturu ~22, Dwayne Bacon ~19, Sylvain Francisco ~13,5
 6-as: Mbaye Ndiaye ~20,5
-Suolas: Bruno Fernando ~37,5, Devon Dotson ~17,3, Nigel Hayes-Davis ~14,3, Marcus Carr ~13,5
+Suolas: Bruno Fernando ~37,5, Nigel Hayes-Davis ~17,5, Marcus Carr ~13,5, Devon Dotson ~9,5
 Out: Tonye Jekiri (jau žaidė), Tadas Sedekerskis (jau žaidė), Umoja Gibson (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
 - Tadas Sedekerskis: nežais
+- Bruno Fernando: neaišku – šiuo metu sudėtyje!
 
-**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~228,8 : ~128,9
+**⚔️ Prieš HLA Fanazz ch0ice:** prognozė ~221 : ~131,8
 
 ---
 
