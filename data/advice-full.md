@@ -94,22 +94,21 @@ Pirmos rungtynės: 18:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,9 FP @ PAR
-2. Aliou Diarra (VIR, C) – ~23 FP vs PAN
-3. Daniel Oturu (HTA, C) – ~19,6 FP @ KBA
+2. Theo Maledon (RMB, G) – ~25,5 FP @ BES
+3. Aliou Diarra (VIR, C) – ~23 FP vs PAN
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~177,1 FP, dabartinė ~157,1 FP, **+19,9**)
-Startas: TJ Shorts II (C) ~27,9, Aliou Diarra ~23, Nikola Mirotic ~18,6, Sylvain Francisco ~18,6, Mbaye Ndiaye ~14,6
-6-as: Daniel Oturu ~19,6
-Suolas: Marcus Carr ~15,8, Neal Sako ~13,8, Braxton Key ~13,5, Alec Peters ~11,1
-Out: Juan Hernangomez, Umoja Gibson, Theo Maledon
-Pakeitimai: į startą – Nikola Mirotic; iš starto – Daniel Oturu.
-Iš Out į sudėtį – Nikola Mirotic, Neal Sako; į Out – Juan Hernangomez, Umoja Gibson.
-6-u žaidėju (b-1) dėk Daniel Oturu vietoj Umoja Gibson.
+**📋 Siūloma sudėtis** (prognozė ~187,8 FP, dabartinė ~157,1 FP, **+30,6**)
+Startas: TJ Shorts II (C) ~27,9, Theo Maledon ~25,5, Daniel Oturu ~19,6, Nikola Mirotic ~18,6, Mbaye Ndiaye ~14,6
+6-as: Aliou Diarra ~23
+Suolas: Sylvain Francisco ~18,6, Marcus Carr ~15,8, Neal Sako ~13,8, Braxton Key ~13,5
+Out: Alec Peters, Juan Hernangomez, Umoja Gibson
+Pakeitimai: į startą – Theo Maledon, Nikola Mirotic; iš starto – Sylvain Francisco, Aliou Diarra.
+Iš Out į sudėtį – Theo Maledon, Nikola Mirotic, Neal Sako; į Out – Juan Hernangomez, Alec Peters, Umoja Gibson.
+6-u žaidėju (b-1) dėk Aliou Diarra vietoj Umoja Gibson.
 
 **🩹 Traumos**
 - Umoja Gibson: nežais – šiuo metu sudėtyje!
-- Theo Maledon: nežais
 - Nikola Mirotic: neaišku
 
 **🛒 Laisvoji rinka**
