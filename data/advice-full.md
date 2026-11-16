@@ -78,6 +78,7 @@ Iš Out į sudėtį – TyTy Washington Jr., Kevarrius Hayes; į Out – Dzanan 
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
+- Braxton Key: neaišku – šiuo metu sudėtyje!
 - Kevarrius Hayes: neaišku
 - Umoja Gibson: nežais – šiuo metu sudėtyje!
 - Tadas Sedekerskis: nežais
@@ -108,6 +109,7 @@ Iš Out į sudėtį – Theo Maledon, Nikola Mirotic, Neal Sako; į Out – Juan
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Umoja Gibson.
 
 **🩹 Traumos**
+- Braxton Key: neaišku – šiuo metu sudėtyje!
 - Umoja Gibson: nežais – šiuo metu sudėtyje!
 - Nikola Mirotic: neaišku
 
