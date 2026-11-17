@@ -19,9 +19,9 @@ Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 1. Devon Dotson (BES, G) – ~16,4 FP vs RMB
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~167,4 FP, dabartinė ~167,4 FP)
-Startas: TJ Shorts II (C) ~27,9, Daniel Oturu ~22,5, Sylvain Francisco ~18,6, Dwayne Bacon ~16,5, Collin Malcolm ~7,5
-6-as: Tonye Jekiri ~19,1
+**📋 Siūloma sudėtis** (prognozė ~141 FP, dabartinė ~141 FP)
+Startas: Daniel Oturu ~22,5, Sylvain Francisco ~18,6, Dwayne Bacon ~16,5, TJ Shorts II (C) ~15, Collin Malcolm ~7,5
+6-as: Tonye Jekiri ~18,5
 Suolas: Devon Dotson ~16,4, Marcus Carr ~15,8, Nigel Hayes-Davis ~14,6, Mbaye Ndiaye ~8
 Out: Tadas Sedekerskis (jau žaidė), Bruno Fernando (jau žaidė), Jared Rhoden (jau žaidė)
 Startinis penketas jau optimalus. ✅
@@ -30,7 +30,7 @@ Startinis penketas jau optimalus. ✅
 - Tadas Sedekerskis: nežais
 - Bruno Fernando: nežais
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~167,4 : ~146,2
+**⚔️ Prieš BC Svajuonė:** prognozė ~141 : ~146,2
 
 ---
 
