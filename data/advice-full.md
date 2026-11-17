@@ -7,10 +7,10 @@
 3. Devon Dotson (BES, G) – ~16,4 FP vs RMB
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~160,5 FP, dabartinė ~183,4 FP)
-Startas: Jonas Valančiūnas (C) ~27,6, Andres Feliz ~19,6, Nigel Hayes-Davis ~14,6, Dzanan Musa ~11,1, Alec Peters ~11,1
+**📋 Siūloma sudėtis** (prognozė ~183,8 FP, dabartinė ~206,7 FP)
+Startas: Dzanan Musa ~31, Jonas Valančiūnas (C) ~27,6, Andres Feliz ~19,6, Nigel Hayes-Davis ~14,6, Alec Peters ~11,1
 6-as: Aliou Diarra ~23
-Suolas: Devon Dotson ~16,4, Neal Sako ~13,8, Chris Duarte ~13,2, Tornike Shengelia ~8,6
+Suolas: Devon Dotson ~16,4, Tornike Shengelia ~15,5, Neal Sako ~13,8, Chris Duarte ~13,2
 Out: Joel Parra, Chima Moneke, Kevin Punter
 Pakeitimai: į startą – Andres Feliz; iš starto – Aliou Diarra.
 Iš Out į sudėtį – Neal Sako; į Out – Joel Parra.
@@ -66,8 +66,8 @@ Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 3. Devon Dotson (BES, G) – ~16,4 FP vs RMB
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~151,7 FP, dabartinė ~140,6 FP, **+11,1**)
-Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,6, Nigel Hayes-Davis ~14,6, Tyrese Martin ~11,7, Dzanan Musa ~11,1
+**📋 Siūloma sudėtis** (prognozė ~207,1 FP, dabartinė ~196,1 FP, **+11,1**)
+Startas: Mfiondu Kabengele (C) ~42, Dzanan Musa ~31, Andres Feliz ~19,6, Nigel Hayes-Davis ~14,6, Tyrese Martin ~11,7
 6-as: Tonye Jekiri ~19,1
 Suolas: Devon Dotson ~16,4, Braxton Key ~13,5, Nikola Tanaskovic ~13,5, Trent Frazier ~10,9
 Out: Marko Guduric, Chima Moneke, Tadas Sedekerskis
