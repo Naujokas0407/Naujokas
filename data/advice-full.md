@@ -1,11 +1,11 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, antradienis
 
 **👑 Kapitonas**
-1. Jonas Valančiūnas (ZAL, C) – ~27,6 FP vs BAY
-2. Aliou Diarra (VIR, C) – ~23 FP vs PAN
-3. Andres Feliz (RMB, G) – ~19,6 FP @ BES
-Dabartinis kapitonas Jonas Valančiūnas – geriausias pasirinkimas. ✅
+1. Aliou Diarra (VIR, C) – ~23 FP vs PAN
+2. Andres Feliz (RMB, G) – ~19,6 FP @ BES
+3. Devon Dotson (BES, G) – ~16,4 FP vs RMB
+Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
 **📋 Siūloma sudėtis** (prognozė ~160,5 FP, dabartinė ~183,4 FP)
 Startas: Jonas Valančiūnas (C) ~27,6, Andres Feliz ~19,6, Nigel Hayes-Davis ~14,6, Dzanan Musa ~11,1, Alec Peters ~11,1
@@ -28,7 +28,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Joel Parra.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,9 FP @ PAR
@@ -58,7 +58,7 @@ Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, antradienis
 
 **👑 Kapitonas**
 1. Andres Feliz (RMB, G) – ~19,6 FP @ BES
@@ -88,7 +88,7 @@ Iš Out į sudėtį – Nikola Tanaskovic; į Out – Chima Moneke.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:30, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,9 FP @ PAR
@@ -114,6 +114,6 @@ Iš Out į sudėtį – Neal Sako; į Out – Juan Hernangomez.
 **🛒 Laisvoji rinka**
 - Jared Rhoden (PRS, G) ~14,4 FP @ BAR (vietoj Umoja Gibson ~0)
 - Nikola Tanaskovic (PAR, C) ~13,5 FP vs VBC (vietoj Umoja Gibson ~0)
-- Austin Wiley (BAY, C) ~13,2 FP @ ZAL (vietoj Umoja Gibson ~0)
+- Chris Duarte (KBA, G) ~13,2 FP vs HTA (vietoj Umoja Gibson ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
