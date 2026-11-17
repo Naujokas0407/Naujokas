@@ -7,17 +7,18 @@ Pirmos rungtynės: 18:00, antradienis
 3. Andres Feliz (RMB, G) – ~19,6 FP @ BES
 Dabartinis kapitonas Jonas Valančiūnas – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~169,2 FP, dabartinė ~154,1 FP, **+15,1**)
-Startas: Jonas Valančiūnas (C) ~27,6, Andres Feliz ~19,6, Chima Moneke ~17,1, Devon Dotson ~16,4, Nigel Hayes-Davis ~14,6
+**📋 Siūloma sudėtis** (prognozė ~162 FP, dabartinė ~137 FP, **+24,9**)
+Startas: Jonas Valančiūnas (C) ~27,6, Andres Feliz ~19,6, Devon Dotson ~16,4, Nigel Hayes-Davis ~14,6, Alec Peters ~11,1
 6-as: Aliou Diarra ~23
-Suolas: Neal Sako ~13,8, Dzanan Musa ~11,1, Alec Peters ~11,1, Joel Parra ~10,9
-Out: Tornike Shengelia, Umoja Gibson, Kevin Punter
-Pakeitimai: į startą – Devon Dotson, Andres Feliz; iš starto – Dzanan Musa, Aliou Diarra.
-Iš Out į sudėtį – Alec Peters, Neal Sako; į Out – Umoja Gibson, Tornike Shengelia.
+Suolas: Neal Sako ~13,8, Dzanan Musa ~11,1, Joel Parra ~10,9, Tornike Shengelia ~8,6
+Out: Umoja Gibson, Chima Moneke, Kevin Punter
+Pakeitimai: į startą – Devon Dotson, Andres Feliz, Alec Peters; iš starto – Dzanan Musa, Aliou Diarra, Chima Moneke.
+Iš Out į sudėtį – Alec Peters, Neal Sako; į Out – Umoja Gibson, Chima Moneke.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Joel Parra.
 
 **🩹 Traumos**
 - Umoja Gibson: nežais – šiuo metu sudėtyje!
+- Chima Moneke: nežais – šiuo metu sudėtyje!
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
@@ -54,7 +55,7 @@ Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 - Mike James (IST, G) ~16,3 FP @ DUB (vietoj Tadas Sedekerskis ~0)
 - Tremont Waters (ASV, G) ~15,4 FP @ FBT (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~183,2 : ~141,8
+**⚔️ Prieš BC Svajuonė:** prognozė ~183,2 : ~142,9
 
 ---
 
@@ -67,25 +68,25 @@ Pirmos rungtynės: 18:00, antradienis
 3. Tonye Jekiri (PAR, C) – ~19,1 FP vs VBC
 Dabar kapitonas – Tonye Jekiri (~19,1 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~153,6 FP, dabartinė ~138,9 FP, **+14,6**)
-Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,6, Chima Moneke ~17,1, Devon Dotson ~16,4, Nigel Hayes-Davis ~14,6
+**📋 Siūloma sudėtis** (prognozė ~142,3 FP, dabartinė ~137,3 FP, **+5,1**)
+Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,6, Devon Dotson ~16,4, Nigel Hayes-Davis ~14,6, Tyrese Martin ~11,7
 6-as: Tonye Jekiri ~19,1
-Suolas: TyTy Washington Jr. ~13,7, Tyrese Martin ~11,7, Dzanan Musa ~11,1, Braxton Key ~0
+Suolas: TyTy Washington Jr. ~13,7, Dzanan Musa ~11,1, Chima Moneke ~0, Braxton Key ~0
 Out: Kevarrius Hayes, Umoja Gibson, Tadas Sedekerskis
-Pakeitimai: į startą – Chima Moneke; iš starto – Tonye Jekiri.
-Iš Out į sudėtį – TyTy Washington Jr.; į Out – Umoja Gibson.
+Pakeitimai: į startą – Tyrese Martin; iš starto – Tonye Jekiri.
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
+- Chima Moneke: nežais – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Kevarrius Hayes: nežais
-- Umoja Gibson: nežais – šiuo metu sudėtyje!
+- Umoja Gibson: nežais
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Braxton Key ~0)
-- Mike James (IST, G) ~16,3 FP @ DUB (vietoj Braxton Key ~0)
-- Alan Dokossi (PRS, C) ~15,2 FP @ BAR (vietoj Braxton Key ~0)
+- Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Chima Moneke ~0)
+- Mike James (IST, G) ~16,3 FP @ DUB (vietoj Chima Moneke ~0)
+- Alan Dokossi (PRS, C) ~15,2 FP @ BAR (vietoj Chima Moneke ~0)
 
 ---
 
