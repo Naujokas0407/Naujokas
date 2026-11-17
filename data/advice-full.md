@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~27,6 FP vs BAY
@@ -22,13 +22,13 @@ Iš Out į sudėtį – Neal Sako; į Out – Joel Parra.
 
 **🛒 Laisvoji rinka**
 - Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Chima Moneke ~0)
-- Tyler Dorsey (OLY, G) ~14,6 FP @ TEL (vietoj Chima Moneke ~0)
 - Umoja Gibson (BAR, G) ~14,4 FP vs PRS (vietoj Chima Moneke ~0)
+- Jared Rhoden (PRS, G) ~14,4 FP @ BAR (vietoj Chima Moneke ~0)
 
 ---
 
 ## HLA 2 Divizionas – Naujokas · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,9 FP @ PAR
@@ -49,16 +49,16 @@ Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 - Bruno Fernando: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Tadas Sedekerskis ~0)
 - Kenneth Faried (KBA, C) ~17,7 FP vs HTA (vietoj Tadas Sedekerskis ~0)
-- Tyler Dorsey (OLY, G) ~14,6 FP @ TEL (vietoj Tadas Sedekerskis ~0)
+- Umoja Gibson (BAR, G) ~14,4 FP vs PRS (vietoj Tadas Sedekerskis ~0)
+- Kevarrius Hayes (PAR, C) ~14,3 FP vs VBC (vietoj Tadas Sedekerskis ~0)
 
 **⚔️ Prieš BC Svajuonė:** prognozė ~183,2 : ~142,9
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. Andres Feliz (RMB, G) – ~19,6 FP @ BES
@@ -81,14 +81,14 @@ Iš Out į sudėtį – Nikola Tanaskovic, Marko Guduric; į Out – Chima Monek
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Chima Moneke ~0)
 - Kenneth Faried (KBA, C) ~17,7 FP vs HTA (vietoj Chima Moneke ~0)
 - Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Chima Moneke ~0)
+- Umoja Gibson (BAR, G) ~14,4 FP vs PRS (vietoj Chima Moneke ~0)
 
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,9 FP @ PAR
@@ -112,8 +112,8 @@ Iš Out į sudėtį – Neal Sako; į Out – Braxton Key.
 - Nikola Mirotic: nežais
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Braxton Key ~0)
 - Tremont Waters (ASV, G) ~15,4 FP @ FBT (vietoj Braxton Key ~0)
 - Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Braxton Key ~0)
+- Jared Rhoden (PRS, G) ~14,4 FP @ BAR (vietoj Braxton Key ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
