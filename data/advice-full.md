@@ -36,8 +36,8 @@ Iš Out į sudėtį – Neal Sako; į Out – Joel Parra.
 3. Tonye Jekiri (PAR, C) – ~19,1 FP vs VBC
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~183,2 FP, dabartinė ~183,2 FP)
-Startas: TJ Shorts II (C) ~27,9, Dwayne Bacon ~22,7, Tonye Jekiri ~19,1, Sylvain Francisco ~18,6, Collin Malcolm ~16,7
+**📋 Siūloma sudėtis** (prognozė ~167,7 FP, dabartinė ~167,7 FP)
+Startas: TJ Shorts II (C) ~27,9, Tonye Jekiri ~19,1, Sylvain Francisco ~18,6, Dwayne Bacon ~16,5, Collin Malcolm ~7,5
 6-as: Daniel Oturu ~19,6
 Suolas: Devon Dotson ~16,4, Marcus Carr ~15,8, Nigel Hayes-Davis ~14,6, Mbaye Ndiaye ~14,6
 Out: Bruno Fernando (jau žaidė), Jared Rhoden, Tadas Sedekerskis
@@ -53,7 +53,7 @@ Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 - Umoja Gibson (BAR, G) ~14,4 FP vs PRS (vietoj Tadas Sedekerskis ~0)
 - Kevarrius Hayes (PAR, C) ~14,3 FP vs VBC (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš BC Svajuonė:** prognozė ~183,2 : ~142,9
+**⚔️ Prieš BC Svajuonė:** prognozė ~167,7 : ~147,8
 
 ---
 
