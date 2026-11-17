@@ -7,24 +7,23 @@ Pirmos rungtynės: 18:00, antradienis
 3. Andres Feliz (RMB, G) – ~19,6 FP @ BES
 Dabartinis kapitonas Jonas Valančiūnas – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~162 FP, dabartinė ~137 FP, **+24,9**)
+**📋 Siūloma sudėtis** (prognozė ~164,3 FP, dabartinė ~154,7 FP, **+9,6**)
 Startas: Jonas Valančiūnas (C) ~27,6, Andres Feliz ~19,6, Devon Dotson ~16,4, Nigel Hayes-Davis ~14,6, Alec Peters ~11,1
 6-as: Aliou Diarra ~23
-Suolas: Neal Sako ~13,8, Dzanan Musa ~11,1, Joel Parra ~10,9, Tornike Shengelia ~8,6
-Out: Umoja Gibson, Chima Moneke, Kevin Punter
-Pakeitimai: į startą – Devon Dotson, Andres Feliz, Alec Peters; iš starto – Dzanan Musa, Aliou Diarra, Chima Moneke.
-Iš Out į sudėtį – Alec Peters, Neal Sako; į Out – Umoja Gibson, Chima Moneke.
+Suolas: Neal Sako ~13,8, Chris Duarte ~13,2, Dzanan Musa ~11,1, Joel Parra ~10,9
+Out: Tornike Shengelia, Chima Moneke, Kevin Punter
+Pakeitimai: į startą – Devon Dotson, Andres Feliz; iš starto – Dzanan Musa, Aliou Diarra.
+Iš Out į sudėtį – Neal Sako; į Out – Tornike Shengelia.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Joel Parra.
 
 **🩹 Traumos**
-- Umoja Gibson: nežais – šiuo metu sudėtyje!
-- Chima Moneke: nežais – šiuo metu sudėtyje!
+- Chima Moneke: nežais
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP @ DUB (vietoj Umoja Gibson ~0)
-- Tremont Waters (ASV, G) ~15,4 FP @ FBT (vietoj Umoja Gibson ~0)
-- Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Umoja Gibson ~0)
+- Bruno Fernando (IST, C) ~18,1 FP @ DUB (vietoj Chima Moneke ~0)
+- Mike James (IST, G) ~16,3 FP @ DUB (vietoj Chima Moneke ~0)
+- Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Chima Moneke ~0)
 
 ---
 
@@ -41,19 +40,18 @@ Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 Startas: TJ Shorts II (C) ~27,9, Dwayne Bacon ~22,7, Tonye Jekiri ~19,1, Sylvain Francisco ~18,6, Collin Malcolm ~16,7
 6-as: Daniel Oturu ~19,6
 Suolas: Devon Dotson ~16,4, Marcus Carr ~15,8, Nigel Hayes-Davis ~14,6, Mbaye Ndiaye ~14,6
-Out: Tadas Sedekerskis, Bruno Fernando, Umoja Gibson
+Out: Jared Rhoden, Tadas Sedekerskis, Bruno Fernando
 Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 6-u žaidėju (b-1) dėk Daniel Oturu vietoj Tonye Jekiri.
 
 **🩹 Traumos**
 - Tadas Sedekerskis: nežais
 - Bruno Fernando: nežais
-- Umoja Gibson: nežais
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Tadas Sedekerskis ~0)
+- Kenneth Faried (KBA, C) ~17,7 FP vs HTA (vietoj Tadas Sedekerskis ~0)
 - Mike James (IST, G) ~16,3 FP @ DUB (vietoj Tadas Sedekerskis ~0)
-- Tremont Waters (ASV, G) ~15,4 FP @ FBT (vietoj Tadas Sedekerskis ~0)
 
 **⚔️ Prieš BC Svajuonė:** prognozė ~183,2 : ~142,9
 
@@ -68,25 +66,24 @@ Pirmos rungtynės: 18:00, antradienis
 3. Tonye Jekiri (PAR, C) – ~19,1 FP vs VBC
 Dabar kapitonas – Tonye Jekiri (~19,1 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~142,3 FP, dabartinė ~137,3 FP, **+5,1**)
+**📋 Siūloma sudėtis** (prognozė ~151,5 FP, dabartinė ~135,8 FP, **+15,7**)
 Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,6, Devon Dotson ~16,4, Nigel Hayes-Davis ~14,6, Tyrese Martin ~11,7
 6-as: Tonye Jekiri ~19,1
-Suolas: TyTy Washington Jr. ~13,7, Dzanan Musa ~11,1, Chima Moneke ~0, Braxton Key ~0
-Out: Kevarrius Hayes, Umoja Gibson, Tadas Sedekerskis
+Suolas: Nikola Tanaskovic ~13,5, Dzanan Musa ~11,1, Trent Frazier ~10,9, Marko Guduric ~7,7
+Out: Chima Moneke, Braxton Key, Tadas Sedekerskis
 Pakeitimai: į startą – Tyrese Martin; iš starto – Tonye Jekiri.
+Iš Out į sudėtį – Nikola Tanaskovic, Marko Guduric; į Out – Chima Moneke, Braxton Key.
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
 - Chima Moneke: nežais – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
-- Kevarrius Hayes: nežais
-- Umoja Gibson: nežais
 - Tadas Sedekerskis: nežais
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Chima Moneke ~0)
+- Kenneth Faried (KBA, C) ~17,7 FP vs HTA (vietoj Chima Moneke ~0)
 - Mike James (IST, G) ~16,3 FP @ DUB (vietoj Chima Moneke ~0)
-- Alan Dokossi (PRS, C) ~15,2 FP @ BAR (vietoj Chima Moneke ~0)
 
 ---
 
@@ -115,7 +112,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Braxton Key.
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP @ TEL (vietoj Braxton Key ~0)
+- Bruno Fernando (IST, C) ~18,1 FP @ DUB (vietoj Braxton Key ~0)
 - Mike James (IST, G) ~16,3 FP @ DUB (vietoj Braxton Key ~0)
-- Tremont Waters (ASV, G) ~15,4 FP @ FBT (vietoj Braxton Key ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
