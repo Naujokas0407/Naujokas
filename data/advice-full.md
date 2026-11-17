@@ -21,9 +21,9 @@ Iš Out į sudėtį – Neal Sako; į Out – Joel Parra.
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
-- Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Chima Moneke ~0)
 - Umoja Gibson (BAR, G) ~14,4 FP vs PRS (vietoj Chima Moneke ~0)
 - Jared Rhoden (PRS, G) ~14,4 FP @ BAR (vietoj Chima Moneke ~0)
+- Kevarrius Hayes (PAR, C) ~14,3 FP vs VBC (vietoj Chima Moneke ~0)
 
 ---
 
@@ -66,13 +66,13 @@ Pakeitimai: į startą – Tonye Jekiri; iš starto – Daniel Oturu.
 3. Devon Dotson (BES, G) – ~16,4 FP vs RMB
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~148,8 FP, dabartinė ~133,9 FP, **+14,9**)
+**📋 Siūloma sudėtis** (prognozė ~151,7 FP, dabartinė ~140,6 FP, **+11,1**)
 Startas: Mfiondu Kabengele (C) ~24,2, Andres Feliz ~19,6, Nigel Hayes-Davis ~14,6, Tyrese Martin ~11,7, Dzanan Musa ~11,1
 6-as: Tonye Jekiri ~19,1
-Suolas: Devon Dotson ~16,4, Nikola Tanaskovic ~13,5, Trent Frazier ~10,9, Marko Guduric ~7,7
-Out: Chima Moneke, Braxton Key, Tadas Sedekerskis
+Suolas: Devon Dotson ~16,4, Braxton Key ~13,5, Nikola Tanaskovic ~13,5, Trent Frazier ~10,9
+Out: Marko Guduric, Chima Moneke, Tadas Sedekerskis
 Pakeitimai: į startą – Andres Feliz, Tyrese Martin; iš starto – Tonye Jekiri, Trent Frazier.
-Iš Out į sudėtį – Nikola Tanaskovic, Marko Guduric; į Out – Chima Moneke, Braxton Key.
+Iš Out į sudėtį – Nikola Tanaskovic; į Out – Chima Moneke.
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Tyrese Martin.
 
 **🩹 Traumos**
@@ -82,8 +82,8 @@ Iš Out į sudėtį – Nikola Tanaskovic, Marko Guduric; į Out – Chima Monek
 
 **🛒 Laisvoji rinka**
 - Kenneth Faried (KBA, C) ~17,7 FP vs HTA (vietoj Chima Moneke ~0)
-- Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Chima Moneke ~0)
 - Umoja Gibson (BAR, G) ~14,4 FP vs PRS (vietoj Chima Moneke ~0)
+- Kevarrius Hayes (PAR, C) ~14,3 FP vs VBC (vietoj Chima Moneke ~0)
 
 ---
 
@@ -96,13 +96,13 @@ Iš Out į sudėtį – Nikola Tanaskovic, Marko Guduric; į Out – Chima Monek
 3. Aliou Diarra (VIR, C) – ~23 FP vs PAN
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~179 FP, dabartinė ~194,8 FP)
+**📋 Siūloma sudėtis** (prognozė ~180,3 FP, dabartinė ~208,3 FP)
 Startas: TJ Shorts II (C) ~27,9, Theo Maledon ~25,5, Aliou Diarra ~23, Mbaye Ndiaye ~14,6, Alec Peters ~11,1
 6-as: Daniel Oturu ~19,6
-Suolas: Sylvain Francisco ~18,6, Marcus Carr ~15,8, Neal Sako ~13,8, Juan Hernangomez ~11
-Out: Braxton Key, Umoja Gibson, Nikola Mirotic
+Suolas: Sylvain Francisco ~18,6, Marcus Carr ~15,8, Neal Sako ~13,8, Braxton Key ~13,5
+Out: Juan Hernangomez, Umoja Gibson, Nikola Mirotic
 Pakeitimai: į startą – Alec Peters, Theo Maledon; iš starto – Sylvain Francisco, Daniel Oturu.
-Iš Out į sudėtį – Neal Sako; į Out – Braxton Key.
+Iš Out į sudėtį – Neal Sako; į Out – Juan Hernangomez.
 6-u žaidėju (b-1) dėk Daniel Oturu vietoj Marcus Carr.
 
 **🩹 Traumos**
@@ -112,8 +112,8 @@ Iš Out į sudėtį – Neal Sako; į Out – Braxton Key.
 - Nikola Mirotic: nežais
 
 **🛒 Laisvoji rinka**
-- Tremont Waters (ASV, G) ~15,4 FP @ FBT (vietoj Braxton Key ~0)
-- Hugo Besson (ASV, G) ~14,7 FP @ FBT (vietoj Braxton Key ~0)
-- Jared Rhoden (PRS, G) ~14,4 FP @ BAR (vietoj Braxton Key ~0)
+- Jared Rhoden (PRS, G) ~14,4 FP @ BAR (vietoj Umoja Gibson ~0)
+- Nikola Tanaskovic (PAR, C) ~13,5 FP vs VBC (vietoj Umoja Gibson ~0)
+- Austin Wiley (BAY, C) ~13,2 FP @ ZAL (vietoj Umoja Gibson ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
