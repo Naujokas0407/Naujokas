@@ -7,7 +7,7 @@
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
-- Chima Moneke: nežais
+- Chima Moneke: neaišku
 - Kevin Punter: nežais
 
 ---
@@ -36,7 +36,7 @@ Dabartinis kapitonas Devon Dotson – geriausias pasirinkimas. ✅
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
-- Chima Moneke: nežais – šiuo metu sudėtyje!
+- Chima Moneke: neaišku – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Tadas Sedekerskis: nežais
 
@@ -47,12 +47,12 @@ Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
 **👑 Kapitonas**
 1. Theo Maledon (RMB, G) – ~25,5 FP @ BES
-Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
+Dabartinis kapitonas Theo Maledon – geriausias pasirinkimas. ✅
 
 **🩹 Traumos**
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Umoja Gibson: nežais
 - Theo Maledon: tikėtina žais – šiuo metu sudėtyje!
-- Nikola Mirotic: nežais
+- Nikola Mirotic: neaišku
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
