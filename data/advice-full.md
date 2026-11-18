@@ -1,9 +1,7 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Andres Feliz (RMB, G) – ~19,6 FP @ BES
-2. Devon Dotson (BES, G) – ~16,4 FP vs RMB
 Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -13,11 +11,10 @@ Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Devon Dotson (BES, G) – ~16,4 FP vs RMB
-Dabartinis kapitonas Devon Dotson – geriausias pasirinkimas. ✅
+Kapitonas Devon Dotson jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
 - Tadas Sedekerskis: nežais
@@ -28,11 +25,9 @@ Dabartinis kapitonas Devon Dotson – geriausias pasirinkimas. ✅
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Andres Feliz (RMB, G) – ~19,6 FP @ BES
-2. Devon Dotson (BES, G) – ~16,4 FP vs RMB
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
@@ -43,11 +38,10 @@ Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 12 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 19:00, trečiadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems.
 
 **👑 Kapitonas**
-1. Theo Maledon (RMB, G) – ~25,5 FP @ BES
-Dabartinis kapitonas Theo Maledon – geriausias pasirinkimas. ✅
+Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 
 **🩹 Traumos**
 - Braxton Key: nežais – šiuo metu sudėtyje!
