@@ -46,7 +46,6 @@ Kapitonas Theo Maledon jau žaidžia – šį turą keisti nebegalima.
 **🩹 Traumos**
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Umoja Gibson: nežais
-- Theo Maledon: tikėtina žais – šiuo metu sudėtyje!
 - Nikola Mirotic: neaišku
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
