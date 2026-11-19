@@ -44,7 +44,7 @@ Startinis penketas jau optimalus. ✅
 - Mike James (IST, G) ~16,3 FP vs ASV (vietoj Bruno Fernando ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Briedis:** prognozė ~172,1 : ~139,5
+**⚔️ Prieš Briedis:** prognozė ~172,1 : ~113,8
 
 ---
 
