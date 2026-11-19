@@ -27,8 +27,8 @@ Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 3. Devon Dotson (BES, G) – ~15,8 FP @ PAR
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~172,1 FP, dabartinė ~172,1 FP)
-Startas: TJ Shorts II (C) ~26,8, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Daniel Oturu ~19,8, Sylvain Francisco ~4,5
+**📋 Siūloma sudėtis** (prognozė ~159,8 FP, dabartinė ~159,8 FP)
+Startas: TJ Shorts II (C) ~26,8, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
 6-as: Marcus Carr ~15,8
 Suolas: Tonye Jekiri ~19,1, Collin Malcolm ~15,9, Devon Dotson ~15,8, Mbaye Ndiaye ~14
 Out: Tadas Sedekerskis (jau žaidė), Bruno Fernando, Killian Hayes
@@ -44,7 +44,7 @@ Startinis penketas jau optimalus. ✅
 - Mike James (IST, G) ~16,3 FP vs ASV (vietoj Bruno Fernando ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Briedis:** prognozė ~172,1 : ~113,8
+**⚔️ Prieš Briedis:** prognozė ~159,8 : ~96,5
 
 ---
 
