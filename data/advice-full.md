@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 13 turas
-Pirmos rungtynės: 19:15, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, ketvirtadienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~27,3 FP vs PAN
@@ -7,14 +7,13 @@ Pirmos rungtynės: 19:15, ketvirtadienis
 3. Andres Feliz (RMB, G) – ~19,4 FP @ OLY
 Dabartinis kapitonas Jonas Valančiūnas – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~163,9 FP, dabartinė ~151,3 FP, **+12,6**)
-Startas: Jonas Valančiūnas (C) ~27,3, Andres Feliz ~19,4, Devon Dotson ~15,8, Nigel Hayes-Davis ~14,6, Alec Peters ~11,5
-6-as: Aliou Diarra ~23,6
-Suolas: Dzanan Musa ~15,1, Neal Sako ~14,2, Johnny Juzang ~10,4, Tornike Shengelia ~9,2
+**📋 Siūloma sudėtis** (prognozė ~156,3 FP, dabartinė ~151,3 FP, **+5**)
+Startas: Jonas Valančiūnas (C) ~27,3, Andres Feliz ~19,4, Dzanan Musa ~15,1, Nigel Hayes-Davis ~14,6, Alec Peters ~11,5
+6-as: Tornike Shengelia ~9,2
+Suolas: Aliou Diarra ~23,6, Devon Dotson ~15,8, Neal Sako ~14,2, Johnny Juzang ~10,4
 Out: Killian Hayes, Chima Moneke, Kevin Punter
-Pakeitimai: į startą – Devon Dotson, Andres Feliz; iš starto – Dzanan Musa, Aliou Diarra.
+Pakeitimai: į startą – Andres Feliz; iš starto – Aliou Diarra.
 Iš Out į sudėtį – Neal Sako; į Out – Killian Hayes.
-6-u žaidėju (b-1) dėk Aliou Diarra vietoj Tornike Shengelia.
 
 **🩹 Traumos**
 - Killian Hayes: paaiškės prieš rungtynes – šiuo metu sudėtyje!
@@ -29,12 +28,12 @@ Iš Out į sudėtį – Neal Sako; į Out – Killian Hayes.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 13 turas
-Pirmos rungtynės: 19:15, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~26,8 FP vs VIR
-2. Dwayne Bacon (DUB, F) – ~22,2 FP @ TEL
-3. Daniel Oturu (HTA, C) – ~19,8 FP @ PRS
+2. Daniel Oturu (HTA, C) – ~19,8 FP @ PRS
+3. Tonye Jekiri (PAR, C) – ~19,1 FP vs BES
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
 **📋 Siūloma sudėtis** (prognozė ~178,7 FP, dabartinė ~176,4 FP, **+2,3**)
@@ -55,27 +54,26 @@ Pakeitimai: į startą – Collin Malcolm; iš starto – Nigel Hayes-Davis.
 - Kenneth Faried (KBA, C) ~17,7 FP @ BAY (vietoj Tadas Sedekerskis ~0)
 - Mike James (IST, G) ~16,3 FP vs ASV (vietoj Tadas Sedekerskis ~0)
 
-**⚔️ Prieš Briedis:** prognozė ~178,7 : ~146,1
+**⚔️ Prieš Briedis:** prognozė ~178,7 : ~141,6
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 13 turas
-Pirmos rungtynės: 19:15, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, ketvirtadienis
 
 **👑 Kapitonas**
-1. Mfiondu Kabengele (DUB, C) – ~25,7 FP @ TEL
-2. Andres Feliz (RMB, G) – ~19,4 FP @ OLY
-3. Tonye Jekiri (PAR, C) – ~19,1 FP vs BES
-Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
+1. Andres Feliz (RMB, G) – ~19,4 FP @ OLY
+2. Tonye Jekiri (PAR, C) – ~19,1 FP vs BES
+3. Devon Dotson (BES, G) – ~15,8 FP @ PAR
+Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~153,7 FP, dabartinė ~144,3 FP, **+9,4**)
-Startas: Mfiondu Kabengele (C) ~25,7, Andres Feliz ~19,4, Devon Dotson ~15,8, Nigel Hayes-Davis ~14,6, Oscar da Silva ~13,9
-6-as: Tonye Jekiri ~19,1
-Suolas: Dzanan Musa ~15,1, Jimmy Clark III ~12,5, Wenyen Gabriel ~11,4, Chima Moneke ~0
+**📋 Siūloma sudėtis** (prognozė ~150 FP, dabartinė ~144,3 FP, **+5,7**)
+Startas: Mfiondu Kabengele (C) ~25,7, Dzanan Musa ~15,1, Nigel Hayes-Davis ~14,6, Oscar da Silva ~13,9, Jimmy Clark III ~12,5
+6-as: Andres Feliz ~19,4
+Suolas: Tonye Jekiri ~19,1, Devon Dotson ~15,8, Wenyen Gabriel ~11,4, Chima Moneke ~0
 Out: Braxton Key, Killian Hayes, Tadas Sedekerskis
-Pakeitimai: į startą – Andres Feliz, Devon Dotson; iš starto – Dzanan Musa, Jimmy Clark III.
+Startinis penketas jau optimalus. ✅
 Iš Out į sudėtį – Wenyen Gabriel; į Out – Braxton Key.
-6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Andres Feliz.
 
 **🩹 Traumos**
 - Chima Moneke: nežais – šiuo metu sudėtyje!
@@ -91,7 +89,7 @@ Iš Out į sudėtį – Wenyen Gabriel; į Out – Braxton Key.
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 13 turas
-Pirmos rungtynės: 19:15, ketvirtadienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, ketvirtadienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~26,8 FP vs VIR
