@@ -29,7 +29,7 @@ Startinis penketas jau optimalus. ✅
 - Bruno Fernando: nežais
 - Killian Hayes: nežais
 
-**⚔️ Prieš Briedis:** prognozė ~181,4 : ~92,6
+**⚔️ Prieš Briedis:** prognozė ~181,4 : ~110,3
 
 ---
 
