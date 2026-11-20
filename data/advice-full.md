@@ -27,15 +27,15 @@ Dabartinis kapitonas Andres Feliz – geriausias pasirinkimas. ✅
 3. Devon Dotson (BES, G) – ~15,8 FP @ PAR
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~185 FP, dabartinė ~185 FP)
-Startas: TJ Shorts II (C) ~35, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Tonye Jekiri ~19,1, Devon Dotson ~15,8
+**📋 Siūloma sudėtis** (prognozė ~183 FP, dabartinė ~183 FP)
+Startas: TJ Shorts II (C) ~34, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Tonye Jekiri ~19,1, Devon Dotson ~15,8
 6-as: Collin Malcolm ~15,9
 Suolas: Mbaye Ndiaye ~14, Marcus Carr ~10,5, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
 Out: Tadas Sedekerskis (jau žaidė), Bruno Fernando, Killian Hayes
 Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
-- Tadas Sedekerskis: nežais
+- Tadas Sedekerskis: neaišku
 - Bruno Fernando: nežais
 - Killian Hayes: paaiškės prieš rungtynes
 
@@ -44,7 +44,7 @@ Startinis penketas jau optimalus. ✅
 - Mike James (IST, G) ~16,3 FP vs ASV (vietoj Bruno Fernando ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Briedis:** prognozė ~185 : ~92,4
+**⚔️ Prieš Briedis:** prognozė ~183 : ~96,9
 
 ---
 
@@ -69,7 +69,7 @@ Iš Out į sudėtį – Wenyen Gabriel; į Out – Chima Moneke.
 - Chima Moneke: nežais – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Killian Hayes: paaiškės prieš rungtynes
-- Tadas Sedekerskis: nežais
+- Tadas Sedekerskis: neaišku
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs RMB (vietoj Chima Moneke ~0)
@@ -87,10 +87,10 @@ Iš Out į sudėtį – Wenyen Gabriel; į Out – Chima Moneke.
 3. Nikola Milutinov (OLY, C) – ~12,1 FP vs RMB
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~148,2 FP, dabartinė ~148,2 FP)
-Startas: TJ Shorts II ~35, Theo Maledon ~25,4, Aliou Diarra (C) ~19, Mbaye Ndiaye ~14, Alec Peters ~8,5
+**📋 Siūloma sudėtis** (prognozė ~144,7 FP, dabartinė ~144,7 FP)
+Startas: TJ Shorts II ~34, Theo Maledon ~25,4, Aliou Diarra (C) ~18, Mbaye Ndiaye ~14, Alec Peters ~8,5
 6-as: Marcus Carr ~10,5
-Suolas: Nikola Mirotic ~11,5, Johnny Juzang ~10, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
+Suolas: Nikola Mirotic ~10,5, Johnny Juzang ~10, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
 Out: Braxton Key (jau žaidė), Nikola Milutinov, Killian Hayes
 Startinis penketas jau optimalus. ✅
 
