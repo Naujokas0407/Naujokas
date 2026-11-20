@@ -17,10 +17,10 @@ Kapitonas Andres Feliz jau žaidžia – šį turą keisti nebegalima.
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~183,1 FP, dabartinė ~183,1 FP)
+**📋 Siūloma sudėtis** (prognozė ~181,4 FP, dabartinė ~181,4 FP)
 Startas: TJ Shorts II (C) ~34, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Tonye Jekiri ~19,1, Devon Dotson ~15,8
 6-as: Collin Malcolm ~16
-Suolas: Mbaye Ndiaye ~14, Marcus Carr ~10,5, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
+Suolas: Mbaye Ndiaye ~10,5, Marcus Carr ~10,5, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
 Out: Tadas Sedekerskis (jau žaidė), Bruno Fernando (jau žaidė), Killian Hayes (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
@@ -29,7 +29,7 @@ Startinis penketas jau optimalus. ✅
 - Bruno Fernando: nežais
 - Killian Hayes: nežais
 
-**⚔️ Prieš Briedis:** prognozė ~183,1 : ~131,8
+**⚔️ Prieš Briedis:** prognozė ~181,4 : ~92,6
 
 ---
 
@@ -39,8 +39,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~163,5 FP, dabartinė ~163,5 FP)
-Startas: Nigel Hayes-Davis ~26, Mfiondu Kabengele (C) ~21,5, Oscar da Silva ~21, Andres Feliz ~19,4, Devon Dotson ~15,8
+**📋 Siūloma sudėtis** (prognozė ~150,6 FP, dabartinė ~150,6 FP)
+Startas: Nigel Hayes-Davis ~26, Mfiondu Kabengele (C) ~21,5, Oscar da Silva ~21, Devon Dotson ~15,8, Andres Feliz ~6,5
 6-as: Tonye Jekiri ~19,1
 Suolas: Chima Moneke ~17,1, Braxton Key ~13,5, Dzanan Musa ~4,5, Jimmy Clark III ~3,5
 Out: Killian Hayes (jau žaidė), Wenyen Gabriel (jau žaidė), Tadas Sedekerskis (jau žaidė)
@@ -60,8 +60,8 @@ Startinis penketas jau optimalus. ✅
 **👑 Kapitonas**
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~144,7 FP, dabartinė ~144,7 FP)
-Startas: TJ Shorts II ~34, Theo Maledon ~25,4, Aliou Diarra (C) ~18, Mbaye Ndiaye ~14, Alec Peters ~8,5
+**📋 Siūloma sudėtis** (prognozė ~141,8 FP, dabartinė ~141,8 FP)
+Startas: TJ Shorts II ~34, Theo Maledon ~26, Aliou Diarra (C) ~18, Mbaye Ndiaye ~10,5, Alec Peters ~8,5
 6-as: Marcus Carr ~10,5
 Suolas: Nikola Mirotic ~10,5, Johnny Juzang ~10, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
 Out: Braxton Key (jau žaidė), Killian Hayes (jau žaidė), Nikola Milutinov (jau žaidė)
