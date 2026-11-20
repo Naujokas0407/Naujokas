@@ -4,7 +4,7 @@
 **👑 Kapitonas**
 1. Andres Feliz (RMB, G) – ~19,4 FP @ OLY
 2. Devon Dotson (BES, G) – ~15,8 FP @ PAR
-Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
+Dabartinis kapitonas Andres Feliz – geriausias pasirinkimas. ✅
 
 **🩹 Traumos**
 - Killian Hayes: paaiškės prieš rungtynes – šiuo metu sudėtyje!
@@ -27,10 +27,10 @@ Kapitonas Jonas Valančiūnas jau žaidžia – šį turą keisti nebegalima.
 3. Devon Dotson (BES, G) – ~15,8 FP @ PAR
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~170,9 FP, dabartinė ~170,9 FP)
-Startas: TJ Shorts II (C) ~35, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
-6-as: Marcus Carr ~10,5
-Suolas: Tonye Jekiri ~19,1, Collin Malcolm ~15,9, Devon Dotson ~15,8, Mbaye Ndiaye ~14
+**📋 Siūloma sudėtis** (prognozė ~185 FP, dabartinė ~185 FP)
+Startas: TJ Shorts II (C) ~35, Nigel Hayes-Davis ~26, Dwayne Bacon ~20, Tonye Jekiri ~19,1, Devon Dotson ~15,8
+6-as: Collin Malcolm ~15,9
+Suolas: Mbaye Ndiaye ~14, Marcus Carr ~10,5, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
 Out: Tadas Sedekerskis (jau žaidė), Bruno Fernando, Killian Hayes
 Startinis penketas jau optimalus. ✅
 
@@ -44,7 +44,7 @@ Startinis penketas jau optimalus. ✅
 - Mike James (IST, G) ~16,3 FP vs ASV (vietoj Bruno Fernando ~0)
 - Tyler Dorsey (OLY, G) ~14,6 FP vs RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Briedis:** prognozė ~170,9 : ~92,4
+**⚔️ Prieš Briedis:** prognozė ~185 : ~92,4
 
 ---
 
@@ -57,10 +57,10 @@ Startinis penketas jau optimalus. ✅
 3. Devon Dotson (BES, G) – ~15,8 FP @ PAR
 Kapitonas Mfiondu Kabengele jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~147,3 FP, dabartinė ~141,6 FP, **+5,7**)
-Startas: Nigel Hayes-Davis ~26, Mfiondu Kabengele (C) ~21,5, Oscar da Silva ~21, Dzanan Musa ~4,5, Jimmy Clark III ~3,5
-6-as: Andres Feliz ~19,4
-Suolas: Tonye Jekiri ~19,1, Devon Dotson ~15,8, Braxton Key ~13,5, Wenyen Gabriel ~11,4
+**📋 Siūloma sudėtis** (prognozė ~160,7 FP, dabartinė ~155 FP, **+5,7**)
+Startas: Nigel Hayes-Davis ~26, Mfiondu Kabengele (C) ~21,5, Oscar da Silva ~21, Andres Feliz ~19,4, Devon Dotson ~15,8
+6-as: Tonye Jekiri ~19,1
+Suolas: Braxton Key ~13,5, Wenyen Gabriel ~11,4, Dzanan Musa ~4,5, Jimmy Clark III ~3,5
 Out: Tadas Sedekerskis (jau žaidė), Chima Moneke, Killian Hayes
 Startinis penketas jau optimalus. ✅
 Iš Out į sudėtį – Wenyen Gabriel; į Out – Chima Moneke.
@@ -86,6 +86,13 @@ Iš Out į sudėtį – Wenyen Gabriel; į Out – Chima Moneke.
 2. Mbaye Ndiaye (OLY, F) – ~14 FP vs RMB
 3. Nikola Milutinov (OLY, C) – ~12,1 FP vs RMB
 Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
+
+**📋 Siūloma sudėtis** (prognozė ~148,2 FP, dabartinė ~148,2 FP)
+Startas: TJ Shorts II ~35, Theo Maledon ~25,4, Aliou Diarra (C) ~19, Mbaye Ndiaye ~14, Alec Peters ~8,5
+6-as: Marcus Carr ~10,5
+Suolas: Nikola Mirotic ~11,5, Johnny Juzang ~10, Daniel Oturu ~7,5, Sylvain Francisco ~4,5
+Out: Braxton Key (jau žaidė), Nikola Milutinov, Killian Hayes
+Startinis penketas jau optimalus. ✅
 
 **🩹 Traumos**
 - Braxton Key: nežais
