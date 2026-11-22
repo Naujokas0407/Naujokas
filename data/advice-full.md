@@ -19,7 +19,6 @@ Iš Out į sudėtį – Chima Moneke, Neal Sako; į Out – Killian Hayes, Torni
 **🩹 Traumos**
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
 - Killian Hayes: tikėtina žais – šiuo metu sudėtyje!
-- Chima Moneke: neaišku
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
@@ -57,7 +56,7 @@ Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
 - Kenneth Faried (KBA, C) ~17,7 FP vs IST (vietoj Bruno Fernando ~0)
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~177,7 : ~167,7
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~177,7 : ~147,7
 
 ---
 
@@ -80,7 +79,6 @@ Iš Out į sudėtį – Tadas Sedekerskis; į Out – Braxton Key.
 
 **🩹 Traumos**
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
-- Chima Moneke: neaišku – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Killian Hayes: tikėtina žais
 - Tadas Sedekerskis: neaišku
@@ -113,7 +111,7 @@ Iš Out į sudėtį – Nikola Milutinov; į Out – Johnny Juzang.
 **🩹 Traumos**
 - Braxton Key: nežais
 - Killian Hayes: tikėtina žais
-- Nikola Milutinov: neaišku
+- Nikola Milutinov: tikėtina žais
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs HTA (vietoj Braxton Key ~0)
