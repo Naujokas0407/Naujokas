@@ -67,20 +67,22 @@ Pirmos rungtynės: 19:00, antradienis
 1. Mfiondu Kabengele (DUB, C) – ~25,4 FP vs PAR
 2. Tonye Jekiri (PAR, C) – ~18,4 FP @ DUB
 3. Andres Feliz (RMB, G) – ~18,4 FP vs ZAL
-Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
+Dabar kapitonas – Chima Moneke (~17,1 FP). Siūlau keisti į Mfiondu Kabengele.
 
-**📋 Siūloma sudėtis** (prognozė ~162,8 FP, dabartinė ~153,5 FP, **+9,3**)
+**📋 Siūloma sudėtis** (prognozė ~162,8 FP, dabartinė ~141,2 FP, **+21,6**)
 Startas: Mfiondu Kabengele (C) ~25,4, Andres Feliz ~18,4, Chima Moneke ~17,1, Tadas Sedekerskis ~15,9, Devon Dotson ~14,7
 6-as: Tonye Jekiri ~18,4
 Suolas: Nigel Hayes-Davis ~15,6, Oscar da Silva ~14,6, Dzanan Musa ~13,3, Jimmy Clark III ~11,8
-Out: Wenyen Gabriel, Braxton Key, Killian Hayes
-Pakeitimai: į startą – Chima Moneke, Tadas Sedekerskis; iš starto – Nigel Hayes-Davis, Oscar da Silva.
+Out: Braxton Key, Killian Hayes, Wenyen Gabriel
+Pakeitimai: į startą – Andres Feliz, Tadas Sedekerskis; iš starto – Nigel Hayes-Davis, Oscar da Silva.
 Iš Out į sudėtį – Tadas Sedekerskis; į Out – Braxton Key.
+6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Jimmy Clark III.
 
 **🩹 Traumos**
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
 - Killian Hayes: tikėtina žais
+- Wenyen Gabriel: nežais
 - Tadas Sedekerskis: neaišku
 
 **🛒 Laisvoji rinka**
@@ -97,21 +99,21 @@ Pirmos rungtynės: 19:00, antradienis
 1. TJ Shorts II (VBC, G) – ~27,4 FP vs PAN
 2. Theo Maledon (RMB, G) – ~25,5 FP vs ZAL
 3. Aliou Diarra (VIR, C) – ~23,2 FP @ CZV
-Dabar kapitonas – Aliou Diarra (~23,2 FP). Siūlau keisti į TJ Shorts II.
+Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~181,4 FP, dabartinė ~171,3 FP, **+10,1**)
+**📋 Siūloma sudėtis** (prognozė ~181,4 FP, dabartinė ~154,5 FP, **+26,9**)
 Startas: TJ Shorts II (C) ~27,4, Theo Maledon ~25,5, Aliou Diarra ~23,2, Nikola Mirotic ~17,7, Mbaye Ndiaye ~13,7
 6-as: Daniel Oturu ~18,9
 Suolas: Sylvain Francisco ~16,9, Marcus Carr ~15,4, Nikola Milutinov ~12,1, Alec Peters ~11,2
 Out: Johnny Juzang, Braxton Key, Killian Hayes
-Pakeitimai: į startą – Nikola Mirotic; iš starto – Alec Peters.
-Iš Out į sudėtį – Nikola Milutinov; į Out – Johnny Juzang.
-6-u žaidėju (b-1) dėk Daniel Oturu vietoj Marcus Carr.
+Pakeitimai: į startą – Mbaye Ndiaye, Theo Maledon; iš starto – Alec Peters, Killian Hayes.
+Iš Out į sudėtį – Daniel Oturu, Marcus Carr; į Out – Johnny Juzang, Killian Hayes.
+6-u žaidėju (b-1) dėk Daniel Oturu vietoj Sylvain Francisco.
 
 **🩹 Traumos**
 - Braxton Key: nežais
-- Killian Hayes: tikėtina žais
-- Nikola Milutinov: tikėtina žais
+- Killian Hayes: tikėtina žais – šiuo metu sudėtyje!
+- Nikola Milutinov: tikėtina žais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs HTA (vietoj Braxton Key ~0)
