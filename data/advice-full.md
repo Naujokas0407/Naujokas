@@ -7,24 +7,25 @@ Pirmos rungtynės: 19:00, antradienis
 3. Andres Feliz (RMB, G) – ~18,4 FP vs ZAL
 Dabar kapitonas – Andres Feliz (~18,4 FP). Siūlau keisti į Jonas Valančiūnas.
 
-**📋 Siūloma sudėtis** (prognozė ~166,4 FP, dabartinė ~143,5 FP, **+22,8**)
+**📋 Siūloma sudėtis** (prognozė ~165,1 FP, dabartinė ~132,3 FP, **+32,8**)
 Startas: Jonas Valančiūnas (C) ~25,9, Andres Feliz ~18,4, Chima Moneke ~17,1, Nigel Hayes-Davis ~15,6, Devon Dotson ~14,7
 6-as: Aliou Diarra ~23,2
-Suolas: Neal Sako ~16,4, Dzanan Musa ~13,3, Alec Peters ~11,2, Johnny Juzang ~10,3
-Out: Tornike Shengelia, Killian Hayes, Kevin Punter
+Suolas: Neal Sako ~16,4, Dzanan Musa ~13,3, Johnny Juzang ~10,3, Tornike Shengelia ~8,7
+Out: Alec Peters, Killian Hayes, Kevin Punter
 Pakeitimai: į startą – Devon Dotson, Chima Moneke; iš starto – Alec Peters, Aliou Diarra.
-Iš Out į sudėtį – Chima Moneke, Neal Sako; į Out – Killian Hayes, Tornike Shengelia.
+Iš Out į sudėtį – Chima Moneke, Neal Sako; į Out – Alec Peters, Killian Hayes.
 6-u žaidėju (b-1) dėk Aliou Diarra vietoj Devon Dotson.
 
 **🩹 Traumos**
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
-- Killian Hayes: tikėtina žais – šiuo metu sudėtyje!
+- Alec Peters: nežais – šiuo metu sudėtyje!
+- Killian Hayes: abejotinas – šiuo metu sudėtyje!
 - Kevin Punter: nežais
 
 **🛒 Laisvoji rinka**
-- Mike James (IST, G) ~16,3 FP @ KBA (vietoj Killian Hayes ~0)
-- Kevarrius Hayes (PAR, C) ~15,4 FP @ DUB (vietoj Killian Hayes ~0)
-- Marcus Carr (VIR, G) ~15,4 FP @ CZV (vietoj Killian Hayes ~0)
+- Mike James (IST, G) ~16,3 FP @ KBA (vietoj Alec Peters ~0)
+- Kevarrius Hayes (PAR, C) ~15,4 FP @ DUB (vietoj Alec Peters ~0)
+- Marcus Carr (VIR, G) ~15,4 FP @ CZV (vietoj Alec Peters ~0)
 
 ---
 
@@ -49,14 +50,14 @@ Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
 **🩹 Traumos**
 - Tadas Sedekerskis: neaišku
 - Bruno Fernando: nežais
-- Killian Hayes: tikėtina žais
+- Killian Hayes: abejotinas
 
 **🛒 Laisvoji rinka**
 - Jean Montero (OLY, G) ~23,6 FP vs HTA (vietoj Bruno Fernando ~0)
 - Kenneth Faried (KBA, C) ~17,7 FP vs IST (vietoj Bruno Fernando ~0)
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~177,7 : ~147,7
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~177,7 : ~136,9
 
 ---
 
@@ -81,7 +82,7 @@ Iš Out į sudėtį – Tadas Sedekerskis; į Out – Braxton Key.
 **🩹 Traumos**
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
 - Braxton Key: nežais – šiuo metu sudėtyje!
-- Killian Hayes: tikėtina žais
+- Killian Hayes: abejotinas
 - Wenyen Gabriel: nežais
 - Tadas Sedekerskis: neaišku
 
@@ -101,23 +102,25 @@ Pirmos rungtynės: 19:00, antradienis
 3. Aliou Diarra (VIR, C) – ~23,2 FP @ CZV
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~181,4 FP, dabartinė ~154,5 FP, **+26,9**)
+**📋 Siūloma sudėtis** (prognozė ~181 FP, dabartinė ~143,3 FP, **+37,7**)
 Startas: TJ Shorts II (C) ~27,4, Theo Maledon ~25,5, Aliou Diarra ~23,2, Nikola Mirotic ~17,7, Mbaye Ndiaye ~13,7
 6-as: Daniel Oturu ~18,9
-Suolas: Sylvain Francisco ~16,9, Marcus Carr ~15,4, Nikola Milutinov ~12,1, Alec Peters ~11,2
-Out: Johnny Juzang, Braxton Key, Killian Hayes
+Suolas: Sylvain Francisco ~16,9, Marcus Carr ~15,4, Nikola Milutinov ~12,1, Johnny Juzang ~10,3
+Out: Alec Peters, Braxton Key, Killian Hayes
 Pakeitimai: į startą – Mbaye Ndiaye, Theo Maledon; iš starto – Alec Peters, Killian Hayes.
-Iš Out į sudėtį – Daniel Oturu, Marcus Carr; į Out – Johnny Juzang, Killian Hayes.
+Iš Out į sudėtį – Daniel Oturu, Marcus Carr; į Out – Alec Peters, Killian Hayes.
 6-u žaidėju (b-1) dėk Daniel Oturu vietoj Sylvain Francisco.
 
 **🩹 Traumos**
+- Alec Peters: nežais – šiuo metu sudėtyje!
+- Nikola Mirotic: tikėtina žais – šiuo metu sudėtyje!
 - Braxton Key: nežais
-- Killian Hayes: tikėtina žais – šiuo metu sudėtyje!
+- Killian Hayes: abejotinas – šiuo metu sudėtyje!
 - Nikola Milutinov: tikėtina žais – šiuo metu sudėtyje!
 
 **🛒 Laisvoji rinka**
-- Jean Montero (OLY, G) ~23,6 FP vs HTA (vietoj Braxton Key ~0)
-- Bruno Fernando (IST, C) ~18,1 FP @ KBA (vietoj Braxton Key ~0)
-- Neal Sako (VBC, C) ~16,4 FP vs PAN (vietoj Braxton Key ~0)
+- Jean Montero (OLY, G) ~23,6 FP vs HTA (vietoj Alec Peters ~0)
+- Bruno Fernando (IST, C) ~18,1 FP @ KBA (vietoj Alec Peters ~0)
+- Neal Sako (VBC, C) ~16,4 FP vs PAN (vietoj Alec Peters ~0)
 
 _Prognozė: žaidėjo sezono FP vidurkis × koeficientas (kapitonas ×2, startas ir 6-as ×1, suolas ×0,5, Out ×0). Traumuoti su „Nežais“ – 0._
