@@ -418,7 +418,8 @@ function groupTable(G) {
     pairs.forEach(([a, b]) => { const A = t[a], B = t[b]; if (!A || !B) return;
       const sa = scoreOf(A.L, A.title, r), sb = scoreOf(B.L, B.title, r);
       matches.push({ r, A, B, sa, sb, fin: isFinal(r) });
-      if (sa != null && sb != null && (isFinal(r) || r === CUR)) { A.gp++; B.gp++; A.pf += sa; A.pa += sb; B.pf += sb; B.pa += sa; if (sa > sb) { A.w++; B.l++; } else if (sb > sa) { B.w++; A.l++; } else { A.dr++; B.dr++; } }
+      // vykstančiame ture lygiosios (pvz. 0:0, kol komandų žaidėjai dar nežaidė) neskaičiuojamos – tik baigus turą
+      if (sa != null && sb != null && (isFinal(r) || (r === CUR && sa !== sb))) { A.gp++; B.gp++; A.pf += sa; A.pa += sb; B.pf += sb; B.pa += sa; if (sa > sb) { A.w++; B.l++; } else if (sb > sa) { B.w++; A.l++; } else { A.dr++; B.dr++; } }
     }); });
   t.sort((a, b) => ((b.w + b.dr / 2) - (a.w + a.dr / 2)) || (b.pf - a.pf) || (a.i - b.i));
   t.forEach((x, k) => x.place = k + 1);
