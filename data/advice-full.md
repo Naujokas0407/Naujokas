@@ -24,6 +24,14 @@ Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 3. Tonye Jekiri (PAR, C) – ~18,4 FP @ DUB
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
+**📋 Siūloma sudėtis** (prognozė ~155,3 FP, dabartinė ~154 FP, **+1,3**)
+Startas: TJ Shorts II (C) ~22,5, Dwayne Bacon ~22, Daniel Oturu ~18,9, Marcus Carr ~16, Nigel Hayes-Davis ~14,5
+6-as: Sylvain Francisco ~15,5
+Suolas: Tonye Jekiri ~18,4, Collin Malcolm ~15,9, Tadas Sedekerskis ~15,9, Devon Dotson ~-3,5
+Out: Killian Hayes (jau žaidė), Mbaye Ndiaye, Bruno Fernando
+Pakeitimai: į startą – Daniel Oturu; iš starto – Tonye Jekiri.
+Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
+
 **🩹 Traumos**
 - Tadas Sedekerskis: neaišku
 - Bruno Fernando: nežais
@@ -34,7 +42,7 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 - Carsen Edwards (ZAL, G) ~15,3 FP @ RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~141,2 : ~124
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~155,3 : ~124
 
 ---
 
@@ -45,7 +53,15 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 1. Mfiondu Kabengele (DUB, C) – ~25,4 FP vs PAR
 2. Tonye Jekiri (PAR, C) – ~18,4 FP @ DUB
 3. Andres Feliz (RMB, G) – ~18,4 FP vs ZAL
-Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
+Dabartinis kapitonas Mfiondu Kabengele – geriausias pasirinkimas. ✅
+
+**📋 Siūloma sudėtis** (prognozė ~134,4 FP, dabartinė ~144,8 FP)
+Startas: Roman Sorkin ~20,5, Chima Moneke ~20, Andres Feliz (C) ~18,4, Tadas Sedekerskis ~15,9, Tomas Satoransky ~13,6
+6-as: Nigel Hayes-Davis ~14,5
+Suolas: Mfiondu Kabengele ~25,4, Isaac Bonga ~2,5, Oscar da Silva ~2, Devon Dotson ~-3,5
+Out: Killian Hayes (jau žaidė), Tonye Jekiri, Dzanan Musa
+Pakeitimai: į startą – Tomas Satoransky, Tadas Sedekerskis; iš starto – Mfiondu Kabengele, Dzanan Musa.
+Iš Out į sudėtį – Tadas Sedekerskis; į Out – Dzanan Musa.
 
 **🩹 Traumos**
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
