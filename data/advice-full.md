@@ -79,7 +79,6 @@ Iš Out į sudėtį – Tonye Jekiri, Tadas Sedekerskis; į Out – Isaac Bonga,
 6-u žaidėju (b-1) dėk Tonye Jekiri vietoj Isaac Bonga.
 
 **🩹 Traumos**
-- Oscar da Silva: paaiškės prieš rungtynes – šiuo metu sudėtyje!
 - Dzanan Musa: neaišku – šiuo metu sudėtyje!
 - Killian Hayes: abejotinas
 - Tadas Sedekerskis: neaišku
