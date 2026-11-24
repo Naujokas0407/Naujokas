@@ -1,20 +1,20 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 14 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, antradienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~25,9 FP @ RMB
-2. Aliou Diarra (VIR, C) – ~23,2 FP @ CZV
-3. Andres Feliz (RMB, G) – ~18,4 FP vs ZAL
-Dabar kapitonas – Aliou Diarra (~23,2 FP). Siūlau keisti į Jonas Valančiūnas.
+2. Andres Feliz (RMB, G) – ~18,4 FP vs ZAL
+3. Neal Sako (VBC, C) – ~16,4 FP vs PAN
+Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~166,2 FP, dabartinė ~142,9 FP, **+23,3**)
-Startas: Jonas Valančiūnas (C) ~25,9, Andres Feliz ~18,4, Chima Moneke ~17,1, Nigel Hayes-Davis ~15,6, Marcus Carr ~15,4
-6-as: Aliou Diarra ~23,2
+**📋 Siūloma sudėtis** (prognozė ~163,4 FP, dabartinė ~142,9 FP, **+20,5**)
+Startas: Aliou Diarra (C) ~23,2, Andres Feliz ~18,4, Chima Moneke ~17,1, Nigel Hayes-Davis ~15,6, Marcus Carr ~15,4
+6-as: Jonas Valančiūnas ~25,9
 Suolas: Neal Sako ~16,4, Dzanan Musa ~13,3, Johnny Juzang ~10,3, Isaac Bonga ~9,5
 Out: Killian Hayes, Alec Peters, Kevin Punter
-Pakeitimai: į startą – Jonas Valančiūnas, Andres Feliz; iš starto – Aliou Diarra, Johnny Juzang.
+Pakeitimai: į startą – Andres Feliz; iš starto – Johnny Juzang.
 Iš Out į sudėtį – Neal Sako; į Out – Killian Hayes.
-6-u žaidėju (b-1) dėk Aliou Diarra vietoj Isaac Bonga.
+6-u žaidėju (b-1) dėk Jonas Valančiūnas vietoj Isaac Bonga.
 
 **🩹 Traumos**
 - Killian Hayes: abejotinas – šiuo metu sudėtyje!
@@ -30,7 +30,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Killian Hayes.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 14 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,4 FP vs PAN
@@ -38,14 +38,13 @@ Iš Out į sudėtį – Neal Sako; į Out – Killian Hayes.
 3. Daniel Oturu (HTA, C) – ~18,9 FP @ OLY
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~176,6 FP, dabartinė ~171,1 FP, **+5,5**)
-Startas: TJ Shorts II (C) ~27,4, Dwayne Bacon ~22, Tonye Jekiri ~18,4, Collin Malcolm ~15,9, Devon Dotson ~14,7
-6-as: Daniel Oturu ~18,9
-Suolas: Sylvain Francisco ~16,9, Tadas Sedekerskis ~15,9, Nigel Hayes-Davis ~15,6, Marcus Carr ~15,4
+**📋 Siūloma sudėtis** (prognozė ~175 FP, dabartinė ~171,1 FP, **+4**)
+Startas: TJ Shorts II (C) ~27,4, Dwayne Bacon ~22, Daniel Oturu ~18,9, Collin Malcolm ~15,9, Devon Dotson ~14,7
+6-as: Marcus Carr ~15,4
+Suolas: Tonye Jekiri ~18,4, Sylvain Francisco ~16,9, Tadas Sedekerskis ~15,9, Nigel Hayes-Davis ~15,6
 Out: Mbaye Ndiaye, Bruno Fernando, Killian Hayes
-Pakeitimai: į startą – Dwayne Bacon, Collin Malcolm; iš starto – Nigel Hayes-Davis, Sylvain Francisco.
+Pakeitimai: į startą – Dwayne Bacon, Collin Malcolm, Daniel Oturu; iš starto – Tonye Jekiri, Nigel Hayes-Davis, Sylvain Francisco.
 Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
-6-u žaidėju (b-1) dėk Daniel Oturu vietoj Marcus Carr.
 
 **🩹 Traumos**
 - Tadas Sedekerskis: neaišku
@@ -57,21 +56,21 @@ Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
 - Josh Nebo (BAR, C) ~17,9 FP vs FBT (vietoj Bruno Fernando ~0)
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~176,6 : ~138,3
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~175 : ~138,3
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 14 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, antradienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~25,4 FP vs PAR
 2. Tonye Jekiri (PAR, C) – ~18,4 FP @ DUB
 3. Andres Feliz (RMB, G) – ~18,4 FP vs ZAL
-Dabar kapitonas – Chima Moneke (~17,1 FP). Siūlau keisti į Mfiondu Kabengele.
+Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~163,7 FP, dabartinė ~134,2 FP, **+29,6**)
-Startas: Mfiondu Kabengele (C) ~25,4, Andres Feliz ~18,4, Chima Moneke ~17,1, Tadas Sedekerskis ~15,9, Devon Dotson ~14,7
+**📋 Siūloma sudėtis** (prognozė ~155,4 FP, dabartinė ~134,2 FP, **+21,3**)
+Startas: Mfiondu Kabengele ~25,4, Andres Feliz ~18,4, Chima Moneke (C) ~17,1, Tadas Sedekerskis ~15,9, Devon Dotson ~14,7
 6-as: Tonye Jekiri ~18,4
 Suolas: Nigel Hayes-Davis ~15,6, Oscar da Silva ~14,6, Tomas Satoransky ~13,6, Dzanan Musa ~13,3
 Out: Roman Sorkin, Isaac Bonga, Killian Hayes
@@ -93,22 +92,22 @@ Iš Out į sudėtį – Tonye Jekiri, Tadas Sedekerskis; į Out – Isaac Bonga,
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 14 turas
-⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 21:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,4 FP vs PAN
 2. Theo Maledon (RMB, G) – ~25,5 FP vs ZAL
-3. Aliou Diarra (VIR, C) – ~23,2 FP @ CZV
+3. Daniel Oturu (HTA, C) – ~18,9 FP @ OLY
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~181 FP, dabartinė ~168,5 FP, **+12,4**)
-Startas: TJ Shorts II (C) ~27,4, Theo Maledon ~25,5, Aliou Diarra ~23,2, Nikola Mirotic ~17,7, Mbaye Ndiaye ~13,7
-6-as: Daniel Oturu ~18,9
-Suolas: Sylvain Francisco ~16,9, Marcus Carr ~15,4, Nikola Milutinov ~12,1, Johnny Juzang ~10,3
+**📋 Siūloma sudėtis** (prognozė ~179,2 FP, dabartinė ~168,5 FP, **+10,7**)
+Startas: TJ Shorts II (C) ~27,4, Aliou Diarra ~23,2, Nikola Mirotic ~17,7, Marcus Carr ~15,4, Mbaye Ndiaye ~13,7
+6-as: Theo Maledon ~25,5
+Suolas: Daniel Oturu ~18,9, Sylvain Francisco ~16,9, Nikola Milutinov ~12,1, Johnny Juzang ~10,3
 Out: Isaac Bonga, Alec Peters, Killian Hayes
-Pakeitimai: į startą – Mbaye Ndiaye, Theo Maledon; iš starto – Marcus Carr, Johnny Juzang.
+Pakeitimai: į startą – Mbaye Ndiaye; iš starto – Johnny Juzang.
 Iš Out į sudėtį – Daniel Oturu; į Out – Isaac Bonga.
-6-u žaidėju (b-1) dėk Daniel Oturu vietoj Sylvain Francisco.
+6-u žaidėju (b-1) dėk Theo Maledon vietoj Sylvain Francisco.
 
 **🩹 Traumos**
 - Alec Peters: nežais
