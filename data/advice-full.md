@@ -34,7 +34,7 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 - Carsen Edwards (ZAL, G) ~15,3 FP @ RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~153,5 : ~111,9
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~153,5 : ~121,8
 
 ---
 
