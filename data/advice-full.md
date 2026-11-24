@@ -34,7 +34,7 @@ Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 - Carsen Edwards (ZAL, G) ~15,3 FP @ RMB (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~152,9 : ~138,3
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~153,5 : ~111,9
 
 ---
 
@@ -67,8 +67,8 @@ Kapitonas Chima Moneke jau žaidžia – šį turą keisti nebegalima.
 3. Mbaye Ndiaye (OLY, F) – ~13,7 FP vs HTA
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~171,9 FP, dabartinė ~168,5 FP, **+3,4**)
-Startas: TJ Shorts II (C) ~27,4, Aliou Diarra ~23,2, Nikola Mirotic ~17,7, Marcus Carr ~15,4, Johnny Juzang ~10,3
+**📋 Siūloma sudėtis** (prognozė ~181,9 FP, dabartinė ~178,5 FP, **+3,4**)
+Startas: Aliou Diarra ~32,5, TJ Shorts II (C) ~27,4, Nikola Mirotic ~17,7, Marcus Carr ~16, Johnny Juzang ~10,3
 6-as: Sylvain Francisco ~16,9
 Suolas: Theo Maledon ~25,5, Daniel Oturu ~18,9, Mbaye Ndiaye ~13,7, Isaac Bonga ~9,5
 Out: Alec Peters (jau žaidė), Killian Hayes (jau žaidė), Nikola Milutinov
