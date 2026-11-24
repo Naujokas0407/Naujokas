@@ -132,6 +132,7 @@ tr.tot td.pt{font-weight:700}
 .wcc{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:999px;background:rgba(250,204,21,.16);color:#facc15;white-space:nowrap;vertical-align:1px}.wcb{margin-left:4px;font-size:13px}.cap.cap3{background:#facc15;color:#111;width:auto;padding:0 5px;border-radius:999px}
 .bnh{display:inline-block;font-size:10px;font-weight:700;line-height:1;padding:3px 6px;border-radius:999px;margin-left:6px;vertical-align:1px;white-space:nowrap;color:#fff!important}
 .bnh.h-out{background:#ff3b30}.bnh.h-dbt{background:#f7931e}.bnh.h-unc{background:#6b7079}.bnh.h-exp{background:#2fa84f}.hbt2{font-size:12px;color:var(--ink-2)}
+.tavg{border-top:1px solid var(--line)}.tavg summary{cursor:pointer;padding:10px 4px;display:flex;gap:8px;align-items:baseline;list-style:none}.tavg summary::-webkit-details-marker{display:none}.tavg summary .sub{margin-left:auto;white-space:nowrap}.tavg summary::before{content:'▸';color:var(--faint)}.tavg[open] summary::before{content:'▾'}
 .tbg{font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px}.tbg.hot{background:rgba(249,115,22,.2);color:#fb923c}.tbg.ice{background:rgba(56,189,248,.18);color:#38bdf8}
 .tchs{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}.tch{font-size:11px;font-weight:600;padding:1px 6px;border-radius:999px;white-space:nowrap}.tup{background:rgba(34,197,94,.15);color:#22c55e}.tdn{background:rgba(239,68,68,.15);color:#ef4444}
 .tgs,.tgl{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;vertical-align:middle}.tgs{background:rgba(34,197,94,.15);color:#22c55e}.tgl{background:rgba(245,158,11,.18);color:#f59e0b}
@@ -1825,6 +1826,22 @@ function lineupValue(ps, K) {
   }
   return best || { val: 0, S: [], cap: null };
 }
+// visų lygos komandų sudėtys su žaidėjų vidurkiais (Mainų skiltyje)
+function teamsAvgHtml() {
+  const SRC = CUR || D, U = tradeUniverse(), me = myTeam(), ord = { G: 1, F: 2, C: 3 };
+  const fmtN = v => v == null ? "–" : num(Math.round(v * 10) / 10);
+  const cards = SRC.teams.map(t => {
+    const ps = t.players.map(p => U[p.id] || p).sort((a, b) => (b.avg ?? -99) - (a.avg ?? -99));
+    const av = ps.filter(p => p.avg != null), sum = av.reduce((s, p) => s + p.avg, 0);
+    const rows = ps.map(p => { const f = formOf(p.id);
+      return `<tr><td class="l pl">${posChip(p)} <span class="nm">${nameMark(p)}</span> <span class="fa">${esc(tv(p.club))}</span>${hBadge(p)}</td><td class="pt">${fmtN(p.avg)}</td><td>${f ? fmtN(f.avg) : "–"}</td><td>${minTxt(p.min)}</td></tr>`; }).join("");
+    const mine = me && t.title.trim() === me.trim();
+    return `<details class="tavg"${mine ? " open" : ""}><summary><span class="nm">${esc(t.title)}</span>${mine ? ' <span class="fa">(mano)</span>' : ""}<span class="sub">vid. ${av.length ? fmtN(sum / av.length) : "–"} · suma ${fmtN(sum)}</span></summary>
+      <div class="x"><table class="box"><thead><tr><th class="l">Žaidėjas</th><th>Vid. FP</th><th title="Paskutinių 3 turų vidurkis">Forma</th><th>Min.</th></tr></thead><tbody>${rows}</tbody></table></div></details>`;
+  }).join("");
+  return `<div class="card"><div class="ph"><div class="h">Komandų sudėtys ir vidurkiai</div><span class="sub">spausk ant komandos</span></div>${cards}
+    <p class="foot" style="margin:0">Vid. – komandos žaidėjų sezono FP vidurkių vidurkis, suma – visų žaidėjų vidurkių suma. Žaidėjai surikiuoti pagal sezono vidurkį.</p></div>`;
+}
 function renderTrade() {
   const el = document.getElementById("trade"); if (!el || !D) return;
   if (!FPH) { loadFph().then(() => renderTrade()); }
@@ -1895,7 +1912,7 @@ function renderTrade() {
     verdict = `<div class="card mycard"><div class="ph"><div class="h">Rezultatas · ${who}</div><button type="button" class="lnk" id="trClear">Išvalyti</button></div><div class="sub" style="padding:0 16px 8px">Atiduoda: ${G.map(p => esc(p.name)).join(", ")} · Gauna: ${R.map(p => esc(p.name)).join(", ")}</div><div class="myg">${tiles.join("")}</div><div class="myn">${notes.map(n => `<p>${n}</p>`).join("")}</div></div>`;
   } else if (TRA && TRB) verdict = `<p class="note">Pažymėk bent po vieną žaidėją abiejose komandose – rezultatas atsiras čia.</p>`;
   el.innerHTML = head + verdict + `<div class="trg">${roster(TRA, "give", "Atiduoda: " + esc(TRA))}${roster(TRB, "get", TRB === "__fa" ? "Gauna: laisvieji žaidėjai" : "Gauna iš: " + esc(TRB))}</div>
-    <p class="foot" style="margin:0">Spausk ant žaidėjo eilutės, kad pažymėtum. Forma – paskutinių 3 turų FP vidurkis (🔥 – gerokai virš sezono vidurkio, 🧊 – gerokai žemiau). Minutės – vidutinis žaidimo laikas per rungtynes.</p>`;
+    <p class="foot" style="margin:0">Spausk ant žaidėjo eilutės, kad pažymėtum. Forma – paskutinių 3 turų FP vidurkis (🔥 – gerokai virš sezono vidurkio, 🧊 – gerokai žemiau). Minutės – vidutinis žaidimo laikas per rungtynes.</p>` + teamsAvgHtml();
   el.querySelectorAll("[data-trm]").forEach(b => b.addEventListener("click", () => { TRM = b.dataset.trm; renderTrade(); }));
   el.querySelector("#trA").addEventListener("change", e => { TRA = e.target.value; TR.give = []; if (TRB === TRA) { TRB = ""; TR.get = []; } renderTrade(); });
   el.querySelector("#trB").addEventListener("change", e => { TRB = e.target.value; TR.get = []; renderTrade(); });
