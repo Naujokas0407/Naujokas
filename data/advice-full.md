@@ -1,5 +1,5 @@
 ## BN Fantasy 🏆 – Naujokas ™️ · 14 turas
-Pirmos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. Jonas Valančiūnas (ZAL, C) – ~25,9 FP @ RMB
@@ -30,7 +30,7 @@ Iš Out į sudėtį – Neal Sako; į Out – Killian Hayes.
 ---
 
 ## HLA 2 Divizionas – Naujokas · 14 turas
-Pirmos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,4 FP vs PAN
@@ -38,12 +38,12 @@ Pirmos rungtynės: 19:00, antradienis
 3. Daniel Oturu (HTA, C) – ~18,9 FP @ OLY
 Dabartinis kapitonas TJ Shorts II – geriausias pasirinkimas. ✅
 
-**📋 Siūloma sudėtis** (prognozė ~177,7 FP, dabartinė ~171,1 FP, **+6,6**)
-Startas: TJ Shorts II (C) ~27,4, Dwayne Bacon ~22, Tonye Jekiri ~18,4, Sylvain Francisco ~16,9, Collin Malcolm ~15,9
+**📋 Siūloma sudėtis** (prognozė ~176,6 FP, dabartinė ~171,1 FP, **+5,5**)
+Startas: TJ Shorts II (C) ~27,4, Dwayne Bacon ~22, Tonye Jekiri ~18,4, Collin Malcolm ~15,9, Devon Dotson ~14,7
 6-as: Daniel Oturu ~18,9
-Suolas: Tadas Sedekerskis ~15,9, Nigel Hayes-Davis ~15,6, Marcus Carr ~15,4, Devon Dotson ~14,7
+Suolas: Sylvain Francisco ~16,9, Tadas Sedekerskis ~15,9, Nigel Hayes-Davis ~15,6, Marcus Carr ~15,4
 Out: Mbaye Ndiaye, Bruno Fernando, Killian Hayes
-Pakeitimai: į startą – Dwayne Bacon, Collin Malcolm; iš starto – Devon Dotson, Nigel Hayes-Davis.
+Pakeitimai: į startą – Dwayne Bacon, Collin Malcolm; iš starto – Nigel Hayes-Davis, Sylvain Francisco.
 Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
 6-u žaidėju (b-1) dėk Daniel Oturu vietoj Marcus Carr.
 
@@ -57,12 +57,12 @@ Iš Out į sudėtį – Tadas Sedekerskis; į Out – Mbaye Ndiaye.
 - Josh Nebo (BAR, C) ~17,9 FP vs FBT (vietoj Bruno Fernando ~0)
 - Mike James (IST, G) ~16,3 FP @ KBA (vietoj Bruno Fernando ~0)
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~177,7 : ~138,3
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~176,6 : ~138,3
 
 ---
 
 ## Bėdų turgus – Naujokas 4️⃣7️⃣ · 14 turas
-Pirmos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. Mfiondu Kabengele (DUB, C) – ~25,4 FP vs PAR
@@ -93,7 +93,7 @@ Iš Out į sudėtį – Tonye Jekiri, Tadas Sedekerskis; į Out – Isaac Bonga,
 ---
 
 ## Lupika Fantasy Lyga – Naujokas 7️⃣ · 14 turas
-Pirmos rungtynės: 19:00, antradienis
+⚠️ Turas jau prasidėjęs – žaidę ir dabar žaidžiantys žaidėjai lieka savo vietose, siūlymai tik likusiems. Kitos rungtynės: 20:00, antradienis
 
 **👑 Kapitonas**
 1. TJ Shorts II (VBC, G) – ~27,4 FP vs PAN
