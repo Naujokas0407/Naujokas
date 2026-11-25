@@ -433,6 +433,10 @@ details.mtsd[open]>summary{margin-bottom:8px}
   <p class="foot">Rezultatai ir statistika – iš oficialios Eurolygos, rungtynių metu atsinaujina kas 30 sekundžių. Fantasy taškai ir sudėtys – iš BasketNews Fantasy, atsinaujina kas ~6 min. * – startinio penketo žaidėjas, oranžiškai pažymėti žaidėjai, kurie tuo metu aikštėje. FP – žaidėjo fantasy taškai (~ – preliminarūs, apskaičiuoti pagal gyvą Eurolygos statistiką, kol BasketNews paskelbs oficialius), × – daugiklis (kapitonas ×2, 6-as žaidėjas ×1, kiti suolelyje ×0,5).</p>
 </div></main>
 <script>
+// duomenys imami tiesiai iš GitHub saugyklos (visada naujausi, net jei GitHub Pages neatsinaujino); nepavykus – iš puslapio
+const RAW = "https://raw.githubusercontent.com/Naujokas0407/Naujokas/main/";
+async function dfetch(u, o) { if (u.startsWith("data/")) { try { const r = await fetch(RAW + u, o); if (r.ok) return r; } catch (e) {} } return fetch(u, o); }
+
 const TZ = "Europe/Vilnius";
 const EL = "https://live.euroleague.net/api", SEASON = "E2026";
 const SLUG = new URLSearchParams(location.search).get("l") || "bn";
@@ -672,7 +676,7 @@ function h2hHtml(isMe) {
 
 // ---- Žaidėjų tendencijos: paskutinių 3 sužaistų turų vidurkis prieš sezono vidurkį ----
 let STH = null;
-async function loadSth() { if (STH) return STH; try { const r = await fetch("data/stat-hist.json?t=" + Date.now(), { cache: "no-store" }); STH = r.ok ? await r.json() : {}; } catch (e) { STH = {}; } return STH; }
+async function loadSth() { if (STH) return STH; try { const r = await dfetch("data/stat-hist.json?t=" + Date.now(), { cache: "no-store" }); STH = r.ok ? await r.json() : {}; } catch (e) { STH = {}; } return STH; }
 const TRD = [["min", "Min", 3], ["fp", "FP", 3], ["pts", "TŠK", 2], ["reb", "ATK", 1.5], ["ast", "RP", 1], ["pir", "PIR", 3]];
 function trendOf(id) {
   if (!id || !STH) return null;
@@ -967,7 +971,7 @@ const healthOf = p => (viewR == null && INJ && p.id && INJ.state[p.id]) ? INJ.st
 const hBadge = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="bnh ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}">${HL[h][2]}</span>` : ""; };
 const hBadgeFull = p => { const h = healthOf(p); return h && h !== "ready" && HL[h] ? `<span class="bnh ${HL[h][1]}" title="Traumos būsena: ${HL[h][0]}">${HL[h][2]}</span> <span class="hbt2">${HL[h][0]}</span>` : ""; };
 let BNI = null;
-async function loadBni() { try { const r = await fetch("data/injuries-bn.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!BNI || j.updated !== BNI.updated) { BNI = j; BNI.idx = {}; (j.rows || []).forEach(x => { const n = norm(x.name), parts = n.split(" "); BNI.idx[n] = x; BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] = x; }); if (D) render(); } } } catch (e) {} }
+async function loadBni() { try { const r = await dfetch("data/injuries-bn.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!BNI || j.updated !== BNI.updated) { BNI = j; BNI.idx = {}; (j.rows || []).forEach(x => { const n = norm(x.name), parts = n.split(" "); BNI.idx[n] = x; BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] = x; }); if (D) render(); } } } catch (e) {} }
 const bniOf = name => { if (!BNI || !BNI.idx) return null; const n = norm(name), parts = n.split(" "); return BNI.idx[n] || BNI.idx["L|" + parts[parts.length - 1] + "|" + parts[0].charAt(0)] || null; };
 const LTX = [[/coach'?s decision/gi, "trenerio sprendimas"], [/Not included in (the )?official Euroleague roster/gi, "neįtrauktas į Eurolygos sudėtį"], [/Not included in 12-man roster/gi, "neįtrauktas į 12 žaidėjų sudėtį"], [/DNP in Rounds? /gi, "nežaidė turuose: "], [/Rehab after surgery/gi, "reabilitacija po operacijos"], [/underwent surgery/gi, "operuotas"], [/illness/gi, "liga"], [/new signing, not injured/gi, "naujokas, ne trauma"], [/Played in the domestic league/gi, "žaidė vietinėje lygoje"], [/out for six weeks/gi, "6 sav."]];
 const ltx = s => LTX.reduce((a, [re, r]) => a.replace(re, r), String(s || ""));
@@ -985,7 +989,7 @@ function returnTxt(x) {
 }
 const injInfo = name => { const x = bniOf(name); if (!x) return ""; const rt = returnTxt(x), c = ltx(x.comment); return `<div class="ijr">${rt ? `<b>${esc(rt)}</b>` : ""}${c ? `<span class="fa">${rt ? " · " : ""}${esc(c)}</span>` : ""}</div>`; };
 async function loadInj() {
-  try { const r = await fetch("data/injuries.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!INJ || j.updated !== INJ.updated) { INJ = j; if (D) render(); } } } catch (e) {}
+  try { const r = await dfetch("data/injuries.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!INJ || j.updated !== INJ.updated) { INJ = j; if (D) render(); } } } catch (e) {}
 }
 const pick = (arr, seed) => { let h = 0; for (const c of String(seed)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return arr[h % arr.length]; };
 const pn = p => `<b>${esc(p.name)}</b>`;
@@ -1130,7 +1134,7 @@ function renderReporter() {
 // ---- Trenerių komentarai (išgalvoti, humoristiniai). Parenka serveris – kiekvienas tekstas unikalus visose lygose ir turuose ----
 let COACH = null;
 async function loadCoach() {
-  try { const r = await fetch("data/coach.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); const n = Object.keys(j.q || {}).length; if (!COACH || n !== Object.keys(COACH.q || {}).length) { COACH = j; if (D) render(); } } } catch (e) {}
+  try { const r = await dfetch("data/coach.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); const n = Object.keys(j.q || {}).length; if (!COACH || n !== Object.keys(COACH.q || {}).length) { COACH = j; if (D) render(); } } } catch (e) {}
 }
 const coachText = key => { const x = COACH && COACH.q && COACH.q[key]; return x ? esc(x.t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") : null; };
 const coachBlock = (team, html, lbl) => `<blockquote class="cq"><div class="cq-h">Komandos „${esc(team.trim())}“ treneris${lbl || ""}:</div>„${html}“</blockquote>`;
@@ -1149,7 +1153,7 @@ function coachPair(A, B) {
 // ---- Perėjimai ir mainai ----
 let TX = null;
 async function loadTx() {
-  try { const r = await fetch("data/" + encodeURIComponent(SLUG) + "-tx.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!TX || j.updated !== TX.updated) { TX = j; if (D) render(); } } } catch (e) {}
+  try { const r = await dfetch("data/" + encodeURIComponent(SLUG) + "-tx.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!TX || j.updated !== TX.updated) { TX = j; if (D) render(); } } } catch (e) {}
 }
 const pl = arr => arr.map(p => `<b>${esc(p.name)}</b> <span class="fa">${esc(tv(p.club))}</span>`).join(", ");
 const tq = t => `„${esc(String(t).trim())}“`;
@@ -1244,7 +1248,7 @@ function renderTx() {
 // ---- Sezono „Oskarai“ ----
 let SEAS = null;
 async function loadSeason() {
-  try { const r = await fetch("data/" + encodeURIComponent(SLUG) + "-season.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!SEAS || JSON.stringify(j.rounds) !== JSON.stringify(SEAS.rounds) || j.deals.length !== SEAS.deals.length) { SEAS = j; if (D) render(); } } } catch (e) {}
+  try { const r = await dfetch("data/" + encodeURIComponent(SLUG) + "-season.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { const j = await r.json(); if (!SEAS || JSON.stringify(j.rounds) !== JSON.stringify(SEAS.rounds) || j.deals.length !== SEAS.deals.length) { SEAS = j; if (D) render(); } } } catch (e) {}
 }
 function seasonOscars() {
   if (!SEAS || !SEAS.rounds || !SEAS.rounds.length) return `<div class="sub">Sezono „Oskarai“ atsiras po pirmojo baigto turo.</div>`;
@@ -1385,7 +1389,7 @@ function h2hPopHtml({ a, b, P }) {
 
 // ---- Žaidėjo kortelė ----
 let FPH = null;
-async function loadFph() { if (FPH) return FPH; try { const r = await fetch("data/fp-hist.json?t=" + Date.now(), { cache: "no-store" }); FPH = r.ok ? await r.json() : {}; } catch (e) { FPH = {}; } return FPH; }
+async function loadFph() { if (FPH) return FPH; try { const r = await dfetch("data/fp-hist.json?t=" + Date.now(), { cache: "no-store" }); FPH = r.ok ? await r.json() : {}; } catch (e) { FPH = {}; } return FPH; }
 function findPlayer(id) {
   for (const t of D.teams) { const p = t.players.find(x => x.id === id); if (p) return { p, team: t.title }; }
   const q = (D.pool || []).find(x => x.id === id) || (D.fa || []).find(x => x.id === id);
@@ -1418,7 +1422,7 @@ const clubName = c => CLUB_NAME[c] || c;
 const RARCH = {};
 async function loadArch(r) {
   const k = D.slug + "|" + r; if (k in RARCH) return RARCH[k];
-  try { const x = await fetch("data/" + D.slug + "-r" + r + ".json", { cache: "force-cache" }); RARCH[k] = x.ok ? await x.json() : null; } catch (e) { RARCH[k] = null; }
+  try { const x = await dfetch("data/" + D.slug + "-r" + r + ".json", { cache: "force-cache" }); RARCH[k] = x.ok ? await x.json() : null; } catch (e) { RARCH[k] = null; }
   return RARCH[k];
 }
 function oppRow(r, club, g, fp, cur) {
@@ -1702,7 +1706,7 @@ async function pollLive() {
 async function load() {
   loadInj(); loadBni(); loadTx(); loadCoach(); loadSeason();
   try {
-    const res = await fetch("data/" + encodeURIComponent(SLUG) + ".json?t=" + Date.now(), { cache: "no-store" });
+    const res = await dfetch("data/" + encodeURIComponent(SLUG) + ".json?t=" + Date.now(), { cache: "no-store" });
     if (!res.ok) throw new Error(res.status);
     const d = await res.json();
     if (CUR && d.updated === CUR.updated) return;
@@ -1795,7 +1799,7 @@ function formOf(id) {
   return v.length ? { avg: v.reduce((a, b) => a + b, 0) / v.length, n: v.length, rounds: rs } : null;
 }
 let MINH = null;
-async function loadMinH() { if (MINH) return MINH; try { const r = await fetch("data/min-hist.json?t=" + Date.now(), { cache: "no-store" }); MINH = r.ok ? await r.json() : {}; } catch (e) { MINH = {}; } return MINH; }
+async function loadMinH() { if (MINH) return MINH; try { const r = await dfetch("data/min-hist.json?t=" + Date.now(), { cache: "no-store" }); MINH = r.ok ? await r.json() : {}; } catch (e) { MINH = {}; } return MINH; }
 // žaidėjo profilis: stabilumas, sužaistos rungtynės, minučių tendencija, vertė sudėčiai
 function profileOf(p) {
   const rs = FPH ? Object.keys(FPH).map(Number).sort((a, b) => a - b) : [];
@@ -1948,7 +1952,7 @@ async function goRound(n) {
   if (n < 1) return;
   if (!ARCH[n]) {
     try {
-      const res = await fetch("data/" + encodeURIComponent(SLUG) + "-r" + n + ".json?t=" + Date.now(), { cache: "no-store" });
+      const res = await dfetch("data/" + encodeURIComponent(SLUG) + "-r" + n + ".json?t=" + Date.now(), { cache: "no-store" });
       if (!res.ok) throw new Error(res.status);
       ARCH[n] = await res.json();
       // archyve – naujausia (oficiali) istorija, bet tik iki to turo imtinai

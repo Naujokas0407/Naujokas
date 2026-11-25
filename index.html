@@ -91,6 +91,10 @@ a.lg.cup:hover .go{color:#f2c14e}
   <p class="foot">Neoficialus puslapis. Duomenys atsinaujina automatiškai rungtynių metu.</p>
 </main>
 <script>
+// duomenys imami tiesiai iš GitHub saugyklos (visada naujausi, net jei GitHub Pages neatsinaujino); nepavykus – iš puslapio
+const RAW = "https://raw.githubusercontent.com/Naujokas0407/Naujokas/main/";
+async function dfetch(u, o) { if (u.startsWith("data/")) { try { const r = await fetch(RAW + u, o); if (r.ok) return r; } catch (e) {} } return fetch(u, o); }
+
 const LEAGUES = [
   { slug: "hla1", title: "HLA 1 Divizionas", short: "D1", format: "h2h" },
   { slug: "hla2", title: "HLA 2 Divizionas", short: "D2", format: "h2h" },
@@ -126,7 +130,7 @@ const box = document.getElementById("leagues");
 const boxBn = document.getElementById("leaguesBn");
 const paint = ds => { box.innerHTML = LEAGUES.map((L, i) => /^hla/.test(L.slug) ? card(L, ds ? ds[i] : null) : "").join(""); boxBn.innerHTML = LEAGUES.map((L, i) => /^hla/.test(L.slug) ? "" : card(L, ds ? ds[i] : null)).join(""); };
 paint(null);
-Promise.all(LEAGUES.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
+Promise.all(LEAGUES.map(L => dfetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))
   .then(ds => { paint(ds);
     const d = ds[LEAGUES.findIndex(L => L.slug === "hla1")]; if (!d) return; const r = d.round, el = document.getElementById("cupMeta");
     el.innerHTML = r < 8 ? `Startas ${8} ture · liko ${8 - r} ${8 - r === 1 ? "turas" : "turai"}` : r <= 21 ? `<span class="gold">Grupių etapas</span> · ${r} turas` : r <= 31 ? `<span class="gold">Atkrintamosios</span> · ${r} turas` : "Taurė baigta"; });

@@ -284,6 +284,10 @@ td.pts{font-weight:700;color:var(--ink)}
   <p class="foot">Rezultatai skaičiuojami automatiškai iš lygų duomenų (fantasy taškai iš BasketNews Fantasy).</p>
 </main>
 <script>
+// duomenys imami tiesiai iš GitHub saugyklos (visada naujausi, net jei GitHub Pages neatsinaujino); nepavykus – iš puslapio
+const RAW = "https://raw.githubusercontent.com/Naujokas0407/Naujokas/main/";
+async function dfetch(u, o) { if (u.startsWith("data/")) { try { const r = await fetch(RAW + u, o); if (r.ok) return r; } catch (e) {} } return fetch(u, o); }
+
 const LG = [{ slug: "hla1", div: 1 }, { slug: "hla2", div: 2 }, { slug: "hla3", div: 3 }, { slug: "hla4", div: 4 }];
 const START = 8, SEED_AFTER = 7, GROUP_END = 21, GROUP_ROUNDS = Array.from({ length: 14 }, (_, i) => 8 + i);
 const STAGES = [{ key: "r32", name: "1/16 finalo", gen: "1/16 finalo", r: [22, 23] }, { key: "r16", name: "1/8 finalo", gen: "1/8 finalo", r: [24, 25] }, { key: "qf", name: "Ketvirtfinalis", gen: "Ketvirtfinalio", r: [26, 27] }, { key: "sf", name: "Pusfinalis", gen: "Pusfinalio", r: [28, 29] }, { key: "f", name: "Finalas", r: [30, 31] }];
@@ -300,7 +304,7 @@ const num = n => n == null ? "–" : String(Math.round(n * 100) / 100).replace("
 let DATA = null, CUR = 0, RSTATE = "scheduled";
 
 async function load() {
-  const ds = await Promise.all(LG.map(L => fetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)));
+  const ds = await Promise.all(LG.map(L => dfetch("data/" + L.slug + ".json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)));
   if (ds.some(d => !d)) { document.querySelector("#status span").textContent = "Nepavyko įkelti duomenų"; return; }
   DATA = ds.map((d, i) => ({ ...LG[i], d }));
   CUR = Math.max(...ds.map(d => d.round));
@@ -682,7 +686,7 @@ const monthName = k => { const [y, m] = k.split("-").map(Number); return MONTHS_
 const starsHtml = n => `<span class="stars">${"★".repeat(n)}<i>${"★".repeat(5 - n)}</i></span>`;
 const lgDiv = lg => +String(lg).replace(/\D/g, "") || 0;
 const ownChips = own => (own || []).sort((a, b) => lgDiv(a.lg) - lgDiv(b.lg)).map(o => `<span class="own" data-team="${esc(o.team)}">${divChip(lgDiv(o.lg))}${esc(o.team)}</span>`).join(" ");
-async function loadExtra() { try { const r = await fetch("data/hla-extra.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { EXTRA = await r.json(); renderStats(); } } catch (e) {} }
+async function loadExtra() { try { const r = await dfetch("data/hla-extra.json?t=" + Date.now(), { cache: "no-store" }); if (r.ok) { EXTRA = await r.json(); renderStats(); } } catch (e) {} }
 function playerAwards() {
   if (!EXTRA || !EXTRA.dream || !Object.keys(EXTRA.dream).length) return "";
   const rs = Object.keys(EXTRA.dream).map(Number).filter(r => r >= START).sort((a, b) => a - b), ms = Object.keys(EXTRA.months || {}).filter(k => EXTRA.months[k].rounds.some(r => r >= START)).sort();
@@ -736,7 +740,7 @@ async function openTeam(title) {
     <div class="sub">Geriausi komandos žaidėjai</div><div id="pmTop" class="gr">Kraunama…</div>
     <a class="cuplink" href="league.html?l=${L.slug}">Komandos lyga: HLA ${L.div} Divizionas →</a>`;
   pm.hidden = false; document.body.style.overflow = "hidden";
-  try { if (!SEASONS[L.slug]) { const r = await fetch("data/" + L.slug + "-season.json?t=" + Date.now(), { cache: "no-store" }); SEASONS[L.slug] = r.ok ? await r.json() : {}; }
+  try { if (!SEASONS[L.slug]) { const r = await dfetch("data/" + L.slug + "-season.json?t=" + Date.now(), { cache: "no-store" }); SEASONS[L.slug] = r.ok ? await r.json() : {}; }
     const top = (SEASONS[L.slug].teamTop || {})[title] || [];
     document.getElementById("pmTop").innerHTML = top.length ? top.map((p, i) => `<div class="dt-r sm"><span class="dt-p">${i + 1}</span><div class="dt-n"><b>${esc(p.name)}</b> <span class="gr">${esc(p.club)}</span></div><div class="dt-v"><b>${num(p.pts)}</b></div></div>`).join("") : "Duomenų dar nėra"; } catch (e) {}
 }
