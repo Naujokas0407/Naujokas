@@ -17,10 +17,10 @@ Kapitonas Aliou Diarra jau žaidžia – šį turą keisti nebegalima.
 **👑 Kapitonas**
 Kapitonas TJ Shorts II jau žaidžia – šį turą keisti nebegalima.
 
-**📋 Siūloma sudėtis** (prognozė ~128 FP, dabartinė ~128 FP)
+**📋 Siūloma sudėtis** (prognozė ~126 FP, dabartinė ~126 FP)
 Startas: TJ Shorts II (C) ~22,5, Marcus Carr ~16, Nigel Hayes-Davis ~14,5, Tonye Jekiri ~13,5, Dwayne Bacon ~10,5
 6-as: Sylvain Francisco ~15,5
-Suolas: Collin Malcolm ~15,9, Mbaye Ndiaye ~8,5, Daniel Oturu ~5, Devon Dotson ~-3,5
+Suolas: Collin Malcolm ~12, Mbaye Ndiaye ~8,5, Daniel Oturu ~5, Devon Dotson ~-3,5
 Out: Tadas Sedekerskis (jau žaidė), Bruno Fernando (jau žaidė), Killian Hayes (jau žaidė)
 Startinis penketas jau optimalus. ✅
 
@@ -29,7 +29,7 @@ Startinis penketas jau optimalus. ✅
 - Bruno Fernando: nežais
 - Killian Hayes: neaišku
 
-**⚔️ Prieš Vidurinis pirštas :** prognozė ~128 : ~160,4
+**⚔️ Prieš Vidurinis pirštas :** prognozė ~126 : ~136,8
 
 ---
 
