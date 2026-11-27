@@ -56,7 +56,7 @@ Iš Out į sudėtį – Tadas Sedekerskis, Bruno Fernando; į Out – Devon Dots
 - Jean Montero (OLY, G) ~23,6 FP vs ASV (vietoj Killian Hayes ~0)
 - Josh Nebo (BAR, C) ~17,9 FP @ RMB (vietoj Killian Hayes ~0)
 
-**⚔️ Prieš Naujoji Akmenė:** prognozė ~176,3 : ~152,1
+**⚔️ Prieš Naujoji Akmenė:** prognozė ~176,3 : ~146,5
 
 ---
 
